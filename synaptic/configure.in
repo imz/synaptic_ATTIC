@@ -1,7 +1,7 @@
 dnl Process this file with autoconf to produce a configure script.
 AC_INIT(configure.in)
 
-AM_INIT_AUTOMAKE(synaptic, 0.55.3)
+AM_INIT_AUTOMAKE(synaptic, 0.56)
 AM_CONFIG_HEADER(config.h)
 AM_MAINTAINER_MODE
 
@@ -15,7 +15,7 @@ AC_PROG_MAKE_SET
 AC_PROG_RANLIB
 
 dnl i18n
-ALL_LINGUAS="ar pt_BR es fr de tr zh_CN zh_HK zh_TW ru nl ja be it_IT pl cs hu sr sr@Latn da he ca ko bg no nb sl bu pt_PT"
+ALL_LINGUAS="ar pt_BR es fr de tr zh_CN zh_HK zh_TW ru nl ja be it_IT pl cs hu sr sr@Latn da he ca ko bg no nb sl bu pt_PT lt"
 AM_GLIB_GNU_GETTEXT
 GETTEXT_PACKAGE=synaptic
 AC_SUBST(GETTEXT_PACKAGE)
@@ -152,6 +152,16 @@ AC_ARG_WITH(pkg-hold,
         AC_DEFINE(SYNAPTIC_PKG_HOLD, 1, [build with package pin feature] )
 )
 
+AC_ARG_WITH(apt-authentication, 
+	[--with-apt-authentication  build with support for apt authentication],
+        AC_DEFINE(WITH_APT_AUTH, 1, [build with apt auth support] )
+)
+
+AC_ARG_WITH(nice-dpkg-status, 
+	[--with-nice-dpkg-status build with support for dpkg progress bar],
+        AC_DEFINE(WITH_DPKG_STATUSFD, 1, [build with dpkg progress bar] )
+)
+
 
 AC_ARG_WITH(debtags, 
 	[--with-debtags-support   build with experimental debtags support],
@@ -171,25 +181,6 @@ AC_ARG_WITH(vte,
 	      AC_SUBST(VTE_LIBS)
 	      ]
 	      )
-
-dnl check for libzvt
-AC_ARG_WITH(zvt, 
-	      [--with-zvt  compile with libzvt support (terminal output)], 
-	      [pkg_modules="libzvt-2.0 >= 2.0.0"
-	      PKG_CHECK_MODULES(ZVT, [$pkg_modules])
-	      AC_DEFINE(HAVE_ZVT, 1, [build with ZVT as output terminal]) 
-	      AC_DEFINE(HAVE_TERMINAL, 1, [build with a terminal widget]) 
-	      AC_SUBST(ZVT_CFLAGS)
-	      AC_SUBST(ZVT_LIBS)
-	      ]
-	      )
-
-# check and make sure that we only have vte _or_ zvt
-if test "${with_vte+set}" = set; then
-	if test "${with_zvt+set}" = set; then
-		AC_MSG_ERROR([You can only build with vte or zvt])
-	fi
-fi
 
 AC_OUTPUT([
 common/Makefile 

@@ -1,4 +1,5 @@
 copy: *.8
+copy: *.diff
 copy: *.patch
 copy: *.po
-tar.gz: synaptic
+tar.gz: synaptic name=synaptic-@version@pre2 base=synaptic-@version@

@@ -177,6 +177,11 @@ class RPackageLister {
 
    RUserDialog *_userDialog;
 
+   void makeCommitLog();
+   void writeCommitLog();
+   string _logEntry;
+   time_t _logTime;
+
    // undo/redo stuff
    list<pkgState> undoStack;
    list<pkgState> redoStack;
@@ -221,7 +226,8 @@ class RPackageLister {
 
    void getSummary(int &held, int &kept, int &essential,
                    int &toInstall, int &toReInstall, int &toUpgrade, 
-		   int &toRemove,  int &toDowngrade, double &sizeChange);
+		   int &toRemove,  int &toDowngrade, 
+		   int &unAuthenticated,  double &sizeChange);
 
 
    void getDetailedSummary(vector<RPackage *> &held,
@@ -231,7 +237,11 @@ class RPackageLister {
                            vector<RPackage *> &toReInstall,
                            vector<RPackage *> &toUpgrade,
                            vector<RPackage *> &toRemove,
+                           vector<RPackage *> &toPurge,
                            vector<RPackage *> &toDowngrade,
+#ifdef WITH_APT_AUTH
+			   vector<string> &notAuthenticated,
+#endif
                            double &sizeChange);
 
    void getDownloadSummary(int &dlCount, double &dlSize);
@@ -249,6 +259,7 @@ class RPackageLister {
                         vector<RPackage *> &toUpgrade,
                         vector<RPackage *> &toRemove,
                         vector<RPackage *> &toDowngrade,
+			vector<RPackage *> &notAuthenticated,
                         vector<RPackage *> &exclude, bool sorted = true);
 
    bool openCache(bool reset);
@@ -298,6 +309,8 @@ class RPackageLister {
 
    bool readSelections(istream &in);
    bool writeSelections(ostream &out, bool fullState);
+
+   RPackageCache* getCache() { return _cache; };
 
    RPackageLister();
    ~RPackageLister();

@@ -61,10 +61,11 @@
 
 	      <child>
 		<widget class="GtkProgressBar" id="progressbar_download">
+		  <property name="width_request">400</property>
 		  <property name="visible">True</property>
 		  <property name="orientation">GTK_PROGRESS_LEFT_TO_RIGHT</property>
 		  <property name="fraction">0</property>
-		  <property name="pulse_step">0.1</property>
+		  <property name="pulse_step">0.10000000149</property>
 		</widget>
 		<packing>
 		  <property name="padding">0</property>
@@ -81,7 +82,7 @@
 	  </child>
 
 	  <child>
-	    <widget class="GtkExpander" id="expander1">
+	    <widget class="GtkExpander" id="expander">
 	      <property name="visible">True</property>
 	      <property name="can_focus">True</property>
 	      <property name="expanded">False</property>
@@ -144,14 +145,14 @@
 	    </widget>
 	    <packing>
 	      <property name="padding">0</property>
-	      <property name="expand">False</property>
-	      <property name="fill">False</property>
+	      <property name="expand">True</property>
+	      <property name="fill">True</property>
 	    </packing>
 	  </child>
 	</widget>
 	<packing>
 	  <property name="padding">0</property>
-	  <property name="expand">False</property>
+	  <property name="expand">True</property>
 	  <property name="fill">True</property>
 	</packing>
       </child>
@@ -177,7 +178,7 @@
 	</widget>
 	<packing>
 	  <property name="padding">0</property>
-	  <property name="expand">True</property>
+	  <property name="expand">False</property>
 	  <property name="fill">True</property>
 	</packing>
       </child>

@@ -69,8 +69,10 @@ bool ShowHelp(CommandLine & CmdL)
       _("-i=? Start with the initialFilter with the number given\n") <<
       _("-o=? Set an arbitary configuration option, eg -o dir::cache=/tmp\n")<<
       _("--upgrade-mode  Call Refresh, Upgrade and display changes\n") <<
+      _("--dist-upgrade-mode  Call Refresh, DistUpgrade and display changes\n") <<
       _("--non-interactive Never prompt for user input\n") << 
       _("--task-window Open with task window\n");
+      _("--add-cdrom Add a cdrom at startup\n");
    exit(0);
 }
 
@@ -89,6 +91,12 @@ CommandLine::Args Args[] = {
    0, "non-interactive", "Volatile::Non-Interactive", 0}
    , {
    0, "upgrade-mode", "Volatile::Upgrade-Mode", 0}
+   , {
+   0, "dist-upgrade-mode", "Volatile::DistUpgrade-Mode", 0}
+   , {
+   0, "add-cdrom", "Volatile::AddCdrom-Mode", CommandLine::HasArg}
+   , {
+   0, "update-at-startup", "Volatile::Update-Mode", 0}
    , {
    0, "hide-main-window", "Volatile::HideMainwindow", 0}
    , {
@@ -145,7 +153,7 @@ void update_check(RGMainWindow *mainWindow, RPackageLister *lister)
    if(update != UPDATE_CLOSE) {
       // check when last update happend
       int lastUpdate = _config->FindI("Synaptic::update::last",0);
-      int minimal= _config->FindI("Synaptic::update::minimalIntervall", 24);
+      int minimal= _config->FindI("Synaptic::update::minimalIntervall", 48);
 
       // check for the mtime of the various package lists
       vector<string> filenames = lister->getPolicyArchives(true);
@@ -195,15 +203,6 @@ int main(int argc, char **argv)
 
    gtk_init(&argc, &argv);
    //XSynchronize(dpy, 1);
-
-   // check if the locales are actually supported, I got a number
-   // of bugreports that where caused by incorrect locales, try to
-   // work around this problem here
-   if (!XSupportsLocale()) {
-      RGGladeUserDialog locales(NULL);
-      // run a dialog that warns about the incorrect locale settings
-      locales.run("locales_warning");
-   }
 
    if (getuid() != 0) {
       RGUserDialog userDialog;
@@ -276,10 +275,23 @@ int main(int argc, char **argv)
    mainWindow->restoreState();
    mainWindow->showErrors();
 
-   if(_config->FindB("Volatile::Upgrade-Mode",false)) {
-      mainWindow->cbUpdateClicked(NULL, mainWindow);
+   
+   string cd_mount_point = _config->Find("Volatile::AddCdrom-Mode", "");
+   if(!cd_mount_point.empty()) {
+      _config->Set("Acquire::cdrom::mount",cd_mount_point);
+      _config->Set("APT::CDROM::NoMount", true);
+      mainWindow->cbAddCDROM(NULL, mainWindow);
+   }
+
+   if(_config->FindB("Volatile::Upgrade-Mode",false) 
+      || _config->FindB("Volatile::DistUpgrade-Mode",false) ) {
       mainWindow->cbUpgradeClicked(NULL, mainWindow);
       mainWindow->changeView(PACKAGE_VIEW_CUSTOM, _("Marked Changes"));
+   }
+
+   if(_config->FindB("Volatile::Update-Mode",false)) {
+      mainWindow->cbUpdateClicked(NULL, mainWindow);
+      mainWindow->changeView(PACKAGE_VIEW_STATUS, _("Installed (upgradable)"));
    }
 
    if(_config->FindB("Volatile::TaskWindow",false)) {

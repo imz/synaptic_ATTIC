@@ -1,14 +1,21 @@
+# translation of cs.po to čeština
+# keny <keny@nativepeople.cz>, 2004.
+# Keny Otter <keny@nativepeople.cz>, 2004.
+# 
+# 
 msgid ""
 msgstr ""
-"Project-Id-Version: Synaptic 0.47\n"
+"Project-Id-Version: Synaptic v. 55\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-11-04 22:37+0100\n"
-"PO-Revision-Date: 2004-06-22 15:26+0100\n"
-"Last-Translator: Keny Otter <keny@email.cz>\n"
-"Language-Team: Czech <keny@email.cz>\n"
+"POT-Creation-Date: 2005-01-06 22:25+0100\n"
+"PO-Revision-Date: 2004-12-16 11:33+0100\n"
+"Last-Translator: Keny Otter <keny@nativepeople.cz>\n"
+"Language-Team: cs <cs@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #  TRANSLATORS: Alias for the Debian package section "admin"
 #. TRANSLATORS: Alias for the Debian package section "admin"
@@ -121,7 +128,7 @@ msgstr "Diskuse"
 #. TRANSLATORS: Alias for the Debian package section "oldlibs"
 #: common/sections_trans.cc:54
 msgid "Libraries - Old"
-msgstr "Knihovny - staré        "
+msgstr "Knihovny - staré"
 
 #. TRANSLATORS: Alias for the Debian package section "otherosfs"
 #: common/sections_trans.cc:56
@@ -179,14 +186,14 @@ msgid "Miscellaneous  - Graphical"
 msgstr "Různé - Grafika"
 
 #. TRANSLATORS: The section of the package is not known
-#: common/sections_trans.cc:78 common/rpackage.cc:108 gtk/rgmainwindow.cc:76
+#: common/sections_trans.cc:78 common/rpackage.cc:108 gtk/rgmainwindow.cc:78
 msgid "Unknown"
 msgstr "Neznámý"
 
 #. TRANSLATORS: Alias for the Debian package section "alien"
 #: common/sections_trans.cc:80
 msgid "Converted From RPM by Alien"
-msgstr "Převedeno do rpm pomocí aplikace Alien"
+msgstr "Balíky převedené pomocí aplikace Alien"
 
 #. TRANSLATORS: Alias for the Debian package section "non-US"
 #. Export to the outside of the USA is not allowed
@@ -259,97 +266,97 @@ msgstr "Selhalo přejmenování  %s.new na %s"
 msgid "Internal error"
 msgstr "Vnitřní chyba"
 
-#: common/rcdscanner.cc:257
+#: common/rcdscanner.cc:258
 msgid "Preparing..."
 msgstr "Připravuji..."
 
-#: common/rcdscanner.cc:270
+#: common/rcdscanner.cc:271
 #, c-format
 msgid "Unable to read the cdrom database %s"
 msgstr "Nemohu přečíst databázi na cdrom %s"
 
-#: common/rcdscanner.cc:277 common/rcdscanner.cc:319 common/rcdscanner.cc:418
+#: common/rcdscanner.cc:278 common/rcdscanner.cc:320 common/rcdscanner.cc:419
 msgid "Unmounting CD-ROM..."
 msgstr "Odpojuji CD-ROM..."
 
-#: common/rcdscanner.cc:280
+#: common/rcdscanner.cc:281
 msgid "Waiting for disc..."
 msgstr "Čekám na CD..."
 
-#: common/rcdscanner.cc:281
+#: common/rcdscanner.cc:282
 msgid "Insert a disc in the drive."
 msgstr "Vložte CD do mechaniky."
 
 #. Mount the new CDROM
-#: common/rcdscanner.cc:285
+#: common/rcdscanner.cc:286
 msgid "Mounting CD-ROM..."
 msgstr "Připojuji CD-ROM..."
 
-#: common/rcdscanner.cc:288
+#: common/rcdscanner.cc:289
 msgid "Failed to mount the cdrom."
 msgstr "Selhalo připojení cdrom."
 
-#: common/rcdscanner.cc:292
+#: common/rcdscanner.cc:293
 msgid "Identifying disc..."
 msgstr "Rozpoznávám CD..."
 
-#: common/rcdscanner.cc:295
+#: common/rcdscanner.cc:296
 msgid "Couldn't identify disc."
 msgstr "Nemohu idendifikovat CD."
 
-#: common/rcdscanner.cc:298
+#: common/rcdscanner.cc:299
 msgid "Scanning disc..."
 msgstr "Skenuji CD..."
 
-#: common/rcdscanner.cc:313
+#: common/rcdscanner.cc:314
 msgid "Cleaning package lists..."
 msgstr "Čistím seznam balíků..."
 
-#: common/rcdscanner.cc:326
+#: common/rcdscanner.cc:327
 msgid ""
 "Unable to locate any package files. Perhaps this is not an APT enabled disc."
 msgstr "Nemohu najít žádné balíky, jelikož to není CD vytvořené pro APT."
 
-#: common/rcdscanner.cc:377
+#: common/rcdscanner.cc:378
 msgid "Disc not successfuly scanned."
 msgstr "Při skenování disku došlo k chybě."
 
-#: common/rcdscanner.cc:381
+#: common/rcdscanner.cc:382
 msgid "Empty disc name."
 msgstr "Prázdné pole pro název CD."
 
-#: common/rcdscanner.cc:384
+#: common/rcdscanner.cc:385
 msgid "Registering disc..."
 msgstr "Provádím registraci disku..."
 
-#: common/rcdscanner.cc:398
+#: common/rcdscanner.cc:399
 msgid "Copying package lists..."
 msgstr "Kopíruji seznam balíků..."
 
-#: common/rcdscanner.cc:407
+#: common/rcdscanner.cc:408
 msgid "Writing sources list..."
 msgstr "Zapisuji seznam zdrojů..."
 
-#: common/rcdscanner.cc:422
+#: common/rcdscanner.cc:423
 msgid "Done!"
 msgstr "Hotovo!"
 
-#: common/rcdscanner.cc:520
+#: common/rcdscanner.cc:521
 #, c-format
 msgid "Failed to stat %s%s"
 msgstr "Selhal stat %s%s"
 
-#: common/rcdscanner.cc:622 common/rcdscanner.cc:718
+#: common/rcdscanner.cc:623 common/rcdscanner.cc:719
 #, c-format
 msgid "Unable to change to %s"
 msgstr "Nelze provést změnu u %s balíků"
 
-#: common/rcdscanner.cc:660
+#: common/rcdscanner.cc:661
 #, c-format
 msgid "Unable to read %s"
 msgstr "Nemohu přečíst: %s"
 
-#: common/rconfiguration.cc:83 common/rconfiguration.cc:184
+#: common/rconfiguration.cc:83 common/rconfiguration.cc:202
 #, c-format
 msgid "ERROR: couldn't open %s for writing"
 msgstr "CHYBA: soubor %s nelze zapsat"
@@ -363,7 +370,12 @@ msgstr "CHYBA: Nelze zadat heslo pro superuživatele"
 msgid "ERROR: could not create configuration directory %s"
 msgstr "CHYBA: pro %s nelze vytvořit adresář s konfigurací"
 
-#: common/rconfiguration.cc:209
+#: common/rconfiguration.cc:143
+#, c-format
+msgid "ERROR: could not create log directory %s"
+msgstr "CHYBA: pro %s nelze vytvořit logovací adresář"
+
+#: common/rconfiguration.cc:227
 #, c-format
 msgid "couldn't open %s for writing"
 msgstr "Nemohu otevřít %s pro zápis"
@@ -377,9 +389,8 @@ msgid "or dependency"
 msgstr "nebo závislostí"
 
 #: common/rpackage.cc:401
-#, fuzzy
 msgid "Dependency of"
-msgstr "Závislosti"
+msgstr "Na tomto balíčku závisí"
 
 #: common/rpackage.cc:509
 #, c-format
@@ -396,121 +407,100 @@ msgstr ""
 "uploadován, buď proto že byl zastaralý nebo není dostupný v žádném  zdroji.\n"
 
 #: common/rpackage.cc:544
-#, fuzzy, c-format
+#, c-format
 msgid "\t%s %s but %s is to be installed"
-msgstr "%s je/bude instalováno"
+msgstr "\t%s %s ale %s lze nainstalovat"
 
 #: common/rpackage.cc:548
-#, fuzzy, c-format
+#, c-format
 msgid " %s: %s %s but %s is to be installed"
-msgstr "%s je/bude instalováno"
+msgstr " %s: %s %s ale %s lze nainstalovat"
 
 #: common/rpackage.cc:556
-#, fuzzy, c-format
+#, c-format
 msgid "\t%s %s but it is not installable"
-msgstr "balík nelze instalovat"
+msgstr "\t%s %s ale tento balíček nelze nainstalovat"
 
 #: common/rpackage.cc:564
-#, fuzzy, c-format
+#, c-format
 msgid "\t%s but it is a virtual package"
-msgstr "balík je pouze virtuálním balíčkem"
+msgstr "\t%s ale jde o virtuální balíček"
 
 #: common/rpackage.cc:567
-#, fuzzy, c-format
+#, c-format
 msgid "%s: %s but it is a virtual package"
-msgstr "balík je pouze virtuálním balíčkem"
+msgstr "%s: %s ale jde o virtuální balíček"
 
 #: common/rpackage.cc:570
-#, fuzzy, c-format
+#, c-format
 msgid "\t%s but it is not going to be installed"
-msgstr "%s je/bude instalováno"
+msgstr "\t%s jde ale o balíček který nelze nainstalovat"
 
 #: common/rpackage.cc:573
 #, c-format
 msgid "%s: %s but it is not going to be installed"
-msgstr ""
+msgstr "%s:  %s ale jde o balíček který nelze nainstalovat"
 
 #: common/rpackage.cc:592
 msgid " or"
 msgstr " nebo"
 
-#: common/rpackage.cc:753
-#, c-format
-msgid "%s is/will be installed"
-msgstr "%s je/bude instalováno"
-
-#: common/rpackage.cc:758
-msgid "package is not installable"
-msgstr "balík nelze instalovat"
-
-#: common/rpackage.cc:760
-msgid "package is a virtual package"
-msgstr "balík je pouze virtuálním balíčkem"
-
-#: common/rpackage.cc:762
-msgid "package is/will not be installed"
-msgstr "balík není a nebude nainstalován"
-
-#: common/rpackage.cc:765
-msgid "dependency is satisfied"
-msgstr "závislosti jsou splněny"
-
-#: common/rpackage.cc:997
+#: common/rpackage.cc:895
 msgid "Invalid record in the preferences file, no Package header"
 msgstr "Vadný záznam v souboru nastavení, chybí hlavičky balíčků."
 
-#: common/rpackage.cc:1365
+#: common/rpackage.cc:1276
 msgid "Marked for installation"
 msgstr "Nainstalovat"
 
-#: common/rpackage.cc:1366
+#: common/rpackage.cc:1277
 msgid "Marked for re-installation"
 msgstr "Re-instalovat"
 
-#: common/rpackage.cc:1367
+#: common/rpackage.cc:1278
 msgid "Marked for upgrade"
 msgstr "Aktualizovat"
 
-#: common/rpackage.cc:1368
+#: common/rpackage.cc:1279
 msgid "Marked for downgrade"
 msgstr "Přeinstalovat na nižší verzi"
 
-#: common/rpackage.cc:1369
+#: common/rpackage.cc:1280
 msgid "Marked for removal"
 msgstr "Odebrat"
 
-#: common/rpackage.cc:1370
+#: common/rpackage.cc:1281
 msgid "Marked for complete removal"
 msgstr "Kompletně odebrat"
 
-#: common/rpackage.cc:1371 common/rpackageview.cc:123
+#: common/rpackage.cc:1282 common/rpackageview.cc:123
 #: gtk/window_filters.glade.h:31
 msgid "Not installed"
 msgstr "Nenainstalované balíky"
 
-#: common/rpackage.cc:1372
+#: common/rpackage.cc:1283
 msgid "Not installed (locked)"
 msgstr "Nenainstalováno (zamčeno)"
 
-#: common/rpackage.cc:1373 common/rpackageview.cc:118
+#: common/rpackage.cc:1284 common/rpackageview.cc:118
 #: gtk/window_filters.glade.h:23
 msgid "Installed"
 msgstr "Instalované balíky"
 
-#: common/rpackage.cc:1374 common/rpackageview.cc:138
+#: common/rpackage.cc:1285 common/rpackageview.cc:138 gtk/gsynaptic.cc:294
 msgid "Installed (upgradable)"
 msgstr "Instalováno (lze aktualizovat)"
 
-#: common/rpackage.cc:1375
+#: common/rpackage.cc:1286
 msgid "Installed (locked to the current version)"
 msgstr "Instalováno (závisí na aktuální verzi)"
 
-#: common/rpackage.cc:1376 common/rpackageview.cc:422
+#: common/rpackage.cc:1287 common/rpackageview.cc:422
 #: gtk/window_filters.glade.h:9
 msgid "Broken"
 msgstr "Problémové balíky"
 
-#: common/rpackage.cc:1377
+#: common/rpackage.cc:1288
 msgid "Not installed (new in repository)"
 msgstr "Nenainstalováno (novinka ve zdroji)"
 
@@ -531,13 +521,13 @@ msgstr ""
 msgid "Internal Error, non-zero counts"
 msgstr "Vnitřní chyba, kontrolní součet nesouhlasí"
 
-#: common/rpackagefilter.cc:45 gtk/rgpreferenceswindow.cc:899
+#: common/rpackagefilter.cc:45 gtk/rgpreferenceswindow.cc:956
 #: gtk/window_find.glade.h:6
 msgid "Name"
 msgstr "Název"
 
 #: common/rpackagefilter.cc:46 gtk/rgpreferenceswindow.cc:48
-#: gtk/rgmainwindow.cc:996 gtk/rgvendorswindow.cc:62 gtk/rgvendorswindow.cc:94
+#: gtk/rgmainwindow.cc:967 gtk/rgvendorswindow.cc:62 gtk/rgvendorswindow.cc:94
 #: gtk/window_main.glade.h:18 gtk/window_filters.glade.h:13
 #: gtk/rgfiltermanager.h:67 gtk/window_details.glade.h:16
 msgid "Description"
@@ -585,21 +575,21 @@ msgstr "Vzájemná závislost"
 #: common/rpackagefilter.cc:56 gtk/window_filters.glade.h:35
 #: gtk/rgfiltermanager.h:77
 msgid "Origin"
-msgstr "Vychází z"
+msgstr "Původ u křížových závislostí"
 
 #: common/rpackagefilter.cc:61 common/rpackageview.h:126
-#: gtk/rgpreferenceswindow.cc:46 gtk/rgfetchprogress.cc:84
+#: gtk/rgpreferenceswindow.cc:46 gtk/rgfetchprogress.cc:78
 #: gtk/window_filters.glade.h:53
 msgid "Status"
 msgstr "Stav"
 
 #. g_object_set(G_OBJECT(renderer), "editable", TRUE, NULL);
-#: common/rpackagefilter.cc:62 gtk/rgfiltermanager.cc:186
+#: common/rpackagefilter.cc:62 gtk/rgfiltermanager.cc:179
 msgid "Pattern"
 msgstr "Vzor"
 
 #: common/rpackagefilter.cc:63 gtk/rgpreferenceswindow.cc:46
-#: gtk/rgmainwindow.cc:868 gtk/window_filters.glade.h:52
+#: gtk/rgmainwindow.cc:839 gtk/window_filters.glade.h:52
 msgid "Section"
 msgstr "Sekce"
 
@@ -621,18 +611,18 @@ msgstr "Vnitřní chyba: Nemůžu otevřít soubor filtrů %s"
 msgid "Bad regular expression '%s' in ReducedView file."
 msgstr "Špatný regulární výraz '%s' pro Filtrovaný výpis"
 
-#: common/rpackagelister.cc:297 common/rpackagelister.cc:303
-#: common/rpackagelister.cc:317
+#: common/rpackagelister.cc:298 common/rpackagelister.cc:304
+#: common/rpackagelister.cc:318
 #, c-format
 msgid "Internal error opening cache (%d). Please report."
 msgstr ""
 "Vnitřní chyba při otevírání skladiště (%d). Prosím nahlašte tuto chybu."
 
-#: common/rpackagelister.cc:456
+#: common/rpackagelister.cc:457
 msgid "Unable to correct dependencies"
 msgstr "Nelze opravit chybu závislostí"
 
-#: common/rpackagelister.cc:458
+#: common/rpackagelister.cc:459
 msgid ""
 "Unable to mark upgrades\n"
 "Check your system for errors."
@@ -640,19 +630,19 @@ msgstr ""
 "Nelze provést aktualizaci\n"
 "Opravte chyby ve vašem systému."
 
-#: common/rpackagelister.cc:470
+#: common/rpackagelister.cc:471
 msgid "Internal Error, AllUpgrade broke stuff. Please report."
 msgstr "Vnitřní chyba, úplná aktualizace selhala. Prosím nahlašte tuto chybu."
 
-#: common/rpackagelister.cc:488
+#: common/rpackagelister.cc:489
 msgid "dist upgrade Failed"
 msgstr "Upgrade distribuce selhal"
 
-#: common/rpackagelister.cc:1185
+#: common/rpackagelister.cc:1235
 msgid "Unable to lock the list directory"
 msgstr "Nelze zamknout adresář se seznamy"
 
-#: common/rpackagelister.cc:1207
+#: common/rpackagelister.cc:1257
 msgid ""
 "Release files for some repositories could not be retrieved or authenticated. "
 "Such repositories are being ignored."
@@ -660,8 +650,8 @@ msgstr ""
 "Soubory pro některý zdroj nešly stáhnout, proto s ním Synaptic nebude "
 "pracovat."
 
-#: common/rpackagelister.cc:1274 common/rpackagelister.cc:1280
-#: gtk/rgrepositorywin.cc:320
+#: common/rpackagelister.cc:1329 common/rpackagelister.cc:1335
+#: gtk/rgrepositorywin.cc:322
 msgid "Ignoring invalid record(s) in sources.list file!"
 msgstr "Ignoruji chybné záznamy v souboru sources.list!"
 
@@ -669,43 +659,107 @@ msgstr "Ignoruji chybné záznamy v souboru sources.list!"
 #. The first %s is the URL and the second
 #. one is a detailed error message that
 #. is provided by apt
-#: common/rpackagelister.cc:1325
-#, fuzzy, c-format
+#: common/rpackagelister.cc:1386
+#, c-format
 msgid ""
 "Failed to fetch %s\n"
 "  %s\n"
 "\n"
 msgstr ""
 "Chyba při přenosu %s\n"
-"  %s"
+"  %s\n"
+"\n"
 
-#: common/rpackagelister.cc:1349
+#: common/rpackagelister.cc:1410
 msgid "Some of the packages could not be retrieved from the server(s).\n"
 msgstr "Některé z balíků se nepodařilo stáhnout.\n"
 
-#: common/rpackagelister.cc:1352
+#: common/rpackagelister.cc:1413
 msgid "Do you want to continue, ignoring these packages?"
 msgstr "Chcete pokračovat, s tím že se tyto balíky nebudou instalovat?"
 
-#: common/rpackagelister.cc:1359
+#: common/rpackagelister.cc:1420
 msgid "Unable to correct missing packages"
 msgstr "Nelze opravit chybějící balíčky"
 
-#: common/rpackagelister.cc:1422
+#. _logEntry += _("\n<b>Removed the following ESSENTIAL packages:</b>\n");
+#: common/rpackagelister.cc:1531
+msgid ""
+"\n"
+"Removed the following ESSENTIAL packages:\n"
+msgstr ""
+"\n"
+"Byly odebrány následující SYSTÉMOVÉ balíky:\n"
+
+#. _logEntry += _("\n<b>Downgraded the following packages:</b>\n");
+#: common/rpackagelister.cc:1540
+msgid ""
+"\n"
+"Downgraded the following packages:\n"
+msgstr ""
+"\n"
+"Na nižší verzi byly přeinstalovány následující balíky:\n"
+
+#. _logEntry += _("\n<b>Completely removed the following packages:</b>\n");
+#: common/rpackagelister.cc:1549
+msgid ""
+"\n"
+"Completely removed the following packages:\n"
+msgstr ""
+"\n"
+"Včetně konfiguračních souborů byly odebrány následující balíky:\n"
+
+#. _logEntry += _("\n<b>Removed the following packages:</b>\n");
+#: common/rpackagelister.cc:1558
+msgid ""
+"\n"
+"Removed the following packages:\n"
+msgstr ""
+"\n"
+"Byly odebrány následující balíky:\n"
+
+#. _logEntry += _("\n<b>Upgraded the following packages:</b>\n");
+#: common/rpackagelister.cc:1567
+msgid ""
+"\n"
+"Upgraded the following packages:\n"
+msgstr ""
+"\n"
+"Byly aktualizovány následující balíky:\n"
+
+#. _logEntry += _("\n<b>Installed the following packages:</b>\n");
+#: common/rpackagelister.cc:1578
+msgid ""
+"\n"
+"Installed the following packages:\n"
+msgstr ""
+"\n"
+"Byly nainstalovány následující balíky:\n"
+
+#. _logEntry += _("\n<b>Reinstalled the following packages:</b>\n");
+#: common/rpackagelister.cc:1588
+msgid ""
+"\n"
+"Reinstalled the following packages:\n"
+msgstr ""
+"\n"
+"Byly reinstalovány následující balíky:\n"
+
+#: common/rpackagelister.cc:1605
 msgid "Unable to lock the download directory"
 msgstr "Nelze uzamknout adresář pro stahované soubory"
 
-#: common/rpackagelister.cc:1500
+#: common/rpackagelister.cc:1683
 #, c-format
 msgid "Line %u too long in markings file."
 msgstr "Řádek %u v souboru s výběry je příliš dlouhý."
 
-#: common/rpackagelister.cc:1514 common/rpackagelister.cc:1518
+#: common/rpackagelister.cc:1697 common/rpackagelister.cc:1701
 #, c-format
 msgid "Malformed line %u in markings file"
 msgstr "Chyba na řádku %u v souboru s výběry"
 
-#: common/rpackagelister.cc:1530
+#: common/rpackagelister.cc:1713
 msgid "Setting markings..."
 msgstr "Nastavení výběrů..."
 
@@ -726,42 +780,37 @@ msgstr "Sekce"
 msgid "Alphabetic"
 msgstr "Abecedně"
 
-#: common/rpackageview.h:149
-#, fuzzy
+#: common/rpackageview.h:145
 msgid "Search History"
-msgstr "Podle stavu"
+msgstr "Historie hledání"
 
-#: common/rpackageview.h:196
-#, fuzzy
+#: common/rpackageview.h:192
 msgid "Custom"
-msgstr "Nastavení filtrů"
+msgstr "Vlastní"
 
 #: common/rpackageview.cc:116
-#, fuzzy
 msgid "Installed (unsupported)"
-msgstr "Instalované (zamčené):"
+msgstr "Nainstalované (nepodporované)"
 
 #: common/rpackageview.cc:121
-#, fuzzy
 msgid "Not installed (unsupported)"
-msgstr "Nenainstalováno (zamčeno)"
+msgstr "Nenainstalované (nepodporované)"
 
 #: common/rpackageview.cc:129 gtk/window_filters.glade.h:29
 msgid "New in repository"
-msgstr "Novinka ve zdroji"
+msgstr "Nově přidané do zdroje"
 
 #: common/rpackageview.cc:131 gtk/window_filters.glade.h:45
 msgid "Pinned"
 msgstr "Fixované"
 
 #: common/rpackageview.cc:135
-#, fuzzy
 msgid "Installed (local or obsolete)"
-msgstr "Instalované (zastaralé)"
+msgstr "Instalované (lokální nebo zastaralé)"
 
 #: common/rpackageview.cc:141
 msgid "Not installed (residual config)"
-msgstr "Není nainstalován (zůstaly pouze konfiguráky)"
+msgstr "Nenainstalované (zůstaly konfiguráky)"
 
 #: common/rpackageview.cc:400
 msgid "Search Filter"
@@ -769,13 +818,13 @@ msgstr "Podle stavu"
 
 #: common/rpackageview.cc:408
 msgid "Tasks"
-msgstr "Úlohy"
+msgstr "Účely"
 
 #: common/rpackageview.cc:414
 msgid "Reduced View"
 msgstr "Filtrovaný seznam"
 
-#: common/rpackageview.cc:431 gtk/gsynaptic.cc:282 gtk/rgsummarywindow.cc:299
+#: common/rpackageview.cc:431 gtk/gsynaptic.cc:289 gtk/rgsummarywindow.cc:355
 msgid "Marked Changes"
 msgstr "Požadované změny"
 
@@ -789,80 +838,79 @@ msgstr "Aktualizovatelné (základ)"
 
 #. vim:sts=3:sw=3
 #: gtk/dialog_quit.glade.h:1
-#, fuzzy
 msgid ""
 "<b><big>Quit and discard marked changes?</big></b>\n"
 "\n"
 "There are still marked changes that have not yet been applied. They will get "
 "lost if you choose to quit 'Synaptic'."
 msgstr ""
-"Máte nastaveno několik akcí, které nebyly dosud realizovány. Jestliže se "
-"nyní rozhodnete 'Synaptic' ukončit, pak je bude později nutno nastavit znovu."
+"<b><big>Chcete ukončit program a ztratit nastavené akce?</big></b>\n"
+"\n"
+"Máte stále naplánované nerealizované akce. Pokud ukončíte 'Synaptic', tak je "
+"budete muset nastavit znovu."
+
+#: gtk/dialog_conffile.glade.h:1
+#, fuzzy
+msgid ""
+"<span weight=\"bold\" size=\"larger\">Configuration file changed</span>\n"
+"\n"
+"Secondary Text"
+msgstr ""
+"<span weight=\"bold\" size=\"larger\">Akce je podmíněna dalšími balíky, "
+"pokračovat?</span>"
+
+#: gtk/dialog_conffile.glade.h:4
+msgid "Difference between the files"
+msgstr ""
 
 #: gtk/dialog_change_version.glade.h:1
-#, fuzzy
 msgid "Force version:"
-msgstr "Poslední verze:"
+msgstr "Upřednostněná verze:"
 
 #: gtk/dialog_change_version.glade.h:2
-#, fuzzy
 msgid "_Force Version"
-msgstr "Verze"
+msgstr "_Upřednostnit jinou verzi"
 
 #: gtk/dialog_upgrade.glade.h:1
 msgid ""
 "<b><big>Mark upgrades in a smart way?</big></b>\n"
 "\n"
 "The default upgrade method skips upgrades that would introduce conflicts or "
-"would require to install additional packages.\n"
+"require installation of additional packages.\n"
 "\n"
-"The smart upgrade (dist-upgrade) attemps to resolve conflicts and to fullfil "
+"The smart upgrade (dist-upgrade) attempts to resolve conflicts and to fulfil "
 "all dependencies of upgrades in a smart way.\n"
 "\n"
-"<b>Note:</b> The upgrades will be marked, only. You still have to apply them "
+"<b>Note:</b> The upgrades will be marked only. You still have to apply them "
 "afterwards."
 msgstr ""
+"<b><big>Vybrat balíčky automaticky?</big></b>\n"
+"\n"
+"Při základní aktualizaci jsou vynechány všechny aktualizace které by mohly "
+"vyvolat konflikt nebo které vyžadují doinstalování dalších balíčků.\n"
+"\n"
+"Při automatické aktualizaci (odpovídá příkazu dist-upgrade) jsou vyřešit "
+"potencionální konflikty přeinstalováním balíčků tak aby byly splněny "
+"závislosti, včetně případného doinstalování balíčků nových.\n"
+"\n"
+"<b>Poznámka:</b> Veškeré změny budou pouze nastaveny jako naplánované akce, "
+"k jejich realizaci dojde až poté až kliknete na \"Realizovat\"."
 
 #: gtk/dialog_upgrade.glade.h:8 gtk/window_preferences.glade.h:30
 msgid "Default Upgrade"
 msgstr "Základní aktualizace"
 
 #: gtk/dialog_upgrade.glade.h:9
-msgid "Remember the answer for further upgrades"
+msgid "Remember my answer for future upgrades"
 msgstr "Zapamatovat odpověď pro další aktualizace"
 
-#: gtk/dialog_upgrade.glade.h:10 gtk/window_preferences.glade.h:69
+#: gtk/dialog_upgrade.glade.h:10 gtk/window_preferences.glade.h:68
 msgid "Smart Upgrade"
 msgstr "Automatická aktualizace"
 
 #: gtk/dialog_upgrade.glade.h:11
 msgid "This behavior can be changed in the preferences later."
 msgstr "Toto chování může být později upraveno pomocí nastavení Synapticu."
-
-#: gtk/dialog_locales_warning.glade.h:1
-#, fuzzy
-msgid ""
-"<b><big>The grafical user interface (xlib) does not support your chosen "
-"language environment</big></b>\n"
-"\n"
-"Synaptic can crash if you decide to continue with unchanged localisation "
-"preferences. Language values like \"fr_FR.iso8859-15@euro\" are not "
-"supported. Use values like \"fr_FR\" or \"fr_FR@euro\" for your language.\n"
-"\n"
-"Contact the mailing list for comments or help:\n"
-"<i>synaptic-devel@nongnu.org</i> \n"
-"Include the output of the \"locale\" command in your email."
-msgstr ""
-"Synaptic může havarovat!\n"
-"\n"
-"Xlib nepodporuje vámi zvolený jazyk.\n"
-"\n"
-"Nastavte prosím v locales podobně \"fr_FR\" nebo \"fr_FR@euro\". Ne \"fr_FR."
-"iso8859-15@euro\".\n"
-"\n"
-"Pro nápovědu nebo případné připomínky prosím pište na:\n"
-"<i>synaptic-devel@nongnu.org</i> \n"
-"Nezapomeňte prosím do e-mailu vložit informaci o nastavení vašich \"locale\"."
 
 #: gtk/gsynaptic.cc:65
 msgid "Usage: synaptic [options]\n"
@@ -893,18 +941,27 @@ msgid "--upgrade-mode  Call Refresh, Upgrade and display changes\n"
 msgstr "--upgrade-mode  Provede stažení indexů, aktualizaci a zobrazí změny\n"
 
 #: gtk/gsynaptic.cc:72
+#, fuzzy
+msgid "--dist-upgrade-mode  Call Refresh, DistUpgrade and display changes\n"
+msgstr "--upgrade-mode  Provede stažení indexů, aktualizaci a zobrazí změny\n"
+
+#: gtk/gsynaptic.cc:73
 msgid "--non-interactive Never prompt for user input\n"
 msgstr "--non-interactive Bez uživatelského dialogu\n"
 
-#: gtk/gsynaptic.cc:73
+#: gtk/gsynaptic.cc:74
 msgid "--task-window Open with task window\n"
+msgstr "--task-window Otevřít s volbami účelu\n"
+
+#: gtk/gsynaptic.cc:75
+msgid "--add-cdrom Add a cdrom at startup\n"
 msgstr ""
 
-#: gtk/gsynaptic.cc:210
+#: gtk/gsynaptic.cc:209
 msgid "You must run this program as the root user."
 msgstr "Tento program musíte spouštět jako superuživatel."
 
-#: gtk/gsynaptic.cc:248
+#: gtk/gsynaptic.cc:247
 msgid "Synaptic Package Manager "
 msgstr "Synaptic - manažer instalačních balíků"
 
@@ -912,11 +969,11 @@ msgstr "Synaptic - manažer instalačních balíků"
 msgid "Scanning CD-ROM"
 msgstr "Prohlížím CD-ROM"
 
-#: gtk/rgcdscanner.cc:100
+#: gtk/rgcdscanner.cc:107
 msgid "Invalid disc name!"
 msgstr "Nesouhlasí název CD!"
 
-#: gtk/rgcdscanner.cc:111
+#: gtk/rgcdscanner.cc:119
 msgid "Disc Label"
 msgstr "Popisek CD"
 
@@ -932,105 +989,103 @@ msgstr "O programu Synaptic"
 msgid "Package changes"
 msgstr "Změny v instalaci"
 
-#: gtk/rgchangeswindow.cc:76 gtk/rgsummarywindow.cc:109
+#: gtk/rgchangeswindow.cc:77 gtk/rgsummarywindow.cc:92
+msgid "NOT AUTHENTICATED"
+msgstr "NEAUTORIZOVÁNO"
+
+#: gtk/rgchangeswindow.cc:90 gtk/rgsummarywindow.cc:134
 msgid "To be removed"
 msgstr "K odstranění"
 
-#: gtk/rgchangeswindow.cc:89
+#: gtk/rgchangeswindow.cc:103
 msgid "To be downgraded"
 msgstr "Bude snížena verze"
 
-#: gtk/rgchangeswindow.cc:102 gtk/rgsummarywindow.cc:121
+#: gtk/rgchangeswindow.cc:116 gtk/rgsummarywindow.cc:160
 msgid "To be upgraded"
 msgstr "K aktualizaci"
 
-#: gtk/rgchangeswindow.cc:114 gtk/rgsummarywindow.cc:133
+#: gtk/rgchangeswindow.cc:128 gtk/rgsummarywindow.cc:172
 msgid "To be installed"
 msgstr "K instalaci"
 
-#: gtk/rgchangeswindow.cc:126 gtk/rgsummarywindow.cc:145
+#: gtk/rgchangeswindow.cc:140 gtk/rgsummarywindow.cc:184
 msgid "To be re-installed"
 msgstr "K re-instalaci"
 
-#: gtk/rgchangeswindow.cc:137
+#: gtk/rgchangeswindow.cc:151
 msgid "To be kept"
 msgstr "Bude zachováno"
 
 #: gtk/rgpreferenceswindow.cc:46
 msgid "Supported"
-msgstr ""
+msgstr "Podporovaný"
 
 #: gtk/rgpreferenceswindow.cc:46 gtk/window_filters.glade.h:37
 msgid "Package Name"
 msgstr "Název balíku"
 
-#: gtk/rgpreferenceswindow.cc:47 gtk/rgmainwindow.cc:889
-#, fuzzy
+#: gtk/rgpreferenceswindow.cc:47 gtk/rgmainwindow.cc:860
 msgid "Component"
-msgstr "_Obsah"
+msgstr "Zdroj"
 
-#: gtk/rgpreferenceswindow.cc:47 gtk/rgmainwindow.cc:911
+#: gtk/rgpreferenceswindow.cc:47 gtk/rgmainwindow.cc:882
 msgid "Installed Version"
 msgstr "Nainstalovaná verze"
 
 #: gtk/rgpreferenceswindow.cc:47
-#, fuzzy
 msgid "Available Version"
-msgstr "<b>Dostupná verze</b>"
+msgstr "Dostupná verze"
 
 #: gtk/rgpreferenceswindow.cc:48
-#, fuzzy
 msgid "Installed Size"
-msgstr "Velikost po instalaci:"
+msgstr "Objem instalovaných dat"
 
 #: gtk/rgpreferenceswindow.cc:48
-#, fuzzy
 msgid "Download Size"
-msgstr "Stahuji soubory..."
+msgstr "Objem stahovaných dat"
 
-#: gtk/rgpreferenceswindow.cc:329 gtk/rgmainwindow.cc:1697
-#: gtk/rgterminstallprogress.cc:110
+#: gtk/rgpreferenceswindow.cc:347 gtk/rgmainwindow.cc:1646
+#: gtk/rgterminstallprogress.cc:99
 msgid "An error occurred while saving configurations."
 msgstr "Při ukládání nastavení se vyskytla nějaká chyba!"
 
-#: gtk/rgpreferenceswindow.cc:373
+#: gtk/rgpreferenceswindow.cc:392
 msgid "Choose font"
 msgstr "Vyberte písmo"
 
-#: gtk/rgpreferenceswindow.cc:578
-msgid "ignore"
-msgstr "ignorovat"
-
-#: gtk/rgpreferenceswindow.cc:766
+#: gtk/rgpreferenceswindow.cc:801
 msgid "Color selection"
 msgstr "Výběr barev"
 
-#: gtk/rgpreferenceswindow.cc:893
-#, fuzzy
+#: gtk/rgpreferenceswindow.cc:950
 msgid "Visible"
-msgstr "Proměnná:"
+msgstr "Zobrazovat"
 
-#: gtk/rgpreferenceswindow.cc:967 gtk/window_preferences.glade.h:64
+#: gtk/rgpreferenceswindow.cc:1024 gtk/window_preferences.glade.h:64
 msgid "Preferences"
 msgstr "Nastavení"
 
-#: gtk/rgfetchprogress.cc:96 gtk/rgmainwindow.cc:953
+#: gtk/rgfetchprogress.cc:90 gtk/rgmainwindow.cc:924
 msgid "Size"
 msgstr "Velikost"
 
-#: gtk/rgfetchprogress.cc:103 gtk/rgrepositorywin.cc:175
+#: gtk/rgfetchprogress.cc:97 gtk/rgrepositorywin.cc:177
 msgid "URI"
 msgstr "URI"
 
-#: gtk/rgfetchprogress.cc:127
+#: gtk/rgfetchprogress.cc:153
 #, c-format
 msgid ""
 "<big><b>%s</b></big> \n"
 "\n"
 "%s"
 msgstr ""
+"<big><b>%s</b></big> \n"
+"\n"
+"%s"
 
-#: gtk/rgfetchprogress.cc:140
+#: gtk/rgfetchprogress.cc:166
 #, c-format
 msgid ""
 "Please insert the disk labeled:\n"
@@ -1041,45 +1096,45 @@ msgstr ""
 "%s\n"
 "do mechaniky %s"
 
-#: gtk/rgfetchprogress.cc:246
+#: gtk/rgfetchprogress.cc:277
 #, c-format
 msgid "Downloading file %li of %li at %s/s - %s remaining"
 msgstr "Přijato %li z %li souborů rychlostí %s/s - zbývá %s"
 
-#: gtk/rgfetchprogress.cc:251
+#: gtk/rgfetchprogress.cc:282
 #, c-format
 msgid "Downloading file %li of %li"
 msgstr "Stahuji soubor %li z %li"
 
-#: gtk/rgfetchprogress.cc:316
+#: gtk/rgfetchprogress.cc:347
 msgid "Queued"
 msgstr "Dotazuji"
 
-#: gtk/rgfetchprogress.cc:319
+#: gtk/rgfetchprogress.cc:350
 msgid "Done"
 msgstr "Hotovo"
 
-#: gtk/rgfetchprogress.cc:322
+#: gtk/rgfetchprogress.cc:353
 msgid "Hit"
 msgstr "Záznam"
 
-#: gtk/rgfetchprogress.cc:325
+#: gtk/rgfetchprogress.cc:356
 msgid "Failed"
 msgstr "Selhalo"
 
-#: gtk/rgfiltermanager.cc:46 gtk/window_filters.glade.h:17
+#: gtk/rgfiltermanager.cc:39 gtk/window_filters.glade.h:17
 msgid "Filters"
 msgstr "Nastavení filtrů"
 
-#: gtk/rgfiltermanager.cc:171
+#: gtk/rgfiltermanager.cc:164
 msgid "Field"
 msgstr "Pole"
 
-#: gtk/rgfiltermanager.cc:178
+#: gtk/rgfiltermanager.cc:171
 msgid "Operator"
 msgstr "Operátor"
 
-#: gtk/rgfiltermanager.cc:760
+#: gtk/rgfiltermanager.cc:748
 #, c-format
 msgid "New Filter %i"
 msgstr "Nový filtr %i"
@@ -1115,8 +1170,10 @@ msgid ""
 "APT system reports:\n"
 "%s"
 msgstr ""
+"APT hlásí:\n"
+"%s"
 
-#: gtk/rginstallprogress.cc:284 gtk/rgterminstallprogress.cc:183
+#: gtk/rginstallprogress.cc:284 gtk/rgterminstallprogress.cc:168
 msgid "Applying Changes"
 msgstr "Realizuji změny"
 
@@ -1128,126 +1185,129 @@ msgstr "%s Vlastnosti"
 #: gtk/rgpkgdetails.cc:157
 #, c-format
 msgid "%s (%s)"
-msgstr ""
+msgstr "%s (%s)"
 
-#: gtk/rgmainwindow.cc:77
+#: gtk/rgmainwindow.cc:79
 msgid "Normal"
 msgstr "Normální"
 
-#: gtk/rgmainwindow.cc:78
+#: gtk/rgmainwindow.cc:80
 msgid "Critical"
 msgstr "Kritický"
 
-#: gtk/rgmainwindow.cc:79
+#: gtk/rgmainwindow.cc:81
 msgid "Security"
 msgstr "Zabezpečení"
 
-#: gtk/rgmainwindow.cc:167
+#: gtk/rgmainwindow.cc:149
 msgid "All"
 msgstr "Vše"
 
-#: gtk/rgmainwindow.cc:361 gtk/window_main.glade.h:29
+#: gtk/rgmainwindow.cc:336 gtk/window_main.glade.h:29
 #: gtk/window_details.glade.h:19
 msgid "No package is selected.\n"
 msgstr "Není vybrán žádný balíček.\n"
 
-#: gtk/rgmainwindow.cc:460
+#: gtk/rgmainwindow.cc:438
 #, c-format
 msgid "Select the version of %s that should be forced for installation"
-msgstr ""
+msgstr "Vyberte verzi balíčku %s která má být upřednostněna"
 
-#: gtk/rgmainwindow.cc:462
+#: gtk/rgmainwindow.cc:440
 msgid ""
 "The package manager always selects the most applicable version available. If "
 "you force a different version from the default one, errors in the dependency "
 "handling can occur."
 msgstr ""
+"Správce balíčků se bude snažit upřednostnit verzi, která bude maximálně "
+"vyhovovat pro splnění závislostí. Pokud upřednostníte jinou verzi, pak "
+"můžete způsobit chyby v závislostech"
 
 #. TRANSLATORS: Column header for the column "Status" in the package list
-#: gtk/rgmainwindow.cc:806
+#: gtk/rgmainwindow.cc:781
 msgid "S"
-msgstr ""
+msgstr "S"
 
 #. TRANSLATORS: Column header for the column "Supported" in the package list
-#: gtk/rgmainwindow.cc:822 gtk/window_preferences.glade.h:1
+#: gtk/rgmainwindow.cc:797 gtk/window_preferences.glade.h:1
 #: gtk/window_summary.glade.h:1 gtk/window_filters.glade.h:1
 msgid " "
 msgstr " "
 
-#: gtk/rgmainwindow.cc:842
+#: gtk/rgmainwindow.cc:817
 msgid "Package"
 msgstr "Balík"
 
-#: gtk/rgmainwindow.cc:932
+#: gtk/rgmainwindow.cc:903
 msgid "Latest Version"
 msgstr "Poslední verze"
 
-#: gtk/rgmainwindow.cc:974
-#, fuzzy
+#: gtk/rgmainwindow.cc:945
 msgid "Download"
-msgstr "Dat ke stažení:"
+msgstr "Dat ke stažení"
 
-#: gtk/rgmainwindow.cc:1245
-#, fuzzy
+#: gtk/rgmainwindow.cc:1198
 msgid ""
 "Reload the package information to become informed about new, removed or "
 "upgraded  software packages."
-msgstr "Instalovat, odebrat a zaktualizovat balíčky"
+msgstr ""
+"Předtím než začnete instalovat, nebo aktualizovat balíčky doporučujeme "
+"aktualizovat seznam balíčků."
 
-#: gtk/rgmainwindow.cc:1251
+#: gtk/rgmainwindow.cc:1204
 msgid "Mark all possible upgrades"
 msgstr "Nastavení všech realizovatelných aktualizací"
 
-#: gtk/rgmainwindow.cc:1255 gtk/window_summary.glade.h:5
+#: gtk/rgmainwindow.cc:1208 gtk/window_summary.glade.h:5
 msgid "Apply all marked changes"
 msgstr "Realizovat všechny akce"
 
-#: gtk/rgmainwindow.cc:1434
+#: gtk/rgmainwindow.cc:1387
 msgid "Unmark"
 msgstr "Odznačit"
 
-#: gtk/rgmainwindow.cc:1442
+#: gtk/rgmainwindow.cc:1395
 msgid "Mark for Installation"
 msgstr "Instalovat"
 
-#: gtk/rgmainwindow.cc:1450
+#: gtk/rgmainwindow.cc:1403
 msgid "Mark for Reinstallation"
 msgstr "Reinstalovat"
 
-#: gtk/rgmainwindow.cc:1459
+#: gtk/rgmainwindow.cc:1412
 msgid "Mark for Upgrade"
 msgstr "Aktualizovat"
 
-#: gtk/rgmainwindow.cc:1467
+#: gtk/rgmainwindow.cc:1420
 msgid "Mark for Removal"
 msgstr "Odebrat"
 
-#: gtk/rgmainwindow.cc:1476
+#: gtk/rgmainwindow.cc:1429
 msgid "Mark for Complete Removal"
 msgstr "Kompletně odebrat"
 
-#: gtk/rgmainwindow.cc:1488
+#: gtk/rgmainwindow.cc:1441
 msgid "Remove Including Orphaned Dependencies"
 msgstr "Odstranit včetně křížově závislých balíků"
 
-#: gtk/rgmainwindow.cc:1500
+#: gtk/rgmainwindow.cc:1453
 msgid "Hold Current Version"
 msgstr "Zachovat stávající verzi"
 
-#: gtk/rgmainwindow.cc:1509 gtk/window_main.glade.h:31
+#: gtk/rgmainwindow.cc:1462 gtk/window_main.glade.h:31
 #: gtk/window_filters.glade.h:46
 msgid "Properties"
 msgstr "Vlastnosti"
 
-#: gtk/rgmainwindow.cc:1521
+#: gtk/rgmainwindow.cc:1474
 msgid "Mark Recommended for Installation"
 msgstr "Instalovat i doporučené balíčky"
 
-#: gtk/rgmainwindow.cc:1525
+#: gtk/rgmainwindow.cc:1478
 msgid "Mark Suggested for Installation"
 msgstr "Instalovat navržené balíčky"
 
-#: gtk/rgmainwindow.cc:1614
+#: gtk/rgmainwindow.cc:1563
 msgid ""
 "Removing this package may render the system unusable.\n"
 "Are you sure you want to do that?"
@@ -1255,7 +1315,7 @@ msgstr ""
 "Odstraněním tohoto balíku můžete destabilizovat váš systém.\n"
 "Opravdu tak chcete učinit?"
 
-#: gtk/rgmainwindow.cc:1650
+#: gtk/rgmainwindow.cc:1599
 #, c-format
 msgid ""
 "%i packages listed, %i installed, %i broken. %i to install/upgrade, %i to "
@@ -1265,7 +1325,7 @@ msgstr ""
 "vybraných pro instalaci/aktualizaci a %i pro odebrání; po provedení změn "
 "bude uvolněno %s"
 
-#: gtk/rgmainwindow.cc:1656
+#: gtk/rgmainwindow.cc:1605
 #, c-format
 msgid ""
 "%i packages listed, %i installed, %i broken. %i to install/upgrade, %i to "
@@ -1275,7 +1335,7 @@ msgstr ""
 "vybraných pro instalaci/aktualizaci a %i pro odebrání; po provedení změn "
 "bude zabráno %s"
 
-#: gtk/rgmainwindow.cc:1662
+#: gtk/rgmainwindow.cc:1611
 #, c-format
 msgid ""
 "%i packages listed, %i installed, %i broken. %i to install/upgrade, %i to "
@@ -1284,8 +1344,8 @@ msgstr ""
 "V seznamu je %i balíků, z toho %i nainstalováno a %i problémových. %i je "
 "vybraných pro instalaci resp. aktualizaci a %i k odebrání"
 
-#: gtk/rgmainwindow.cc:1714
-#, c-format
+#: gtk/rgmainwindow.cc:1663
+#, fuzzy, c-format
 msgid ""
 "You have %d broken package on your system!\n"
 "\n"
@@ -1295,63 +1355,95 @@ msgid_plural ""
 "\n"
 "Use the \"Broken\" filter to locate them."
 msgstr[0] ""
+"Balíček %d ve vašem systému způsobuje problémy!\n"
+"\n"
+"K jeho nalezení použijte filtr \"Problémové balíky\".Ve vašem systému máte %"
+"i problémových balíčků!\n"
+"\n"
+"K jejich identifikaci použijte filtr \"Problémové balíky\"."
 msgstr[1] ""
+"Balíček %d ve vašem systému způsobuje problémy!\n"
+"\n"
+"K jeho nalezení použijte filtr \"Problémové balíky\".Ve vašem systému máte %"
+"i problémových balíčků!\n"
+"\n"
+"K jejich identifikaci použijte filtr \"Problémové balíky\"."
+msgstr[2] ""
+"Balíček %d ve vašem systému způsobuje problémy!\n"
+"\n"
+"K jeho nalezení použijte filtr \"Problémové balíky\".Ve vašem systému máte %"
+"i problémových balíčků!\n"
+"\n"
+"K jejich identifikaci použijte filtr \"Problémové balíky\"."
 
-#: gtk/rgmainwindow.cc:1886
-#, fuzzy
+#: gtk/rgmainwindow.cc:1824
 msgid "Downloading changelog"
-msgstr "_Stáhnout přehled změn"
+msgstr "Stahuji přehled změn"
 
-#: gtk/rgmainwindow.cc:1887
+#: gtk/rgmainwindow.cc:1825
 msgid ""
 "The changelog contains information about the changes and closed bugs in each "
 "version of the package."
 msgstr ""
+"Přehled změn obsahuje informace o změnách a opravách chyb v instalačním "
+"balíku."
 
 #. TRANSLATORS: Title of the changelog dialog - %s is the name of the package
-#: gtk/rgmainwindow.cc:1900
-#, fuzzy, c-format
+#: gtk/rgmainwindow.cc:1838
+#, c-format
 msgid "%s Changelog"
-msgstr "_Stáhnout přehled změn"
+msgstr "Přehled změn pro %s"
 
-#: gtk/rgmainwindow.cc:1983
+#: gtk/rgmainwindow.cc:1923
 msgid "Do you want to add another CD-ROM?"
 msgstr "Opravdu chcete přidat další CD?"
 
-#: gtk/rgmainwindow.cc:2008 gtk/rgmainwindow.cc:2621 gtk/rgmainwindow.cc:2703
-#: gtk/rgmainwindow.cc:2863
+#: gtk/rgmainwindow.cc:1957 gtk/rgmainwindow.cc:2013
+msgid "Open changes"
+msgstr "Otevřít změny"
+
+#: gtk/rgmainwindow.cc:1970 gtk/rgmainwindow.cc:2578 gtk/rgmainwindow.cc:2662
+#: gtk/rgmainwindow.cc:2825
 #, c-format
 msgid "Can't read %s"
 msgstr "Nemůžu otevřít %s"
 
-#: gtk/rgmainwindow.cc:2038
-msgid "Open changes"
-msgstr "Otevřít změny"
-
-#: gtk/rgmainwindow.cc:2069 gtk/rgmainwindow.cc:2132 gtk/rgmainwindow.cc:2539
-#: gtk/rgmainwindow.cc:2675 gtk/rgmainwindow.cc:2840
+#: gtk/rgmainwindow.cc:1994 gtk/rgmainwindow.cc:2487 gtk/rgmainwindow.cc:2632
+#: gtk/rgmainwindow.cc:2802
 #, c-format
 msgid "Can't write %s"
 msgstr "Nemůžu uložit %s"
 
-#: gtk/rgmainwindow.cc:2088
-msgid "Save changes"
-msgstr "Uložit změny"
-
-#: gtk/rgmainwindow.cc:2105
+#: gtk/rgmainwindow.cc:2020
 msgid "Save full state, not only changes"
 msgstr "Uložit kompletní seznam, nejenom vybrané změny"
 
-#: gtk/rgmainwindow.cc:2231
+#: gtk/rgmainwindow.cc:2097
+msgid "Repositories changed"
+msgstr "Zdroj byl aktualizován"
+
+#: gtk/rgmainwindow.cc:2098
+msgid ""
+"The repository information has changed. You have to click on the \"Reload\" "
+"button for your changes to take effect"
+msgstr ""
+"V nastavení zdrojů došlo ke změně. Případné změny se projeví teprve až znovu "
+"dáte volbu \"Aktualizovat\"."
+
+#: gtk/rgmainwindow.cc:2109
+msgid "Never show this message again"
+msgstr "Tuto zprávu již nezobrazovat"
+
+#: gtk/rgmainwindow.cc:2163
 #, c-format
 msgid "Found %i packages"
 msgstr "Nalezeno %i balíčků"
 
-#: gtk/rgmainwindow.cc:2261
+#: gtk/rgmainwindow.cc:2204
 msgid "Starting help viewer..."
 msgstr "Spouštím prohlížeč nápovědy..."
 
-#: gtk/rgmainwindow.cc:2281
+#: gtk/rgmainwindow.cc:2224
 msgid ""
 "No help viewer is installed!\n"
 "\n"
@@ -1371,7 +1463,7 @@ msgstr ""
 "synaptic' na konzoli nebo si prohlídnout jejich html verzi umístěnou v "
 "adresáři 'synaptic/html'."
 
-#: gtk/rgmainwindow.cc:2435
+#: gtk/rgmainwindow.cc:2372
 msgid ""
 "Cannot start configuration tool!\n"
 "You have to install the required package 'libgnome2-perl'."
@@ -1379,24 +1471,24 @@ msgstr ""
 "Nemohu spustit konfigurační nástroje!\n"
 "Musíte mít nejdříve nainstalován balíček 'libgnome2-perl'."
 
-#: gtk/rgmainwindow.cc:2441
+#: gtk/rgmainwindow.cc:2378
 msgid "Starting package configuration tool..."
 msgstr "Spouštím konfiguraci balíčků..."
 
 #  cout << "RGMainWindow::pkgHelpClicked()" << endl;
 #. cout << "RGMainWindow::pkgHelpClicked()" << endl;
-#: gtk/rgmainwindow.cc:2456
+#: gtk/rgmainwindow.cc:2393
 msgid "Starting package documentation viewer..."
 msgstr "Spouštím prohlížeč nápovědy..."
 
-#: gtk/rgmainwindow.cc:2468
+#: gtk/rgmainwindow.cc:2405
 msgid ""
 "You have to install the package \"dwww\" to browse the documentation of a "
 "package"
 msgstr ""
 "Pro prohlížení dokumentace k balíčkům, musíte nejdřív nainstalovat \"dwww\""
 
-#: gtk/rgmainwindow.cc:2505
+#: gtk/rgmainwindow.cc:2451
 msgid ""
 "Could not apply changes!\n"
 "Fix broken packages first."
@@ -1404,50 +1496,45 @@ msgstr ""
 "Nemohu realizovat změny!\n"
 "Vyřešte nejdřív problémové balíčky."
 
-#: gtk/rgmainwindow.cc:2524
+#: gtk/rgmainwindow.cc:2472
 msgid "Applying marked changes. This may take a while..."
 msgstr "Ověřuji vybrané akce, což může chvíli trvat..."
 
-#: gtk/rgmainwindow.cc:2528
-#, fuzzy
+#: gtk/rgmainwindow.cc:2476
 msgid "Downloading package files"
 msgstr "Probíhá stahování balíčků"
 
-#: gtk/rgmainwindow.cc:2529
-#, fuzzy
+#: gtk/rgmainwindow.cc:2477
 msgid "The package files will be cached locally for installation."
-msgstr "Balíčky se pouze stáhnou a nebudou nainstalovány"
+msgstr "Instalační balíčky jsou před instalací dočasně uloženy na lokální disk"
 
-#: gtk/rgmainwindow.cc:2604
+#: gtk/rgmainwindow.cc:2561
 msgid "Do you want to quit Synaptic?"
 msgstr "Opravdu chcete ukončit práci se Synapticem?"
 
-#: gtk/rgmainwindow.cc:2660
-#, fuzzy
+#: gtk/rgmainwindow.cc:2617
 msgid "Downloading package information"
-msgstr "Balíčky pouze stáhnout"
+msgstr "Probíhá stahování informací o balíčcích"
 
-#: gtk/rgmainwindow.cc:2661
-#, fuzzy
+#: gtk/rgmainwindow.cc:2618
 msgid ""
 "The repositories will be checked for new, removed or upgraded software "
 "packages."
-msgstr "Instalovat, odebrat a zaktualizovat balíčky"
+msgstr "Ze zdrojů budou staženy aktualizované indexové soubory."
 
-#: gtk/rgmainwindow.cc:2664
-#, fuzzy
+#: gtk/rgmainwindow.cc:2621
 msgid "Reloading package information..."
-msgstr "Spouštím konfiguraci balíčků..."
+msgstr "Aktualizuji seznam balíků..."
 
-#: gtk/rgmainwindow.cc:2728
+#: gtk/rgmainwindow.cc:2687
 msgid "Failed to resolve dependency problems!"
 msgstr "Nelze opravit chybu závislostí!"
 
-#: gtk/rgmainwindow.cc:2730
+#: gtk/rgmainwindow.cc:2689
 msgid "Successfully fixed dependency problems"
 msgstr "Problém závislostí byl úspěšně vyřešen"
 
-#: gtk/rgmainwindow.cc:2746
+#: gtk/rgmainwindow.cc:2705
 msgid ""
 "Could not upgrade the system!\n"
 "Fix broken packages first."
@@ -1455,15 +1542,15 @@ msgstr ""
 "Nemohu aktualizovat váš systém!\n"
 "Nejprve vyřešte problémové balíčky."
 
-#: gtk/rgmainwindow.cc:2787
+#: gtk/rgmainwindow.cc:2754
 msgid "Marking all available upgrades..."
 msgstr "Automaticky vybrat vše aktualizovatelné..."
 
-#: gtk/rgmainwindow.cc:2799
+#: gtk/rgmainwindow.cc:2766
 msgid "Successfully marked available upgrades"
 msgstr "Všechny možné aktualizace byly úspěšně nastaveny."
 
-#: gtk/rgmainwindow.cc:2801
+#: gtk/rgmainwindow.cc:2768
 msgid "Failed to mark all available upgrades!"
 msgstr "Výběru všech aktualizovatelných balíčků selhal!"
 
@@ -1473,168 +1560,188 @@ msgid ""
 "\n"
 " Packages in this component are not supported. Are you sure?"
 msgstr ""
+"Přidali jste si jako zdroj balíků \"universe\".\n"
+"\n"
+" Na balíčky z této části se nevztahuje podpora. Jste s tím srozuměni?"
 
-#: gtk/rgrepositorywin.cc:118 gtk/window_repositories.glade.h:4
+#: gtk/rgrepositorywin.cc:120 gtk/window_repositories.glade.h:4
 msgid "Repositories"
 msgstr "Zdroje"
 
-#: gtk/rgrepositorywin.cc:142
+#: gtk/rgrepositorywin.cc:144
 msgid "Enabled"
 msgstr "Použitý"
 
-#: gtk/rgrepositorywin.cc:152
+#: gtk/rgrepositorywin.cc:154
 msgid "Type"
 msgstr "Typ"
 
-#: gtk/rgrepositorywin.cc:162 gtk/rgvendorswindow.cc:62
+#: gtk/rgrepositorywin.cc:164 gtk/rgvendorswindow.cc:62
 #: gtk/rgvendorswindow.cc:80
 msgid "Vendor"
 msgstr "Prodávající"
 
-#: gtk/rgrepositorywin.cc:185
+#: gtk/rgrepositorywin.cc:187 gtk/window_preferences.glade.h:33
 msgid "Distribution"
-msgstr "Seznam balíků"
+msgstr "Distribuce"
 
-#: gtk/rgrepositorywin.cc:196
+#: gtk/rgrepositorywin.cc:198
 msgid "Section(s)"
 msgstr "Sekce s balíky"
 
-#: gtk/rgrepositorywin.cc:237
+#: gtk/rgrepositorywin.cc:239
 msgid "Binary (deb)"
 msgstr "Binární (deb)"
 
-#: gtk/rgrepositorywin.cc:242
-#, fuzzy
+#: gtk/rgrepositorywin.cc:244
 msgid "Source (deb-src)"
-msgstr "Zdrojové (deb-src))"
+msgstr "Zdrojové (deb-src)"
 
-#: gtk/rgrepositorywin.cc:251 gtk/rgrepositorywin.cc:373
+#: gtk/rgrepositorywin.cc:253 gtk/rgrepositorywin.cc:375
 #: gtk/window_repositories.glade.h:1
 msgid "(no vendor)"
 msgstr "(žádný poskytovatel)"
 
-#: gtk/rgrepositorywin.cc:327
+#: gtk/rgrepositorywin.cc:329
 msgid "Cannot read vendors.list file"
 msgstr "Nelze přečíst seznam poskytovatelů"
 
-#: gtk/rgrepositorywin.cc:492
+#: gtk/rgrepositorywin.cc:496
 msgid "Unknown source type"
 msgstr "Neznámý typ zdroje"
 
-#: gtk/rgsummarywindow.cc:83
+#: gtk/rgsummarywindow.cc:108
 msgid "(ESSENTIAL) to be removed"
 msgstr "(ESSENTIAL) bude odstraněn"
 
-#: gtk/rgsummarywindow.cc:96
+#: gtk/rgsummarywindow.cc:121
 msgid "To be DOWNGRADED"
 msgstr "Bude SNÍŽENA verze"
 
-#: gtk/rgsummarywindow.cc:160
+#: gtk/rgsummarywindow.cc:147
 #, fuzzy
-msgid "To be not upgraded"
-msgstr "K aktualizaci"
+msgid "To be completely removed (including configuration files)"
+msgstr "Odebrat včetně konfiguráků"
 
-#: gtk/rgsummarywindow.cc:196
+#: gtk/rgsummarywindow.cc:199
+#, fuzzy
+msgid "Unchanged"
+msgstr "Otevřít změny"
+
+#: gtk/rgsummarywindow.cc:244
 #, c-format
 msgid "<b>%s</b> (<b>essential</b>) will be removed\n"
 msgstr "<b>%s</b> (<b>systémový</b>) bude odebrán\n"
 
-#: gtk/rgsummarywindow.cc:205
+#: gtk/rgsummarywindow.cc:253
 #, c-format
 msgid "<b>%s</b> will be <b>downgraded</b>\n"
 msgstr "<b>%s</b> bude přeinstalován na <b>nižší</b> verzi\n"
 
-#: gtk/rgsummarywindow.cc:213
+#: gtk/rgsummarywindow.cc:261
+#, c-format
+msgid "<b>%s</b> will be removed with configuration\n"
+msgstr "<b>%s</b> bude odebrán včetně konfiguráků\n"
+
+#: gtk/rgsummarywindow.cc:269
 #, c-format
 msgid "<b>%s</b> will be removed\n"
 msgstr "<b>%s</b> bude odebrán\n"
 
-#: gtk/rgsummarywindow.cc:222
+#: gtk/rgsummarywindow.cc:278
 #, c-format
 msgid "<b>%s</b> (version <i>%s</i>) will be upgraded to version <i>%s</i>\n"
 msgstr "<b>%s</b> (verze <i>%s</i>) bude aktualizován na verzi <i>%s</i>\n"
 
-#: gtk/rgsummarywindow.cc:233
+#: gtk/rgsummarywindow.cc:289
 #, c-format
 msgid "<b>%s</b> (version <i>%s</i>) will be installed\n"
 msgstr "<b>%s</b> (verze <i>%s</i>) bude nainstalován\n"
 
-#: gtk/rgsummarywindow.cc:241
+#: gtk/rgsummarywindow.cc:297
 #, c-format
 msgid "<b>%s</b> (version <i>%s</i>) will be re-installed\n"
 msgstr "<b>%s</b> (verze <i>%s</i>) bude re-instalován\n"
 
-#: gtk/rgsummarywindow.cc:276
+#: gtk/rgsummarywindow.cc:332
 msgid "Summary"
 msgstr "Shrnutí:"
 
-#: gtk/rgsummarywindow.cc:346
-#, fuzzy, c-format
+#: gtk/rgsummarywindow.cc:402
+#, c-format
 msgid "%d package is locked\n"
 msgid_plural "%d packages are locked\n"
-msgstr[0] "Není vybrán žádný balíček.\n"
-msgstr[1] "Není vybrán žádný balíček.\n"
+msgstr[0] "%d balíček je uzamčen\n"
+msgstr[1] "%d balíčky jsou zamčeny\n"
+msgstr[2] "%d balíčků je zamčeno\n"
 
-#: gtk/rgsummarywindow.cc:353
-#, fuzzy, c-format
+#: gtk/rgsummarywindow.cc:409
+#, c-format
 msgid "%d package will be held back and not upgraded\n"
 msgid_plural "%d packages will be held back and not upgraded\n"
-msgstr[0] "Balíčky které mohou být instalovány či aktualizovány"
-msgstr[1] "Balíčky které mohou být instalovány či aktualizovány"
+msgstr[0] "%d balíček bude zachován ve stávající verzi\n"
+msgstr[1] "%d balíčky budou zachovány ve stávající verzi\n"
+msgstr[2] "%d balíčků bude zachováno ve stávající verzi\n"
 
-#: gtk/rgsummarywindow.cc:360
-#, fuzzy, c-format
+#: gtk/rgsummarywindow.cc:416
+#, c-format
 msgid "%d new package will be installed\n"
 msgid_plural "%d new packages will be installed\n"
-msgstr[0] "balík není a nebude nainstalován"
-msgstr[1] "balík není a nebude nainstalován"
+msgstr[0] "Bude instalován %d nový balíček\n"
+msgstr[1] "Budou instalovány %d nové balíčky\n"
+msgstr[2] "Bude instalováno %d nových balíčků\n"
 
-#: gtk/rgsummarywindow.cc:367
-#, fuzzy, c-format
+#: gtk/rgsummarywindow.cc:423
+#, c-format
 msgid "%d new package will be re-installed\n"
 msgid_plural "%d new packages will be re-installed\n"
-msgstr[0] "balík není a nebude nainstalován"
-msgstr[1] "balík není a nebude nainstalován"
+msgstr[0] "%d balíček bude reinstalován\n"
+msgstr[1] "%d balíčky bude reinstalovány\n"
+msgstr[2] "%d balíčků bude reinstalováno\n"
 
-#: gtk/rgsummarywindow.cc:374
-#, fuzzy, c-format
+#: gtk/rgsummarywindow.cc:430
+#, c-format
 msgid "%d package will be upgraded\n"
 msgid_plural "%d packages will be upgraded\n"
-msgstr[0] "Balíčky "
-msgstr[1] "Balíčky "
+msgstr[0] "%d balíček bude aktualizován\n"
+msgstr[1] "%d balíčky bude aktualizovány\n"
+msgstr[2] "%d balíčků bude aktualizováno\n"
 
-#: gtk/rgsummarywindow.cc:381
-#, fuzzy, c-format
+#: gtk/rgsummarywindow.cc:437
+#, c-format
 msgid "%d package will be removed\n"
 msgid_plural "%d packages will be removed\n"
-msgstr[0] "Balíčky, které budou odebrány"
-msgstr[1] "Balíčky, které budou odebrány"
+msgstr[0] "Bude odebrán %d balíček\n"
+msgstr[1] "Budou odebrány %d balíčky\n"
+msgstr[2] "Bude odebráno %d balíčků\n"
 
-#: gtk/rgsummarywindow.cc:388
-#, fuzzy, c-format
+#: gtk/rgsummarywindow.cc:444
+#, c-format
 msgid "%d package will be <b>downgraded</b>\n"
 msgid_plural "%d packages will be <b>downgraded</b>\n"
-msgstr[0] "<b>%s</b> bude přeinstalován na <b>nižší</b> verzi\n"
-msgstr[1] "<b>%s</b> bude přeinstalován na <b>nižší</b> verzi\n"
+msgstr[0] "%d balíček bude přeinstalován na <b>nižší</b> verzi\n"
+msgstr[1] "%d balíčky budou přeinstalovány na <b>nižší</b> verzi\n"
+msgstr[2] "%d balíčků bude přeinstalováno na <b>nižší</b> verzi\n"
 
-#: gtk/rgsummarywindow.cc:396
-#, fuzzy, c-format
+#: gtk/rgsummarywindow.cc:452
+#, c-format
 msgid "<b>Warning:</b> %d essential package will be removed\n"
 msgid_plural "<b>Warning:</b> %d essential packages will be removed\n"
-msgstr[0] "<b>%s</b> (<b>systémový</b>) bude odebrán\n"
-msgstr[1] "<b>%s</b> (<b>systémový</b>) bude odebrán\n"
+msgstr[0] "<b>Upozornění:</b> chcete odinstalovat %d systémový balíček\n"
+msgstr[1] "<b>Upozornění:</b> chcete odinstalovat %d systémové balíčky\n"
+msgstr[2] "<b>Upozornění:</b> chcete odinstalovat %d systémových balíčků\n"
 
-#: gtk/rgsummarywindow.cc:408
+#: gtk/rgsummarywindow.cc:464
 #, c-format
 msgid "%s of extra space will be used"
 msgstr "po aktualizaci bude zabráno na disku o %s více místa"
 
-#: gtk/rgsummarywindow.cc:411
+#: gtk/rgsummarywindow.cc:467
 #, c-format
 msgid "%s of extra space will be freed"
 msgstr "uvolní se %s"
 
-#: gtk/rgsummarywindow.cc:417
+#: gtk/rgsummarywindow.cc:473
 #, c-format
 msgid ""
 "\n"
@@ -1643,13 +1750,17 @@ msgstr ""
 "\n"
 "Bude se stahovat %s dat."
 
-#: gtk/rgsummarywindow.cc:442
+#: gtk/rgsummarywindow.cc:498
 msgid ""
 "Essential packages will be removed.\n"
 "This may render your system unusable!\n"
 msgstr ""
 "Tímto bude odstraněn systémový balík,\n"
 "což může vést k destabilizaci systému!\n"
+
+#: gtk/rguserdialog.cc:72
+msgid "The following problems where found on your system:"
+msgstr "Ve vašem systému se objevil následující problém:"
 
 #: gtk/rgvendorswindow.cc:39
 msgid "Setup Vendors"
@@ -1681,9 +1792,9 @@ msgstr "Hledat"
 
 #. TRANSLATORS: Title of the task window - %s is the task (e.g. "desktop" or "mail server")
 #: gtk/rgtaskswin.cc:141
-#, fuzzy, c-format
+#, c-format
 msgid "Description %s"
-msgstr "Popis"
+msgstr "Popis %s"
 
 #: gtk/window_main.glade.h:1 gtk/window_preferences.glade.h:2
 #: gtk/window_summary.glade.h:2 gtk/window_filters.glade.h:2
@@ -1708,6 +1819,8 @@ msgid ""
 "<b>Note:</b> To install a version that is different from the default one, "
 "choose <b>Package -> Force Version...</b> from the menu."
 msgstr ""
+"<b>Poznámka:</b> Pokud chcete nainstalovat jinou než výchozí verzi balíku, "
+"pak zvolte v menu <b>Balíčky -> Upřednostnit jinou verzi...</b>."
 
 #: gtk/window_main.glade.h:6 gtk/window_details.glade.h:6
 msgid "<b>Package:</b>"
@@ -1738,9 +1851,8 @@ msgid "Apply"
 msgstr "Realizovat"
 
 #: gtk/window_main.glade.h:13 gtk/window_details.glade.h:11
-#, fuzzy
 msgid "Available versions:"
-msgstr "<b>Dostupná verze</b>"
+msgstr "Dostupné verze:"
 
 #: gtk/window_main.glade.h:14 gtk/window_details.glade.h:12
 msgid "Common"
@@ -1749,13 +1861,13 @@ msgstr "Obecné"
 #  suggests
 #: gtk/window_main.glade.h:15
 msgid "Dependants"
-msgstr "Závisí na"
+msgstr "Nezbytná závislost na balíčku"
 
 #: gtk/window_main.glade.h:16 gtk/window_find.glade.h:2
 #: gtk/window_filters.glade.h:11 gtk/rgfiltermanager.h:70
 #: gtk/window_details.glade.h:13
 msgid "Dependencies"
-msgstr "Závislosti"
+msgstr "Závisí na balíčcích"
 
 #: gtk/window_main.glade.h:17 gtk/window_details.glade.h:14
 msgid "Dependencies of the Latest Version"
@@ -1766,13 +1878,12 @@ msgid "Download:"
 msgstr "Dat ke stažení:"
 
 #: gtk/window_main.glade.h:20
-#, fuzzy
 msgid "Icon _Legend"
 msgstr "_Popis k ikonám"
 
 #: gtk/window_main.glade.h:21 gtk/window_details.glade.h:18
 msgid "Installed Files"
-msgstr "Nainstalované balíky"
+msgstr "Instalované soubory"
 
 #: gtk/window_main.glade.h:22
 msgid "Mark All Upgrades"
@@ -1780,7 +1891,7 @@ msgstr "Aktualizovat vše"
 
 #: gtk/window_main.glade.h:23
 msgid "Mark Packages by _Task..."
-msgstr ""
+msgstr "Vybra_t balíčky podle účelu..."
 
 #: gtk/window_main.glade.h:24
 msgid "Mark for Co_mplete Removal"
@@ -1808,28 +1919,24 @@ msgid "Provided Packages"
 msgstr "Nabízí"
 
 #: gtk/window_main.glade.h:33
-#, fuzzy
 msgid "Reload"
-msgstr "Vydání"
+msgstr "Aktualizovat"
 
 #: gtk/window_main.glade.h:34
-#, fuzzy
 msgid "S_earch"
-msgstr "Probíhá hledání..."
+msgstr "Vyhl_edané"
 
 #: gtk/window_main.glade.h:35
-#, fuzzy
 msgid "S_tatus"
-msgstr "Stav"
+msgstr "S_tav"
 
 #: gtk/window_main.glade.h:36
 msgid "Save Markings _As..."
 msgstr "Uložit výběr _jako..."
 
 #: gtk/window_main.glade.h:37
-#, fuzzy
 msgid "Search"
-msgstr "Probíhá hledání..."
+msgstr "Hledat"
 
 #: gtk/window_main.glade.h:38 gtk/window_details.glade.h:22
 msgid "Size:"
@@ -1860,7 +1967,6 @@ msgid "Version:"
 msgstr "Verze:"
 
 #: gtk/window_main.glade.h:45 gtk/window_details.glade.h:24
-#, fuzzy
 msgid "Versions"
 msgstr "Verze"
 
@@ -1886,7 +1992,7 @@ msgstr "_Obsah"
 
 #: gtk/window_main.glade.h:51
 msgid "_Custom"
-msgstr ""
+msgstr "_Filtry"
 
 #: gtk/window_main.glade.h:52
 msgid "_Download Changelog"
@@ -1910,7 +2016,7 @@ msgstr "_Odstranit balíky které jsou v konfliktu"
 
 #: gtk/window_main.glade.h:57
 msgid "_Force Version..."
-msgstr ""
+msgstr "_Upřednostnit verzi..."
 
 #: gtk/window_main.glade.h:58
 msgid "_Help"
@@ -1921,87 +2027,82 @@ msgid "_Hide"
 msgstr "_Skrýt"
 
 #: gtk/window_main.glade.h:60
+msgid "_History"
+msgstr "_Přehled změn"
+
+#: gtk/window_main.glade.h:61
 msgid "_Icons Only"
 msgstr "Jen _ikony"
 
-#: gtk/window_main.glade.h:61
-#, fuzzy
-msgid "_Lock Version"
-msgstr "Verze"
-
 #: gtk/window_main.glade.h:62
-#, fuzzy
-msgid "_Mark All Upgrades..."
-msgstr "Aktualizovat _vše"
+msgid "_Lock Version"
+msgstr "_Zamknout verzi"
 
 #: gtk/window_main.glade.h:63
-#, fuzzy
-msgid "_Package"
-msgstr "Balík"
+msgid "_Mark All Upgrades..."
+msgstr "_Aktualizovat vše..."
 
 #: gtk/window_main.glade.h:64
-#, fuzzy
-msgid "_Properties"
-msgstr "Vlastnosti"
+msgid "_Package"
+msgstr "_Balíček"
 
 #: gtk/window_main.glade.h:65
+msgid "_Properties"
+msgstr "_Vlastnosti"
+
+#: gtk/window_main.glade.h:66
 msgid "_Quick Introduction"
 msgstr "_Rychlé seznámení"
 
-#: gtk/window_main.glade.h:66
+#: gtk/window_main.glade.h:67
 msgid "_Quit"
 msgstr "_Konec"
 
-#: gtk/window_main.glade.h:67
+#: gtk/window_main.glade.h:68
 msgid "_Read Markings..."
 msgstr "_Načíst výběr..."
 
-#: gtk/window_main.glade.h:68
+#: gtk/window_main.glade.h:69
 msgid "_Redo"
 msgstr "Zn_ovu"
 
-#: gtk/window_main.glade.h:69
-#, fuzzy
+#: gtk/window_main.glade.h:70
 msgid "_Reload Package Information"
 msgstr "_Aktualizovat seznam balíků "
 
-#: gtk/window_main.glade.h:70
+#: gtk/window_main.glade.h:71
 msgid "_Repositories"
 msgstr "_Zdroje"
 
-#: gtk/window_main.glade.h:71
+#: gtk/window_main.glade.h:72
 msgid "_Save Markings"
 msgstr "_Uložit výběr"
 
-#: gtk/window_main.glade.h:72
-#, fuzzy
-msgid "_Search..."
-msgstr "Probíhá hledání..."
-
 #: gtk/window_main.glade.h:73
-#, fuzzy
-msgid "_Sections"
-msgstr "Sekce"
+msgid "_Search..."
+msgstr "_Najít..."
 
 #: gtk/window_main.glade.h:74
-#, fuzzy
-msgid "_Set Internal Option..."
-msgstr "Nastavení _interních voleb..."
+msgid "_Sections"
+msgstr "_Sekce"
 
 #: gtk/window_main.glade.h:75
-#, fuzzy
-msgid "_Settings"
-msgstr "Sekce"
+msgid "_Set Internal Option..."
+msgstr "_Nastavení interních voleb..."
 
 #: gtk/window_main.glade.h:76
+msgid "_Settings"
+msgstr "_Nastavení"
+
+#: gtk/window_main.glade.h:77
 msgid "_Text Only"
 msgstr "_Pouze text"
 
-#: gtk/window_main.glade.h:77
+#: gtk/window_main.glade.h:78
 msgid "_Toolbar"
 msgstr "_Tlačítková lišta"
 
-#: gtk/window_main.glade.h:78
+#: gtk/window_main.glade.h:79
 msgid "_Undo"
 msgstr "_Zpět"
 
@@ -2099,13 +2200,12 @@ msgid "Written by"
 msgstr "Naprogramovali:"
 
 #: gtk/window_about.glade.h:33
-#, fuzzy
 msgid "translators-credits"
 msgstr "Keny Otter"
 
-#: gtk/window_find.glade.h:1 gtk/window_preferences.glade.h:3
-#: gtk/window_disc_name.glade.h:1 gtk/window_setopt.glade.h:1
-#: gtk/window_filters.glade.h:3 gtk/window_repositories.glade.h:2
+#: gtk/window_find.glade.h:1 gtk/window_disc_name.glade.h:1
+#: gtk/window_setopt.glade.h:1 gtk/window_filters.glade.h:3
+#: gtk/window_repositories.glade.h:2
 msgid "*"
 msgstr "*"
 
@@ -2118,18 +2218,16 @@ msgid "Look in:"
 msgstr "Hledat v:"
 
 #: gtk/window_find.glade.h:8
-#, fuzzy
 msgid "Search:"
-msgstr "Probíhá hledání..."
+msgstr "Vyhledat:"
 
 #: gtk/window_find.glade.h:10
-#, fuzzy
 msgid "_Search"
-msgstr "Probíhá hledání..."
+msgstr "_Hledání"
 
 #: gtk/window_fetch.glade.h:1
 msgid "Show progress of single files"
-msgstr ""
+msgstr "Průběh stahování jednotlivých souborů"
 
 #: gtk/window_changes.glade.h:1
 msgid ""
@@ -2151,76 +2249,74 @@ msgstr ""
 msgid "_Mark"
 msgstr "_Vybrat"
 
-#: gtk/window_preferences.glade.h:4
+#: gtk/window_preferences.glade.h:3
 msgid "<b>Appearance</b>"
 msgstr "<b>Vyhledávání</b>"
 
-#: gtk/window_preferences.glade.h:5
+#: gtk/window_preferences.glade.h:4
 msgid "<b>Applying Changes</b>"
 msgstr "<b>Realizovat změny</b>"
 
-#: gtk/window_preferences.glade.h:6
+#: gtk/window_preferences.glade.h:5
 msgid "<b>Colors</b>"
 msgstr "<b>Barvy</b>"
 
-#: gtk/window_preferences.glade.h:7
+#: gtk/window_preferences.glade.h:6
 msgid "<b>Columns</b>"
 msgstr "<b>Sloupce</b>"
 
-#: gtk/window_preferences.glade.h:8
-msgid "<b>Distribution</b>"
-msgstr "<b>Distribuce</b>"
-
-#: gtk/window_preferences.glade.h:9
+#: gtk/window_preferences.glade.h:7
 msgid "<b>Fonts</b>"
 msgstr "<b>Písma</b>"
 
-#: gtk/window_preferences.glade.h:10
+#: gtk/window_preferences.glade.h:8
 msgid "<b>Marking Changes</b>"
 msgstr "<b>Označení akcí</b>"
 
-#: gtk/window_preferences.glade.h:11
+#: gtk/window_preferences.glade.h:9
 #, fuzzy
-msgid ""
-"<b>Note:</b> The package information must be reloaded and all marked changes "
-"will be lost. Make sure to apply your changes first."
-msgstr ""
-"<b>Poznámka:</b> Seznam balíků bude potřeba natáhnout znovu, takže veškeré "
-"doposud zvolené změny budou ztraceny. Nechte tudíž napřed změny provést."
+msgid "<b>Package upgrade behaviour (default distribution)</b>"
+msgstr "<b>Postup při aktualizaci (výchozí distribuce)</b>"
 
-#: gtk/window_preferences.glade.h:12
+#: gtk/window_preferences.glade.h:10
 msgid "<b>Proxy Server</b>"
 msgstr "<b>Proxy server</b>"
 
-#: gtk/window_preferences.glade.h:13
+#: gtk/window_preferences.glade.h:11
 msgid "<b>Temporary Files</b>"
 msgstr "<b>Dočasné soubory</b>"
 
-#: gtk/window_preferences.glade.h:14
+#: gtk/window_preferences.glade.h:12
 msgid ""
 "<span size=\"large\" weight=\"bold\">These settings affect the core of your "
-"system. Consider changes carefully.</span>"
+"system. Consider any changes carefully.</span>"
 msgstr ""
 "<span size=\"large\" weight=\"bold\">Toto nastavení ovlivní jádro vašeho "
-"systému. Případné změny proto předem řádně promyslete.</span>"
+"systému. Případné změny si proto předem řádně promyslete.</span>"
 
-#: gtk/window_preferences.glade.h:15
-#, fuzzy
+#: gtk/window_preferences.glade.h:13
 msgid "A_pplication Font"
-msgstr "Vlastní nastavení písma aplikace"
+msgstr "_Font aplikace"
 
-#: gtk/window_preferences.glade.h:16
+#: gtk/window_preferences.glade.h:14
 msgid "Always Ask"
 msgstr "Vždy se dotázat"
+
+#: gtk/window_preferences.glade.h:15
+msgid "Always prefer the highest version"
+msgstr ""
+
+#: gtk/window_preferences.glade.h:16
+msgid "Always prefer the installed version"
+msgstr ""
 
 #: gtk/window_preferences.glade.h:17
 msgid "Apply changes in a terminal window"
 msgstr "Realizovat změny v okně terminálu"
 
 #: gtk/window_preferences.glade.h:18
-#, fuzzy
-msgid "Ask to confirm changes also affecting other packages"
-msgstr "Potvrdit akci ovlivňující další balíky?"
+msgid "Ask to confirm changes that also affect other packages"
+msgstr "Ptát se při akcích které mají vliv na další balíky"
 
 #: gtk/window_preferences.glade.h:19
 msgid "Ask to quit after the changes have been applied successfully"
@@ -2228,16 +2324,15 @@ msgstr "Ptát se zda ukončit práci s programem po úspěšné realizaci změn?
 
 #: gtk/window_preferences.glade.h:20
 msgid "Automatically"
-msgstr ""
+msgstr "Automaticky"
 
 #: gtk/window_preferences.glade.h:21
 msgid "Broken:"
 msgstr "Problémový:"
 
 #: gtk/window_preferences.glade.h:22
-#, fuzzy
 msgid "Clicking on the status icon marks the most likely action"
-msgstr "Kliknutím na stavovou ikonu nastavíte posledně použitou akci"
+msgstr "Kliknutím na stavovou ikonu nastavíte naposledy použitou akci"
 
 #: gtk/window_preferences.glade.h:23
 msgid "Color"
@@ -2268,189 +2363,175 @@ msgid "Completely"
 msgstr "Úplně"
 
 #: gtk/window_preferences.glade.h:29
-#, fuzzy
 msgid "Consider recommended packages as dependencies"
 msgstr "Považovat doporučené balíky za závislé"
 
 #: gtk/window_preferences.glade.h:31
-msgid "Default archive: "
-msgstr "Výchozí archív:"
-
-#: gtk/window_preferences.glade.h:32
 msgid "Delete downloaded packages after installation"
 msgstr "Po nainstalování stažené balíky smazat"
 
-#: gtk/window_preferences.glade.h:33
-msgid "Delete packages which are no longer available only"
-msgstr "Odstranit balíky, které již nelze stáhnout"
-
-#: gtk/window_preferences.glade.h:34
+#: gtk/window_preferences.glade.h:32
 msgid "Direct connection to the internet"
 msgstr "Přímé připojení k internetu"
 
-#: gtk/window_preferences.glade.h:35
-msgid "Expert"
-msgstr "Expertní režim"
-
-#: gtk/window_preferences.glade.h:36
+#: gtk/window_preferences.glade.h:34
 msgid "FTP proxy: "
 msgstr "FTP proxy:"
 
-#: gtk/window_preferences.glade.h:37
+#: gtk/window_preferences.glade.h:35
 msgid "General"
 msgstr "Obecné"
 
-#: gtk/window_preferences.glade.h:38
+#: gtk/window_preferences.glade.h:36
 msgid "HTTP proxy: "
 msgstr "HTTP proxy:"
 
-#: gtk/window_preferences.glade.h:39
+#: gtk/window_preferences.glade.h:37
 msgid "IP address or host name of the ftp proxy server"
 msgstr "IP adresa nebo alias ftp proxy serveru"
 
-#: gtk/window_preferences.glade.h:40
+#: gtk/window_preferences.glade.h:38
 msgid "IP address or host name of the http proxy server"
 msgstr "IP adresa nebo alias http proxy serveru"
 
-#: gtk/window_preferences.glade.h:41
-#, fuzzy
+#: gtk/window_preferences.glade.h:39
 msgid "Ignore"
-msgstr "ignorovat"
+msgstr "Ignorovat"
 
-#: gtk/window_preferences.glade.h:42
+#: gtk/window_preferences.glade.h:40
 msgid "Installed (locked):"
 msgstr "Instalované (zamčené):"
 
-#: gtk/window_preferences.glade.h:43
+#: gtk/window_preferences.glade.h:41
 msgid "Installed:"
 msgstr "Instalované:"
 
-#: gtk/window_preferences.glade.h:44
+#: gtk/window_preferences.glade.h:42
 msgid "Keep Configuration"
 msgstr "Zachovat konfiguráky"
 
-#: gtk/window_preferences.glade.h:45
+#: gtk/window_preferences.glade.h:43
 msgid "Leave all downloaded packages in the cache"
 msgstr "Ponechávat všechny stažené balíky ve skladišti"
 
-#: gtk/window_preferences.glade.h:46
+#: gtk/window_preferences.glade.h:44
 msgid "Manual proxy configuration"
 msgstr "Ruční nastavení proxy"
 
-#: gtk/window_preferences.glade.h:47
+#: gtk/window_preferences.glade.h:45
 msgid "Marked for complete removal:"
 msgstr "Kompletně odebrat:"
 
-#: gtk/window_preferences.glade.h:48
+#: gtk/window_preferences.glade.h:46
 msgid "Marked for downgrade:"
 msgstr "Přeinstalovat na nižší verzi:"
 
-#: gtk/window_preferences.glade.h:49
+#: gtk/window_preferences.glade.h:47
 msgid "Marked for installation:"
 msgstr "Instalovat:"
 
-#: gtk/window_preferences.glade.h:50
+#: gtk/window_preferences.glade.h:48
 msgid "Marked for reinstallation:"
 msgstr "Reinstalovat:"
 
-#: gtk/window_preferences.glade.h:51
+#: gtk/window_preferences.glade.h:49
 msgid "Marked for removal:"
 msgstr "Odebrat:"
 
-#: gtk/window_preferences.glade.h:52
+#: gtk/window_preferences.glade.h:50
 msgid "Marked for upgrade:"
 msgstr "Aktualizovat:"
 
-#: gtk/window_preferences.glade.h:53
+#: gtk/window_preferences.glade.h:51
 msgid "Move D_own"
 msgstr "Přesunout d_olů"
 
-#: gtk/window_preferences.glade.h:54
+#: gtk/window_preferences.glade.h:52
 msgid "Move _Up"
 msgstr "Přesunout nahor_u"
 
-#: gtk/window_preferences.glade.h:55
+#: gtk/window_preferences.glade.h:53
 msgid "Network"
 msgstr "Síť"
 
-#: gtk/window_preferences.glade.h:56
-msgid "New in respository:"
+#: gtk/window_preferences.glade.h:54
+#, fuzzy
+msgid "New in repository:"
 msgstr "Novinka ve zdroji:"
 
-#: gtk/window_preferences.glade.h:57
+#: gtk/window_preferences.glade.h:55
 msgid "No proxy for: "
 msgstr "Nepoužívat proxy pro:"
 
-#: gtk/window_preferences.glade.h:58
+#: gtk/window_preferences.glade.h:56
 msgid "Not installed (locked):"
 msgstr "Nenainstalované (zamčené):"
 
-#: gtk/window_preferences.glade.h:59
+#: gtk/window_preferences.glade.h:57
 msgid "Not installed:"
 msgstr "Nenainstalované:"
 
-#: gtk/window_preferences.glade.h:60
+#: gtk/window_preferences.glade.h:58
 msgid "Number of undo operations:"
 msgstr "Počet kroků pro návrat zpět:"
 
-#: gtk/window_preferences.glade.h:61
-#, fuzzy
-msgid "Port number of the ftp proxy server"
-msgstr "Číslo portu FTP proxy serveru."
+#: gtk/window_preferences.glade.h:59
+msgid "Only delete packages which are no longer available"
+msgstr "Odstraňovat pouze balíčky které nejsou delší dobu dostupné"
 
-#: gtk/window_preferences.glade.h:62
+#: gtk/window_preferences.glade.h:60
+msgid "Port number of the ftp proxy server"
+msgstr "Číslo portu ftp proxy serveru"
+
+#: gtk/window_preferences.glade.h:61
 msgid "Port number of the http proxy server"
 msgstr "Číslo portu HTTP proxy serveru."
 
-#: gtk/window_preferences.glade.h:63
+#: gtk/window_preferences.glade.h:62
 msgid "Port: "
 msgstr "Port: "
 
+#: gtk/window_preferences.glade.h:63
+msgid "Prefer versions from: "
+msgstr "Upřednostňovat verzi z: "
+
 #: gtk/window_preferences.glade.h:65
 msgid "Reloading outdated package information:"
-msgstr ""
+msgstr "Spuštění aktualizace seznamu balíků:"
 
 #: gtk/window_preferences.glade.h:66
-#, fuzzy
 msgid "Removal of packages: "
-msgstr "Odebírání balíků:"
+msgstr "Odebrané balíčky:"
 
 #: gtk/window_preferences.glade.h:67
-msgid ""
-"Select the default release if more than one is specifed in the sources.list"
-msgstr ""
-"Vyberte jednu výchozí distribuci, je-li jich v sources.list uvedeno více"
-
-#: gtk/window_preferences.glade.h:68
 msgid "Show package properties in the main window"
-msgstr ""
+msgstr "Zobrazovat vlastnosti balíčků v hlavním okně"
 
-#: gtk/window_preferences.glade.h:70
-#, fuzzy
+#: gtk/window_preferences.glade.h:69
 msgid "System upgrade:"
 msgstr "Aktualizace systému:"
 
-#: gtk/window_preferences.glade.h:71
+#: gtk/window_preferences.glade.h:70
 msgid "Temporary Files"
 msgstr "Dočasné soubory"
 
-#: gtk/window_preferences.glade.h:72
+#: gtk/window_preferences.glade.h:71
 msgid "Upgradable:"
 msgstr "Aktualizovatelné"
 
-#: gtk/window_preferences.glade.h:73
+#: gtk/window_preferences.glade.h:72
 msgid "Use custom application font"
 msgstr "Vlastní nastavení písma aplikace"
 
-#: gtk/window_preferences.glade.h:74
+#: gtk/window_preferences.glade.h:73
 msgid "Use custom terminal font"
 msgstr "Vlastní nastavení písma terminálu"
 
-#: gtk/window_preferences.glade.h:75
+#: gtk/window_preferences.glade.h:74
 msgid "_Delete Cached Package Files"
 msgstr "_Odstranit balíčky ze skladiště"
 
-#: gtk/window_preferences.glade.h:76
+#: gtk/window_preferences.glade.h:75
 msgid "_Terminal Font"
 msgstr "Font _terminálu"
 
@@ -2505,7 +2586,8 @@ msgid "Return to the main screen"
 msgstr "Zpět do hlavního okna"
 
 #: gtk/window_summary.glade.h:8
-msgid "The package files will be downloaded only, but not installed"
+#, fuzzy
+msgid "The package files will be downloaded, but not installed"
 msgstr "Balíčky se pouze stáhnou a nebudou nainstalovány"
 
 #: gtk/window_summary.glade.h:9
@@ -2517,14 +2599,18 @@ msgstr ""
 "budou realizovány."
 
 #: gtk/window_summary.glade.h:10
+#, fuzzy
 msgid ""
-"Vendors sign theirs packages to verify the correct origin and integraty of "
-"the packages. Disabling the verification is a security risk"
+"Vendors sign their packages to verify the origin and integrity of the "
+"packages. Disabling the verification is a security risk"
 msgstr ""
+"Poskytovatelé balíčků své balíčky elektronicky podepisují, aby bylo možné "
+"ověřit jejich původ. Vypnutí ověřování podpisu může představovat "
+"bezpečnostní riziko."
 
 #: gtk/window_summary.glade.h:11
 msgid "Verify package signatures"
-msgstr ""
+msgstr "Ověřovat podpisy balíčků"
 
 #: gtk/window_summary.glade.h:12
 msgid "_Show Details"
@@ -2544,20 +2630,19 @@ msgstr "<b>Další</b>"
 
 #: gtk/window_filters.glade.h:7
 msgid "AND"
-msgstr ""
+msgstr "A ZÁROVEŇ"
 
 #: gtk/window_filters.glade.h:8
 msgid "Boolean operator between property criterias:"
-msgstr ""
+msgstr "Logický operátor platící mezi podmínkami"
 
 #: gtk/window_filters.glade.h:10
 msgid "Conflicting Packages"
 msgstr "Problémové balíčky"
 
 #: gtk/window_filters.glade.h:12 gtk/window_details.glade.h:15
-#, fuzzy
 msgid "Dependent Packages"
-msgstr "Balíčky které budou nahrazeny"
+msgstr "Závisející balíčky"
 
 #: gtk/window_filters.glade.h:14
 msgid "Exclude"
@@ -2593,15 +2678,13 @@ msgstr "obsahuje"
 
 #: gtk/window_filters.glade.h:24
 msgid "Installed packages that are up-to-date"
-msgstr ""
+msgstr "Nainstalované balíčky které jsou aktuální"
 
 #: gtk/window_filters.glade.h:25
-#, fuzzy
 msgid "Installed packages that are upgradable"
-msgstr "Instalováno (lze aktualizovat)"
+msgstr "Nainstalované balíčky které lze aktualizovat"
 
 #: gtk/window_filters.glade.h:26
-#, fuzzy
 msgid "Installed packages that are upgradable to a later upstream version"
 msgstr ""
 "Nainstalované balíčky pro něž je dostupná novější verze v hlavní distribuci"
@@ -2615,9 +2698,8 @@ msgid "Not installable"
 msgstr "Nenainstalovatelné"
 
 #: gtk/window_filters.glade.h:32
-#, fuzzy
 msgid "Not installed packages"
-msgstr "Nenainstalováno (zamčeno)"
+msgstr "Nenainstalované balíčky"
 
 #: gtk/window_filters.glade.h:33
 msgid "Not marked"
@@ -2625,7 +2707,7 @@ msgstr "Neoznačené"
 
 #: gtk/window_filters.glade.h:34
 msgid "OR"
-msgstr ""
+msgstr "NEBO"
 
 #: gtk/window_filters.glade.h:36
 msgid "Orphaned"
@@ -2668,9 +2750,8 @@ msgid "Recommendations"
 msgstr "Doporučené"
 
 #: gtk/window_filters.glade.h:49
-#, fuzzy
 msgid "Removed packages that have left configuration files on the system"
-msgstr "Balíčky, které mohou být odebrány včetně jejich konfiguráků"
+msgstr "Odebrané balíčky, které v systému zanechaly své konfiguráky"
 
 #: gtk/window_filters.glade.h:50
 msgid "Replaced Packages"
@@ -2742,6 +2823,18 @@ msgstr "rpm"
 msgid "rpm-src"
 msgstr "rpm-src"
 
+#: gtk/window_rgdebinstall_progress.glade.h:1
+msgid ""
+"<big><b>Installing and removing software</b></big>\n"
+"\n"
+"The marked changes are now applied. This can take some time. Please wait."
+msgstr ""
+
+#: gtk/window_rgdebinstall_progress.glade.h:4
+#, fuzzy
+msgid "<i>Preperaring packages...</i>"
+msgstr "Čistím seznam balíků..."
+
 #: gtk/window_rginstall_progress_msgs.glade.h:1
 msgid "Extra output was generated during Package Manager operation"
 msgstr "Během operace vygeneroval manažer balíčků následující výstup"
@@ -2754,18 +2847,25 @@ msgid ""
 "There are preselected groups of packages to perform each task. If you select "
 "a task, the corresponding packages will be marked for installation."
 msgstr ""
+"<span size=\"large\" weight=\"bold\">K jakému účelu by měl sloužit váš "
+"počítač?</span>\n"
+"\n"
+"Zde máte několik předvolených skupin balíčků, podle účelu použití. Po volbě "
+"bude u všech balíčků z příslušné skupiny nastaveno že mají být "
+"nainstalovány, resp. aktualizovány. Před vlastní realizací samozřejmě můžete "
+"ještě tento výběr upravit."
 
 #: gtk/window_tasks.glade.h:4
-#, fuzzy
 msgid "_Description"
-msgstr "Popis"
+msgstr "_Popis"
 
 #: gtk/window_zvtinstallprogress.glade.h:1
 msgid "<b>Terminal Output:</b>"
 msgstr "<b>Výstup z terminálu:</b>"
 
 #: gtk/window_zvtinstallprogress.glade.h:2
-msgid "Close this dialog after the changes have been applied successfully"
+#, fuzzy
+msgid "Close this dialog after the changes have been successfully applied"
 msgstr "Po úspěšné realizaci změn zavřít toto dialogové okno."
 
 #: data/synaptic.desktop.in.h:1
@@ -2837,9 +2937,11 @@ msgid ""
 "You should reload the package information regularly. Otherwise you could "
 "miss important security upgrades."
 msgstr ""
+"Poskytne vám prostředí pro správnou instalaci balíčků, ve kterém můžete "
+"ještě před vlastní instalací ošetřit potřebné závislosti a zároveň snadno a "
+"rychle vybrat bezpečnostní aktualizace pro váš stroj."
 
 #: gtk/dialog_unmet.glade.h:1
-#, fuzzy
 msgid ""
 "<span weight=\"bold\" size=\"larger\">Could not mark all packages for "
 "installation or upgrade</span>\n"
@@ -2847,18 +2949,17 @@ msgid ""
 "The following packages have unresolvable dependencies. Make sure that all "
 "required repositories are added and enabled in the preferences."
 msgstr ""
-"<span weight=\"bold\" size=\"larger\">Hromadný výběr po instalaci a "
-"aktualizaci se nezdařil</span>\n"
+"<span weight=\"bold\" size=\"larger\">Hromadný výběr se nezdařil</span>\n"
 "\n"
-"Následující balíčky mají problém v závislostech:"
+"Následující balíčky mají nějaké problémy v závislostech. Ověřte si zda jsou "
+"v nastavení přidány a nastaveny jako aktivní všechny potřebné zdroje a zda u "
+"vybraných balíků nedochází ke křížení závislostí."
 
 #: gtk/dialog_changelog.glade.h:1
-#, fuzzy
 msgid "Complete changelog of the latest version:"
-msgstr "<b>Kompletní přehled změn od poslední verze:</b>"
+msgstr "Kompletní přehled změn od poslední verze:"
 
 #: gtk/dialog_update_failed.glade.h:1
-#, fuzzy
 msgid ""
 "<big><b>Could not download all repository indexes</b></big>\n"
 "\n"
@@ -2868,11 +2969,13 @@ msgid ""
 "network connection and the correct writing of the repository address in the "
 "preferences."
 msgstr ""
-"<span weight=\"bold\" size=\"larger\">Nepodařilo se stáhnout všechny "
-"indexové soubory</span>\n"
+"<span weight=\"bold\" size=\"larger\">Nepodařilo se stáhnout indexové "
+"soubory pro všechny zdroje</span>\n"
 "\n"
-"Pokud je dostupná starší verze indexového souboru, pak bude použita ta, v "
-"opačném případě nebude zdroj použit."
+"Některé zdroje nemusí být zrovna dostupné kvůli problémům na síti. Pokud je "
+"dostupná starší verze indexového souboru, pak bude použita ta, v opačném "
+"případě nebude zdroj použit. Zkontrolujte si vaše síťové připojení a také "
+"zda máte správně nastavení zdroje."
 
 #: gtk/rgfiltermanager.h:66
 msgid "Package name"
@@ -2903,18 +3006,16 @@ msgstr "Nahrazené balíčky"
 #  conflicts
 #. suggests
 #: gtk/rgfiltermanager.h:76
-#, fuzzy
 msgid "Dependent packages"
-msgstr "Nahrazené balíčky"
+msgstr "Závislé balíčky"
 
 #: gtk/rgiconlegend.cc:41 gtk/window_iconlegend.glade.h:2
 msgid "Icon Legend"
 msgstr "_Popis k ikonám"
 
 #: gtk/rgiconlegend.cc:72
-#, fuzzy
 msgid "Package is supported"
-msgstr "Není vybrán žádný balíček."
+msgstr "Balíček je podporován"
 
 #  vim:ts=3:sw=3:et
 #. vim:ts=3:sw=3:et
@@ -2923,14 +3024,14 @@ msgid ""
 "<b>The following icons are used to indicate the current status of a package:"
 "</b>"
 msgstr ""
-"<b>The following icons are used to indicate the current status of a package:"
-"</b>"
+"<b>Následující ikony jsou používané pro rychlou vizuální informaci o stavu "
+"balíčku:</b>"
 
-#: gtk/rgterminstallprogress.cc:86
+#: gtk/rgterminstallprogress.cc:75
 msgid "<i>Running...</i>"
 msgstr "<i>Probíhá...</i>"
 
-#: gtk/rgterminstallprogress.cc:93
+#: gtk/rgterminstallprogress.cc:82
 msgid ""
 "\n"
 "Successfully applied all changes. You can close the window now "
@@ -2938,7 +3039,7 @@ msgstr ""
 "\n"
 "Všechny akce byly úspěšně realizovány. Nyní již můžete toto okno zavřít"
 
-#: gtk/rgterminstallprogress.cc:94
+#: gtk/rgterminstallprogress.cc:83
 msgid ""
 "\n"
 "Failed to apply all changes! Scroll in this buffer to see what went wrong "
@@ -2947,7 +3048,7 @@ msgstr ""
 "Realizace všech akcí se nepovedla! - Prolistujte si výpis abyste zjistili "
 "kde se stala chyba"
 
-#: gtk/rgterminstallprogress.cc:96
+#: gtk/rgterminstallprogress.cc:85
 msgid ""
 "\n"
 "Successfully installed all packages of the current medium. To continue the "
@@ -2957,207 +3058,218 @@ msgstr ""
 "Všechny balíčky z CD byly úspěšně nainstalovány. Pro pokračování v instalaci "
 "s dalším CD zavřete prosím toto okno."
 
-#: gtk/rgterminstallprogress.cc:145
+#: gtk/rgterminstallprogress.cc:128
 msgid "<i>Finished</i>"
 msgstr "<i>Hotovo</i>"
 
-#: gtk/rgterminstallprogress.cc:154
+#: gtk/rgterminstallprogress.cc:139
 msgid "<i>Can't close while running</i>"
 msgstr "<i>Nemohu skončit během operace</i>"
 
 #. vim:sts=3:sw=3
 #: gtk/dialog_download_error.glade.h:1
+#, fuzzy
 msgid ""
-"<big><b>Could not download all package files</b></big>\n"
+"<big><b>Could not download all necessary package files</b></big>\n"
 "\n"
 "The version of the package that you want to install might be no longer "
-"available in the repository. Or there might be problems with the source of "
-"the package. Refresh the package list and check the source of the package (e."
-"g. CD or network connection)."
+"available in the repository, or there may be problems with the source of the "
+"package. Refresh the package list and check the source of the package (e.g. "
+"CD or network connection)."
 msgstr ""
+"<big><b>Nebylo možné stáhnout všechny balíčky</b></big>\n"
+"\n"
+"Tento problém může být způsoben buď tím, že vámi požadované balíčky byly "
+"nahrazeny novější verzí, v tom případě doporučujeme aktualizovat seznam "
+"balíků, nebo je nějaký problém s dostupností zdroje balíků. V tom případě si "
+"nejdříve zkontrolujte zda máte v pořádku připojení, popř. správně nastavenou "
+"proxy a především správně nastavený zdroj balíčků. Může jít také o dočasnou "
+"nedostupnost způsobenou výpadkem v internetové síti."
 
-#~ msgid "Downloading Files"
-#~ msgstr "Stahuji soubory..."
+#: gtk/dialog_update_outdated.glade.h:1
+msgid ""
+"<span weight=\"bold\" size=\"larger\">Your package information is out of "
+"date</span>\n"
+"\n"
+"Your package information is older than 48 hours. There could be important "
+"security updates available. It is recommended to reload the package "
+"information regularly."
+msgstr ""
+"<span weight=\"bold\" size=\"larger\">Seznam balíků není aktuální</span>\n"
+"\n"
+"Vaše indexovací soubory jsou starší 48 hodin. Během té doby mohlo dojít ve "
+"vašich zdrojích balíků k podstatným změnám, které mohou mít vliv na důležité "
+"bezpečnostní aktualizace, proto vám doporučujeme seznam balíků aktualizovat."
 
-#, fuzzy
-#~ msgid "Refresh the list of known packages from remote server"
-#~ msgstr "Aktualizovat seznam známých balíčků"
+#: gtk/dialog_update_outdated.glade.h:4
+msgid "Remember the answer"
+msgstr "Zapamatovat si odpověď"
 
-#~ msgid "Downloading Index Files"
-#~ msgstr "Probíhá stahování indexů"
+#: gtk/dialog_update_outdated.glade.h:5
+msgid "_Reload"
+msgstr "_Aktualizovat"
 
-#~ msgid "Refreshing package list..."
-#~ msgstr "Aktualizuji seznam balíků..."
+#: gtk/window_logview.glade.h:1
+msgid "History"
+msgstr "Přehled změn"
 
-#~ msgid "To be kept back"
-#~ msgstr "Bude zachováno"
+#: gtk/window_logview.glade.h:2
+msgid "History of installed, upgraded and removed software packages."
+msgstr "Přehled o manipulaci s balíky."
 
-#~ msgid "Alphabet"
-#~ msgstr "Abecedně"
-
-#~ msgid "Release"
-#~ msgstr "Vydání"
-
-#~ msgid "<b>Single Files:</b>"
-#~ msgstr "<b>Probíhá stahování jednotlivých souborů:</b>"
-
-#~ msgid "<b>Total Progress:</b>"
-#~ msgstr "<b>Celkový průběh:</b>"
-
-#~ msgid "Depended on by"
-#~ msgstr "Závisí na"
-
-#~ msgid "Find History"
-#~ msgstr "Historie hledání"
-
-#~ msgid "Filter"
-#~ msgstr "Filtry"
-
-#~ msgid "Description:"
-#~ msgstr "Popis:"
-
-#~ msgid "Pac_kage"
-#~ msgstr "_Balík"
-
-#~ msgid "Prefere_nces"
-#~ msgstr "Nas_tavení"
-
-#~ msgid "Refresh"
-#~ msgstr "Aktualizovat seznam"
-
-#~ msgid "_Find..."
-#~ msgstr "_Najít..."
-
-#~ msgid "_Icon Legend"
-#~ msgstr "_Vysvětlivky k ikonám"
-
-#~ msgid "Find:"
-#~ msgstr "Najít:"
-
-#~ msgid "Allow regular expressions in searches and filters"
-#~ msgstr "Používat regulární výrazy při hledání a v nastavení filtrů"
-
-#~ msgid "Regular expressions are an advanced method of text matching"
-#~ msgstr "Regulární výrazy jsou rozšiřující metodou pro vzorkování textu"
-
-#~ msgid "<b>Available Versions</b>"
-#~ msgstr "<b>Dostupná verze</b>"
-
-#~ msgid ""
-#~ "<b>Warning:</b> This can render your package manager unusable.\n"
-#~ "Changes override the version selected by the package manager. "
-#~ msgstr ""
-#~ "<b>Upozornění:</b> Tato volba může zmást váš balíčkovací manažer.\n"
-#~ "Verze kterou zvolíte nahradí verzi vybranou manažerem balíčků."
-
-#~ msgid "     "
-#~ msgstr "     "
-
-#~ msgid ""
-#~ "1 = Package list\n"
-#~ "2 = Package details"
-#~ msgstr ""
-#~ "1 =Seznam balíků\n"
-#~ "2 = Informace o balíku"
-
-#~ msgid "<b>Main Window</b>"
-#~ msgstr "<b>Hlavní okno</b>"
-
-#~ msgid ""
-#~ "<b>Note:</b> You will have to restart synaptic for \n"
-#~ "this setting to take effect."
-#~ msgstr ""
-#~ "<b>Poznámka:</b> Aby se nastavení aktivovalo, bude \n"
-#~ "nutné znovu spustit synaptic."
-
-#~ msgid "Hide"
-#~ msgstr "Skrýt"
-
-#~ msgid "Installed version:"
-#~ msgstr "Instalovaná verze:"
-
-#~ msgid "Latest version:"
-#~ msgstr "Poslední verze:"
-
-#~ msgid "Name:"
-#~ msgstr "Název:"
-
-#~ msgid "Show"
-#~ msgstr "Zobrazit"
-
-#~ msgid "Status:"
-#~ msgstr "Stav:"
-
-#~ msgid ""
-#~ "The position of the column from left to right. A value of -1 hides the "
-#~ "column"
-#~ msgstr ""
-#~ "Pozice sloupců zleva doprava. Hodnota -1 označí sloupec jako skrytý."
-
-#~ msgid ""
-#~ "<span weight=\"bold\" size=\"large\">Incorrect or incompatible locale "
-#~ "settings</span>"
-#~ msgstr ""
-#~ "<span weight=\"bold\" size=\"larger\">Špatné, nebo neodpovídající "
-#~ "nastavení lokalizačních souborů</span>"
+#~ msgid "ignore"
+#~ msgstr "ignorovat"
 
 #, fuzzy
-#~ msgid "Changelog for %s"
-#~ msgstr "Přehled změn"
+#~ msgid "Dependencies of"
+#~ msgstr "Závisí na balíčcích"
+
+#  Reverse Depends
+#, fuzzy
+#~ msgid "Origion"
+#~ msgstr "Původ u křížových závislostí"
+
+#~ msgid "%s is/will be installed"
+#~ msgstr "%s je/bude instalováno"
+
+#~ msgid "package is not installable"
+#~ msgstr "balík nelze instalovat"
+
+#~ msgid "package is a virtual package"
+#~ msgstr "balík je pouze virtuálním balíčkem"
+
+#~ msgid "package is/will not be installed"
+#~ msgstr "balík není a nebude nainstalován"
+
+#~ msgid "dependency is satisfied"
+#~ msgstr "závislosti jsou splněny"
 
 #~ msgid ""
-#~ "<b>Note:</b> If you are upgrading to a new major operating system release "
-#~ "you have to choose 'Smart Upgrade' here."
+#~ "\n"
+#~ "The following ESSENTIAL packages are removed:\n"
 #~ msgstr ""
-#~ "<b>Poznámka:</b> Pokud chcete aktualizovat celý váš systém na novější "
-#~ "verzi, pak zvolte 'Automatickou aktualizaci'."
+#~ "\n"
+#~ "Chcete odebrat následující SYSTÉMOVÉ balíčky:\n"
 
 #~ msgid ""
-#~ "<b>Note:</b> The upgrades will be marked only. You still have to apply "
-#~ "them afterwards."
+#~ "\n"
+#~ "The following packages are DOWNGRADED:\n"
 #~ msgstr ""
-#~ "<b>Poznámka:</b> Aktualizovatelné balíčky budou pouze vybrány. Vlastní "
-#~ "proces aktualizace můžete spustit později."
+#~ "\n"
+#~ "Následující balíčky budou přeinstalovány na STARŠÍ verzi:\n"
 
 #~ msgid ""
-#~ "<span weight=\"bold\" size=\"large\">Mark upgrades in a smart way?</span>"
+#~ "\n"
+#~ "The following packages are purged:\n"
 #~ msgstr ""
-#~ "<span weight=\"bold\" size=\"large\">Provést výběr aktualizovatelných "
-#~ "balíčků automaticky?</span>"
+#~ "\n"
+#~ "Následující balíčky jsou čisté:\n"
 
 #~ msgid ""
-#~ "The default upgrade method skips upgrades that introduce conflicts or "
-#~ "require new packages to be installed."
+#~ "\n"
+#~ "The following packages are removed:\n"
 #~ msgstr ""
-#~ "Při základní aktualizaci jsou přeskočeny ty balíky, které by mohly "
-#~ "vyvolat konflikt, nebo by vyžadovaly instalaci dalších, nových balíků."
+#~ "\n"
+#~ "Následující balíčky budou odebrány:\n"
 
 #~ msgid ""
-#~ "The smart upgrade (dist-upgrade) attempts to resolve conflicts and to "
-#~ "fulfill all dependencies of upgrades in a smart way."
+#~ "\n"
+#~ "The following packages are upgraded:\n"
 #~ msgstr ""
-#~ "Automatická aktualizace řeší potenciální konflikty a chyby závislostí "
-#~ "automatickou aktualizací a doinstalováním potřebných balíků."
+#~ "\n"
+#~ "Následující balíčky budou aktualizovány:\n"
 
-#  vim:sts=3:sw=3
 #~ msgid ""
-#~ "<span weight=\"bold\" size=\"large\">Quit and ignore marked changes?</"
-#~ "span>"
+#~ "\n"
+#~ "The following packages are installed:\n"
 #~ msgstr ""
-#~ "<span weight=\"bold\" size=\"large\">Ukončit bez toho aniž by byly "
-#~ "provedeny změny?</span>"
+#~ "\n"
+#~ "Následující balíčky budou nově nainstalovány:\n"
 
-#~ msgid "_Lock Current Status and Version"
-#~ msgstr "_Zachovat současný stav a verzi"
+#~ msgid ""
+#~ "\n"
+#~ "The following packages are re-installed:\n"
+#~ msgstr ""
+#~ "\n"
+#~ "Následující balíčky budou přeinstalovány:\n"
 
-#~ msgid "_Default Font"
-#~ msgstr "_Výchozí font"
+#~ msgid "To be not upgraded"
+#~ msgstr "Nebude aktualizováno"
 
-#~ msgid "Packages that have been installed and a later version is available"
-#~ msgstr "Nainstalované balíčky u nichž je dostupná novější verze"
+#~ msgid "View Commit Log"
+#~ msgstr "Zobrazit záznam přenosů"
 
-#~ msgid "Packages that have been installed and are up to date"
-#~ msgstr "Nainstalované balíčky, které jsou aktuální"
+#~ msgid "<b>Distribution</b>"
+#~ msgstr "<b>Distribuce</b>"
 
-#~ msgid "Packages that have not been installed"
-#~ msgstr "Balíčky které nelze instalovat "
+#~ msgid ""
+#~ "<b>Note:</b> The package information must be reloaded and all marked "
+#~ "changes will be lost. Make sure you apply your changes first."
+#~ msgstr ""
+#~ "<b>Poznámka:</b> Seznam balíků bude potřeba natáhnout znovu, takže "
+#~ "veškeré doposud zvolené akce mohou být ztraceny. Nechte tudíž napřed "
+#~ "změny realizovat."
+
+#~ msgid "Default archive: "
+#~ msgstr "Výchozí archív:"
+
+#~ msgid "Delete packages which are no longer available only"
+#~ msgstr "Odstranit balíky, které již nelze stáhnout"
+
+#~ msgid "Expert"
+#~ msgstr "Expertní režim"
+
+#~ msgid ""
+#~ "Select the default release if more than one is specifed in the sources."
+#~ "list"
+#~ msgstr ""
+#~ "Vyberte jednu výchozí distribuci, je-li jich v sources.list uvedeno více"
+
+#~ msgid ""
+#~ "\n"
+#~ "<b>Removed the following ESSENTIAL packages:</b>\n"
+#~ msgstr ""
+#~ "\n"
+#~ "<b>Byly odebrány následující SYSTÉMOVÉ balíky:</b>\n"
+
+#~ msgid ""
+#~ "\n"
+#~ "<b>Downgraded the following packages:</b>\n"
+#~ msgstr ""
+#~ "\n"
+#~ "<b>Na nižší verzi byly přeinstalovány následující balíky:</b>\n"
+
+#~ msgid ""
+#~ "\n"
+#~ "<b>Completely removed the following packages:</b>\n"
+#~ msgstr ""
+#~ "\n"
+#~ "<b>Včetně konfiguračních souborů byly odebrány následující balíky:</b>\n"
+
+#~ msgid ""
+#~ "\n"
+#~ "<b>Removed the following packages:</b>\n"
+#~ msgstr ""
+#~ "\n"
+#~ "<b>Byly odebrány následující balíky:</b>\n"
+
+#~ msgid ""
+#~ "\n"
+#~ "<b>Upgraded the following packages:</b>\n"
+#~ msgstr ""
+#~ "\n"
+#~ "<b>Byly aktualizovány následující balíky:</b>\n"
+
+#~ msgid ""
+#~ "\n"
+#~ "<b>Installed the following packages:</b>\n"
+#~ msgstr ""
+#~ "\n"
+#~ "<b>Byly nainstalovány následující balíky:</b>\n"
+
+#~ msgid ""
+#~ "\n"
+#~ "<b>Reinstalled the following packages:</b>\n"
+#~ msgstr ""
+#~ "\n"
+#~ "<b>Byly reinstalovány následující balíky:</b>\n"

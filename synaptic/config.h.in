@@ -79,9 +79,6 @@
 /* build with VTE as output terminal */
 #undef HAVE_VTE
 
-/* build with ZVT as output terminal */
-#undef HAVE_ZVT
-
 /* Name of package */
 #undef PACKAGE
 
@@ -108,6 +105,12 @@
 
 /* Version number of package */
 #undef VERSION
+
+/* build with apt auth support */
+#undef WITH_APT_AUTH
+
+/* build with dpkg progress bar */
+#undef WITH_DPKG_STATUSFD
 
 /* Define if you want to enable the extension system. */
 #undef WITH_LUA

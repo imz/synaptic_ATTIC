@@ -9,17 +9,17 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Synaptic cvs\n"
+"Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-11-04 22:37+0100\n"
-"PO-Revision-Date: 2004-08-09 17:35+0200\n"
+"POT-Creation-Date: 2005-01-06 22:25+0100\n"
+"PO-Revision-Date: 2004-11-21 13:15+0100\n"
 "Last-Translator: Vincent van Adrighem <adrighem@gnome.org>\n"
-"Language-Team: Dutch <vertaling@vrijschrift.org>\n"
+"Language-Team: Dutch <nl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
-"X-Generator: KBabel 1.3.1\n"
+"X-Generator: KBabel 1.9.1\n"
 
 #. TRANSLATORS: Alias for the Debian package section "admin"
 #: common/sections_trans.cc:12
@@ -187,7 +187,7 @@ msgid "Miscellaneous  - Graphical"
 msgstr "Diversen - Grafisch"
 
 #. TRANSLATORS: The section of the package is not known
-#: common/sections_trans.cc:78 common/rpackage.cc:108 gtk/rgmainwindow.cc:76
+#: common/sections_trans.cc:78 common/rpackage.cc:108 gtk/rgmainwindow.cc:78
 msgid "Unknown"
 msgstr "Onbekend"
 
@@ -267,97 +267,97 @@ msgstr "kan %s.new niet hernoemen naar %s"
 msgid "Internal error"
 msgstr "Interne fout"
 
-#: common/rcdscanner.cc:257
+#: common/rcdscanner.cc:258
 msgid "Preparing..."
 msgstr "Bezig met voorbereiding..."
 
-#: common/rcdscanner.cc:270
+#: common/rcdscanner.cc:271
 #, c-format
 msgid "Unable to read the cdrom database %s"
 msgstr "Kan de cd-rom database %s niet lezen"
 
-#: common/rcdscanner.cc:277 common/rcdscanner.cc:319 common/rcdscanner.cc:418
+#: common/rcdscanner.cc:278 common/rcdscanner.cc:320 common/rcdscanner.cc:419
 msgid "Unmounting CD-ROM..."
 msgstr "Cd-rom wordt afgekoppeld..."
 
-#: common/rcdscanner.cc:280
+#: common/rcdscanner.cc:281
 msgid "Waiting for disc..."
 msgstr "Wachtend op schijf..."
 
-#: common/rcdscanner.cc:281
+#: common/rcdscanner.cc:282
 msgid "Insert a disc in the drive."
 msgstr "Doe een schijf in het schijfstation."
 
 #. Mount the new CDROM
-#: common/rcdscanner.cc:285
+#: common/rcdscanner.cc:286
 msgid "Mounting CD-ROM..."
 msgstr "Cd-rom wordt aangekoppeld..."
 
-#: common/rcdscanner.cc:288
+#: common/rcdscanner.cc:289
 msgid "Failed to mount the cdrom."
 msgstr "Kan de CD-ROM niet aankoppelen."
 
-#: common/rcdscanner.cc:292
+#: common/rcdscanner.cc:293
 msgid "Identifying disc..."
 msgstr "Bezig met identificatie van schijf..."
 
-#: common/rcdscanner.cc:295
+#: common/rcdscanner.cc:296
 msgid "Couldn't identify disc."
 msgstr "Kan schjif niet identificeren."
 
-#: common/rcdscanner.cc:298
+#: common/rcdscanner.cc:299
 msgid "Scanning disc..."
 msgstr "Bezig met doorzoeken van de schijf..."
 
-#: common/rcdscanner.cc:313
+#: common/rcdscanner.cc:314
 msgid "Cleaning package lists..."
 msgstr "Bezig met opschonen pakketlijsten..."
 
-#: common/rcdscanner.cc:326
+#: common/rcdscanner.cc:327
 msgid ""
 "Unable to locate any package files. Perhaps this is not an APT enabled disc."
 msgstr "Kan geen pakketbestanden vinden. Misschien is dit geen APT-schijf."
 
-#: common/rcdscanner.cc:377
+#: common/rcdscanner.cc:378
 msgid "Disc not successfuly scanned."
 msgstr "De schijf kon niet goed geanalyseerd worden."
 
-#: common/rcdscanner.cc:381
+#: common/rcdscanner.cc:382
 msgid "Empty disc name."
 msgstr "Geen schijfnaam."
 
-#: common/rcdscanner.cc:384
+#: common/rcdscanner.cc:385
 msgid "Registering disc..."
 msgstr "Bezig met toevoegen van schijf..."
 
-#: common/rcdscanner.cc:398
+#: common/rcdscanner.cc:399
 msgid "Copying package lists..."
 msgstr "Bezig met kopiëren pakketlijsten..."
 
-#: common/rcdscanner.cc:407
+#: common/rcdscanner.cc:408
 msgid "Writing sources list..."
 msgstr "Bronnenlijst wordt weggeschreven..."
 
-#: common/rcdscanner.cc:422
+#: common/rcdscanner.cc:423
 msgid "Done!"
 msgstr "Klaar!"
 
-#: common/rcdscanner.cc:520
+#: common/rcdscanner.cc:521
 #, c-format
 msgid "Failed to stat %s%s"
 msgstr "Kan %s%s niet raadplegen"
 
-#: common/rcdscanner.cc:622 common/rcdscanner.cc:718
+#: common/rcdscanner.cc:623 common/rcdscanner.cc:719
 #, c-format
 msgid "Unable to change to %s"
 msgstr "Kan niet veranderen naar %s"
 
-#: common/rcdscanner.cc:660
+#: common/rcdscanner.cc:661
 #, c-format
 msgid "Unable to read %s"
 msgstr "Kan %s niet lezen"
 
-#: common/rconfiguration.cc:83 common/rconfiguration.cc:184
+#: common/rconfiguration.cc:83 common/rconfiguration.cc:202
 #, c-format
 msgid "ERROR: couldn't open %s for writing"
 msgstr "FOUT: kan %s niet openen om naar te schrijven"
@@ -371,7 +371,12 @@ msgstr "FOUT: Kan geen wachtwoordingang krijgen voor supergebruiker"
 msgid "ERROR: could not create configuration directory %s"
 msgstr "FOUT: kan configuratiemap %s niet aanmaken"
 
-#: common/rconfiguration.cc:209
+#: common/rconfiguration.cc:143
+#, c-format
+msgid "ERROR: could not create log directory %s"
+msgstr "FOUT: kan logboekmap %s niet aanmaken"
+
+#: common/rconfiguration.cc:227
 #, c-format
 msgid "couldn't open %s for writing"
 msgstr "kan %s niet openen om naar te schrijven"
@@ -444,83 +449,62 @@ msgstr "%s: %s maar het wordt niet genstalleerd"
 msgid " or"
 msgstr " of"
 
-#: common/rpackage.cc:753
-#, c-format
-msgid "%s is/will be installed"
-msgstr "%s is / wordt geïnstalleerd"
-
-#: common/rpackage.cc:758
-msgid "package is not installable"
-msgstr "pakket kan niet geïnstalleerd worden"
-
-#: common/rpackage.cc:760
-msgid "package is a virtual package"
-msgstr "pakket is een virtueel pakket"
-
-#: common/rpackage.cc:762
-msgid "package is/will not be installed"
-msgstr "pakket is / wordt niet geïnstalleerd"
-
-#: common/rpackage.cc:765
-msgid "dependency is satisfied"
-msgstr "afhankelijkheden zijn voldaan"
-
-#: common/rpackage.cc:997
+#: common/rpackage.cc:895
 msgid "Invalid record in the preferences file, no Package header"
 msgstr "Ongeldige ingang in het voorkeurenbestand, geen pakketheader"
 
-#: common/rpackage.cc:1365
+#: common/rpackage.cc:1276
 msgid "Marked for installation"
 msgstr "Gemarkeerd voor installatie"
 
-#: common/rpackage.cc:1366
+#: common/rpackage.cc:1277
 msgid "Marked for re-installation"
 msgstr "Gemarkeerd voor herinstallatie"
 
-#: common/rpackage.cc:1367
+#: common/rpackage.cc:1278
 msgid "Marked for upgrade"
 msgstr "Gemarkeerd voor bijwerken"
 
-#: common/rpackage.cc:1368
+#: common/rpackage.cc:1279
 msgid "Marked for downgrade"
 msgstr "Gemarkeerd voor bijwerken met oudere versie"
 
-#: common/rpackage.cc:1369
+#: common/rpackage.cc:1280
 msgid "Marked for removal"
 msgstr "Gemarkeerd voor verwijdering"
 
-#: common/rpackage.cc:1370
+#: common/rpackage.cc:1281
 msgid "Marked for complete removal"
 msgstr "Gemarkeerd voor volledige verwijdering"
 
-#: common/rpackage.cc:1371 common/rpackageview.cc:123
+#: common/rpackage.cc:1282 common/rpackageview.cc:123
 #: gtk/window_filters.glade.h:31
 msgid "Not installed"
 msgstr "Niet geïnstalleerd"
 
-#: common/rpackage.cc:1372
+#: common/rpackage.cc:1283
 msgid "Not installed (locked)"
 msgstr "Niet geïnstalleerd (vastgezet)"
 
-#: common/rpackage.cc:1373 common/rpackageview.cc:118
+#: common/rpackage.cc:1284 common/rpackageview.cc:118
 #: gtk/window_filters.glade.h:23
 msgid "Installed"
 msgstr "Geïnstalleerd"
 
-#: common/rpackage.cc:1374 common/rpackageview.cc:138
+#: common/rpackage.cc:1285 common/rpackageview.cc:138 gtk/gsynaptic.cc:294
 msgid "Installed (upgradable)"
 msgstr "Geïnstalleerd (nieuwere versie beschikbaar)"
 
-#: common/rpackage.cc:1375
+#: common/rpackage.cc:1286
 msgid "Installed (locked to the current version)"
 msgstr "Geïnstalleerd (vastgezet)"
 
-#: common/rpackage.cc:1376 common/rpackageview.cc:422
+#: common/rpackage.cc:1287 common/rpackageview.cc:422
 #: gtk/window_filters.glade.h:9
 msgid "Broken"
 msgstr "Gebroken"
 
-#: common/rpackage.cc:1377
+#: common/rpackage.cc:1288
 msgid "Not installed (new in repository)"
 msgstr "Niet geïnstalleerd (nieuw in archief)"
 
@@ -540,13 +524,13 @@ msgstr "De pakketlijst of statusbestand kon niet worden ingelezen."
 msgid "Internal Error, non-zero counts"
 msgstr "Interne fout. Telling ongelijk aan nul"
 
-#: common/rpackagefilter.cc:45 gtk/rgpreferenceswindow.cc:899
+#: common/rpackagefilter.cc:45 gtk/rgpreferenceswindow.cc:956
 #: gtk/window_find.glade.h:6
 msgid "Name"
 msgstr "Naam"
 
 #: common/rpackagefilter.cc:46 gtk/rgpreferenceswindow.cc:48
-#: gtk/rgmainwindow.cc:996 gtk/rgvendorswindow.cc:62 gtk/rgvendorswindow.cc:94
+#: gtk/rgmainwindow.cc:967 gtk/rgvendorswindow.cc:62 gtk/rgvendorswindow.cc:94
 #: gtk/window_main.glade.h:18 gtk/window_filters.glade.h:13
 #: gtk/rgfiltermanager.h:67 gtk/window_details.glade.h:16
 msgid "Description"
@@ -596,18 +580,18 @@ msgid "Origin"
 msgstr "Oorsprong"
 
 #: common/rpackagefilter.cc:61 common/rpackageview.h:126
-#: gtk/rgpreferenceswindow.cc:46 gtk/rgfetchprogress.cc:84
+#: gtk/rgpreferenceswindow.cc:46 gtk/rgfetchprogress.cc:78
 #: gtk/window_filters.glade.h:53
 msgid "Status"
 msgstr "Status"
 
 #. g_object_set(G_OBJECT(renderer), "editable", TRUE, NULL);
-#: common/rpackagefilter.cc:62 gtk/rgfiltermanager.cc:186
+#: common/rpackagefilter.cc:62 gtk/rgfiltermanager.cc:179
 msgid "Pattern"
 msgstr "Patroon"
 
 #: common/rpackagefilter.cc:63 gtk/rgpreferenceswindow.cc:46
-#: gtk/rgmainwindow.cc:868 gtk/window_filters.glade.h:52
+#: gtk/rgmainwindow.cc:839 gtk/window_filters.glade.h:52
 msgid "Section"
 msgstr "Onderdeel"
 
@@ -629,17 +613,17 @@ msgstr "Interne fout:Kan Basisweergavebestand %s niet openen"
 msgid "Bad regular expression '%s' in ReducedView file."
 msgstr "Ongeldige reguliere expressie '%s' in Basisweergave-bestand."
 
-#: common/rpackagelister.cc:297 common/rpackagelister.cc:303
-#: common/rpackagelister.cc:317
+#: common/rpackagelister.cc:298 common/rpackagelister.cc:304
+#: common/rpackagelister.cc:318
 #, c-format
 msgid "Internal error opening cache (%d). Please report."
 msgstr "Interne fout bij openen van buffer (%d). Gaarne rapporteren."
 
-#: common/rpackagelister.cc:456
+#: common/rpackagelister.cc:457
 msgid "Unable to correct dependencies"
 msgstr "Kan afhankelijkheden niet corrigeren"
 
-#: common/rpackagelister.cc:458
+#: common/rpackagelister.cc:459
 msgid ""
 "Unable to mark upgrades\n"
 "Check your system for errors."
@@ -647,19 +631,19 @@ msgstr ""
 "Kan bij te werken pakketten niet markeren.\n"
 "Controleer uw systeem op fouten."
 
-#: common/rpackagelister.cc:470
+#: common/rpackagelister.cc:471
 msgid "Internal Error, AllUpgrade broke stuff. Please report."
 msgstr "Interne fout. Alles bijwerken heeft dingen vernield. Gaarne melden."
 
-#: common/rpackagelister.cc:488
+#: common/rpackagelister.cc:489
 msgid "dist upgrade Failed"
 msgstr "DistroVernieuwen mislukt"
 
-#: common/rpackagelister.cc:1185
+#: common/rpackagelister.cc:1235
 msgid "Unable to lock the list directory"
 msgstr "Kan de lijstmap niet vergrendelen"
 
-#: common/rpackagelister.cc:1207
+#: common/rpackagelister.cc:1257
 msgid ""
 "Release files for some repositories could not be retrieved or authenticated. "
 "Such repositories are being ignored."
@@ -667,8 +651,8 @@ msgstr ""
 "Sommige uitgavebestanden konden niet gevonden worden of op echtheid worden "
 "gecontroleerd. Deze pakkettenbronnen zullen worden genegeerd."
 
-#: common/rpackagelister.cc:1274 common/rpackagelister.cc:1280
-#: gtk/rgrepositorywin.cc:320
+#: common/rpackagelister.cc:1329 common/rpackagelister.cc:1335
+#: gtk/rgrepositorywin.cc:322
 msgid "Ignoring invalid record(s) in sources.list file!"
 msgstr "Ongeldige regels in sources.list worden genegeerd!"
 
@@ -676,7 +660,7 @@ msgstr "Ongeldige regels in sources.list worden genegeerd!"
 #. The first %s is the URL and the second
 #. one is a detailed error message that
 #. is provided by apt
-#: common/rpackagelister.cc:1325
+#: common/rpackagelister.cc:1386
 #, c-format
 msgid ""
 "Failed to fetch %s\n"
@@ -687,33 +671,104 @@ msgstr ""
 "  %s\n"
 "\n"
 
-#: common/rpackagelister.cc:1349
+#: common/rpackagelister.cc:1410
 msgid "Some of the packages could not be retrieved from the server(s).\n"
 msgstr "Kan niet alle pakketten ophalen van de server(s).\n"
 
-#: common/rpackagelister.cc:1352
+#: common/rpackagelister.cc:1413
 msgid "Do you want to continue, ignoring these packages?"
 msgstr "Wilt u doorgaan zonder deze pakketten?"
 
-#: common/rpackagelister.cc:1359
+#: common/rpackagelister.cc:1420
 msgid "Unable to correct missing packages"
 msgstr "Kan niet corrigeren voor missende pakketten"
 
-#: common/rpackagelister.cc:1422
+#. _logEntry += _("\n<b>Removed the following ESSENTIAL packages:</b>\n");
+#: common/rpackagelister.cc:1531
+#, fuzzy
+msgid ""
+"\n"
+"Removed the following ESSENTIAL packages:\n"
+msgstr ""
+"\n"
+"De volgende ESSENTIËLE pakketten worden verwijderd:\n"
+
+#. _logEntry += _("\n<b>Downgraded the following packages:</b>\n");
+#: common/rpackagelister.cc:1540
+#, fuzzy
+msgid ""
+"\n"
+"Downgraded the following packages:\n"
+msgstr ""
+"\n"
+"De volgende pakketten worden volledig verwijderd:\n"
+
+#. _logEntry += _("\n<b>Completely removed the following packages:</b>\n");
+#: common/rpackagelister.cc:1549
+#, fuzzy
+msgid ""
+"\n"
+"Completely removed the following packages:\n"
+msgstr ""
+"\n"
+"De volgende pakketten worden volledig verwijderd:\n"
+
+#. _logEntry += _("\n<b>Removed the following packages:</b>\n");
+#: common/rpackagelister.cc:1558
+#, fuzzy
+msgid ""
+"\n"
+"Removed the following packages:\n"
+msgstr ""
+"\n"
+"De volgende pakketten worden volledig verwijderd:\n"
+
+#. _logEntry += _("\n<b>Upgraded the following packages:</b>\n");
+#: common/rpackagelister.cc:1567
+#, fuzzy
+msgid ""
+"\n"
+"Upgraded the following packages:\n"
+msgstr ""
+"\n"
+"De volgende pakketten worden volledig verwijderd:\n"
+
+#. _logEntry += _("\n<b>Installed the following packages:</b>\n");
+#: common/rpackagelister.cc:1578
+#, fuzzy
+msgid ""
+"\n"
+"Installed the following packages:\n"
+msgstr ""
+"\n"
+"De volgende pakketten worden volledig verwijderd:\n"
+
+#. _logEntry += _("\n<b>Reinstalled the following packages:</b>\n");
+#: common/rpackagelister.cc:1588
+#, fuzzy
+msgid ""
+"\n"
+"Reinstalled the following packages:\n"
+msgstr ""
+"\n"
+"Tijdens installatie van %s:\n"
+"\n"
+
+#: common/rpackagelister.cc:1605
 msgid "Unable to lock the download directory"
 msgstr "Kan de downloadmap niet vergrendelen"
 
-#: common/rpackagelister.cc:1500
+#: common/rpackagelister.cc:1683
 #, c-format
 msgid "Line %u too long in markings file."
 msgstr "Regel %u te lang in selectiebestand."
 
-#: common/rpackagelister.cc:1514 common/rpackagelister.cc:1518
+#: common/rpackagelister.cc:1697 common/rpackagelister.cc:1701
 #, c-format
 msgid "Malformed line %u in markings file"
 msgstr "Regel %u slecht gevormd in selectiebestand"
 
-#: common/rpackagelister.cc:1530
+#: common/rpackagelister.cc:1713
 msgid "Setting markings..."
 msgstr "Selectie maken..."
 
@@ -733,11 +788,11 @@ msgstr "Onderdelen"
 msgid "Alphabetic"
 msgstr "Alfabetisch"
 
-#: common/rpackageview.h:149
+#: common/rpackageview.h:145
 msgid "Search History"
 msgstr "Zoekgeschiedenis"
 
-#: common/rpackageview.h:196
+#: common/rpackageview.h:192
 msgid "Custom"
 msgstr "Filters"
 
@@ -777,7 +832,7 @@ msgstr "Taken"
 msgid "Reduced View"
 msgstr "Basisweergave"
 
-#: common/rpackageview.cc:431 gtk/gsynaptic.cc:282 gtk/rgsummarywindow.cc:299
+#: common/rpackageview.cc:431 gtk/gsynaptic.cc:289 gtk/rgsummarywindow.cc:355
 msgid "Marked Changes"
 msgstr "Aangegeven veranderingen"
 
@@ -802,6 +857,20 @@ msgstr ""
 "Er zijn nog veranderingen aangegeven en niet doorgevoerd. Deze zullen "
 "verloren gaan als u het programma afsluit."
 
+#: gtk/dialog_conffile.glade.h:1
+#, fuzzy
+msgid ""
+"<span weight=\"bold\" size=\"larger\">Configuration file changed</span>\n"
+"\n"
+"Secondary Text"
+msgstr ""
+"<span weight=\"bold\" size=\"larger\">Benodigde veranderingen markeren?</"
+"span>"
+
+#: gtk/dialog_conffile.glade.h:4
+msgid "Difference between the files"
+msgstr ""
+
 #: gtk/dialog_change_version.glade.h:1
 msgid "Force version:"
 msgstr "Versie forceren:"
@@ -811,22 +880,23 @@ msgid "_Force Version"
 msgstr "Versie _forceren"
 
 #: gtk/dialog_upgrade.glade.h:1
+#, fuzzy
 msgid ""
 "<b><big>Mark upgrades in a smart way?</big></b>\n"
 "\n"
 "The default upgrade method skips upgrades that would introduce conflicts or "
-"would require to install additional packages.\n"
+"require installation of additional packages.\n"
 "\n"
-"The smart upgrade (dist-upgrade) attemps to resolve conflicts and to fullfil "
+"The smart upgrade (dist-upgrade) attempts to resolve conflicts and to fulfil "
 "all dependencies of upgrades in a smart way.\n"
 "\n"
-"<b>Note:</b> The upgrades will be marked, only. You still have to apply them "
+"<b>Note:</b> The upgrades will be marked only. You still have to apply them "
 "afterwards."
 msgstr ""
 "<b><big>Nieuwe versie slim markeren?</big></b>\n"
 "\n"
 "De standaardmanier slaat pakketten over waarvan installatie van de nieuwe "
-"versie de installatie / verwijdering van andere pakketten zou introduceren.\n"
+"versie de installatie / verwijdering van andere pakketten zou vereisen.\n"
 "\n"
 "De slimme manier (dist-upgrade) probeert deze problemen zo slim mogelijk op "
 "eigen kracht op te lossen.\n"
@@ -839,41 +909,17 @@ msgid "Default Upgrade"
 msgstr "Normaal bijwerken"
 
 #: gtk/dialog_upgrade.glade.h:9
-msgid "Remember the answer for further upgrades"
+#, fuzzy
+msgid "Remember my answer for future upgrades"
 msgstr "Dit antwoord onthouden"
 
-#: gtk/dialog_upgrade.glade.h:10 gtk/window_preferences.glade.h:69
+#: gtk/dialog_upgrade.glade.h:10 gtk/window_preferences.glade.h:68
 msgid "Smart Upgrade"
 msgstr "Slim bijwerken"
 
 #: gtk/dialog_upgrade.glade.h:11
 msgid "This behavior can be changed in the preferences later."
 msgstr "Dit gedrag kan later veranderd worden in de Voorkeuren."
-
-#: gtk/dialog_locales_warning.glade.h:1
-msgid ""
-"<b><big>The grafical user interface (xlib) does not support your chosen "
-"language environment</big></b>\n"
-"\n"
-"Synaptic can crash if you decide to continue with unchanged localisation "
-"preferences. Language values like \"fr_FR.iso8859-15@euro\" are not "
-"supported. Use values like \"fr_FR\" or \"fr_FR@euro\" for your language.\n"
-"\n"
-"Contact the mailing list for comments or help:\n"
-"<i>synaptic-devel@nongnu.org</i> \n"
-"Include the output of the \"locale\" command in your email."
-msgstr ""
-"<b><big>De grafische schil (xlib) heeft geen ondersteuning voor uw "
-"taalomgeving</big></b>\n"
-"\n"
-"Synaptic zou kunnen crashen als u besluit door te gaan met uw huidige "
-"instellingen. Gebruik alstublieft instellingen als \"nl_NL\" of nl_NL@euro"
-"\". Gebruik geen instellingen als \"nl_NL.iso8859-15@euro\".\n"
-"\n"
-"Neem (in het engels) contact op met de discussielijst voor commentaar of "
-"hulp:\n"
-"<i>synaptic-devel@nongnu.org</i> \n"
-"Voeg de uitvoer van de opdracht \"locale\" als bijlage toe aan uw e-mail."
 
 #: gtk/gsynaptic.cc:65
 msgid "Usage: synaptic [options]\n"
@@ -906,18 +952,29 @@ msgstr ""
 "weergeven\n"
 
 #: gtk/gsynaptic.cc:72
+#, fuzzy
+msgid "--dist-upgrade-mode  Call Refresh, DistUpgrade and display changes\n"
+msgstr ""
+"--upgrade-mode  Lijst verversen, Markeringen maken en veranderingen "
+"weergeven\n"
+
+#: gtk/gsynaptic.cc:73
 msgid "--non-interactive Never prompt for user input\n"
 msgstr "--non-interactive Nooit ergens om vragen\n"
 
-#: gtk/gsynaptic.cc:73
+#: gtk/gsynaptic.cc:74
 msgid "--task-window Open with task window\n"
 msgstr "--task-window Openen in takenvenster\n"
 
-#: gtk/gsynaptic.cc:210
+#: gtk/gsynaptic.cc:75
+msgid "--add-cdrom Add a cdrom at startup\n"
+msgstr ""
+
+#: gtk/gsynaptic.cc:209
 msgid "You must run this program as the root user."
 msgstr "U moet dit programma uitvoeren als de supergebruiker."
 
-#: gtk/gsynaptic.cc:248
+#: gtk/gsynaptic.cc:247
 msgid "Synaptic Package Manager "
 msgstr "Synaptic pakketbeheer "
 
@@ -925,11 +982,11 @@ msgstr "Synaptic pakketbeheer "
 msgid "Scanning CD-ROM"
 msgstr "Analyseren van CD-ROM"
 
-#: gtk/rgcdscanner.cc:100
+#: gtk/rgcdscanner.cc:107
 msgid "Invalid disc name!"
 msgstr "Ongeldige schijfnaam!"
 
-#: gtk/rgcdscanner.cc:111
+#: gtk/rgcdscanner.cc:119
 msgid "Disc Label"
 msgstr "Schijfnaam"
 
@@ -945,27 +1002,31 @@ msgstr "Info over Synaptic"
 msgid "Package changes"
 msgstr "Pakketveranderingen"
 
-#: gtk/rgchangeswindow.cc:76 gtk/rgsummarywindow.cc:109
+#: gtk/rgchangeswindow.cc:77 gtk/rgsummarywindow.cc:92
+msgid "NOT AUTHENTICATED"
+msgstr ""
+
+#: gtk/rgchangeswindow.cc:90 gtk/rgsummarywindow.cc:134
 msgid "To be removed"
 msgstr "Verwijderen"
 
-#: gtk/rgchangeswindow.cc:89
+#: gtk/rgchangeswindow.cc:103
 msgid "To be downgraded"
 msgstr "Bijwerken naar oudere versie"
 
-#: gtk/rgchangeswindow.cc:102 gtk/rgsummarywindow.cc:121
+#: gtk/rgchangeswindow.cc:116 gtk/rgsummarywindow.cc:160
 msgid "To be upgraded"
 msgstr "Bijwerken"
 
-#: gtk/rgchangeswindow.cc:114 gtk/rgsummarywindow.cc:133
+#: gtk/rgchangeswindow.cc:128 gtk/rgsummarywindow.cc:172
 msgid "To be installed"
 msgstr "Installeren"
 
-#: gtk/rgchangeswindow.cc:126 gtk/rgsummarywindow.cc:145
+#: gtk/rgchangeswindow.cc:140 gtk/rgsummarywindow.cc:184
 msgid "To be re-installed"
 msgstr "Herinstalleren"
 
-#: gtk/rgchangeswindow.cc:137
+#: gtk/rgchangeswindow.cc:151
 msgid "To be kept"
 msgstr "Onveranderd"
 
@@ -977,11 +1038,11 @@ msgstr "Ondersteund"
 msgid "Package Name"
 msgstr "Pakketnaam"
 
-#: gtk/rgpreferenceswindow.cc:47 gtk/rgmainwindow.cc:889
+#: gtk/rgpreferenceswindow.cc:47 gtk/rgmainwindow.cc:860
 msgid "Component"
 msgstr "Component"
 
-#: gtk/rgpreferenceswindow.cc:47 gtk/rgmainwindow.cc:911
+#: gtk/rgpreferenceswindow.cc:47 gtk/rgmainwindow.cc:882
 msgid "Installed Version"
 msgstr "Huidige versie"
 
@@ -997,51 +1058,47 @@ msgstr "Grootte op schijf"
 msgid "Download Size"
 msgstr "Downloadgrootte"
 
-#: gtk/rgpreferenceswindow.cc:329 gtk/rgmainwindow.cc:1697
-#: gtk/rgterminstallprogress.cc:110
+#: gtk/rgpreferenceswindow.cc:347 gtk/rgmainwindow.cc:1646
+#: gtk/rgterminstallprogress.cc:99
 msgid "An error occurred while saving configurations."
 msgstr "Er is een fout opgetreden bij het opslaan van de instellingen."
 
-#: gtk/rgpreferenceswindow.cc:373
+#: gtk/rgpreferenceswindow.cc:392
 msgid "Choose font"
 msgstr "Kies lettertype"
 
-#: gtk/rgpreferenceswindow.cc:578
-msgid "ignore"
-msgstr "negeren"
-
-#: gtk/rgpreferenceswindow.cc:766
+#: gtk/rgpreferenceswindow.cc:801
 msgid "Color selection"
 msgstr "Kleurselectie"
 
-#: gtk/rgpreferenceswindow.cc:893
+#: gtk/rgpreferenceswindow.cc:950
 msgid "Visible"
 msgstr "Zichtbaar"
 
-#: gtk/rgpreferenceswindow.cc:967 gtk/window_preferences.glade.h:64
+#: gtk/rgpreferenceswindow.cc:1024 gtk/window_preferences.glade.h:64
 msgid "Preferences"
 msgstr "Voorkeuren"
 
-#: gtk/rgfetchprogress.cc:96 gtk/rgmainwindow.cc:953
+#: gtk/rgfetchprogress.cc:90 gtk/rgmainwindow.cc:924
 msgid "Size"
 msgstr "Grootte"
 
-#: gtk/rgfetchprogress.cc:103 gtk/rgrepositorywin.cc:175
+#: gtk/rgfetchprogress.cc:97 gtk/rgrepositorywin.cc:177
 msgid "URI"
 msgstr "URI"
 
-#: gtk/rgfetchprogress.cc:127
-#, fuzzy, c-format
+#: gtk/rgfetchprogress.cc:153
+#, c-format
 msgid ""
 "<big><b>%s</b></big> \n"
 "\n"
 "%s"
 msgstr ""
-"<big><b>%s</b></big>\n"
+"<big><b>%s</b></big> \n"
 "\n"
 "%s"
 
-#: gtk/rgfetchprogress.cc:140
+#: gtk/rgfetchprogress.cc:166
 #, c-format
 msgid ""
 "Please insert the disk labeled:\n"
@@ -1052,45 +1109,45 @@ msgstr ""
 "%s\n"
 "in station %s"
 
-#: gtk/rgfetchprogress.cc:246
+#: gtk/rgfetchprogress.cc:277
 #, c-format
 msgid "Downloading file %li of %li at %s/s - %s remaining"
 msgstr "Ophalen van bestand %li van %li met %s/s - %s resterend"
 
-#: gtk/rgfetchprogress.cc:251
+#: gtk/rgfetchprogress.cc:282
 #, c-format
 msgid "Downloading file %li of %li"
 msgstr "Ophalen van bestand %li van %li"
 
-#: gtk/rgfetchprogress.cc:316
+#: gtk/rgfetchprogress.cc:347
 msgid "Queued"
 msgstr "In de rij"
 
-#: gtk/rgfetchprogress.cc:319
+#: gtk/rgfetchprogress.cc:350
 msgid "Done"
 msgstr "Klaar"
 
-#: gtk/rgfetchprogress.cc:322
+#: gtk/rgfetchprogress.cc:353
 msgid "Hit"
 msgstr "Hetzelfde"
 
-#: gtk/rgfetchprogress.cc:325
+#: gtk/rgfetchprogress.cc:356
 msgid "Failed"
 msgstr "Mislukt"
 
-#: gtk/rgfiltermanager.cc:46 gtk/window_filters.glade.h:17
+#: gtk/rgfiltermanager.cc:39 gtk/window_filters.glade.h:17
 msgid "Filters"
 msgstr "Filters"
 
-#: gtk/rgfiltermanager.cc:171
+#: gtk/rgfiltermanager.cc:164
 msgid "Field"
 msgstr "Veld"
 
-#: gtk/rgfiltermanager.cc:178
+#: gtk/rgfiltermanager.cc:171
 msgid "Operator"
 msgstr "Opdracht"
 
-#: gtk/rgfiltermanager.cc:760
+#: gtk/rgfiltermanager.cc:748
 #, c-format
 msgid "New Filter %i"
 msgstr "Nieuw filter %i"
@@ -1129,7 +1186,7 @@ msgstr ""
 "APT-systeem rapporteert:\n"
 "%s"
 
-#: gtk/rginstallprogress.cc:284 gtk/rgterminstallprogress.cc:183
+#: gtk/rginstallprogress.cc:284 gtk/rgterminstallprogress.cc:168
 msgid "Applying Changes"
 msgstr "Doorvoeren van veranderingen"
 
@@ -1143,33 +1200,33 @@ msgstr "%s Eigenschappen"
 msgid "%s (%s)"
 msgstr "%s (%s)"
 
-#: gtk/rgmainwindow.cc:77
+#: gtk/rgmainwindow.cc:79
 msgid "Normal"
 msgstr "Normaal"
 
-#: gtk/rgmainwindow.cc:78
+#: gtk/rgmainwindow.cc:80
 msgid "Critical"
 msgstr "Kritisch"
 
-#: gtk/rgmainwindow.cc:79
+#: gtk/rgmainwindow.cc:81
 msgid "Security"
 msgstr "Beveiliging"
 
-#: gtk/rgmainwindow.cc:167
+#: gtk/rgmainwindow.cc:149
 msgid "All"
 msgstr "Alles"
 
-#: gtk/rgmainwindow.cc:361 gtk/window_main.glade.h:29
+#: gtk/rgmainwindow.cc:336 gtk/window_main.glade.h:29
 #: gtk/window_details.glade.h:19
 msgid "No package is selected.\n"
 msgstr "Geen pakket geselecteerd.\n"
 
-#: gtk/rgmainwindow.cc:460
+#: gtk/rgmainwindow.cc:438
 #, c-format
 msgid "Select the version of %s that should be forced for installation"
 msgstr "Kies de versie van %s die gekozen moet worden voor installatie"
 
-#: gtk/rgmainwindow.cc:462
+#: gtk/rgmainwindow.cc:440
 msgid ""
 "The package manager always selects the most applicable version available. If "
 "you force a different version from the default one, errors in the dependency "
@@ -1180,29 +1237,29 @@ msgstr ""
 "pakketafhankelijkheden."
 
 #. TRANSLATORS: Column header for the column "Status" in the package list
-#: gtk/rgmainwindow.cc:806
+#: gtk/rgmainwindow.cc:781
 msgid "S"
 msgstr "S"
 
 #. TRANSLATORS: Column header for the column "Supported" in the package list
-#: gtk/rgmainwindow.cc:822 gtk/window_preferences.glade.h:1
+#: gtk/rgmainwindow.cc:797 gtk/window_preferences.glade.h:1
 #: gtk/window_summary.glade.h:1 gtk/window_filters.glade.h:1
 msgid " "
 msgstr " "
 
-#: gtk/rgmainwindow.cc:842
+#: gtk/rgmainwindow.cc:817
 msgid "Package"
 msgstr "Pakket"
 
-#: gtk/rgmainwindow.cc:932
+#: gtk/rgmainwindow.cc:903
 msgid "Latest Version"
 msgstr "Nieuwste versie"
 
-#: gtk/rgmainwindow.cc:974
+#: gtk/rgmainwindow.cc:945
 msgid "Download"
 msgstr "Ophalen"
 
-#: gtk/rgmainwindow.cc:1245
+#: gtk/rgmainwindow.cc:1198
 msgid ""
 "Reload the package information to become informed about new, removed or "
 "upgraded  software packages."
@@ -1210,60 +1267,60 @@ msgstr ""
 "De pakketlijsten verversen om geïnformeerd te worden over nieuwe pakketten "
 "of nieuwe versies van bestaande pakketten."
 
-#: gtk/rgmainwindow.cc:1251
+#: gtk/rgmainwindow.cc:1204
 msgid "Mark all possible upgrades"
 msgstr "Alle bij te werken pakketten markeren"
 
-#: gtk/rgmainwindow.cc:1255 gtk/window_summary.glade.h:5
+#: gtk/rgmainwindow.cc:1208 gtk/window_summary.glade.h:5
 msgid "Apply all marked changes"
 msgstr "Veranderingen doorvoeren"
 
-#: gtk/rgmainwindow.cc:1434
+#: gtk/rgmainwindow.cc:1387
 msgid "Unmark"
 msgstr "Demarkeren"
 
-#: gtk/rgmainwindow.cc:1442
+#: gtk/rgmainwindow.cc:1395
 msgid "Mark for Installation"
 msgstr "Markeren voor installatie"
 
-#: gtk/rgmainwindow.cc:1450
+#: gtk/rgmainwindow.cc:1403
 msgid "Mark for Reinstallation"
 msgstr "Markeren voor herinstallatie"
 
-#: gtk/rgmainwindow.cc:1459
+#: gtk/rgmainwindow.cc:1412
 msgid "Mark for Upgrade"
 msgstr "Markeren voor bijwerken"
 
-#: gtk/rgmainwindow.cc:1467
+#: gtk/rgmainwindow.cc:1420
 msgid "Mark for Removal"
 msgstr "Markeren voor verwijdering"
 
-#: gtk/rgmainwindow.cc:1476
+#: gtk/rgmainwindow.cc:1429
 msgid "Mark for Complete Removal"
 msgstr "Markeren voor volledige verwijdering"
 
-#: gtk/rgmainwindow.cc:1488
+#: gtk/rgmainwindow.cc:1441
 msgid "Remove Including Orphaned Dependencies"
 msgstr "Verwijderen inclusief afhankelijkheden"
 
-#: gtk/rgmainwindow.cc:1500
+#: gtk/rgmainwindow.cc:1453
 msgid "Hold Current Version"
 msgstr "Huidige versie en status behouden"
 
-#: gtk/rgmainwindow.cc:1509 gtk/window_main.glade.h:31
+#: gtk/rgmainwindow.cc:1462 gtk/window_main.glade.h:31
 #: gtk/window_filters.glade.h:46
 msgid "Properties"
 msgstr "Eigenschappen"
 
-#: gtk/rgmainwindow.cc:1521
+#: gtk/rgmainwindow.cc:1474
 msgid "Mark Recommended for Installation"
 msgstr "Aanbevolen pakketten markeren voor installatie"
 
-#: gtk/rgmainwindow.cc:1525
+#: gtk/rgmainwindow.cc:1478
 msgid "Mark Suggested for Installation"
 msgstr "Suggesties markeren voor installatie"
 
-#: gtk/rgmainwindow.cc:1614
+#: gtk/rgmainwindow.cc:1563
 msgid ""
 "Removing this package may render the system unusable.\n"
 "Are you sure you want to do that?"
@@ -1272,7 +1329,7 @@ msgstr ""
 "achterlaten.\n"
 "Weet u zeker dat u hiermee door wilt gaan?"
 
-#: gtk/rgmainwindow.cc:1650
+#: gtk/rgmainwindow.cc:1599
 #, c-format
 msgid ""
 "%i packages listed, %i installed, %i broken. %i to install/upgrade, %i to "
@@ -1281,7 +1338,7 @@ msgstr ""
 "%i pakketten in de lijst, %i geïnstalleerd, %i gebroken. %i te installeren / "
 "bij te werken, %i te verwijderen. Er zal %s aan ruimte vrijkomen."
 
-#: gtk/rgmainwindow.cc:1656
+#: gtk/rgmainwindow.cc:1605
 #, c-format
 msgid ""
 "%i packages listed, %i installed, %i broken. %i to install/upgrade, %i to "
@@ -1290,7 +1347,7 @@ msgstr ""
 "%i pakketten in de lijst, %i geïnstalleerd, %i gebroken. %i te installeren / "
 "bij te werken, %i te verwijderen. Er zal %s aan extra ruimte gebruikt worden."
 
-#: gtk/rgmainwindow.cc:1662
+#: gtk/rgmainwindow.cc:1611
 #, c-format
 msgid ""
 "%i packages listed, %i installed, %i broken. %i to install/upgrade, %i to "
@@ -1299,7 +1356,7 @@ msgstr ""
 "%i pakketten in de lijst, %i geïnstalleerd, %i gebroken. %i te installeren / "
 "bij te werken, %i te verwijderen"
 
-#: gtk/rgmainwindow.cc:1714
+#: gtk/rgmainwindow.cc:1663
 #, c-format
 msgid ""
 "You have %d broken package on your system!\n"
@@ -1318,11 +1375,11 @@ msgstr[1] ""
 "\n"
 "Gebruik het filter \"Gebroken\" om deze te vinden."
 
-#: gtk/rgmainwindow.cc:1886
+#: gtk/rgmainwindow.cc:1824
 msgid "Downloading changelog"
 msgstr "Ophalen van pakketlogboek"
 
-#: gtk/rgmainwindow.cc:1887
+#: gtk/rgmainwindow.cc:1825
 msgid ""
 "The changelog contains information about the changes and closed bugs in each "
 "version of the package."
@@ -1331,49 +1388,61 @@ msgstr ""
 "versie van het pakket."
 
 #. TRANSLATORS: Title of the changelog dialog - %s is the name of the package
-#: gtk/rgmainwindow.cc:1900
+#: gtk/rgmainwindow.cc:1838
 #, c-format
 msgid "%s Changelog"
 msgstr "%s Veranderingen"
 
-#: gtk/rgmainwindow.cc:1983
+#: gtk/rgmainwindow.cc:1923
 msgid "Do you want to add another CD-ROM?"
 msgstr "Wilt u nog een CD-ROM doorzoeken?"
 
-#: gtk/rgmainwindow.cc:2008 gtk/rgmainwindow.cc:2621 gtk/rgmainwindow.cc:2703
-#: gtk/rgmainwindow.cc:2863
+#: gtk/rgmainwindow.cc:1957 gtk/rgmainwindow.cc:2013
+msgid "Open changes"
+msgstr "Veranderingen openen"
+
+#: gtk/rgmainwindow.cc:1970 gtk/rgmainwindow.cc:2578 gtk/rgmainwindow.cc:2662
+#: gtk/rgmainwindow.cc:2825
 #, c-format
 msgid "Can't read %s"
 msgstr "Kan %s niet lezen"
 
-#: gtk/rgmainwindow.cc:2038
-msgid "Open changes"
-msgstr "Veranderingen openen"
-
-#: gtk/rgmainwindow.cc:2069 gtk/rgmainwindow.cc:2132 gtk/rgmainwindow.cc:2539
-#: gtk/rgmainwindow.cc:2675 gtk/rgmainwindow.cc:2840
+#: gtk/rgmainwindow.cc:1994 gtk/rgmainwindow.cc:2487 gtk/rgmainwindow.cc:2632
+#: gtk/rgmainwindow.cc:2802
 #, c-format
 msgid "Can't write %s"
 msgstr "Kan %s niet schrijven"
 
-#: gtk/rgmainwindow.cc:2088
-msgid "Save changes"
-msgstr "Veranderingen opslaan"
-
-#: gtk/rgmainwindow.cc:2105
+#: gtk/rgmainwindow.cc:2020
 msgid "Save full state, not only changes"
 msgstr "Volledige status opslaan, niet alleen veranderingen"
 
-#: gtk/rgmainwindow.cc:2231
+#: gtk/rgmainwindow.cc:2097
+msgid "Repositories changed"
+msgstr "Pakketbronnen veranderd"
+
+#: gtk/rgmainwindow.cc:2098
+msgid ""
+"The repository information has changed. You have to click on the \"Reload\" "
+"button for your changes to take effect"
+msgstr ""
+"De informatie over de pakketbronnen is veranderd. U dient op de knop "
+"\"Herladen\" te klikken om de veranderingen door te voeren"
+
+#: gtk/rgmainwindow.cc:2109
+msgid "Never show this message again"
+msgstr "Dit bericht niet meer weergeven"
+
+#: gtk/rgmainwindow.cc:2163
 #, c-format
 msgid "Found %i packages"
 msgstr "%i pakketten gevonden"
 
-#: gtk/rgmainwindow.cc:2261
+#: gtk/rgmainwindow.cc:2204
 msgid "Starting help viewer..."
 msgstr "Starten van hulpweergave..."
 
-#: gtk/rgmainwindow.cc:2281
+#: gtk/rgmainwindow.cc:2224
 msgid ""
 "No help viewer is installed!\n"
 "\n"
@@ -1391,7 +1460,7 @@ msgstr ""
 "U kunt ook de handleiding bekijken met de opdracht 'man synaptic', of de "
 "html-versie bekijken in de map 'synaptic/html'."
 
-#: gtk/rgmainwindow.cc:2435
+#: gtk/rgmainwindow.cc:2372
 msgid ""
 "Cannot start configuration tool!\n"
 "You have to install the required package 'libgnome2-perl'."
@@ -1399,16 +1468,16 @@ msgstr ""
 "Kan de configuratie niet starten!\n"
 "U dient eerst het pakket 'libgnome2-perl' te installeren."
 
-#: gtk/rgmainwindow.cc:2441
+#: gtk/rgmainwindow.cc:2378
 msgid "Starting package configuration tool..."
 msgstr "Starten van pakketconfiguratie..."
 
 #. cout << "RGMainWindow::pkgHelpClicked()" << endl;
-#: gtk/rgmainwindow.cc:2456
+#: gtk/rgmainwindow.cc:2393
 msgid "Starting package documentation viewer..."
 msgstr "Starten van pakketdocumentatieweergave..."
 
-#: gtk/rgmainwindow.cc:2468
+#: gtk/rgmainwindow.cc:2405
 msgid ""
 "You have to install the package \"dwww\" to browse the documentation of a "
 "package"
@@ -1416,7 +1485,7 @@ msgstr ""
 "U dient het pakket \"dwww\" te installeren om de documentatie van een pakket "
 "te bekijken."
 
-#: gtk/rgmainwindow.cc:2505
+#: gtk/rgmainwindow.cc:2451
 msgid ""
 "Could not apply changes!\n"
 "Fix broken packages first."
@@ -1424,27 +1493,27 @@ msgstr ""
 "Kan veranderingen niet toepassen.\n"
 "U dient eerst de gebroken pakketten te repareren."
 
-#: gtk/rgmainwindow.cc:2524
+#: gtk/rgmainwindow.cc:2472
 msgid "Applying marked changes. This may take a while..."
 msgstr "Gegeven veranderingen worden doorgevoerd. Dit kan even duren..."
 
-#: gtk/rgmainwindow.cc:2528
+#: gtk/rgmainwindow.cc:2476
 msgid "Downloading package files"
 msgstr "Ophalen van pakketten"
 
-#: gtk/rgmainwindow.cc:2529
+#: gtk/rgmainwindow.cc:2477
 msgid "The package files will be cached locally for installation."
 msgstr "De pakketten worden lokaal opgeslagen voor de installatie."
 
-#: gtk/rgmainwindow.cc:2604
+#: gtk/rgmainwindow.cc:2561
 msgid "Do you want to quit Synaptic?"
 msgstr "Wilt u Synaptic afsluiten?"
 
-#: gtk/rgmainwindow.cc:2660
+#: gtk/rgmainwindow.cc:2617
 msgid "Downloading package information"
 msgstr "Ophalen van pakketinformatie"
 
-#: gtk/rgmainwindow.cc:2661
+#: gtk/rgmainwindow.cc:2618
 msgid ""
 "The repositories will be checked for new, removed or upgraded software "
 "packages."
@@ -1452,19 +1521,19 @@ msgstr ""
 "Er wordt gecontroleerd op nieuwe, verwijderde of bijgewerkte "
 "softwarepakketten."
 
-#: gtk/rgmainwindow.cc:2664
+#: gtk/rgmainwindow.cc:2621
 msgid "Reloading package information..."
 msgstr "Herladen van pakketinformatie..."
 
-#: gtk/rgmainwindow.cc:2728
+#: gtk/rgmainwindow.cc:2687
 msgid "Failed to resolve dependency problems!"
 msgstr "Kan afhankelijkheidsproblemen niet oplossen!"
 
-#: gtk/rgmainwindow.cc:2730
+#: gtk/rgmainwindow.cc:2689
 msgid "Successfully fixed dependency problems"
 msgstr "Afhankelijkheden succesvol gerepareerd"
 
-#: gtk/rgmainwindow.cc:2746
+#: gtk/rgmainwindow.cc:2705
 msgid ""
 "Could not upgrade the system!\n"
 "Fix broken packages first."
@@ -1472,15 +1541,15 @@ msgstr ""
 "Kan systeem niet bijwerken!\n"
 "Er zijn gebroken pakketten. Die moeten eerst gerepareerd worden."
 
-#: gtk/rgmainwindow.cc:2787
+#: gtk/rgmainwindow.cc:2754
 msgid "Marking all available upgrades..."
 msgstr "Markeren van bij te werken pakketten..."
 
-#: gtk/rgmainwindow.cc:2799
+#: gtk/rgmainwindow.cc:2766
 msgid "Successfully marked available upgrades"
 msgstr "Alle bij te werken pakketten succesvol gemarkeerd"
 
-#: gtk/rgmainwindow.cc:2801
+#: gtk/rgmainwindow.cc:2768
 msgid "Failed to mark all available upgrades!"
 msgstr "Kan niet alle bij te werken pakketten markeren!"
 
@@ -1495,142 +1564,153 @@ msgstr ""
 " Pakketten die onder dit onderdeel vallen worden niet ondersteund.\n"
 " Weet u het zeker?"
 
-#: gtk/rgrepositorywin.cc:118 gtk/window_repositories.glade.h:4
+#: gtk/rgrepositorywin.cc:120 gtk/window_repositories.glade.h:4
 msgid "Repositories"
 msgstr "Pakketbronnen"
 
-#: gtk/rgrepositorywin.cc:142
+#: gtk/rgrepositorywin.cc:144
 msgid "Enabled"
 msgstr "Ingeschakeld"
 
-#: gtk/rgrepositorywin.cc:152
+#: gtk/rgrepositorywin.cc:154
 msgid "Type"
 msgstr "Type"
 
-#: gtk/rgrepositorywin.cc:162 gtk/rgvendorswindow.cc:62
+#: gtk/rgrepositorywin.cc:164 gtk/rgvendorswindow.cc:62
 #: gtk/rgvendorswindow.cc:80
 msgid "Vendor"
 msgstr "Verkoper"
 
-#: gtk/rgrepositorywin.cc:185
+#: gtk/rgrepositorywin.cc:187 gtk/window_preferences.glade.h:33
 msgid "Distribution"
 msgstr "Distributie"
 
-#: gtk/rgrepositorywin.cc:196
+#: gtk/rgrepositorywin.cc:198
 msgid "Section(s)"
 msgstr "Onderdelen"
 
-#: gtk/rgrepositorywin.cc:237
+#: gtk/rgrepositorywin.cc:239
 msgid "Binary (deb)"
 msgstr "Programma's (deb)"
 
-#: gtk/rgrepositorywin.cc:242
+#: gtk/rgrepositorywin.cc:244
 msgid "Source (deb-src)"
 msgstr "Broncode (deb-src)"
 
-#: gtk/rgrepositorywin.cc:251 gtk/rgrepositorywin.cc:373
+#: gtk/rgrepositorywin.cc:253 gtk/rgrepositorywin.cc:375
 #: gtk/window_repositories.glade.h:1
 msgid "(no vendor)"
 msgstr "(geen verkoper)"
 
-#: gtk/rgrepositorywin.cc:327
+#: gtk/rgrepositorywin.cc:329
 msgid "Cannot read vendors.list file"
 msgstr "Kan vendors.list bestand niet inlezen"
 
-#: gtk/rgrepositorywin.cc:492
+#: gtk/rgrepositorywin.cc:496
 msgid "Unknown source type"
-msgstr "Obekend brontype"
+msgstr "Onbekend brontype"
 
-#: gtk/rgsummarywindow.cc:83
+#: gtk/rgsummarywindow.cc:108
 msgid "(ESSENTIAL) to be removed"
 msgstr "(ESSENTIEEL) te verwijderen"
 
-#: gtk/rgsummarywindow.cc:96
+#: gtk/rgsummarywindow.cc:121
 msgid "To be DOWNGRADED"
-msgstr "Bijwerken met oudere versie"
+msgstr "Bijwerken naar OUDERE VERSIE"
 
-#: gtk/rgsummarywindow.cc:160
-msgid "To be not upgraded"
-msgstr "Niet bijwerken"
+#: gtk/rgsummarywindow.cc:147
+#, fuzzy
+msgid "To be completely removed (including configuration files)"
+msgstr "Volledig verwijderen"
 
-#: gtk/rgsummarywindow.cc:196
+#: gtk/rgsummarywindow.cc:199
+#, fuzzy
+msgid "Unchanged"
+msgstr "Veranderingen openen"
+
+#: gtk/rgsummarywindow.cc:244
 #, c-format
 msgid "<b>%s</b> (<b>essential</b>) will be removed\n"
 msgstr "<b>%s</b> (<b>essentieel</b>) zal verwijderd worden\n"
 
-#: gtk/rgsummarywindow.cc:205
+#: gtk/rgsummarywindow.cc:253
 #, c-format
 msgid "<b>%s</b> will be <b>downgraded</b>\n"
 msgstr "<b>%s</b> zal vervangen worden <b>door een oudere versie</b>\n"
 
-#: gtk/rgsummarywindow.cc:213
+#: gtk/rgsummarywindow.cc:261
+#, c-format
+msgid "<b>%s</b> will be removed with configuration\n"
+msgstr "<b>%s</b> zal volledig verwijderd worden\n"
+
+#: gtk/rgsummarywindow.cc:269
 #, c-format
 msgid "<b>%s</b> will be removed\n"
 msgstr "<b>%s</b> zal verwijderd worden\n"
 
-#: gtk/rgsummarywindow.cc:222
+#: gtk/rgsummarywindow.cc:278
 #, c-format
 msgid "<b>%s</b> (version <i>%s</i>) will be upgraded to version <i>%s</i>\n"
 msgstr ""
 "<b>%s</b> (versie <i>%s</i>) zal bijgewerkt worden naar versie <i>%s</i>\n"
 
-#: gtk/rgsummarywindow.cc:233
+#: gtk/rgsummarywindow.cc:289
 #, c-format
 msgid "<b>%s</b> (version <i>%s</i>) will be installed\n"
 msgstr "<b>%s</b> (versie <i>%s</i>) zal geïnstalleerd worden\n"
 
-#: gtk/rgsummarywindow.cc:241
+#: gtk/rgsummarywindow.cc:297
 #, c-format
 msgid "<b>%s</b> (version <i>%s</i>) will be re-installed\n"
 msgstr "<b>%s</b> (versie <i>%s</i>) zal ge-herïnstalleerd worden\n"
 
-#: gtk/rgsummarywindow.cc:276
+#: gtk/rgsummarywindow.cc:332
 msgid "Summary"
 msgstr "Samenvatting"
 
-#: gtk/rgsummarywindow.cc:346
+#: gtk/rgsummarywindow.cc:402
 #, c-format
 msgid "%d package is locked\n"
 msgid_plural "%d packages are locked\n"
 msgstr[0] "%d pakket is vastgezet\n"
 msgstr[1] "%d pakketten zijn vastgezet\n"
 
-#: gtk/rgsummarywindow.cc:353
+#: gtk/rgsummarywindow.cc:409
 #, c-format
 msgid "%d package will be held back and not upgraded\n"
 msgid_plural "%d packages will be held back and not upgraded\n"
 msgstr[0] "%d pakket blijft onveranderd\n"
 msgstr[1] "%d pakketten blijven onveranderd\n"
 
-#: gtk/rgsummarywindow.cc:360
+#: gtk/rgsummarywindow.cc:416
 #, c-format
 msgid "%d new package will be installed\n"
 msgid_plural "%d new packages will be installed\n"
 msgstr[0] "Er zal %d nieuw pakket geïnstalleerd worden\n"
 msgstr[1] "Er zullen %d nieuwe pakketten geïnstalleerd worden\n"
 
-#: gtk/rgsummarywindow.cc:367
+#: gtk/rgsummarywindow.cc:423
 #, c-format
 msgid "%d new package will be re-installed\n"
 msgid_plural "%d new packages will be re-installed\n"
 msgstr[0] "Er zal %d nieuw pakket ge-herinstalleerd worden\n"
 msgstr[1] "Er zullen %d nieuwe pakketten ge-herinstalleerd worden\n"
 
-#: gtk/rgsummarywindow.cc:374
+#: gtk/rgsummarywindow.cc:430
 #, c-format
 msgid "%d package will be upgraded\n"
 msgid_plural "%d packages will be upgraded\n"
 msgstr[0] "Er zal %d pakket bijgewerkt worden\n"
 msgstr[1] "Er zullen %d pakketten bijgewerkt worden\n"
 
-#: gtk/rgsummarywindow.cc:381
+#: gtk/rgsummarywindow.cc:437
 #, c-format
 msgid "%d package will be removed\n"
 msgid_plural "%d packages will be removed\n"
 msgstr[0] "Er zal %d pakket verwijderd worden\n"
 msgstr[1] "Er zullen %d pakketten verwijderd worden\n"
 
-#: gtk/rgsummarywindow.cc:388
+#: gtk/rgsummarywindow.cc:444
 #, c-format
 msgid "%d package will be <b>downgraded</b>\n"
 msgid_plural "%d packages will be <b>downgraded</b>\n"
@@ -1638,7 +1718,7 @@ msgstr[0] "Er zal %d pakket naar een <b>oudere versie</b> bijgewerkt worden\n"
 msgstr[1] ""
 "Er zullen %d pakketten naar een <b>oudere versie</b> bijgewerkt worden\n"
 
-#: gtk/rgsummarywindow.cc:396
+#: gtk/rgsummarywindow.cc:452
 #, c-format
 msgid "<b>Warning:</b> %d essential package will be removed\n"
 msgid_plural "<b>Warning:</b> %d essential packages will be removed\n"
@@ -1646,17 +1726,17 @@ msgstr[0] "<b>Waarschuwing:</b> %d essentieel pakket zal verwijderd worden!\n"
 msgstr[1] ""
 "<b>Waarschuwing:</b> %d essentiële pakketten zullen verwijderd worden!\n"
 
-#: gtk/rgsummarywindow.cc:408
+#: gtk/rgsummarywindow.cc:464
 #, c-format
 msgid "%s of extra space will be used"
 msgstr "Er zal %s aan extra ruimte gebruikt worden"
 
-#: gtk/rgsummarywindow.cc:411
+#: gtk/rgsummarywindow.cc:467
 #, c-format
 msgid "%s of extra space will be freed"
 msgstr "Er zal %s aan ruimte vrijkomen"
 
-#: gtk/rgsummarywindow.cc:417
+#: gtk/rgsummarywindow.cc:473
 #, c-format
 msgid ""
 "\n"
@@ -1665,13 +1745,17 @@ msgstr ""
 "\n"
 "Er moet %s opgehaald worden"
 
-#: gtk/rgsummarywindow.cc:442
+#: gtk/rgsummarywindow.cc:498
 msgid ""
 "Essential packages will be removed.\n"
 "This may render your system unusable!\n"
 msgstr ""
 "Er zullen essentiële pakketten verwijderd worden.\n"
 "Uw systeem kan hierdoor onbruikbaar worden!!!\n"
+
+#: gtk/rguserdialog.cc:72
+msgid "The following problems where found on your system:"
+msgstr ""
 
 #: gtk/rgvendorswindow.cc:39
 msgid "Setup Vendors"
@@ -1730,8 +1814,8 @@ msgid ""
 "<b>Note:</b> To install a version that is different from the default one, "
 "choose <b>Package -> Force Version...</b> from the menu."
 msgstr ""
-"<b>Opmerking:</b>Om een andere versie dan de standaardversie te installeren, "
-"kiest u <p>Pakket -> Versie forceren...</b> uit het menu."
+"<b>Opmerking:</b> Om een andere versie dan de standaardversie te "
+"installeren, kiest u <b>Pakket -> Versie forceren...</b> uit het menu."
 
 #: gtk/window_main.glade.h:6 gtk/window_details.glade.h:6
 msgid "<b>Package:</b>"
@@ -1937,78 +2021,83 @@ msgid "_Hide"
 msgstr "_Verbergen"
 
 #: gtk/window_main.glade.h:60
+#, fuzzy
+msgid "_History"
+msgstr "Zoekgeschiedenis"
+
+#: gtk/window_main.glade.h:61
 msgid "_Icons Only"
 msgstr "_Alleen pictogrammen"
 
-#: gtk/window_main.glade.h:61
+#: gtk/window_main.glade.h:62
 msgid "_Lock Version"
 msgstr "Versie vast_zetten"
 
-#: gtk/window_main.glade.h:62
+#: gtk/window_main.glade.h:63
 msgid "_Mark All Upgrades..."
 msgstr "Pakketten met _nieuwe versie markeren..."
 
-#: gtk/window_main.glade.h:63
+#: gtk/window_main.glade.h:64
 msgid "_Package"
 msgstr "_Pakket"
 
-#: gtk/window_main.glade.h:64
+#: gtk/window_main.glade.h:65
 msgid "_Properties"
 msgstr "_Eigenschappen"
 
-#: gtk/window_main.glade.h:65
+#: gtk/window_main.glade.h:66
 msgid "_Quick Introduction"
 msgstr "_Korte inleiding"
 
-#: gtk/window_main.glade.h:66
+#: gtk/window_main.glade.h:67
 msgid "_Quit"
 msgstr "A_fsluiten"
 
-#: gtk/window_main.glade.h:67
+#: gtk/window_main.glade.h:68
 msgid "_Read Markings..."
 msgstr "Markeringen inle_zen..."
 
-#: gtk/window_main.glade.h:68
+#: gtk/window_main.glade.h:69
 msgid "_Redo"
 msgstr "Opnieu_w"
 
-#: gtk/window_main.glade.h:69
+#: gtk/window_main.glade.h:70
 msgid "_Reload Package Information"
 msgstr "Pakkettenlijst _verversen"
 
-#: gtk/window_main.glade.h:70
+#: gtk/window_main.glade.h:71
 msgid "_Repositories"
 msgstr "Pakket_bronnen"
 
-#: gtk/window_main.glade.h:71
+#: gtk/window_main.glade.h:72
 msgid "_Save Markings"
 msgstr "Markeringen _opslaan"
 
-#: gtk/window_main.glade.h:72
+#: gtk/window_main.glade.h:73
 msgid "_Search..."
 msgstr "_Zoeken..."
 
-#: gtk/window_main.glade.h:73
+#: gtk/window_main.glade.h:74
 msgid "_Sections"
 msgstr "_Onderdelen"
 
-#: gtk/window_main.glade.h:74
+#: gtk/window_main.glade.h:75
 msgid "_Set Internal Option..."
 msgstr "_Interne optie instellen..."
 
-#: gtk/window_main.glade.h:75
+#: gtk/window_main.glade.h:76
 msgid "_Settings"
 msgstr "_Instellingen"
 
-#: gtk/window_main.glade.h:76
+#: gtk/window_main.glade.h:77
 msgid "_Text Only"
 msgstr "Alleen _tekst"
 
-#: gtk/window_main.glade.h:77
+#: gtk/window_main.glade.h:78
 msgid "_Toolbar"
 msgstr "_Werkbalk"
 
-#: gtk/window_main.glade.h:78
+#: gtk/window_main.glade.h:79
 msgid "_Undo"
 msgstr "_Ongedaan maken"
 
@@ -2112,9 +2201,9 @@ msgstr ""
 "\n"
 "Kijk voor meer info op http://nl.gnome.org/"
 
-#: gtk/window_find.glade.h:1 gtk/window_preferences.glade.h:3
-#: gtk/window_disc_name.glade.h:1 gtk/window_setopt.glade.h:1
-#: gtk/window_filters.glade.h:3 gtk/window_repositories.glade.h:2
+#: gtk/window_find.glade.h:1 gtk/window_disc_name.glade.h:1
+#: gtk/window_setopt.glade.h:1 gtk/window_filters.glade.h:3
+#: gtk/window_repositories.glade.h:2
 msgid "*"
 msgstr "*"
 
@@ -2157,73 +2246,74 @@ msgstr ""
 msgid "_Mark"
 msgstr "_Markeren"
 
-#: gtk/window_preferences.glade.h:4
+#: gtk/window_preferences.glade.h:3
 msgid "<b>Appearance</b>"
 msgstr "<b>Zoeken</b>"
 
-#: gtk/window_preferences.glade.h:5
+#: gtk/window_preferences.glade.h:4
 msgid "<b>Applying Changes</b>"
 msgstr "<b>Doorvoeren van veranderingen</b>"
 
-#: gtk/window_preferences.glade.h:6
+#: gtk/window_preferences.glade.h:5
 msgid "<b>Colors</b>"
 msgstr "<b>Kleuren</b>"
 
-#: gtk/window_preferences.glade.h:7
+#: gtk/window_preferences.glade.h:6
 msgid "<b>Columns</b>"
 msgstr "<b>Kolommen</b>"
 
-#: gtk/window_preferences.glade.h:8
-msgid "<b>Distribution</b>"
-msgstr "<b>Distributie</b>"
-
-#: gtk/window_preferences.glade.h:9
+#: gtk/window_preferences.glade.h:7
 msgid "<b>Fonts</b>"
 msgstr "<b>Lettertypes</b>"
 
-#: gtk/window_preferences.glade.h:10
+#: gtk/window_preferences.glade.h:8
 msgid "<b>Marking Changes</b>"
 msgstr "<b>Markeringen</b>"
 
-#: gtk/window_preferences.glade.h:11
-msgid ""
-"<b>Note:</b> The package information must be reloaded and all marked changes "
-"will be lost. Make sure to apply your changes first."
+#: gtk/window_preferences.glade.h:9
+msgid "<b>Package upgrade behaviour (default distribution)</b>"
 msgstr ""
-"<b>Opmerking:</b> De pakkettenlijst moet ververst worden. Alle gemarkeerde "
-"veranderingen zullen verloren gaan. Vergeet niet eerst uw veranderingen toe "
-"te passen."
 
-#: gtk/window_preferences.glade.h:12
+#: gtk/window_preferences.glade.h:10
 msgid "<b>Proxy Server</b>"
 msgstr "<b>Proxy</b>"
 
-#: gtk/window_preferences.glade.h:13
+#: gtk/window_preferences.glade.h:11
 msgid "<b>Temporary Files</b>"
 msgstr "<b>Tijdelijke bestanden</b>"
 
-#: gtk/window_preferences.glade.h:14
+#: gtk/window_preferences.glade.h:12
+#, fuzzy
 msgid ""
 "<span size=\"large\" weight=\"bold\">These settings affect the core of your "
-"system. Consider changes carefully.</span>"
+"system. Consider any changes carefully.</span>"
 msgstr ""
 "<span size=\"large\" weight=\"bold\">Deze instellingen hebben effect op het "
 "hart van uw systeem. Wees voorzichtig.</span>"
 
-#: gtk/window_preferences.glade.h:15
+#: gtk/window_preferences.glade.h:13
 msgid "A_pplication Font"
 msgstr "Toe_passingslettertype"
 
-#: gtk/window_preferences.glade.h:16
+#: gtk/window_preferences.glade.h:14
 msgid "Always Ask"
 msgstr "Altijd vragen"
+
+#: gtk/window_preferences.glade.h:15
+msgid "Always prefer the highest version"
+msgstr ""
+
+#: gtk/window_preferences.glade.h:16
+msgid "Always prefer the installed version"
+msgstr ""
 
 #: gtk/window_preferences.glade.h:17
 msgid "Apply changes in a terminal window"
 msgstr "Veranderingen toepassen in een terminal-venster"
 
 #: gtk/window_preferences.glade.h:18
-msgid "Ask to confirm changes also affecting other packages"
+#, fuzzy
+msgid "Ask to confirm changes that also affect other packages"
 msgstr ""
 "Bevestiging vragen voor veranderingen die ook andere pakketten beïnvloeden"
 
@@ -2279,136 +2369,135 @@ msgid "Consider recommended packages as dependencies"
 msgstr "Beschouw aanbevolen pakketten als afhankelijkheden"
 
 #: gtk/window_preferences.glade.h:31
-msgid "Default archive: "
-msgstr "Standaardarchief: "
-
-#: gtk/window_preferences.glade.h:32
 msgid "Delete downloaded packages after installation"
 msgstr "Binnengehaalde pakketten verwijderen na installatie"
 
-#: gtk/window_preferences.glade.h:33
-msgid "Delete packages which are no longer available only"
-msgstr "Alleen pakketten die niet meer beschikbaar zijn verwijderen"
-
-#: gtk/window_preferences.glade.h:34
+#: gtk/window_preferences.glade.h:32
 msgid "Direct connection to the internet"
 msgstr "Directe verbinding met het internet"
 
-#: gtk/window_preferences.glade.h:35
-msgid "Expert"
-msgstr "Expert"
-
-#: gtk/window_preferences.glade.h:36
+#: gtk/window_preferences.glade.h:34
 msgid "FTP proxy: "
 msgstr "FTP-proxy: "
 
-#: gtk/window_preferences.glade.h:37
+#: gtk/window_preferences.glade.h:35
 msgid "General"
 msgstr "Algemeen"
 
-#: gtk/window_preferences.glade.h:38
+#: gtk/window_preferences.glade.h:36
 msgid "HTTP proxy: "
 msgstr "HTTP-proxy: "
 
-#: gtk/window_preferences.glade.h:39
+#: gtk/window_preferences.glade.h:37
 msgid "IP address or host name of the ftp proxy server"
 msgstr "IP-adres of computernaam van de FTP-proxy"
 
-#: gtk/window_preferences.glade.h:40
+#: gtk/window_preferences.glade.h:38
 msgid "IP address or host name of the http proxy server"
 msgstr "IP-adres of computernaam van de HTTP-proxy"
 
-#: gtk/window_preferences.glade.h:41
+#: gtk/window_preferences.glade.h:39
 msgid "Ignore"
 msgstr "Negeren"
 
-#: gtk/window_preferences.glade.h:42
+#: gtk/window_preferences.glade.h:40
 msgid "Installed (locked):"
 msgstr "Geïnstalleerd (vastgehouden):"
 
-#: gtk/window_preferences.glade.h:43
+#: gtk/window_preferences.glade.h:41
 msgid "Installed:"
 msgstr "Geïnstalleerd:"
 
-#: gtk/window_preferences.glade.h:44
+#: gtk/window_preferences.glade.h:42
 msgid "Keep Configuration"
 msgstr "Configuratie behouden"
 
-#: gtk/window_preferences.glade.h:45
+#: gtk/window_preferences.glade.h:43
 msgid "Leave all downloaded packages in the cache"
 msgstr "Opgehaalde pakketten in de buffer laten staan"
 
-#: gtk/window_preferences.glade.h:46
+#: gtk/window_preferences.glade.h:44
 msgid "Manual proxy configuration"
 msgstr "Handmatige proxy-configuratie"
 
-#: gtk/window_preferences.glade.h:47
+#: gtk/window_preferences.glade.h:45
 msgid "Marked for complete removal:"
 msgstr "Gemarkeerd voor volledige verwijdering:"
 
-#: gtk/window_preferences.glade.h:48
+#: gtk/window_preferences.glade.h:46
 msgid "Marked for downgrade:"
 msgstr "Gemarkeerd voor bijwerken met oudere versie:"
 
-#: gtk/window_preferences.glade.h:49
+#: gtk/window_preferences.glade.h:47
 msgid "Marked for installation:"
 msgstr "Gemarkeerd voor installatie:"
 
-#: gtk/window_preferences.glade.h:50
+#: gtk/window_preferences.glade.h:48
 msgid "Marked for reinstallation:"
 msgstr "Gemarkeerd voor herinstallatie:"
 
-#: gtk/window_preferences.glade.h:51
+#: gtk/window_preferences.glade.h:49
 msgid "Marked for removal:"
 msgstr "Gemarkeerd voor verwijdering:"
 
-#: gtk/window_preferences.glade.h:52
+#: gtk/window_preferences.glade.h:50
 msgid "Marked for upgrade:"
 msgstr "Gemarkeerd voor bijwerken:"
 
-#: gtk/window_preferences.glade.h:53
+#: gtk/window_preferences.glade.h:51
 msgid "Move D_own"
 msgstr "Naar be_neden"
 
-#: gtk/window_preferences.glade.h:54
+#: gtk/window_preferences.glade.h:52
 msgid "Move _Up"
 msgstr "Naar _boven"
 
-#: gtk/window_preferences.glade.h:55
+#: gtk/window_preferences.glade.h:53
 msgid "Network"
 msgstr "Netwerk"
 
-#: gtk/window_preferences.glade.h:56
-msgid "New in respository:"
+#: gtk/window_preferences.glade.h:54
+#, fuzzy
+msgid "New in repository:"
 msgstr "Nieuw in archief:"
 
-#: gtk/window_preferences.glade.h:57
+#: gtk/window_preferences.glade.h:55
 msgid "No proxy for: "
 msgstr "Geen proxy voor: "
 
-#: gtk/window_preferences.glade.h:58
+#: gtk/window_preferences.glade.h:56
 msgid "Not installed (locked):"
 msgstr "Niet geïnstalleerd (vastgehouden):"
 
-#: gtk/window_preferences.glade.h:59
+#: gtk/window_preferences.glade.h:57
 msgid "Not installed:"
 msgstr "Niet geïnstalleerd:"
 
-#: gtk/window_preferences.glade.h:60
+#: gtk/window_preferences.glade.h:58
 msgid "Number of undo operations:"
 msgstr "Aantal ongedaan te maken acties:"
 
-#: gtk/window_preferences.glade.h:61
+#: gtk/window_preferences.glade.h:59
+#, fuzzy
+msgid "Only delete packages which are no longer available"
+msgstr "Alleen pakketten die niet meer beschikbaar zijn verwijderen"
+
+#: gtk/window_preferences.glade.h:60
 msgid "Port number of the ftp proxy server"
 msgstr "Poortnummer van de FTP-proxy"
 
-#: gtk/window_preferences.glade.h:62
+#: gtk/window_preferences.glade.h:61
 msgid "Port number of the http proxy server"
 msgstr "Poortnummer van de HTTP-proxy"
 
-#: gtk/window_preferences.glade.h:63
+#: gtk/window_preferences.glade.h:62
 msgid "Port: "
 msgstr "Poort: "
+
+#: gtk/window_preferences.glade.h:63
+#, fuzzy
+msgid "Prefer versions from: "
+msgstr "Versie forceren:"
 
 #: gtk/window_preferences.glade.h:65
 msgid "Reloading outdated package information:"
@@ -2419,39 +2508,34 @@ msgid "Removal of packages: "
 msgstr "Verwijdering van pakketten: "
 
 #: gtk/window_preferences.glade.h:67
-msgid ""
-"Select the default release if more than one is specifed in the sources.list"
-msgstr "Kies de standaardversie als er meer dan een mogelijk zijn"
-
-#: gtk/window_preferences.glade.h:68
 msgid "Show package properties in the main window"
 msgstr "Pakketeigenschappen in hoofdvenster weergeven"
 
-#: gtk/window_preferences.glade.h:70
+#: gtk/window_preferences.glade.h:69
 msgid "System upgrade:"
 msgstr "Systeem bijwerken:"
 
-#: gtk/window_preferences.glade.h:71
+#: gtk/window_preferences.glade.h:70
 msgid "Temporary Files"
 msgstr "Tijdelijke bestanden"
 
-#: gtk/window_preferences.glade.h:72
+#: gtk/window_preferences.glade.h:71
 msgid "Upgradable:"
 msgstr "Nieuwe versie beschikbaar:"
 
-#: gtk/window_preferences.glade.h:73
+#: gtk/window_preferences.glade.h:72
 msgid "Use custom application font"
 msgstr "Aangepast lettertype gebruiken"
 
-#: gtk/window_preferences.glade.h:74
+#: gtk/window_preferences.glade.h:73
 msgid "Use custom terminal font"
 msgstr "Aangepast terminal-lettertype gebruiken"
 
-#: gtk/window_preferences.glade.h:75
+#: gtk/window_preferences.glade.h:74
 msgid "_Delete Cached Package Files"
 msgstr "Gebufferde pakketbestanden ver_wijderen"
 
-#: gtk/window_preferences.glade.h:76
+#: gtk/window_preferences.glade.h:75
 msgid "_Terminal Font"
 msgstr "_Terminal-lettertype"
 
@@ -2510,7 +2594,8 @@ msgid "Return to the main screen"
 msgstr "Terug naar het hoofdvenster"
 
 #: gtk/window_summary.glade.h:8
-msgid "The package files will be downloaded only, but not installed"
+#, fuzzy
+msgid "The package files will be downloaded, but not installed"
 msgstr "De pakketten zullen alleen opgehaald en niet geïnstalleerd worden"
 
 #: gtk/window_summary.glade.h:9
@@ -2522,9 +2607,10 @@ msgstr ""
 "voordat deze worden toegepast."
 
 #: gtk/window_summary.glade.h:10
+#, fuzzy
 msgid ""
-"Vendors sign theirs packages to verify the correct origin and integraty of "
-"the packages. Disabling the verification is a security risk"
+"Vendors sign their packages to verify the origin and integrity of the "
+"packages. Disabling the verification is a security risk"
 msgstr ""
 "Distributeurs ondertekenen hun pakketten om de echtheid en correctheid ervan "
 "te waarborgen. Uitschakelen hiervan is een beveiligingsrisico"
@@ -2739,6 +2825,18 @@ msgstr "rpm"
 msgid "rpm-src"
 msgstr "rpm-src"
 
+#: gtk/window_rgdebinstall_progress.glade.h:1
+msgid ""
+"<big><b>Installing and removing software</b></big>\n"
+"\n"
+"The marked changes are now applied. This can take some time. Please wait."
+msgstr ""
+
+#: gtk/window_rgdebinstall_progress.glade.h:4
+#, fuzzy
+msgid "<i>Preperaring packages...</i>"
+msgstr "Bezig met opschonen pakketlijsten..."
+
 #: gtk/window_rginstall_progress_msgs.glade.h:1
 msgid "Extra output was generated during Package Manager operation"
 msgstr "Er is extra uitvoer gegenereerd tijdens pakketbeheer"
@@ -2767,7 +2865,8 @@ msgid "<b>Terminal Output:</b>"
 msgstr "<b>Terminal uitvoer:</b>"
 
 #: gtk/window_zvtinstallprogress.glade.h:2
-msgid "Close this dialog after the changes have been applied successfully"
+#, fuzzy
+msgid "Close this dialog after the changes have been successfully applied"
 msgstr "Venster sluiten nadat de veranderingen zijn doorgevoerd"
 
 #: data/synaptic.desktop.in.h:1
@@ -2926,11 +3025,11 @@ msgstr ""
 "<b>De volgende pictogrammen worden gebruikt om de status van een pakket aan "
 "te geven:</b>"
 
-#: gtk/rgterminstallprogress.cc:86
+#: gtk/rgterminstallprogress.cc:75
 msgid "<i>Running...</i>"
 msgstr "<i>Actief...</i>"
 
-#: gtk/rgterminstallprogress.cc:93
+#: gtk/rgterminstallprogress.cc:82
 msgid ""
 "\n"
 "Successfully applied all changes. You can close the window now "
@@ -2938,7 +3037,7 @@ msgstr ""
 "\n"
 "Alle veranderingen succesvol doorgevoerd. U kunt het venster sluiten "
 
-#: gtk/rgterminstallprogress.cc:94
+#: gtk/rgterminstallprogress.cc:83
 msgid ""
 "\n"
 "Failed to apply all changes! Scroll in this buffer to see what went wrong "
@@ -2947,7 +3046,7 @@ msgstr ""
 "Niet alle veranderingen zijn succesvol doorgevoerd! Kijk hierboven naar de "
 "fout "
 
-#: gtk/rgterminstallprogress.cc:96
+#: gtk/rgterminstallprogress.cc:85
 msgid ""
 "\n"
 "Successfully installed all packages of the current medium. To continue the "
@@ -2957,23 +3056,24 @@ msgstr ""
 "Alle pakketten van het huidige medium zijn geïnstalleerd. Sluit dit venster "
 "om door te gaan."
 
-#: gtk/rgterminstallprogress.cc:145
+#: gtk/rgterminstallprogress.cc:128
 msgid "<i>Finished</i>"
 msgstr "<i>Klaar</i>"
 
-#: gtk/rgterminstallprogress.cc:154
+#: gtk/rgterminstallprogress.cc:139
 msgid "<i>Can't close while running</i>"
 msgstr "<i>Kan niet sluiten tijdens activiteit</i>"
 
 #. vim:sts=3:sw=3
 #: gtk/dialog_download_error.glade.h:1
+#, fuzzy
 msgid ""
-"<big><b>Could not download all package files</b></big>\n"
+"<big><b>Could not download all necessary package files</b></big>\n"
 "\n"
 "The version of the package that you want to install might be no longer "
-"available in the repository. Or there might be problems with the source of "
-"the package. Refresh the package list and check the source of the package (e."
-"g. CD or network connection)."
+"available in the repository, or there may be problems with the source of the "
+"package. Refresh the package list and check the source of the package (e.g. "
+"CD or network connection)."
 msgstr ""
 "<big><b>Kan niet alle pakketten downloaden</b></big>\n"
 "\n"
@@ -2982,30 +3082,123 @@ msgstr ""
 "pakkettenbron. Ververs de pakkettenlijst en controleer de bron van het "
 "pakket ( bijvoorbeeld CD of netwerkverbinding)."
 
-#~ msgid "Downloading Files"
-#~ msgstr "Ophalen van bestanden"
+#: gtk/dialog_update_outdated.glade.h:1
+msgid ""
+"<span weight=\"bold\" size=\"larger\">Your package information is out of "
+"date</span>\n"
+"\n"
+"Your package information is older than 48 hours. There could be important "
+"security updates available. It is recommended to reload the package "
+"information regularly."
+msgstr ""
+"<span weight=\"bold\" size=\"larger\">Uw pakketinformatie is verouderd</"
+"span>\n"
+"\n"
+"Uw pakketinformatie is meer dan 2 dagen oud. Er zouden belangrijke "
+"beveiligingsupdates kunnen zijn. U dient de pakketinformatie regelmatig bij "
+"te werken."
+
+#: gtk/dialog_update_outdated.glade.h:4
+msgid "Remember the answer"
+msgstr "Dit antwoord onthouden"
+
+#: gtk/dialog_update_outdated.glade.h:5
+msgid "_Reload"
+msgstr "_Herladen"
+
+#: gtk/window_logview.glade.h:1
+#, fuzzy
+msgid "History"
+msgstr "Zoekgeschiedenis"
+
+#: gtk/window_logview.glade.h:2
+#, fuzzy
+msgid "History of installed, upgraded and removed software packages."
+msgstr "Softwarepakketten installeren, verwijderen of bijwerken"
+
+#~ msgid "ignore"
+#~ msgstr "negeren"
+
+#~ msgid "<b>Distribution</b>"
+#~ msgstr "<b>Distributie</b>"
 
 #, fuzzy
-#~ msgid "Refresh the list of known packages from remote server"
-#~ msgstr "Lijst van bekende pakketten verversen"
+#~ msgid ""
+#~ "<b>Note:</b> The package information must be reloaded and all marked "
+#~ "changes will be lost. Make sure you apply your changes first."
+#~ msgstr ""
+#~ "<b>Opmerking:</b> De pakkettenlijst moet ververst worden. Alle "
+#~ "gemarkeerde veranderingen zullen verloren gaan. Vergeet niet eerst uw "
+#~ "veranderingen toe te passen."
 
-#~ msgid "Downloading Index Files"
-#~ msgstr "Ophalen van lijstbestanden"
+#~ msgid "Default archive: "
+#~ msgstr "Standaardarchief: "
 
-#~ msgid "Refreshing package list..."
-#~ msgstr "Opschonen van pakketlijsten..."
+#~ msgid "Expert"
+#~ msgstr "Expert"
 
-#~ msgid "To be kept back"
-#~ msgstr "Onveranderd"
+#~ msgid ""
+#~ "Select the default release if more than one is specifed in the sources."
+#~ "list"
+#~ msgstr "Kies de standaardversie als er meer dan een mogelijk zijn"
 
-#~ msgid "Alphabet"
-#~ msgstr "Alfabet"
+#~ msgid "%s is/will be installed"
+#~ msgstr "%s is / wordt geïnstalleerd"
 
-#~ msgid "Release"
-#~ msgstr "Uitgave"
+#~ msgid "package is not installable"
+#~ msgstr "pakket kan niet geïnstalleerd worden"
 
-#~ msgid "<b>Single Files:</b>"
-#~ msgstr "<b>Losse bestanden:</b>"
+#~ msgid "package is a virtual package"
+#~ msgstr "pakket is een virtueel pakket"
 
-#~ msgid "<b>Total Progress:</b>"
-#~ msgstr "<b>Voortgang:</b>"
+#~ msgid "package is/will not be installed"
+#~ msgstr "pakket is / wordt niet geïnstalleerd"
+
+#~ msgid "dependency is satisfied"
+#~ msgstr "afhankelijkheden zijn voldaan"
+
+#, fuzzy
+#~ msgid ""
+#~ "\n"
+#~ "The following packages are DOWNGRADED:\n"
+#~ msgstr ""
+#~ "\n"
+#~ "De volgende pakketten worden bijgewerkt naar een OUDERE VERSIE:\n"
+
+#, fuzzy
+#~ msgid ""
+#~ "\n"
+#~ "The following packages are removed:\n"
+#~ msgstr ""
+#~ "\n"
+#~ "De volgende pakketten worden verwijderd:\n"
+
+#, fuzzy
+#~ msgid ""
+#~ "\n"
+#~ "The following packages are upgraded:\n"
+#~ msgstr ""
+#~ "\n"
+#~ "De volgende pakketten worden bijgewerkt:\n"
+
+#, fuzzy
+#~ msgid ""
+#~ "\n"
+#~ "The following packages are installed:\n"
+#~ msgstr ""
+#~ "\n"
+#~ "De volgende pakketten worden geïnstalleerd:\n"
+
+#, fuzzy
+#~ msgid ""
+#~ "\n"
+#~ "The following packages are re-installed:\n"
+#~ msgstr ""
+#~ "\n"
+#~ "De volgende pakketten worden ge-herinstalleerd:\n"
+
+#~ msgid "To be not upgraded"
+#~ msgstr "Niet bijwerken"
+
+#~ msgid "View Commit Log"
+#~ msgstr "Logboek raadplegen"

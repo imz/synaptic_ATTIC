@@ -95,6 +95,7 @@ INTLTOOL_THEME_RULE = @INTLTOOL_THEME_RULE@
 INTLTOOL_UI_RULE = @INTLTOOL_UI_RULE@
 INTLTOOL_UPDATE = @INTLTOOL_UPDATE@
 INTLTOOL_XAM_RULE = @INTLTOOL_XAM_RULE@
+INTLTOOL_XML_NOMERGE_RULE = @INTLTOOL_XML_NOMERGE_RULE@
 INTLTOOL_XML_RULE = @INTLTOOL_XML_RULE@
 LDFLAGS = @LDFLAGS@
 LIBOBJS = @LIBOBJS@
@@ -138,8 +139,6 @@ WITH_LUA_FALSE = @WITH_LUA_FALSE@
 WITH_LUA_TRUE = @WITH_LUA_TRUE@
 XGETTEXT = @XGETTEXT@
 XMLTO = @XMLTO@
-ZVT_CFLAGS = @ZVT_CFLAGS@
-ZVT_LIBS = @ZVT_LIBS@
 ac_ct_CC = @ac_ct_CC@
 ac_ct_CXX = @ac_ct_CXX@
 ac_ct_RANLIB = @ac_ct_RANLIB@
@@ -163,6 +162,7 @@ libdir = @libdir@
 libexecdir = @libexecdir@
 localstatedir = @localstatedir@
 mandir = @mandir@
+mkdir_p = @mkdir_p@
 oldincludedir = @oldincludedir@
 prefix = @prefix@
 program_transform_name = @program_transform_name@
@@ -179,7 +179,7 @@ INCLUDES = -I${top_srcdir}/common \
 	-DPACKAGE_LOCALE_DIR=\""$(prefix)/$(DATADIRNAME)/locale"\" \
 	-DSYNAPTIC_GLADEDIR=\""$(datadir)/synaptic/glade/"\" \
 	-DSYNAPTIC_PIXMAPDIR=\""$(datadir)/synaptic/pixmaps/"\" \
-	@PACKAGE_CFLAGS@ @ZVT_CFLAGS@ @VTE_CFLAGS@ $(LIBTAGCOLL_CFLAGS)
+	@PACKAGE_CFLAGS@ @VTE_CFLAGS@ $(LIBTAGCOLL_CFLAGS)
 
 
 sbin_PROGRAMS = synaptic 
@@ -189,7 +189,7 @@ sbin_PROGRAMS = synaptic
 synaptic_LDADD = \
 	${top_builddir}/common/libsynaptic.a\
 	-lapt-pkg @RPM_LIBS@ @DEB_LIBS@ \
-	@PACKAGE_LIBS@ @ZVT_LIBS@ @VTE_LIBS@ \
+	@PACKAGE_LIBS@ @VTE_LIBS@ \
 	-lpthread $(LIBTAGCOLL_LIBS) 
 
 
@@ -202,13 +202,14 @@ glade_DATA = \
 	window_find.glade  \
 	window_filters.glade \
 	window_iconlegend.glade \
+	window_logview.glade \
 	dialog_changelog.glade \
 	dialog_change_version.glade \
-	dialog_locales_warning.glade \
         window_main.glade \
 	window_preferences.glade \
 	dialog_quit.glade  \
 	window_rginstall_progress.glade \
+	window_rgdebinstall_progress.glade \
 	window_rginstall_progress_msgs.glade \
 	window_repositories.glade \
 	window_setopt.glade  \
@@ -245,12 +246,16 @@ synaptic_SOURCES = \
 	rgfindwindow.h\
 	rgiconlegend.h\
 	rgiconlegend.cc\
+	rglogview.cc\
+	rglogview.h\
 	rgmisc.cc\
 	rgmisc.h\
 	rgsetoptwindow.cc\
 	rgsetoptwindow.h\
 	rgdummyinstallprogress.cc\
 	rgdummyinstallprogress.h\
+	rgdebinstallprogress.cc\
+	rgdebinstallprogress.h\
 	rgterminstallprogress.cc\
 	rgterminstallprogress.h\
 	rginstallprogress.cc\
@@ -294,15 +299,16 @@ am_synaptic_OBJECTS = gsynaptic.$(OBJEXT) gtkpkglist.$(OBJEXT) \
 	rgaboutpanel.$(OBJEXT) rgcacheprogress.$(OBJEXT) \
 	rgpreferenceswindow.$(OBJEXT) rgfetchprogress.$(OBJEXT) \
 	rgfiltermanager.$(OBJEXT) rgfindwindow.$(OBJEXT) \
-	rgiconlegend.$(OBJEXT) rgmisc.$(OBJEXT) \
+	rgiconlegend.$(OBJEXT) rglogview.$(OBJEXT) rgmisc.$(OBJEXT) \
 	rgsetoptwindow.$(OBJEXT) rgdummyinstallprogress.$(OBJEXT) \
-	rgterminstallprogress.$(OBJEXT) rginstallprogress.$(OBJEXT) \
-	rgslideshow.$(OBJEXT) rgtaskswin.$(OBJEXT) \
-	rgcdscanner.$(OBJEXT) rgmainwindow.$(OBJEXT) \
-	rgpkgdetails.$(OBJEXT) rgrepositorywin.$(OBJEXT) \
-	rgvendorswindow.$(OBJEXT) rgsummarywindow.$(OBJEXT) \
-	rgchangeswindow.$(OBJEXT) rguserdialog.$(OBJEXT) \
-	rgwindow.$(OBJEXT) rggladewindow.$(OBJEXT)
+	rgdebinstallprogress.$(OBJEXT) rgterminstallprogress.$(OBJEXT) \
+	rginstallprogress.$(OBJEXT) rgslideshow.$(OBJEXT) \
+	rgtaskswin.$(OBJEXT) rgcdscanner.$(OBJEXT) \
+	rgmainwindow.$(OBJEXT) rgpkgdetails.$(OBJEXT) \
+	rgrepositorywin.$(OBJEXT) rgvendorswindow.$(OBJEXT) \
+	rgsummarywindow.$(OBJEXT) rgchangeswindow.$(OBJEXT) \
+	rguserdialog.$(OBJEXT) rgwindow.$(OBJEXT) \
+	rggladewindow.$(OBJEXT)
 synaptic_OBJECTS = $(am_synaptic_OBJECTS)
 synaptic_DEPENDENCIES = ${top_builddir}/common/libsynaptic.a
 synaptic_LDFLAGS =
@@ -316,6 +322,7 @@ am__depfiles_maybe = depfiles
 @AMDEP_TRUE@	./$(DEPDIR)/rgcacheprogress.Po \
 @AMDEP_TRUE@	./$(DEPDIR)/rgcdscanner.Po \
 @AMDEP_TRUE@	./$(DEPDIR)/rgchangeswindow.Po \
+@AMDEP_TRUE@	./$(DEPDIR)/rgdebinstallprogress.Po \
 @AMDEP_TRUE@	./$(DEPDIR)/rgdummyinstallprogress.Po \
 @AMDEP_TRUE@	./$(DEPDIR)/rgfetchprogress.Po \
 @AMDEP_TRUE@	./$(DEPDIR)/rgfiltermanager.Po \
@@ -323,6 +330,7 @@ am__depfiles_maybe = depfiles
 @AMDEP_TRUE@	./$(DEPDIR)/rggladewindow.Po \
 @AMDEP_TRUE@	./$(DEPDIR)/rgiconlegend.Po \
 @AMDEP_TRUE@	./$(DEPDIR)/rginstallprogress.Po \
+@AMDEP_TRUE@	./$(DEPDIR)/rglogview.Po \
 @AMDEP_TRUE@	./$(DEPDIR)/rgmainwindow.Po ./$(DEPDIR)/rgmisc.Po \
 @AMDEP_TRUE@	./$(DEPDIR)/rgpkgdetails.Po \
 @AMDEP_TRUE@	./$(DEPDIR)/rgpreferenceswindow.Po \
@@ -399,6 +407,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rgcacheprogress.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rgcdscanner.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rgchangeswindow.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rgdebinstallprogress.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rgdummyinstallprogress.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rgfetchprogress.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rgfiltermanager.Po@am__quote@
@@ -406,6 +415,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rggladewindow.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rgiconlegend.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rginstallprogress.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rglogview.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rgmainwindow.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rgmisc.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rgpkgdetails.Po@am__quote@

@@ -62,13 +62,16 @@ class RGPreferencesWindow:public RGGladeWindow {
    GtkWidget *_useProxy;
 
    // policy settings
-   GtkWidget *_optionmenuDefaultDistro;
+   GtkWidget *_comboDefaultDistro;
    string _defaultDistro;
+
+   bool _dirty;
 
    int columnPos[6];
 
    // distro selection
-   static void onArchiveSelection(GtkWidget *self, void *data);
+   static void cbArchiveSelection(GtkWidget *self, void *data);
+   static void cbRadioDistributionChanged(GtkWidget *self, void *data);
    bool distroChanged;
 
    // treeview stuff
@@ -91,14 +94,14 @@ class RGPreferencesWindow:public RGGladeWindow {
    void saveColors();
    void saveTempFiles();
    void saveNetwork();
-   void saveExpert();
+   void saveDistribution();
 
    void readGeneral();
    void readColumnsAndFonts();
    void readColors();
    void readTempFiles();
    void readNetwork();
-   void readExpert();
+   void readDistribution();
 
 
    static void closeAction(GtkWidget *self, void *data);

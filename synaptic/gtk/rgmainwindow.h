@@ -40,6 +40,7 @@ using namespace std;
 #include "rgiconlegend.h"
 #include "gtkpkglist.h"
 #include "rgpkgdetails.h"
+#include "rglogview.h"
 
 #define TOOLBAR_HIDE -1
 
@@ -142,6 +143,7 @@ class RGMainWindow : public RGGladeWindow, public RPackageObserver {
    RGTasksWin *_tasksWin;
    RGIconLegendPanel *_iconLegendPanel;
    RGPkgDetailsWindow *_pkgDetails;
+   RGLogView *_logView;
 
    RGCacheProgress *_cacheProgress;
    RGUserDialog *_userDialog;
@@ -153,7 +155,6 @@ class RGMainWindow : public RGGladeWindow, public RPackageObserver {
 
  private:
    // display/table releated
-   void refreshTable(RPackage *selectedPkg = NULL);
    void refreshSubViewList();
 
    virtual bool close();
@@ -203,6 +204,8 @@ class RGMainWindow : public RGGladeWindow, public RPackageObserver {
  public:
    RGMainWindow(RPackageLister *packLister, string name);
    virtual ~RGMainWindow() {};
+
+   void refreshTable(RPackage *selectedPkg = NULL);
 
    void changeView(int view, string subView="");
 
@@ -257,12 +260,11 @@ class RGMainWindow : public RGGladeWindow, public RPackageObserver {
    // file menu
    static void cbTasksClicked(GtkWidget *self, void *data);
    static void cbOpenClicked(GtkWidget *self, void *data);
-   static void cbOpenSelections(GtkWidget *file_selector, gpointer data);
    static void cbSaveClicked(GtkWidget *self, void *data);
    static void cbSaveAsClicked(GtkWidget *self, void *data);
-   static void cbSaveSelections(GtkWidget *file_selector, gpointer data);
    string selectionsFilename;
    bool saveFullState;
+   static void cbViewLogClicked(GtkWidget *self, void *data);
 
    // actions menu
    static void cbUndoClicked(GtkWidget *self, void *data);

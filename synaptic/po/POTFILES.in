@@ -13,9 +13,9 @@ common/rpmindexcopy.cc
 common/rpackageview.h
 common/rpackageview.cc
 gtk/dialog_quit.glade
+gtk/dialog_conffile.glade
 gtk/dialog_change_version.glade
 gtk/dialog_upgrade.glade
-gtk/dialog_locales_warning.glade
 gtk/dialog_task_descr.glade
 gtk/gsynaptic.cc
 gtk/rgcdscanner.cc
@@ -27,6 +27,7 @@ gtk/rgdummyinstallprogress.cc
 gtk/rgfetchprogress.cc
 gtk/rgfiltermanager.cc
 gtk/rginstallprogress.cc
+gtk/rglogview.cc
 gtk/rgdummyinstallprogress.cc
 gtk/rgpkgdetails.cc
 gtk/rgmainwindow.cc
@@ -50,6 +51,7 @@ gtk/window_summary.glade
 gtk/window_filters.glade
 gtk/window_repositories.glade
 gtk/window_rginstall_progress.glade
+gtk/window_rgdebinstall_progress.glade
 gtk/window_rginstall_progress_msgs.glade
 gtk/window_tasks.glade
 gtk/window_zvtinstallprogress.glade
@@ -80,3 +82,5 @@ gtk/window_zvtinstallprogress.glade
 gtk/window_details.glade
 gtk/rgterminstallprogress.cc
 gtk/dialog_download_error.glade
+gtk/dialog_update_outdated.glade
+gtk/window_logview.glade

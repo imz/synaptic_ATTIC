@@ -1,0 +1,11 @@
+--- synaptic-0.56/common/rpackageview.h~	2004-10-13 17:58:33 +0300
++++ synaptic-0.56/common/rpackageview.h	2005-01-31 18:07:07 +0200
+@@ -69,7 +69,7 @@ class RPackageView {
+    void showAll() { 
+       _selectedView = _all; 
+       _hasSelection = false;
+-      _selectedName.clear();
++      _selectedName = "";
+    };
+ 
+    vector<string> getSubViews();
