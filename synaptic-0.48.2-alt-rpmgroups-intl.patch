@@ -1,0 +1,49 @@
+diff -ur synaptic-0.48.2/common/rpackagelister.cc synaptic-0.48.2.groups/common/rpackagelister.cc
+--- synaptic-0.48.2/common/rpackagelister.cc	2004-03-25 11:55:38 +0200
++++ synaptic-0.48.2.groups/common/rpackagelister.cc	2004-06-27 18:53:59 +0300
+@@ -791,11 +791,7 @@
+ 	{
+ 	    string sec = pkg->section();
+ 	    if(itermap.find(sec) == itermap.end()) {
+-#ifndef HAVE_RPM
+ 		string str = trans_section(sec);
+-#else
+-		string str = sec;
+-#endif
+ 		it = _treeOrganizer.insert(_treeOrganizer.begin(), 
+ 					   pkgPair(str,NULL));
+ 		itermap[sec] = it;
+diff -ur synaptic-0.48.2/common/sections_trans.cc synaptic-0.48.2.groups/common/sections_trans.cc
+--- synaptic-0.48.2/common/sections_trans.cc	2004-01-29 14:11:52 +0200
++++ synaptic-0.48.2.groups/common/sections_trans.cc	2004-06-27 18:51:43 +0300
+@@ -3,6 +3,8 @@
+  *  
+  */
+ 
++#include <iostream>
++
+ #include "sections_trans.h"
+ 
+ char *transtable[][2] = {
+@@ -93,5 +95,8 @@
+ 		return str;
+ }
+ #else
+-string trans_section(string sec) {return sec;}
++string trans_section(string sec)
++{
++  return dgettext("rpm", sec.c_str());
++}
+ #endif
+diff -ur synaptic-0.48.2/gtk/gsynaptic.cc synaptic-0.48.2.groups/gtk/gsynaptic.cc
+--- synaptic-0.48.2/gtk/gsynaptic.cc	2004-03-12 12:07:18 +0200
++++ synaptic-0.48.2.groups/gtk/gsynaptic.cc	2004-06-27 18:50:53 +0300
+@@ -101,6 +101,8 @@
+     bind_textdomain_codeset(GETTEXT_PACKAGE, "UTF-8");
+     bindtextdomain(GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR);
+     textdomain(GETTEXT_PACKAGE);
++
++    bind_textdomain_codeset("rpm", "UTF-8");
+ #endif
+ 
+     gtk_init(&argc, &argv);    
