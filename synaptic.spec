@@ -10,7 +10,7 @@
 
 Name: synaptic
 Version: 0.48.2
-Release: alt2
+Release: alt3
 
 Summary: Graphical front-end for APT
 Summary(ru_RU.CP1251): Графическая оболочка для APT
@@ -28,6 +28,7 @@ Patch1: synaptic-0.36-alt-state.patch
 
 Patch2: synaptic-0.47-alt-xslt.patch
 Patch3: synaptic-0.48.2-alt-rpmgroups-intl.patch
+Patch4: synaptic-0.48.2-alt-brokendeps-segfault.patch
 
 Requires: %{get_dep rpm}, %{get_dep libapt}
 
@@ -68,6 +69,7 @@ Synaptic - это графическая оболочка для APT (Advanced Package Tool).
 #%%patch1 -p1
 #%%patch2 -p1
 %patch3 -p1
+%patch4 -p1
 
 %if_with ru_po
 # installing own translation
@@ -109,6 +111,10 @@ mkdir -p %buildroot%_mandir/ru/man8/
 %doc README* TODO NEWS AUTHORS
 
 %changelog
+* Sun Jul 11 2004 Sviatoslav Sviridov <svd@altlinux.ru> 0.48.2-alt3
+- Fixed segfault when system has broken packages (#4359)
+- updated russian translation
+
 * Sun Jun 27 2004 Sviatoslav Sviridov <svd@altlinux.ru> 0.48.2-alt2
 - created patch to perform group names translation using RPM messages
   (#4360)

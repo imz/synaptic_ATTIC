@@ -1,0 +1,21 @@
+--- synaptic-0.48.2/gtk/rgmainwindow.cc~	2004-04-07 22:46:41 +0300
++++ synaptic-0.48.2/gtk/rgmainwindow.cc	2004-07-11 20:44:52 +0300
+@@ -3659,13 +3659,11 @@
+     _lister->getStats(installed, broken, toinstall, toremove,sizeChange);
+     if(broken > 0) {
+ 	gchar *msg;
+-	if(broken == 1) {
+-	    msg = ngettext("You have %d broken package on your system!\n\n"
+-			   "Use the \"Broken\" filter to locate it.",
+-			   "You have %i broken packages on your system!\n\n"
+-			   "Use the \"Broken\" filter to locate them.", broken);
+-	    msg = g_strdup_printf(msg, broken);
+-	}
++	msg = ngettext("You have %d broken package on your system!\n\n"
++		       "Use the \"Broken\" filter to locate it.",
++		       "You have %i broken packages on your system!\n\n"
++		       "Use the \"Broken\" filter to locate them.", broken);
++	msg = g_strdup_printf(msg, broken);
+ 	_userDialog->warning(msg);
+ 	g_free(msg);
+     }
