@@ -46,7 +46,6 @@ public:
 	    RUserDialog::ButtonsType buttons=RUserDialog::ButtonsOk,
 	    bool defres=true);
 
-    virtual bool showErrors();
 };
 
 
@@ -74,12 +73,18 @@ class RGGladeUserDialog : public RGUserDialog
     GtkWidget *_dialog;
     GtkResponseType res;
     GladeXML *gladeXML;
+    bool init(const char *name);
 
  public:
     RGGladeUserDialog(RGWindow* parent) : gladeXML(0) {};
+    RGGladeUserDialog(RGWindow* parent, const char *name);
     virtual ~RGGladeUserDialog()  { gtk_widget_destroy(_dialog); };
 
-    bool run(const char *name);
+    void setTitle(string title) { 
+       gtk_window_set_title(GTK_WINDOW(_dialog),title.c_str());
+    }
+
+    int run(const char *name=NULL, bool return_gtk_response=false);
     GladeXML *getGladeXML() { return gladeXML; };
 };
 #endif

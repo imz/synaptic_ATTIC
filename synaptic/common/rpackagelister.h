@@ -37,19 +37,9 @@
 
 #include "rpackagecache.h"
 #include "rpackage.h"
+#include "rpackageview.h"
 #include "ruserdialog.h"
-#include "tree.hh"
 #include "config.h"
-
-#ifdef HAVE_DEBTAGS
-#include <TagcollParser.h>
-#include <StdioParserInput.h>
-#include <SmartHierarchy.h>
-#include <TagcollBuilder.h>
-#include <HandleMaker.h>
-#include <TagCollection.h>
-#endif
-
 
 using namespace std;
 
@@ -57,198 +47,165 @@ class OpProgress;
 class RPackageCache;
 class RPackageFilter;
 class RCacheActor;
+class RPackageViewFilter;
+class RPackageViewSearch;
 class pkgRecords;
 class pkgAcquireStatus;
 class pkgPackageManager;
 
 
 struct RFilter;
-
+class RPackageView;
 
 class RInstallProgress;
 
 class RPackageObserver {
-public:
+ public:
    virtual void notifyChange(RPackage *pkg) = 0;
    virtual void notifyPreFilteredChange() = 0;
    virtual void notifyPostFilteredChange() = 0;
 };
 
 class RCacheObserver {
-public:
+ public:
    virtual void notifyCacheOpen() = 0;
    virtual void notifyCachePreChange() = 0;
    virtual void notifyCachePostChange() = 0;
 };
 
-class RPackageLister
-{
-private:
-   RPackageCache *_cache;
+class RPackageLister {
+
+   protected:
+
+   // Internal APT stuff.
+   RPackageCache * _cache;
    pkgRecords *_records;
    OpProgress *_progMeter;
+
+   // Other members.
+   vector<RPackage *> _packages;
+   vector<int> _packagesIndex;
+
+   vector<RPackage *> _viewPackages;
+   vector<int> _viewPackagesIndex;
+
+   // It shouldn't be needed to control this inside this class. -- niemeyer
+   bool _updating;
+
+   // all known packages (needed identifing "new" pkgs)
+   set<string> packageNames; 
+
+   bool _cacheValid;            // is the cache valid?
+
+   int _installedCount;         // # of installed packages
+
+   vector<RCacheActor *> _actors;
+
+   RPackageViewFilter *_filterView; // the package view that does the filtering
+   RPackageViewSearch *_searchView; // the package view that does the (simple) search
    
-   RPackage **_packages;
-   int *_packageindex;
-   unsigned _count;
-   set<string> allPackages; //all known packages (needed identifing "new" pkgs)
-   
-   bool _updating;   // can't access anything while this is true
-   bool _cacheValid; // is the cache valid?
+   public:
 
-   int _installedCount; // # of installed packages
-   
-   vector<RFilter*> _filterL;
-   RFilter *_filter; // effective filter, NULL for none
-   vector<RPackage*> _displayList; // list of packages after filter
-
-   vector<string> _sectionList; // list of all available package sections
-
-   vector<RCacheActor*> _actors;
-#if 0
-   tree<string> virtualPackages; // all virtual packages
-#endif
-
-public:
-   //FIXME: this shouldn't be public, but we'll do it for now this way
-#ifdef HAVE_DEBTAGS
-    HierarchyNode<int> *_tagroot;
-    HandleMaker<RPackage*> *_hmaker;
-    TagCollection<int> _coll;
-#endif
-
-   typedef pair<string,RPackage*> pkgPair;
-   typedef tree<pkgPair>::iterator treeIter;
-   typedef tree<pkgPair>::sibling_iterator sibTreeIter;
-   typedef tree<pkgPair>::tree_node treeNode;
-   typedef enum {
-     TREE_DISPLAY_SECTIONS,
-     TREE_DISPLAY_ALPHABETIC,
-     TREE_DISPLAY_STATUS,
-     TREE_DISPLAY_FLAT,
-     TREE_DISPLAY_TAGS
-   } treeDisplayMode;
-   treeDisplayMode _displayMode;
+   unsigned int _viewMode;
 
    typedef enum {
-       TREE_SORT_NAME,
-       TREE_SORT_SIZE_ASC,
-       TREE_SORT_SIZE_DES
-   } treeSortMode;
-   treeSortMode _sortMode;
+      LIST_SORT_NAME,
+      LIST_SORT_SIZE_ASC,
+      LIST_SORT_SIZE_DES,
+      LIST_SORT_STATUS_ASC,
+      LIST_SORT_STATUS_DES,
+      LIST_SORT_VERSION_ASC,
+      LIST_SORT_VERSION_DES,
+      LIST_SORT_INST_VERSION_ASC,
+      LIST_SORT_INST_VERSION_DES
+   } listSortMode;
+   listSortMode _sortMode;
 
 #ifdef HAVE_RPM
    typedef pkgDepCache::State pkgState;
 #else
-   typedef vector<RPackage::MarkedStatus> pkgState;
+   typedef vector<int> pkgState;
 #endif
 
-private:
-   tree<pkgPair> _treeOrganizer;
+   private:
+
+   vector<RPackageView *> _views;
+   RPackageView *_selectedView;
 
    void applyInitialSelection();
-   
-   void makePresetFilters();
-   
-   bool applyFilters(RPackage *package);
 
    bool lockPackageCache(FileFd &lock);
 
-   void getFilteredPackages(vector<RPackage*> &packages);
-   void addFilteredPackageToTree(tree<pkgPair>& tree,
-				 map<string,tree<pkgPair>::iterator>& itermap,
-				 RPackage *pkg);
+   void sortPackages(vector<RPackage *> &packages,listSortMode mode);
 
-   void sortPackagesByName(vector<RPackage*> &packages);
-   void sortPackagesByInstSize(vector<RPackage*> &packages, int order);
-   
    struct {
-       char *pattern;       
-       regex_t regex;
-       bool isRegex;
-       int last;
+      char *pattern;
+      regex_t regex;
+      bool isRegex;
+      int last;
    } _searchData;
 
-   vector<RPackageObserver*> _packageObservers;
-   vector<RCacheObserver*> _cacheObservers;
-   
+   vector<RPackageObserver *> _packageObservers;
+   vector<RCacheObserver *> _cacheObservers;
+
    RUserDialog *_userDialog;
 
    // undo/redo stuff
    list<pkgState> undoStack;
    list<pkgState> redoStack;
 
-  
-public:
-   void sortPackagesByName() { sortPackagesByName(_displayList); };
-   void sortPackagesByInstSize(int order) { sortPackagesByInstSize(_displayList, order); };
-
-   inline void getSections(vector<string> &sections) {sections=_sectionList; };
-
-   inline int nrOfSections() { return _sectionList.size(); };
-
-   inline tree<pkgPair>* RPackageLister::getTreeOrganizer() { 
-     return &_treeOrganizer; 
-   };
-   inline void setTreeDisplayMode(treeDisplayMode mode) {
-     //cout << "setTreeDisplayMode() " << mode << endl;
-     _displayMode = mode;
-   };
-   inline treeDisplayMode getTreeDisplayMode() {
-     return _displayMode;
-   };
-   
-   void storeFilters();
-   void restoreFilters();
-
-   // filter management
-   void setFilter(int index=-1);
-   // note that setFilter will only set it if the filter is already registered
-   void setFilter(RFilter *filter);
-   inline RFilter *getFilter() { return _filter; };
-   int getFilterIndex(RFilter *filter=NULL);
-   unsigned int nrOfFilters() { return _filterL.size(); };
-
-   bool registerFilter(RFilter *filter);
-   void unregisterFilter(RFilter *filter);
-   void getFilterNames(vector<string> &filters);
-   inline RFilter *findFilter(unsigned int index) { 
-       if(index > _filterL.size()) return NULL; else return _filterL[index]; 
+   public:
+   void sortPackages(listSortMode mode) {
+      sortPackages(_viewPackages, mode);
    };
 
+   void setView(int index);
+   vector<string> getViews();
+   vector<string> getSubViews();
+
+   // set subView (if newView is empty, set to all packages)
+   bool setSubView(string newView="");
+
+   // this needs a different name, something like refresh
    void reapplyFilter();
-   
+
+   // is is exposed for the stuff like filter manager window
+   RPackageViewFilter *filterView() { return _filterView; };
+   RPackageViewSearch *searchView() { return _searchView; };
+
    // find 
    int findPackage(const char *pattern);
    int findNextPackage();
 
-   inline unsigned count() { return _updating ? 0 : _displayList.size(); };
-   inline RPackage *getElement(int row) { 
-       if (!_updating && row < (int)_displayList.size()) 
-	   return _displayList[row];
-       else
-	   return NULL;
-   };
-   int getElementIndex(RPackage *pkg);
-   RPackage *getElement(pkgCache::PkgIterator &pkg);
-   RPackage *getElement(string Name);
+   const vector<RPackage *> &getPackages() { return _packages; };
+   const vector<RPackage *> &getViewPackages() { return _viewPackages; };
+   RPackage *getPackage(int index) { return _packages.at(index); };
+   RPackage *getViewPackage(int index) { return _viewPackages.at(index); };
+   RPackage *getPackage(pkgCache::PkgIterator &pkg);
+   RPackage *getPackage(string name);
+   int getPackageIndex(RPackage *pkg);
+   int getViewPackageIndex(RPackage *pkg);
 
-   void getStats(int &installed, int &broken, int &toinstall, int &toremove,
-		 double &sizeChange);
-   
+   int packagesSize() { return _packages.size(); };
+   int viewPackagesSize() { return _updating ? 0 : _viewPackages.size(); };
+
+   void getStats(int &installed, int &broken, int &toInstall, int &toReInstall,
+		 int &toRemove, double &sizeChange);
+
    void getSummary(int &held, int &kept, int &essential,
-		   int &toInstall, int &toUpgrade, int &toRemove,
-		   int &toDowngrade, double &sizeChange);
-   
+                   int &toInstall, int &toReInstall, int &toUpgrade, 
+		   int &toRemove,  int &toDowngrade, double &sizeChange);
 
-   void getDetailedSummary(vector<RPackage*> &held, 
-			   vector<RPackage*> &kept, 
-			   vector<RPackage*> &essential,
-			   vector<RPackage*> &toInstall, 
-			   vector<RPackage*> &toUpgrade, 
-			   vector<RPackage*> &toRemove,
-			   vector<RPackage*> &toDowngrade,
-			   double &sizeChange);   
+
+   void getDetailedSummary(vector<RPackage *> &held,
+                           vector<RPackage *> &kept,
+                           vector<RPackage *> &essential,
+                           vector<RPackage *> &toInstall,
+                           vector<RPackage *> &toReInstall,
+                           vector<RPackage *> &toUpgrade,
+                           vector<RPackage *> &toRemove,
+                           vector<RPackage *> &toDowngrade,
+                           double &sizeChange);
 
    void getDownloadSummary(int &dlCount, double &dlSize);
 
@@ -259,39 +216,43 @@ public:
    void saveState(pkgState &state);
    void restoreState(pkgState &state);
    bool getStateChanges(pkgState &state,
-			vector<RPackage*> &kept,
-			vector<RPackage*> &toInstall, 
-			vector<RPackage*> &toUpgrade, 
-			vector<RPackage*> &toRemove,
-			vector<RPackage*> &toDowngrade,
-			vector<RPackage*> &exclude,
-			bool sorted=true);
+                        vector<RPackage *> &kept,
+                        vector<RPackage *> &toInstall,
+			vector<RPackage *> &toReInstall,
+                        vector<RPackage *> &toUpgrade,
+                        vector<RPackage *> &toRemove,
+                        vector<RPackage *> &toDowngrade,
+                        vector<RPackage *> &exclude, bool sorted = true);
 
    bool openCache(bool reset);
 
    bool fixBroken();
-   
+
    bool check();
    bool upgradable();
-   
+
    bool upgrade();
    bool distUpgrade();
-   
-   bool cleanPackageCache(bool forceClean=false);
 
-   bool updateCache(pkgAcquireStatus *status);
+   bool cleanPackageCache(bool forceClean = false);
+
+   bool updateCache(pkgAcquireStatus *status, string &error);
    bool commitChanges(pkgAcquireStatus *status, RInstallProgress *iprog);
-   
-   inline void setProgressMeter(OpProgress *progMeter) { _progMeter = progMeter; };
 
-   inline void setUserDialog(RUserDialog *dialog) { _userDialog = dialog; };
+   inline void setProgressMeter(OpProgress *progMeter) {
+      _progMeter = progMeter;
+   };
+
+   inline void setUserDialog(RUserDialog *dialog) {
+      _userDialog = dialog;
+   };
 
    // policy stuff                             
-   vector<string> getPolicyArchives() { 
-       if(_cacheValid)
-	   return _cache->getPolicyArchives(); 
-       else
-	   return vector<string>();
+   vector<string> getPolicyArchives() {
+      if (_cacheValid)
+         return _cache->getPolicyArchives();
+      else
+         return vector<string>();
    };
 
    // notification stuff about changes in packages
@@ -310,12 +271,12 @@ public:
 
    bool readSelections(istream &in);
    bool writeSelections(ostream &out, bool fullState);
-   
-   RPackageLister();   
+
+   RPackageLister();
    ~RPackageLister();
 };
 
 
 #endif
 
-// vim:sts=4:sw=4
+// vim:ts=3:sw=3:et

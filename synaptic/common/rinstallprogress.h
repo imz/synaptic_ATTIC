@@ -27,12 +27,10 @@
 #define _RINSTALLPROGRESS_H_
 
 #include "config.h"
-#include "rpackagemanager.h"
-#include <apt-pkg/packagemanager.h>
-
+#include <rpackagemanager.h>
 
 class RInstallProgress {
-protected:
+ protected:
    int _stdout;
    int _stderr;
    int _childin;
@@ -42,17 +40,20 @@ protected:
    int _donePackagesTotal;
    int _numPackagesTotal;
 
-   virtual void startUpdate() {};
-   virtual void updateInterface() {};
-   virtual void finishUpdate() {};
+   virtual void startUpdate() {
+   };
+   virtual void updateInterface() {
+   };
+   virtual void finishUpdate() {
+   };
 
-public:
+ public:
    virtual pkgPackageManager::OrderResult start(RPackageManager *pm,
-		   				int numPackages = 0,
-						int numPackagesTotal = 0);
+                                                int numPackages = 0,
+                                                int numPackagesTotal = 0);
 
 
-   RInstallProgress() : _donePackagesTotal(0), _numPackagesTotal(0) {};
+   RInstallProgress():_donePackagesTotal(0), _numPackagesTotal(0) {};
 };
 
 

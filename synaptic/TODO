@@ -1,21 +1,61 @@
-0.50+:
- - Separate sections from package list
- - think about using a package details dialog
+Unknown:
+ - split into user and root mode. User mode does all the changes and for
+   the final installation runs (with gksu or libgksu): 
+   # synaptic --set-selection --non-interactive --hide-main-window
+   (hide-main-window needs to be implemented)
+   -> MOST infrastructure is there. 
+      Problems: * set-version is not in selection file
+                * all settings are in in $USER/.synaptic (use --preserve-env?)
+		* proxy settings and stuff needs to be preserved/passed 
+		  "run-as-root synaptic"
+      
 
-Sebastian's wish list:
- - copy desktop file to the KDE menu - $KDEPREFIX/applnk/Settingsmenu
-   "kde-config --prefix"
+0.53:
+ - re-enable "default remove action" in the preferences window
+ - > > (synaptic:24143): Gtk-CRITICAL **: file gtkwidget.c: line 1827
+   > > (gtk_widget_hide): assertion `GTK_IS_WIDGET (widget)' failed
+   auf RPM
+ - search in name+provides in search-dialog
+ - network proxy detection if gnome/kde is installed/run
+
+0.50+:
+ * a "server list" similar to amule (or gnutella, etc).
+ - Separate sections from package list
+ - In the change log view, link "bug" references to the actual bug report
+
+Usability issues:
+ - Use new column editor in the preferences
+ - Disable search button in the search dialog until an expresseion was entered
+ - Disable "Undo" and "Redo" if there is no action to perform
+ - Rework repository and vendor dialog
+ - Think about implementing a summary of changes in the upgrade dialog
+ - Use HIGified common dialogs (alignments and message text!)
+ - Use a tree view for sections containing a separator "/" (e.g. SuSE, RedHat)
+ - Merge the message about failed downloads and the "ignore failed downloads"
+   dialog
+ - Pressing a key should jump to the first package with the same inital letter, 
+   if the focus is on the package list
+ - Do not show "0 broken" and other "0" messages in the status bar
+ - Use a warning or error icon in the status bar to get the users attention
+   (e.g. in the case of broken packages)
+ - Always show the progress bar in the main window and move it to left side
+   (this is the default position in GNOME)
+ - Make the status message more contextual: 
+ 	* show available upgrades after refresh
+	* if there are broken packages, this is the only relevant message
+ - Replace the "Running..." label in the "Apply changes" dialog with a
+   progress bar and use a busy cursor (?)
+
+Translation issues:
+ - Add comments for translators
+ - Reword unclear messages
+ - Use plural gettext in the status message
+
+Unsorted:
  - possibility to resume failed installation of half installed packages
    Execute should be available if there are outstanding packages 
    (difficult!)
- - exchange gtk popups with glade files to fulfil HIG and have nicer alert boxes
- - Icons should be themable: gtkiconfactory
- - Use new column dialog
-
-Unsorted:
  - if(userid != 0) { exec "gksu -c /usr/sbin/synaptic"}
- - when searching and then switching view-mode, go to the last selected
-   pkg (maybe do that every time the view is switched?)
  - when switching filters/update pkgs clear filter field
  - Please add hyperlink support in package info for example BTS entry
  - Please allow users to delete default filters and add an option to
@@ -23,6 +63,8 @@ Unsorted:
  - "crash handler" that automatically save the selections on a synaptic
    segfault (and present a dialog to reread them on the next start)
  - if download failed, use a special dialog to show it
+ - copy desktop file to the KDE menu - $KDEPREFIX/applnk/Settingsmenu
+   "kde-config --prefix"
  
  - ask on debian-deity if it is possible to get a "DeletePin" function.
    this way, we can do default release pining without rereading the cache
@@ -42,6 +84,7 @@ Configure:
      (currently hardcoded)
 
 GUI:
+   - Icons should be themable: gtkiconfactory
    - allow clicking in the depedency list so that the click takes
      you to the package
    - add TaskView view to show tasks (add just a new view). 
@@ -56,7 +99,6 @@ GUI:
    - add context menu in the dependency list to install/remove/upgrade
    - changesWindow should also support installing recommends/suggested pkgs
    - add a sources.list wizard for debian (like base-config)?
-   - make a the used font in the treeview configurable 
 
 Filter:
    - add "immutable" filters that can be configured via /etc/synaptic/filters
@@ -74,6 +116,15 @@ General:
    - implement raptoptions save/restore for getFlags/setFlags [not needed?]
 
 Done:
+   - sorting by versions
+   - redesign the columns (drag 'n drop?)
+   - "pin/hold" support (-)
+   - "install-this-versioN" (-) 
+   - make a the used font in the treeview configurable 
+   - when searching and then switching view-mode, go to the last selected
+     pkg (maybe do that every time the view is switched?)
+   - think about using a package details dialog
+   - add reinstall
    - Add konqueror and opera to the list of help browser
    - do not use ithe same sentence for singular and plural in summary
    - icons in status list

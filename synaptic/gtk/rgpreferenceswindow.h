@@ -23,70 +23,97 @@
 #include "rggladewindow.h"
 #include "rgmainwindow.h"
 
-class RGPreferencesWindow : public RGGladeWindow {
-    enum {LAYOUT_VPANED, LAYOUT_HPANED} _synapticLayout;
+class RGPreferencesWindow:public RGGladeWindow {
+   bool _blockAction;
 
-    RGMainWindow *_mainWin;
-    RPackageLister *_lister;
-    // option buttons
-    GtkWidget *_optionUseRegexp;
-    GtkWidget *_optionUseStatusColors;
-    GtkWidget *_optionAskRelated;
-    GtkWidget *_optionUseTerminal;
-    GtkWidget *_optionCheckRecom;
-    GtkWidget *_optionAskQuit;
+   enum {TREE_CHECKBOX_COLUMN, TREE_VISIBLE_NAME_COLUMN, TREE_NAME_COLUMN};
 
-    // cache settings
-    GtkWidget *_cacheLeave;
-    GtkWidget *_cacheClean;
-    GtkWidget *_cacheAutoClean;
+   struct column_struct {
+      bool visible;
+      const char *name;
+      const char *visible_name;
+   };
 
-    GtkWidget *_pathT;
-    GtkWidget *_sizeT;
-    GtkWidget *_maxUndoE;
-    GtkWidget *_optionmenuDel;
-    GtkWidget *_useProxy;
+   // the names for the VisibleColumnsTreeView
+   static const char *column_names[];
+   static const char *column_visible_names[];
 
-    // policy settings
-    GtkWidget *_optionmenuDefaultDistro;
+   RGMainWindow *_mainWin;
+   RPackageLister *_lister;
+   // option buttons
+   GtkWidget *_optionShowAllPkgInfoInMain;
+   GtkWidget *_optionUseStatusColors;
+   GtkWidget *_optionAskRelated;
+   GtkWidget *_optionUseTerminal;
+   GtkWidget *_optionCheckRecom;
+   GtkWidget *_optionAskQuit;
+   GtkWidget *_optionOneClick;
 
-    int columnPos[6];
-    
-    void readColors();
+   // cache settings
+   GtkWidget *_cacheLeave;
+   GtkWidget *_cacheClean;
+   GtkWidget *_cacheAutoClean;
 
-    // distro selection
-    static void onArchiveSelection(GtkWidget *self, void *data);
-    bool distroChanged;
+   GtkWidget *_pathT;
+   GtkWidget *_sizeT;
+   GtkWidget *_maxUndoE;
+   GtkWidget *_optionmenuDel;
+   GtkWidget *_useProxy;
 
-    // treeview stuff
-    void readTreeViewValues();
-    void saveTreeViewValues();
-    
-    // callbacks
-    static void changeFontAction(GtkWidget *self, void *data);
-    static void checkbuttonUserFontToggled(GtkWidget *self, void *data);
-    static void checkbuttonUserTerminalFontToggled(GtkWidget *self, void *data);
+   // policy settings
+   GtkWidget *_optionmenuDefaultDistro;
+   string _defaultDistro;
 
-    static void colorButtonToggled(GtkWidget *self, void *data);
+   int columnPos[6];
 
-    static void saveAction(GtkWidget *self, void *data);
-    static void closeAction(GtkWidget *self, void *data);
-    static void doneAction(GtkWidget *self, void *data);
-    static void clearCacheAction(GtkWidget *self, void *data);
-    
-    static void hpanedClickedAction(GtkWidget *self, void *data);
-    static void vpanedClickedAction(GtkWidget *self, void *data);
+   // distro selection
+   static void onArchiveSelection(GtkWidget *self, void *data);
+   bool distroChanged;
 
-    static void colorClicked(GtkWidget *self, void *data);
-    static void saveColor(GtkWidget *self, void *data);
+   // treeview stuff
+   void readTreeViewValues();
+   GtkListStore *_listColumns;
+   GtkWidget *_treeView;
+   static void cbMoveColumnUp(GtkWidget *self, void *data);
+   static void cbMoveColumnDown(GtkWidget *self, void *data);
+   static void cbToggleColumn(GtkWidget *self, char *path, void *data);
 
-    static void useProxyToggled(GtkWidget *self, void *data);
+   // callbacks
+   static void changeFontAction(GtkWidget *self, void *data);
+   static void checkbuttonUserFontToggled(GtkWidget *self, void *data);
+   static void checkbuttonUserTerminalFontToggled(GtkWidget *self,
+                                                  void *data);
+
+   static void saveAction(GtkWidget *self, void *data);
+   void saveGeneral();
+   void saveColumnsAndFonts();
+   void saveColors();
+   void saveTempFiles();
+   void saveNetwork();
+   void saveExpert();
+
+   void readGeneral();
+   void readColumnsAndFonts();
+   void readColors();
+   void readTempFiles();
+   void readNetwork();
+   void readExpert();
+
+
+   static void closeAction(GtkWidget *self, void *data);
+   static void doneAction(GtkWidget *self, void *data);
+   static void clearCacheAction(GtkWidget *self, void *data);
+
+   static void colorClicked(GtkWidget *self, void *data);
+   static void saveColor(GtkWidget *self, void *data);
+
+   static void useProxyToggled(GtkWidget *self, void *data);
 
  public:
-    RGPreferencesWindow(RGWindow *owner, RPackageLister *lister);
-    virtual ~RGPreferencesWindow() {};
-    virtual void show();
+   RGPreferencesWindow(RGWindow *owner, RPackageLister *lister);
+   virtual ~RGPreferencesWindow() {};
+   virtual void show();
 
-    // call this to set the proxy stuff for apt
-    static void applyProxySettings();
+   // call this to set the proxy stuff for apt
+   static void applyProxySettings();
 };

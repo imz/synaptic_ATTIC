@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: synaptic 0.32\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-04-09 16:12+0200\n"
+"POT-Creation-Date: 2004-09-19 11:36+0200\n"
 "PO-Revision-Date: 2002-01-21 09:49+0800\n"
 "Last-Translator: Anthony Fok <anthony@thizlinux.com>\n"
 "Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
@@ -15,358 +15,397 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: common/sections_trans.cc:9
+#. TRANSLATORS: Alias for the Debian package section "admin"
+#: common/sections_trans.cc:12
 msgid "System Administration"
 msgstr ""
 
-#: common/sections_trans.cc:10
+#. TRANSLATORS: Alias for the Debian package section "base"
+#: common/sections_trans.cc:14
 #, fuzzy
 msgid "Base System"
 msgstr "升級(_G)"
 
-#: common/sections_trans.cc:11
+#. TRANSLATORS: Alias for the Debian package section "comm"
+#: common/sections_trans.cc:16
 #, fuzzy
 msgid "Communication"
 msgstr "指令"
 
-#: common/sections_trans.cc:12
+#. TRANSLATORS: Alias for the Debian package section "devel"
+#: common/sections_trans.cc:18
 msgid "Development"
 msgstr ""
 
-#: common/sections_trans.cc:13 gtk/window_main_vpaned.glade.h:28
+#. TRANSLATORS: Alias for the Debian package section "doc"
+#: common/sections_trans.cc:20
 msgid "Documentation"
 msgstr ""
 
-#: common/sections_trans.cc:14
+#. TRANSLATORS: Alias for the Debian package section "editors"
+#: common/sections_trans.cc:22
 #, fuzzy
 msgid "Editors"
 msgstr "編輯篩選器..."
 
-#: common/sections_trans.cc:15
+#. TRANSLATORS: Alias for the Debian package section "electronics"
+#: common/sections_trans.cc:24
 msgid "Electronics"
 msgstr ""
 
-#: common/sections_trans.cc:16
+#. TRANSLATORS: Alias for the Debian package section "emmbedded"
+#: common/sections_trans.cc:26
 msgid "Embedded Devices"
 msgstr ""
 
-#: common/sections_trans.cc:17
+#. TRANSLATORS: Alias for the Debian package section "games"
+#: common/sections_trans.cc:28
 msgid "Games and Amusement"
 msgstr ""
 
-#: common/sections_trans.cc:18
+#. TRANSLATORS: Alias for the Debian package section "gnome"
+#: common/sections_trans.cc:30
 msgid "GNOME Desktop Environment"
 msgstr ""
 
-#: common/sections_trans.cc:19
+#. TRANSLATORS: Alias for the Debian package section "graphics"
+#: common/sections_trans.cc:32
 msgid "Graphics"
 msgstr ""
 
-#: common/sections_trans.cc:20
+#. TRANSLATORS: Alias for the Debian package section "hamradio"
+#: common/sections_trans.cc:34
 msgid "Amateur Radio"
 msgstr ""
 
-#: common/sections_trans.cc:21
+#. TRANSLATORS: Alias for the Debian package section "interpreters"
+#: common/sections_trans.cc:36
 msgid "Interpreted Computer Languages"
 msgstr ""
 
-#: common/sections_trans.cc:22
+#. TRANSLATORS: Alias for the Debian package section "KDE"
+#: common/sections_trans.cc:38
 msgid "KDE Desktop Environment"
 msgstr ""
 
-#: common/sections_trans.cc:23
+#. TRANSLATORS: Alias for the Debian package section "libdevel"
+#: common/sections_trans.cc:40
 msgid "Libraries - Development"
 msgstr ""
 
-#: common/sections_trans.cc:24
+#. TRANSLATORS: Alias for the Debian package section "libs"
+#: common/sections_trans.cc:42
 msgid "Libraries"
 msgstr ""
 
-#: common/sections_trans.cc:25
+#. TRANSLATORS: Alias for the Debian package section "mail"
+#: common/sections_trans.cc:44
 msgid "Email"
 msgstr ""
 
-#: common/sections_trans.cc:26
+#. TRANSLATORS: Alias for the Debian package section "math"
+#: common/sections_trans.cc:46
 msgid "Mathematics"
 msgstr ""
 
-#: common/sections_trans.cc:27
+#. TRANSLATORS: Alias for the Debian package section "misc"
+#: common/sections_trans.cc:48
 msgid "Miscellaneous - Text Based"
 msgstr ""
 
-#: common/sections_trans.cc:28
+#. TRANSLATORS: Alias for the Debian package section "net"
+#: common/sections_trans.cc:50
 #, fuzzy
 msgid "Networking"
 msgstr "色彩"
 
-#: common/sections_trans.cc:29
+#. TRANSLATORS: Alias for the Debian package section "news"
+#: common/sections_trans.cc:52
 #, fuzzy
 msgid "Newsgroup"
 msgstr "新增"
 
-#: common/sections_trans.cc:30
+#. TRANSLATORS: Alias for the Debian package section "oldlibs"
+#: common/sections_trans.cc:54
 msgid "Libraries - Old"
 msgstr ""
 
-#: common/sections_trans.cc:31
+#. TRANSLATORS: Alias for the Debian package section "otherosfs"
+#: common/sections_trans.cc:56
 msgid "Cross Platform"
 msgstr ""
 
-#: common/sections_trans.cc:32
+#. TRANSLATORS: Alias for the Debian package section "perl"
+#: common/sections_trans.cc:58
 #, fuzzy
 msgid "Perl Programming Language"
 msgstr "正在進行修改"
 
-#: common/sections_trans.cc:33
+#. TRANSLATORS: Alias for the Debian package section "python"
+#: common/sections_trans.cc:60
 msgid "Python Programming Language"
 msgstr ""
 
-#: common/sections_trans.cc:34
+#. TRANSLATORS: Alias for the Debian package section "science"
+#: common/sections_trans.cc:62
 msgid "Science"
 msgstr ""
 
-#: common/sections_trans.cc:35
+#. TRANSLATORS: Alias for the Debian package section "shells"
+#: common/sections_trans.cc:64
 msgid "Shells"
 msgstr ""
 
-#: common/sections_trans.cc:36
+#. TRANSLATORS: Alias for the Debian package section "sound"
+#: common/sections_trans.cc:66
 msgid "Multimedia"
 msgstr ""
 
-#: common/sections_trans.cc:37
+#. TRANSLATORS: Alias for the Debian package section "tex"
+#: common/sections_trans.cc:68
 msgid "TeX Authoring"
 msgstr ""
 
-#: common/sections_trans.cc:38
+#. TRANSLATORS: Alias for the Debian package section "text"
+#: common/sections_trans.cc:70
 msgid "Word Processing"
 msgstr ""
 
-#: common/sections_trans.cc:39
+#. TRANSLATORS: Alias for the Debian package section "utils"
+#: common/sections_trans.cc:72
 #, fuzzy
 msgid "Utilities"
 msgstr "篩選器"
 
-#: common/sections_trans.cc:40
+#. TRANSLATORS: Alias for the Debian package section "web"
+#: common/sections_trans.cc:74
 msgid "World Wide Web"
 msgstr ""
 
-#: common/sections_trans.cc:41
+#. TRANSLATORS: Alias for the Debian package section "x11"
+#: common/sections_trans.cc:76
 msgid "Miscellaneous  - Graphical"
 msgstr ""
 
-#: common/sections_trans.cc:42 common/rpackage.cc:125 gtk/rgmainwindow.cc:76
+#. TRANSLATORS: The section of the package is not known
+#: common/sections_trans.cc:78 common/rpackage.cc:108 gtk/rgmainwindow.cc:76
 msgid "Unknown"
 msgstr "不明"
 
-#: common/sections_trans.cc:43
+#. TRANSLATORS: Alias for the Debian package section "alien"
+#: common/sections_trans.cc:80
 msgid "Converted From RPM by Alien"
 msgstr ""
 
-#: common/sections_trans.cc:45
+#. TRANSLATORS: Alias for the Debian package section "non-US"
+#. Export to the outside of the USA is not allowed
+#. or restricted
+#: common/sections_trans.cc:85 common/sections_trans.cc:103
+#: common/sections_trans.cc:107
 msgid "Restricted On Export"
 msgstr ""
 
-#: common/sections_trans.cc:46 common/sections_trans.cc:61
+#. TRANSLATORS: Alias for the Debian package section "non free"
+#: common/sections_trans.cc:87 common/sections_trans.cc:104
 #, fuzzy
 msgid "non free"
 msgstr "釋放"
 
-#: common/sections_trans.cc:47 common/sections_trans.cc:65
+#. TRANSLATORS: Alias for the Debian package section "contrib"
+#. Free software that depends on non-free software
+#: common/sections_trans.cc:90 common/sections_trans.cc:108
 msgid "contrib"
 msgstr ""
 
-#: common/sections_trans.cc:60 common/sections_trans.cc:64
-msgid "Non US"
-msgstr ""
-
-#: common/sections_trans.cc:89
+#: common/indexcopy.cc:51 common/rpmindexcopy.cc:75
 #, c-format
-msgid "%s <i>(%s)</i>"
+msgid "Stat failed for %s"
 msgstr ""
 
-#: common/indexcopy.cc:51
-#, fuzzy, c-format
-msgid "Failed to access %s"
-msgstr "開啟 %s.new 失敗"
-
-#: common/indexcopy.cc:82 common/rpmindexcopy.cc:112
+#: common/indexcopy.cc:78 common/rpmindexcopy.cc:107
 #, fuzzy
 msgid "Unable to create a tmp file"
 msgstr "無法讀取 CD-ROM 資料庫 %s"
 
-#: common/indexcopy.cc:89
-msgid "Unable to start helper process (gzip). Please report."
+#: common/indexcopy.cc:87
+msgid "Internal Error: Couldn't fork gzip. Please report."
 msgstr ""
 
-#: common/indexcopy.cc:110
+#: common/indexcopy.cc:108
 msgid "gzip failed, perhaps the disk is full."
 msgstr ""
 
-#: common/indexcopy.cc:131
+#: common/indexcopy.cc:129
 #, fuzzy
 msgid "Failed to reopen fd"
 msgstr "開啟 %s.new 失敗"
 
-#: common/indexcopy.cc:234 common/indexcopy.cc:261 common/rpmindexcopy.cc:175
-#: common/rpmindexcopy.cc:216
+#: common/indexcopy.cc:219 common/indexcopy.cc:243 common/rpmindexcopy.cc:170
+#: common/rpmindexcopy.cc:206
 #, fuzzy
 msgid "Failed to rename"
 msgstr "開啟 %s.new 失敗"
 
-#: common/indexcopy.cc:285
+#: common/indexcopy.cc:267
 msgid "No valid records were found."
 msgstr ""
 
-#: common/indexcopy.cc:464
+#: common/indexcopy.cc:442
 msgid "Cannot find filename or size tag"
 msgstr ""
 
-#: common/indexcopy.cc:505
+#: common/indexcopy.cc:486
 msgid "Error parsing file record"
 msgstr ""
 
-#: common/rcdscanner.cc:112 common/rcdscanner.cc:165
+#: common/rcdscanner.cc:110 common/rcdscanner.cc:160
 #, c-format
 msgid "Failed to open %s.new"
 msgstr "開啟 %s.new 失敗"
 
-#: common/rcdscanner.cc:139 common/rcdscanner.cc:257
+#: common/rcdscanner.cc:135 common/rcdscanner.cc:245
 #, c-format
 msgid "Failed to rename %s.new to %s"
 msgstr ""
 
-#: common/rcdscanner.cc:208 common/rcdscanner.cc:246
+#: common/rcdscanner.cc:200 common/rcdscanner.cc:233
 msgid "Internal error"
 msgstr "內部錯誤"
 
-#: common/rcdscanner.cc:269
+#: common/rcdscanner.cc:257
 msgid "Preparing..."
 msgstr ""
 
-#: common/rcdscanner.cc:283
+#: common/rcdscanner.cc:270
 #, c-format
 msgid "Unable to read the cdrom database %s"
 msgstr "無法讀取 CD-ROM 資料庫 %s"
 
-#: common/rcdscanner.cc:292 common/rcdscanner.cc:334 common/rcdscanner.cc:436
+#: common/rcdscanner.cc:277 common/rcdscanner.cc:319 common/rcdscanner.cc:418
 #, fuzzy
 msgid "Unmounting CD-ROM..."
 msgstr "正在裝載 CD-ROM..."
 
-#: common/rcdscanner.cc:295
+#: common/rcdscanner.cc:280
 #, fuzzy
 msgid "Waiting for disc..."
 msgstr "正在掃描光碟..."
 
-#: common/rcdscanner.cc:296
+#: common/rcdscanner.cc:281
 msgid "Insert a disc in the drive."
 msgstr ""
 
 #. Mount the new CDROM
-#: common/rcdscanner.cc:300
+#: common/rcdscanner.cc:285
 msgid "Mounting CD-ROM..."
 msgstr "正在裝載 CD-ROM..."
 
-#: common/rcdscanner.cc:303
+#: common/rcdscanner.cc:288
 msgid "Failed to mount the cdrom."
 msgstr ""
 
-#: common/rcdscanner.cc:307
+#: common/rcdscanner.cc:292
 #, fuzzy
 msgid "Identifying disc..."
 msgstr "正在識別光碟..."
 
-#: common/rcdscanner.cc:310
+#: common/rcdscanner.cc:295
 #, fuzzy
 msgid "Couldn't identify disc."
 msgstr "無法識別光碟"
 
-#: common/rcdscanner.cc:313
+#: common/rcdscanner.cc:298
 #, fuzzy
 msgid "Scanning disc..."
 msgstr "正在掃描光碟..."
 
-#: common/rcdscanner.cc:328
+#: common/rcdscanner.cc:313
 #, fuzzy
 msgid "Cleaning package lists..."
 msgstr "套件主清單使用色彩顯示"
 
-#: common/rcdscanner.cc:341
+#: common/rcdscanner.cc:326
 msgid ""
 "Unable to locate any package files. Perhaps this is not an APT enabled disc."
 msgstr ""
 
-#: common/rcdscanner.cc:394
+#: common/rcdscanner.cc:377
 msgid "Disc not successfuly scanned."
 msgstr ""
 
-#: common/rcdscanner.cc:398
+#: common/rcdscanner.cc:381
 msgid "Empty disc name."
 msgstr ""
 
-#: common/rcdscanner.cc:401
+#: common/rcdscanner.cc:384
 #, fuzzy
 msgid "Registering disc..."
 msgstr "正在識別光碟..."
 
-#: common/rcdscanner.cc:416
+#: common/rcdscanner.cc:398
 #, fuzzy
 msgid "Copying package lists..."
 msgstr "從伺服器更新套件清單..."
 
-#: common/rcdscanner.cc:425
+#: common/rcdscanner.cc:407
 msgid "Writing sources list..."
 msgstr ""
 
-#: common/rcdscanner.cc:440
+#: common/rcdscanner.cc:422
 #, fuzzy
 msgid "Done!"
 msgstr "已下載"
 
-#: common/rcdscanner.cc:540
+#: common/rcdscanner.cc:520
 #, fuzzy, c-format
 msgid "Failed to stat %s%s"
 msgstr "開啟 %s.new 失敗"
 
-#: common/rcdscanner.cc:646 common/rcdscanner.cc:750
+#: common/rcdscanner.cc:622 common/rcdscanner.cc:718
 #, fuzzy, c-format
 msgid "Unable to change to %s"
 msgstr "無法讀取目錄 %s"
 
-#: common/rcdscanner.cc:688
+#: common/rcdscanner.cc:660
 #, fuzzy, c-format
 msgid "Unable to read %s"
 msgstr "無法讀取目錄 %s"
 
-#: common/rconfiguration.cc:82 common/rconfiguration.cc:179
+#: common/rconfiguration.cc:83 common/rconfiguration.cc:184
 #, fuzzy, c-format
 msgid "ERROR: couldn't open %s for writing"
 msgstr "不能開啟 %s 進行寫入"
 
-#: common/rconfiguration.cc:107
+#: common/rconfiguration.cc:109
 #, fuzzy
 msgid "ERROR: Could not get password entry for superuser"
 msgstr "無法取得超級使用者的密碼輸入"
 
-#: common/rconfiguration.cc:115
+#: common/rconfiguration.cc:118
 #, fuzzy, c-format
 msgid "ERROR: could not create configuration directory %s"
 msgstr "無法建立設定檔目錄 %s"
 
-#: common/rconfiguration.cc:204
+#: common/rconfiguration.cc:209
 #, c-format
 msgid "couldn't open %s for writing"
 msgstr "不能開啟 %s 進行寫入"
 
-#: common/rpackage.cc:215
+#: common/rpackage.cc:198
 msgid "The list of installed files is only available for installed packages"
 msgstr ""
 
-#: common/rpackage.cc:419
-msgid "OH SHIT DUNNO WTF IS GOIN ON!"
-msgstr "糟糕了！發生了什麼事呢？"
+#: common/rpackage.cc:397
+#, fuzzy
+msgid "or dependency"
+msgstr "相依關係有問題。"
 
-#: common/rpackage.cc:600
+#: common/rpackage.cc:401
+#, fuzzy
+msgid "Dependency of"
+msgstr "此套件依賴的套件"
+
+#: common/rpackage.cc:509
 #, c-format
 msgid ""
 "\n"
@@ -376,504 +415,593 @@ msgid ""
 "sources.list\n"
 msgstr ""
 
-#: common/rpackage.cc:667
+#: common/rpackage.cc:585
 msgid " or"
 msgstr ""
 
-#: common/rpackage.cc:764
+#: common/rpackage.cc:746
 #, c-format
 msgid "%s is/will be installed"
 msgstr "%s 已安裝或將會安裝"
 
-#: common/rpackage.cc:769
+#: common/rpackage.cc:751
 msgid "package is not installable"
 msgstr "此套件不能安裝"
 
-#: common/rpackage.cc:771
+#: common/rpackage.cc:753
 msgid "package is a virtual package"
 msgstr "此套件是一個虛擬套件"
 
-#: common/rpackage.cc:773
+#: common/rpackage.cc:755
 msgid "package is/will not be installed"
 msgstr "此套件未安裝，也不會被安裝"
 
-#: common/rpackage.cc:776
+#: common/rpackage.cc:758
 msgid "dependency is satisfied"
 msgstr "已符合相依性要求"
 
-#: common/rpackage.cc:948
+#: common/rpackage.cc:990
 msgid "Invalid record in the preferences file, no Package header"
 msgstr ""
 
-#: common/rpackagecache.cc:51
+#: common/rpackage.cc:1309
+#, fuzzy
+msgid "Marked for installation"
+msgstr "標記套件，預備安裝或升級"
+
+#: common/rpackage.cc:1310
+#, fuzzy
+msgid "Marked for re-installation"
+msgstr "標記套件，預備安裝或升級"
+
+#: common/rpackage.cc:1311
+#, fuzzy
+msgid "Marked for upgrade"
+msgstr "將會升級的套件"
+
+#: common/rpackage.cc:1312
+#, fuzzy
+msgid "Marked for downgrade"
+msgstr "將會升級的套件"
+
+#: common/rpackage.cc:1313
+#, fuzzy
+msgid "Marked for removal"
+msgstr "已標記要移除的套件"
+
+#: common/rpackage.cc:1314
+#, fuzzy
+msgid "Marked for complete removal"
+msgstr "已標記要移除的套件"
+
+#: common/rpackage.cc:1315 common/rpackageview.cc:89
+#: gtk/window_filters.glade.h:28
+#, fuzzy
+msgid "Not installed"
+msgstr "未安裝"
+
+#: common/rpackage.cc:1316
+#, fuzzy
+msgid "Not installed (locked)"
+msgstr ""
+"\n"
+"已安裝套件:\n"
+
+#: common/rpackage.cc:1317 common/rpackageview.cc:87
+#: gtk/window_filters.glade.h:20
+msgid "Installed"
+msgstr "已安裝"
+
+#: common/rpackage.cc:1318 common/rpackageview.cc:103
+#, fuzzy
+msgid "Installed (upgradable)"
+msgstr "已安裝並可升級的套件"
+
+#: common/rpackage.cc:1319
+#, fuzzy
+msgid "Installed (locked to the current version)"
+msgstr ""
+"\n"
+"已安裝套件:\n"
+
+#: common/rpackage.cc:1320 common/rpackageview.cc:375
+#: gtk/window_filters.glade.h:6
+msgid "Broken"
+msgstr "安裝不完整"
+
+#: common/rpackage.cc:1321
+#, fuzzy
+msgid "Not installed (new in repository)"
+msgstr "已移除但尚存舊設定檔的套件"
+
+#: common/rpackagecache.cc:50
 msgid ""
 "The list of sources could not be read.\n"
 "Go to the repository dialog to correct the problem."
 msgstr ""
 
-#: common/rpackagecache.cc:57
+#: common/rpackagecache.cc:58
 msgid "The package lists or status file could not be parsed or opened."
 msgstr "無法分析或開啟套件清單或狀態檔案。"
 
-#: common/rpackagecache.cc:92
+#: common/rpackagecache.cc:95
 msgid "Internal Error, non-zero counts"
 msgstr ""
 
-#: common/rpackagefilter.cc:43 gtk/rgfetchprogress.cc:84
-#: gtk/window_preferences.glade.h:70 gtk/window_filters.glade.h:56
-msgid "Status"
-msgstr "狀態"
-
-#. g_object_set(G_OBJECT(renderer), "editable", TRUE, NULL);
-#: common/rpackagefilter.cc:44 gtk/rgfiltermanager.cc:201
-msgid "Pattern"
-msgstr "樣板"
-
-#: common/rpackagefilter.cc:45 gtk/window_filters.glade.h:52
-msgid "Section"
-msgstr "組別"
-
-#: common/rpackagefilter.cc:46
-msgid "Priority"
-msgstr "優先級"
-
-#: common/rpackagefilter.cc:47
-msgid "ReducedView"
-msgstr ""
-
-#: common/rpackagefilter.cc:51 gtk/window_filters.glade.h:59
-#, fuzzy
-msgid "Tags"
-msgstr "任務"
-
-#: common/rpackagefilter.cc:195 gtk/window_preferences.glade.h:53
+#: common/rpackagefilter.cc:45 gtk/rgpreferenceswindow.cc:920
+#: gtk/window_find.glade.h:6
 msgid "Name"
 msgstr "名稱"
 
-#: common/rpackagefilter.cc:196 gtk/window_find.glade.h:10
+#: common/rpackagefilter.cc:46 gtk/rgpreferenceswindow.cc:46
+#: gtk/rgmainwindow.cc:893 gtk/rgvendorswindow.cc:62 gtk/rgvendorswindow.cc:94
+#: gtk/window_main.glade.h:19 gtk/window_filters.glade.h:10
+#: gtk/rgfiltermanager.h:67 gtk/window_details.glade.h:16
+msgid "Description"
+msgstr "套件描述"
+
+#: common/rpackagefilter.cc:47 gtk/window_find.glade.h:5
+#: gtk/window_filters.glade.h:25 gtk/rgfiltermanager.h:68
+msgid "Maintainer"
+msgstr ""
+
+#: common/rpackagefilter.cc:48 gtk/window_find.glade.h:9
 #, fuzzy
 msgid "Version"
 msgstr "    　　版本"
 
-#: common/rpackagefilter.cc:197 gtk/rgmainwindow.cc:2395
-#: gtk/rgvendorswindow.cc:62 gtk/rgvendorswindow.cc:94
-#: gtk/window_find.glade.h:3 gtk/window_main_hpaned.glade.h:26
-#: gtk/window_main_vpaned.glade.h:27 gtk/window_preferences.glade.h:36
-#: gtk/window_filters.glade.h:13 gtk/rgfiltermanager.h:71
-msgid "Description"
-msgstr "套件描述"
-
-#: common/rpackagefilter.cc:198 gtk/window_find.glade.h:4
-#: gtk/window_filters.glade.h:29 gtk/rgfiltermanager.h:72
-msgid "Maintainer"
-msgstr ""
-
-#: common/rpackagefilter.cc:199 gtk/window_find.glade.h:2
+#: common/rpackagefilter.cc:49
 msgid "Depends"
 msgstr "依賴"
 
-#: common/rpackagefilter.cc:200 gtk/window_find.glade.h:6
+#: common/rpackagefilter.cc:50
 msgid "Provides"
 msgstr "提供"
 
-#: common/rpackagefilter.cc:201
+#: common/rpackagefilter.cc:51
 msgid "Conflicts"
 msgstr "不相容"
 
-#: common/rpackagefilter.cc:202
+#: common/rpackagefilter.cc:52
 msgid "Replaces"
 msgstr "取代"
 
-#: common/rpackagefilter.cc:203
-msgid "WeakDepends"
-msgstr ""
+#: common/rpackagefilter.cc:53
+#, fuzzy
+msgid "Recommends"
+msgstr "推薦"
 
-#: common/rpackagefilter.cc:204
+#: common/rpackagefilter.cc:54
+msgid "Suggests"
+msgstr "建議"
+
+#: common/rpackagefilter.cc:55
 msgid "ReverseDepends"
 msgstr ""
 
-#: common/rpackagefilter.cc:666
+#. Reverse Depends
+#: common/rpackagefilter.cc:56 gtk/window_filters.glade.h:31
+#: gtk/rgfiltermanager.h:77
+msgid "Origin"
+msgstr ""
+
+#: common/rpackagefilter.cc:61 common/rpackageview.h:114
+#: gtk/rgpreferenceswindow.cc:45 gtk/rgfetchprogress.cc:83
+#: gtk/window_main.glade.h:40 gtk/window_filters.glade.h:49
+msgid "Status"
+msgstr "狀態"
+
+#. g_object_set(G_OBJECT(renderer), "editable", TRUE, NULL);
+#: common/rpackagefilter.cc:62 gtk/rgfiltermanager.cc:186
+msgid "Pattern"
+msgstr "樣板"
+
+#: common/rpackagefilter.cc:63 gtk/window_main.glade.h:38
+#: gtk/window_filters.glade.h:48
+msgid "Section"
+msgstr "組別"
+
+#: common/rpackagefilter.cc:64
+msgid "Priority"
+msgstr "優先級"
+
+#: common/rpackagefilter.cc:65
+msgid "ReducedView"
+msgstr ""
+
+#: common/rpackagefilter.cc:641
 #, fuzzy, c-format
 msgid "Internal Error: Could not open ReducedView file %s"
 msgstr ":無法開啟顯示"
 
-#: common/rpackagefilter.cc:693
+#: common/rpackagefilter.cc:669
 #, c-format
 msgid "Bad regular expression '%s' in ReducedView file."
 msgstr ""
 
-#: common/rpackagefilter.cc:763
-#, fuzzy
-msgid "unkown"
-msgstr "不明"
-
-#: common/rpackagelister.cc:224
-msgid "Search Filter"
-msgstr "搜尋篩選器"
-
-#: common/rpackagelister.cc:231 common/rpackagelister.cc:846
-#: gtk/window_filters.glade.h:24 gtk/rgmisc.cc:233
-msgid "Installed"
-msgstr "已安裝"
-
-#: common/rpackagelister.cc:238
-msgid "Not Installed"
-msgstr "未安裝"
-
-#: common/rpackagelister.cc:246
-msgid "Tasks"
-msgstr "任務"
-
-#: common/rpackagelister.cc:252
-msgid "Reduced View"
-msgstr ""
-
-#: common/rpackagelister.cc:260
-msgid "Upgradable"
-msgstr "可升級"
-
-#: common/rpackagelister.cc:267 gtk/window_filters.glade.h:9 gtk/rgmisc.cc:236
-msgid "Broken"
-msgstr "安裝不完整"
-
-#: common/rpackagelister.cc:276
-#, fuzzy
-msgid "Queued Changes"
-msgstr "預期變動"
-
-#: common/rpackagelister.cc:283 gtk/window_filters.glade.h:30
-#: gtk/rgmisc.cc:237
-msgid "New in archive"
-msgstr ""
-
-#: common/rpackagelister.cc:291 gtk/window_filters.glade.h:50
-#, fuzzy
-msgid "Residual config"
-msgstr "已移除但尚存舊設定檔的套件"
-
-#: common/rpackagelister.cc:299
-msgid "Pkg with Debconf"
-msgstr ""
-
-#: common/rpackagelister.cc:306
-#, fuzzy
-msgid "Obsolete or locally installed"
-msgstr "未安裝"
-
-#: common/rpackagelister.cc:431 common/rpackagelister.cc:436
-#: common/rpackagelister.cc:453
-#, fuzzy
-msgid "Internal error recalculating dependency cache. Please report."
+#: common/rpackagelister.cc:291 common/rpackagelister.cc:297
+#: common/rpackagelister.cc:311
+#, fuzzy, c-format
+msgid "Internal error opening cache (%d). Please report."
 msgstr "重新計算相依關係時出現內部錯誤。"
 
-#: common/rpackagelister.cc:649
+#: common/rpackagelister.cc:450
 #, fuzzy
 msgid "Unable to correct dependencies"
 msgstr "無法更正缺少的套件"
 
-#: common/rpackagelister.cc:651
-#, fuzzy
-msgid "Unable to minimize the upgrade set"
-msgstr "無法讀取 CD-ROM 資料庫 %s"
+#: common/rpackagelister.cc:452
+msgid ""
+"Unable to mark upgrades\n"
+"Check your system for errors."
+msgstr ""
 
-#: common/rpackagelister.cc:662
+#: common/rpackagelister.cc:464
 msgid "Internal Error, AllUpgrade broke stuff. Please report."
 msgstr ""
 
-#: common/rpackagelister.cc:682
+#: common/rpackagelister.cc:482
 #, fuzzy
 msgid "dist upgrade Failed"
 msgstr "全面升級(_D)"
 
-#: common/rpackagelister.cc:838
-#, fuzzy
-msgid "New in repository"
-msgstr "新增套件庫"
-
-#: common/rpackagelister.cc:841
-msgid "Obsolete and locally installed"
-msgstr ""
-
-#: common/rpackagelister.cc:844 gtk/window_filters.glade.h:25
-#, fuzzy
-msgid "Installed and upgradable"
-msgstr "已安裝並可升級的套件"
-
-#: common/rpackagelister.cc:849
-#, fuzzy
-msgid "Not installed (residual config)"
-msgstr "已移除但尚存舊設定檔的套件"
-
-#: common/rpackagelister.cc:851 gtk/rgmainwindow.cc:1387
-#: gtk/window_filters.glade.h:32 gtk/rgmisc.cc:231
-#, fuzzy
-msgid "Not installed"
-msgstr "未安裝"
-
-#: common/rpackagelister.cc:1422
+#: common/rpackagelister.cc:1122
 msgid "Unable to lock the list directory"
 msgstr "無法鎖住清單目錄"
 
-#: common/rpackagelister.cc:1444
+#: common/rpackagelister.cc:1144
 msgid ""
 "Release files for some repositories could not be retrieved or authenticated. "
 "Such repositories are being ignored."
 msgstr "無法抓取或認證某些套件庫的 Release 檔，暫時略過那些套件庫。"
 
-#: common/rpackagelister.cc:1476
-msgid ""
-"Some index files failed to download, they have been ignored, or old ones "
-"used instead."
-msgstr "一些索引檔案下載失敗。它們已被略過，或暫由較舊檔案代替。"
-
-#: common/rpackagelister.cc:1505 common/rpackagelister.cc:1509
-#: gtk/rgrepositorywin.cc:329
+#: common/rpackagelister.cc:1211 common/rpackagelister.cc:1217
+#: gtk/rgrepositorywin.cc:320
 #, fuzzy
 msgid "Ignoring invalid record(s) in sources.list file!"
 msgstr "無法讀取 sources.list 套件庫來源清單檔"
 
-#: common/rpackagelister.cc:1553
-#, fuzzy
-msgid "Failed to fetch "
+#. TRANSLATORS: Error message after a failed download.
+#. The first %s is the URL and the second
+#. one is a detailed error message that
+#. is provided by apt
+#: common/rpackagelister.cc:1262
+#, fuzzy, c-format
+msgid ""
+"Failed to fetch %s\n"
+"  %s\n"
+"\n"
 msgstr "擷取 hash 檔案失敗: "
 
-#: common/rpackagelister.cc:1560
-msgid "More packages failed to fetch. Not displaying.\n"
-msgstr ""
-
-#: common/rpackagelister.cc:1581
-#, fuzzy, c-format
-msgid "%i of the packages could not be retrieved from the server(s).\n"
+#: common/rpackagelister.cc:1283
+msgid "Some of the packages could not be retrieved from the server(s).\n"
 msgstr "有些套件未能從伺服器抓取。\n"
 
-#: common/rpackagelister.cc:1585
+#: common/rpackagelister.cc:1286
 msgid "Do you want to continue, ignoring these packages?"
 msgstr "您想略過這些套件，繼續進行嗎?"
 
-#: common/rpackagelister.cc:1592
+#: common/rpackagelister.cc:1293
 #, fuzzy
 msgid "Unable to correct missing packages"
 msgstr "無法更正缺少的套件"
 
-#: common/rpackagelister.cc:1656
+#: common/rpackagelister.cc:1356
 msgid "Unable to lock the download directory"
 msgstr "無法鎖住下載區目錄"
 
-#: common/rpackagelister.cc:1761
+#: common/rpackagelister.cc:1434
 #, fuzzy, c-format
-msgid "Line %u too long in selection file."
+msgid "Line %u too long in markings file."
 msgstr "自動選擇升級套件失敗。"
 
-#: common/rpackagelister.cc:1775 common/rpackagelister.cc:1779
+#: common/rpackagelister.cc:1448 common/rpackagelister.cc:1452
 #, c-format
-msgid "Malformed line %u in selection file"
+msgid "Malformed line %u in markings file"
 msgstr ""
 
-#: common/rpackagelister.cc:1791
-msgid "Setting selections..."
+#: common/rpackagelister.cc:1464
+msgid "Setting markings..."
 msgstr ""
 
-#: common/rpmindexcopy.cc:75
-#, c-format
-msgid "Stat failed for %s"
-msgstr ""
-
-#: common/rpmindexcopy.cc:119
+#: common/rpmindexcopy.cc:116
 msgid "Internal Error: couldn't fork bzip2. Please report."
 msgstr ""
 
-#: common/rpmindexcopy.cc:139
+#: common/rpmindexcopy.cc:136
 msgid "bzip2 failed, perhaps the disk is full."
 msgstr ""
+
+#: common/rpackageview.h:89
+#, fuzzy
+msgid "Sections"
+msgstr "組別"
+
+#: common/rpackageview.h:99
+msgid "Alphabetic"
+msgstr ""
+
+#: common/rpackageview.h:137
+#, fuzzy
+msgid "Search History"
+msgstr "搜尋篩選器"
+
+#: common/rpackageview.h:180
+#, fuzzy
+msgid "Custom Filters"
+msgstr "到篩選器"
+
+#: common/rpackageview.cc:94 gtk/window_filters.glade.h:26
+#, fuzzy
+msgid "New in repository"
+msgstr "新增套件庫"
+
+#: common/rpackageview.cc:96 gtk/window_filters.glade.h:41
+msgid "Pinned"
+msgstr "標記為永不升級的套件"
+
+#: common/rpackageview.cc:100
+#, fuzzy
+msgid "Installed (local or obsolete)"
+msgstr "已安裝並可升級的套件"
+
+#: common/rpackageview.cc:106
+#, fuzzy
+msgid "Not installed (residual config)"
+msgstr "已移除但尚存舊設定檔的套件"
+
+#: common/rpackageview.cc:353
+#, fuzzy
+msgid "Search Filter"
+msgstr "搜尋篩選器"
+
+#: common/rpackageview.cc:361
+msgid "Tasks"
+msgstr "任務"
+
+#: common/rpackageview.cc:367
+msgid "Reduced View"
+msgstr ""
+
+#: common/rpackageview.cc:384 gtk/gsynaptic.cc:207 gtk/rgsummarywindow.cc:299
+#, fuzzy
+msgid "Marked Changes"
+msgstr "預期變動"
+
+#: common/rpackageview.cc:393
+msgid "Pkg with Debconf"
+msgstr ""
+
+#: common/rpackageview.cc:400 gtk/window_filters.glade.h:53
+#, fuzzy
+msgid "Upgradable (upstream)"
+msgstr "升級(_G)"
 
 #. vim:sts=3:sw=3
 #: gtk/dialog_quit.glade.h:1
 msgid ""
-"<span weight=\"bold\" size=\"large\">Quit and ignore marked changes?</span>"
-msgstr ""
-
-#: gtk/dialog_quit.glade.h:2
-msgid ""
-"There are still marked changes that have not been applied. They will get "
+"<b><big>Quit and discard marked changes?</big></b>\n"
+"\n"
+"There are still marked changes that have not yet been applied. They will get "
 "lost if you choose to quit 'Synaptic'."
 msgstr ""
 
+#: gtk/dialog_change_version.glade.h:1
+#, fuzzy
+msgid "Force version:"
+msgstr "已安裝"
+
+#: gtk/dialog_change_version.glade.h:2
+#, fuzzy
+msgid "_Force Version"
+msgstr "    　　版本"
+
 #: gtk/dialog_upgrade.glade.h:1
 msgid ""
-"<b>Note:</b> If you are upgrading to a new major operating system release "
-"you have to choose 'Smart Upgrade' here."
+"<b><big>Mark upgrades in a smart way?</big></b>\n"
+"\n"
+"The default upgrade method skips upgrades that would introduce conflicts or "
+"would require to install additional packages.\n"
+"\n"
+"The smart upgrade (dist-upgrade) attemps to resolve conflicts and to fullfil "
+"all dependencies of upgrades in a smart way.\n"
+"\n"
+"<b>Note:</b> The upgrades will be marked, only. You still have to apply them "
+"afterwards."
 msgstr ""
 
-#: gtk/dialog_upgrade.glade.h:2
-msgid ""
-"<span weight=\"bold\" size=\"large\">Use smart upgrade method (dist-upgrade)?"
-"</span>"
-msgstr ""
-
-#: gtk/dialog_upgrade.glade.h:3 gtk/window_preferences.glade.h:32
+#: gtk/dialog_upgrade.glade.h:8 gtk/window_preferences.glade.h:29
 #, fuzzy
 msgid "Default Upgrade"
 msgstr "升級"
 
-#: gtk/dialog_upgrade.glade.h:4
+#: gtk/dialog_upgrade.glade.h:9
 msgid "Remember the answer for further upgrades"
 msgstr ""
 
-#: gtk/dialog_upgrade.glade.h:5 gtk/window_preferences.glade.h:69
+#: gtk/dialog_upgrade.glade.h:10 gtk/window_preferences.glade.h:66
 #, fuzzy
 msgid "Smart Upgrade"
 msgstr "升級"
 
-#: gtk/dialog_upgrade.glade.h:6
-msgid ""
-"The default upgrade method skips upgrades that introduce conflicts or "
-"require new packages to be installed."
-msgstr ""
-
-#: gtk/dialog_upgrade.glade.h:7
-msgid ""
-"The smart upgrade method attempts to resolve conflicts and to fulfill all "
-"dependencies of upgrades in a smart way."
-msgstr ""
-
-#: gtk/dialog_upgrade.glade.h:8
+#: gtk/dialog_upgrade.glade.h:11
 msgid "This behavior can be changed in the preferences later."
 msgstr ""
 
 #: gtk/dialog_locales_warning.glade.h:1
 msgid ""
-"<span weight=\"bold\" size=\"large\">Incorrect or incompatible locale "
-"settings</span>"
-msgstr ""
-
-#: gtk/dialog_locales_warning.glade.h:2
-msgid ""
-"Synaptic may crash!\n"
+"<b><big>The grafical user interface (xlib) does not support your chosen "
+"language environment</big></b>\n"
 "\n"
-"Xlib does not support your chosen language environment.\n"
-"\n"
-"Please use locales settings like \"fr_FR\" or \"fr_FR@euro\". Do not use "
-"settings like \"fr_FR.iso8859-15@euro\".\n"
+"Synaptic can crash if you decide to continue with unchanged localisation "
+"preferences. Language values like \"fr_FR.iso8859-15@euro\" are not "
+"supported. Use values like \"fr_FR\" or \"fr_FR@euro\" for your language.\n"
 "\n"
 "Contact the mailing list for comments or help:\n"
 "<i>synaptic-devel@nongnu.org</i> \n"
 "Include the output of the \"locale\" command in your email."
 msgstr ""
 
-#: gtk/gsynaptic.cc:55
+#: gtk/gsynaptic.cc:56
 #, fuzzy
 msgid "Usage: synaptic [options]\n"
 msgstr "設定 Synaptic 選項"
 
-#: gtk/gsynaptic.cc:56
+#: gtk/gsynaptic.cc:57
 msgid "-h   This help text\n"
 msgstr ""
 
-#: gtk/gsynaptic.cc:57
+#: gtk/gsynaptic.cc:58
 msgid "-r   Open in the repository screen\n"
 msgstr ""
 
-#: gtk/gsynaptic.cc:58
+#: gtk/gsynaptic.cc:59
 msgid "-f=? Give a alternative filter file\n"
 msgstr ""
 
-#: gtk/gsynaptic.cc:59
+#: gtk/gsynaptic.cc:60
 msgid "-i=? Start with the initialFilter with the number given\n"
 msgstr ""
 
-#: gtk/gsynaptic.cc:60
+#: gtk/gsynaptic.cc:61
 msgid "-o=? Set an arbitary configuration option, eg -o dir::cache=/tmp\n"
 msgstr ""
 
-#: gtk/gsynaptic.cc:120
+#: gtk/gsynaptic.cc:62
+msgid "--upgrade-mode  Call Refresh, Upgrade and display changes\n"
+msgstr ""
+
+#: gtk/gsynaptic.cc:63
+msgid "--non-interactive Never prompt for user input\n"
+msgstr ""
+
+#: gtk/gsynaptic.cc:64
+msgid "--task-window Open with task window\n"
+msgstr ""
+
+#: gtk/gsynaptic.cc:139
 msgid "You must run this program as the root user."
 msgstr "您必須以 root 使用者身份執行此程式。"
 
-#: gtk/gsynaptic.cc:167
+#: gtk/gsynaptic.cc:177
 #, fuzzy
 msgid "Synaptic Package Manager "
 msgstr "套件變更"
 
-#: gtk/rgcdscanner.cc:62
+#: gtk/rgcdscanner.cc:61
 #, fuzzy
-msgid "Scanning CD-ROM..."
+msgid "Scanning CD-ROM"
 msgstr "正在裝載 CD-ROM..."
 
-#: gtk/rgcdscanner.cc:95
+#: gtk/rgcdscanner.cc:100
 msgid "Invalid disc name!"
 msgstr ""
 
-#: gtk/rgaboutpanel.cc:54 gtk/window_about.glade.h:5
+#: gtk/rgcdscanner.cc:111
+#, fuzzy
+msgid "Disc Label"
+msgstr "更換光碟"
+
+#: gtk/rgaboutpanel.cc:63 gtk/window_about.glade.h:5
 msgid "Credits"
 msgstr ""
 
-#: gtk/rgaboutpanel.cc:72 gtk/window_about.glade.h:4
+#: gtk/rgaboutpanel.cc:81 gtk/window_about.glade.h:4
 #, fuzzy
 msgid "About Synaptic"
 msgstr "Synaptic「新立得」"
 
-#: gtk/rgchangeswindow.cc:70
+#: gtk/rgchangeswindow.cc:69
 msgid "Package changes"
 msgstr "套件變更"
 
-#: gtk/rgchangeswindow.cc:107 gtk/rgsummarywindow.cc:111
-#: gtk/window_filters.glade.h:62 gtk/rgmisc.cc:229
+#: gtk/rgchangeswindow.cc:105 gtk/rgsummarywindow.cc:109
 msgid "To be removed"
 msgstr "將會移除的套件"
 
-#: gtk/rgchangeswindow.cc:122 gtk/rgmisc.cc:228
+#: gtk/rgchangeswindow.cc:118
 #, fuzzy
 msgid "To be downgraded"
 msgstr "將會升級的套件"
 
-#: gtk/rgchangeswindow.cc:137 gtk/rgsummarywindow.cc:125 gtk/rgmisc.cc:227
+#: gtk/rgchangeswindow.cc:131 gtk/rgsummarywindow.cc:121
 msgid "To be upgraded"
 msgstr "將會升級的套件"
 
-#: gtk/rgchangeswindow.cc:151 gtk/rgsummarywindow.cc:139 gtk/rgmisc.cc:226
+#: gtk/rgchangeswindow.cc:143 gtk/rgsummarywindow.cc:133
 msgid "To be installed"
 msgstr "將會新安裝的套件"
 
-#: gtk/rgchangeswindow.cc:165 gtk/window_filters.glade.h:61
+#: gtk/rgchangeswindow.cc:155 gtk/rgsummarywindow.cc:145
+#, fuzzy
+msgid "To be re-installed"
+msgstr "將會新安裝的套件"
+
+#: gtk/rgchangeswindow.cc:166
 #, fuzzy
 msgid "To be kept"
 msgstr "將會維持原狀不升級的套件"
 
-#: gtk/rgpreferenceswindow.cc:202 gtk/rgzvtinstallprogress.cc:109
-#: gtk/rgmainwindow.cc:3605
+#: gtk/rgpreferenceswindow.cc:45 gtk/window_filters.glade.h:33
+#, fuzzy
+msgid "Package Name"
+msgstr "套件名稱"
+
+#: gtk/rgpreferenceswindow.cc:45 gtk/rgmainwindow.cc:823
+#, fuzzy
+msgid "Installed Version"
+msgstr "已安裝"
+
+#: gtk/rgpreferenceswindow.cc:46
+#, fuzzy
+msgid "Available Version"
+msgstr "最新版本"
+
+#: gtk/rgpreferenceswindow.cc:46
+#, fuzzy
+msgid "Installed Size"
+msgstr "已安裝"
+
+#: gtk/rgpreferenceswindow.cc:321 gtk/rgmainwindow.cc:1602
+#: gtk/rgterminstallprogress.cc:110
 msgid "An error occurred while saving configurations."
 msgstr "儲存設定時發生錯誤。"
 
-#: gtk/rgpreferenceswindow.cc:245
+#: gtk/rgpreferenceswindow.cc:365
 msgid "Choose font"
 msgstr ""
 
-#: gtk/rgpreferenceswindow.cc:501
-msgid "Color selection"
-msgstr ""
-
-#: gtk/rgpreferenceswindow.cc:703
+#: gtk/rgpreferenceswindow.cc:565
 msgid "ignore"
 msgstr ""
 
-#: gtk/rgpreferenceswindow.cc:748 gtk/window_preferences.glade.h:64
+#: gtk/rgpreferenceswindow.cc:777
+msgid "Color selection"
+msgstr ""
+
+#: gtk/rgpreferenceswindow.cc:914
+#, fuzzy
+msgid "Visible"
+msgstr "可以"
+
+#: gtk/rgpreferenceswindow.cc:990 gtk/window_preferences.glade.h:62
 msgid "Preferences"
 msgstr "偏好設定"
 
 #: gtk/rgfetchprogress.cc:64
 #, fuzzy
-msgid "Downloading Files..."
+msgid "Downloading Files"
 msgstr "編輯篩選器..."
 
-#: gtk/rgfetchprogress.cc:95
+#: gtk/rgfetchprogress.cc:95 gtk/rgmainwindow.cc:872
 msgid "Size"
 msgstr "檔案大小"
 
-#: gtk/rgfetchprogress.cc:102 gtk/rgrepositorywin.cc:154
+#: gtk/rgfetchprogress.cc:102 gtk/rgrepositorywin.cc:175
 msgid "URI"
 msgstr "網址"
 
-#: gtk/rgfetchprogress.cc:129
+#: gtk/rgfetchprogress.cc:128
 #, fuzzy, c-format
 msgid ""
 "Please insert the disk labeled:\n"
@@ -881,67 +1009,57 @@ msgid ""
 "in drive %s"
 msgstr "請把標籤為：\n"
 
-#: gtk/rgfetchprogress.cc:225
-#, c-format
-msgid "Retrieved %li of %li files at %s/s - %s remaining"
-msgstr ""
+#: gtk/rgfetchprogress.cc:230
+#, fuzzy, c-format
+msgid "Downloading file %li of %li at %s/s - %s remaining"
+msgstr "%-3li/%-3li 檔案    %4sB/s   尚餘 %6s\n"
 
-#: gtk/rgfetchprogress.cc:291
+#: gtk/rgfetchprogress.cc:235
+#, fuzzy, c-format
+msgid "Downloading file %li of %li"
+msgstr "編輯篩選器..."
+
+#: gtk/rgfetchprogress.cc:300
 msgid "Queued"
 msgstr "已佇列"
 
-#: gtk/rgfetchprogress.cc:294
+#: gtk/rgfetchprogress.cc:303
 msgid "Done"
 msgstr "已下載"
 
-#: gtk/rgfetchprogress.cc:297
+#: gtk/rgfetchprogress.cc:306
 msgid "Hit"
 msgstr "已有"
 
-#: gtk/rgfetchprogress.cc:300
+#: gtk/rgfetchprogress.cc:309
 msgid "Failed"
 msgstr "失敗"
 
-#: gtk/rgfiltermanager.cc:47 gtk/window_filters.glade.h:19
+#: gtk/rgfiltermanager.cc:46 gtk/window_filters.glade.h:14
 msgid "Filters"
 msgstr "篩選器"
 
-#: gtk/rgfiltermanager.cc:187
+#: gtk/rgfiltermanager.cc:171
 #, fuzzy
 msgid "Field"
 msgstr "失敗"
 
-#: gtk/rgfiltermanager.cc:193
+#: gtk/rgfiltermanager.cc:178
 #, fuzzy
 msgid "Operator"
 msgstr "操作摘要"
 
-#: gtk/rgfiltermanager.cc:220
-#, fuzzy
-msgid "Available Tags"
-msgstr "最新版本"
-
-#: gtk/rgfiltermanager.cc:233
-#, fuzzy
-msgid "Included Tags"
-msgstr "包括"
-
-#: gtk/rgfiltermanager.cc:245
-#, fuzzy
-msgid "Excluded Tags"
-msgstr "不包括"
-
-#: gtk/rgfiltermanager.cc:1033
+#: gtk/rgfiltermanager.cc:749
 #, fuzzy, c-format
 msgid "New Filter %i"
 msgstr "新篩選器"
 
-#: gtk/rginstallprogress.cc:41 gtk/window_rginstall_progress_msgs.glade.h:2
+#: gtk/rginstallprogress.cc:42 gtk/window_rginstall_progress_msgs.glade.h:2
 #, fuzzy
 msgid "Package Manager output"
 msgstr "套件變更"
 
-#: gtk/rginstallprogress.cc:82
+#: gtk/rginstallprogress.cc:83
 #, fuzzy, c-format
 msgid ""
 "\n"
@@ -951,48 +1069,33 @@ msgstr ""
 "\n"
 "已安裝套件:\n"
 
-#: gtk/rginstallprogress.cc:86
+#: gtk/rginstallprogress.cc:87
 msgid ""
 "\n"
 "While preparing for installation:\n"
 "\n"
 msgstr ""
 
-#: gtk/rginstallprogress.cc:263 gtk/rgzvtinstallprogress.cc:181
-#: gtk/window_zvtinstallprogress.glade.h:2
+#: gtk/rginstallprogress.cc:129
+#, c-format
+msgid ""
+"APT system reports:\n"
+"%s"
+msgstr ""
+
+#: gtk/rginstallprogress.cc:284 gtk/rgterminstallprogress.cc:182
 #, fuzzy
-msgid "Applying Changes..."
+msgid "Applying Changes"
 msgstr "不包括已選的組別"
 
-#: gtk/rgzvtinstallprogress.cc:83
-msgid "<i>Running...</i>"
-msgstr ""
+#: gtk/rgpkgdetails.cc:103
+#, fuzzy, c-format
+msgid "%s Properties"
+msgstr "提供"
 
-#: gtk/rgzvtinstallprogress.cc:91
-msgid ""
-"\n"
-"Successfully applied all changes. You can close the window now "
-msgstr ""
-
-#: gtk/rgzvtinstallprogress.cc:93
-msgid ""
-"\n"
-"Failed to apply all changes! Scroll in this buffer to see what went wrong "
-msgstr ""
-
-#: gtk/rgzvtinstallprogress.cc:95
-msgid ""
-"\n"
-"Successfully installed all packages of the current medium. To continue the "
-"installation with the next medium close this window."
-msgstr ""
-
-#: gtk/rgzvtinstallprogress.cc:143
-msgid "<i>Finished</i>"
-msgstr ""
-
-#: gtk/rgzvtinstallprogress.cc:152
-msgid "<i>Can't close while running</i>"
+#: gtk/rgpkgdetails.cc:157
+#, c-format
+msgid "%s (%s)"
 msgstr ""
 
 #: gtk/rgmainwindow.cc:77
@@ -1007,228 +1110,113 @@ msgstr "重大更新"
 msgid "Security"
 msgstr "安全更新"
 
-#: gtk/rgmainwindow.cc:290
-#, fuzzy
-msgid "Starting help viewer..."
-msgstr "更新套件清單緩衝區 (apt-get update)"
-
-#: gtk/rgmainwindow.cc:305
-msgid ""
-"No help viewer is installed!\n"
-"\n"
-"You need either the GNOME help viewer 'yelp', the 'konqueror' browser or the "
-"'mozilla' browser to view the synaptic manual.\n"
-"\n"
-"Alternativly you can open the man page with 'man synaptic' from the command "
-"line or view the html version located in the 'synaptic/html' folder."
+#: gtk/rgmainwindow.cc:164
+msgid "All"
 msgstr ""
 
-#: gtk/rgmainwindow.cc:550
-msgid ""
-"Could not start the configuration tool!\n"
-"You have to install the required package 'libgnome2-perl'."
-msgstr ""
-
-#: gtk/rgmainwindow.cc:556
-#, fuzzy
-msgid "Starting package configuration tool..."
-msgstr "更新套件清單緩衝區 (apt-get update)"
-
-#. cout << "RGMainWindow::pkgHelpClicked()" << endl;
-#: gtk/rgmainwindow.cc:568
-#, fuzzy
-msgid "Starting package documentation viewer..."
-msgstr "更新套件清單緩衝區 (apt-get update)"
-
-#: gtk/rgmainwindow.cc:680
-#, fuzzy
-msgid "Retrieving Index Files..."
-msgstr "正在抓取索引檔案"
-
-#: gtk/rgmainwindow.cc:682
-#, fuzzy
-msgid "Refreshing package list..."
-msgstr "套件主清單使用色彩顯示"
-
-#: gtk/rgmainwindow.cc:692 gtk/rgmainwindow.cc:893 gtk/rgmainwindow.cc:1526
-#: gtk/rgmainwindow.cc:2036 gtk/rgmainwindow.cc:2195
-#, c-format
-msgid "Can't write %s"
-msgstr ""
-
-#: gtk/rgmainwindow.cc:715 gtk/rgmainwindow.cc:961 gtk/rgmainwindow.cc:1551
-#: gtk/rgmainwindow.cc:1988
-#, fuzzy, c-format
-msgid "Can't read %s"
-msgstr "無法讀取目錄 %s"
-
-#: gtk/rgmainwindow.cc:783
-#, fuzzy
-msgid "Failed to resolve dependency problems!"
-msgstr "修正套件相依關係的問題"
-
-#: gtk/rgmainwindow.cc:785
-#, fuzzy
-msgid "Successfully fixed dependency problems"
-msgstr "修正套件相依關係的問題"
-
-#: gtk/rgmainwindow.cc:800
-msgid ""
-"Could not upgrade the system!\n"
-"There are broken packages. Fix broken packages at first."
-msgstr ""
-
-#: gtk/rgmainwindow.cc:827
-#, fuzzy
-msgid "Marking all available upgrades..."
-msgstr "此套件將會被升級。"
-
-#: gtk/rgmainwindow.cc:839
-#, fuzzy
-msgid "Successfully marked all available upgrades"
-msgstr "此套件將會被升級。"
-
-#: gtk/rgmainwindow.cc:841
-#, fuzzy
-msgid "Failed to mark all available upgrades!"
-msgstr "此套件將會被升級。"
-
-#: gtk/rgmainwindow.cc:860
-msgid ""
-"Could not apply changes!\n"
-"There are broken packages. Fix broken packages at first."
-msgstr ""
-
-#: gtk/rgmainwindow.cc:880
-msgid "Applying marked changes. This may take a while..."
-msgstr ""
-
-#: gtk/rgmainwindow.cc:884
-#, fuzzy
-msgid "Retrieving Package Files..."
-msgstr "正在抓取套件檔案"
-
-#: gtk/rgmainwindow.cc:943
-msgid "Do you want to quit Synaptic?"
-msgstr ""
-
-#: gtk/rgmainwindow.cc:988 gtk/rgmainwindow.cc:1001
-msgid "N/A"
-msgstr "不適用"
-
-#: gtk/rgmainwindow.cc:1416 gtk/window_main_hpaned.glade.h:39
-#: gtk/window_main_vpaned.glade.h:41
+#: gtk/rgmainwindow.cc:358 gtk/window_main.glade.h:30
+#: gtk/window_details.glade.h:19
 #, fuzzy
 msgid "No package is selected.\n"
 msgstr "套件已安裝。"
 
-#: gtk/rgmainwindow.cc:1438
-#, fuzzy
-msgid "_Downgrade"
-msgstr "升級"
+#: gtk/rgmainwindow.cc:454
+#, c-format
+msgid "Select the version of %s that should be forced for installation"
+msgstr ""
 
-#: gtk/rgmainwindow.cc:1441 gtk/window_main_hpaned.glade.h:84
-#: gtk/window_main_vpaned.glade.h:85
-msgid "_Install"
-msgstr "安裝(_I)"
-
-#: gtk/rgmainwindow.cc:1444 gtk/window_main_hpaned.glade.h:102
-#: gtk/window_main_vpaned.glade.h:103
-msgid "_Upgrade"
-msgstr "升級(_U)"
-
-#. standard header in case the installing fails
-#: gtk/rgmainwindow.cc:1770
+#: gtk/rgmainwindow.cc:456
 msgid ""
-"Some packages could not be installed.\n"
-"\n"
-"The following packages have unmet dependencies:\n"
+"The package manager always selects the most applicable version available. If "
+"you force a different version from the default one, errors in the dependency "
+"handling can occur."
 msgstr ""
 
-#: gtk/rgmainwindow.cc:2005
-#, fuzzy
-msgid "Open changes"
-msgstr "套件變更"
-
-#: gtk/rgmainwindow.cc:2212
-#, fuzzy
-msgid "Save changes"
-msgstr "套件變更"
-
-#: gtk/rgmainwindow.cc:2228
-msgid "Save full state, not only changes"
+#. TRANSLATORS: Column header for the column "Status" in the package list
+#: gtk/rgmainwindow.cc:778
+msgid "S"
 msgstr ""
 
-#: gtk/rgmainwindow.cc:2313
+#: gtk/rgmainwindow.cc:797
 msgid "Package"
 msgstr "套件"
 
-#: gtk/rgmainwindow.cc:2336
-#, fuzzy
-msgid "Installed Version"
-msgstr "已安裝"
-
-#: gtk/rgmainwindow.cc:2352
+#: gtk/rgmainwindow.cc:844
 #, fuzzy
 msgid "Latest Version"
 msgstr "已安裝"
 
-#: gtk/rgmainwindow.cc:2378
-msgid "Required Space"
-msgstr ""
-
-#: gtk/rgmainwindow.cc:2631
+#: gtk/rgmainwindow.cc:1153
 #, fuzzy
-msgid "Update the list of available packages"
-msgstr "此套件是一個虛擬套件"
+msgid "Refresh the list of known packages"
+msgstr "選擇套件篩選器"
 
-#: gtk/rgmainwindow.cc:2635
+#: gtk/rgmainwindow.cc:1157
 #, fuzzy
 msgid "Mark all possible upgrades"
 msgstr "此套件將會被升級。"
 
-#: gtk/rgmainwindow.cc:2639
+#: gtk/rgmainwindow.cc:1161 gtk/window_summary.glade.h:5
 #, fuzzy
 msgid "Apply all marked changes"
 msgstr "套件變更"
 
-#: gtk/rgmainwindow.cc:3084
-#, fuzzy
-msgid "No Changes"
-msgstr "預期變動"
-
-#: gtk/rgmainwindow.cc:3092
-msgid "Install"
-msgstr "安裝"
-
-#: gtk/rgmainwindow.cc:3100
-#, fuzzy
-msgid "Upgrade"
-msgstr "升級(_U)"
-
-#: gtk/rgmainwindow.cc:3106 gtk/rgvendorswindow.cc:136
-msgid "Remove"
-msgstr "移除"
-
-#: gtk/rgmainwindow.cc:3114
-msgid "Remove Including Configuration"
+#: gtk/rgmainwindow.cc:1339
+msgid "Unmark"
 msgstr ""
 
-#: gtk/rgmainwindow.cc:3120
+#: gtk/rgmainwindow.cc:1347
+#, fuzzy
+msgid "Mark for Installation"
+msgstr "標記套件，預備安裝或升級"
+
+#: gtk/rgmainwindow.cc:1355
+#, fuzzy
+msgid "Mark for Reinstallation"
+msgstr "標記套件，預備安裝或升級"
+
+#: gtk/rgmainwindow.cc:1364
+#, fuzzy
+msgid "Mark for Upgrade"
+msgstr "將會升級的套件"
+
+#: gtk/rgmainwindow.cc:1372
+#, fuzzy
+msgid "Mark for Removal"
+msgstr "已標記要移除的套件"
+
+#: gtk/rgmainwindow.cc:1381
+#, fuzzy
+msgid "Mark for Complete Removal"
+msgstr "已標記要移除的套件"
+
+#: gtk/rgmainwindow.cc:1393
 #, fuzzy
 msgid "Remove Including Orphaned Dependencies"
 msgstr "移除依賴此套件的套件"
 
-#: gtk/rgmainwindow.cc:3129
+#: gtk/rgmainwindow.cc:1405
 #, fuzzy
-msgid "Lock Current Version and Status"
+msgid "Hold Current Version"
 msgstr "    　　版本"
 
-#: gtk/rgmainwindow.cc:3327
-msgid "Do you want to add another CD-ROM?"
-msgstr ""
+#: gtk/rgmainwindow.cc:1414 gtk/window_main.glade.h:32
+#: gtk/window_filters.glade.h:42
+#, fuzzy
+msgid "Properties"
+msgstr "提供"
 
-#: gtk/rgmainwindow.cc:3356
+#: gtk/rgmainwindow.cc:1426
+#, fuzzy
+msgid "Mark Recommended for Installation"
+msgstr "標記套件，預備安裝或升級"
+
+#: gtk/rgmainwindow.cc:1430
+#, fuzzy
+msgid "Mark Suggested for Installation"
+msgstr "標記套件，預備安裝或升級"
+
+#: gtk/rgmainwindow.cc:1494
 msgid ""
 "Removing this package may render the system unusable.\n"
 "Are you sure you want to do that?"
@@ -1236,7 +1224,7 @@ msgstr ""
 "移除這個套件或會導致您的系統完全失效。\n"
 "您確定要那樣做嗎?"
 
-#: gtk/rgmainwindow.cc:3515
+#: gtk/rgmainwindow.cc:1530
 #, fuzzy, c-format
 msgid ""
 "%i packages listed, %i installed, %i broken. %i to install/upgrade, %i to "
@@ -1245,7 +1233,7 @@ msgstr ""
 "清單共有 %1$i 個套件，已安裝 %2$i 個，壞的有 %3$i 個。將安裝/升級 %4$i 個套"
 "件，移除 %5$i 個套件；將%7$s %6$sB 磁碟空間。"
 
-#: gtk/rgmainwindow.cc:3519
+#: gtk/rgmainwindow.cc:1536
 #, fuzzy, c-format
 msgid ""
 "%i packages listed, %i installed, %i broken. %i to install/upgrade, %i to "
@@ -1254,22 +1242,16 @@ msgstr ""
 "清單共有 %1$i 個套件，已安裝 %2$i 個，壞的有 %3$i 個。將安裝/升級 %4$i 個套"
 "件，移除 %5$i 個套件；將%7$s %6$sB 磁碟空間。"
 
-#: gtk/rgmainwindow.cc:3548 gtk/window_main_hpaned.glade.h:19
-#: gtk/window_main_vpaned.glade.h:20
-msgid "All Packages"
-msgstr "全部套件"
-
-#: gtk/rgmainwindow.cc:3629
+#: gtk/rgmainwindow.cc:1542
+#, fuzzy, c-format
 msgid ""
-"The debtags database is not installed\n"
-"\n"
-"Please call \"debtags update\" in a shell to get the database\n"
-"\n"
-"Sorry for this inconvenience, it will go away in one of the next versions "
-"(patches are welcome)!"
+"%i packages listed, %i installed, %i broken. %i to install/upgrade, %i to "
+"remove"
 msgstr ""
+"清單共有 %1$i 個套件，已安裝 %2$i 個，壞的有 %3$i 個。將安裝/升級 %4$i 個套"
+"件，移除 %5$i 個套件；將%7$s %6$sB 磁碟空間。"
 
-#: gtk/rgmainwindow.cc:3663
+#: gtk/rgmainwindow.cc:1619
 #, c-format
 msgid ""
 "You have %d broken package on your system!\n"
@@ -1282,46 +1264,200 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: gtk/rgrepositorywin.cc:101 gtk/window_repositories.glade.h:4
+#. TRANSLATORS: Title of the changelog dialog - %s is the name of the package
+#: gtk/rgmainwindow.cc:1801
+#, fuzzy, c-format
+msgid "%s Changelog"
+msgstr "更換光碟"
+
+#: gtk/rgmainwindow.cc:1884
+msgid "Do you want to add another CD-ROM?"
+msgstr ""
+
+#: gtk/rgmainwindow.cc:1907 gtk/rgmainwindow.cc:2502 gtk/rgmainwindow.cc:2581
+#: gtk/rgmainwindow.cc:2741
+#, fuzzy, c-format
+msgid "Can't read %s"
+msgstr "無法讀取目錄 %s"
+
+#: gtk/rgmainwindow.cc:1937
+#, fuzzy
+msgid "Open changes"
+msgstr "套件變更"
+
+#: gtk/rgmainwindow.cc:1968 gtk/rgmainwindow.cc:2031 gtk/rgmainwindow.cc:2420
+#: gtk/rgmainwindow.cc:2554 gtk/rgmainwindow.cc:2718
+#, c-format
+msgid "Can't write %s"
+msgstr ""
+
+#: gtk/rgmainwindow.cc:1987
+#, fuzzy
+msgid "Save changes"
+msgstr "套件變更"
+
+#: gtk/rgmainwindow.cc:2004
+msgid "Save full state, not only changes"
+msgstr ""
+
+#: gtk/rgmainwindow.cc:2129
+#, fuzzy, c-format
+msgid "Found %i packages"
+msgstr "永不升級"
+
+#: gtk/rgmainwindow.cc:2159
+#, fuzzy
+msgid "Starting help viewer..."
+msgstr "更新套件清單緩衝區 (apt-get update)"
+
+#: gtk/rgmainwindow.cc:2176
+msgid ""
+"No help viewer is installed!\n"
+"\n"
+"You need either the GNOME help viewer 'yelp', the 'konqueror' browser or the "
+"'mozilla' browser to view the synaptic manual.\n"
+"\n"
+"Alternativly you can open the man page with 'man synaptic' from the command "
+"line or view the html version located in the 'synaptic/html' folder."
+msgstr ""
+
+#: gtk/rgmainwindow.cc:2322
+msgid ""
+"Cannot start configuration tool!\n"
+"You have to install the required package 'libgnome2-perl'."
+msgstr ""
+
+#: gtk/rgmainwindow.cc:2328
+#, fuzzy
+msgid "Starting package configuration tool..."
+msgstr "更新套件清單緩衝區 (apt-get update)"
+
+#. cout << "RGMainWindow::pkgHelpClicked()" << endl;
+#: gtk/rgmainwindow.cc:2343
+#, fuzzy
+msgid "Starting package documentation viewer..."
+msgstr "更新套件清單緩衝區 (apt-get update)"
+
+#: gtk/rgmainwindow.cc:2355
+msgid ""
+"You have to install the package \"dwww\" to browse the documentation of a "
+"package"
+msgstr ""
+
+#: gtk/rgmainwindow.cc:2387
+msgid ""
+"Could not apply changes!\n"
+"Fix broken packages first."
+msgstr ""
+
+#: gtk/rgmainwindow.cc:2406
+msgid "Applying marked changes. This may take a while..."
+msgstr ""
+
+#: gtk/rgmainwindow.cc:2410
+#, fuzzy
+msgid "Downloading Package Files"
+msgstr "編輯篩選器..."
+
+#: gtk/rgmainwindow.cc:2485
+msgid "Do you want to quit Synaptic?"
+msgstr ""
+
+#: gtk/rgmainwindow.cc:2541
+#, fuzzy
+msgid "Downloading Index Files"
+msgstr "編輯篩選器..."
+
+#: gtk/rgmainwindow.cc:2543
+#, fuzzy
+msgid "Refreshing package list..."
+msgstr "套件主清單使用色彩顯示"
+
+#: gtk/rgmainwindow.cc:2606
+#, fuzzy
+msgid "Failed to resolve dependency problems!"
+msgstr "修正套件相依關係的問題"
+
+#: gtk/rgmainwindow.cc:2608
+#, fuzzy
+msgid "Successfully fixed dependency problems"
+msgstr "修正套件相依關係的問題"
+
+#: gtk/rgmainwindow.cc:2624
+msgid ""
+"Could not upgrade the system!\n"
+"Fix broken packages first."
+msgstr ""
+
+#: gtk/rgmainwindow.cc:2665
+#, fuzzy
+msgid "Marking all available upgrades..."
+msgstr "此套件將會被升級。"
+
+#: gtk/rgmainwindow.cc:2677
+#, fuzzy
+msgid "Successfully marked available upgrades"
+msgstr "此套件將會被升級。"
+
+#: gtk/rgmainwindow.cc:2679
+msgid "Failed to mark all available upgrades!"
+msgstr ""
+
+#: gtk/rgrepositorywin.cc:88
+msgid ""
+"You are adding the \"universe\" component.\n"
+"\n"
+" Packages in this component are not supported. Are you sure?"
+msgstr ""
+
+#: gtk/rgrepositorywin.cc:118 gtk/window_repositories.glade.h:4
 msgid "Repositories"
 msgstr "套件庫"
 
-#: gtk/rgrepositorywin.cc:126
+#: gtk/rgrepositorywin.cc:142
 #, fuzzy
 msgid "Enabled"
 msgstr "停用"
 
-#: gtk/rgrepositorywin.cc:136
+#: gtk/rgrepositorywin.cc:152
 msgid "Type"
 msgstr "種類"
 
-#: gtk/rgrepositorywin.cc:145 gtk/rgvendorswindow.cc:62
+#: gtk/rgrepositorywin.cc:162 gtk/rgvendorswindow.cc:62
 #: gtk/rgvendorswindow.cc:80
 msgid "Vendor"
 msgstr "發行商"
 
-#: gtk/rgrepositorywin.cc:163
+#: gtk/rgrepositorywin.cc:185
 msgid "Distribution"
 msgstr "發行版本"
 
-#: gtk/rgrepositorywin.cc:172
+#: gtk/rgrepositorywin.cc:196
 msgid "Section(s)"
 msgstr "組別"
 
-#: gtk/rgrepositorywin.cc:259 gtk/rgrepositorywin.cc:381
+#: gtk/rgrepositorywin.cc:237
+msgid "Binary (deb)"
+msgstr ""
+
+#: gtk/rgrepositorywin.cc:242
+msgid "Source (deb-src)"
+msgstr ""
+
+#: gtk/rgrepositorywin.cc:251 gtk/rgrepositorywin.cc:373
 #: gtk/window_repositories.glade.h:1
 msgid "(no vendor)"
 msgstr "(無特定包裝商)"
 
-#: gtk/rgrepositorywin.cc:336
+#: gtk/rgrepositorywin.cc:327
 msgid "Cannot read vendors.list file"
 msgstr "無法讀取 vendors.list 套件包裝商清單檔"
 
-#: gtk/rgrepositorywin.cc:497
+#: gtk/rgrepositorywin.cc:492
 msgid "Unknown source type"
 msgstr "套件來源種類不明"
 
-#: gtk/rgsummarywindow.cc:81
+#: gtk/rgsummarywindow.cc:83
 msgid "(ESSENTIAL) to be removed"
 msgstr "(必需套件) 將會被移除"
 
@@ -1329,104 +1465,112 @@ msgstr "(必需套件) 將會被移除"
 msgid "To be DOWNGRADED"
 msgstr ""
 
-#: gtk/rgsummarywindow.cc:153
-msgid "To be kept back"
-msgstr "將會維持原狀不升級的套件"
+#: gtk/rgsummarywindow.cc:160
+#, fuzzy
+msgid "To be not upgraded"
+msgstr "將會升級的套件"
 
-#: gtk/rgsummarywindow.cc:209
+#: gtk/rgsummarywindow.cc:196
 #, fuzzy, c-format
 msgid "<b>%s</b> (<b>essential</b>) will be removed\n"
 msgstr ": (必需套件) 將會被移除\n"
 
-#: gtk/rgsummarywindow.cc:216
+#: gtk/rgsummarywindow.cc:205
 #, fuzzy, c-format
 msgid "<b>%s</b> will be <b>downgraded</b>\n"
 msgstr ": 將會被移除\n"
 
-#: gtk/rgsummarywindow.cc:223
+#: gtk/rgsummarywindow.cc:213
 #, fuzzy, c-format
 msgid "<b>%s</b> will be removed\n"
 msgstr ": 將會被移除\n"
 
-#: gtk/rgsummarywindow.cc:230
+#: gtk/rgsummarywindow.cc:222
 #, fuzzy, c-format
 msgid "<b>%s</b> (version <i>%s</i>) will be upgraded to version <i>%s</i>\n"
 msgstr ": 將會被安裝\n"
 
-#: gtk/rgsummarywindow.cc:237
+#: gtk/rgsummarywindow.cc:233
 #, fuzzy, c-format
 msgid "<b>%s</b> (version <i>%s</i>) will be installed\n"
 msgstr ": 將會被安裝\n"
 
-#: gtk/rgsummarywindow.cc:256
+#: gtk/rgsummarywindow.cc:241
+#, fuzzy, c-format
+msgid "<b>%s</b> (version <i>%s</i>) will be re-installed\n"
+msgstr ": 將會被安裝\n"
+
+#: gtk/rgsummarywindow.cc:276
 msgid "Summary"
 msgstr "摘要"
 
-#: gtk/rgsummarywindow.cc:273
-#, fuzzy
-msgid "Marked Changes"
-msgstr "預期變動"
-
-#: gtk/rgsummarywindow.cc:314
+#: gtk/rgsummarywindow.cc:346
 #, fuzzy, c-format
 msgid "%d package is locked\n"
 msgid_plural "%d packages are locked\n"
 msgstr[0] "套件已安裝。"
 msgstr[1] "套件已安裝。"
 
-#: gtk/rgsummarywindow.cc:320
+#: gtk/rgsummarywindow.cc:353
 #, fuzzy, c-format
 msgid "%d package will be held back and not upgraded\n"
 msgid_plural "%d packages will be held back and not upgraded\n"
 msgstr[0] "%d 個%s維持原狀不升級；\n"
 msgstr[1] "%d 個%s維持原狀不升級；\n"
 
-#: gtk/rgsummarywindow.cc:327
+#: gtk/rgsummarywindow.cc:360
 #, fuzzy, c-format
 msgid "%d new package will be installed\n"
 msgid_plural "%d new packages will be installed\n"
 msgstr[0] "將會新安裝 %d 個%s；\n"
 msgstr[1] "將會新安裝 %d 個%s；\n"
 
-#: gtk/rgsummarywindow.cc:334
+#: gtk/rgsummarywindow.cc:367
+#, fuzzy, c-format
+msgid "%d new package will be re-installed\n"
+msgid_plural "%d new packages will be re-installed\n"
+msgstr[0] "將會新安裝 %d 個%s；\n"
+msgstr[1] "將會新安裝 %d 個%s；\n"
+
+#: gtk/rgsummarywindow.cc:374
 #, fuzzy, c-format
 msgid "%d package will be upgraded\n"
 msgid_plural "%d packages will be upgraded\n"
 msgstr[0] "此套件將會被升級。"
 msgstr[1] "此套件將會被升級。"
 
-#: gtk/rgsummarywindow.cc:341
+#: gtk/rgsummarywindow.cc:381
 #, fuzzy, c-format
 msgid "%d package will be removed\n"
 msgid_plural "%d packages will be removed\n"
 msgstr[0] "將會移除 %d 個%s；\n"
 msgstr[1] "將會移除 %d 個%s；\n"
 
-#: gtk/rgsummarywindow.cc:348
+#: gtk/rgsummarywindow.cc:388
 #, fuzzy, c-format
 msgid "%d package will be <b>downgraded</b>\n"
 msgid_plural "%d packages will be <b>downgraded</b>\n"
 msgstr[0] "此套件將會被升級。"
 msgstr[1] "此套件將會被升級。"
 
-#: gtk/rgsummarywindow.cc:355
+#: gtk/rgsummarywindow.cc:396
 #, fuzzy, c-format
 msgid "<b>Warning:</b> %d essential package will be removed\n"
 msgid_plural "<b>Warning:</b> %d essential packages will be removed\n"
 msgstr[0] "警告: %d 個必要的%s將會被移除!\n"
 msgstr[1] "警告: %d 個必要的%s將會被移除!\n"
 
-#: gtk/rgsummarywindow.cc:368
+#: gtk/rgsummarywindow.cc:408
 #, fuzzy, c-format
 msgid "%s of extra space will be used"
 msgstr "將會新安裝 %d 個%s；\n"
 
-#: gtk/rgsummarywindow.cc:371
+#: gtk/rgsummarywindow.cc:411
 #, fuzzy, c-format
 msgid "%s of extra space will be freed"
 msgstr "將會移除 %d 個%s；\n"
 
-#: gtk/rgsummarywindow.cc:377
+#: gtk/rgsummarywindow.cc:417
 #, fuzzy, c-format
 msgid ""
 "\n"
@@ -1435,7 +1579,7 @@ msgstr ""
 "\n"
 "需要下載 %sB。"
 
-#: gtk/rgsummarywindow.cc:401
+#: gtk/rgsummarywindow.cc:442
 #, fuzzy
 msgid ""
 "Essential packages will be removed.\n"
@@ -1461,19 +1605,377 @@ msgstr "確定"
 msgid "Add"
 msgstr "新增"
 
+#: gtk/rgvendorswindow.cc:136
+msgid "Remove"
+msgstr "移除"
+
 #: gtk/rgvendorswindow.cc:140
 #, fuzzy
 msgid "Cancel"
 msgstr "取消"
 
-#: gtk/rgfindwindow.cc:117
+#: gtk/rgfindwindow.cc:128
 #, fuzzy
 msgid "Find"
 msgstr "尋找"
 
+#. TRANSLATORS: Title of the task window - %s is the task (e.g. "desktop" or "mail server")
+#: gtk/rgtaskswin.cc:141
+#, fuzzy, c-format
+msgid "Description %s"
+msgstr "套件描述"
+
+#: gtk/window_main.glade.h:1 gtk/window_fetch.glade.h:1
+#: gtk/window_preferences.glade.h:2 gtk/window_summary.glade.h:2
+#: gtk/window_filters.glade.h:1 gtk/window_details.glade.h:1
+#, fuzzy
+msgid "    "
+msgstr "    　日期"
+
+#: gtk/window_main.glade.h:2 gtk/window_details.glade.h:2
+#, fuzzy
+msgid "<b>Installed Version</b>"
+msgstr "已安裝"
+
+#: gtk/window_main.glade.h:3 gtk/window_details.glade.h:3
+#, fuzzy
+msgid "<b>Latest Available Version</b>"
+msgstr "最新版本"
+
+#: gtk/window_main.glade.h:4 gtk/window_details.glade.h:4
+#, fuzzy
+msgid "<b>Maintainer:</b>"
+msgstr "動作"
+
+#: gtk/window_main.glade.h:5 gtk/window_details.glade.h:5
+msgid ""
+"<b>Note:</b> To install a version that is different from the default one, "
+"choose <b>Package -> Force Version...</b> from the menu."
+msgstr ""
+
+#: gtk/window_main.glade.h:6 gtk/window_details.glade.h:6
+#, fuzzy
+msgid "<b>Package:</b>"
+msgstr "一般資訊"
+
+#: gtk/window_main.glade.h:7 gtk/window_details.glade.h:7
+#, fuzzy
+msgid "<b>Priority:</b>"
+msgstr "色彩"
+
+#: gtk/window_main.glade.h:8 gtk/window_details.glade.h:8
+#, fuzzy
+msgid "<b>Section:</b>"
+msgstr "動作"
+
+#: gtk/window_main.glade.h:9 gtk/window_details.glade.h:9
+#, fuzzy
+msgid "<b>Status:</b>"
+msgstr "動作"
+
+#: gtk/window_main.glade.h:10 gtk/window_details.glade.h:10
+#, fuzzy
+msgid "<b>Tags:</b>"
+msgstr "動作"
+
+#: gtk/window_main.glade.h:11
+#, fuzzy
+msgid "A_pply Marked Changes"
+msgstr "套件變更"
+
+#: gtk/window_main.glade.h:12
+msgid "Alphabet"
+msgstr ""
+
+#: gtk/window_main.glade.h:13
+#, fuzzy
+msgid "Apply"
+msgstr "套用"
+
+#: gtk/window_main.glade.h:14 gtk/window_details.glade.h:11
+#, fuzzy
+msgid "Available versions:"
+msgstr "最新版本"
+
+#: gtk/window_main.glade.h:15 gtk/window_details.glade.h:12
+#, fuzzy
+msgid "Common"
+msgstr "指令"
+
+#: gtk/window_main.glade.h:16
+#, fuzzy
+msgid "Dependants"
+msgstr "依賴此套件的套件"
+
+#: gtk/window_main.glade.h:17 gtk/window_find.glade.h:2
+#: gtk/window_filters.glade.h:8 gtk/rgfiltermanager.h:70
+#: gtk/window_details.glade.h:13
+msgid "Dependencies"
+msgstr "此套件依賴的套件"
+
+#: gtk/window_main.glade.h:18 gtk/window_details.glade.h:14
+#, fuzzy
+msgid "Dependencies of the Latest Version"
+msgstr "此套件依賴的套件"
+
+#: gtk/window_main.glade.h:20 gtk/window_details.glade.h:17
+#, fuzzy
+msgid "Download:"
+msgstr "升級"
+
+#: gtk/window_main.glade.h:21
+msgid "Icon _Legend"
+msgstr ""
+
+#: gtk/window_main.glade.h:22 gtk/window_details.glade.h:18
+#, fuzzy
+msgid "Installed Files"
+msgstr "已安裝"
+
+#: gtk/window_main.glade.h:23
+#, fuzzy
+msgid "Mark All Upgrades"
+msgstr "將會升級的套件"
+
+#: gtk/window_main.glade.h:24
+msgid "Mark Packages by _Task..."
+msgstr ""
+
+#: gtk/window_main.glade.h:25
+#, fuzzy
+msgid "Mark for Co_mplete Removal"
+msgstr "已標記要移除的套件"
+
+#: gtk/window_main.glade.h:26
+#, fuzzy
+msgid "Mark for R_einstallation"
+msgstr "標記套件，預備安裝或升級"
+
+#: gtk/window_main.glade.h:27
+#, fuzzy
+msgid "Mark for _Installation"
+msgstr "標記套件，預備安裝或升級"
+
+#: gtk/window_main.glade.h:28
+#, fuzzy
+msgid "Mark for _Removal"
+msgstr "已標記要移除的套件"
+
+#: gtk/window_main.glade.h:29
+#, fuzzy
+msgid "Mark for _Upgrade"
+msgstr "將會升級的套件"
+
+#: gtk/window_main.glade.h:33 gtk/window_find.glade.h:7
+#: gtk/window_filters.glade.h:43 gtk/window_details.glade.h:21
+#, fuzzy
+msgid "Provided Packages"
+msgstr "尋找套件"
+
+#: gtk/window_main.glade.h:34
+#, fuzzy
+msgid "Release"
+msgstr "取代"
+
+#: gtk/window_main.glade.h:35
+#, fuzzy
+msgid "Reload"
+msgstr "取代"
+
+#: gtk/window_main.glade.h:36
+#, fuzzy
+msgid "Save Markings _As..."
+msgstr "組別"
+
+#: gtk/window_main.glade.h:37
+#, fuzzy
+msgid "Search"
+msgstr "搜尋"
+
+#: gtk/window_main.glade.h:39 gtk/window_details.glade.h:22
+#, fuzzy
+msgid "Size:"
+msgstr "檔案大小"
+
+#: gtk/window_main.glade.h:41
+msgid "Synaptic"
+msgstr "Synaptic「新立得」"
+
+#: gtk/window_main.glade.h:42
+msgid "Text Be_side Icons"
+msgstr ""
+
+#: gtk/window_main.glade.h:43
+msgid "Text _Below Icons"
+msgstr ""
+
+#: gtk/window_main.glade.h:44
+msgid "U_nmark"
+msgstr ""
+
+#: gtk/window_main.glade.h:45
+#, fuzzy
+msgid "U_nmark All"
+msgstr "預期變動"
+
+#: gtk/window_main.glade.h:46 gtk/window_details.glade.h:23
+#, fuzzy
+msgid "Version:"
+msgstr "    　　版本"
+
+#: gtk/window_main.glade.h:47 gtk/window_details.glade.h:24
+#, fuzzy
+msgid "Versions"
+msgstr "    　　版本"
+
+#: gtk/window_main.glade.h:48
+#, fuzzy
+msgid "_About"
+msgstr "關於"
+
+#: gtk/window_main.glade.h:49
+#, fuzzy
+msgid "_Add CD-ROM..."
+msgstr "加 CD-ROM"
+
+#: gtk/window_main.glade.h:50
+msgid "_Browse Documentation"
+msgstr ""
+
+#: gtk/window_main.glade.h:51
+#, fuzzy
+msgid "_Configure..."
+msgstr "繼續"
+
+#: gtk/window_main.glade.h:52
+#, fuzzy
+msgid "_Contents"
+msgstr "元件"
+
+#: gtk/window_main.glade.h:53
+#, fuzzy
+msgid "_Download Changelog"
+msgstr "安裝後刪除已下載的套件"
+
+#: gtk/window_main.glade.h:54
+#, fuzzy
+msgid "_Edit"
+msgstr "編輯"
+
+#: gtk/window_main.glade.h:55
+msgid "_File"
+msgstr "檔案(_F)"
+
+#: gtk/window_main.glade.h:56
+#, fuzzy
+msgid "_Filters"
+msgstr "篩選器"
+
+#: gtk/window_main.glade.h:57
+#, fuzzy
+msgid "_Fix Broken Packages"
+msgstr "修正未完整安裝的套件 (apt-get -f install)"
+
+#: gtk/window_main.glade.h:58
+msgid "_Force Version..."
+msgstr ""
+
+#: gtk/window_main.glade.h:59
+msgid "_Help"
+msgstr "說明(_H)"
+
+#: gtk/window_main.glade.h:60
+#, fuzzy
+msgid "_Hide"
+msgstr "檔案(_F)"
+
+#: gtk/window_main.glade.h:61
+msgid "_Icons Only"
+msgstr ""
+
+#: gtk/window_main.glade.h:62
+#, fuzzy
+msgid "_Lock Version"
+msgstr "    　　版本"
+
+#: gtk/window_main.glade.h:63
+#, fuzzy
+msgid "_Mark All Upgrades..."
+msgstr "此套件將會被升級。"
+
+#: gtk/window_main.glade.h:64
+#, fuzzy
+msgid "_Package"
+msgstr "套件"
+
+#: gtk/window_main.glade.h:65
+#, fuzzy
+msgid "_Properties"
+msgstr "提供"
+
+#: gtk/window_main.glade.h:66
+msgid "_Quick Introduction"
+msgstr ""
+
+#: gtk/window_main.glade.h:67
+#, fuzzy
+msgid "_Quit"
+msgstr "離開"
+
+#: gtk/window_main.glade.h:68
+#, fuzzy
+msgid "_Read Markings..."
+msgstr "組別"
+
+#: gtk/window_main.glade.h:69
+#, fuzzy
+msgid "_Redo"
+msgstr "移除(_R)"
+
+#: gtk/window_main.glade.h:70
+#, fuzzy
+msgid "_Reload Package List"
+msgstr "更新套件清單 (apt-get update)"
+
+#: gtk/window_main.glade.h:71
+msgid "_Repositories"
+msgstr "套件庫(_R)"
+
+#: gtk/window_main.glade.h:72
+#, fuzzy
+msgid "_Save Markings"
+msgstr "套件變更"
+
+#: gtk/window_main.glade.h:73
+#, fuzzy
+msgid "_Search..."
+msgstr "搜尋"
+
+#: gtk/window_main.glade.h:74
+msgid "_Set Internal Option..."
+msgstr ""
+
+#: gtk/window_main.glade.h:75
+msgid "_Settings"
+msgstr "設定(_S)"
+
+#: gtk/window_main.glade.h:76
+#, fuzzy
+msgid "_Text Only"
+msgstr "找下一個"
+
+#: gtk/window_main.glade.h:77
+msgid "_Toolbar"
+msgstr ""
+
+#: gtk/window_main.glade.h:78
+#, fuzzy
+msgid "_Undo"
+msgstr "移除(_R)"
+
 #: gtk/window_about.glade.h:1
 msgid ""
-"<span size=\"small\">Copyright (c) 2001-2004 Conectiva S/A \n"
+"<span size=\"small\">Copyright (c) 2001-2004 Connectiva S/A \n"
 "Copyright (c) 2002-2004 Michael Vogt</span>"
 msgstr ""
 
@@ -1494,12 +1996,13 @@ msgid ""
 "Man page:\n"
 "Wybo Dekker <wybo@servalys.nl>\n"
 "Michael Vogt <mvo@debian.org>\n"
+"Sebastian Heinlein <sebastain.heinlein@web.de>\n"
 "\n"
 "Manual:\n"
-"Sebastian Heinlein <allerlei@renates-welt.de>"
+"Sebastian Heinlein <sebastain.heinlein@web.de>"
 msgstr ""
 
-#: gtk/window_about.glade.h:14
+#: gtk/window_about.glade.h:15
 msgid ""
 "Original author:\n"
 "Alfredo K. Kojima <kojima@windowmaker.org>\n"
@@ -1507,579 +2010,82 @@ msgid ""
 "Maintainers:\n"
 "Michael Vogt <mvo@debian.org>\n"
 "Gustavo Niemeyer <niemeyer@conectiva.com>\n"
+"Sebastian Heinlein <sebastian.heinlein@web.de>\n"
 "\n"
 "Contributors:\n"
 "Enrico Zini <enrico@debian.org>\n"
-"Sebastian Heinlein <allerlei@renates-welt.de>\n"
 "Panu Matilainen <pmatilai@welho.com>\n"
 "Sviatoslav Sviridov <svd@lintec.minsk.by>"
 msgstr ""
 
-#: gtk/window_about.glade.h:26
+#: gtk/window_about.glade.h:27
 #, fuzzy
 msgid "Package management software using apt."
 msgstr "套件變更"
 
-#: gtk/window_about.glade.h:27
+#: gtk/window_about.glade.h:28
 msgid ""
 "This software is licensed under the terms of the GNU General Public License, "
 "Version 2"
 msgstr ""
 
-#: gtk/window_about.glade.h:28
+#: gtk/window_about.glade.h:29
 msgid "Translated by"
 msgstr ""
 
-#: gtk/window_about.glade.h:29
+#: gtk/window_about.glade.h:30
 msgid ""
 "Visit the home page at \n"
 "http://www.nongnu.org/synaptic/"
 msgstr ""
 
-#: gtk/window_about.glade.h:31
-msgid ""
-"Vital Khilko <dojlid@mova.org> (Belarusian)\n"
-"Keld Simonsen <keld@dkuug.dk> (Danish)\n"
-"Michael Vogt <mvo@debian.org> (German)\n"
-"Sebastain Heinlein <allerlei@renates-welt.de> (German)\n"
-"Francisco Javier F. Serrador <serrador@arrakis.es> (Spanish)\n"
-"Mathieu Roy <yeupou@gnu.org> (French)\n"
-"Mauro Colorio <linuxbox@interfree.it> (Italian)\n"
-"Luigi Maselli <metnik at tiscali it> (Italian)\n"
-"Daisuke Suzuki <daisuke@linux.or.jp> (Japanese)\n"
-"Vincent van Adrighem <V.vanAdrighem@dirck.mine.nu> (Dutch)\n"
-"Emil <emil5@go2.pl> (Polish)\n"
-"Marcia Norie Nakaza <norie@conectiva.com.br> (Portugese)\n"
-"Arnaldo Carvalho de Melo <acme@conectiva.com.br> (Portugese)\n"
-"Sviatoslav Sviridov <svd@altlinux.ru> (Russian)\n"
-"Vitaly Lipatov <lav@altlinux.ru> (Russian)\n"
-"Rail Aliev <rail@iqchoice.com> (Turkish)\n"
-"Anthony Fok <anthony@thizlinux.com> (Chinese)\n"
-"Alwin Meschede <ameschede@gmx.de> (German)\n"
-"Liu Songhe <jackliu9999@hotmail.com> (Chinese)\n"
-"Jean-Michel Poure <jm@poure.com> (French)\n"
-"Ossama Khayat <okhayat@yahoo.com> (Arabic)\n"
-"Slobodan Sredojevic <ssl@uns.ns.ac.yu> (Serbian)\n"
-"Kelemen Gábor <kg0021@stud.unideb.hu> (Hungarian)"
-msgstr ""
-
-#: gtk/window_about.glade.h:54
+#: gtk/window_about.glade.h:32
 msgid "Written by"
 msgstr ""
 
-#: gtk/window_find.glade.h:1 gtk/window_main_hpaned.glade.h:3
-#: gtk/window_main_vpaned.glade.h:3 gtk/window_preferences.glade.h:4
+#: gtk/window_about.glade.h:33
+msgid "translators-credits"
+msgstr ""
+
+#: gtk/window_find.glade.h:1 gtk/window_preferences.glade.h:3
 #: gtk/window_disc_name.glade.h:1 gtk/window_setopt.glade.h:1
 #: gtk/window_filters.glade.h:2 gtk/window_repositories.glade.h:2
 msgid "*"
 msgstr "*"
 
-#: gtk/window_find.glade.h:5 gtk/rgfiltermanager.h:69
+#: gtk/window_find.glade.h:3
 #, fuzzy
-msgid "Package name"
-msgstr "套件名稱"
+msgid "Description and Name"
+msgstr "套件描述"
 
-#: gtk/window_find.glade.h:7
-#, fuzzy
-msgid "Search for:"
-msgstr "搜尋"
+#: gtk/window_find.glade.h:4
+msgid "Look in:"
+msgstr ""
 
 #: gtk/window_find.glade.h:8
 #, fuzzy
-msgid "Search in:"
+msgid "Search:"
 msgstr "搜尋"
 
-#: gtk/window_find.glade.h:9
-msgid "Show only packages matching the searched terms."
-msgstr ""
-
-#: gtk/window_fetch.glade.h:1 gtk/window_main_hpaned.glade.h:1
-#: gtk/window_main_vpaned.glade.h:1 gtk/window_preferences.glade.h:2
-#: gtk/window_summary.glade.h:2 gtk/window_filters.glade.h:1
+#: gtk/window_find.glade.h:10
 #, fuzzy
-msgid "    "
-msgstr "    　日期"
+msgid "_Search"
+msgstr "搜尋"
 
 #: gtk/window_fetch.glade.h:2
 #, fuzzy
-msgid "<b>Single files:</b>"
+msgid "<b>Single Files:</b>"
 msgstr "包括"
 
 #: gtk/window_fetch.glade.h:3
 #, fuzzy
-msgid "<b>Total:</b>"
+msgid "<b>Total Progress:</b>"
 msgstr "動作"
-
-#: gtk/window_main_hpaned.glade.h:2 gtk/window_main_vpaned.glade.h:2
-#: gtk/window_preferences.glade.h:3
-#, fuzzy
-msgid "     "
-msgstr "    　日期"
-
-#: gtk/window_main_hpaned.glade.h:4 gtk/window_main_vpaned.glade.h:4
-#, fuzzy
-msgid "<b>Available Versions</b>"
-msgstr "最新版本"
-
-#: gtk/window_main_hpaned.glade.h:5 gtk/window_main_vpaned.glade.h:6
-#, fuzzy
-msgid "<b>Install</b>"
-msgstr "一般資訊"
-
-#: gtk/window_main_hpaned.glade.h:6 gtk/window_main_vpaned.glade.h:7
-#, fuzzy
-msgid "<b>Installed Version</b>"
-msgstr "已安裝"
-
-#: gtk/window_main_hpaned.glade.h:7 gtk/window_main_vpaned.glade.h:8
-#, fuzzy
-msgid "<b>Latest Available Version</b>"
-msgstr "最新版本"
-
-#: gtk/window_main_hpaned.glade.h:8 gtk/window_main_vpaned.glade.h:9
-#, fuzzy
-msgid "<b>Maintainer:</b>"
-msgstr "動作"
-
-#: gtk/window_main_hpaned.glade.h:9 gtk/window_main_vpaned.glade.h:10
-#, fuzzy
-msgid "<b>Package Control</b>"
-msgstr "一般資訊"
-
-#: gtk/window_main_hpaned.glade.h:10
-#, fuzzy
-msgid "<b>Package:</b>"
-msgstr "一般資訊"
-
-#: gtk/window_main_hpaned.glade.h:11 gtk/window_main_vpaned.glade.h:12
-#, fuzzy
-msgid "<b>Priority:</b>"
-msgstr "色彩"
-
-#: gtk/window_main_hpaned.glade.h:12 gtk/window_main_vpaned.glade.h:13
-#, fuzzy
-msgid "<b>Section:</b>"
-msgstr "動作"
-
-#: gtk/window_main_hpaned.glade.h:13 gtk/window_main_vpaned.glade.h:14
-#, fuzzy
-msgid "<b>Status:</b>"
-msgstr "動作"
-
-#: gtk/window_main_hpaned.glade.h:14 gtk/window_main_vpaned.glade.h:15
-#, fuzzy
-msgid "<b>Tags:</b>"
-msgstr "動作"
-
-#: gtk/window_main_hpaned.glade.h:15
-msgid ""
-"<b>Warning:</b> This can render your package manager unusable.\n"
-"Changes override the version selected by the package manager. "
-msgstr ""
-
-#: gtk/window_main_hpaned.glade.h:17 gtk/window_main_vpaned.glade.h:18
-#, fuzzy
-msgid "A_dd CD-ROM..."
-msgstr "加 CD-ROM"
-
-#: gtk/window_main_hpaned.glade.h:18 gtk/window_main_vpaned.glade.h:19
-#, fuzzy
-msgid "Ac_tions"
-msgstr "動作"
-
-#: gtk/window_main_hpaned.glade.h:20 gtk/window_main_vpaned.glade.h:21
-msgid "Commit (and download if necessary) selected changes on packages"
-msgstr "實行已選擇對套件的變更，並有需要時下載套件"
-
-#: gtk/window_main_hpaned.glade.h:21 gtk/window_main_vpaned.glade.h:22
-#, fuzzy
-msgid "Common"
-msgstr "指令"
-
-#: gtk/window_main_hpaned.glade.h:22 gtk/window_main_vpaned.glade.h:23
-msgid "Configure the package using the debconf configuration system"
-msgstr ""
-
-#: gtk/window_main_hpaned.glade.h:23 gtk/window_main_vpaned.glade.h:24
-#, fuzzy
-msgid "Deinstall the package"
-msgstr ""
-"\n"
-"已安裝套件:\n"
-
-#: gtk/window_main_hpaned.glade.h:24 gtk/window_main_vpaned.glade.h:25
-#: gtk/window_filters.glade.h:12 gtk/rgfiltermanager.h:73
-msgid "Dependencies"
-msgstr "此套件依賴的套件"
-
-#: gtk/window_main_hpaned.glade.h:25 gtk/window_main_vpaned.glade.h:26
-#, fuzzy
-msgid "Dependencies of the Latest Version"
-msgstr "此套件依賴的套件"
-
-#: gtk/window_main_hpaned.glade.h:27 gtk/window_main_vpaned.glade.h:29
-#, fuzzy
-msgid "Download size:"
-msgstr "升級"
-
-#: gtk/window_main_hpaned.glade.h:28 gtk/window_main_vpaned.glade.h:30
-#, fuzzy
-msgid "Edit the available filters"
-msgstr "編輯已選的篩選器"
-
-#: gtk/window_main_hpaned.glade.h:29 gtk/window_main_vpaned.glade.h:31
-#: gtk/window_preferences.glade.h:38
-#, fuzzy
-msgid "Expert"
-msgstr "不包括"
-
-#: gtk/window_main_hpaned.glade.h:30 gtk/window_main_vpaned.glade.h:32
-#, fuzzy
-msgid "Filter the list of shown packages"
-msgstr "選擇套件篩選器"
-
-#: gtk/window_main_hpaned.glade.h:31 gtk/window_main_vpaned.glade.h:33
-msgid "Filters..."
-msgstr "篩選器..."
-
-#: gtk/window_main_hpaned.glade.h:32 gtk/window_main_vpaned.glade.h:34
-#, fuzzy
-msgid "Find a package name in the list of shown packages below"
-msgstr "選擇套件篩選器"
-
-#: gtk/window_main_hpaned.glade.h:33 gtk/window_main_vpaned.glade.h:35
-#, fuzzy
-msgid "Find next"
-msgstr "尋找文字:"
-
-#: gtk/window_main_hpaned.glade.h:34 gtk/window_main_vpaned.glade.h:36
-#, fuzzy
-msgid "Find:"
-msgstr "尋找"
-
-#: gtk/window_main_hpaned.glade.h:35 gtk/window_main_vpaned.glade.h:37
-msgid "Install the latest version of the package"
-msgstr ""
-
-#: gtk/window_main_hpaned.glade.h:36 gtk/window_main_vpaned.glade.h:38
-#, fuzzy
-msgid "Installed Files"
-msgstr "已安裝"
-
-#: gtk/window_main_hpaned.glade.h:37 gtk/window_main_vpaned.glade.h:39
-msgid "Keep the package as supplied before and forget selected changes"
-msgstr ""
-
-#: gtk/window_main_hpaned.glade.h:38 gtk/window_main_vpaned.glade.h:40
-msgid "Mark packages for upgrade, except those with new dependencies"
-msgstr "標記可升級的套件，但不包括有新相依關係的套件 (apt-get upgrade)"
-
-#: gtk/window_main_hpaned.glade.h:41 gtk/window_main_vpaned.glade.h:43
-#, fuzzy
-msgid "Pac_kage"
-msgstr "套件"
-
-#: gtk/window_main_hpaned.glade.h:42 gtk/window_main_vpaned.glade.h:44
-msgid "Packages Depending on this One"
-msgstr ""
-
-#: gtk/window_main_hpaned.glade.h:43 gtk/window_main_vpaned.glade.h:45
-#, fuzzy
-msgid "Prefere_nces"
-msgstr "偏好設定"
-
-#: gtk/window_main_hpaned.glade.h:44 gtk/window_main_vpaned.glade.h:46
-#: gtk/window_filters.glade.h:48
-#, fuzzy
-msgid "Provided Packages"
-msgstr "尋找套件"
-
-#: gtk/window_main_hpaned.glade.h:45 gtk/window_main_vpaned.glade.h:47
-msgid "Recommended"
-msgstr "推薦"
-
-#: gtk/window_main_hpaned.glade.h:46 gtk/window_main_vpaned.glade.h:48
-#, fuzzy
-msgid "Remove Including Orphaned _Dependencies"
-msgstr "移除依賴此套件的套件"
-
-#: gtk/window_main_hpaned.glade.h:47 gtk/window_main_vpaned.glade.h:49
-msgid "Remove Including _Configuration"
-msgstr ""
-
-#: gtk/window_main_hpaned.glade.h:48 gtk/window_main_vpaned.glade.h:50
-msgid "Required space:"
-msgstr ""
-
-#: gtk/window_main_hpaned.glade.h:49 gtk/window_main_vpaned.glade.h:51
-#, fuzzy
-msgid "Save Selections _As..."
-msgstr "組別"
-
-#: gtk/window_main_hpaned.glade.h:50 gtk/window_main_vpaned.glade.h:52
-msgid "Search again from the beginning"
-msgstr ""
-
-#: gtk/window_main_hpaned.glade.h:51 gtk/window_main_vpaned.glade.h:53
-#, fuzzy
-msgid "Selected"
-msgstr "刪除"
-
-#: gtk/window_main_hpaned.glade.h:52 gtk/window_main_vpaned.glade.h:54
-msgid "Set _Internal Option..."
-msgstr ""
-
-#: gtk/window_main_hpaned.glade.h:53 gtk/window_main_vpaned.glade.h:55
-msgid "Show:"
-msgstr ""
-
-#: gtk/window_main_hpaned.glade.h:54 gtk/window_main_vpaned.glade.h:56
-#, fuzzy
-msgid "Stat_us Tree"
-msgstr "狀態"
-
-#: gtk/window_main_hpaned.glade.h:55 gtk/window_main_vpaned.glade.h:57
-#, fuzzy
-msgid "Suggested"
-msgstr "建議"
-
-#: gtk/window_main_hpaned.glade.h:56 gtk/window_main_vpaned.glade.h:58
-#, fuzzy
-msgid "Suggestions and Recommendations"
-msgstr "建議和推薦"
-
-#: gtk/window_main_hpaned.glade.h:57 gtk/window_main_vpaned.glade.h:59
-msgid "Synaptic"
-msgstr "Synaptic「新立得」"
-
-#: gtk/window_main_hpaned.glade.h:58 gtk/window_main_vpaned.glade.h:60
-msgid "Synaptic - an apt frontend"
-msgstr ""
-
-#: gtk/window_main_hpaned.glade.h:59 gtk/window_main_vpaned.glade.h:61
-msgid "Text Be_side Icons"
-msgstr ""
-
-#: gtk/window_main_hpaned.glade.h:60 gtk/window_main_vpaned.glade.h:62
-msgid "Text _Below Icons"
-msgstr ""
-
-#: gtk/window_main_hpaned.glade.h:61 gtk/window_main_vpaned.glade.h:63
-#, fuzzy
-msgid "Up_grade System"
-msgstr "升級(_G)"
-
-#: gtk/window_main_hpaned.glade.h:62 gtk/window_main_vpaned.glade.h:64
-msgid "Update package cache"
-msgstr "更新套件清單緩衝區 (apt-get update)"
-
-#: gtk/window_main_hpaned.glade.h:63 gtk/window_main_vpaned.glade.h:65
-#, fuzzy
-msgid "Version:"
-msgstr "    　　版本"
-
-#: gtk/window_main_hpaned.glade.h:64
-msgid "View installed documentation of the package in a browser"
-msgstr ""
-
-#: gtk/window_main_hpaned.glade.h:65 gtk/window_main_vpaned.glade.h:67
-#, fuzzy
-msgid "_About"
-msgstr "關於"
-
-#: gtk/window_main_hpaned.glade.h:66 gtk/window_main_vpaned.glade.h:68
-msgid "_Alphabetic Tree"
-msgstr ""
-
-#: gtk/window_main_hpaned.glade.h:67 gtk/window_main_vpaned.glade.h:69
-#, fuzzy
-msgid "_Apply Filter"
-msgstr "篩選器"
-
-#: gtk/window_main_hpaned.glade.h:68 gtk/window_main_vpaned.glade.h:70
-msgid "_Apply Marked Changes"
-msgstr ""
-
-#: gtk/window_main_hpaned.glade.h:69 gtk/window_main_vpaned.glade.h:71
-#, fuzzy
-msgid "_Clear All Marked Changes"
-msgstr "預期變動"
-
-#: gtk/window_main_hpaned.glade.h:70
-msgid "_Collapse All"
-msgstr ""
-
-#: gtk/window_main_hpaned.glade.h:71 gtk/window_main_vpaned.glade.h:73
-#, fuzzy
-msgid "_Configure"
-msgstr "繼續"
-
-#: gtk/window_main_hpaned.glade.h:72 gtk/window_main_vpaned.glade.h:74
-#, fuzzy
-msgid "_Contents"
-msgstr "元件"
-
-#: gtk/window_main_hpaned.glade.h:73
-msgid "_Documentation"
-msgstr ""
-
-#: gtk/window_main_hpaned.glade.h:74 gtk/window_main_vpaned.glade.h:75
-#, fuzzy
-msgid "_Edit Filters..."
-msgstr "編輯篩選器..."
-
-#: gtk/window_main_hpaned.glade.h:75 gtk/window_main_vpaned.glade.h:76
-#, fuzzy
-msgid "_Expand All"
-msgstr "升級(_G)"
-
-#: gtk/window_main_hpaned.glade.h:76 gtk/window_main_vpaned.glade.h:77
-msgid "_File"
-msgstr "檔案(_F)"
-
-#: gtk/window_main_hpaned.glade.h:77 gtk/window_main_vpaned.glade.h:78
-#, fuzzy
-msgid "_Find..."
-msgstr "尋找文字:"
-
-#: gtk/window_main_hpaned.glade.h:78 gtk/window_main_vpaned.glade.h:79
-#, fuzzy
-msgid "_Fix Broken Packages"
-msgstr "修正未完整安裝的套件 (apt-get -f install)"
-
-#: gtk/window_main_hpaned.glade.h:79 gtk/window_main_vpaned.glade.h:80
-#, fuzzy
-msgid "_Flat List"
-msgstr "更新清單(_L)"
-
-#: gtk/window_main_hpaned.glade.h:80 gtk/window_main_vpaned.glade.h:81
-msgid "_Help"
-msgstr "說明(_H)"
-
-#: gtk/window_main_hpaned.glade.h:81 gtk/window_main_vpaned.glade.h:82
-#, fuzzy
-msgid "_Hide"
-msgstr "檔案(_F)"
-
-#: gtk/window_main_hpaned.glade.h:82 gtk/window_main_vpaned.glade.h:83
-msgid "_Icon Legend"
-msgstr ""
-
-#: gtk/window_main_hpaned.glade.h:83 gtk/window_main_vpaned.glade.h:84
-msgid "_Icons Only"
-msgstr ""
-
-#: gtk/window_main_hpaned.glade.h:85 gtk/window_main_vpaned.glade.h:86
-#, fuzzy
-msgid "_Install Latest Version"
-msgstr "已安裝"
-
-#: gtk/window_main_hpaned.glade.h:86 gtk/window_main_vpaned.glade.h:87
-#, fuzzy
-msgid "_Lock Current Status and Version"
-msgstr "    　　版本"
-
-#: gtk/window_main_hpaned.glade.h:87 gtk/window_main_vpaned.glade.h:88
-#, fuzzy
-msgid "_No Changes"
-msgstr "預期變動"
-
-#: gtk/window_main_hpaned.glade.h:88 gtk/window_main_vpaned.glade.h:89
-msgid "_Quick Introduction"
-msgstr ""
-
-#: gtk/window_main_hpaned.glade.h:89 gtk/window_main_vpaned.glade.h:90
-#, fuzzy
-msgid "_Quit"
-msgstr "離開"
-
-#: gtk/window_main_hpaned.glade.h:90 gtk/window_main_vpaned.glade.h:91
-#, fuzzy
-msgid "_Read Selections..."
-msgstr "組別"
-
-#: gtk/window_main_hpaned.glade.h:91 gtk/window_main_vpaned.glade.h:92
-#, fuzzy
-msgid "_Redo"
-msgstr "移除(_R)"
-
-#: gtk/window_main_hpaned.glade.h:92 gtk/window_main_vpaned.glade.h:93
-msgid "_Refresh"
-msgstr ""
-
-#: gtk/window_main_hpaned.glade.h:93 gtk/window_main_vpaned.glade.h:94
-#, fuzzy
-msgid "_Refresh Package List"
-msgstr "更新套件清單 (apt-get update)"
-
-#: gtk/window_main_hpaned.glade.h:94 gtk/window_main_vpaned.glade.h:95
-msgid "_Remove"
-msgstr "移除(_R)"
-
-#: gtk/window_main_hpaned.glade.h:95 gtk/window_main_vpaned.glade.h:96
-msgid "_Repositories"
-msgstr "套件庫(_R)"
-
-#: gtk/window_main_hpaned.glade.h:96 gtk/window_main_vpaned.glade.h:97
-#, fuzzy
-msgid "_Save Selections"
-msgstr "組別"
-
-#: gtk/window_main_hpaned.glade.h:97 gtk/window_main_vpaned.glade.h:98
-#, fuzzy
-msgid "_Section Tree"
-msgstr "組別"
-
-#: gtk/window_main_hpaned.glade.h:98 gtk/window_main_vpaned.glade.h:99
-#, fuzzy
-msgid "_Tag Tree"
-msgstr "狀態"
-
-#: gtk/window_main_hpaned.glade.h:99 gtk/window_main_vpaned.glade.h:100
-#, fuzzy
-msgid "_Text Only"
-msgstr "找下一個"
-
-#: gtk/window_main_hpaned.glade.h:100 gtk/window_main_vpaned.glade.h:101
-msgid "_Toolbar"
-msgstr ""
-
-#: gtk/window_main_hpaned.glade.h:101 gtk/window_main_vpaned.glade.h:102
-msgid "_Undo"
-msgstr ""
-
-#: gtk/window_main_hpaned.glade.h:103 gtk/window_main_vpaned.glade.h:104
-#, fuzzy
-msgid "_View"
-msgstr "檔案(_F)"
-
-#: gtk/window_main_vpaned.glade.h:5
-#, fuzzy
-msgid "<b>Details</b>"
-msgstr "動作"
-
-#: gtk/window_main_vpaned.glade.h:11
-#, fuzzy
-msgid "<b>Package</b>"
-msgstr "一般資訊"
-
-#: gtk/window_main_vpaned.glade.h:16
-msgid ""
-"<b>Warning:</b> This can render your package\n"
-"manager unusable. Changes override the version selected by the package "
-"manager. "
-msgstr ""
-
-#: gtk/window_main_vpaned.glade.h:66
-msgid "View installed online documentation related to the package"
-msgstr ""
-
-#: gtk/window_main_vpaned.glade.h:72
-msgid "_Collapse All   "
-msgstr ""
 
 #: gtk/window_changes.glade.h:1
-msgid "<span weight=\"bold\" size=\"larger\">Mark required changes?</span>"
+msgid ""
+"<span weight=\"bold\" size=\"larger\">Mark additional required changes?</"
+"span>"
 msgstr ""
 
 #: gtk/window_changes.glade.h:2
@@ -2096,345 +2102,333 @@ msgstr ""
 msgid " "
 msgstr " "
 
+#: gtk/window_preferences.glade.h:4
+msgid "<b>Appearance</b>"
+msgstr "此套件依賴的套件"
+
 #: gtk/window_preferences.glade.h:5
-msgid ""
-"1 = Package list\n"
-"2 = Package details"
-msgstr ""
-
-#: gtk/window_preferences.glade.h:7
 #, fuzzy
-msgid "<b>Actions</b>"
-msgstr "動作"
+msgid "<b>Applying Changes</b>"
+msgstr "一般資訊"
 
-#: gtk/window_preferences.glade.h:8
+#: gtk/window_preferences.glade.h:6
 #, fuzzy
 msgid "<b>Colors</b>"
 msgstr "色彩"
 
-#: gtk/window_preferences.glade.h:9
+#: gtk/window_preferences.glade.h:7
 #, fuzzy
 msgid "<b>Columns</b>"
 msgstr "色彩"
 
-#: gtk/window_preferences.glade.h:10
+#: gtk/window_preferences.glade.h:8
 #, fuzzy
 msgid "<b>Distribution</b>"
 msgstr "發行版本"
 
-#: gtk/window_preferences.glade.h:11
+#: gtk/window_preferences.glade.h:9
 #, fuzzy
 msgid "<b>Fonts</b>"
 msgstr "動作"
 
-#: gtk/window_preferences.glade.h:12
+#: gtk/window_preferences.glade.h:10
 #, fuzzy
-msgid "<b>General</b>"
+msgid "<b>Marking Changes</b>"
 msgstr "一般資訊"
 
-#: gtk/window_preferences.glade.h:13
-msgid "<b>Main Window</b>"
-msgstr ""
-
-#: gtk/window_preferences.glade.h:14
+#: gtk/window_preferences.glade.h:11
 msgid ""
-"<b>Note:</b> The package list will need to be reloaded and so all marked "
-"changes will get lost. Make sure to apply your changes first."
+"<b>Note:</b> The package list must be reloaded and all marked changes will "
+"be lost. Make sure to apply your changes first."
 msgstr ""
 
-#: gtk/window_preferences.glade.h:15
-msgid ""
-"<b>Note:</b> You will need to restart synaptic for \n"
-"this setting to take effect."
-msgstr ""
-
-#: gtk/window_preferences.glade.h:17
+#: gtk/window_preferences.glade.h:12
 #, fuzzy
 msgid "<b>Proxy Server</b>"
 msgstr "動作"
 
-#: gtk/window_preferences.glade.h:18
+#: gtk/window_preferences.glade.h:13
 #, fuzzy
 msgid "<b>Temporary Files</b>"
 msgstr "一般資訊"
 
-#: gtk/window_preferences.glade.h:19
+#: gtk/window_preferences.glade.h:14
 msgid ""
 "<span size=\"large\" weight=\"bold\">These settings affect the core of your "
 "system. Consider changes carefully.</span>"
 msgstr ""
 
-#: gtk/window_preferences.glade.h:20
+#: gtk/window_preferences.glade.h:15
 #, fuzzy
-msgid "Allow regular expressions in searches and filters"
-msgstr "搜尋或匹配時使用正規表達式"
+msgid "A_pplication Font"
+msgstr "刪除"
 
-#: gtk/window_preferences.glade.h:21
+#: gtk/window_preferences.glade.h:16
 msgid "Always Ask"
 msgstr ""
 
-#: gtk/window_preferences.glade.h:22
+#: gtk/window_preferences.glade.h:17
 msgid "Apply changes in a terminal window"
 msgstr ""
 
-#: gtk/window_preferences.glade.h:23
+#: gtk/window_preferences.glade.h:18
 msgid "Ask to confirm changes also affecting other packages"
 msgstr ""
 
-#: gtk/window_preferences.glade.h:24
+#: gtk/window_preferences.glade.h:19
 #, fuzzy
 msgid "Ask to quit after the changes have been applied successfully"
 msgstr "dpkg 執行完畢後自由關閉此對話框"
 
-#: gtk/window_preferences.glade.h:25
+#: gtk/window_preferences.glade.h:20
 #, fuzzy
 msgid "Broken:"
 msgstr "安裝不完整"
 
-#: gtk/window_preferences.glade.h:26
-msgid "Clear"
-msgstr "清除"
+#: gtk/window_preferences.glade.h:21
+msgid "Clicking on the status icon marks the most likely action"
+msgstr ""
 
-#: gtk/window_preferences.glade.h:27
+#: gtk/window_preferences.glade.h:22
 #, fuzzy
 msgid "Color"
 msgstr "色彩"
 
-#: gtk/window_preferences.glade.h:28
+#: gtk/window_preferences.glade.h:23
 msgid "Color packages by their status"
 msgstr ""
 
-#: gtk/window_preferences.glade.h:29
+#: gtk/window_preferences.glade.h:24
+#, fuzzy
+msgid "Colors"
+msgstr "色彩"
+
+#: gtk/window_preferences.glade.h:25
+msgid "Columns and Fonts"
+msgstr ""
+
+#: gtk/window_preferences.glade.h:26
 msgid ""
 "Comma separated list of hosts and domains that will not be contacted through "
 "the proxy (e.g. localhost, 192.168.1.231, .net)"
 msgstr ""
 
-#: gtk/window_preferences.glade.h:30
+#: gtk/window_preferences.glade.h:27
+msgid "Completely"
+msgstr ""
+
+#: gtk/window_preferences.glade.h:28
 msgid "Consider recommended packages as dependencies"
 msgstr ""
 
-#: gtk/window_preferences.glade.h:31
-#, fuzzy
-msgid "Default"
-msgstr "刪除"
-
-#: gtk/window_preferences.glade.h:33
+#: gtk/window_preferences.glade.h:30
 msgid "Default archive: "
 msgstr ""
 
-#: gtk/window_preferences.glade.h:34
+#: gtk/window_preferences.glade.h:31
 msgid "Delete downloaded packages after installation"
 msgstr "安裝後刪除已下載的套件"
 
-#: gtk/window_preferences.glade.h:35
+#: gtk/window_preferences.glade.h:32
 msgid "Delete packages which are no longer available only"
 msgstr ""
 
-#: gtk/window_preferences.glade.h:37
+#: gtk/window_preferences.glade.h:33
 msgid "Direct connection to the internet"
 msgstr ""
 
-#: gtk/window_preferences.glade.h:39
+#: gtk/window_preferences.glade.h:34
+#, fuzzy
+msgid "Expert"
+msgstr "不包括"
+
+#: gtk/window_preferences.glade.h:35
 msgid "FTP proxy: "
 msgstr ""
 
-#: gtk/window_preferences.glade.h:40
+#: gtk/window_preferences.glade.h:36
 msgid "General"
 msgstr "一般資訊"
 
-#: gtk/window_preferences.glade.h:41
+#: gtk/window_preferences.glade.h:37
 msgid "HTTP proxy: "
 msgstr ""
 
-#: gtk/window_preferences.glade.h:42
+#: gtk/window_preferences.glade.h:38
 msgid "IP address or host name of the ftp proxy server"
 msgstr ""
 
-#: gtk/window_preferences.glade.h:43
+#: gtk/window_preferences.glade.h:39
 msgid "IP address or host name of the http proxy server"
 msgstr ""
 
-#: gtk/window_preferences.glade.h:44
-msgid "Include Configuration"
-msgstr ""
-
-#: gtk/window_preferences.glade.h:45
-#, fuzzy
-msgid "Include Orphaned Dependencies"
-msgstr "移除依賴此套件的套件"
-
-#: gtk/window_preferences.glade.h:46
+#: gtk/window_preferences.glade.h:40
 #, fuzzy
 msgid "Installed (locked):"
 msgstr ""
 "\n"
 "已安裝套件:\n"
 
-#: gtk/window_preferences.glade.h:47
-#, fuzzy
-msgid "Installed version"
-msgstr "已安裝"
-
-#: gtk/window_preferences.glade.h:48
+#: gtk/window_preferences.glade.h:41
 #, fuzzy
 msgid "Installed:"
 msgstr "已安裝"
 
-#: gtk/window_preferences.glade.h:49
+#: gtk/window_preferences.glade.h:42
 #, fuzzy
-msgid "Latest version"
-msgstr "已安裝"
+msgid "Keep Configuration"
+msgstr "已標記要移除的套件"
 
-#: gtk/window_preferences.glade.h:50
-msgid "Layout"
-msgstr ""
-
-#: gtk/window_preferences.glade.h:51
+#: gtk/window_preferences.glade.h:43
 #, fuzzy
 msgid "Leave all downloaded packages in the cache"
 msgstr "把已下載的套件留在緩衝區裏"
 
-#: gtk/window_preferences.glade.h:52
+#: gtk/window_preferences.glade.h:44
 msgid "Manual proxy configuration"
 msgstr ""
 
-#: gtk/window_preferences.glade.h:54
+#: gtk/window_preferences.glade.h:45
+#, fuzzy
+msgid "Marked for complete removal:"
+msgstr "已標記要移除的套件"
+
+#: gtk/window_preferences.glade.h:46
+#, fuzzy
+msgid "Marked for downgrade:"
+msgstr "將會升級的套件"
+
+#: gtk/window_preferences.glade.h:47
+#, fuzzy
+msgid "Marked for installation:"
+msgstr "標記套件，預備安裝或升級"
+
+#: gtk/window_preferences.glade.h:48
+#, fuzzy
+msgid "Marked for reinstallation:"
+msgstr "標記套件，預備安裝或升級"
+
+#: gtk/window_preferences.glade.h:49
+#, fuzzy
+msgid "Marked for removal:"
+msgstr "已標記要移除的套件"
+
+#: gtk/window_preferences.glade.h:50
+#, fuzzy
+msgid "Marked for upgrade:"
+msgstr "將會升級的套件"
+
+#: gtk/window_preferences.glade.h:51
+msgid "Move D_own"
+msgstr ""
+
+#: gtk/window_preferences.glade.h:52
+msgid "Move _Up"
+msgstr ""
+
+#: gtk/window_preferences.glade.h:53
 #, fuzzy
 msgid "Network"
 msgstr "色彩"
 
-#: gtk/window_preferences.glade.h:55
+#: gtk/window_preferences.glade.h:54
 #, fuzzy
-msgid "New in archive:"
-msgstr "已移除但尚存舊設定檔的套件"
+msgid "New in respository:"
+msgstr "新增套件庫"
 
-#: gtk/window_preferences.glade.h:56
+#: gtk/window_preferences.glade.h:55
 msgid "No proxy for: "
 msgstr ""
 
-#: gtk/window_preferences.glade.h:57
+#: gtk/window_preferences.glade.h:56
 #, fuzzy
 msgid "Not installed (locked):"
 msgstr ""
 "\n"
 "已安裝套件:\n"
 
-#: gtk/window_preferences.glade.h:58
+#: gtk/window_preferences.glade.h:57
 #, fuzzy
-msgid "Not installed: "
+msgid "Not installed:"
 msgstr "未安裝"
 
-#: gtk/window_preferences.glade.h:59
+#: gtk/window_preferences.glade.h:58
 msgid "Number of undo operations:"
 msgstr ""
 
-#: gtk/window_preferences.glade.h:60
-#, fuzzy
-msgid "Package List"
-msgstr "套件"
+#: gtk/window_preferences.glade.h:59
+msgid "Port number of the ftp proxy server"
+msgstr ""
 
-#: gtk/window_preferences.glade.h:61
+#: gtk/window_preferences.glade.h:60
 msgid "Port number of the http proxy server"
 msgstr ""
 
-#: gtk/window_preferences.glade.h:62
-msgid "Port numer of the ftp proxy server"
-msgstr ""
-
-#: gtk/window_preferences.glade.h:63
+#: gtk/window_preferences.glade.h:61
 msgid "Port: "
 msgstr ""
 
-#: gtk/window_preferences.glade.h:65
-#, fuzzy
-msgid "Regular expressions are an advanced method of text matching"
-msgstr "搜尋或匹配時使用正規表達式"
-
-#: gtk/window_preferences.glade.h:66
+#: gtk/window_preferences.glade.h:63
 #, fuzzy
 msgid "Removal of packages: "
 msgstr "套件"
 
-#: gtk/window_preferences.glade.h:67
-msgid "Required space"
-msgstr ""
-
-#: gtk/window_preferences.glade.h:68
+#: gtk/window_preferences.glade.h:64
 msgid ""
 "Select the default release if more than one is specifed in the sources.list"
 msgstr ""
 
-#: gtk/window_preferences.glade.h:71
+#: gtk/window_preferences.glade.h:65
+msgid "Show package properties in the main window"
+msgstr ""
+
+#: gtk/window_preferences.glade.h:67
 #, fuzzy
 msgid "System upgrade:"
 msgstr "升級"
 
-#: gtk/window_preferences.glade.h:72
+#: gtk/window_preferences.glade.h:68
 #, fuzzy
 msgid "Temporary Files"
 msgstr "一般資訊"
 
-#: gtk/window_preferences.glade.h:73
-msgid ""
-"The position of the column from left to right. A value of -1 hides the column"
-msgstr ""
-
-#: gtk/window_preferences.glade.h:74
+#: gtk/window_preferences.glade.h:69
 #, fuzzy
-msgid "To be downgraded:"
-msgstr "將會升級的套件"
+msgid "Upgradable:"
+msgstr "可升級"
 
-#: gtk/window_preferences.glade.h:75
-#, fuzzy
-msgid "To be installed:"
-msgstr "將會新安裝的套件"
-
-#: gtk/window_preferences.glade.h:76
-#, fuzzy
-msgid "To be removed including configuration:"
-msgstr "已標記要移除的套件"
-
-#: gtk/window_preferences.glade.h:77
-#, fuzzy
-msgid "To be removed:"
-msgstr "將會移除的套件"
-
-#: gtk/window_preferences.glade.h:78
-#, fuzzy
-msgid "To be upgraded:"
-msgstr "將會升級的套件"
-
-#: gtk/window_preferences.glade.h:79
-#, fuzzy
-msgid "Update available:"
-msgstr "編輯已選的篩選器"
-
-#: gtk/window_preferences.glade.h:80
+#: gtk/window_preferences.glade.h:70
 #, fuzzy
 msgid "Use custom application font"
 msgstr "刪除"
 
-#: gtk/window_preferences.glade.h:81
+#: gtk/window_preferences.glade.h:71
 msgid "Use custom terminal font"
 msgstr ""
 
-#: gtk/window_preferences.glade.h:82
+#: gtk/window_preferences.glade.h:72
 #, fuzzy
-msgid "_Default Font"
-msgstr "刪除"
+msgid "_Delete Cached Package Files"
+msgstr "全部套件"
 
-#: gtk/window_preferences.glade.h:83
+#: gtk/window_preferences.glade.h:73
 msgid "_Terminal Font"
 msgstr ""
 
 #: gtk/window_disc_name.glade.h:2
-#, fuzzy
-msgid "Disc name"
-msgstr "更換光碟"
+msgid ""
+"<span weight=\"bold\" size=\"larger\">Enter the label of the CD-ROM</span>"
+msgstr ""
 
 #: gtk/window_disc_name.glade.h:3
-msgid "Enter the disc name"
+#, fuzzy
+msgid "Disc label:"
+msgstr "更換光碟"
+
+#: gtk/window_disc_name.glade.h:4
+msgid ""
+"The label will be used to identify the CD-ROM if you want to install "
+"packages from it later."
 msgstr ""
 
 #: gtk/window_setopt.glade.h:2
@@ -2464,24 +2458,18 @@ msgid ""
 "<span weight=\"bold\" size=\"large\">Apply the following changes?</span>"
 msgstr ""
 
-#: gtk/window_summary.glade.h:5
-#, fuzzy
-msgid "Apply the changes"
-msgstr "套件變更"
-
 #: gtk/window_summary.glade.h:6
 #, fuzzy
 msgid "Download package files only"
 msgstr "安裝後刪除已下載的套件"
 
 #: gtk/window_summary.glade.h:7
-#, fuzzy
-msgid "Return to the main window"
-msgstr "主視窗裏使用的按鈕僅顯示文字"
+msgid "Return to the main screen"
+msgstr ""
 
 #: gtk/window_summary.glade.h:8
 #, fuzzy
-msgid "The package files will ony be retrieved, but not installed or upgraded"
+msgid "The package files will be downloaded only, but not installed"
 msgstr "此套件將會被安裝。"
 
 #: gtk/window_summary.glade.h:9
@@ -2491,6 +2479,17 @@ msgid ""
 msgstr ""
 
 #: gtk/window_summary.glade.h:10
+msgid ""
+"Vendors sign theirs packages to verify the correct origin and integraty of "
+"the packages. Disabling the verification is a security risk"
+msgstr ""
+
+#: gtk/window_summary.glade.h:11
+#, fuzzy
+msgid "Verify package signatures"
+msgstr "管理套件檔案庫"
+
+#: gtk/window_summary.glade.h:12
 #, fuzzy
 msgid "_Show Details"
 msgstr "顯示詳細資料"
@@ -2510,209 +2509,182 @@ msgstr "一般資訊"
 msgid "<b>Other</b>"
 msgstr "動作"
 
-#: gtk/window_filters.glade.h:6
-#, fuzzy
-msgid "<b>Rules</b>"
-msgstr "動作"
-
 #: gtk/window_filters.glade.h:7
-#, fuzzy
-msgid "<b>View</b>"
-msgstr "動作"
-
-#: gtk/window_filters.glade.h:8
-msgid "Alphabetic Tree"
-msgstr ""
-
-#: gtk/window_filters.glade.h:10
-msgid "Collapse All"
-msgstr ""
-
-#: gtk/window_filters.glade.h:11
 #, fuzzy
 msgid "Conflicting Packages"
 msgstr "正在進行修改"
 
-#: gtk/window_filters.glade.h:14
+#: gtk/window_filters.glade.h:9 gtk/window_details.glade.h:15
 #, fuzzy
-msgid "Deselect All"
-msgstr "刪除"
+msgid "Dependent Packages"
+msgstr "全部套件"
 
-#: gtk/window_filters.glade.h:15
+#: gtk/window_filters.glade.h:11
 msgid "Exclude"
 msgstr "不包括"
 
-#: gtk/window_filters.glade.h:16
+#: gtk/window_filters.glade.h:12
 #, fuzzy
 msgid "Exclude selected sections"
 msgstr "不包括已選的組別"
 
-#: gtk/window_filters.glade.h:17 gtk/rgfiltermanager.h:63
+#: gtk/window_filters.glade.h:13 gtk/rgfiltermanager.h:60
 #, fuzzy
 msgid "Excludes"
 msgstr "不包括"
 
-#: gtk/window_filters.glade.h:18
+#: gtk/window_filters.glade.h:15
 #, fuzzy
-msgid "Expand All"
-msgstr "升級(_G)"
+msgid "For installation or upgrade"
+msgstr "將會升級的套件"
 
-#: gtk/window_filters.glade.h:20
+#: gtk/window_filters.glade.h:16
 #, fuzzy
-msgid "Flat List"
-msgstr "更新清單(_L)"
+msgid "For removal"
+msgstr "已標記要移除的套件"
 
-#: gtk/window_filters.glade.h:21
+#: gtk/window_filters.glade.h:17
 msgid "Include"
 msgstr "包括"
 
-#: gtk/window_filters.glade.h:22
+#: gtk/window_filters.glade.h:18
 #, fuzzy
 msgid "Include selected sections only"
 msgstr "只包括已選的組別"
 
-#: gtk/window_filters.glade.h:23 gtk/rgfiltermanager.h:62
+#: gtk/window_filters.glade.h:19 gtk/rgfiltermanager.h:59
 #, fuzzy
 msgid "Includes"
 msgstr "包括"
 
-#: gtk/window_filters.glade.h:26
+#: gtk/window_filters.glade.h:21
 #, fuzzy
-msgid "Invert All"
-msgstr "安裝"
+msgid "Installed packages that are up-to-date"
+msgstr "包括以下狀態的套件..."
 
-#: gtk/window_filters.glade.h:27
+#: gtk/window_filters.glade.h:22
 #, fuzzy
-msgid "Leave Unchanged"
-msgstr "套件變更"
+msgid "Installed packages that are upgradable"
+msgstr "已安裝並可升級的套件"
 
-#: gtk/window_filters.glade.h:28
+#: gtk/window_filters.glade.h:23
+#, fuzzy
+msgid "Installed packages that are upgradable to a later upstream version"
+msgstr "已安裝"
+
+#: gtk/window_filters.glade.h:24
 msgid "Library packages that are no longer needed (deborphan is required)"
 msgstr ""
 
-#: gtk/window_filters.glade.h:31
+#: gtk/window_filters.glade.h:27
 #, fuzzy
-msgid "Not (no longer) installable"
+msgid "Not installable"
 msgstr "未安裝"
 
-#: gtk/window_filters.glade.h:33
+#: gtk/window_filters.glade.h:29
+#, fuzzy
+msgid "Not installed packages"
+msgstr ""
+"\n"
+"已安裝套件:\n"
+
+#: gtk/window_filters.glade.h:30
+#, fuzzy
+msgid "Not marked"
+msgstr "未安裝"
+
+#: gtk/window_filters.glade.h:32
 msgid "Orphaned"
 msgstr "再沒有人維護的「孤兒」套件"
 
 #: gtk/window_filters.glade.h:34
-#, fuzzy
-msgid "Package Name"
-msgstr "套件名稱"
-
-#: gtk/window_filters.glade.h:35
-msgid "Packages that are new in the repository since that last \"Update\" "
+msgid "Packages that are new in the repository since that last \"Refresh\""
 msgstr ""
 
-#: gtk/window_filters.glade.h:36
+#: gtk/window_filters.glade.h:35
 msgid "Packages that are not available in any repository"
 msgstr ""
 
-#: gtk/window_filters.glade.h:37
-#, fuzzy
-msgid "Packages that have been installed and a later version is available"
-msgstr "此套件將會被安裝。"
-
-#: gtk/window_filters.glade.h:38
-#, fuzzy
-msgid "Packages that have been installed and are up to date"
-msgstr "此套件將會被安裝。"
-
-#: gtk/window_filters.glade.h:39
-msgid "Packages that have been removed except their configuration files"
-msgstr ""
-
-#: gtk/window_filters.glade.h:40
-#, fuzzy
-msgid "Packages that have not been installed"
-msgstr "此套件沒有安裝。"
-
-#: gtk/window_filters.glade.h:41
+#: gtk/window_filters.glade.h:36
 #, fuzzy
 msgid "Packages that will be installed or upgraded"
 msgstr "此套件將會被安裝。"
 
-#: gtk/window_filters.glade.h:42
-#, fuzzy
-msgid "Packages that will be kept"
-msgstr "此套件將會被升級。"
-
-#: gtk/window_filters.glade.h:43
+#: gtk/window_filters.glade.h:37
 #, fuzzy
 msgid "Packages that will be removed"
 msgstr "此套件將會被升級。"
 
-#: gtk/window_filters.glade.h:44
+#: gtk/window_filters.glade.h:38
 #, fuzzy
 msgid "Packages that will never be upgraded"
 msgstr "此套件將會被升級。"
 
-#: gtk/window_filters.glade.h:45
+#: gtk/window_filters.glade.h:39
+#, fuzzy
+msgid "Packages that won't be changed"
+msgstr "此套件將會被升級。"
+
+#: gtk/window_filters.glade.h:40
 #, fuzzy
 msgid "Packages with broken dependencies"
 msgstr "相依關係有問題。"
 
-#: gtk/window_filters.glade.h:46
-msgid "Pinned"
-msgstr "標記為永不升級的套件"
-
-#: gtk/window_filters.glade.h:47
+#. replaces/obsoletes
+#: gtk/window_filters.glade.h:44 gtk/rgfiltermanager.h:74
 #, fuzzy
-msgid "Properties"
-msgstr "提供"
+msgid "Recommendations"
+msgstr "推薦"
 
-#: gtk/window_filters.glade.h:49
+#: gtk/window_filters.glade.h:45
+msgid "Removed packages that have left configuration files on the system"
+msgstr ""
+
+#: gtk/window_filters.glade.h:46
 #, fuzzy
 msgid "Replaced Packages"
 msgstr "全部套件"
 
+#: gtk/window_filters.glade.h:47
+#, fuzzy
+msgid "Residual config"
+msgstr "已移除但尚存舊設定檔的套件"
+
+#. /recommends
+#: gtk/window_filters.glade.h:50 gtk/rgfiltermanager.h:75
+#, fuzzy
+msgid "Suggestions"
+msgstr "建議"
+
 #: gtk/window_filters.glade.h:51
 #, fuzzy
-msgid "Reverse Dependencies"
-msgstr "反向依賴的套件為"
+msgid "Tags"
+msgstr "任務"
 
-#: gtk/window_filters.glade.h:53
+#: gtk/window_filters.glade.h:52
 #, fuzzy
-msgid "Section Tree"
-msgstr "組別"
+msgid "Upgradable"
+msgstr "可升級"
 
 #: gtk/window_filters.glade.h:54
 #, fuzzy
-msgid "Select All"
-msgstr "刪除"
+msgid "Version Number"
+msgstr "    　　版本"
 
 #: gtk/window_filters.glade.h:55
-msgid "Sorting:"
-msgstr ""
+#, fuzzy
+msgid "_Deselect All"
+msgstr "刪除"
+
+#: gtk/window_filters.glade.h:56
+#, fuzzy
+msgid "_Invert All"
+msgstr "安裝"
 
 #: gtk/window_filters.glade.h:57
 #, fuzzy
-msgid "Status Tree"
-msgstr "狀態"
-
-#: gtk/window_filters.glade.h:58
-#, fuzzy
-msgid "Suggestions or Recommendations"
-msgstr "建議和推薦"
-
-#: gtk/window_filters.glade.h:60
-#, fuzzy
-msgid "To be installed or upgraded"
-msgstr "將會升級的套件"
-
-#: gtk/window_filters.glade.h:63
-#, fuzzy
-msgid "Tree: "
-msgstr "找下一個"
-
-#: gtk/window_filters.glade.h:64
-#, fuzzy
-msgid "Version Number"
-msgstr "    　　版本"
+msgid "_Select All"
+msgstr "刪除"
 
 #: gtk/window_repositories.glade.h:3
 #, fuzzy
@@ -2754,11 +2726,25 @@ msgstr ""
 msgid "Extra output was generated during Package Manager operation"
 msgstr ""
 
+#: gtk/window_tasks.glade.h:1
+msgid ""
+"<span size=\"large\" weight=\"bold\">Which tasks should be performed by your "
+"computer?</span>\n"
+"\n"
+"There are preselected groups of packages to perform each task. If you select "
+"a task, the corresponding packages will be marked for installation."
+msgstr ""
+
+#: gtk/window_tasks.glade.h:4
+#, fuzzy
+msgid "_Description"
+msgstr "套件描述"
+
 #: gtk/window_zvtinstallprogress.glade.h:1
 msgid "<b>Terminal Output:</b>"
 msgstr ""
 
-#: gtk/window_zvtinstallprogress.glade.h:3
+#: gtk/window_zvtinstallprogress.glade.h:2
 #, fuzzy
 msgid "Close this dialog after the changes have been applied successfully"
 msgstr "dpkg 執行完畢後自由關閉此對話框"
@@ -2779,103 +2765,462 @@ msgid "Synaptic Package Manager"
 msgstr "套件變更"
 
 #: gtk/dialog_welcome.glade.h:1
+#, fuzzy
+msgid " - "
+msgstr "    　日期"
+
+#: gtk/dialog_welcome.glade.h:2
 msgid ""
-"1. Select the package that you wish to install or remove\n"
-"2. Mark the change in the package control area, package menu or context menu "
-"of the package\n"
-"3. Apply the marked change(s)"
+"<b>Note:</b> Changes are not applied instantly. At first you have to mark "
+"all changes and then to apply them."
+msgstr ""
+
+#: gtk/dialog_welcome.glade.h:3
+msgid "Choose the action from the context menu of the package."
 msgstr ""
 
 #: gtk/dialog_welcome.glade.h:4
-msgid "<b>Note:</b> Modifications are not applied instantly."
+msgid "Click on the status icon to open a menu that contains all actions."
 msgstr ""
 
 #: gtk/dialog_welcome.glade.h:5
-msgid "Quick Introduction"
+msgid "Double click on the package name."
 msgstr ""
 
 #: gtk/dialog_welcome.glade.h:6
-msgid "Show this dialog at startup"
+msgid "Quick Introduction"
 msgstr ""
 
 #: gtk/dialog_welcome.glade.h:7
-msgid ""
-"The software on your system is organized in so called <i>packages</i>. The "
-"package manager enables you to remove, install or upgrade software packages:"
+msgid "Select the package and choose the action from the 'Package' menu."
 msgstr ""
 
-#: gtk/rgfiltermanager.h:70
+#: gtk/dialog_welcome.glade.h:8
+msgid "Show this dialog at startup"
+msgstr ""
+
+#: gtk/dialog_welcome.glade.h:9
+msgid ""
+"The software on your system is organized in so called <i>packages</i>. The "
+"package manager enables you to install, to upgrade or to remove software "
+"packages."
+msgstr ""
+
+#: gtk/dialog_welcome.glade.h:10
+#, fuzzy
+msgid ""
+"You can mark packages for installation, upgrade or removal in several ways:"
+msgstr "標記套件，預備安裝或升級"
+
+#: gtk/dialog_unmet.glade.h:1
+msgid ""
+"<span weight=\"bold\" size=\"larger\">Could not mark all packages for "
+"installation or upgrade</span>\n"
+"\n"
+"The following packages have unresolvable dependencies. Make sure that all "
+"required repositories are added and enabled in the preferences."
+msgstr ""
+
+#: gtk/dialog_changelog.glade.h:1
+#, fuzzy
+msgid "Complete changelog of the latest version:"
+msgstr "此套件依賴的套件"
+
+#: gtk/dialog_update_failed.glade.h:1
+msgid ""
+"<big><b>Could not download all repository indexes</b></big>\n"
+"\n"
+"The repository might be no longer available or could not be contacted "
+"because of network problems. If available an older version of the failed "
+"index will be used. Otherwise the repository will be ignored. Check your "
+"network connection and the correct writing of the repository address in the "
+"preferences."
+msgstr ""
+
+#: gtk/rgfiltermanager.h:66
+#, fuzzy
+msgid "Package name"
+msgstr "套件名稱"
+
+#: gtk/rgfiltermanager.h:69
 #, fuzzy
 msgid "Version number"
 msgstr "    　　版本"
 
 #. depends, predepends etc
-#: gtk/rgfiltermanager.h:74
+#: gtk/rgfiltermanager.h:71
 #, fuzzy
 msgid "Provided packages"
 msgstr "尋找套件"
 
 #. provides and name
-#: gtk/rgfiltermanager.h:75
+#: gtk/rgfiltermanager.h:72
 #, fuzzy
 msgid "Conflicting packages"
 msgstr "正在進行修改"
 
 #. conflicts
-#: gtk/rgfiltermanager.h:76
+#: gtk/rgfiltermanager.h:73
 #, fuzzy
 msgid "Replaced packages"
 msgstr "全部套件"
 
-#. replaces/obsoletes
-#: gtk/rgfiltermanager.h:77
+#. suggests
+#: gtk/rgfiltermanager.h:76
 #, fuzzy
-msgid "Suggestions or recommendations"
-msgstr "建議和推薦"
-
-#. suggests/recommends
-#: gtk/rgfiltermanager.h:78
-#, fuzzy
-msgid "Reverse dependencies"
-msgstr "反向依賴的套件為"
+msgid "Dependent packages"
+msgstr "全部套件"
 
 #: gtk/rgiconlegend.cc:41 gtk/window_iconlegend.glade.h:2
 msgid "Icon Legend"
 msgstr ""
 
-#: gtk/rgmisc.cc:230
-#, fuzzy
-msgid "To be removed including configuration"
-msgstr "已標記要移除的套件"
-
-#: gtk/rgmisc.cc:232
-#, fuzzy
-msgid "Not installed (locked)"
-msgstr ""
-"\n"
-"已安裝套件:\n"
-
-#: gtk/rgmisc.cc:234
-#, fuzzy
-msgid "Installed (update available)"
-msgstr "編輯已選的篩選器"
-
-#: gtk/rgmisc.cc:235
-#, fuzzy
-msgid "Installed (locked to the current version)"
-msgstr ""
-"\n"
-"已安裝套件:\n"
-
+#. vim:ts=3:sw=3:et
 #: gtk/window_iconlegend.glade.h:1
 msgid ""
 "<b>The following icons are used to indicate the current status of a package:"
 "</b>"
 msgstr ""
 
+#: gtk/rgterminstallprogress.cc:86
+msgid "<i>Running...</i>"
+msgstr ""
+
+#: gtk/rgterminstallprogress.cc:93
+msgid ""
+"\n"
+"Successfully applied all changes. You can close the window now "
+msgstr ""
+
+#: gtk/rgterminstallprogress.cc:94
+msgid ""
+"\n"
+"Failed to apply all changes! Scroll in this buffer to see what went wrong "
+msgstr ""
+
+#: gtk/rgterminstallprogress.cc:96
+msgid ""
+"\n"
+"Successfully installed all packages of the current medium. To continue the "
+"installation with the next medium close this window."
+msgstr ""
+
+#: gtk/rgterminstallprogress.cc:144
+msgid "<i>Finished</i>"
+msgstr ""
+
+#: gtk/rgterminstallprogress.cc:153
+msgid "<i>Can't close while running</i>"
+msgstr ""
+
+#. vim:sts=3:sw=3
+#: gtk/dialog_download_error.glade.h:1
+msgid ""
+"<big><b>Could not download all package files</b></big>\n"
+"\n"
+"The version of the package that you want to install might be no longer "
+"available in the repository. Or there might be problems with the source of "
+"the package. Refresh the package list and check the source of the package (e."
+"g. CD or network connection)."
+msgstr ""
+
+#~ msgid "To be kept back"
+#~ msgstr "將會維持原狀不升級的套件"
+
 #, fuzzy
-#~ msgid "Retrieved %-3lii of %-3li files at %4s B/s - %6s remaining\n"
-#~ msgstr "%-3li/%-3li 檔案    %4sB/s   尚餘 %6s\n"
+#~ msgid "Depended on by"
+#~ msgstr "依賴套件為"
+
+#, fuzzy
+#~ msgid "Find History"
+#~ msgstr "尋找文字:"
+
+#, fuzzy
+#~ msgid "Filter"
+#~ msgstr "篩選器"
+
+#, fuzzy
+#~ msgid "Description:"
+#~ msgstr "套件描述"
+
+#, fuzzy
+#~ msgid "No package is selected."
+#~ msgstr "套件已安裝。"
+
+#, fuzzy
+#~ msgid "Pac_kage"
+#~ msgstr "套件"
+
+#, fuzzy
+#~ msgid "Prefere_nces"
+#~ msgstr "偏好設定"
+
+#, fuzzy
+#~ msgid "_Find..."
+#~ msgstr "尋找文字:"
+
+#, fuzzy
+#~ msgid "Find:"
+#~ msgstr "尋找"
+
+#, fuzzy
+#~ msgid "<b>Search</b>"
+#~ msgstr "動作"
+
+#, fuzzy
+#~ msgid "Allow regular expressions in searches and filters"
+#~ msgstr "搜尋或匹配時使用正規表達式"
+
+#, fuzzy
+#~ msgid "Regular expressions are an advanced method of text matching"
+#~ msgstr "搜尋或匹配時使用正規表達式"
+
+#, fuzzy
+#~ msgid "<b>Available Versions</b>"
+#~ msgstr "最新版本"
+
+#, fuzzy
+#~ msgid "     "
+#~ msgstr "    　日期"
+
+#, fuzzy
+#~ msgid "Hide"
+#~ msgstr "檔案(_F)"
+
+#, fuzzy
+#~ msgid "Installed version:"
+#~ msgstr "已安裝"
+
+#, fuzzy
+#~ msgid "Latest version:"
+#~ msgstr "已安裝"
+
+#, fuzzy
+#~ msgid "Name:"
+#~ msgstr "名稱"
+
+#, fuzzy
+#~ msgid "Status:"
+#~ msgstr "狀態"
+
+#, fuzzy
+#~ msgid "Changelog for %s"
+#~ msgstr "取消"
+
+#, fuzzy
+#~ msgid "_Lock Current Status and Version"
+#~ msgstr "    　　版本"
+
+#, fuzzy
+#~ msgid "_Default Font"
+#~ msgstr "刪除"
+
+#, fuzzy
+#~ msgid ""
+#~ "Packages that have been installed and a later upstream version ist "
+#~ "available"
+#~ msgstr "此套件將會被安裝。"
+
+#, fuzzy
+#~ msgid "Packages that have been installed and a later version is available"
+#~ msgstr "此套件將會被安裝。"
+
+#, fuzzy
+#~ msgid "Packages that have been installed and are up to date"
+#~ msgstr "此套件將會被安裝。"
+
+#, fuzzy
+#~ msgid "Packages that have not been installed"
+#~ msgstr "此套件沒有安裝。"
+
+#, fuzzy
+#~ msgid "Not (no longer) installable"
+#~ msgstr "未安裝"
+
+#, fuzzy
+#~ msgid "unknown"
+#~ msgstr "不明"
+
+#, fuzzy
+#~ msgid "Installed (update available)"
+#~ msgstr "編輯已選的篩選器"
+
+#, fuzzy
+#~ msgid "Queued Changes"
+#~ msgstr "預期變動"
+
+#, fuzzy
+#~ msgid "Up_grade System"
+#~ msgstr "升級(_G)"
+
+#, fuzzy
+#~ msgid "New in archive:"
+#~ msgstr "已移除但尚存舊設定檔的套件"
+
+#, fuzzy
+#~ msgid "Update available:"
+#~ msgstr "編輯已選的篩選器"
+
+#~ msgid ""
+#~ "Some index files failed to download, they have been ignored, or old ones "
+#~ "used instead."
+#~ msgstr "一些索引檔案下載失敗。它們已被略過，或暫由較舊檔案代替。"
+
+#, fuzzy
+#~ msgid "Reverse dependencies"
+#~ msgstr "反向依賴的套件為"
+
+#, fuzzy
+#~ msgid "Reverse Depends"
+#~ msgstr "反向依賴的套件為"
+
+#, fuzzy
+#~ msgid "Reverse Dependencies"
+#~ msgstr "反向依賴的套件為"
+
+#, fuzzy
+#~ msgid "Search in:"
+#~ msgstr "搜尋"
+
+#, fuzzy
+#~ msgid "_Show Matching Packages Only"
+#~ msgstr "編輯篩選器..."
+
+#, fuzzy
+#~ msgid "Marked for removal including config:"
+#~ msgstr "已標記要移除的套件"
+
+#, fuzzy
+#~ msgid "<b>Install</b>"
+#~ msgstr "一般資訊"
+
+#, fuzzy
+#~ msgid "Recommended"
+#~ msgstr "推薦"
+
+#, fuzzy
+#~ msgid "Selected"
+#~ msgstr "刪除"
+
+#, fuzzy
+#~ msgid "Suggested"
+#~ msgstr "建議"
+
+#, fuzzy
+#~ msgid "Suggestions and Recommendations"
+#~ msgstr "建議和推薦"
+
+#, fuzzy
+#~ msgid "Remove Including Orphaned _Dependencies"
+#~ msgstr "移除依賴此套件的套件"
+
+#, fuzzy
+#~ msgid "Search for:"
+#~ msgstr "搜尋"
+
+#, fuzzy
+#~ msgid "_Save Selections"
+#~ msgstr "組別"
+
+#, fuzzy
+#~ msgid "Marked for removal including configuration"
+#~ msgstr "已標記要移除的套件"
+
+#, fuzzy
+#~ msgid "Unable to minimize the upgrade set"
+#~ msgstr "無法讀取 CD-ROM 資料庫 %s"
+
+#, fuzzy
+#~ msgid "Retrieving %li of %li files"
+#~ msgstr "正在抓取索引檔案"
+
+#, fuzzy
+#~ msgid "Retrieving Package Files"
+#~ msgstr "正在抓取套件檔案"
+
+#, fuzzy
+#~ msgid "Retrieving Index Files"
+#~ msgstr "正在抓取索引檔案"
+
+#, fuzzy
+#~ msgid "No Changes"
+#~ msgstr "預期變動"
+
+#~ msgid "Install"
+#~ msgstr "安裝"
+
+#, fuzzy
+#~ msgid "Reinstall"
+#~ msgstr "安裝"
+
+#, fuzzy
+#~ msgid "Upgrade"
+#~ msgstr "升級(_U)"
+
+#, fuzzy
+#~ msgid "R_einstall Current Version"
+#~ msgstr "    　　版本"
+
+#, fuzzy
+#~ msgid "_Install Latest Version"
+#~ msgstr "已安裝"
+
+#~ msgid "_Remove"
+#~ msgstr "移除(_R)"
+
+#~ msgid "_Upgrade"
+#~ msgstr "升級(_U)"
+
+#, fuzzy
+#~ msgid "Default"
+#~ msgstr "刪除"
+
+#, fuzzy
+#~ msgid "Include Orphaned Dependencies"
+#~ msgstr "移除依賴此套件的套件"
+
+#~ msgid "Not Installed"
+#~ msgstr "未安裝"
+
+#, fuzzy
+#~ msgid "Obsolete or locally installed"
+#~ msgstr "未安裝"
+
+#~ msgid "All Packages"
+#~ msgstr "全部套件"
+
+#, fuzzy
+#~ msgid "Filter the list of shown packages"
+#~ msgstr "選擇套件篩選器"
+
+#, fuzzy
+#~ msgid "<b>Selected</b>"
+#~ msgstr "動作"
+
+#, fuzzy
+#~ msgid "Suggestions or Recommendations"
+#~ msgstr "建議和推薦"
+
+#, fuzzy
+#~ msgid "Suggestions or recommendations"
+#~ msgstr "建議和推薦"
+
+#~ msgid "N/A"
+#~ msgstr "不適用"
+
+#, fuzzy
+#~ msgid "Ac_tions"
+#~ msgstr "動作"
+
+#, fuzzy
+#~ msgid "Clear Package Cache Now"
+#~ msgstr "更新套件清單緩衝區 (apt-get update)"
+
+#, fuzzy
+#~ msgid "One click on status icon marks packages"
+#~ msgstr ""
+#~ "套件主清單使用色彩表示\n"
+#~ "(要重新啟動程式後才生效)"
 
 #~ msgid "(stalled)\n"
 #~ msgstr "(停頓)\n"
@@ -2884,20 +3229,42 @@ msgstr ""
 #~ msgid "[Receiving...] "
 #~ msgstr "[接收中]"
 
+#~ msgid "OH SHIT DUNNO WTF IS GOIN ON!"
+#~ msgstr "糟糕了！發生了什麼事呢？"
+
+#, fuzzy
+#~ msgid "unkown"
+#~ msgstr "不明"
+
+#, fuzzy
+#~ msgid "Available Tags"
+#~ msgstr "最新版本"
+
+#, fuzzy
+#~ msgid "Included Tags"
+#~ msgstr "包括"
+
+#, fuzzy
+#~ msgid "Excluded Tags"
+#~ msgstr "不包括"
+
 #~ msgid "Performing Changes"
 #~ msgstr "正在進行修改"
 
 #, fuzzy
-#~ msgid "Executing Changes..."
+#~ msgid "Update the list of available packages"
+#~ msgstr "此套件是一個虛擬套件"
+
+#, fuzzy
+#~ msgid "Execute the queued changes"
 #~ msgstr "不包括已選的組別"
 
-#, fuzzy
-#~ msgid "Not installed (available)"
-#~ msgstr "未安裝"
-
-#, fuzzy
-#~ msgid "Not installed (new in archive)"
-#~ msgstr "已移除但尚存舊設定檔的套件"
+#~ msgid ""
+#~ "Operation not possible with broken packages.\n"
+#~ "Please fix them first."
+#~ msgstr ""
+#~ "系統上仍有套件安裝不完整或相依關係有問題，\n"
+#~ "未能進行這項操作。請先修正問題。"
 
 #~ msgid "Updating Package Lists from Servers..."
 #~ msgstr "從伺服器更新套件清單..."
@@ -2924,16 +3291,123 @@ msgstr ""
 #~ msgid "Automatic upgrade selection failed."
 #~ msgstr "自動選擇升級套件失敗。"
 
-#~ msgid ""
-#~ "Operation not possible with broken packages.\n"
-#~ "Please fix them first."
-#~ msgstr ""
-#~ "系統上仍有套件安裝不完整或相依關係有問題，\n"
-#~ "未能進行這項操作。請先修正問題。"
+#, fuzzy
+#~ msgid "Queue"
+#~ msgstr "已佇列"
 
 #, fuzzy
-#~ msgid "Execute the queued changes"
+#~ msgid "<b>Actions</b>"
+#~ msgstr "動作"
+
+#, fuzzy
+#~ msgid "<b>General</b>"
+#~ msgstr "一般資訊"
+
+#, fuzzy
+#~ msgid "Queued for removal:"
+#~ msgstr "已標記要移除的套件"
+
+#, fuzzy
+#~ msgid "Execute the changes"
 #~ msgstr "不包括已選的組別"
+
+#, fuzzy
+#~ msgid "<b>Rules</b>"
+#~ msgstr "動作"
+
+#, fuzzy
+#~ msgid "<b>View</b>"
+#~ msgstr "動作"
+
+#, fuzzy
+#~ msgid "Expand All"
+#~ msgstr "升級(_G)"
+
+#, fuzzy
+#~ msgid "Flat List"
+#~ msgstr "更新清單(_L)"
+
+#, fuzzy
+#~ msgid "Leave Unchanged"
+#~ msgstr "套件變更"
+
+#, fuzzy
+#~ msgid "Section Tree"
+#~ msgstr "組別"
+
+#, fuzzy
+#~ msgid "Status Tree"
+#~ msgstr "狀態"
+
+#, fuzzy
+#~ msgid "Tree: "
+#~ msgstr "找下一個"
+
+#, fuzzy
+#~ msgid "Queued for removal"
+#~ msgstr "已標記要移除的套件"
+
+#, fuzzy
+#~ msgid "Not installed (available)"
+#~ msgstr "未安裝"
+
+#, fuzzy
+#~ msgid "_Downgrade"
+#~ msgstr "升級"
+
+#~ msgid "_Install"
+#~ msgstr "安裝(_I)"
+
+#, fuzzy
+#~ msgid "<b>Package Control</b>"
+#~ msgstr "一般資訊"
+
+#, fuzzy
+#~ msgid "Clear All _Queued Changes"
+#~ msgstr "預期變動"
+
+#~ msgid "Commit (and download if necessary) selected changes on packages"
+#~ msgstr "實行已選擇對套件的變更，並有需要時下載套件"
+
+#, fuzzy
+#~ msgid "Deinstall the package"
+#~ msgstr ""
+#~ "\n"
+#~ "已安裝套件:\n"
+
+#, fuzzy
+#~ msgid "Edit the available filters"
+#~ msgstr "編輯已選的篩選器"
+
+#~ msgid "Filters..."
+#~ msgstr "篩選器..."
+
+#, fuzzy
+#~ msgid "Find a package name in the list of shown packages below"
+#~ msgstr "選擇套件篩選器"
+
+#, fuzzy
+#~ msgid "Find next"
+#~ msgstr "尋找文字:"
+
+#~ msgid "Mark packages for upgrade, except those with new dependencies"
+#~ msgstr "標記可升級的套件，但不包括有新相依關係的套件 (apt-get upgrade)"
+
+#, fuzzy
+#~ msgid "Stat_us Tree"
+#~ msgstr "狀態"
+
+#, fuzzy
+#~ msgid "Up_grade All"
+#~ msgstr "升級(_G)"
+
+#, fuzzy
+#~ msgid "_Apply Filter"
+#~ msgstr "篩選器"
+
+#, fuzzy
+#~ msgid "_Edit Filters..."
+#~ msgstr "編輯篩選器..."
 
 #, fuzzy
 #~ msgid "_Execute"
@@ -2944,60 +3418,32 @@ msgstr ""
 #~ msgstr "預期變動"
 
 #, fuzzy
-#~ msgid "Queue"
-#~ msgstr "已佇列"
-
-#, fuzzy
-#~ msgid "Queued for downgrade:"
-#~ msgstr "將會升級的套件"
-
-#, fuzzy
-#~ msgid "Queued for installation:"
-#~ msgstr "標記套件，預備安裝或升級"
-
-#, fuzzy
-#~ msgid "Queued for removal:"
-#~ msgstr "已標記要移除的套件"
-
-#, fuzzy
-#~ msgid "Queued for upgrade:"
-#~ msgstr "將會升級的套件"
-
-#, fuzzy
-#~ msgid "Upgrade of all packages:"
-#~ msgstr "此套件是一個虛擬套件"
-
-#, fuzzy
-#~ msgid "Execute the changes"
-#~ msgstr "不包括已選的組別"
-
-#, fuzzy
-#~ msgid "<b>Queued</b>"
-#~ msgstr "動作"
-
-#, fuzzy
-#~ msgid "Queued for installation"
-#~ msgstr "標記套件，預備安裝或升級"
-
-#, fuzzy
-#~ msgid "Queued for upgrade"
-#~ msgstr "將會升級的套件"
-
-#, fuzzy
-#~ msgid "Queued for downgrade"
-#~ msgstr "將會升級的套件"
-
-#, fuzzy
-#~ msgid "Queued for removal"
-#~ msgstr "已標記要移除的套件"
-
-#, fuzzy
-#~ msgid "Size:"
-#~ msgstr "檔案大小"
-
-#, fuzzy
-#~ msgid "Up_grade All"
+#~ msgid "_Expand All"
 #~ msgstr "升級(_G)"
+
+#, fuzzy
+#~ msgid "_Flat List"
+#~ msgstr "更新清單(_L)"
+
+#, fuzzy
+#~ msgid "_No Changes"
+#~ msgstr "預期變動"
+
+#, fuzzy
+#~ msgid "_Section Tree"
+#~ msgstr "組別"
+
+#, fuzzy
+#~ msgid "_Tag Tree"
+#~ msgstr "狀態"
+
+#, fuzzy
+#~ msgid "_View"
+#~ msgstr "檔案(_F)"
+
+#, fuzzy
+#~ msgid "<b>Details</b>"
+#~ msgstr "動作"
 
 #, fuzzy
 #~ msgid "Available (New):"
@@ -3013,6 +3459,9 @@ msgstr ""
 #~ msgid "Available: "
 #~ msgstr "最新版本"
 
+#~ msgid "Clear"
+#~ msgstr "清除"
+
 #, fuzzy
 #~ msgid "Downgrade:"
 #~ msgstr "升級"
@@ -3022,8 +3471,8 @@ msgstr ""
 #~ msgstr "安裝"
 
 #, fuzzy
-#~ msgid "Installed size"
-#~ msgstr "已安裝"
+#~ msgid "Package List"
+#~ msgstr "套件"
 
 #, fuzzy
 #~ msgid "Purge: "
@@ -3034,12 +3483,12 @@ msgstr ""
 #~ msgstr "移除"
 
 #, fuzzy
-#~ msgid "Upgrade:"
-#~ msgstr "升級"
+#~ msgid "Upgrade of all packages:"
+#~ msgstr "此套件是一個虛擬套件"
 
 #, fuzzy
-#~ msgid "<b>Selected</b>"
-#~ msgstr "動作"
+#~ msgid "Upgrade:"
+#~ msgstr "升級"
 
 #, fuzzy
 #~ msgid "_Update List"
@@ -3052,10 +3501,6 @@ msgstr ""
 #, fuzzy
 #~ msgid "<b>Column Order</b>"
 #~ msgstr "色彩"
-
-#, fuzzy
-#~ msgid "<b>Package Changes</b>"
-#~ msgstr "一般資訊"
 
 #, fuzzy
 #~ msgid "Default remove: "
@@ -3151,9 +3596,6 @@ msgstr ""
 #~ msgid "Pin:"
 #~ msgstr "標記為永不升級的套件"
 
-#~ msgid "Broken dependencies."
-#~ msgstr "相依關係有問題。"
-
 #, fuzzy
 #~ msgid "<b>Latest:</b>"
 #~ msgstr "動作"
@@ -3176,14 +3618,6 @@ msgstr ""
 #, fuzzy
 #~ msgid "Package Manager finished"
 #~ msgstr "套件變更"
-
-#, fuzzy
-#~ msgid "Name:"
-#~ msgstr "名稱"
-
-#, fuzzy
-#~ msgid "unknown"
-#~ msgstr "不明"
 
 #, fuzzy
 #~ msgid "not installed"
@@ -3256,16 +3690,8 @@ msgstr ""
 #~ msgstr "繼續"
 
 #, fuzzy
-#~ msgid "Install Latest Version"
-#~ msgstr "已安裝"
-
-#, fuzzy
 #~ msgid "Execute"
 #~ msgstr "不包括"
-
-#, fuzzy
-#~ msgid "Apply"
-#~ msgstr "套用"
 
 #, fuzzy
 #~ msgid "\tVersion"
@@ -3283,10 +3709,6 @@ msgstr ""
 #~ msgstr "維持原狀"
 
 #, fuzzy
-#~ msgid "Status:"
-#~ msgstr "狀態"
-
-#, fuzzy
 #~ msgid "Include Dependencies"
 #~ msgstr "此套件依賴的套件"
 
@@ -3298,28 +3720,12 @@ msgstr ""
 #~ msgstr "無法讀取目錄 %s"
 
 #, fuzzy
-#~ msgid "Available Version"
-#~ msgstr "最新版本"
-
-#, fuzzy
 #~ msgid "_Hold"
 #~ msgstr "保留永不更新 (Hold)"
 
 #, fuzzy
-#~ msgid "_Search..."
-#~ msgstr "搜尋"
-
-#, fuzzy
 #~ msgid "Exclude the package from upgrades"
 #~ msgstr "不包括已選的組別"
-
-#, fuzzy
-#~ msgid "   "
-#~ msgstr "    　日期"
-
-#, fuzzy
-#~ msgid "<b>Dependencies</b>"
-#~ msgstr "此套件依賴的套件"
 
 #~ msgid "Programmed Changes"
 #~ msgstr "將要進行的修改"
@@ -3374,10 +3780,6 @@ msgstr ""
 #~ msgid "Never upgrade this package"
 #~ msgstr "永不升級此套件"
 
-#, fuzzy
-#~ msgid "Hold package"
-#~ msgstr "永不升級"
-
 #~ msgid "Show Pkg Help"
 #~ msgstr "顯示套件說明"
 
@@ -3396,10 +3798,6 @@ msgstr ""
 #, fuzzy
 #~ msgid "_Apply"
 #~ msgstr "套用"
-
-#, fuzzy
-#~ msgid "_Edit..."
-#~ msgstr "編輯"
 
 #, fuzzy
 #~ msgid "Pattern:"
@@ -3444,10 +3842,6 @@ msgstr ""
 #~ msgid "Do"
 #~ msgstr "選擇..."
 
-#, fuzzy
-#~ msgid "Find tool"
-#~ msgstr "尋找文字:"
-
 #~ msgid "Actions"
 #~ msgstr "動作"
 
@@ -3469,9 +3863,6 @@ msgstr ""
 #, fuzzy
 #~ msgid "Status tree"
 #~ msgstr "狀態"
-
-#~ msgid "_Settings"
-#~ msgstr "設定(_S)"
 
 #, fuzzy
 #~ msgid "Text"
@@ -3505,9 +3896,6 @@ msgstr ""
 #~ msgid ""
 #~ "Keep selected package as is in the system, unmarking selections over it"
 #~ msgstr "把已選的套件維持原狀，取消已有的選擇標記"
-
-#~ msgid "Mark selected package for installation/upgrade"
-#~ msgstr "標記套件，預備安裝或升級"
 
 #~ msgid "Mark selected package for removal from system"
 #~ msgstr "標記套件，預備從系統移除"
@@ -3593,10 +3981,6 @@ msgstr ""
 #~ msgstr "更新清單(_U)"
 
 #, fuzzy
-#~ msgid "Search: "
-#~ msgstr "搜尋"
-
-#, fuzzy
 #~ msgid "Open the filter editor"
 #~ msgstr "開啟套件篩選編輯器"
 
@@ -3612,18 +3996,8 @@ msgstr ""
 #~ msgid "Automatically select recommended packages on actions"
 #~ msgstr "自動選擇可升級套件完成。"
 
-#, fuzzy
-#~ msgid "Use colors in main package list"
-#~ msgstr ""
-#~ "套件主清單使用色彩表示\n"
-#~ "(要重新啟動程式後才生效)"
-
 #~ msgid "by Section"
 #~ msgstr "按組別篩選"
-
-#, fuzzy
-#~ msgid "Include packages that are ..."
-#~ msgstr "包括以下狀態的套件..."
 
 #, fuzzy
 #~ msgid "Marked to keep"
@@ -3631,10 +4005,6 @@ msgstr ""
 
 #~ msgid "Marked to Install/Upgrade"
 #~ msgstr "已標記要安裝或升級的套件"
-
-#, fuzzy
-#~ msgid "Marked to remove"
-#~ msgstr "已標記要移除的套件"
 
 #, fuzzy
 #~ msgid "Packages that are broken"
@@ -3686,9 +4056,6 @@ msgstr ""
 
 #~ msgid "Not Relevant"
 #~ msgstr "無關係"
-
-#~ msgid "Possible"
-#~ msgstr "可以"
 
 #~ msgid "Package Upgrade"
 #~ msgstr "升級套件"
@@ -3743,17 +4110,11 @@ msgstr ""
 #~ msgid "Save"
 #~ msgstr "儲存"
 
-#~ msgid "Disk Change"
-#~ msgstr "更換光碟"
-
 #~ msgid "Include Only Selected Sections"
 #~ msgstr "只包括已選的組別"
 
 #~ msgid "Include packages that are..."
 #~ msgstr "包括以下狀態的套件..."
-
-#~ msgid "Installed and Upgradable"
-#~ msgstr "已安裝並可升級的套件"
 
 #~ msgid "Marked to Keep"
 #~ msgstr "已標記要保留的套件"
@@ -3767,14 +4128,8 @@ msgstr ""
 #~ msgid "in Description"
 #~ msgstr "描述為"
 
-#~ msgid "Depends on"
-#~ msgstr "依賴套件為"
-
 #~ msgid "Conflicts with"
 #~ msgstr "不相容套件為"
-
-#~ msgid "Suggests"
-#~ msgstr "建議"
 
 #~ msgid "Excl."
 #~ msgstr "不包括"
@@ -3857,9 +4212,6 @@ msgstr ""
 #~ msgid "Find next package matching pattern"
 #~ msgstr "找下一個符合樣式的套件"
 
-#~ msgid "To Filter"
-#~ msgstr "到篩選器"
-
 #~ msgid ""
 #~ "Make a filter in 'Search Filter' showing all packages matching the pattern"
 #~ msgstr "在「搜尋篩選器」製作篩選器，顯示所有匹配樣板的套件"
@@ -3880,10 +4232,6 @@ msgstr ""
 
 #~ msgid ":could not open display"
 #~ msgstr ":無法開啟顯示"
-
-#, fuzzy
-#~ msgid "Description "
-#~ msgstr "套件描述"
 
 #~ msgid ""
 #~ "There are unsaved changes.\n"
@@ -3911,6 +4259,9 @@ msgstr ""
 #, fuzzy
 #~ msgid "Exapnd all"
 #~ msgstr "升級(_G)"
+
+#~ msgid "Use text-only buttons in main window"
+#~ msgstr "主視窗裏使用的按鈕僅顯示文字"
 
 #, fuzzy
 #~ msgid "MKeepColor"
@@ -3961,9 +4312,6 @@ msgstr ""
 #~ msgid "_Proceed!"
 #~ msgstr "進行(_P)!"
 
-#~ msgid "Manage package repositories"
-#~ msgstr "管理套件檔案庫"
-
 #~ msgid ""
 #~ "\n"
 #~ "Summary of the changes\n"
@@ -3989,6 +4337,3 @@ msgstr ""
 
 #~ msgid " will not be authenticated."
 #~ msgstr " 不會被認證。"
-
-#~ msgid "Dependents"
-#~ msgstr "依賴此套件的套件"

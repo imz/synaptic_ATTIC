@@ -33,15 +33,6 @@
 #include <iostream>
 #include <apt-pkg/tagfile.h>
 
-#ifdef HAVE_DEBTAGS
-#include <TagcollParser.h>
-#include <StdioParserInput.h>
-#include <SmartHierarchy.h>
-#include <TagcollBuilder.h>
-#include <HandleMaker.h>
-#include <TagCollection.h>
-#endif
-
 #include <regex.h>
 
 #include "rpackagelister.h"
@@ -55,11 +46,11 @@ class Configuration;
 
 
 class RPackageFilter {
-protected:
-   RPackageLister *_lister;
 
-public:
-   virtual const char* type() = 0;
+
+   public:
+
+   virtual const char *type() = 0;
 
    virtual bool filter(RPackage *pkg) = 0;
    virtual void reset() = 0;
@@ -68,7 +59,6 @@ public:
    virtual bool write(ofstream &out, string pad) = 0;
 
    RPackageFilter() {};
-   RPackageFilter(RPackageLister *lister) : _lister(lister) {};
    virtual ~RPackageFilter() {};
 };
 
@@ -76,26 +66,32 @@ public:
 extern const char *RPFSection;
 
 class RSectionPackageFilter : public RPackageFilter {
-   vector<string> _groups;
-   bool _inclusive; // include or exclude the packages
    
-public:
-   RSectionPackageFilter(RPackageLister *lister)
-	   : RPackageFilter(lister), _inclusive(false) {};
+   protected:
+
+   vector<string> _groups;
+   bool _inclusive;             // include or exclude the packages
+
+   public:
+
+   RSectionPackageFilter() : _inclusive(false) {};
    virtual ~RSectionPackageFilter() {};
 
-   inline virtual void reset() { clear(); _inclusive = false; };
+   inline virtual void reset() {
+      clear();
+      _inclusive = false;
+   };
 
-   inline virtual const char* type() { return RPFSection; };
-   
+   inline virtual const char *type() { return RPFSection; };
+
    void setInclusive(bool flag) { _inclusive = flag; };
    bool inclusive();
-   
+
    inline void addSection(string group) { _groups.push_back(group); };
    int count();
    string section(int index);
    void clear();
-   
+
    virtual bool filter(RPackage *pkg);
    virtual bool read(Configuration &conf, string key);
    virtual bool write(ofstream &out, string pad);
@@ -105,53 +101,64 @@ public:
 extern const char *RPFPattern;
 
 class RPatternPackageFilter : public RPackageFilter {
-public:
-  typedef enum  {
-    Name,
-    Version,
-    Description,
-    Maintainer,
-    Depends,
-    Provides,
-    Conflicts,
-    Replaces, // (or obsoletes)
-    WeakDepends, // suggests et al
-    RDepends // reverse depends
-  } DepType;
-   static char *TypeName[];
+ public:
+   typedef enum {
+      Name,
+      Description,
+      Maintainer,
+      Version,
+      Depends,
+      Provides,
+      Conflicts,
+      Replaces,                 // (or obsoletes)
+      Recommends,
+      Suggests,
+      RDepends,                  // reverse depends
+      Origin                   // package origin (like security.debian.org)
+   } DepType;
 
-protected:
+   
+ protected:
    struct Pattern {
-       DepType where;
-       string pattern;
-       bool exclusive;
-       vector<regex_t*> regexps;
+      DepType where;
+      string pattern;
+      bool exclusive;
+        vector<regex_t *> regexps;
    };
    vector<Pattern> _patterns;
-   
-public:
-   RPatternPackageFilter(RPackageLister *lister)
-	   : RPackageFilter(lister) {};
 
-   // copy constructor
+   inline bool filterName(Pattern pat, RPackage *pkg);
+   inline bool RPatternPackageFilter::filterVersion(Pattern pat, RPackage *pkg);
+   inline bool filterDescription(Pattern pat, RPackage *pkg);
+   inline bool filterMaintainer(Pattern pat, RPackage *pkg);
+   inline bool filterDepends(Pattern pat, RPackage *pkg, 
+			     pkgCache::Dep::DepType filterType);
+   inline bool filterProvides(Pattern pat, RPackage *pkg);
+   inline bool filterRDepends(Pattern pat, RPackage *pkg);
+   inline bool filterOrigin(Pattern pat, RPackage *pkg);
+
+ public:
+
+   static char *TypeName[];
+
+   RPatternPackageFilter() {};
    RPatternPackageFilter(RPatternPackageFilter &f);
-
-
    virtual ~RPatternPackageFilter();
 
    inline virtual void reset() { clear(); };
-   
+
    inline virtual const char *type() { return RPFPattern; };
-   
+
    void addPattern(DepType type, string pattern, bool exclusive);
    inline int count() { return _patterns.size(); };
-   inline void getPattern(int index, DepType &type, string &pattern, bool &exclusive) {
-       type = _patterns[index].where;
-       pattern = _patterns[index].pattern;
-       exclusive = _patterns[index].exclusive;
+   inline void getPattern(int index, DepType &type, string &pattern,
+                          bool &exclusive) {
+      type = _patterns[index].where;
+      pattern = _patterns[index].pattern;
+      exclusive = _patterns[index].exclusive;
    };
    void clear();
-   
+
    virtual bool filter(RPackage *pkg);
    virtual bool read(Configuration &conf, string key);
    virtual bool write(ofstream &out, string pad);
@@ -160,35 +167,39 @@ public:
 
 extern const char *RPFStatus;
 
-class RStatusPackageFilter : public RPackageFilter {   
-protected:
+class RStatusPackageFilter : public RPackageFilter {
+
+   protected:
+      
    int _status;
 
-public:
+   public:
+
    enum Types {
-       Installed = 1<<0,
-       Upgradable = 1<<1, // installed but upgradable
-       Broken = 1<<2, // installed but dependencies are broken
-       NotInstalled = 1<<3,
-       MarkInstall = 1<<4,
-       MarkRemove = 1<<5,
-       MarkKeep = 1<<6,
-       NewPackage = 1<<7, // new Package (after update)
-       PinnedPackage = 1<<8, // pinned Package (never upgrade)
-       OrphanedPackage = 1<<9, // orphaned (identfied with deborphan)
-       ResidualConfig = 1<<10,  // not installed but has config left
-       NotInstallable = 1<<11  // the package is not aviailable in repository
+      Installed = 1 << 0,
+      Upgradable = 1 << 1,      // installed but upgradable
+      Broken = 1 << 2,          // installed but dependencies are broken
+      NotInstalled = 1 << 3,
+      MarkInstall = 1 << 4,
+      MarkRemove = 1 << 5,
+      MarkKeep = 1 << 6,
+      NewPackage = 1 << 7,      // new Package (after update)
+      PinnedPackage = 1 << 8,   // pinned Package (never upgrade)
+      OrphanedPackage = 1 << 9, // orphaned (identfied with deborphan)
+      ResidualConfig = 1 << 10, // not installed but has config left
+      NotInstallable = 1 << 11,  // the package is not aviailable in repository
+      UpstreamUpgradable = 1 << 12 // new upstream version
    };
 
-   RStatusPackageFilter(RPackageLister *lister)
-	   : RPackageFilter(lister), _status(~0) {};
+   RStatusPackageFilter() : _status(~0)
+   {};
    inline virtual void reset() { _status = ~0; };
 
    inline virtual const char *type() { return RPFStatus; };
-   
+
    inline void setStatus(int status) { _status = status; };
    inline int status() { return _status; };
-   
+
    virtual bool filter(RPackage *pkg);
    virtual bool read(Configuration &conf, string key);
    virtual bool write(ofstream &out, string pad);
@@ -197,14 +208,16 @@ public:
 
 extern const char *RPFPriority;
 
-class RPriorityPackageFilter : public RPackageFilter {   
-public:
-   RPriorityPackageFilter(RPackageLister *lister)
-	   : RPackageFilter(lister) {};
+class RPriorityPackageFilter:public RPackageFilter {
+
+   public:
+
+   RPriorityPackageFilter()  {};
+
    inline virtual void reset() {};
-   
+
    inline virtual const char *type() { return RPFPriority; };
-   
+
    virtual bool filter(RPackage *pkg);
    virtual bool read(Configuration &conf, string key);
    virtual bool write(ofstream &out, string pad);
@@ -213,23 +226,25 @@ public:
 
 extern const char *RPFReducedView;
 
-class RReducedViewPackageFilter : public RPackageFilter {   
-protected:
+class RReducedViewPackageFilter : public RPackageFilter {
+
+   protected:
+
    bool _enabled;
 
    set<string> _hide;
    vector<string> _hide_wildcard;
-   vector<regex_t*> _hide_regex;
+   vector<regex_t *> _hide_regex;
 
    void addFile(string FileName);
 
-public:
-   RReducedViewPackageFilter(RPackageLister *lister)
-	   : RPackageFilter(lister), _enabled(false) {};
+   public:
+
+   RReducedViewPackageFilter() : _enabled(false) {};
    ~RReducedViewPackageFilter();
 
    inline virtual void reset() { _hide.clear(); };
-   
+
    inline virtual const char *type() { return RPFReducedView; };
 
    virtual bool filter(RPackage *pkg);
@@ -240,133 +255,37 @@ public:
    void disable() { _enabled = false; };
 };
 
-#ifdef HAVE_DEBTAGS
-extern const char *RPFTags;
-
-class RTagPackageFilter : public RPackageFilter, public TagcollConsumer<int, string> {
-    protected:
-    OpSet<string> included;
-    OpSet<string> excluded;
-    set<RPackage*> selected;
-    bool dirty;
-
-    void rebuildSelected()
-    {
-	selected.clear();
-	_lister->_coll.output(*this);
-	dirty = false;
-    }
-    
-    public:
-    RTagPackageFilter(RPackageLister *lister) 
-	: RPackageFilter(lister), dirty(true)  {};
-
-    inline virtual void reset() 
-    { 
-	included.clear(); 
-	excluded.clear();
-	selected.clear();
-	dirty = false;
-    };
-    inline virtual const char *type() { return RPFTags; };
-   
-    void include(string tag) { included.insert(tag); dirty = true; }
-    void exclude(string tag) { excluded.insert(tag); dirty = true; }
-
-    OpSet<string>& getIncluded() { return included; };
-    OpSet<string>& getExcluded() { return excluded; };
-
-    virtual bool filter(RPackage *pkg)
-    {
-	// if we do not use tags, ignore them
-	if(included.empty() && excluded.empty())
-	    return true;
-
-	if (dirty)
-	    rebuildSelected();
-
-	return selected.find(pkg) != selected.end();
-    }
-
-    virtual bool read(Configuration &conf, string key);
-    virtual bool write(ofstream &out, string pad);
-
-    virtual void consume(const int& item) throw ()
-    {
-	if (included.empty())
-	    selected.insert(_lister->_hmaker->getItem(item));
-    }
-    virtual void consume(const int& item, const OpSet<string>& tags) throw ()
-    {
-	OpSet<string> inters = tags ^ excluded;
-	if (inters.empty() && tags.contains(included))
-	    selected.insert(_lister->_hmaker->getItem(item));
-    }
-	
-    virtual void consume(const OpSet<int>& items) throw ()
-    {
-	if (included.empty())
-	    for (OpSet<int>::const_iterator i = items.begin();
-		     i != items.end(); i++)
-		selected.insert(_lister->_hmaker->getItem(*i));
-    }
-
-    virtual void consume(const OpSet<int>& items, const OpSet<string>& tags) throw ()
-    {
-	OpSet<string> inters = tags ^ excluded;
-	if (inters.empty() && tags.contains(included))
-	    for (OpSet<int>::const_iterator i = items.begin();
-		     i != items.end(); i++)
-		selected.insert(_lister->_hmaker->getItem(*i));
-    }
-};
-#endif
-
-
-struct RFilterView {
-    RFilterView() : viewMode(0),expandMode(0) {};
-    int viewMode;
-    int expandMode;
-};
-
 struct RFilter {
-  public:
-    RFilter(RPackageLister *lister)
-       : section(lister), pattern(lister), status(lister),
-	 priority(lister), reducedview(lister),
-#ifdef HAVE_DEBTAGS
-	 tags(lister),
-#endif
-	 preset(false)
-    {};
 
-    void setName(string name);
-    string getName();
+   public:
 
-    void setViewMode(RFilterView view) {_view=view;};
-    RFilterView getViewMode() {return _view;};
+   RFilter()
+      :   section(), pattern(), status(),
+          priority(), reducedview(), preset()
+   {};
 
-    bool read(Configuration &conf, string key);
-    bool write(ofstream &out);
-    bool apply(RPackage *package);
-    void reset();
+   void setName(string name);
+   string getName();
 
-    RSectionPackageFilter section;
-    RPatternPackageFilter pattern;
-    RStatusPackageFilter status;
-    RPriorityPackageFilter priority;
-    RReducedViewPackageFilter reducedview;
-#ifdef HAVE_DEBTAGS
-    RTagPackageFilter tags;
-#endif
-    bool preset;
+   bool read(Configuration &conf, string key);
+   bool write(ofstream &out);
+   bool apply(RPackage *package);
+   void reset();
 
-  private:
-    string name;
-    RFilterView _view;
+   RSectionPackageFilter section;
+   RPatternPackageFilter pattern;
+   RStatusPackageFilter status;
+   RPriorityPackageFilter priority;
+   RReducedViewPackageFilter reducedview;
+
+   bool preset;
+
+   protected:
+
+   string name;
 };
 
 
 #endif
 
-// vim:sts=3:sw=3
+// vim:ts=3:sw=3:et

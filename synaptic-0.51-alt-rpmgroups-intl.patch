@@ -1,0 +1,45 @@
+--- synaptic-0.51.orig/common/rpackageview.cc	2004-06-15 18:18:49 +0300
++++ synaptic-0.51/common/rpackageview.cc	2004-06-27 18:11:00 +0300
+@@ -73,11 +73,7 @@
+ 
+ void RPackageViewSections::addPackage(RPackage *package)
+ {
+-#ifndef HAVE_RPM
+-		string str = trans_section(package->section());
+-#else
+-		string str = package->section();
+-#endif
++   string str = trans_section(package->section());
+    _view[str].push_back(package);
+ };
+ 
+--- synaptic-0.51.orig/common/sections_trans.cc	2004-06-18 13:17:37 +0300
++++ synaptic-0.51/common/sections_trans.cc	2004-06-27 18:21:25 +0300
+@@ -3,6 +3,8 @@
+  *  
+  */
+ 
++#include <libintl.h>
++
+ #include "sections_trans.h"
+ 
+ char *transtable[][2] = {
+@@ -135,6 +137,6 @@
+ #else
+ string trans_section(string sec)
+ {
+-   return sec;
++   return dgettext("rpm", sec.c_str());
+ }
+ #endif
+--- synaptic-0.51.orig/gtk/gsynaptic.cc	2004-06-02 18:19:29 +0300
++++ synaptic-0.51/gtk/gsynaptic.cc	2004-06-27 18:26:10 +0300
+@@ -113,6 +113,8 @@
+    bind_textdomain_codeset(GETTEXT_PACKAGE, "UTF-8");
+    bindtextdomain(GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR);
+    textdomain(GETTEXT_PACKAGE);
++
++   bind_textdomain_codeset("rpm", "UTF-8");
+ #endif
+ 
+    gtk_init(&argc, &argv);

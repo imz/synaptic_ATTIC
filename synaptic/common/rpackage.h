@@ -34,6 +34,8 @@
 #include <vector>
 
 #include <apt-pkg/pkgcache.h>
+#include <apt-pkg/acquire.h>
+#include "rconfiguration.h"
 
 using namespace std;
 
@@ -41,182 +43,240 @@ class pkgDepCache;
 class RPackageLister;
 class pkgRecords;
 
-enum {NO_PARSER, DEB_PARSER, STRIP_WS_PARSER, RPM_PARSER};
+enum { NO_PARSER, DEB_PARSER, STRIP_WS_PARSER, RPM_PARSER };
 
 class RPackage {
+
+   protected:
+
    RPackageLister *_lister;
-   
+
    pkgRecords *_records;
    pkgDepCache *_depcache;
    pkgCache::PkgIterator *_package;
+
    // save the default candidate version to undo version selection
-   const char *_candidateVer;
-
-   bool _newPackage;
-   bool _pinnedPackage;
-   bool _orphanedPackage;
-   bool _purge;
-
-   enum ChangeReason {unknown, manual, weak_depends, libapt};
-   ChangeReason last_change;
+   string _defaultCandVer;
 
    bool _notify;
 
-   // virtual pkgs provided by this one
-   vector<pkgCache::PkgIterator> _virtualPackages; 
+   // Virtual pkgs provided by this one.
+#if 0
+   vector<pkgCache::PkgIterator> _virtualPackages;
+   vector<const char *> _provides;
 
-   // provides list as string
-   vector<const char*> _provides;
-   
-   // stuff for enumerators
+   // Stuff for enumerators
    int _vpackI;
    pkgCache::DepIterator _rdepI;
-   
+
    pkgCache::DepIterator _wdepI;
    pkgCache::DepIterator _wdepStart;
    pkgCache::DepIterator _wdepEnd;
-   
+
    pkgCache::DepIterator _depI;
    pkgCache::DepIterator _depStart;
    pkgCache::DepIterator _depEnd;
 
-   bool isShallowDependency(RPackage *pkg);
-
    bool isWeakDep(pkgCache::DepIterator &dep);
-   
-public:
-   enum PackageStatus {
-       SInstalledUpdated,
-       SInstalledOutdated,
-       SInstalledBroken, // installed but broken	   
-       SNotInstalled
-   };
-   
-   enum MarkedStatus {
-       MKeep,
-       MInstall,
-       MUpgrade,
-       MDowngrade,
-       MRemove,
-       MHeld,
-       MBroken
+#endif
+   // FIXME: broken right now 
+   bool isShallowDependency(RPackage *pkg);
+   int _boolFlags;
+
+ public:
+
+   typedef struct  {
+      pkgCache::Dep::DepType type; // type as enum
+      const char* typeStr;         // type (depends, preDepends, etc) as str
+      const char* name;            // target pkg name
+      const char* version;         // target version  
+      const char* versionComp;     // target version compare type ( << , > etc)
+      bool isSatisfied;            // dependecy is satified 
+      bool isVirtual;              // package is virtual
+      bool isOr;                   // or dependency (with next pkg)
+   } DepInformation;
+
+   enum Flags {
+      FKeep             = 1 << 0,
+      FInstall          = 1 << 1,
+      FNewInstall       = 1 << 2,
+      FReInstall        = 1 << 3,
+      FUpgrade          = 1 << 4,
+      FDowngrade        = 1 << 5,
+      FRemove           = 1 << 6,
+      FHeld             = 1 << 7,
+      FInstalled        = 1 << 8,
+      FOutdated         = 1 << 9,
+      FNowBroken        = 1 << 10,
+      FInstBroken       = 1 << 11,
+      FOrphaned         = 1 << 12,
+      FPinned           = 1 << 13,
+      FNew              = 1 << 14,
+      FResidualConfig   = 1 << 15,
+      FNotInstallable   = 1 << 16,
+      FPurge            = 1 << 17,
+      FImportant        = 1 << 18,
+      FOverrideVersion  = 1 << 19,
    };
 
-   enum OtherStatus {
-     OOrphaned        = 1<<0,
-     OPinned          = 1<<1, /* apt-pined */
-     ONew             = 1<<2,
-     OResidualConfig  = 1<<3,
-     ONotInstallable  = 1<<4,
-     OPurge           = 1<<5
-   };
-   
    enum UpdateImportance {
-       IUnknown,
-       INormal,
-       ICritical,
-       ISecurity
+      IUnknown,
+      INormal,
+      ICritical,
+      ISecurity
    };
-   
+
    pkgCache::PkgIterator *package() { return _package; };
-   
 
    inline const char *name() { return _package->Name(); };
-   
+
    const char *section();
    const char *priority();
 
    const char *summary();
    const char *description();
    const char *installedFiles();
-#ifdef HAVE_DEBTAGS
-   const char *tags();
-#endif
-   vector<const char*> provides(); 
+
+   // get changelog file from the debian server (debian only of course)
+   string getChangelogFile(pkgAcquire *fetcher);
+
+   vector<string> provides();
 
    // get all available versions (version, release)
-   vector<pair<string,string> > getAvailableVersions();
+   vector<pair<string, string> > getAvailableVersions();
 
-   bool isImportant();
+   // get origin of the package
+   string getCanidateOrigin();
 
    const char *maintainer();
    const char *vendor();
-   
+
    const char *installedVersion();
    long installedSize();
 
-   // if this is an update
-   UpdateImportance updateImportance();
-   const char *updateSummary();
-   const char *updateDate();
-   const char *updateURL();
+   // sourcepkg
+   const char *srcPackage();
 
    // relative to version that would be installed
    const char *availableVersion();
    long availableInstalledSize();
    long availablePackageSize();
 
+#if 0
+   // if this is an update
+   UpdateImportance updateImportance();
+   const char *updateSummary();
+   const char *updateDate();
+   const char *updateURL();
+
    // special case: alway get the deps of the latest available version
    // (not necessary the installed one)
    bool enumAvailDeps(const char *&type, const char *&what, const char *&pkg,
-		 const char *&which, char *&summary, bool &satisfied);
+                      const char *&which, char *&summary, bool &satisfied);
 
    // this gives the dependencies for the installed package
-   vector<RPackage*> getInstalledDeps();
+   vector<RPackage *> getInstalledDeps();
 
    // installed package if installed, scheduled/candidate if not or if marked
    bool enumDeps(const char *&type, const char *&what, const char *&pkg,
-		 const char *&which, char *&summary, bool &satisfied);
+                 const char *&which, char *&summary, bool &satisfied);
    bool nextDeps(const char *&type, const char *&what, const char *&pkg,
-		 const char *&which, char *&summary, bool &satisfied);
+                 const char *&which, char *&summary, bool &satisfied);
 
-   // does the pkg depends on this one?
-   bool dependsOn(const char *pkgname);
-
-   // reverse dependencies
    bool enumRDeps(const char *&dep, const char *&what);
    bool nextRDeps(const char *&dep, const char *&what);
-   
+
    // weak dependencies
    bool enumWDeps(const char *&type, const char *&what, bool &satisfied);
    bool nextWDeps(const char *&type, const char *&what, bool &satisfied);
 
-   // current status query
-   PackageStatus getStatus();
+   void addVirtualPackage(pkgCache::PkgIterator dep);
+#endif
 
-   // selected status query
-   MarkedStatus getMarkedStatus();
+   // does the pkg depends on this one?
+   bool dependsOn(const char *pkgname);
 
-   // other information about the package (bitwise encoded in the returned int)
-   int getOtherStatus();
+   // getDeps of installed pkg
+   vector<DepInformation> enumDeps(bool useCanidateVersion=false);
+
+   // reverse dependencies
+   vector<RPackage::DepInformation> enumRDeps();
+
+   int getFlags();
 
    bool wouldBreak();
 
-   void inline setNew(bool isNew=true) { _newPackage=isNew; };
-   void setPinned(bool flag);
-   void setOrphaned(bool flag=true) { _orphanedPackage=flag; };
-
-   // change status
    void setKeep();
    void setInstall();
-   void setRemove(bool purge = false); //XXX: purge for debian
+   void setReInstall(bool flag);
+   void setRemove(bool purge = false);
 
-   void setNotify(bool flag=true);
+   void setPinned(bool flag);
 
-   // shallow doesnt remove things other pkgs depend on
-   void setRemoveWithDeps(bool shallow, bool purge=false);
+   void setNew(bool flag = true) {
+      _boolFlags = flag ? (_boolFlags | FNew) : (_boolFlags & ~FNew);
+   };
+   void setOrphaned(bool flag = true) {
+      _boolFlags = flag ? (_boolFlags | FOrphaned) : (_boolFlags & ~FOrphaned);
+   };
 
-   void addVirtualPackage(pkgCache::PkgIterator dep);
+   void setNotify(bool flag = true);
 
-   // install verTag version
-   bool setVersion(const char* verTag);
-   // cancel version selection
-   void unsetVersion() { setVersion(_candidateVer); };
+   // Shallow doesnt remove things other pkgs depend on.
+   void setRemoveWithDeps(bool shallow, bool purge = false);
+
+   // mainpulate the candiate version
+   bool setVersion(string verTag);
+   void unsetVersion(); 
    string showWhyInstBroken();
 
-   RPackage(RPackageLister *lister, pkgDepCache *depcache, pkgRecords *records,
-	    pkgCache::PkgIterator &pkg);
+   RPackage(RPackageLister *lister, pkgDepCache *depcache,
+            pkgRecords *records, pkgCache::PkgIterator &pkg);
    ~RPackage();
 };
 
+
+class RPackageStatus {
+ public:
+   enum PkgStatus {
+      ToInstall, ToReInstall, ToUpgrade, ToDowngrade, ToRemove, ToPurge,
+      NotInstalled, NotInstalledLocked,
+      InstalledUpdated, InstalledOutdated, InstalledLocked,
+      IsBroken, IsNew,
+      N_STATUS_COUNT
+   };
+
+ protected:
+   // this is the short string to load the icons
+   const char *PackageStatusShortString[N_STATUS_COUNT];
+   // this is the long string for the gui description of the state
+   const char *PackageStatusLongString[N_STATUS_COUNT];
+
+
+   // this does the actual work
+   int getStatus(RPackage *pkg);
+
+
+ public:
+   RPackageStatus() {
+   };
+
+   // this reads the pixmaps and the colors
+   virtual void init();
+
+   // here we get the description for the States
+   const char *getLongStatusString(int i) {
+      return PackageStatusLongString[i];
+   };
+   const char *getLongStatusString(RPackage *pkg) {
+      return PackageStatusLongString[getStatus(pkg)];
+   };
+
+   const char *getShortStatusString(int i) {
+      return PackageStatusShortString[i];
+   };
+};
+
 #endif
+
+// vim:ts=3:sw=3:et

@@ -1,3 +1,3 @@
 ## arch-tag: Automake rules for main help directory
 
-SUBDIRS = de C
+SUBDIRS = C es

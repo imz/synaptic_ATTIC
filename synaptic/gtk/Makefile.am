@@ -21,14 +21,16 @@ synaptic_LDADD = \
 glade_DATA =                            \
 	window_about.glade  \
 	window_changes.glade  \
+	window_details.glade \
 	window_disc_name.glade  \
 	window_fetch.glade  \
 	window_find.glade  \
 	window_filters.glade \
 	window_iconlegend.glade \
+	dialog_changelog.glade \
+	dialog_change_version.glade \
 	dialog_locales_warning.glade \
-        window_main_vpaned.glade \
-        window_main_hpaned.glade \
+        window_main.glade \
 	window_preferences.glade \
 	dialog_quit.glade  \
 	window_rginstall_progress.glade \
@@ -36,6 +38,11 @@ glade_DATA =                            \
 	window_repositories.glade \
 	window_setopt.glade  \
 	window_summary.glade \
+	window_tasks.glade \
+	dialog_download_error.glade \
+	dialog_task_descr.glade \
+	dialog_unmet.glade \
+	dialog_update_failed.glade \
 	dialog_upgrade.glade \
 	dialog_welcome.glade \
 	window_zvtinstallprogress.glade 
@@ -47,10 +54,6 @@ EXTRA_DIST = $(glade_DATA)
 synaptic_SOURCES= \
 	gsynaptic.cc\
 	gsynaptic.h\
-	gtkpkgtree.cc\
-	gtkpkgtree.h\
-	gtktagtree.cc\
-	gtktagtree.h\
 	gtkpkglist.cc\
 	gtkpkglist.h\
 	rgaboutpanel.cc\
@@ -73,16 +76,20 @@ synaptic_SOURCES= \
 	rgsetoptwindow.h\
 	rgdummyinstallprogress.cc\
 	rgdummyinstallprogress.h\
-	rgzvtinstallprogress.cc\
-	rgzvtinstallprogress.h\
+	rgterminstallprogress.cc\
+	rgterminstallprogress.h\
 	rginstallprogress.cc\
 	rginstallprogress.h\
 	rgslideshow.cc\
 	rgslideshow.h\
+	rgtaskswin.cc\
+	rgtaskswin.h\
 	rgcdscanner.cc\
 	rgcdscanner.h\
 	rgmainwindow.cc\
 	rgmainwindow.h\
+	rgpkgdetails.cc \
+	rgpkgdetails.h \
 	rgrepositorywin.cc\
 	rgrepositorywin.h\
 	rgvendorswindow.cc\

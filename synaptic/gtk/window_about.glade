@@ -13,6 +13,11 @@
   <property name="resizable">False</property>
   <property name="destroy_with_parent">False</property>
   <property name="icon">synaptic_mini.xpm</property>
+  <property name="decorated">True</property>
+  <property name="skip_taskbar_hint">False</property>
+  <property name="skip_pager_hint">False</property>
+  <property name="type_hint">GDK_WINDOW_TYPE_HINT_DIALOG</property>
+  <property name="gravity">GDK_GRAVITY_NORTH_WEST</property>
   <property name="has_separator">False</property>
 
   <child internal-child="vbox">
@@ -35,6 +40,7 @@
 	      <property name="label" translatable="yes">Credits</property>
 	      <property name="use_underline">True</property>
 	      <property name="relief">GTK_RELIEF_NORMAL</property>
+	      <property name="focus_on_click">True</property>
 	      <property name="response_id">0</property>
 	      <signal name="clicked" handler="on_button_credits_clicked" last_modification_time="Wed, 01 Oct 2003 21:27:23 GMT"/>
 	    </widget>
@@ -48,6 +54,7 @@
 	      <property name="label">gtk-close</property>
 	      <property name="use_stock">True</property>
 	      <property name="relief">GTK_RELIEF_NORMAL</property>
+	      <property name="focus_on_click">True</property>
 	      <property name="response_id">-7</property>
 	      <signal name="clicked" handler="on_okbutton_clicked" last_modification_time="Tue, 17 Dec 2002 23:58:37 GMT"/>
 	    </widget>
@@ -238,7 +245,7 @@ http://www.nongnu.org/synaptic/</property>
 	  <child>
 	    <widget class="GtkLabel" id="label65">
 	      <property name="visible">True</property>
-	      <property name="label" translatable="yes">&lt;span size=&quot;small&quot;&gt;Copyright (c) 2001-2004 Conectiva S/A 
+	      <property name="label" translatable="yes">&lt;span size=&quot;small&quot;&gt;Copyright (c) 2001-2004 Connectiva S/A 
 Copyright (c) 2002-2004 Michael Vogt&lt;/span&gt;</property>
 	      <property name="use_underline">False</property>
 	      <property name="use_markup">True</property>
@@ -276,9 +283,14 @@ Copyright (c) 2002-2004 Michael Vogt&lt;/span&gt;</property>
   <property name="type">GTK_WINDOW_TOPLEVEL</property>
   <property name="window_position">GTK_WIN_POS_NONE</property>
   <property name="modal">False</property>
-  <property name="resizable">True</property>
+  <property name="resizable">False</property>
   <property name="destroy_with_parent">False</property>
   <property name="icon">synaptic_mini.xpm</property>
+  <property name="decorated">True</property>
+  <property name="skip_taskbar_hint">False</property>
+  <property name="skip_pager_hint">False</property>
+  <property name="type_hint">GDK_WINDOW_TYPE_HINT_DIALOG</property>
+  <property name="gravity">GDK_GRAVITY_NORTH_WEST</property>
   <property name="has_separator">False</property>
 
   <child internal-child="vbox">
@@ -300,6 +312,7 @@ Copyright (c) 2002-2004 Michael Vogt&lt;/span&gt;</property>
 	      <property name="label">gtk-close</property>
 	      <property name="use_stock">True</property>
 	      <property name="relief">GTK_RELIEF_NORMAL</property>
+	      <property name="focus_on_click">True</property>
 	      <property name="response_id">-7</property>
 	      <signal name="clicked" handler="on_closebutton_clicked" last_modification_time="Wed, 01 Oct 2003 21:35:23 GMT"/>
 	    </widget>
@@ -326,7 +339,7 @@ Copyright (c) 2002-2004 Michael Vogt&lt;/span&gt;</property>
 
 	  <child>
 	    <widget class="GtkScrolledWindow" id="scrolledwindow2">
-	      <property name="border_width">8</property>
+	      <property name="border_width">12</property>
 	      <property name="visible">True</property>
 	      <property name="can_focus">True</property>
 	      <property name="hscrollbar_policy">GTK_POLICY_NEVER</property>
@@ -349,10 +362,10 @@ Alfredo K. Kojima &lt;kojima@windowmaker.org&gt;
 Maintainers:
 Michael Vogt &lt;mvo@debian.org&gt;
 Gustavo Niemeyer &lt;niemeyer@conectiva.com&gt;
+Sebastian Heinlein &lt;sebastian.heinlein@web.de&gt;
 
 Contributors:
 Enrico Zini &lt;enrico@debian.org&gt;
-Sebastian Heinlein &lt;allerlei@renates-welt.de&gt;
 Panu Matilainen &lt;pmatilai@welho.com&gt;
 Sviatoslav Sviridov &lt;svd@lintec.minsk.by&gt;</property>
 		      <property name="use_underline">False</property>
@@ -395,72 +408,18 @@ Sviatoslav Sviridov &lt;svd@lintec.minsk.by&gt;</property>
 	  </child>
 
 	  <child>
-	    <widget class="GtkScrolledWindow" id="scrolledwindow1">
-	      <property name="border_width">6</property>
+	    <widget class="GtkLabel" id="label_translator_credits">
 	      <property name="visible">True</property>
-	      <property name="can_focus">True</property>
-	      <property name="hscrollbar_policy">GTK_POLICY_NEVER</property>
-	      <property name="vscrollbar_policy">GTK_POLICY_NEVER</property>
-	      <property name="shadow_type">GTK_SHADOW_NONE</property>
-	      <property name="window_placement">GTK_CORNER_TOP_LEFT</property>
-
-	      <child>
-		<widget class="GtkViewport" id="viewport1">
-		  <property name="visible">True</property>
-		  <property name="shadow_type">GTK_SHADOW_NONE</property>
-
-		  <child>
-		    <widget class="GtkScrolledWindow" id="scrolledwindow3">
-		      <property name="visible">True</property>
-		      <property name="can_focus">True</property>
-		      <property name="hscrollbar_policy">GTK_POLICY_AUTOMATIC</property>
-		      <property name="vscrollbar_policy">GTK_POLICY_AUTOMATIC</property>
-		      <property name="shadow_type">GTK_SHADOW_IN</property>
-		      <property name="window_placement">GTK_CORNER_TOP_LEFT</property>
-
-		      <child>
-			<widget class="GtkTextView" id="textview1">
-			  <property name="visible">True</property>
-			  <property name="can_focus">True</property>
-			  <property name="editable">False</property>
-			  <property name="justification">GTK_JUSTIFY_LEFT</property>
-			  <property name="wrap_mode">GTK_WRAP_NONE</property>
-			  <property name="cursor_visible">True</property>
-			  <property name="pixels_above_lines">3</property>
-			  <property name="pixels_below_lines">3</property>
-			  <property name="pixels_inside_wrap">0</property>
-			  <property name="left_margin">3</property>
-			  <property name="right_margin">3</property>
-			  <property name="indent">0</property>
-			  <property name="text" translatable="yes">Vital Khilko &lt;dojlid@mova.org&gt; (Belarusian)
-Keld Simonsen &lt;keld@dkuug.dk&gt; (Danish)
-Michael Vogt &lt;mvo@debian.org&gt; (German)
-Sebastain Heinlein &lt;allerlei@renates-welt.de&gt; (German)
-Francisco Javier F. Serrador &lt;serrador@arrakis.es&gt; (Spanish)
-Mathieu Roy &lt;yeupou@gnu.org&gt; (French)
-Mauro Colorio &lt;linuxbox@interfree.it&gt; (Italian)
-Luigi Maselli &lt;metnik at tiscali it&gt; (Italian)
-Daisuke Suzuki &lt;daisuke@linux.or.jp&gt; (Japanese)
-Vincent van Adrighem &lt;V.vanAdrighem@dirck.mine.nu&gt; (Dutch)
-Emil &lt;emil5@go2.pl&gt; (Polish)
-Marcia Norie Nakaza &lt;norie@conectiva.com.br&gt; (Portugese)
-Arnaldo Carvalho de Melo &lt;acme@conectiva.com.br&gt; (Portugese)
-Sviatoslav Sviridov &lt;svd@altlinux.ru&gt; (Russian)
-Vitaly Lipatov &lt;lav@altlinux.ru&gt; (Russian)
-Rail Aliev &lt;rail@iqchoice.com&gt; (Turkish)
-Anthony Fok &lt;anthony@thizlinux.com&gt; (Chinese)
-Alwin Meschede &lt;ameschede@gmx.de&gt; (German)
-Liu Songhe &lt;jackliu9999@hotmail.com&gt; (Chinese)
-Jean-Michel Poure &lt;jm@poure.com&gt; (French)
-Ossama Khayat &lt;okhayat@yahoo.com&gt; (Arabic)
-Slobodan Sredojevic &lt;ssl@uns.ns.ac.yu&gt; (Serbian)
-Kelemen Gábor &lt;kg0021@stud.unideb.hu&gt; (Hungarian)</property>
-			</widget>
-		      </child>
-		    </widget>
-		  </child>
-		</widget>
-	      </child>
+	      <property name="label" translatable="yes">translators-credits</property>
+	      <property name="use_underline">False</property>
+	      <property name="use_markup">False</property>
+	      <property name="justify">GTK_JUSTIFY_LEFT</property>
+	      <property name="wrap">False</property>
+	      <property name="selectable">False</property>
+	      <property name="xalign">0</property>
+	      <property name="yalign">0</property>
+	      <property name="xpad">12</property>
+	      <property name="ypad">12</property>
 	    </widget>
 	    <packing>
 	      <property name="tab_expand">False</property>
@@ -489,7 +448,7 @@ Kelemen Gábor &lt;kg0021@stud.unideb.hu&gt; (Hungarian)</property>
 
 	  <child>
 	    <widget class="GtkScrolledWindow" id="scrolledwindow4">
-	      <property name="border_width">8</property>
+	      <property name="border_width">12</property>
 	      <property name="visible">True</property>
 	      <property name="can_focus">True</property>
 	      <property name="hscrollbar_policy">GTK_POLICY_NEVER</property>
@@ -498,23 +457,31 @@ Kelemen Gábor &lt;kg0021@stud.unideb.hu&gt; (Hungarian)</property>
 	      <property name="window_placement">GTK_CORNER_TOP_LEFT</property>
 
 	      <child>
-		<widget class="GtkLabel" id="label72">
+		<widget class="GtkViewport" id="viewport3">
 		  <property name="visible">True</property>
-		  <property name="label" translatable="yes">Man page:
+		  <property name="shadow_type">GTK_SHADOW_NONE</property>
+
+		  <child>
+		    <widget class="GtkLabel" id="label72">
+		      <property name="visible">True</property>
+		      <property name="label" translatable="yes">Man page:
 Wybo Dekker &lt;wybo@servalys.nl&gt;
 Michael Vogt &lt;mvo@debian.org&gt;
+Sebastian Heinlein &lt;sebastain.heinlein@web.de&gt;
 
 Manual:
-Sebastian Heinlein &lt;allerlei@renates-welt.de&gt;</property>
-		  <property name="use_underline">False</property>
-		  <property name="use_markup">False</property>
-		  <property name="justify">GTK_JUSTIFY_LEFT</property>
-		  <property name="wrap">False</property>
-		  <property name="selectable">False</property>
-		  <property name="xalign">0</property>
-		  <property name="yalign">0</property>
-		  <property name="xpad">0</property>
-		  <property name="ypad">0</property>
+Sebastian Heinlein &lt;sebastain.heinlein@web.de&gt;</property>
+		      <property name="use_underline">False</property>
+		      <property name="use_markup">False</property>
+		      <property name="justify">GTK_JUSTIFY_LEFT</property>
+		      <property name="wrap">False</property>
+		      <property name="selectable">False</property>
+		      <property name="xalign">0</property>
+		      <property name="yalign">0</property>
+		      <property name="xpad">0</property>
+		      <property name="ypad">0</property>
+		    </widget>
+		  </child>
 		</widget>
 	      </child>
 	    </widget>

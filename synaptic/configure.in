@@ -1,7 +1,7 @@
 dnl Process this file with autoconf to produce a configure script.
 AC_INIT(configure.in)
 
-AM_INIT_AUTOMAKE(synaptic, 0.48.2)
+AM_INIT_AUTOMAKE(synaptic, 0.53.4)
 AM_CONFIG_HEADER(config.h)
 AM_MAINTAINER_MODE
 
@@ -15,7 +15,7 @@ AC_PROG_MAKE_SET
 AC_PROG_RANLIB
 
 dnl i18n
-ALL_LINGUAS="ar pt_BR es fr de tr zh_CN zh_HK zh_TW ru nl ja be it_IT pl cs hu da sr sr@Latn"
+ALL_LINGUAS="ar pt_BR es fr de tr zh_CN zh_HK zh_TW ru nl ja be it_IT pl cs hu sr sr@Latn da he ca ko bg no_NB"
 AM_GLIB_GNU_GETTEXT
 GETTEXT_PACKAGE=synaptic
 AC_SUBST(GETTEXT_PACKAGE)
@@ -24,41 +24,49 @@ AC_PROG_INTLTOOL([0.23])
 synapticlocaledir='${prefix}/${DATADIRNAME}/locale'
 AC_SUBST(synapticlocaledir)
      
+dnl check for xmlto
+AC_CHECK_PROG(XMLTO, xmlto, yes, no)
+if test x"$XMLTO" == xno; then
+	AC_MSG_ERROR([You need xmlto to build the documentation. Apt-get it or download it from http://cyberelk.net/tim/xmlto/])
+fi
 
 dnl ask for wings
-AC_ARG_WITH(wings,
-	[--with-wings   build with WINGs gui (obsolete)],
-	[AC_CHECK_PROG(WINGS, get-wings-flags, yes, no)
-	if test x"$WINGS" == xno; then
-	   AC_MSG_ERROR([WINGs is not installed])
-	fi
-	]
-)
+dnl AC_ARG_WITH(wings,
+dnl 	[--with-wings   build with WINGs gui (obsolete)],
+dnl	[AC_CHECK_PROG(WINGS, get-wings-flags, yes, no)
+dnl	if test x"$WINGS" == xno; then
+dnl	   AC_MSG_ERROR([WINGs is not installed])
+dnl	fi
+dnl	]
+dnl )
+dnl if test x"$WINGS" = xyes; then
+dnl	BUILD_wings="wings"
+dnl 	WINGS_LIBS=`get-wings-flags --ldflags`
+dnl	WINGS_LIBS="$GUI_LIBS `get-wings-flags --libs`"
+dnl	WINGS_HDRS=`get-wings-flags --cflags`
+dnl	AC_SUBST(WINGS_LIBS)
+dnl	AC_SUBST(WINGS_HDRS)
+dnl fi
+dnl AC_SUBST(BUILD_wings)
+
 
 dnl Checks for gtk
-pkg_modules="gtk+-2.0 >= 2.0.0, libglade-2.0 >= 2.0.0, pango >= 1.0.0, glib-2.0"
-PKG_CHECK_MODULES(PACKAGE, [$pkg_modules])
+dnl if test -z "$BUILD_wings" ; then
+	pkg_modules="gtk+-2.0 >= 2.0.0, libglade-2.0 >= 2.0.0, pango >= 1.0.0, glib-2.0"
+	PKG_CHECK_MODULES(PACKAGE, [$pkg_modules])
+	BUILD_gtk="gtk"	
+dnl fi
+
 AC_SUBST(PACKAGE_CFLAGS)
 AC_SUBST(PACKAGE_LIBS)
-BUILD_gtk="gtk"	
 AC_SUBST(BUILD_gtk)
 
-
-if test x"$WINGS" = xno; then
+dnl if test x"$WINGS" = xno; then
 if test x"$GTK" = xno; then
-	AC_MSG_ERROR([Neither WINGs nor Gtk is installed, you need to install either one to get a GUI])
+	AC_MSG_ERROR([ Gtk is not installed, you need to install it to get a GUI])
 fi
-fi
+dnl fi
 
-if test x"$WINGS" = xyes; then
-	BUILD_wings="wings"
-	WINGS_LIBS=`get-wings-flags --ldflags`
-	WINGS_LIBS="$GUI_LIBS `get-wings-flags --libs`"
-	WINGS_HDRS=`get-wings-flags --cflags`
-	AC_SUBST(WINGS_LIBS)
-	AC_SUBST(WINGS_HDRS)
-fi
-AC_SUBST(BUILD_wings)
 
 
 
@@ -155,7 +163,7 @@ AC_ARG_WITH(debtags,
 dnl check for libvte
 AC_ARG_WITH(vte, 
 	      [--with-vte  compile with libvte support (terminal output)], 
-	      [pkg_modules="vte >= 0.10.10"
+	      [pkg_modules="vte >= 0.10.11"
 	      PKG_CHECK_MODULES(VTE, [$pkg_modules])
 	      AC_DEFINE(HAVE_VTE, 1, [build with VTE as output terminal])
 	      AC_DEFINE(HAVE_TERMINAL, 1, [build with a terminal widget]) 
@@ -185,7 +193,6 @@ fi
 
 AC_OUTPUT([
 common/Makefile 
-wings/Makefile 
 gtk/Makefile
 data/Makefile
 man/Makefile
@@ -193,9 +200,11 @@ pixmaps/Makefile
 po/Makefile.in
 help/Makefile
 help/C/Makefile
-help/de/Makefile
+help/es/Makefile
 doc/Makefile
 doc/html/Makefile
+doc/html/C/Makefile
+doc/html/es/Makefile
 Makefile
 ],[sed -e "/POTFILES =/r po/POTFILES" po/Makefile.in > po/Makefile])
 
