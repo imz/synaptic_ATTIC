@@ -9,8 +9,8 @@
 %def_enable autotools
 
 Name: synaptic
-Version: 0.53.4
-Release: alt2
+Version: 0.55
+Release: alt1
 
 Summary: Graphical front-end for APT
 Summary(ru_RU.CP1251): Графическая оболочка для APT
@@ -28,7 +28,6 @@ Patch1: synaptic-0.36-alt-state.patch
 
 Patch2: synaptic-0.47-alt-xslt.patch
 Patch3: synaptic-0.51-alt-rpmgroups-intl.patch
-Patch4: synaptic-fedora-exit-on-cancel-fix.diff
 
 Requires: %{get_dep rpm}, %{get_dep libapt}
 
@@ -70,8 +69,6 @@ Synaptic - это графическая оболочка для APT (Advanced Package Tool).
 #%%patch2 -p1
 #%%patch3 -p1
 
-%patch4
-
 %if_with ru_po
 # installing own translation
 %__install -p -m644 %SOURCE1 po/ru.po
@@ -112,6 +109,9 @@ mkdir -p %buildroot%_mandir/ru/man8/
 %doc README* TODO NEWS AUTHORS
 
 %changelog
+* Tue Nov 02 2004 Sviatoslav Sviridov <svd@altlinux.ru> 0.55-alt1
+- Updated to 0.55
+
 * Wed Oct 20 2004 Sviatoslav Sviridov <svd@altlinux.ru> 0.53.4-alt2
 - applied patch synaptic-fedora-exit-on-cancel-fix.diff
   (fixes eventual segfaults when selecting packages)

@@ -39,13 +39,16 @@
 enum { FONT_DEFAULT, FONT_TERMINAL };
 
 const char * RGPreferencesWindow::column_names[] = 
-   {"status", "name", "instVer", "availVer", "instSize", "descr", NULL };
+   {"status", "supported", "name", "section", "component", "instVer", 
+    "availVer", "instSize", "downloadSize", "descr", NULL };
 
 const char *RGPreferencesWindow::column_visible_names[] = 
-   {_("Status"), _("Package Name"), _("Installed Version"), 
-    _("Available Version"), _("Installed Size"), _("Description"), NULL };
+   {_("Status"), _("Supported"), _("Package Name"), _("Section"),
+    _("Component"), _("Installed Version"), _("Available Version"), 
+    _("Installed Size"), _("Download Size"),_("Description"), NULL };
 
-
+const gboolean RGPreferencesWindow::column_visible_defaults[] = 
+   { TRUE, TRUE, TRUE, FALSE, FALSE, TRUE, TRUE, TRUE, FALSE, TRUE }; 
 
 void RGPreferencesWindow::onArchiveSelection(GtkWidget *self, void *data)
 {
@@ -163,6 +166,11 @@ void RGPreferencesWindow::saveGeneral()
    i = gtk_option_menu_get_history(GTK_OPTION_MENU(glade_xml_get_widget(_gladeXML, "optionmenu_upgrade_method")));
    _config->Set("Synaptic::upgradeType", i - 1);
 
+   // package list update date check
+   i = gtk_option_menu_get_history(GTK_OPTION_MENU(glade_xml_get_widget(_gladeXML, "optionmenu_update_ask")));
+   _config->Set("Synaptic::update::type", i);
+   
+
    // Number of undo operations:
    int maxUndo = gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(_maxUndoE));
    _config->Set("Synaptic::undoStackSize", maxUndo);
@@ -210,7 +218,7 @@ void RGPreferencesWindow::saveColumnsAndFonts()
    GtkTreeIter iter;
    int i=0;
    char *column_name, *config_name;
-   bool visible;
+   gboolean visible;
    gtk_tree_model_get_iter_first(GTK_TREE_MODEL(store), &iter);
    do {
       gtk_tree_model_get (GTK_TREE_MODEL(store), &iter,
@@ -425,6 +433,9 @@ void RGPreferencesWindow::readGeneral()
    int i = _config->FindI("Synaptic::upgradeType", -1);
    gtk_option_menu_set_history(GTK_OPTION_MENU(glade_xml_get_widget(_gladeXML, "optionmenu_upgrade_method")), i + 1);
 
+   i = _config->FindI("Synaptic::update::type", 0);
+   gtk_option_menu_set_history(GTK_OPTION_MENU(glade_xml_get_widget(_gladeXML, "optionmenu_update_ask")), i);
+
 
    // Number of undo operations:
 
@@ -469,6 +480,8 @@ void RGPreferencesWindow::readColumnsAndFonts()
    gtk_toggle_button_set_active(
       GTK_TOGGLE_BUTTON(glade_xml_get_widget(_gladeXML,
                                              "checkbutton_user_terminal_font")), b);
+
+   readTreeViewValues();
 
 }
 
@@ -629,13 +642,13 @@ void RGPreferencesWindow::readTreeViewValues()
       
       // visible
       name = g_strdup_printf("Synaptic::%sColumnVisible",column_names[i]);
-      c.visible = _config->FindB(name, true);
+      c.visible = _config->FindB(name, column_visible_defaults[i]);
       c.name = column_names[i];
       c.visible_name = column_visible_names[i];
       g_free(name);
 
       if(pos > number_of_columns || pos < 0 || columns[pos].name != NULL) {
-	 cerr << "invalid column config found, reseting"<<endl;
+	 //cerr << "invalid column config found, reseting"<<endl;
 	 corrupt=true;
 	 continue;
       }
@@ -644,10 +657,11 @@ void RGPreferencesWindow::readTreeViewValues()
 
    // if corrupt for some reason, repair
    if(corrupt) {
+      cerr << "seting column order to default" << endl;
       for(int i=0;column_names[i] != NULL; i++) {
 	 name = g_strdup_printf("Synaptic::%sColumnPos",column_names[i]);
 	 _config->Set(name, i);
-	 c.visible = true;
+	 c.visible = column_visible_defaults[i];
 	 c.name = column_names[i];
 	 c.visible_name = column_visible_names[i];
 	 columns[i] = c;
@@ -923,8 +937,6 @@ RGPreferencesWindow::RGPreferencesWindow(RGWindow *win,
 						      NULL);
    gtk_tree_view_append_column (GTK_TREE_VIEW(_treeView), column);
 
-
-   readTreeViewValues();
 
    // lots of signals :)
    glade_xml_signal_connect_data(_gladeXML, "on_button_column_up_clicked",

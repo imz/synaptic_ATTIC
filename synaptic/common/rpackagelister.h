@@ -73,6 +73,24 @@ class RCacheObserver {
    virtual void notifyCachePostChange() = 0;
 };
 
+// base sort class
+// for a example use see sortPackages()
+template<class T>
+class sortFunc {
+ protected:
+   bool _ascent;
+   T cmp;
+ public:
+   sortFunc(bool ascent) : _ascent(ascent) {};
+   bool operator() (RPackage *x, RPackage *y) {
+      if(_ascent) 
+	 return cmp(x,y);
+      else
+	 return cmp(y,x);
+   }
+};
+
+
 class RPackageLister {
 
    protected:
@@ -112,6 +130,14 @@ class RPackageLister {
       LIST_SORT_NAME,
       LIST_SORT_SIZE_ASC,
       LIST_SORT_SIZE_DES,
+      LIST_SORT_SUPPORTED_ASC,
+      LIST_SORT_SUPPORTED_DES,
+      LIST_SORT_SECTION_ASC,
+      LIST_SORT_SECTION_DES,
+      LIST_SORT_COMPONENT_ASC,
+      LIST_SORT_COMPONENT_DES,
+      LIST_SORT_DLSIZE_ASC,
+      LIST_SORT_DLSIZE_DES,
       LIST_SORT_STATUS_ASC,
       LIST_SORT_STATUS_DES,
       LIST_SORT_VERSION_ASC,
@@ -131,7 +157,8 @@ class RPackageLister {
 
    vector<RPackageView *> _views;
    RPackageView *_selectedView;
-
+   RPackageStatus _pkgStatus;
+   
    void applyInitialSelection();
 
    bool lockPackageCache(FileFd &lock);
@@ -159,7 +186,7 @@ class RPackageLister {
       sortPackages(_viewPackages, mode);
    };
 
-   void setView(int index);
+   void setView(unsigned int index);
    vector<string> getViews();
    vector<string> getSubViews();
 
@@ -248,9 +275,9 @@ class RPackageLister {
    };
 
    // policy stuff                             
-   vector<string> getPolicyArchives() {
+   vector<string> getPolicyArchives(bool filenames_only=false) {
       if (_cacheValid)
-         return _cache->getPolicyArchives();
+         return _cache->getPolicyArchives(filenames_only);
       else
          return vector<string>();
    };

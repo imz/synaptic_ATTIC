@@ -38,6 +38,13 @@ using namespace std;
 
 struct RFilter;
 
+enum {PACKAGE_VIEW_SECTION,
+      PACKAGE_VIEW_STATUS,
+      PACKAGE_VIEW_CUSTOM,
+      PACKAGE_VIEW_SEARCH,
+      N_PACKAGE_VIEWS
+};
+
 class RPackageView {
  protected:
 
@@ -81,7 +88,7 @@ class RPackageView {
 
 
 
-class RPackageViewSections:public RPackageView {
+class RPackageViewSections : public RPackageView {
  public:
    RPackageViewSections(vector<RPackage *> &allPkgs) : RPackageView(allPkgs) {};
 
@@ -107,8 +114,13 @@ class RPackageViewAlphabetic : public RPackageView {
 };
 
 class RPackageViewStatus:public RPackageView {
+ protected:
+   // mark the software as unsupported in status view
+   bool markUnsupported;
+   vector<string> supportedComponents;
+
  public:
-   RPackageViewStatus(vector<RPackage *> &allPkgs) : RPackageView(allPkgs) {};
+   RPackageViewStatus(vector<RPackage *> &allPkgs);
 
    string getName() {
       return _("Status");
@@ -165,6 +177,10 @@ class RPackageViewFilter : public RPackageView {
       else
          return _filterL[index];
    };
+
+   // used by kynaptic
+   int getFilterIndex(RFilter *filter);
+
    vector<string> getFilterNames();
    const set<string> &getSections() { return _sectionList; };
 
@@ -177,7 +193,7 @@ class RPackageViewFilter : public RPackageView {
    virtual void clear() {clearSelection();};
 
    string getName() {
-      return _("Custom Filters");
+      return _("Custom");
    };
 
    void addPackage(RPackage *package);

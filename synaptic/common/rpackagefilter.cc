@@ -84,7 +84,8 @@ string RSectionPackageFilter::section(int index)
 
 void RSectionPackageFilter::clear()
 {
-   _groups.erase(_groups.begin(), _groups.end());
+   //_groups.erase(_groups.begin(), _groups.end());
+   _groups.clear();
 }
 
 
@@ -287,7 +288,7 @@ bool RPatternPackageFilter::filterOrigin(Pattern pat, RPackage *pkg)
 bool RPatternPackageFilter::filter(RPackage *pkg)
 {
    bool found;
-   bool and_mode = _config->FindB("Synaptic::Filters::andMode", true);
+   //   bool and_mode = _config->FindB("Synaptic::Filters::andMode", true);
    bool globalfound = and_mode;
    bool useregexp = _config->FindB("Synaptic::UseRegexp", false);
 
@@ -396,6 +397,8 @@ bool RPatternPackageFilter::write(ofstream &out, string pad)
    string pat;
    bool excl;
 
+   out << pad + "andMode " << and_mode << ";" << endl;
+
    out << pad + "patterns {" << endl;
 
    for (int i = 0; i < count(); i++) {
@@ -405,6 +408,7 @@ bool RPatternPackageFilter::write(ofstream &out, string pad)
    }
 
    out << pad + "};" << endl;
+
    return true;
 }
 
@@ -415,6 +419,8 @@ bool RPatternPackageFilter::read(Configuration &conf, string key)
    DepType type;
    string pat;
    bool excl;
+
+   and_mode = conf.FindB(key + "::andMode", true);
 
    top = conf.Tree(string(key + "::patterns").c_str());
    if (top == NULL)
@@ -450,6 +456,7 @@ RPatternPackageFilter::RPatternPackageFilter(RPatternPackageFilter &f)
       addPattern(f._patterns[i].where,
                  f._patterns[i].pattern, f._patterns[i].exclusive);
    }
+   f.and_mode = and_mode;
 }
 
 void RPatternPackageFilter::clear()

@@ -1,4 +1,4 @@
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Managing Packages</title><meta name="generator" content="DocBook XSL Stylesheets V1.64.1"><link rel="home" href="index.html" title="Synaptic Package Manager Manual V0.1.1"><link rel="up" href="index.html" title="Synaptic Package Manager Manual V0.1.1"><link rel="previous" href="ar01s02.html" title="Main Window"><link rel="next" href="ar01s04.html" title="Repositories"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Managing Packages</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ar01s02.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="ar01s04.html">Next</a></td></tr></table><hr></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="synaptic-single"></a>Managing Packages</h2></div></div><div></div></div><p>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Managing Packages</title><meta name="generator" content="DocBook XSL Stylesheets V1.66.1"><link rel="start" href="index.html" title="Synaptic Package Manager Manual V0.1.2"><link rel="up" href="index.html" title="Synaptic Package Manager Manual V0.1.2"><link rel="prev" href="ar01s02.html" title="Main Window"><link rel="next" href="ar01s04.html" title="Repositories"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Managing Packages</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ar01s02.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="ar01s04.html">Next</a></td></tr></table><hr></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="synaptic-single"></a>Managing Packages</h2></div></div></div><p>
 		This chapter covers the basic actions <a href="ar01s03.html#anchor-installing">installing</a>,
 		<a href="ar01s03.html#anchor-removing">removing</a> and <a href="ar01s03.html#anchor-upgrading">upgrading</a>
 		of packages.
@@ -8,17 +8,17 @@
 		<a href="ar01s03.html#anchor-changelog">reading</a> the changelog	and the advanced actions
 		<a href="ar01s03.html#anchor-force">forcing</a> the installation of a specific package version,
 		<a href="ar01s03.html#anchor-lock">locking</a> a package to the current version are described.
-	</p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="synaptic-pkg-install"></a>To Install Packages</h3></div></div><div></div></div><a name="anchor-installing"></a><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>
+	</p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="synaptic-pkg-install"></a>To Install Packages</h3></div></div></div><a name="anchor-installing"></a><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>
 			If different version of the same package are available <span class="application">Synaptic Package Manager</span>  will select the most 
 			applicable by default. To force the installation of a specific version that is different 
 			to the default one, see <a href="ar01s03.html#synaptic-pkg-force" title="To Force the Installation of a Specific Version">the section called &#8220;To Force the Installation of a Specific Version&#8221;</a>.
 		</p></div><p>
 		If you want to install a package perform the following steps:
 	</p><div class="orderedlist"><ol type="1"><li><p>
-				Reload the list of known packages to be aware of the latest version available:
+				Reload the package information to be aware of the latest versions available:
 
 			</p><div class="itemizedlist"><ul type="disc"><li><p>
-						Choose <span class="guimenu">Edit</span>-&gt;<span class="guimenuitem">Reload Package List</span> from the menu.
+						Choose <span class="guimenu">Edit</span>-&gt;<span class="guimenuitem">Reload Package Information</span> from the menu.
 					</p></li><li><p>
 						Click on <span class="guibutton">Reload</span> in the toolbar.
 					</p></li><li><p>
@@ -70,7 +70,7 @@
 			</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>
 					The progressbar is not available on Debian system. Instead you will
 					see a detailed terminal output.
-				 </p></div></li></ol></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="synaptic-pkg-remove"></a>To Remove Packages</h3></div></div><div></div></div><a name="anchor-removing"></a><p>
+				 </p></div></li></ol></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="synaptic-pkg-remove"></a>To Remove Packages</h3></div></div></div><a name="anchor-removing"></a><p>
 		</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>
 				Configuration files and user created data (e.g. a website in "/var/www") are not removed
 				from the system by default.
@@ -127,13 +127,13 @@
 			</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>
 					The progressbar is not available on Debian system. Instead you will
 					see a detailed terminal output.
-				</p></div></li></ol></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="synaptic-pkg-upgrade"></a>To Upgrade Packages</h3></div></div><div></div></div><a name="anchor-upgrading"></a><p>
+				</p></div></li></ol></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="synaptic-pkg-upgrade"></a>To Upgrade Packages</h3></div></div></div><a name="anchor-upgrading"></a><p>
 		To upgrade a package follow these steps:
 	</p><div class="orderedlist"><ol type="1"><li><p>
-				Reload the list of known packages to be aware of the latest version available:
+				Reload the package information to be aware of the latest versions available:
 
 				</p><div class="itemizedlist"><ul type="disc"><li><p>
-							Choose <span class="guimenu">Edit</span>-&gt;<span class="guimenuitem">Reload Package List</span> 
+							Choose <span class="guimenu">Edit</span>-&gt;<span class="guimenuitem">Reload Package Information</span> 
 							from the menu.
 						</p></li><li><p>
 							Click on <span class="guibutton">Reload</span> in the toolbar.
@@ -188,7 +188,7 @@
 				</p></div></li></ol></div><div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Tip</h3><p>
 			To upgrade all installed packages to the latest version,
 			see <a href="ar01s03.html#synaptic-pkg-upgradesystem" title="To Upgrade the Whole System">the section called &#8220;To Upgrade the Whole System&#8221;</a>.
-		</p></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="synaptic-pkg-upgradesystem"></a>To Upgrade the Whole System</h3></div></div><div></div></div><a name="anchor-dist-upgrade"></a><p>
+		</p></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="synaptic-pkg-upgradesystem"></a>To Upgrade the Whole System</h3></div></div></div><a name="anchor-dist-upgrade"></a><p>
 		<span class="application">Synaptic Package Manager</span> provides two methods for marking packages for upgrade:
 		</p><div class="variablelist"><dl><dt><span class="term">
 					Default Upgrade
@@ -215,10 +215,10 @@
 	</p><p>
 		To upgrade your system to the latest version follow these steps:
 	</p><div class="orderedlist"><ol type="1"><li><p>
-				 Reload the list of known packages to be aware of the latest version available:
+				 Reload the package information to be aware of the latest versions available:
 
 				</p><div class="itemizedlist"><ul type="disc"><li><p>
-							Choose <span class="guimenu">Edit</span>-&gt;<span class="guimenuitem">Reload Package List</span> from the menu.
+							Choose <span class="guimenu">Edit</span>-&gt;<span class="guimenuitem">Reload Package Information</span> from the menu.
 						</p></li><li><p>
 							Click on <span class="guibutton">Reload</span> in the toolbar.
 						</p></li><li><p>
@@ -262,7 +262,7 @@
 				</p></div></li></ol></div><div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Tip</h3><p>
 			You can change the default upgrade method for further upgrade in the preferences
 			.
-		</p></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="synaptic-pkg-apply"></a>To Apply Marked Changes</h3></div></div><div></div></div><div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Tip</h3><p>
+		</p></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="synaptic-pkg-apply"></a>To Apply Marked Changes</h3></div></div></div><div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Tip</h3><p>
 			To show packages that are marked for a status change
 			only choose the "Marked Changes" filter, see 
 			<a href="ar01s05.html#synaptic-filter-apply" title="To Apply Filters">the section called &#8220;To Apply Filters&#8221;</a>.
@@ -287,7 +287,7 @@
 	</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>
 			The progressbar is not available on Debian system. Instead you will
 			see a detailed terminal output.
-		</p></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="synaptic-pkg-undo"></a>To Unmark Changes</h3></div></div><div></div></div><p>
+		</p></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="synaptic-pkg-undo"></a>To Unmark Changes</h3></div></div></div><p>
 		The following ways allow you to unmark changes:
 	</p><div class="variablelist"><dl><dt><span class="term">
 				To undo the marking of specific packages
@@ -311,7 +311,7 @@
 				</p><p>
 					This step can be repeated. The maxmium number of undo operations can be set
 					in the preferences. FIX link
-				</p></dd></dl></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="synaptic-pkg-config"></a>To Configure Packages (Debian only)</h3></div></div><div></div></div><p>
+				</p></dd></dl></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="synaptic-pkg-config"></a>To Configure Packages (Debian only)</h3></div></div></div><p>
 		</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>
 				To use this feature you have to install the package
 				<span class="emphasis"><em>libgnome2-perl</em></span>.
@@ -329,7 +329,7 @@
 				Choose <span class="guimenu">Package</span>-&gt;<span class="guimenuitem">Configure...</span> from the menu.
 			</p></li></ol></div><div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Tip</h3><p>
 			To get a list of all configurable packages choose the <span class="emphasis"><em>Configurable Packages</em></span> filter.
-		</p></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="synaptic-pkg-docu"></a>To View Documentation for Packages (Debian only)</h3></div></div><div></div></div><a name="anchor-dwww"></a><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>
+		</p></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="synaptic-pkg-docu"></a>To View Documentation for Packages (Debian only)</h3></div></div></div><a name="anchor-dwww"></a><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>
 			To use this feature you have to install the package <span class="emphasis"><em>dwww</em></span>.
 		</p></div><p>
 		Dwww provides access to all the installed documentation
@@ -340,7 +340,7 @@
 				in the <a href="ar01s02.html#synaptic-win-list">package list</a>.
 			</p></li><li><p>
 				Choose <span class="guimenu">Package</span>-&gt;<span class="guimenuitem">Browse Documentation</span>.
-			</p></li></ol></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="synaptic-pkg-changelog"></a>To View the Changelog of a Package (Debian only)</h3></div></div><div></div></div><a name="anchor-changelog"></a><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>
+			</p></li></ol></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="synaptic-pkg-changelog"></a>To View the Changelog of a Package (Debian only)</h3></div></div></div><a name="anchor-changelog"></a><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>
 			The changelog of native Debian packages can be viewed, only.
 		</p></div><p>
 		To view the changelog of a native Debian package perform the following steps:
@@ -348,18 +348,18 @@
 				Select the package in the <a href="ar01s02.html#synaptic-win-list">package list</a>.
 			</p></li><li><p>
 				Choose <span class="guimenu">Package</span>-&gt;<span class="guimenuitem">Download Changelog</span>.
-			</p></li></ol></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="synaptic-pkg-lock"></a>To Lock a Package to the Current Version (Debian only)</h3></div></div><div></div></div><a name="anchor-lock"></a><p>
+			</p></li></ol></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="synaptic-pkg-lock"></a>To Lock a Package to the Current Version (Debian only)</h3></div></div></div><a name="anchor-lock"></a><p>
 		To lock a package to the current version follow these steps:
 	</p><div class="orderedlist"><ol type="1"><li><p>
 				Select the package that you want to lock in the <a href="ar01s02.html#synaptic-win-list">package list</a>.
 			</p></li><li><p>
 				Choose <span class="guimenu">Package</span>-&gt;<span class="guimenuitem">Lock Version</span>.
 			</p><p>
-				The <span class="application">Synaptic Package Manager</span> will reload the package list. You should now see, that the menu item <span class="guimenu">Package</span>-&gt;<span class="guimenuitem">Lock Version</span> is checked.
+				The <span class="application">Synaptic Package Manager</span> will reload the package information. You should now see, that the menu item <span class="guimenu">Package</span>-&gt;<span class="guimenuitem">Lock Version</span> is checked.
 				Furthermore all actions in the menu <span class="guimenu">Package</span> are disabled now.
 			</p></li></ol></div><p>
 		To unlock the package uncheck <span class="guimenu">Package</span>-&gt;<span class="guimenuitem">Lock Version</span>.
-	</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="synaptic-pkg-force"></a>To Force the Installation of a Specific Version</h3></div></div><div></div></div><a name="anchor-force"></a><div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Warning</h3><p>
+	</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="synaptic-pkg-force"></a>To Force the Installation of a Specific Version</h3></div></div></div><a name="anchor-force"></a><div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Warning</h3><p>
 			The <span class="application">Synaptic Package Manager</span> always selects the most applicable version available. If you force a 
 			different version from the default one, errors in the dependency handling
 			can occur.
@@ -367,10 +367,10 @@
 		To force the installation of a version of package different to the default one 
 		perform the following steps:
 	</p><div class="orderedlist"><ol type="1"><li><p>
-				Reload the list of known packages to be aware of the latest version available:
+				Reload the package information to be aware of the latest versions available:
 
 			</p><div class="itemizedlist"><ul type="disc"><li><p>
-						Choose <span class="guimenu">Edit</span>-&gt;<span class="guimenuitem">Reload Package List</span> from the menu.
+						Choose <span class="guimenu">Edit</span>-&gt;<span class="guimenuitem">Reload Package Information</span> from the menu.
 					</p></li><li><p>
 						Click on <span class="guibutton">Reload</span> in the toolbar.
 					</p></li><li><p>
@@ -405,7 +405,7 @@
 			</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>
 					The progressbar is not available on Debian system. Instead you will
 					see a detailed terminal output.
-				 </p></div></li></ol></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="synaptic-pkg-fix"></a>To Fix Broken Packages</h3></div></div><div></div></div><p>
+				 </p></div></li></ol></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="synaptic-pkg-fix"></a>To Fix Broken Packages</h3></div></div></div><p>
 		<span class="application">Synaptic Package Manager</span> will not allow any further changes to the system before all broken packages are fixed.
 	</p><div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Tip</h3><p>
 			To show all broken packages choose the <span class="emphasis"><em>Broken</em></span> filter.

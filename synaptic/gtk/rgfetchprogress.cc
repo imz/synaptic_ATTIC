@@ -54,6 +54,8 @@ enum {
    N_FETCH_COLUMNS
 };
 
+static const int COLUMN_PERCENT_WIDTH=100;
+static const int COLUMN_PERCENT_HEIGHT=18;
 
 RGFetchProgress::RGFetchProgress(RGWindow *win)
 : RGGladeWindow(win, "fetch")
@@ -61,13 +63,12 @@ RGFetchProgress::RGFetchProgress(RGWindow *win)
    GtkCellRenderer *renderer;
    GtkTreeViewColumn *column;
 
-   setTitle(_("Downloading Files"));
-   gtk_widget_set_usize(_win, 620, 350);
-
+   //setTitle(_("Downloading Files"));
+#if 0
    gint dummy;
    gdk_window_get_geometry(_win->window, &dummy, &dummy, &dummy, &dummy,
                            &_depth);
-
+#endif
    _mainProgressBar = glade_xml_get_widget(_gladeXML, "progressbar_download");
    assert(_mainProgressBar);
 
@@ -85,7 +86,7 @@ RGFetchProgress::RGFetchProgress(RGWindow *win)
                                                      FETCH_PIXMAP_COLUMN,
                                                      NULL);
    gtk_tree_view_column_set_sizing(column, GTK_TREE_VIEW_COLUMN_FIXED);
-   gtk_tree_view_column_set_fixed_width(column, 100);
+   gtk_tree_view_column_set_fixed_width(column, COLUMN_PERCENT_WIDTH);
    _statusColumn = column;
    _statusRenderer = renderer;
    gtk_tree_view_append_column(GTK_TREE_VIEW(_table), column);
@@ -118,6 +119,18 @@ RGFetchProgress::RGFetchProgress(RGWindow *win)
    _textGC = style->black_gc;
 
    skipTaskbar(true);
+}
+
+void RGFetchProgress::setDescription(string mainText, string secondText)
+{
+   gtk_window_set_title(GTK_WINDOW(_win), mainText.c_str());
+   
+   gchar *str = g_strdup_printf(_("<big><b>%s</b></big>\n\n%s"),
+				  mainText.c_str(), secondText.c_str());
+   gtk_label_set_markup(GTK_LABEL(glade_xml_get_widget(_gladeXML, "label_description")), str);
+			
+
+   g_free(str);
 }
 
 bool RGFetchProgress::MediaChange(string Media, string Drive)
@@ -219,6 +232,10 @@ bool RGFetchProgress::Pulse(pkgAcquire * Owner)
    float percent =
       long (double ((CurrentBytes + CurrentItems) * 100.0) /
             double (TotalBytes + TotalItems));
+   // work-around a stupid problem with libapt
+   if(CurrentItems == TotalItems)
+      percent=100.0;
+
    gtk_progress_bar_set_fraction(GTK_PROGRESS_BAR(_mainProgressBar),
                                  percent / 100.0);
 
@@ -284,7 +301,7 @@ GdkPixmap *RGFetchProgress::statusDraw(int width, int height, int status)
    GdkPixmap *pix;
    int px, pw;
 
-   pix = gdk_pixmap_new(_win->window, width, height, _depth);
+   pix = gdk_pixmap_new(_win->window, width, height, -1);
 
    px = 0;
    pw = status * width / 100;
@@ -344,8 +361,8 @@ void RGFetchProgress::refreshTable(int row, bool append)
    if (buf != NULL)
       gdk_pixbuf_unref(buf);
 
-   w = gtk_tree_view_column_get_width(_statusColumn);
-   h = 18;                      // FIXME: height -> get it from somewhere
+   w = COLUMN_PERCENT_WIDTH;   //gtk_tree_view_column_get_width(_statusColumn);
+   h = COLUMN_PERCENT_HEIGHT; // FIXME: height -> get it from somewhere
 
    pix = statusDraw(w, h, _items[row].status);
    buf = gdk_pixbuf_get_from_drawable(NULL, pix, NULL, 0, 0, 0, 0, w, h);

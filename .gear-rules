@@ -1,5 +1,4 @@
 copy: *.8
-copy: *.diff
 copy: *.patch
 copy: *.po
 tar.gz: synaptic

@@ -38,27 +38,10 @@
 
 #include "i18n.h"
 
-void RGChangesWindow::clickedOk(GtkWidget *self, void *data)
-{
-   RGChangesWindow *me = (RGChangesWindow *) data;
-   me->_confirmed = true;
-   gtk_main_quit();
-}
-
-
-void RGChangesWindow::clickedCancel(GtkWidget *self, void *data)
-{
-   //cout << "clickedCancel()" << endl;
-   RGChangesWindow *me = (RGChangesWindow *) data;
-   me->_confirmed = false;
-   gtk_main_quit();
-}
-
 
 RGChangesWindow::RGChangesWindow(RGWindow *wwin)
 : RGGladeWindow(wwin, "changes")
 {
-   setTitle("");
    // new tree store
    _treeStore = gtk_tree_store_new(N_COLUMNS, G_TYPE_STRING);
    _tree = glade_xml_get_widget(_gladeXML, "tree");
@@ -72,29 +55,17 @@ RGChangesWindow::RGChangesWindow(RGWindow *wwin)
    /* Add the column to the view. */
    gtk_tree_view_append_column(GTK_TREE_VIEW(_tree), column);
    gtk_widget_show(_tree);
-
-   glade_xml_signal_connect_data(_gladeXML,
-                                 "on_proceed_clicked",
-                                 G_CALLBACK(clickedOk), this);
-   glade_xml_signal_connect_data(_gladeXML,
-                                 "on_cancel_clicked",
-                                 G_CALLBACK(clickedCancel), this);
-   glade_xml_signal_connect_data(_gladeXML,
-                                 "on_window_changes_close",
-                                 G_CALLBACK(clickedCancel), this);
-
-   skipTaskbar(true);
 }
 
 
 
-bool RGChangesWindow::showAndConfirm(RPackageLister *lister,
-                                     vector<RPackage *> &kept,
-                                     vector<RPackage *> &toInstall,
-                                     vector<RPackage *> &toReInstall,
-                                     vector<RPackage *> &toUpgrade,
-                                     vector<RPackage *> &toRemove,
-                                     vector<RPackage *> &toDowngrade)
+void RGChangesWindow::confirm(RPackageLister *lister,
+			      vector<RPackage *> &kept,
+			      vector<RPackage *> &toInstall,
+			      vector<RPackage *> &toReInstall,
+			      vector<RPackage *> &toUpgrade,
+			      vector<RPackage *> &toRemove,
+			      vector<RPackage *> &toDowngrade)
 {
    GtkTreeIter iter, iter_child;
 
@@ -173,10 +144,4 @@ bool RGChangesWindow::showAndConfirm(RPackageLister *lister,
    }
 
    gtk_tree_view_expand_all(GTK_TREE_VIEW(_tree));
-
-   show();
-   gtk_window_set_modal(GTK_WINDOW(_win), TRUE);
-   gtk_main();
-
-   return _confirmed;
 }

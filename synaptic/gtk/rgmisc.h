@@ -28,8 +28,12 @@
 
 enum {
    PIXMAP_COLUMN,
+   SUPPORTED_COLUMN,
    NAME_COLUMN,
+   COMPONENT_COLUMN,
+   SECTION_COLUMN,
    PKG_SIZE_COLUMN,
+   PKG_DOWNLOAD_SIZE_COLUMN,
    INSTALLED_VERSION_COLUMN,
    AVAILABLE_VERSION_COLUMN,
    DESCR_COLUMN,
@@ -57,6 +61,8 @@ class RGPackageStatus : public RPackageStatus {
    GdkPixbuf *StatusPixbuf[N_STATUS_COUNT];
    GdkColor *StatusColors[N_STATUS_COUNT];
 
+   GdkPixbuf *supportedPix;
+
    void initColors();
    void initPixbufs();
 
@@ -68,6 +74,7 @@ class RGPackageStatus : public RPackageStatus {
    
    // this is what the package listers use
    GdkColor *getBgColor(RPackage *pkg);
+   GdkPixbuf *getSupportedPix(RPackage *pkg);
    GdkPixbuf *getPixbuf(RPackage *pkg);
    GdkPixbuf *getPixbuf(int i) {
       return StatusPixbuf[i];

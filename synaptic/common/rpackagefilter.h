@@ -126,6 +126,8 @@ class RPatternPackageFilter : public RPackageFilter {
         vector<regex_t *> regexps;
    };
    vector<Pattern> _patterns;
+   
+   bool and_mode; // patterns are applied in "AND" mode if true, "OR" if false
 
    inline bool filterName(Pattern pat, RPackage *pkg);
    inline bool RPatternPackageFilter::filterVersion(Pattern pat, RPackage *pkg);
@@ -141,7 +143,7 @@ class RPatternPackageFilter : public RPackageFilter {
 
    static char *TypeName[];
 
-   RPatternPackageFilter() {};
+   RPatternPackageFilter() : and_mode(true) {};
    RPatternPackageFilter(RPatternPackageFilter &f);
    virtual ~RPatternPackageFilter();
 
@@ -158,6 +160,8 @@ class RPatternPackageFilter : public RPackageFilter {
       exclusive = _patterns[index].exclusive;
    };
    void clear();
+   bool getAndMode() { return and_mode; };
+   void setAndMode(bool b) { and_mode=b; };
 
    virtual bool filter(RPackage *pkg);
    virtual bool read(Configuration &conf, string key);

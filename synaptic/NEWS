@@ -1,3 +1,26 @@
+0.55
+ - new columns: "component", "section", "suppported"
+ - support to mark packages as supported by the distribution,
+   see README.supported for details
+ - AND/OR mode for pattern filter has gui support now
+ - Auto install for recommended packages is back
+ - When the find window is opened, the current text is selected
+ - Views looks a bit more like in Evolution 
+
+0.53.4
+ - Added AND/OR mode for the filters
+ - Updated the manual to reflect version 0.53.4 (Thanks to Gaetan de Menten)
+ - Show "no package is selected" in the desc. field
+ - Use a icon with a higher resolution for the app 
+ - Fixed typos
+ - Fixed sections that include a "<" in the name
+ - Added Spanish translation of the manual by Francisco Javier F. Serrador
+ - Added Norwegian translation by Vidar Braut Haarr
+ - Updated  Portuguese translation by Andre Luis Lopes
+ - Updated Spanish translation by Francisco Javier F. Serrador
+ - Updated Italian translation by Mauro Colorio
+ - Updated German translation by Sebastian Heinlein (Thanks to Michael Große)
+
 0.53
  - sort by Available Version and Installed Version 
  - task support (if distribution supports it)

@@ -114,13 +114,16 @@ void cbGetSelectedRows(GtkTreeModel *model,
 
 
 
-void RGMainWindow::changeView(int view, bool sethistory, string subView)
+void RGMainWindow::changeView(int view, string subView)
 {
    //cout << "RGMainWindow::changeView()" << endl;
+   if(view >= N_PACKAGE_VIEWS) {
+      //cerr << "changeView called with invalid view NR: " << view << endl;
+      view=0;
+   }
 
-   if (sethistory)
-      gtk_option_menu_set_history(GTK_OPTION_MENU(_viewPopup), view);
-
+   gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(_viewButtons[view]), TRUE);
+      
    RPackage *pkg = selectedPackage();
    _blockActions = TRUE;
 
@@ -362,7 +365,10 @@ void RGMainWindow::updatePackageInfo(RPackage *pkg)
    // return if no pkg is selected
    if (!pkg) 
       return;
-   
+
+//    cout <<   pkg->label() << endl;
+//    cout <<   pkg->component() << endl;
+  
    // set menu according to pkg status
    int flags = pkg->getFlags();
 
@@ -515,11 +521,11 @@ bool RGMainWindow::askStateChange(RPackageLister::pkgState state,
    if (ask && _lister->getStateChanges(state, toKeep, toInstall, toReInstall,
                                            toUpgrade, toRemove, toDowngrade,
                                            exclude)) {
-      RGChangesWindow *chng;
-      // show a summary of what's gonna happen
-      chng = new RGChangesWindow(this);
-      if (!chng->showAndConfirm(_lister, toKeep, toInstall, toReInstall,
-                                toUpgrade, toRemove, toDowngrade)) {
+      RGChangesWindow changes(this);
+      changes.confirm(_lister, toKeep, toInstall, toReInstall,
+		      toUpgrade, toRemove, toDowngrade);
+      int res = gtk_dialog_run(GTK_DIALOG(changes.window()));
+      if( res != GTK_RESPONSE_OK) {
          // canceled operation
          _lister->restoreState(state);
 	 // if a operation was canceled, we discard all errors from this
@@ -527,10 +533,26 @@ bool RGMainWindow::askStateChange(RPackageLister::pkgState state,
 	 _error->Discard();
          changed = false;
       }
-      delete chng;
    }
 
    return changed;
+}
+
+void RGMainWindow::installAllWeakDepends(RPackage *pkg, 
+					 pkgCache::Dep::DepType type)
+{
+   //cout << "RGMainWindow::installWeakDepends()" << endl;
+   if(pkg == NULL) return;
+   
+   vector<RPackage::DepInformation> deps = pkg->enumDeps();
+   for(unsigned int i=0;i<deps.size();i++) {
+      if(deps[i].type == type) {
+	 if(!deps[i].isVirtual) {
+	    RPackage *newpkg = (RPackage *) _lister->getPackage(deps[i].name);
+	    pkgInstallHelper(newpkg);
+	 }
+      }
+   } 
 }
 
 void RGMainWindow::pkgAction(RGPkgAction action)
@@ -590,6 +612,12 @@ void RGMainWindow::pkgAction(RGPkgAction action)
          case PKG_INSTALL:     // install
             instPkgs.push_back(pkg);
             pkgInstallHelper(pkg, false);
+	    if(_config->FindB("Synaptic::UseRecommends", false)) {
+	       installAllWeakDepends(pkg, pkgCache::Dep::Recommends);
+	    }
+	    if(_config->FindB("Synaptic::UseSuggests", false)) {
+	       installAllWeakDepends(pkg, pkgCache::Dep::Suggests);
+	    }
             break;
          case PKG_INSTALL_FROM_VERSION:     // install with specific version
             pkgInstallHelper(pkg, false);
@@ -785,9 +813,26 @@ void RGMainWindow::buildTreeView()
       all_columns.push_back(pair<int, GtkTreeViewColumn *>(pos, column));
    }
 
+   /* supported(pixmap) column */
+   pos = _config->FindI("Synaptic::supportedColumnPos", 1);
+   visible = _config->FindI("Synaptic::supportedColumnVisible", true);
+   if(visible) {
+      renderer = gtk_cell_renderer_pixbuf_new();
+      // TRANSLATORS: Column header for the column "Supported" in the package list
+      column = gtk_tree_view_column_new_with_attributes(_(" "), renderer,
+                                                        "pixbuf",
+                                                        SUPPORTED_COLUMN, 
+							NULL);
+      gtk_tree_view_column_set_sizing(column, GTK_TREE_VIEW_COLUMN_FIXED);
+      gtk_tree_view_column_set_fixed_width(column, 20);
+      //gtk_tree_view_insert_column(GTK_TREE_VIEW(_treeView), column, pos);
+      gtk_tree_view_column_set_sort_column_id(column, SUPPORTED_COLUMN);
+      all_columns.push_back(pair<int, GtkTreeViewColumn *>(pos, column));
+   }
+
 
    /* Package name */
-   pos = _config->FindI("Synaptic::nameColumnPos", 1);
+   pos = _config->FindI("Synaptic::nameColumnPos", 2);
    visible = _config->FindI("Synaptic::nameColumnVisible", true);
    if (visible) {
       renderer = gtk_cell_renderer_text_new();
@@ -812,8 +857,51 @@ void RGMainWindow::buildTreeView()
       gtk_tree_view_column_set_sort_column_id(column, NAME_COLUMN);
    }
 
+   // section 
+   pos = _config->FindI("Synaptic::sectionColumnPos", 2);
+   visible = _config->FindI("Synaptic::sectionColumnVisible", false);
+   if (visible) {
+      renderer = gtk_cell_renderer_text_new();
+      gtk_cell_renderer_text_set_fixed_height_from_font(GTK_CELL_RENDERER_TEXT
+                                                        (renderer), 1);
+      column =
+         gtk_tree_view_column_new_with_attributes(_("Section"),
+                                                  renderer, "text",
+                                                  SECTION_COLUMN,
+                                                  "background-gdk",
+                                                  COLOR_COLUMN, NULL);
+      gtk_tree_view_column_set_sizing(column, GTK_TREE_VIEW_COLUMN_FIXED);
+      gtk_tree_view_column_set_fixed_width(column, 130);
+      //gtk_tree_view_insert_column (GTK_TREE_VIEW(_treeView), column, pos);
+      all_columns.push_back(pair<int, GtkTreeViewColumn *>(pos, column));
+      gtk_tree_view_column_set_sort_column_id(column, SECTION_COLUMN);
+      gtk_tree_view_column_set_resizable(column, TRUE);
+   }
+
+   // component
+   pos = _config->FindI("Synaptic::componentColumnPos", 3);
+   visible = _config->FindI("Synaptic::componentColumnVisible", false);
+   if (visible) {
+      renderer = gtk_cell_renderer_text_new();
+      gtk_cell_renderer_text_set_fixed_height_from_font(GTK_CELL_RENDERER_TEXT
+                                                        (renderer), 1);
+      column =
+         gtk_tree_view_column_new_with_attributes(_("Component"),
+                                                  renderer, "text",
+                                                  COMPONENT_COLUMN,
+                                                  "background-gdk",
+                                                  COLOR_COLUMN, NULL);
+      gtk_tree_view_column_set_sizing(column, GTK_TREE_VIEW_COLUMN_FIXED);
+      gtk_tree_view_column_set_fixed_width(column, 130);
+      //gtk_tree_view_insert_column (GTK_TREE_VIEW(_treeView), column, pos);
+      all_columns.push_back(pair<int, GtkTreeViewColumn *>(pos, column));
+      gtk_tree_view_column_set_sort_column_id(column, COMPONENT_COLUMN);
+      gtk_tree_view_column_set_resizable(column, TRUE);
+   }
+
+
    /* Installed Version */
-   pos = _config->FindI("Synaptic::instVerColumnPos", 2);
+   pos = _config->FindI("Synaptic::instVerColumnPos", 4);
    visible = _config->FindI("Synaptic::instVerColumnVisible", true);
    if (visible) {
       renderer = gtk_cell_renderer_text_new();
@@ -834,7 +922,7 @@ void RGMainWindow::buildTreeView()
    }
 
    /* Available Version */
-   pos = _config->FindI("Synaptic::availVerColumnPos", 3);
+   pos = _config->FindI("Synaptic::availVerColumnPos", 5);
    visible = _config->FindI("Synaptic::availVerColumnVisible", true);
    if (visible) {
       renderer = gtk_cell_renderer_text_new();
@@ -854,24 +942,17 @@ void RGMainWindow::buildTreeView()
       gtk_tree_view_column_set_resizable(column, TRUE);
    }
    // installed size
-   pos = _config->FindI("Synaptic::instSizeColumnPos", 4);
-   visible = _config->FindI("Synaptic::instSizeColumnVisible", true);
+   pos = _config->FindI("Synaptic::instSizeColumnPos", 6);
+   visible = _config->FindI("Synaptic::instSizeColumnVisible", false);
    if (visible) {
       /* Installed size */
       renderer = gtk_cell_renderer_text_new();
       gtk_cell_renderer_text_set_fixed_height_from_font(GTK_CELL_RENDERER_TEXT
                                                         (renderer), 1);
-      GValue value = { 0, };
-      GValue value2 = { 0, };
-      g_value_init(&value, G_TYPE_FLOAT);
-      g_value_set_float(&value, 1.0);
-      g_object_set_property(G_OBJECT(renderer), "xalign", &value);
-      g_value_init(&value2, G_TYPE_INT);
-      g_value_set_int(&value2, 10);
-      g_object_set_property(G_OBJECT(renderer), "xpad", &value2);
+      g_object_set(G_OBJECT(renderer), "xalign",1.0, "xpad", 10, NULL);
       column = gtk_tree_view_column_new_with_attributes(_("Size"), renderer,
                                                         "text",
-                                                        PKG_SIZE_COLUMN,
+							PKG_SIZE_COLUMN,
                                                         "background-gdk",
                                                         COLOR_COLUMN, NULL);
       gtk_tree_view_column_set_sizing(column, GTK_TREE_VIEW_COLUMN_FIXED);
@@ -882,8 +963,30 @@ void RGMainWindow::buildTreeView()
       gtk_tree_view_column_set_sort_column_id(column, PKG_SIZE_COLUMN);
    }
 
+   pos = _config->FindI("Synaptic::downloadSizeColumnPos", 7);
+   visible = _config->FindI("Synaptic::downloadSizeColumnVisible", false);
+   if (visible) {
+      /* Download size */
+      renderer = gtk_cell_renderer_text_new();
+      gtk_cell_renderer_text_set_fixed_height_from_font(GTK_CELL_RENDERER_TEXT
+                                                        (renderer), 1);
+      g_object_set(G_OBJECT(renderer), "xalign",1.0, "xpad", 10, NULL);
+      column = gtk_tree_view_column_new_with_attributes(_("Download"), 
+							renderer,"text",
+                                                        PKG_DOWNLOAD_SIZE_COLUMN,
+                                                        "background-gdk",
+                                                        COLOR_COLUMN, NULL);
+      gtk_tree_view_column_set_sizing(column, GTK_TREE_VIEW_COLUMN_FIXED);
+      gtk_tree_view_column_set_fixed_width(column, 80);
+      //gtk_tree_view_insert_column (GTK_TREE_VIEW(_treeView), column, pos);
+      all_columns.push_back(pair<int, GtkTreeViewColumn *>(pos, column));
+      gtk_tree_view_column_set_resizable(column, TRUE);
+      gtk_tree_view_column_set_sort_column_id(column, PKG_DOWNLOAD_SIZE_COLUMN);
+   }
+
+
    /* Description */
-   pos = _config->FindI("Synaptic::descrColumnPos", 5);
+   pos = _config->FindI("Synaptic::descrColumnPos", 8);
    visible = _config->FindI("Synaptic::descrColumnVisible", true);
    if (visible) {
       renderer = gtk_cell_renderer_text_new();
@@ -912,25 +1015,14 @@ void RGMainWindow::buildTreeView()
 
 #if GTK_CHECK_VERSION(2,4,0)
 #warning build with new fixed_height_mode
-   GValue value = { 0, };
-   g_value_init(&value, G_TYPE_BOOLEAN);
-   g_value_set_boolean(&value, TRUE);
-   g_object_set_property(G_OBJECT(_treeView), "fixed_height_mode", &value);
+   g_object_set(G_OBJECT(_treeView), 
+		"fixed_height_mode", TRUE,
+		NULL);
 #endif
 
    _pkgList = GTK_TREE_MODEL(gtk_pkg_list_new(_lister));
    gtk_tree_view_set_model(GTK_TREE_VIEW(_treeView), _pkgList);
    gtk_tree_view_set_search_column(GTK_TREE_VIEW(_treeView), NAME_COLUMN);
-
-
-   // LEAK!!! FIX THIS!!
-   /*
-   new RCacheActorPkgList(_lister, GTK_PKG_LIST(_pkgList),
-                          GTK_TREE_VIEW(_treeView));
-   new RPackageListActorPkgList(_lister, GTK_PKG_LIST(_pkgList),
-                                GTK_TREE_VIEW(_treeView));
-   */
-
 }
 
 #if INTERACTIVE_SEARCH_ON_KEYPRESS
@@ -1150,7 +1242,9 @@ void RGMainWindow::buildInterface()
    // Workaround for a bug in libglade.
    button = glade_xml_get_widget(_gladeXML, "button_update");
    gtk_tooltips_set_tip(GTK_TOOLTIPS(_tooltips), button,
-                        _("Refresh the list of known packages"), "");
+                        _("Reload the package information to become"
+                          " informed about new, removed or upgraded "
+                          " software packages."), "");
 
    button = glade_xml_get_widget(_gladeXML, "button_upgrade");
    gtk_tooltips_set_tip(GTK_TOOLTIPS(_tooltips), button,
@@ -1250,7 +1344,8 @@ void RGMainWindow::buildInterface()
    assert(_hpaned);
    // If the pane position is restored before the window is shown, it's
    // not restored in the same place as it was.
-   show();
+   if(!_config->FindB("Volatile::HideMainwindow", false))
+      show();
    RGFlushInterface();
    gtk_paned_set_position(GTK_PANED(_vpaned),
                           _config->FindI("Synaptic::vpanedPos", 140));
@@ -1445,12 +1540,37 @@ void RGMainWindow::buildInterface()
    _cacheProgress = new RGCacheProgress(_progressBar, _statusL);
    assert(_cacheProgress);
 
-   // view stuff
-   _viewPopup = glade_xml_get_widget(_gladeXML, "optionmenu_views");
-   assert(_viewPopup);
 
-   gtk_option_menu_remove_menu(GTK_OPTION_MENU(_viewPopup));
-   gtk_option_menu_set_menu(GTK_OPTION_MENU(_viewPopup), createViewMenu());
+   //FIXME/MAYBE: create this dynmaic?!?
+   //    for (vector<string>::const_iterator I = views.begin();
+   // I != views.end(); I++) {
+   // item = gtk_radiobutton_new((char *)(*I).c_str());
+   GtkWidget *w;
+   glade_xml_signal_connect_data(_gladeXML,
+				 "on_radiobutton_section_toggled",
+				 (GCallback) cbChangedView, this);
+   w=_viewButtons[PACKAGE_VIEW_SECTION] = glade_xml_get_widget(_gladeXML, "radiobutton_sections");
+   g_object_set_data(G_OBJECT(w), "index", 
+		     GINT_TO_POINTER(PACKAGE_VIEW_SECTION));
+   glade_xml_signal_connect_data(_gladeXML,
+				 "on_radiobutton_status_toggled",
+				 (GCallback) cbChangedView, this);
+   w=_viewButtons[PACKAGE_VIEW_STATUS] = glade_xml_get_widget(_gladeXML, "radiobutton_status");
+
+   g_object_set_data(G_OBJECT(w), "index", 
+		     GINT_TO_POINTER(PACKAGE_VIEW_STATUS));
+   glade_xml_signal_connect_data(_gladeXML,
+				 "on_radiobutton_custom_toggled",
+				 (GCallback) cbChangedView, this);
+   w=_viewButtons[PACKAGE_VIEW_CUSTOM] = glade_xml_get_widget(_gladeXML, "radiobutton_custom");
+   g_object_set_data(G_OBJECT(w), "index", 
+		     GINT_TO_POINTER(PACKAGE_VIEW_CUSTOM));
+   glade_xml_signal_connect_data(_gladeXML,
+				 "on_radiobutton_find_toggled",
+				 (GCallback) cbChangedView, this);
+   w=_viewButtons[PACKAGE_VIEW_SEARCH] = glade_xml_get_widget(_gladeXML, "radiobutton_find");
+   g_object_set_data(G_OBJECT(w), "index", 
+		     GINT_TO_POINTER(PACKAGE_VIEW_SEARCH));
 
    _subViewList = glade_xml_get_widget(_gladeXML, "treeview_subviews");
    assert(_subViewList);
@@ -1556,31 +1676,6 @@ void RGMainWindow::setStatusText(char *text)
    gtk_widget_queue_draw(_statusL);
 }
 
-GtkWidget *RGMainWindow::createViewMenu()
-{
-   GtkWidget *menu, *item;
-   vector<string> views;
-   views = _lister->getViews();
-
-   menu = gtk_menu_new();
-
-   int i = 0;
-   for (vector<string>::const_iterator I = views.begin();
-        I != views.end(); I++) {
-
-      item = gtk_menu_item_new_with_label((char *)(*I).c_str());
-      gtk_widget_show(item);
-      gtk_menu_shell_append(GTK_MENU_SHELL(menu), item);
-      gtk_object_set_data(GTK_OBJECT(item), "me", this);
-      gtk_object_set_data(GTK_OBJECT(item), "index", (void *)i++);
-      gtk_signal_connect(GTK_OBJECT(item), "activate",
-                         (GtkSignalFunc) cbChangedView, this);
-   }
-
-   return menu;
-}
-
-
 
 void RGMainWindow::saveState()
 {
@@ -1627,7 +1722,7 @@ bool RGMainWindow::restoreState()
 
    if(!_config->FindB("Volatile::Upgrade-Mode",false)) {
       int viewNr = _config->FindI("Synaptic::ViewMode", 0);
-      changeView(viewNr, true);
+      changeView(viewNr);
 
 #if GTK_CHECK_VERSION(2,4,0)
       // we auto set to "All" on startup when we have gtk2.4 (without
@@ -1787,7 +1882,11 @@ void RGMainWindow::cbChangelogDialog(GtkWidget *self, void *data)
       return;
     
    me->setInterfaceLocked(TRUE);
-   pkgAcquireStatus *status= new RGFetchProgress(me);;
+   RGFetchProgress *status= new RGFetchProgress(me);;
+   status->setDescription(_("Downloading changelog"),
+			  _("The changelog contains information about the"
+             " changes and closed bugs in each version of"
+             " the package."));
    pkgAcquire fetcher(status);
    string filename = pkg->getChangelogFile(&fetcher);
    
@@ -1885,7 +1984,9 @@ void RGMainWindow::cbAddCDROM(GtkWidget *self, void *data)
    }
    scan.hide();
    if (updateCache) {
+      me->setTreeLocked(TRUE);
       me->_lister->openCache(TRUE);
+      me->setTreeLocked(FALSE);
       me->refreshTable(me->selectedPackage());
    }
    me->setInterfaceLocked(FALSE);
@@ -2117,13 +2218,14 @@ void RGMainWindow::cbFindToolClicked(GtkWidget *self, void *data)
       me->_findWin = new RGFindWindow(me);
    }
 
+   me->_findWin->selectText();
    int res = gtk_dialog_run(GTK_DIALOG(me->_findWin->window()));
    if (res == GTK_RESPONSE_OK) {
       me->setBusyCursor(true);
       string str = me->_findWin->getFindString();
       int type = me->_findWin->getSearchType();
       int found = me->_lister->searchView()->setSearch(str,type,utf8_to_locale(str.c_str()));
-      me->changeView(4,true, str);
+      me->changeView(PACKAGE_VIEW_SEARCH, str);
 
       me->setBusyCursor(false);
       gchar *statusstr = g_strdup_printf(_("Found %i packages"), found);
@@ -2160,9 +2262,12 @@ void RGMainWindow::cbHelpAction(GtkWidget *self, void *data)
 
    if (is_binary_in_path("yelp"))
       system("yelp ghelp:synaptic &");
-   else if(is_binary_in_path("khelpcenter")) {
-      system("konqueror ghelp:///" PACKAGE_DATA_DIR "/gnome/help/synaptic/C/synaptic.xml &");
-   } else if (is_binary_in_path("mozilla")) {
+#if 0 // FIXME: khelpcenter can't display this? check again!
+    else if(is_binary_in_path("khelpcenter")) {
+       system("konqueror ghelp:///" PACKAGE_DATA_DIR "/gnome/help/synaptic/C/synaptic.xml &");
+    }
+#endif
+   else if (is_binary_in_path("mozilla")) {
       // mozilla eats bookmarks when run under sudo (because it does not
       // change $HOME)
       if(getenv("SUDO_USER") != NULL) {
@@ -2201,16 +2306,24 @@ void RGMainWindow::cbCloseFilterManagerAction(void *self, bool okcancel)
 
 void RGMainWindow::cbShowFilterManagerWindow(GtkWidget *self, void *data)
 {
+
    RGMainWindow *me = (RGMainWindow *) data;
 
    if (me->_fmanagerWin == NULL) {
       me->_fmanagerWin = new RGFilterManagerWindow(me, me->_lister->filterView());
-
-      me->_fmanagerWin->setCloseCallback(cbCloseFilterManagerAction, me);
    }
 
-   me->_fmanagerWin->show();
+   me->_fmanagerWin->readFilters();
+   if(gtk_dialog_run(GTK_DIALOG(me->_fmanagerWin->window()))) {
+      me->setInterfaceLocked(TRUE);
 
+      me->_lister->filterView()->refreshFilters();
+      me->refreshTable();
+      me->refreshSubViewList();
+
+      me->setInterfaceLocked(FALSE);
+   }
+   
 }
 
 void RGMainWindow::cbSelectedRow(GtkTreeSelection *selection, gpointer data)
@@ -2358,12 +2471,17 @@ void RGMainWindow::cbPkgHelpClicked(GtkWidget *self, void *data)
 }
 
 
-void RGMainWindow::cbChangedView(GtkWidget *self)
+void RGMainWindow::cbChangedView(GtkWidget *self, void *data)
 {
-   RGMainWindow *me =
-      (RGMainWindow *) gtk_object_get_data(GTK_OBJECT(self), "me");
+   // only act on the active buttons
+   if(!gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(self)))
+      return;
+
+   //   cout << "cbChangedView()"<<endl;
+
+   RGMainWindow *me = (RGMainWindow *) data; 
    int view = (int)gtk_object_get_data(GTK_OBJECT(self), "index");
-   me->changeView(view, false);
+   me->changeView(view);
 }
 
 void RGMainWindow::cbChangedSubView(GtkTreeSelection *selection,
@@ -2407,7 +2525,8 @@ void RGMainWindow::cbProceedClicked(GtkWidget *self, void *data)
 
    // fetch packages
    RGFetchProgress *fprogress = new RGFetchProgress(me);
-   fprogress->setTitle(_("Downloading Package Files"));
+   fprogress->setDescription(_("Downloading package files"), 
+			     _("The package files will be cached locally for installation."));
 
    // Do not let the treeview access the cache during the update.
    me->setTreeLocked(TRUE);
@@ -2538,9 +2657,11 @@ void RGMainWindow::cbUpdateClicked(GtkWidget *self, void *data)
    me->_fmanagerWin = NULL;
 
    RGFetchProgress *progress = new RGFetchProgress(me);
-   progress->setTitle(_("Downloading Index Files"));
+   progress->setDescription(_("Downloading package information"),
+			    _("The repositories will be checked for new, removed "
+               "or upgraded software packages."));
 
-   me->setStatusText(_("Refreshing package list..."));
+   me->setStatusText(_("Reloading package information..."));
 
    me->setInterfaceLocked(TRUE);
    me->setTreeLocked(TRUE);
@@ -2566,9 +2687,10 @@ void RGMainWindow::cbUpdateClicked(GtkWidget *self, void *data)
       GtkTextBuffer *tb = gtk_text_view_get_buffer(GTK_TEXT_VIEW(tv));
       gtk_text_buffer_set_text(tb, utf8(error.c_str()), -1);
       dia.run();
-   } else
+   } else {
       me->forgetNewPackages();
-
+      _config->Set("Synaptic::update::last",time(NULL));
+   }
    delete progress;
 
    if (me->_lister->openCache(TRUE)) {

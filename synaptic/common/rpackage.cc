@@ -535,35 +535,42 @@ string RPackage::showWhyInstBroken()
             ioprintf(out, " ");
             pkgCache::VerIterator Ver =
                (*_depcache)[Targ].InstVerIter(*_depcache);
+	    // add minimal version information
+	    string requiredVersion;
+	    if(Start.TargetVer() != 0)
+	       requiredVersion = "("+string(Start.CompType())+string(Start.TargetVer())+")";
             if (Ver.end() == false) {
                if (FirstOr == false)
-                  ioprintf(out, "\t%s but %s is to be installed",
-                           Start.TargetPkg().Name(), Ver.VerStr());
+                  ioprintf(out, _("\t%s %s but %s is to be installed"),
+                           Start.TargetPkg().Name(), requiredVersion.c_str(),
+			   Ver.VerStr());
                else
-                  ioprintf(out, " %s: %s but %s is to be installed",
+                  ioprintf(out, _(" %s: %s %s but %s is to be installed"),
                            End.DepType(), Start.TargetPkg().Name(),
-                           Ver.VerStr());
+			   requiredVersion.c_str(), Ver.VerStr());
             } else {
                if ((*_depcache)[Targ].CandidateVerIter(*_depcache).end() ==
                    true) {
                   if (Targ->ProvidesList == 0)
                      if (FirstOr == false)
-                        ioprintf(out, "\t%s but it is not installable",
-                                 Start.TargetPkg().Name());
+                        ioprintf(out, _("\t%s %s but it is not installable"),
+                                 Start.TargetPkg().Name(), 
+				 requiredVersion.c_str());
                      else
-                        ioprintf(out, "%s: %s but it is not installable",
-                                 End.DepType(), Start.TargetPkg().Name());
+                        ioprintf(out, "%s: %s %s but it is not installable",
+                                 End.DepType(), Start.TargetPkg().Name(),
+				 requiredVersion.c_str());
                   else if (FirstOr == false)
-                     ioprintf(out, "\t%s but it is a virtual package",
+                     ioprintf(out, _("\t%s but it is a virtual package"),
                               Start.TargetPkg().Name());
                   else
-                     ioprintf(out, "%s: %s but it is a virtual package",
+                     ioprintf(out, _("%s: %s but it is a virtual package"),
                               End.DepType(), Start.TargetPkg().Name());
                } else if (FirstOr == false)
-                  ioprintf(out, "\t%s but it is not going to be installed",
+                  ioprintf(out, _("\t%s but it is not going to be installed"),
                            Start.TargetPkg().Name());
                else
-                  ioprintf(out, "%s: %s but it is not going to be installed",
+                  ioprintf(out, _("%s: %s but it is not going to be installed"),
                            End.DepType(), Start.TargetPkg().Name());
             }
          } else {
@@ -1294,6 +1301,55 @@ static char *parseDescription(string descr)
    }
 }
 
+string RPackage::component()
+{
+   string res;
+   pkgCache::VerIterator Ver;
+   pkgDepCache::StateCache & State = (*_depcache)[*_package];
+   if (State.CandidateVer == 0) {
+      //cout << "CanidateVer == 0" << endl;
+      return "";
+   }
+   Ver = State.CandidateVerIter(*_depcache);
+   pkgCache::VerFileIterator VF = Ver.FileList();
+   pkgCache::PkgFileIterator File = VF.File();
+
+   if(File.Component() == NULL) {
+      //cout << "File.Component() == NULL" << endl;
+      return "";
+   }
+
+   res = File.Component();
+
+   return res;
+}
+
+
+
+string RPackage::label()
+{
+   string res;
+   pkgCache::VerIterator Ver;
+   pkgDepCache::StateCache & State = (*_depcache)[*_package];
+   if (State.CandidateVer == 0) {
+      //cout << "CanidateVer == 0" << endl;
+      return "";
+   }
+   Ver = State.CandidateVerIter(*_depcache);
+   pkgCache::VerFileIterator VF = Ver.FileList();
+   pkgCache::PkgFileIterator File = VF.File();
+
+   if(File.Label() == NULL) {
+      //cout << "File.Component() == NULL" << endl;
+      return "";
+   }
+
+   res = File.Label();
+
+   return res;
+}
+
+
 // class that finds out what do display to get user
 void RPackageStatus::init()
 {
@@ -1321,6 +1377,60 @@ void RPackageStatus::init()
       _("Not installed (new in repository)")
    };
    memcpy(PackageStatusLongString, status_long, sizeof(status_long));
+
+
+   // check for unsupported stuff
+   if(_config->FindB("Synaptic::mark-unsupported",true)) {
+      string s, labels, components;
+      markUnsupported = true;
+
+      // read supported labels
+      labels = _config->Find("Synaptic::supported-label", "Debian Debian-Security");
+      stringstream sst1(labels);
+      while(!sst1.eof()) {
+	 sst1 >> s;
+	 supportedLabels.push_back(s);
+      }
+      
+      // read supported components
+      components = _config->Find("Synaptic::supported-components", "main updates/main");
+      stringstream sst2(components);
+      while(!sst2.eof()) {
+	 sst2 >> s;
+	 supportedComponents.push_back(s);
+      }
+   } 
+
+}
+
+bool RPackageStatus::isSupported(RPackage *pkg) 
+{
+   bool res = true;
+
+   if(markUnsupported) {
+      bool sc, sl;
+
+      sc=sl=false;
+
+      string component = pkg->component();
+      string label = pkg->label();
+
+      for(unsigned int i=0;i<supportedComponents.size();i++) {
+	 if(supportedComponents[i] == component) {
+	    sc = true;
+	    break;
+	 }
+      }
+      for(unsigned int i=0;i<supportedLabels.size();i++) {
+	 if(supportedLabels[i] == label) {
+	    sl = true;
+	    break;
+	 }
+      }
+      res = (sc & sl);
+   }
+
+   return res;
 }
 
 int RPackageStatus::getStatus(RPackage *pkg)
