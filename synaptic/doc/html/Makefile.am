@@ -2,7 +2,7 @@
 
 
 htmldir = $(datadir)/synaptic/html
-html_DATA = *.html
+html_DATA = C/*.html 
 
 htmlfiguresdir = $(htmldir)/figures
 htmlfigures_DATA = figures/*

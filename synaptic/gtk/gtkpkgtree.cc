@@ -492,6 +492,7 @@ gtk_pkg_tree_get_value (GtkTreeModel *tree_model,
       pix = RPackageStatus::pkgStatus.getPixbuf(pkg);
       g_value_set_object(value, pix);
       break;
+
     }
   }
 }

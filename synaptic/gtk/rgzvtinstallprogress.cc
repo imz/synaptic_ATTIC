@@ -66,9 +66,9 @@ void RGZvtInstallProgress::startUpdate()
 void RGZvtInstallProgress::finishUpdate()
 {
   string finishMsg = 
-    _("\nUpdate finished - You can close the window now");
+    _("\nSuccessfully applied all changes. You can close the window now ");
   string errorMsg = 
-    _("\nUpdate failed - Scroll in this buffer to see what went wrong");
+    _("\nFailed to apply all changes! Scroll in this buffer to see what went wrong ");
 
   gtk_widget_set_sensitive(_closeB, true);
 
@@ -110,7 +110,7 @@ void RGZvtInstallProgress::stopShell(GtkWidget *self, void* data)
 
   if(!me->updateFinished) {
     gtk_label_set_markup(GTK_LABEL(me->_statusL), 
-		       _("<i>Can't close while executing</i>"));
+		       _("<i>Can't close while running</i>"));
     return;
   } 
 
@@ -139,7 +139,7 @@ RGZvtInstallProgress::RGZvtInstallProgress(RGMainWindow *main)
     : RInstallProgress(), RGGladeWindow(main, "zvtinstallprogress"),
       updateFinished(false)
 {
-    setTitle(_("Executing Changes..."));
+    setTitle(_("Applying Changes..."));
 
     GtkWidget *hbox = glade_xml_get_widget(_gladeXML, "hbox_terminal");
     assert(hbox);
@@ -213,7 +213,7 @@ RGZvtInstallProgress::RGZvtInstallProgress(RGMainWindow *main)
 
 
 pkgPackageManager::OrderResult 
-RGZvtInstallProgress::start(pkgPackageManager *pm,
+RGZvtInstallProgress::start(RPackageManager *pm,
 			    int numPackages,
 			    int numPackagesTotal)
 {
@@ -221,6 +221,11 @@ RGZvtInstallProgress::start(pkgPackageManager *pm,
 
    void *dummy;
    int open_max, ret = 250;
+   pid_t _child_id;
+
+   res = pm->DoInstallPreFork();
+   if (res == pkgPackageManager::Failed)
+      return res;
 
 #ifdef HAVE_ZVT
    _child_id = zvt_term_forkpty (ZVT_TERM(_term), FALSE);
@@ -235,13 +240,20 @@ RGZvtInstallProgress::start(pkgPackageManager *pm,
    }
 
    if (_child_id == 0) {
+      // we ignore sigpipe as it is thrown sporadic on
+      // debian, kernel 2.6 systems
+      struct sigaction new_act;
+      memset( &new_act, 0, sizeof( new_act ) );
+      new_act.sa_handler = SIG_IGN;
+      sigaction( SIGPIPE, &new_act, NULL);
+
       // Close all file descriptors but first 3
       open_max = sysconf(_SC_OPEN_MAX);
       for (int i = 3; i < open_max; i++)
 	 ::close(i);
       // make sure, that term is set correctly
       setenv("TERM","xterm",1);
-      res = pm->DoInstall();
+      res = pm->DoInstallPostFork();
       _exit(res);
    }
 
@@ -249,16 +261,12 @@ RGZvtInstallProgress::start(pkgPackageManager *pm,
    while (waitpid(_child_id, &ret, WNOHANG) == 0)
       updateInterface();
 
-   res = (pkgPackageManager::OrderResult)WEXITSTATUS(ret);
+#ifdef HAVE_ZVT
+   res = (pkgPackageManager::OrderResult)zvt_term_closepty(ZVT_TERM(_term));
+#endif
+   //FIXME: how to get the exit-status from vte?
 
    finishUpdate();
-
-#ifdef HAVE_ZVT
-   zvt_term_closepty(ZVT_TERM(_term));
-#endif
-#ifdef HAVE_VTE
-    // nothing to do
-#endif
 
    return res;
 }

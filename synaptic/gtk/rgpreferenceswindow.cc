@@ -132,6 +132,8 @@ void RGPreferencesWindow::saveAction(GtkWidget *self, void *data)
 
     // save the colors
     RPackageStatus::pkgStatus.saveColors();
+    newval = gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(me->_optionUseStatusColors));
+    _config->Set("Synaptic::UseStatusColors",  newval ? "true" : "false");
 
     // upgrade type, (ask=-1,normal=0,dist-upgrade=1)
     i = gtk_option_menu_get_history(GTK_OPTION_MENU(glade_xml_get_widget(me->_gladeXML, "optionmenu_upgrade_method")));
@@ -483,6 +485,7 @@ void RGPreferencesWindow::saveColor(GtkWidget *self, void *data)
 
     RPackageStatus::pkgStatus.setColor(GPOINTER_TO_INT(data),
 				       gdk_color_copy(&color));
+
     me->readColors();
 }
 
@@ -521,6 +524,7 @@ void RGPreferencesWindow::colorClicked(GtkWidget *self, void *data)
                              (gpointer)color_dialog); 
     
     gtk_widget_show(color_dialog);
+
 }
 
 void RGPreferencesWindow::useProxyToggled(GtkWidget *self, void *data) 
@@ -550,6 +554,21 @@ void RGPreferencesWindow::checkbuttonUserTerminalFontToggled(GtkWidget *self, vo
     GtkWidget *button = glade_xml_get_widget(me->_gladeXML,"button_terminal_font");
     GtkWidget *check = glade_xml_get_widget(me->_gladeXML,"checkbutton_user_terminal_font");
     gtk_widget_set_sensitive(button,gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(check)));
+}
+
+void RGPreferencesWindow::colorButtonToggled(GtkWidget *self, void *data)
+{
+   RGPreferencesWindow *me = (RGPreferencesWindow*)data;
+
+   //cout << "colorButtonToggled" << endl;
+
+   GtkWidget *check = glade_xml_get_widget(me->_gladeXML,"check_use_colors");
+   gboolean active = gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(check));
+   gtk_widget_set_sensitive(glade_xml_get_widget(me->_gladeXML, "table_colors"),active);
+   
+    _config->Set("Synaptic::UseStatusColors",  active ? "true" : "false");
+
+   RPackageStatus::pkgStatus.initColors();
 }
 
 
@@ -667,6 +686,11 @@ RGPreferencesWindow::RGPreferencesWindow(RGWindow *win, RPackageLister *lister)
 				  G_CALLBACK(changeFontAction),
 				  GINT_TO_POINTER(FONT_TERMINAL)); 
 
+    glade_xml_signal_connect_data(_gladeXML,
+				  "on_check_use_colors_toggled",
+				  G_CALLBACK(colorButtonToggled),
+				  this); 
+    
 
     // distro selection
     string defaultDistro = _config->Find("Synaptic::DefaultDistro","");

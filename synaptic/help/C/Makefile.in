@@ -238,7 +238,7 @@ figdir = figures
 docname = synaptic
 lang = C
 omffile = synaptic-C.omf
-entities = gpl.xml
+entities = legal.xml
 
 # ************* Begin of section some packagers may need to modify  **************
 # This variable (docdir) specifies where the documents should be installed.
@@ -412,7 +412,7 @@ install-data-hook-omf:
 	for file in $(omffile); do \
 		$(INSTALL_DATA) $$file.out $(DESTDIR)$(omf_dest_dir)/$$file; \
 	done
-	-scrollkeeper-update -p $(scrollkeeper_localstate_dir) -o $(DESTDIR)$(omf_dest_dir)
+	-scrollkeeper-update -p $(scrollkeeper_localstate_dir) -o $(DESTDIR)$(omf_dest_dir) 
 
 uninstall-local-omf:
 	-for file in $(srcdir)/*.omf; do \
@@ -429,7 +429,9 @@ all: omf html
 html: html_timestamp
 
 html_timestamp:  $(docname).xml
-	db2html -o  $(top_builddir)/doc/html $(docname).xml
+	mkdir -p $(top_builddir)/doc/html/$(lang)/figures
+	rm -f $(top_builddir)/doc/html/$(lang)/*html
+	xmlto html -o  $(top_builddir)/doc/html/$(lang)/ --skip-validation $(docname).xml
 	cp  $(top_srcdir)/help/C/figures/*  $(top_builddir)/doc/html/figures
 	touch html_timestamp
 

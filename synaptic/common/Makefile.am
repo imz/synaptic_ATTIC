@@ -19,6 +19,7 @@ libsynaptic_a_SOURCES =\
 	rpackagefilter.h\
 	rpackagelister.cc\
 	rpackagelister.h\
+	rpackagemanager.h \
 	rcdscanner.cc\
 	rcdscanner.h\
 	indexcopy.cc\

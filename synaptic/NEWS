@@ -9,6 +9,8 @@
  - welcome dialog added
  - bugfixes
  - "Fix broken packages" works now as in apt-get (thanks Panu Matilainen)
+ - multi-cdrom handling bug fixed (thanks to Gabor Kelemen and 
+   Vytautas Lukenskas for reporting)
 
 0.47
  - Fixed many i18n issues (thanks to Ales Kapica and Jean-Michel Poure)

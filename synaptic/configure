@@ -1598,7 +1598,7 @@ fi
 
 # Define the identity of the package.
  PACKAGE=synaptic
- VERSION=0.48
+ VERSION=0.48.1
 
 
 cat >>confdefs.h <<_ACEOF
@@ -4826,7 +4826,7 @@ else
 fi
 
 
-ALL_LINGUAS="ar pt_BR es fr de tr zh_CN zh_HK zh_TW ru nl ja be it_IT pl cs hu"
+ALL_LINGUAS="ar pt_BR es fr de tr zh_CN zh_HK zh_TW ru nl ja be it_IT pl cs hu da sr sr@Latn"
 # On IRIX 5.3, sys/types and inttypes.h are conflicting.
 
 
@@ -6270,9 +6270,9 @@ if test -n "0.23"; then
 echo $ECHO_N "checking for intltool >= 0.23... $ECHO_C" >&6
 
     INTLTOOL_REQUIRED_VERSION_AS_INT=`echo 0.23 | awk -F. '{ printf "%d", $1 * 100 + $2; }'`
-    INTLTOOL_APPLIED_VERSION=`awk -F\" '/\\$VERSION / { printf $2; }'  < ${srcdir}/intltool-update.in`
+    INTLTOOL_APPLIED_VERSION=`awk -F\" '/\\$VERSION / { printf $2; }'  < ${ac_aux_dir}/intltool-update.in`
 
-    INTLTOOL_APPLIED_VERSION_AS_INT=`awk -F\" '/\\$VERSION / { split($2, VERSION, "."); printf "%d\n", VERSION[1] * 100 + VERSION[2];}' < ${srcdir}/intltool-update.in`
+    INTLTOOL_APPLIED_VERSION_AS_INT=`awk -F\" '/\\$VERSION / { split($2, VERSION, "."); printf "%d\n", VERSION[1] * 100 + VERSION[2];}' < ${ac_aux_dir}/intltool-update.in`
 
 
     if test "$INTLTOOL_APPLIED_VERSION_AS_INT" -ge "$INTLTOOL_REQUIRED_VERSION_AS_INT"; then
@@ -6378,7 +6378,9 @@ if test -z "`$INTLTOOL_PERL -v | fgrep '5.' 2> /dev/null`"; then
 echo "$as_me: error: perl 5.x required for intltool" >&2;}
    { (exit 1); exit 1; }; }
 fi
-if ! `perl -e "require XML::Parser" 2>/dev/null`; then
+if `perl -e "require XML::Parser" 2>/dev/null`; then
+:
+else
    { { echo "$as_me:$LINENO: error: XML::Parser perl module is required for intltool" >&5
 echo "$as_me: error: XML::Parser perl module is required for intltool" >&2;}
    { (exit 1); exit 1; }; }
@@ -8488,7 +8490,7 @@ echo "$as_me: error: You can only build with vte or zvt" >&2;}
 	fi
 fi
 
-                                                                                                                        ac_config_files="$ac_config_files common/Makefile wings/Makefile gtk/Makefile data/Makefile man/Makefile pixmaps/Makefile po/Makefile.in help/Makefile help/C/Makefile doc/Makefile doc/html/Makefile Makefile"
+                                                                                                                                  ac_config_files="$ac_config_files common/Makefile wings/Makefile gtk/Makefile data/Makefile man/Makefile pixmaps/Makefile po/Makefile.in help/Makefile help/C/Makefile help/de/Makefile doc/Makefile doc/html/Makefile Makefile"
           ac_config_commands="$ac_config_commands default"
 cat >confcache <<\_ACEOF
 # This file is a shell script that caches the results of configure
@@ -9065,7 +9067,7 @@ cat >>$CONFIG_STATUS <<_ACEOF
 
 AMDEP_TRUE="$AMDEP_TRUE" ac_aux_dir="$ac_aux_dir"
 
-INTLTOOL_PERL=${INTLTOOL_PERL}
+INTLTOOL_PERL=${INTLTOOL_PERL} ac_aux_dir=${ac_aux_dir}
 
 _ACEOF
 
@@ -9085,6 +9087,7 @@ do
   "po/Makefile.in" ) CONFIG_FILES="$CONFIG_FILES po/Makefile.in" ;;
   "help/Makefile" ) CONFIG_FILES="$CONFIG_FILES help/Makefile" ;;
   "help/C/Makefile" ) CONFIG_FILES="$CONFIG_FILES help/C/Makefile" ;;
+  "help/de/Makefile" ) CONFIG_FILES="$CONFIG_FILES help/de/Makefile" ;;
   "doc/Makefile" ) CONFIG_FILES="$CONFIG_FILES doc/Makefile" ;;
   "doc/html/Makefile" ) CONFIG_FILES="$CONFIG_FILES doc/html/Makefile" ;;
   "Makefile" ) CONFIG_FILES="$CONFIG_FILES Makefile" ;;
@@ -9980,7 +9983,7 @@ done
       esac ;;
     default-2 )
 
-sed -e "s:@INTLTOOL_PERL@:${INTLTOOL_PERL}:;" < ${srcdir}/intltool-extract.in > intltool-extract.out
+sed -e "s:@INTLTOOL_PERL@:${INTLTOOL_PERL}:;" < ${ac_aux_dir}/intltool-extract.in > intltool-extract.out
 if cmp -s intltool-extract intltool-extract.out 2>/dev/null; then
   rm -f intltool-extract.out
 else
@@ -9990,7 +9993,7 @@ chmod ugo+x intltool-extract
 chmod u+w intltool-extract
 
 sed -e "s:@INTLTOOL_PERL@:${INTLTOOL_PERL}:;" \
-    < ${srcdir}/intltool-merge.in > intltool-merge.out
+    < ${ac_aux_dir}/intltool-merge.in > intltool-merge.out
 if cmp -s intltool-merge intltool-merge.out 2>/dev/null; then
   rm -f intltool-merge.out
 else
@@ -9999,7 +10002,7 @@ fi
 chmod ugo+x intltool-merge
 chmod u+w intltool-merge
 
-sed -e "s:@INTLTOOL_PERL@:${INTLTOOL_PERL}:;" < ${srcdir}/intltool-update.in > intltool-update.out
+sed -e "s:@INTLTOOL_PERL@:${INTLTOOL_PERL}:;" < ${ac_aux_dir}/intltool-update.in > intltool-update.out
 if cmp -s intltool-update intltool-update.out 2>/dev/null; then
   rm -f intltool-update.out
 else

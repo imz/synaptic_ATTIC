@@ -286,7 +286,7 @@ void RGMainWindow::helpAction(GtkWidget *self, void *data)
 {
     RGMainWindow *me = (RGMainWindow*)data;
 
-    me->setStatusText(_("Starting help system..."));
+    me->setStatusText(_("Starting help viewer..."));
  
     if(is_binary_in_path("yelp")) 
 	system("yelp ghelp:synaptic &");
@@ -295,11 +295,10 @@ void RGMainWindow::helpAction(GtkWidget *self, void *data)
     else if(is_binary_in_path("konqueror")) 
 	system("konqueror " PACKAGE_DATA_DIR "/synaptic/html/index.html &");
     else
-	me->_userDialog->error(_("No help viewer is installed\n\n"
-				"You need either the gnome viewer 'yelp', "
-				"'konquoror' or the 'mozilla' browser to "
-				"view the "
-				"synaptic manual.\n\n"
+	me->_userDialog->error(_("No help viewer is installed!\n\n"
+				"You need either the GNOME help viewer 'yelp', "
+				"the 'konqueror' browser or the 'mozilla' "
+				"browser to view the synaptic manual.\n\n"
 				"Alternativly you can open the man page "
 				"with 'man synaptic' from the "
 				"command line or view the html version located "
@@ -541,13 +540,13 @@ void RGMainWindow::pkgReconfigureClicked(GtkWidget *self, void *data)
     RPackage *pkg=NULL;
     pkg = me->_lister->getElement("libgnome2-perl");
     if(pkg && pkg->installedVersion() == NULL) {
-	me->_userDialog->error(_("No libgnome2-perl installed\n\n"
-				 "You have to install libgnome2-perl to "
-				 "use dpkg-reconfigure with synaptic"));
+	me->_userDialog->error(_("Could not start the configuration tool!\n"
+				 "You have to install the required package "
+				 "'libgnome2-perl'."));
 	return;
     }
 
-    me->setStatusText(_("Starting dpkg-reconfigure..."));
+    me->setStatusText(_("Starting package configuration tool..."));
     cmd = g_strdup_printf("/usr/sbin/dpkg-reconfigure -f%s %s &", 
 			  frontend, me->selectedPackage()->name());
     system(cmd);
@@ -559,7 +558,7 @@ void RGMainWindow::pkgHelpClicked(GtkWidget *self, void *data)
     RGMainWindow *me = (RGMainWindow*)data;
 
     //cout << "RGMainWindow::pkgHelpClicked()" << endl;
-    me->setStatusText(_("Starting package help..."));
+    me->setStatusText(_("Starting package documentation viewer..."));
     
     system(g_strdup_printf("dwww %s &", me->selectedPackage()->name()));
 }
@@ -645,7 +644,18 @@ void RGMainWindow::changeFilter(int filter, bool sethistory)
     setStatusText();
 }
 
+void RGMainWindow::showWelcomeDialog(GtkWidget *self, void *data)
+{
+    RGMainWindow *me = (RGMainWindow*)data;
 
+    RGGladeUserDialog dia(me);
+    dia.run("welcome");
+    GtkWidget *cb = glade_xml_get_widget(dia.getGladeXML(),
+					 "checkbutton_show_again");
+    assert(cb);
+    _config->Set("Synaptic::showWelcomeDialog",
+		 gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(cb)));
+}
 
 
 void RGMainWindow::updateClicked(GtkWidget *self, void *data)
@@ -662,7 +672,7 @@ void RGMainWindow::updateClicked(GtkWidget *self, void *data)
     RGFetchProgress *progress = new RGFetchProgress(me);
     progress->setTitle(_("Retrieving Index Files..."));
 
-    me->setStatusText(_("Updating Package Lists from Servers..."));
+    me->setStatusText(_("Refreshing package list..."));
 
     me->setInterfaceLocked(TRUE);
     me->setTreeLocked(TRUE);
@@ -763,9 +773,9 @@ void RGMainWindow::fixBrokenClicked(GtkWidget *self, void *data)
     me->refreshTable(pkg);
 
     if (!res)
-	me->setStatusText(_("Dependency problem resolver failed."));
+	me->setStatusText(_("Failed to resolve dependency problems!"));
     else
-	me->setStatusText(_("Dependency problems successfully fixed."));
+	me->setStatusText(_("Successfully fixed dependency problems"));
     
     me->setInterfaceLocked(FALSE);
     me->showErrors();
@@ -780,8 +790,9 @@ void RGMainWindow::upgradeClicked(GtkWidget *self, void *data)
 
     if (!me->_lister->check()) {
 	me->_userDialog->error(
-		_("Automatic upgrade selection not possible\n"
-		  "with broken packages. Please fix them first."));
+		_("Could not upgrade the system!\n"
+		  "There are broken packages. "
+		  "Fix broken packages at first."));
 	return;
     }
 
@@ -806,7 +817,7 @@ void RGMainWindow::upgradeClicked(GtkWidget *self, void *data)
 
     // do the work
     me->setInterfaceLocked(TRUE);
-    me->setStatusText(_("Performing automatic selection of upgradadable packages..."));
+    me->setStatusText(_("Marking all available upgrades..."));
 
     me->_lister->saveUndoState();
 
@@ -818,9 +829,9 @@ void RGMainWindow::upgradeClicked(GtkWidget *self, void *data)
     me->refreshTable(pkg);
 
     if (res)
-	me->setStatusText(_("Automatic selection of upgradadable packages done."));
+	me->setStatusText(_("Successfully marked all available upgrades"));
     else
-	me->setStatusText(_("Automatic upgrade selection failed."));
+	me->setStatusText(_("Failed to mark all available upgrades!"));
     
     me->setInterfaceLocked(FALSE);
     me->showErrors();
@@ -839,8 +850,9 @@ void RGMainWindow::proceedClicked(GtkWidget *self, void *data)
     // check whether we can really do it
     if (!me->_lister->check()) {
 	me->_userDialog->error(
-			    _("Operation not possible with broken packages.\n"
-			      "Please fix them first."));
+	            _("Could not apply changes!\n"
+	            "There are broken packages. "
+	            "Fix broken packages at first."));
 	return;
     }
 
@@ -858,7 +870,7 @@ void RGMainWindow::proceedClicked(GtkWidget *self, void *data)
     me->setInterfaceLocked(TRUE);
     me->updatePackageInfo(NULL);
 
-    me->setStatusText(_("Performing selected changes... this may take a while"));
+    me->setStatusText(_("Applying marked changes. This may take a while..."));
 
     // fetch packages
     RGFetchProgress *fprogress = new RGFetchProgress(me);
@@ -1770,8 +1782,9 @@ void RGMainWindow::doPkgAction(RGMainWindow *me, RGPkgAction action)
 		  failedReason += string(pkg->name()) + ":\n";
 		  failedReason += pkg->showWhyInstBroken();
 		  failedReason += "\n";
-		  pkg->setKeep();
-		  pkg->unsetVersion();
+ 		  pkg->setKeep();
+ 		  pkg->unsetVersion();
+		  _error->Discard();
 		  me->_lister->notifyChange(pkg);
 	      }
 	  }
@@ -1799,7 +1812,7 @@ void RGMainWindow::doPkgAction(RGMainWindow *me, RGPkgAction action)
 
 RGMainWindow::RGMainWindow(RPackageLister *packLister, string name)
     : RGGladeWindow(NULL, name), _lister(packLister),  _activeTreeModel(0),
-      _treeView(0)
+      _treeView(0), _iconLegendPanel(0)
 {
     assert(_win);
 
@@ -2143,7 +2156,7 @@ void RGMainWindow::rowExpanded(GtkTreeView *treeview,  GtkTreeIter *arg1,
 
   me->setInterfaceLocked(TRUE); 
   
-  me->setStatusText("Expanding row..");
+  me->setStatusText("Expanding row...");
 
   while(gtk_events_pending())
     gtk_main_iteration();
@@ -2356,7 +2369,7 @@ void RGMainWindow::buildTreeView()
 	g_value_init(&value2, G_TYPE_INT);
 	g_value_set_int(&value2, 10);
 	g_object_set_property(G_OBJECT(renderer),"xpad", &value2);
-	column = gtk_tree_view_column_new_with_attributes(_("Size"), renderer,
+	column = gtk_tree_view_column_new_with_attributes(_("Required Space"), renderer,
 							  "text", PKG_SIZE_COLUMN,
 							  "background-gdk", COLOR_COLUMN,
 							  NULL);
@@ -2435,6 +2448,12 @@ void RGMainWindow::buildInterface()
 				  "on_about_activate",
 				  G_CALLBACK(showAboutPanel),
 				  this); 
+
+    glade_xml_signal_connect_data(_gladeXML,
+				  "on_introduction_activate",
+				  G_CALLBACK(showWelcomeDialog),
+				  this); 
+    
 
     glade_xml_signal_connect_data(_gladeXML,
 				  "on_icon_legend_activate",
@@ -2607,11 +2626,11 @@ void RGMainWindow::buildInterface()
 			 
     button = glade_xml_get_widget(_gladeXML, "button_upgrade");
     gtk_tooltips_set_tip(GTK_TOOLTIPS(_tooltips), button,
-			 _("Queue all possible upgrades"),"");
+			 _("Mark all possible upgrades"),"");
 
     button = glade_xml_get_widget(_gladeXML, "button_procceed");
     gtk_tooltips_set_tip(GTK_TOOLTIPS (_tooltips), button,
-			 _("Execute the queued changes"),"");
+			 _("Apply all marked changes"),"");
 
     _pkgCommonTextView = glade_xml_get_widget(_gladeXML, "textview_pkgcommon");
     assert(_pkgCommonTextView);
@@ -3101,7 +3120,7 @@ void RGMainWindow::buildInterface()
     menuitem = gtk_separator_menu_item_new();
     gtk_menu_shell_append(GTK_MENU_SHELL(_popupMenu), menuitem);
 
-    menuitem = gtk_check_menu_item_new_with_label(_("Hold Current Version"));
+    menuitem = gtk_check_menu_item_new_with_label(_("Lock Current Version and Status"));
     g_object_set_data(G_OBJECT(menuitem),"me",this);
     g_signal_connect(menuitem, "activate",
 		     (GCallback)menuPinClicked,this);

@@ -146,8 +146,6 @@ public:
 private:
    tree<pkgPair> _treeOrganizer;
 
-   pkgPackageManager *_packMan;
-
    void applyInitialSelection();
    
    void makePresetFilters();

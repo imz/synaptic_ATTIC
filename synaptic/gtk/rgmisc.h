@@ -73,7 +73,6 @@ class RPackageStatus {
     // this does the actual work
     int getStatus(RPackage *pkg);
 
-    void initColors();
     void initPixbufs();
 
  public: 
@@ -97,10 +96,11 @@ class RPackageStatus {
 	return PackageStatusLongString[i]; 
     };
     const char *getLongStatusString(RPackage *pkg) { 
-	return PackageStatusLongString[getStatus(pkg)]; 
+	return utf8(PackageStatusLongString[getStatus(pkg)]); 
     };
 
     // this is for the configuration of the colors
+    void initColors();
     void setColor(int i, GdkColor *new_color);
     GdkColor *getColor(int i) { 
 	return StatusColors[i]; 

@@ -254,8 +254,6 @@ RGSummaryWindow::RGSummaryWindow(RGWindow *wwin, RPackageLister *lister)
     _lister = lister;
     
     setTitle(_("Summary"));
-    //gtk_window_set_default_size(GTK_WINDOW(_win), 400, 250);
-        
 
     _summaryL = glade_xml_get_widget(_gladeXML, "label_summary");
     assert(_summaryL);
@@ -271,9 +269,8 @@ RGSummaryWindow::RGSummaryWindow(RGWindow *wwin, RPackageLister *lister)
     gtk_tree_view_set_model(GTK_TREE_VIEW(_tree), GTK_TREE_MODEL(_treeStore));
 
     GtkCellRenderer *renderer = gtk_cell_renderer_text_new ();
-    //GtkTreeViewColumn *column = gtk_tree_view_column_new_with_attributes("Summary",renderer, PKG_COLUMN, "pkg", NULL);
     GtkTreeViewColumn *column;
-    column = gtk_tree_view_column_new_with_attributes (_("Queued Changes"), 
+    column = gtk_tree_view_column_new_with_attributes (_("Marked Changes"), 
 		    					renderer,
 						       "text", PKG_COLUMN,
 						       NULL);

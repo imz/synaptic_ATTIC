@@ -1,20 +1,21 @@
 # translation of synaptic.po to Hungarian
-# This file is distributed under the same license as the PACKAGE package.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# Gabor Kelemen <kg0021@stud.unideb.hu>, 2004
+# This file is distributed under the same license as the synaptic package.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
+# Gabor Kelemen <kg0021@stud.unideb.hu>, 2004.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: synaptic\n"
+"Project-Id-Version: hu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-01-26 23:51+0100\n"
-"PO-Revision-Date: 2004-01-07 21:56+0100\n"
+"POT-Creation-Date: 2004-03-12 08:52+0100\n"
+"PO-Revision-Date: 2004-03-01 23:42+0100\n"
 "Last-Translator: Gabor Kelemen <kg0021@stud.unideb.hu>\n"
-"Language-Team: Hungarian\n"
+"Language-Team: Hungarian <hu@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.0.1\n"
+"X-Generator: KBabel 1.3\n"
+"Plural-Forms:  nplurals=1; plural=0;\n"
 
 #: common/sections_trans.cc:9
 msgid "System Administration"
@@ -22,7 +23,7 @@ msgstr "Rendszer-adminisztráció"
 
 #: common/sections_trans.cc:10
 msgid "Base System"
-msgstr "Alap-rendszer"
+msgstr "Alaprendszer"
 
 #: common/sections_trans.cc:11
 msgid "Communication"
@@ -74,7 +75,7 @@ msgstr "KDE asztali környezet"
 
 #: common/sections_trans.cc:23
 msgid "Libraries - Development"
-msgstr "Könyvtárak - Fordításhoz"
+msgstr "Könyvtárak - Fejlesztés"
 
 #: common/sections_trans.cc:24
 msgid "Libraries"
@@ -90,7 +91,7 @@ msgstr "Matematika"
 
 #: common/sections_trans.cc:27
 msgid "Miscellaneous - Text Based"
-msgstr "Egyéb - Szöveg"
+msgstr "Egyéb - szövegalapú"
 
 #: common/sections_trans.cc:28
 msgid "Networking"
@@ -102,11 +103,11 @@ msgstr "Hírcsoport"
 
 #: common/sections_trans.cc:30
 msgid "Libraries - Old"
-msgstr "Könyvtárak - Régi"
+msgstr "Könyvtárak - régi"
 
 #: common/sections_trans.cc:31
 msgid "Cross Platform"
-msgstr "Kereszt platform"
+msgstr "Keresztplatform"
 
 #: common/sections_trans.cc:32
 msgid "Perl Programming Language"
@@ -122,7 +123,7 @@ msgstr "Tudomány"
 
 #: common/sections_trans.cc:35
 msgid "Shells"
-msgstr "Shell-ek"
+msgstr "Shellek"
 
 #: common/sections_trans.cc:36
 msgid "Multimedia"
@@ -146,7 +147,7 @@ msgstr "World Wide Web"
 
 #: common/sections_trans.cc:41
 msgid "Miscellaneous  - Graphical"
-msgstr "Egyéb - Grafika"
+msgstr "Egyéb - grafika"
 
 #: common/sections_trans.cc:42 common/rpackage.cc:125 gtk/rgmainwindow.cc:75
 msgid "Unknown"
@@ -154,11 +155,11 @@ msgstr "Ismeretlen"
 
 #: common/sections_trans.cc:43
 msgid "Converted From RPM by Alien"
-msgstr "RPM-ből Alien-nel konvertálva"
+msgstr "RPMből Aliennel konvertálva"
 
 #: common/sections_trans.cc:45
 msgid "Restricted On Export"
-msgstr "Export-korlátozás alatt"
+msgstr "Exportkorlátozás alatt"
 
 #: common/sections_trans.cc:46 common/sections_trans.cc:61
 msgid "non free"
@@ -177,22 +178,22 @@ msgstr "Non US"
 msgid "%s <i>(%s)</i>"
 msgstr "%s <i>(%s)</i>"
 
-#: common/indexcopy.cc:51 common/rpmindexcopy.cc:75
+#: common/indexcopy.cc:51
 #, c-format
-msgid "Stat failed for %s"
-msgstr "A megállapítás sikertelen: %s"
+msgid "Failed to access %s"
+msgstr "Nem sikerült hozzáférni a következőhöz: %s"
 
 #: common/indexcopy.cc:82 common/rpmindexcopy.cc:112
 msgid "Unable to create a tmp file"
 msgstr "Nem sikerült létrehozni az átmeneti fájlt"
 
 #: common/indexcopy.cc:89
-msgid "Internal Error: Couldn't fork gzip. Please report."
-msgstr "Belső hiba: nem lehet forkolni gzipre. Kérlek jelentsd."
+msgid "Unable to start helper process (gzip). Please report."
+msgstr "Nem lehet elindítani a (gzipet). Kérlek jelentsd."
 
 #: common/indexcopy.cc:110
 msgid "gzip failed, perhaps the disk is full."
-msgstr "gzip sikertelen, valószínűleg megtelt a lemez."
+msgstr "gzip sikertelen, talán megtelt a lemez."
 
 #: common/indexcopy.cc:131
 msgid "Failed to reopen fd"
@@ -309,7 +310,7 @@ msgstr "Kész!"
 #: common/rcdscanner.cc:540
 #, c-format
 msgid "Failed to stat %s%s"
-msgstr "Nem sikerült megállapítani %s%s"
+msgstr "Nem sikerült megnyitni %s%s"
 
 #: common/rcdscanner.cc:646 common/rcdscanner.cc:750
 #, c-format
@@ -347,7 +348,7 @@ msgstr ""
 
 #: common/rpackage.cc:419
 msgid "OH SHIT DUNNO WTF IS GOIN ON!"
-msgstr "BlabLa, VAZZ itt VALAMI NEM STIMMEL!? eheheh"
+msgstr "Valami NAGYON elcsesződött. Egyebet nem mondhatok :-)"
 
 #: common/rpackage.cc:600
 #, c-format
@@ -406,10 +407,10 @@ msgstr "A csomaglista vagy az állapot fájl nem feldolgozható vagy olvasható.
 
 #: common/rpackagecache.cc:92
 msgid "Internal Error, non-zero counts"
-msgstr "Belső hiba, nem-nulla számolások"
+msgstr "Belső hiba, nem-nulla számok"
 
 #: common/rpackagefilter.cc:43 gtk/rgfetchprogress.cc:84
-#: gtk/window_preferences.glade.h:76 gtk/window_filters.glade.h:56
+#: gtk/window_preferences.glade.h:70 gtk/window_filters.glade.h:56
 msgid "Status"
 msgstr "Állapot"
 
@@ -434,7 +435,7 @@ msgstr "CsökkentettNézet"
 msgid "Tags"
 msgstr "Címkék"
 
-#: common/rpackagefilter.cc:195 gtk/window_preferences.glade.h:61
+#: common/rpackagefilter.cc:195 gtk/window_preferences.glade.h:53
 msgid "Name"
 msgstr "Név"
 
@@ -442,10 +443,10 @@ msgstr "Név"
 msgid "Version"
 msgstr "Verzió"
 
-#: common/rpackagefilter.cc:197 gtk/rgmainwindow.cc:2376
+#: common/rpackagefilter.cc:197 gtk/rgmainwindow.cc:2389
 #: gtk/rgvendorswindow.cc:62 gtk/rgvendorswindow.cc:94
 #: gtk/window_find.glade.h:3 gtk/window_main_hpaned.glade.h:26
-#: gtk/window_main_vpaned.glade.h:27 gtk/window_preferences.glade.h:38
+#: gtk/window_main_vpaned.glade.h:27 gtk/window_preferences.glade.h:36
 #: gtk/window_filters.glade.h:13 gtk/rgfiltermanager.h:71
 msgid "Description"
 msgstr "Leírás"
@@ -477,19 +478,19 @@ msgstr "GyengeFüggőség"
 
 #: common/rpackagefilter.cc:204
 msgid "ReverseDepends"
-msgstr "EllentétesFüggőségek"
+msgstr "FordítottFüggőségek"
 
-#: common/rpackagefilter.cc:659
+#: common/rpackagefilter.cc:666
 #, c-format
 msgid "Internal Error: Could not open ReducedView file %s"
 msgstr "Belső hiba: nem lehet megnyitni a %s Csökkentett Nézet fájlt"
 
-#: common/rpackagefilter.cc:686
+#: common/rpackagefilter.cc:693
 #, c-format
 msgid "Bad regular expression '%s' in ReducedView file."
-msgstr "Hibás reguláris kifejezés a Csökkentett Nézet fájlban: '%s'"
+msgstr "Hibás reguláris kifejezés a Csökkentett Nézet fájlban: %s."
 
-#: common/rpackagefilter.cc:756
+#: common/rpackagefilter.cc:763
 msgid "unkown"
 msgstr "ismeretlen"
 
@@ -498,7 +499,7 @@ msgid "Search Filter"
 msgstr "Keresési szűrő"
 
 #: common/rpackagelister.cc:231 common/rpackagelister.cc:846
-#: gtk/window_filters.glade.h:24 gtk/rgmisc.cc:238
+#: gtk/window_filters.glade.h:24 gtk/rgmisc.cc:233
 msgid "Installed"
 msgstr "Telepítve"
 
@@ -518,21 +519,22 @@ msgstr "Csökkentett nézet"
 msgid "Upgradable"
 msgstr "Frissíthető"
 
-#: common/rpackagelister.cc:267 gtk/window_filters.glade.h:9 gtk/rgmisc.cc:241
+#: common/rpackagelister.cc:267 gtk/window_filters.glade.h:9 gtk/rgmisc.cc:236
 msgid "Broken"
 msgstr "Törött"
 
-#: common/rpackagelister.cc:276 gtk/rgsummarywindow.cc:276
+#: common/rpackagelister.cc:276
 msgid "Queued Changes"
-msgstr "Sorbaállított változások"
+msgstr "Kijelölt változások"
 
 #: common/rpackagelister.cc:283 gtk/window_filters.glade.h:30
+#: gtk/rgmisc.cc:237
 msgid "New in archive"
 msgstr "Új az archívumban"
 
 #: common/rpackagelister.cc:291 gtk/window_filters.glade.h:50
 msgid "Residual config"
-msgstr "Visszamaradt beállítás"
+msgstr "Hátramaradt beállítások"
 
 #: common/rpackagelister.cc:299
 msgid "Pkg with Debconf"
@@ -549,18 +551,16 @@ msgstr ""
 "Belső hiba a függőségi gyorsítótár újraszámítása közben. Kérlek jelentsd."
 
 #: common/rpackagelister.cc:649
-#, fuzzy
 msgid "Unable to correct dependencies"
-msgstr "Nem lehet korrigálni a hiányzó csomagokat"
+msgstr "Nem lehet javítani a függőségeket"
 
 #: common/rpackagelister.cc:651
-#, fuzzy
 msgid "Unable to minimize the upgrade set"
-msgstr "Nem tudom olvasni %s CD-ROM adatbázist"
+msgstr "Nem tudom minimalizálni a frissítési készletet"
 
 #: common/rpackagelister.cc:662
 msgid "Internal Error, AllUpgrade broke stuff. Please report."
-msgstr "Belső hiba, MindentFrissít törött dolgok.Kérlek jelentsd"
+msgstr "Belső hiba, MindentFrissít törött dolgok.Kérlek jelentsd."
 
 #: common/rpackagelister.cc:682
 msgid "dist upgrade Failed"
@@ -582,8 +582,8 @@ msgstr "Telepített és frissíthető"
 msgid "Not installed (residual config)"
 msgstr "Nincs telepítve (visszamaradt konfig)"
 
-#: common/rpackagelister.cc:851 gtk/rgmainwindow.cc:1368
-#: gtk/window_filters.glade.h:32
+#: common/rpackagelister.cc:851 gtk/rgmainwindow.cc:1380
+#: gtk/window_filters.glade.h:32 gtk/rgmisc.cc:231
 msgid "Not installed"
 msgstr "Nincs telepítve"
 
@@ -607,118 +607,133 @@ msgstr ""
 "Néhány index fájlt nem tudtam letölteni, ezeket figyelmen kívül hagyom, vagy "
 "régieket használok helyettük."
 
-#: common/rpackagelister.cc:1502 common/rpackagelister.cc:1506
+#: common/rpackagelister.cc:1505 common/rpackagelister.cc:1509
 #: gtk/rgrepositorywin.cc:322
 msgid "Ignoring invalid record(s) in sources.list file!"
-msgstr "A sources.list nem létező rekordjainak kihagyása!"
+msgstr "A sources.list érvénytelen rekordjainak mellőzése!"
 
-#: common/rpackagelister.cc:1546
+#: common/rpackagelister.cc:1553
 msgid "Failed to fetch "
 msgstr "Nem sikerült letölteni"
 
-#: common/rpackagelister.cc:1566
-msgid "Some of the packages could not be retrieved from the server(s).\n"
+#: common/rpackagelister.cc:1560
+msgid "More packages failed to fetch. Not displaying.\n"
+msgstr ""
+
+#: common/rpackagelister.cc:1581
+#, fuzzy, c-format
+msgid "%i of the packages could not be retrieved from the server(s).\n"
 msgstr "Néhány csomagot nem tudtam letölteni a szerver(ek)ről.\n"
 
-#: common/rpackagelister.cc:1569
+#: common/rpackagelister.cc:1585
 msgid "Do you want to continue, ignoring these packages?"
 msgstr "Szeretnéd folytatni ezen csomagok kihagyásával?"
 
-#: common/rpackagelister.cc:1576
+#: common/rpackagelister.cc:1592
 msgid "Unable to correct missing packages"
-msgstr "Nem lehet korrigálni a hiányzó csomagokat"
+msgstr "Nem lehet kijavítani a hiányzó csomagokat"
 
-#: common/rpackagelister.cc:1640
+#: common/rpackagelister.cc:1656
 msgid "Unable to lock the download directory"
 msgstr "Nem tudom zárolni a letöltési könyvtárat"
 
-#: common/rpackagelister.cc:1745
+#: common/rpackagelister.cc:1761
 #, c-format
 msgid "Line %u too long in selection file."
 msgstr "A(z) %u sor túl hosszú a kiválasztó fájlban."
 
-#: common/rpackagelister.cc:1759 common/rpackagelister.cc:1763
+#: common/rpackagelister.cc:1775 common/rpackagelister.cc:1779
 #, c-format
 msgid "Malformed line %u in selection file"
-msgstr "Deformált sor %u a kiválasztó fájlban"
+msgstr "Deformált sor %u a kiválasztás fájlban"
 
-#: common/rpackagelister.cc:1775
+#: common/rpackagelister.cc:1791
 msgid "Setting selections..."
 msgstr "Kijelölések beállítása..."
 
+#: common/rpmindexcopy.cc:75
+#, c-format
+msgid "Stat failed for %s"
+msgstr "A(z) %s megnyitása sikertelen"
+
 #: common/rpmindexcopy.cc:119
 msgid "Internal Error: couldn't fork bzip2. Please report."
-msgstr "Belső hiba: nem sikerült forkolni a bzip2-t. Kérlek jelentsd"
+msgstr "Belső hiba: nem sikerült elindítani a bzip2-t. Kérlek jelentsd."
 
 #: common/rpmindexcopy.cc:139
 msgid "bzip2 failed, perhaps the disk is full."
-msgstr "bzip2 sikertelen, valószínűleg megtelt a lemez."
+msgstr "bzip2 sikertelen, talán megtelt a lemez."
 
 #. vim:sts=3:sw=3
 #: gtk/dialog_quit.glade.h:1
 msgid ""
-"<span weight=\"bold\" size=\"large\">Quit and ignore queued changes?</span>"
+"<span weight=\"bold\" size=\"large\">Quit and ignore marked changes?</span>"
 msgstr ""
-"<span weight=\"bold\" size=\"large\"> Kilépés és a besorolt változások "
+"<span weight=\"bold\" size=\"large\"> Kilépés és a kijelölt változtatások "
 "elvetése?</span>"
 
 #: gtk/dialog_quit.glade.h:2
-#, fuzzy
 msgid ""
-"There are still changes in the queue that have not been executed. They will "
-"get lost if you choose to quit 'Synaptic'."
+"There are still marked changes that have not been applied. They will get "
+"lost if you choose to quit 'Synaptic'."
 msgstr ""
-"Még vannak végrehajtatlan változtatások a sorban. Ha a kilépést választod, "
-"ezek elvesznek."
+"Még vannak kijelölt és nem alkalmazott változtatások. Ha a kilépést "
+"választod, ezek elvesznek."
 
 #: gtk/dialog_upgrade.glade.h:1
 msgid ""
 "<b>Note:</b> If you are upgrading to a new major operating system release "
 "you have to choose 'Smart Upgrade' here."
 msgstr ""
+"<b>Megjegyzés:</b> ha új operációsrendszer-kiadásra akarsz frissíteni, "
+"válaszd a disztrófrissítést."
 
 #: gtk/dialog_upgrade.glade.h:2
-#, fuzzy
 msgid ""
-"<span weight=\"bold\" size=\"large\">Use smart upgrade (dist-upgrade)?</span>"
-msgstr "Disztrófrissítés bekapcsolása?"
+"<span weight=\"bold\" size=\"large\">Use smart upgrade method (dist-upgrade)?"
+"</span>"
+msgstr ""
+"<span weight=\"bold\" size=\"large\">Használjam a disztrófrissítést (dist-"
+"upgrade)?</span>"
 
-#: gtk/dialog_upgrade.glade.h:3 gtk/window_preferences.glade.h:34
-#, fuzzy
+#: gtk/dialog_upgrade.glade.h:3 gtk/window_preferences.glade.h:32
 msgid "Default Upgrade"
-msgstr "Alapértelmezett rendszerfrissítés:"
+msgstr "Alapértelmezett frissítés"
 
 #: gtk/dialog_upgrade.glade.h:4
-msgid ""
-"Dist-upgrade attempts to resolve conflicts and to fulfill all dependencies "
-"of upgrades in a smart way."
-msgstr ""
-
-#: gtk/dialog_upgrade.glade.h:5
 msgid "Remember the answer for further upgrades"
-msgstr "Emlékezzen a válaszra későbbi frissítéseknél is"
+msgstr "Emlékezzen a válaszra további frissítéseknél is"
 
-#: gtk/dialog_upgrade.glade.h:6 gtk/window_preferences.glade.h:75
-#, fuzzy
+#: gtk/dialog_upgrade.glade.h:5 gtk/window_preferences.glade.h:69
 msgid "Smart Upgrade"
-msgstr "Frissít"
+msgstr "Disztrófrissítés"
 
-#: gtk/dialog_upgrade.glade.h:7
+#: gtk/dialog_upgrade.glade.h:6
 msgid ""
 "The default upgrade method skips upgrades that introduce conflicts or "
 "require new packages to be installed."
 msgstr ""
+"Az alapértelmezett frissítési eljárás átugorja az ütközést okozó vagy új "
+"csomagokat igénylő frissítéseket."
+
+#: gtk/dialog_upgrade.glade.h:7
+msgid ""
+"The smart upgrade method attempts to resolve conflicts and to fulfill all "
+"dependencies of upgrades in a smart way."
+msgstr ""
+"A disztrófrissítés megpróbálja okosan feloldani az ütközéseket és "
+"teljesíteni a függőségeket."
 
 #: gtk/dialog_upgrade.glade.h:8
 msgid "This behavior can be changed in the preferences later."
-msgstr ""
+msgstr "Ez a viselkedés a tulajdonságoknál később megváltoztatható."
 
 #: gtk/dialog_locales_warning.glade.h:1
 msgid ""
 "<span weight=\"bold\" size=\"large\">Incorrect or incompatible locale "
 "settings</span>"
 msgstr ""
-"<span weight=\"bold\" size=\"large\">Téves vagy inkompatibilis helyi "
+"<span weight=\"bold\" size=\"large\">Téves vagy inkompatibilis lokalizációs "
 "beállítások</span>"
 
 #: gtk/dialog_locales_warning.glade.h:2
@@ -768,11 +783,11 @@ msgstr "-i=? A kezdőSzűrővel indul a megadott számmal\n"
 
 #: gtk/gsynaptic.cc:60
 msgid "-o=? Set an arbitary configuration option, eg -o dir::cache=/tmp\n"
-msgstr "-o=? beállít egy tetszőleges konfigurációt, pl -o dir::cache=/tmp\n"
+msgstr "-o=? beállít egy tetszőleges konfigurációt, pl -o dir:cache=/tmp\n"
 
 #: gtk/gsynaptic.cc:120
 msgid "You must run this program as the root user."
-msgstr "Root felhasználóként kell futtatni ezt a programot."
+msgstr "Root felhasználóként futtasd ezt a programot."
 
 #: gtk/gsynaptic.cc:167
 msgid "Synaptic Package Manager "
@@ -784,7 +799,7 @@ msgstr "CD-ROM keresése..."
 
 #: gtk/rgcdscanner.cc:95
 msgid "Invalid disc name!"
-msgstr "Nemlétező lemeznév!"
+msgstr "Érvénytelen lemeznév!"
 
 #: gtk/rgaboutpanel.cc:54 gtk/window_about.glade.h:5
 msgid "Credits"
@@ -796,22 +811,22 @@ msgstr "Synaptic névjegye"
 
 #: gtk/rgchangeswindow.cc:70
 msgid "Package changes"
-msgstr "Csomag változások"
+msgstr "Csomagváltozások"
 
 #: gtk/rgchangeswindow.cc:107 gtk/rgsummarywindow.cc:111
-#: gtk/window_filters.glade.h:62
+#: gtk/window_filters.glade.h:62 gtk/rgmisc.cc:229
 msgid "To be removed"
 msgstr "Törlendő"
 
-#: gtk/rgchangeswindow.cc:122
+#: gtk/rgchangeswindow.cc:122 gtk/rgmisc.cc:228
 msgid "To be downgraded"
 msgstr "Visszafejlesztendő"
 
-#: gtk/rgchangeswindow.cc:137 gtk/rgsummarywindow.cc:125
+#: gtk/rgchangeswindow.cc:137 gtk/rgsummarywindow.cc:125 gtk/rgmisc.cc:227
 msgid "To be upgraded"
 msgstr "Frissítendő"
 
-#: gtk/rgchangeswindow.cc:151 gtk/rgsummarywindow.cc:139
+#: gtk/rgchangeswindow.cc:151 gtk/rgsummarywindow.cc:139 gtk/rgmisc.cc:226
 msgid "To be installed"
 msgstr "Telepítendő"
 
@@ -819,33 +834,32 @@ msgstr "Telepítendő"
 msgid "To be kept"
 msgstr "Megtartandó"
 
-#: gtk/rgpreferenceswindow.cc:200 gtk/rgzvtinstallprogress.cc:83
-#: gtk/rgmainwindow.cc:3580
+#: gtk/rgpreferenceswindow.cc:202 gtk/rgzvtinstallprogress.cc:83
+#: gtk/rgmainwindow.cc:3599
 msgid "An error occurred while saving configurations."
 msgstr "Hiba a beállítások mentése közben."
 
-#: gtk/rgpreferenceswindow.cc:243
+#: gtk/rgpreferenceswindow.cc:245
 msgid "Choose font"
 msgstr "Betűtípus választása"
 
-#: gtk/rgpreferenceswindow.cc:498
+#: gtk/rgpreferenceswindow.cc:501
 msgid "Color selection"
-msgstr "Színes kijelölés"
+msgstr "Kijelölés színezése"
 
-#: gtk/rgpreferenceswindow.cc:679
+#: gtk/rgpreferenceswindow.cc:703
 msgid "ignore"
 msgstr "átlép"
 
-#: gtk/rgpreferenceswindow.cc:724 gtk/window_preferences.glade.h:69
+#: gtk/rgpreferenceswindow.cc:748 gtk/window_preferences.glade.h:64
 msgid "Preferences"
 msgstr "Beállítások"
 
 #: gtk/rgfetchprogress.cc:64
-#, fuzzy
 msgid "Downloading Files..."
-msgstr "Szűrők szerkesztése..."
+msgstr "Fájlok letöltése..."
 
-#: gtk/rgfetchprogress.cc:95 gtk/rgmainwindow.cc:2359
+#: gtk/rgfetchprogress.cc:95
 msgid "Size"
 msgstr "Méret"
 
@@ -853,7 +867,7 @@ msgstr "Méret"
 msgid "URI"
 msgstr "URI"
 
-#: gtk/rgfetchprogress.cc:135
+#: gtk/rgfetchprogress.cc:129
 #, c-format
 msgid ""
 "Please insert the disk labeled:\n"
@@ -863,41 +877,24 @@ msgstr ""
 "Kérlek tedd be a %s címkéjű lemezt \n"
 "a %s meghajtóba"
 
-#: gtk/rgfetchprogress.cc:218
-#, fuzzy, c-format
-msgid "Retrieved %-3lii of %-3li files at %4s B/s - %6s remaining\n"
-msgstr "%-3li/%-3li fájl    %4sB/s   ETA %6s\n"
-
 #: gtk/rgfetchprogress.cc:225
-msgid "(stalled)\n"
-msgstr "(beragadt)\n"
-
-#: gtk/rgfetchprogress.cc:240
-msgid "[Processing...] "
-msgstr "[Feldolgozás...] "
-
-#: gtk/rgfetchprogress.cc:245
-msgid "[Receiving...] "
-msgstr "[Letöltés...] "
-
-#: gtk/rgfetchprogress.cc:261
 #, c-format
 msgid "Retrieved %li of %li files at %s/s - %s remaining"
-msgstr ""
+msgstr "Elhozva %li/%li fájlból %s/s -el, hátravan %s"
 
-#: gtk/rgfetchprogress.cc:331
+#: gtk/rgfetchprogress.cc:291
 msgid "Queued"
 msgstr "Sorbaállítva"
 
-#: gtk/rgfetchprogress.cc:334
+#: gtk/rgfetchprogress.cc:294
 msgid "Done"
 msgstr "Kész"
 
-#: gtk/rgfetchprogress.cc:337
+#: gtk/rgfetchprogress.cc:297
 msgid "Hit"
 msgstr "Siker"
 
-#: gtk/rgfetchprogress.cc:340
+#: gtk/rgfetchprogress.cc:300
 msgid "Failed"
 msgstr "Sikertelen"
 
@@ -919,7 +916,7 @@ msgstr "Elérhető címkék"
 
 #: gtk/rgfiltermanager.cc:233
 msgid "Included Tags"
-msgstr "Tartalmazott címkék"
+msgstr "Beágyazott címkék"
 
 #: gtk/rgfiltermanager.cc:245
 msgid "Excluded Tags"
@@ -928,7 +925,7 @@ msgstr "Kihagyott címkék"
 #: gtk/rgfiltermanager.cc:1033
 #, c-format
 msgid "New Filter %i"
-msgstr "Új szűrő%i"
+msgstr "Új szűrő %i"
 
 #: gtk/rginstallprogress.cc:41 gtk/window_rginstall_progress_msgs.glade.h:2
 msgid "Package Manager output"
@@ -942,7 +939,7 @@ msgid ""
 "\n"
 msgstr ""
 "\n"
-"Amíg a %s telepítés alatt van:\n"
+"%s csomag telepítése alatt:\n"
 "\n"
 
 #: gtk/rginstallprogress.cc:86
@@ -952,46 +949,41 @@ msgid ""
 "\n"
 msgstr ""
 "\n"
-"Amíg a telepítésre készülünk:\n"
+"A telepítésre készülve:\n"
 "\n"
 
-#: gtk/rginstallprogress.cc:263
-msgid "Performing Changes"
-msgstr "Változtatások végrehajtása"
+#: gtk/rginstallprogress.cc:263 gtk/rgzvtinstallprogress.cc:142
+#: gtk/window_zvtinstallprogress.glade.h:2
+msgid "Applying Changes..."
+msgstr "Változtatások alkalmazása..."
 
 #: gtk/rgzvtinstallprogress.cc:61
 msgid "<i>Running...</i>"
-msgstr ""
+msgstr "<i>Futtatás...</i>"
 
 #: gtk/rgzvtinstallprogress.cc:69
 msgid ""
 "\n"
-"Update finished - You can close the window now"
+"Successfully applied all changes. You can close the window now "
 msgstr ""
 "\n"
-"Frissítés befejezve - Most már bezárhatod az ablakot"
+"Minden változtatás sikeresen alkalmazva. Most már bezárhatod az ablakot"
 
 #: gtk/rgzvtinstallprogress.cc:71
 msgid ""
 "\n"
-"Update failed - Scroll in this buffer to see what went wrong"
+"Failed to apply all changes! Scroll in this buffer to see what went wrong "
 msgstr ""
 "\n"
-"Nem sikerült frissíteni. Lejjebb láthatod, mi volt a hiba."
+"Nem sikerült minden változtatást alkalmazni! Lejjebb láthatod, mi volt a hiba"
 
 #: gtk/rgzvtinstallprogress.cc:104
 msgid "<i>Finished</i>"
-msgstr ""
+msgstr "<i>Befejezve</i>"
 
 #: gtk/rgzvtinstallprogress.cc:113
-#, fuzzy
-msgid "<i>Can't close while executing</i>"
-msgstr "Végrehajtás közben nem zárhatod be"
-
-#: gtk/rgzvtinstallprogress.cc:142 gtk/window_zvtinstallprogress.glade.h:3
-#, fuzzy
-msgid "Executing Changes..."
-msgstr "Változtatások végrehajtása..."
+msgid "<i>Can't close while running</i>"
+msgstr "<i>Futás közben nem zárhatod be</i>"
 
 #: gtk/rgmainwindow.cc:76
 msgid "Normal"
@@ -1006,142 +998,137 @@ msgid "Security"
 msgstr "Biztonság"
 
 #: gtk/rgmainwindow.cc:289
-msgid "Starting help system..."
-msgstr "Súgó rendszer indítása..."
+msgid "Starting help viewer..."
+msgstr "Súgóböngésző indítása..."
 
 #: gtk/rgmainwindow.cc:298
-#, fuzzy
 msgid ""
-"No help viewer is installed\n"
+"No help viewer is installed!\n"
 "\n"
-"You need either the gnome viewer 'yelp', 'konquoror' or the 'mozilla' "
-"browser to view the synaptic manual.\n"
+"You need either the GNOME help viewer 'yelp', the 'konqueror' browser or the "
+"'mozilla' browser to view the synaptic manual.\n"
 "\n"
 "Alternativly you can open the man page with 'man synaptic' from the command "
 "line or view the html version located in the 'synaptic/html' folder."
 msgstr ""
-"Nincs telepítve súgóböngésző.\n"
+"Nincs telepítve súgóböngésző!\n"
 "\n"
-"Vagy a GNOME 'yelp' vagy a Mozilla-böngésző szükséges a synaptic kézikönyv "
-"megjelenítéséhez\n"
+"Vagy a GNOME 'yelp' súgóböngésző, a Konqueror vagy a Mozilla-böngésző "
+"szükséges a Synaptic kézikönyv megjelenítéséhez.\n"
 "\n"
-"Alternatívaként megnézheted parancssorból a man oldalt (man synaptic) vagy a "
-"html verziót a synaptic/html könyvtárban"
+"Alternatívaként megnézheted a html verziót a synaptic/html könyvtárban vagy "
+"megnyithatod parancssorból a man oldalt a 'man synaptic'-kal."
 
-#: gtk/rgmainwindow.cc:544
-#, fuzzy
+#: gtk/rgmainwindow.cc:543
 msgid ""
-"No libgnome2-perl installed\n"
-"\n"
-"You have to install libgnome2-perl to use dpkg-reconfigure with synaptic"
+"Could not start the configuration tool!\n"
+"You have to install the required package 'libgnome2-perl'."
 msgstr ""
-"Nincs telepítve a libgnome-perl csomag\n"
-"\n"
-"Muszáj telepítened a libgnome-perl (UHU:perl-gnome) csomagot ahhoz, hogy "
-"használhasd a dpkg-reconfigure -t a synaptic-kal"
+"Nem tudom elindítani a konfigurálóeszközt!\n"
+"Telepítened kell az ehhez szükséges 'libgnome-perl' csomagot."
 
-#: gtk/rgmainwindow.cc:550
-msgid "Starting dpkg-reconfigure..."
-msgstr "dpkg-reconfigure indítása..."
+#: gtk/rgmainwindow.cc:549
+msgid "Starting package configuration tool..."
+msgstr "Csomagkonfiguráló eszköz indítása..."
 
 #. cout << "RGMainWindow::pkgHelpClicked()" << endl;
-#: gtk/rgmainwindow.cc:562
-msgid "Starting package help..."
-msgstr "Csomagsúgó indítása..."
+#: gtk/rgmainwindow.cc:561
+msgid "Starting package documentation viewer..."
+msgstr "Csomagdokumentáció-néző indítása..."
 
-#: gtk/rgmainwindow.cc:663
+#: gtk/rgmainwindow.cc:673
 msgid "Retrieving Index Files..."
 msgstr "Index fájlok letöltése..."
 
-#: gtk/rgmainwindow.cc:665
-msgid "Updating Package Lists from Servers..."
-msgstr "Csomaglisták frissítése szerver(ek)ről..."
+#: gtk/rgmainwindow.cc:675
+msgid "Refreshing package list..."
+msgstr "Csomaglista frissítése..."
 
-#: gtk/rgmainwindow.cc:675 gtk/rgmainwindow.cc:874 gtk/rgmainwindow.cc:1507
-#: gtk/rgmainwindow.cc:2017 gtk/rgmainwindow.cc:2176
+#: gtk/rgmainwindow.cc:685 gtk/rgmainwindow.cc:886 gtk/rgmainwindow.cc:1519
+#: gtk/rgmainwindow.cc:2030 gtk/rgmainwindow.cc:2189
 #, c-format
 msgid "Can't write %s"
-msgstr "Nem tudom írni: %s"
+msgstr "Nem tudom írni a következőt: %s"
 
-#: gtk/rgmainwindow.cc:698 gtk/rgmainwindow.cc:942 gtk/rgmainwindow.cc:1532
-#: gtk/rgmainwindow.cc:1969
+#: gtk/rgmainwindow.cc:708 gtk/rgmainwindow.cc:954 gtk/rgmainwindow.cc:1544
+#: gtk/rgmainwindow.cc:1982
 #, c-format
 msgid "Can't read %s"
-msgstr "Nem tudom olvasni: %s"
+msgstr "Nem tudom olvasni a következőt: %s"
 
-#: gtk/rgmainwindow.cc:766
-msgid "Dependency problem resolver failed."
-msgstr "Függőséghiba-megoldás sikertelen."
+#: gtk/rgmainwindow.cc:776
+msgid "Failed to resolve dependency problems!"
+msgstr "Függőségi hibák megoldása sikertelen!"
 
-#: gtk/rgmainwindow.cc:768
-msgid "Dependency problems successfully fixed."
-msgstr "Függőségi hibák sikeresen javítva."
+#: gtk/rgmainwindow.cc:778
+msgid "Successfully fixed dependency problems"
+msgstr "Függőségi problémák sikeresen megoldva"
 
-#: gtk/rgmainwindow.cc:783
+#: gtk/rgmainwindow.cc:793
 msgid ""
-"Automatic upgrade selection not possible\n"
-"with broken packages. Please fix them first."
+"Could not upgrade the system!\n"
+"There are broken packages. Fix broken packages at first."
 msgstr ""
-"Kiválasztott elemek automatikus frissítése lehetetlen\n"
-"törött csomagokkal. Előbb javítsd meg őket."
+"Nem tudom frissíteni a rendszert!\n"
+"Törött csomagok vannak a rendszereden. Először ezeket javítsd meg."
 
-#: gtk/rgmainwindow.cc:809
-msgid "Performing automatic selection of upgradadable packages..."
-msgstr "Frissíthető csomagok automatikus kiválasztása..."
+#: gtk/rgmainwindow.cc:820
+msgid "Marking all available upgrades..."
+msgstr "Minden rendelkezésre álló frissítés kijelölése..."
 
-#: gtk/rgmainwindow.cc:821
-msgid "Automatic selection of upgradadable packages done."
-msgstr "Frissíthető csomagok automatikus kiválasztása kész."
+#: gtk/rgmainwindow.cc:832
+msgid "Successfully marked all available upgrades"
+msgstr "Minden rendelkezésre álló frissítés sikeresen kijelölve"
 
-#: gtk/rgmainwindow.cc:823
-msgid "Automatic upgrade selection failed."
-msgstr "Frissíthető csomagok automatikus kiválasztása sikertelen."
+#: gtk/rgmainwindow.cc:834
+msgid "Failed to mark all available upgrades!"
+msgstr "Minden rendelkezésre álló frissítés kijelölése sikertelen!"
 
-#: gtk/rgmainwindow.cc:842
+#: gtk/rgmainwindow.cc:853
 msgid ""
-"Operation not possible with broken packages.\n"
-"Please fix them first."
+"Could not apply changes!\n"
+"There are broken packages. Fix broken packages at first."
 msgstr ""
-"A művelet nem hajtható végre törött csomagokkal.\n"
-"Kérlek javítsd meg előbb őket."
+"Nem lehet alkalmazni a változtatásokat!\n"
+"Törött csomagok vannak a rendszereden. Először ezeket javítsd meg."
 
-#: gtk/rgmainwindow.cc:861
-msgid "Performing selected changes... this may take a while"
-msgstr "Kiválasztott változtatások végrehajtása... ez eltarthat egy ideig"
+#: gtk/rgmainwindow.cc:873
+msgid "Applying marked changes. This may take a while..."
+msgstr "Kijelölt változtatások alkalmazása. Ez eltarthat egy ideig..."
 
-#: gtk/rgmainwindow.cc:865
+#: gtk/rgmainwindow.cc:877
 msgid "Retrieving Package Files..."
 msgstr "Csomagfájlok letöltése..."
 
-#: gtk/rgmainwindow.cc:924
+#: gtk/rgmainwindow.cc:936
 msgid "Do you want to quit Synaptic?"
-msgstr "Ki akarsz lépni a Synapticból ?"
+msgstr "Ki akarsz lépni a Synapticból?"
 
-#: gtk/rgmainwindow.cc:969 gtk/rgmainwindow.cc:982
+#: gtk/rgmainwindow.cc:981 gtk/rgmainwindow.cc:994
 msgid "N/A"
 msgstr "N/A"
 
-#: gtk/rgmainwindow.cc:1397 gtk/window_main_hpaned.glade.h:39
+#: gtk/rgmainwindow.cc:1409 gtk/window_main_hpaned.glade.h:39
 #: gtk/window_main_vpaned.glade.h:41
 msgid "No package is selected.\n"
 msgstr "Nincs csomag kiválasztva.\n"
 
-#: gtk/rgmainwindow.cc:1419
+#: gtk/rgmainwindow.cc:1431
 msgid "_Downgrade"
 msgstr "Visszafejlesztés"
 
-#: gtk/rgmainwindow.cc:1422 gtk/window_main_hpaned.glade.h:85
+#: gtk/rgmainwindow.cc:1434 gtk/window_main_hpaned.glade.h:84
 #: gtk/window_main_vpaned.glade.h:85
 msgid "_Install"
-msgstr "Telepít"
+msgstr "Telepítés"
 
-#: gtk/rgmainwindow.cc:1425 gtk/window_main_hpaned.glade.h:103
+#: gtk/rgmainwindow.cc:1437 gtk/window_main_hpaned.glade.h:102
 #: gtk/window_main_vpaned.glade.h:103
 msgid "_Upgrade"
-msgstr "Frissít"
+msgstr "Frissítés"
 
 #. standard header in case the installing fails
-#: gtk/rgmainwindow.cc:1751
+#: gtk/rgmainwindow.cc:1763
 msgid ""
 "Some packages could not be installed.\n"
 "\n"
@@ -1151,75 +1138,79 @@ msgstr ""
 "\n"
 "A következő csomagoknak teljesítetlen függőségei vannak:\n"
 
-#: gtk/rgmainwindow.cc:1986
+#: gtk/rgmainwindow.cc:1999
 msgid "Open changes"
-msgstr "Változások megnyitása"
+msgstr "Változtatások megnyitása"
 
-#: gtk/rgmainwindow.cc:2193
+#: gtk/rgmainwindow.cc:2206
 msgid "Save changes"
-msgstr "Változások mentése"
+msgstr "Változtatások mentése"
 
-#: gtk/rgmainwindow.cc:2209
+#: gtk/rgmainwindow.cc:2222
 msgid "Save full state, not only changes"
-msgstr "Teljes állapot mentése, nem csak a változások"
+msgstr "Teljes állapot mentése, nem csak a változtatások"
 
-#: gtk/rgmainwindow.cc:2294
+#: gtk/rgmainwindow.cc:2307
 msgid "Package"
 msgstr "Csomag"
 
-#: gtk/rgmainwindow.cc:2317
+#: gtk/rgmainwindow.cc:2330
 msgid "Installed Version"
 msgstr "Telepített verzió"
 
-#: gtk/rgmainwindow.cc:2333
+#: gtk/rgmainwindow.cc:2346
 msgid "Latest Version"
-msgstr "Legutóbbi verzió"
+msgstr "Legfrissebb verzió"
 
-#: gtk/rgmainwindow.cc:2606
+#: gtk/rgmainwindow.cc:2372
+msgid "Required Space"
+msgstr "Szükséges hely"
+
+#: gtk/rgmainwindow.cc:2625
 msgid "Update the list of available packages"
 msgstr "Elérhető csomagok listájának frissítése"
 
-#: gtk/rgmainwindow.cc:2610
-msgid "Queue all possible upgrades"
-msgstr "Minden lehetséges frissítés sorba állítása"
+#: gtk/rgmainwindow.cc:2629
+msgid "Mark all possible upgrades"
+msgstr "Minden lehetséges frissítés kijelölése"
 
-#: gtk/rgmainwindow.cc:2614
-msgid "Execute the queued changes"
-msgstr "Sorbanálló változtatások végrehajtása"
+#: gtk/rgmainwindow.cc:2633
+msgid "Apply all marked changes"
+msgstr "Minden kijelölt változtatás alkalmazása"
 
-#: gtk/rgmainwindow.cc:3059
+#: gtk/rgmainwindow.cc:3078
 msgid "No Changes"
-msgstr "Változtatások visszavonása"
+msgstr "Viszzavonás"
 
-#: gtk/rgmainwindow.cc:3067
+#: gtk/rgmainwindow.cc:3086
 msgid "Install"
-msgstr "Telepít"
+msgstr "Telepítés"
 
-#: gtk/rgmainwindow.cc:3075
+#: gtk/rgmainwindow.cc:3094
 msgid "Upgrade"
-msgstr "Frissít"
+msgstr "Frissítés"
 
-#: gtk/rgmainwindow.cc:3081 gtk/rgvendorswindow.cc:136
+#: gtk/rgmainwindow.cc:3100 gtk/rgvendorswindow.cc:136
 msgid "Remove"
 msgstr "Törlés"
 
-#: gtk/rgmainwindow.cc:3089
+#: gtk/rgmainwindow.cc:3108
 msgid "Remove Including Configuration"
 msgstr "Törlés konfigurációval együtt"
 
-#: gtk/rgmainwindow.cc:3095
+#: gtk/rgmainwindow.cc:3114
 msgid "Remove Including Orphaned Dependencies"
 msgstr "Törlés árva függőségekkel együtt"
 
-#: gtk/rgmainwindow.cc:3104
-msgid "Hold Current Version"
-msgstr "Aktuális verzió megtartása"
+#: gtk/rgmainwindow.cc:3123
+msgid "Lock Current Version and Status"
+msgstr "Aktuális verzió és állapot zárolása"
 
-#: gtk/rgmainwindow.cc:3302
+#: gtk/rgmainwindow.cc:3321
 msgid "Do you want to add another CD-ROM?"
 msgstr "Akarsz még egy CD-ROM-ot hozzáadni?"
 
-#: gtk/rgmainwindow.cc:3331
+#: gtk/rgmainwindow.cc:3350
 msgid ""
 "Removing this package may render the system unusable.\n"
 "Are you sure you want to do that?"
@@ -1227,7 +1218,7 @@ msgstr ""
 "Ezen csomag eltávolítása használhatatlanná teheti a rendszert.\n"
 "Biztosan ezt akarod tenni?"
 
-#: gtk/rgmainwindow.cc:3490
+#: gtk/rgmainwindow.cc:3509
 #, c-format
 msgid ""
 "%i packages listed, %i installed, %i broken. %i to install/upgrade, %i to "
@@ -1236,7 +1227,7 @@ msgstr ""
 "%i csomag listázva, %i telepítve, %i törött. %i telepítendő/frissítendő, %i "
 "lesz törölve, %s lesz felszabadítva "
 
-#: gtk/rgmainwindow.cc:3494
+#: gtk/rgmainwindow.cc:3513
 #, c-format
 msgid ""
 "%i packages listed, %i installed, %i broken. %i to install/upgrade, %i to "
@@ -1245,12 +1236,12 @@ msgstr ""
 "%i csomag listázva, %i telepítve, %i törött. %i telepítendő/frissítendő %i "
 "lesz törölve, %s lesz használva"
 
-#: gtk/rgmainwindow.cc:3523 gtk/window_main_hpaned.glade.h:18
-#: gtk/window_main_vpaned.glade.h:19
+#: gtk/rgmainwindow.cc:3542 gtk/window_main_hpaned.glade.h:19
+#: gtk/window_main_vpaned.glade.h:20
 msgid "All Packages"
 msgstr "Minden csomag"
 
-#: gtk/rgmainwindow.cc:3604
+#: gtk/rgmainwindow.cc:3623
 msgid ""
 "The debtags database is not installed\n"
 "\n"
@@ -1261,13 +1252,14 @@ msgid ""
 msgstr ""
 "A debtags adatbázis nincs telepítve\n"
 "\n"
-"Kérlek add ki parancssorból: \"debtags update\" az adatbázis létrehozásához\n"
+"Kérlek az adatbázis létrehozásához add ki parancssorból: \"debtags update\"\n"
 "\n"
 "Elnézést ezért a kellemetlenségért, a következő verziók valamelyikében meg "
 "lesz oldva"
 
-#: gtk/rgmainwindow.cc:3638
-#, fuzzy, c-format
+# c-format
+#: gtk/rgmainwindow.cc:3657
+#, c-format
 msgid ""
 "You have %d broken package on your system!\n"
 "\n"
@@ -1277,13 +1269,13 @@ msgid_plural ""
 "\n"
 "Use the \"Broken\" filter to locate them."
 msgstr[0] ""
-"Van egy törött csomag a rendszereden\n"
+"%d törött csomag van a rendszereden!\n"
 "\n"
-"Kérlek próbáld meg javítani a \"Törött\" szűrővel"
+"A \"Törött\" szűrővel keresheted meg."
 msgstr[1] ""
-"Van egy törött csomag a rendszereden\n"
+"%d törött csomag van a rendszereden\n"
 "\n"
-"Kérlek próbáld meg javítani a \"Törött\" szűrővel"
+"A \"Törött\" szűrővel keresheted meg."
 
 #: gtk/rgrepositorywin.cc:101 gtk/window_repositories.glade.h:4
 msgid "Repositories"
@@ -1325,7 +1317,7 @@ msgstr "Ismeretlen forrástípus"
 
 #: gtk/rgsummarywindow.cc:81
 msgid "(ESSENTIAL) to be removed"
-msgstr "(ALAPVETŐ) törlendő"
+msgstr "Törlendő (ALAPVETŐ)"
 
 #: gtk/rgsummarywindow.cc:96
 msgid "To be DOWNGRADED"
@@ -1338,7 +1330,7 @@ msgstr "Visszatartva"
 #: gtk/rgsummarywindow.cc:209
 #, c-format
 msgid "<b>%s</b> (<b>essential</b>) will be removed\n"
-msgstr "<b>%s</b> (<b>alapvető</b>) lesz törölve\n"
+msgstr "<b>%s</b> (<b>alapvető</b>) törölve lesz\n"
 
 #: gtk/rgsummarywindow.cc:216
 #, c-format
@@ -1353,86 +1345,91 @@ msgstr "<b>%s</b> törölve lesz\n"
 #: gtk/rgsummarywindow.cc:230
 #, c-format
 msgid "<b>%s</b> (version <i>%s</i>) will be upgraded to version <i>%s</i>\n"
-msgstr "<b>%s</b> (verzió: <i>%s</i>) frissítve lesz <i>%s</i>verzióra\n"
+msgstr "<b>%s</b> (verzió: <i>%s</i>) frissítve lesz <i>%s</i> verzióra\n"
 
 #: gtk/rgsummarywindow.cc:237
 #, c-format
 msgid "<b>%s</b> (version <i>%s</i>) will be installed\n"
-msgstr "<b>%s<b> (verzió <i>%s</i>) lesz telepítve\n"
+msgstr "<b>%s</b> (verzió <i>%s</i>) telepítve lesz\n"
 
 #: gtk/rgsummarywindow.cc:256
 msgid "Summary"
 msgstr "Összegzés"
 
-#: gtk/rgsummarywindow.cc:317
-#, fuzzy, c-format
+#: gtk/rgsummarywindow.cc:273
+msgid "Marked Changes"
+msgstr "Kijelölt változtatások"
+
+#: gtk/rgsummarywindow.cc:314
+#, c-format
 msgid "%d package is locked\n"
 msgid_plural "%d packages are locked\n"
-msgstr[0] "Nincs csomag kiválasztva.\n"
-msgstr[1] "Nincs csomag kiválasztva.\n"
+msgstr[0] "%d csomag zárolva van \n"
+msgstr[1] "%d csomag zárolva van \n"
 
-#: gtk/rgsummarywindow.cc:323
-#, fuzzy, c-format
+#: gtk/rgsummarywindow.cc:320
+#, c-format
 msgid "%d package will be held back and not upgraded\n"
 msgid_plural "%d packages will be held back and not upgraded\n"
-msgstr[0] "1 csomag visszatartva, nem lesz frissítve\n"
-msgstr[1] "1 csomag visszatartva, nem lesz frissítve\n"
+msgstr[0] "%d csomag vissza lesz tartva és nem lesz frissítve\n"
+msgstr[1] "%d csomag vissza lesz tartva és nem lesz frissítve\n"
 
-#: gtk/rgsummarywindow.cc:330
-#, fuzzy, c-format
+# c-format
+#: gtk/rgsummarywindow.cc:327
+#, c-format
 msgid "%d new package will be installed\n"
 msgid_plural "%d new packages will be installed\n"
 msgstr[0] "%d új csomag lesz telepítve\n"
 msgstr[1] "%d új csomag lesz telepítve\n"
 
-#: gtk/rgsummarywindow.cc:337
-#, fuzzy, c-format
+#: gtk/rgsummarywindow.cc:334
+#, c-format
 msgid "%d package will be upgraded\n"
 msgid_plural "%d packages will be upgraded\n"
 msgstr[0] "%d csomag frissítve lesz\n"
 msgstr[1] "%d csomag frissítve lesz\n"
 
-#: gtk/rgsummarywindow.cc:344
-#, fuzzy, c-format
+#: gtk/rgsummarywindow.cc:341
+#, c-format
 msgid "%d package will be removed\n"
 msgid_plural "%d packages will be removed\n"
 msgstr[0] "%d csomag lesz eltávolítva\n"
 msgstr[1] "%d csomag lesz eltávolítva\n"
 
-#: gtk/rgsummarywindow.cc:351
-#, fuzzy, c-format
+#: gtk/rgsummarywindow.cc:348
+#, c-format
 msgid "%d package will be <b>downgraded</b>\n"
 msgid_plural "%d packages will be <b>downgraded</b>\n"
-msgstr[0] "%d csomag <b>vissza</b> lesz fejlesztve\n"
+msgstr[0] "%d csomag <b>vissza</b> lesz fejlesztve \n"
 msgstr[1] "%d csomag <b>vissza</b> lesz fejlesztve\n"
 
-#: gtk/rgsummarywindow.cc:358
-#, fuzzy, c-format
+#: gtk/rgsummarywindow.cc:355
+#, c-format
 msgid "<b>Warning:</b> %d essential package will be removed\n"
 msgid_plural "<b>Warning:</b> %d essential packages will be removed\n"
 msgstr[0] "<b>Figyelem:</b> %d alapvető csomag kerül törlésre \n"
 msgstr[1] "<b>Figyelem:</b> %d alapvető csomag kerül törlésre \n"
 
-#: gtk/rgsummarywindow.cc:371
+#: gtk/rgsummarywindow.cc:368
 #, c-format
 msgid "%s of extra space will be used"
 msgstr "%s hely lesz felhasználva"
 
-#: gtk/rgsummarywindow.cc:374
+#: gtk/rgsummarywindow.cc:371
 #, c-format
 msgid "%s of extra space will be freed"
 msgstr "%s hely lesz felszabadítva"
 
-#: gtk/rgsummarywindow.cc:380
+#: gtk/rgsummarywindow.cc:377
 #, c-format
 msgid ""
 "\n"
 "%s have to be downloaded"
 msgstr ""
 "\n"
-"%s-ot kell letölteni."
+"%s-ot kell letölteni"
 
-#: gtk/rgsummarywindow.cc:404
+#: gtk/rgsummarywindow.cc:401
 msgid ""
 "Essential packages will be removed.\n"
 "This may render your system unusable!\n"
@@ -1465,9 +1462,10 @@ msgid "Find"
 msgstr "Keresés"
 
 #: gtk/window_about.glade.h:1
+#, fuzzy
 msgid ""
-"<span size=\"small\">Copyright (c) 2001-2003 Connectiva S/A \n"
-"Copyright (c) 2002,2003 Michael Vogt</span>"
+"<span size=\"small\">Copyright (c) 2001-2004 Conectiva S/A \n"
+"Copyright (c) 2002-2004 Michael Vogt</span>"
 msgstr ""
 "<span size=\"small\">Copyright (c) 2001-2003 Connectiva S/A \n"
 "Copyright (c) 2002,2003 Michael Vogt</span>"
@@ -1478,7 +1476,7 @@ msgstr "<span size=\"xx-large\" weight=\"bold\"> Synaptic verzió</span>"
 
 #: gtk/window_about.glade.h:6
 msgid "Debtag support is enabled."
-msgstr "Debtag támogatás bekapcsolva"
+msgstr "Debtag támogatás bekapcsolva."
 
 #: gtk/window_about.glade.h:7
 msgid "Documented by"
@@ -1530,7 +1528,7 @@ msgstr ""
 
 #: gtk/window_about.glade.h:26
 msgid "Package management software using apt."
-msgstr "APT-t használó csomagkezelő program"
+msgstr "APT-t használó csomagkezelő program."
 
 #: gtk/window_about.glade.h:27
 msgid ""
@@ -1551,7 +1549,6 @@ msgstr ""
 "http://www.nongnu.org/synaptic/"
 
 #: gtk/window_about.glade.h:31
-#, fuzzy
 msgid ""
 "Vital Khilko <dojlid@mova.org> (Belarusian)\n"
 "Keld Simonsen <keld@dkuug.dk> (Danish)\n"
@@ -1634,14 +1631,12 @@ msgid "    "
 msgstr "    "
 
 #: gtk/window_fetch.glade.h:2
-#, fuzzy
 msgid "<b>Single files:</b>"
-msgstr "<b>Telepítve:</b>"
+msgstr "<b>Egyes fájlok:</b>"
 
 #: gtk/window_fetch.glade.h:3
-#, fuzzy
 msgid "<b>Total:</b>"
-msgstr "<b>Címkék:</b>"
+msgstr "<b>Összesen:</b>"
 
 #: gtk/window_main_hpaned.glade.h:2 gtk/window_main_vpaned.glade.h:2
 #: gtk/window_preferences.glade.h:3
@@ -1654,17 +1649,15 @@ msgstr "<b>Elérhető verziók</b>"
 
 #: gtk/window_main_hpaned.glade.h:5 gtk/window_main_vpaned.glade.h:6
 msgid "<b>Install</b>"
-msgstr "<b>Telepít</b>"
+msgstr "<b>Telepítés</b>"
 
 #: gtk/window_main_hpaned.glade.h:6 gtk/window_main_vpaned.glade.h:7
-#, fuzzy
 msgid "<b>Installed Version</b>"
-msgstr "Telepített verzió"
+msgstr "<b>Telepített verzió</b>"
 
 #: gtk/window_main_hpaned.glade.h:7 gtk/window_main_vpaned.glade.h:8
-#, fuzzy
 msgid "<b>Latest Available Version</b>"
-msgstr "<b>Elérhető verziók</b>"
+msgstr "<b>Legfrissebb elérhető verzió</b>"
 
 #: gtk/window_main_hpaned.glade.h:8 gtk/window_main_vpaned.glade.h:9
 msgid "<b>Maintainer:</b>"
@@ -1672,7 +1665,7 @@ msgstr "<b>Karbantartó:</b>"
 
 #: gtk/window_main_hpaned.glade.h:9 gtk/window_main_vpaned.glade.h:10
 msgid "<b>Package Control</b>"
-msgstr "<b> Csomagfelügyelet</b>"
+msgstr "<b> Csomagműveletek</b>"
 
 #: gtk/window_main_hpaned.glade.h:10
 msgid "<b>Package:</b>"
@@ -1699,21 +1692,21 @@ msgid ""
 "<b>Warning:</b> This can render your package manager unusable.\n"
 "Changes override the version selected by the package manager. "
 msgstr ""
-"<b> Figyelem</b>Ez használhatatlanná teheti a csomagkezelődet.\n"
+"<b>Figyelem:</b> ez használhatatlanná teheti a csomagkezelődet.\n"
 "A változtatások figyelmen kívül hagyják a csomagkezelővel kiválasztott "
 "verziót."
 
 #: gtk/window_main_hpaned.glade.h:17 gtk/window_main_vpaned.glade.h:18
+msgid "A_dd CD-ROM..."
+msgstr "CD-ROM hozzáadása..."
+
+#: gtk/window_main_hpaned.glade.h:18 gtk/window_main_vpaned.glade.h:19
 msgid "Ac_tions"
 msgstr "Akciók"
 
-#: gtk/window_main_hpaned.glade.h:19 gtk/window_main_vpaned.glade.h:20
-msgid "Clear All _Queued Changes"
-msgstr "Minden sorban álló változtatás törlése"
-
 #: gtk/window_main_hpaned.glade.h:20 gtk/window_main_vpaned.glade.h:21
 msgid "Commit (and download if necessary) selected changes on packages"
-msgstr "Csomagokon megtett változtatások végrehajtása és letöltés"
+msgstr "Kiválasztott változtatások végrehajtása (és letöltés ha szükséges)"
 
 #: gtk/window_main_hpaned.glade.h:21 gtk/window_main_vpaned.glade.h:22
 msgid "Common"
@@ -1737,15 +1730,15 @@ msgid "Dependencies of the Latest Version"
 msgstr "A legutolsó verzió függőségei"
 
 #: gtk/window_main_hpaned.glade.h:27 gtk/window_main_vpaned.glade.h:29
-msgid "Download:"
-msgstr "Letölt:"
+msgid "Download size:"
+msgstr "Letöltés mérete:"
 
 #: gtk/window_main_hpaned.glade.h:28 gtk/window_main_vpaned.glade.h:30
 msgid "Edit the available filters"
 msgstr "Rendelkezésre álló szűrők szerkesztése"
 
 #: gtk/window_main_hpaned.glade.h:29 gtk/window_main_vpaned.glade.h:31
-#: gtk/window_preferences.glade.h:42
+#: gtk/window_preferences.glade.h:38
 msgid "Expert"
 msgstr "Szakértő"
 
@@ -1771,7 +1764,7 @@ msgstr "Keresés:"
 
 #: gtk/window_main_hpaned.glade.h:35 gtk/window_main_vpaned.glade.h:37
 msgid "Install the latest version of the package"
-msgstr "A csomag legújabb verzióját telepíti"
+msgstr "A csomag legfrissebb verzióját telepíti"
 
 #: gtk/window_main_hpaned.glade.h:36 gtk/window_main_vpaned.glade.h:38
 msgid "Installed Files"
@@ -1815,28 +1808,28 @@ msgid "Remove Including _Configuration"
 msgstr "Törlés konfigurációval együtt"
 
 #: gtk/window_main_hpaned.glade.h:48 gtk/window_main_vpaned.glade.h:50
-msgid "Save Selections _As..."
-msgstr "Szelekciók mentése másként..."
+msgid "Required space:"
+msgstr "Szükséges hely:"
 
 #: gtk/window_main_hpaned.glade.h:49 gtk/window_main_vpaned.glade.h:51
+msgid "Save Selections _As..."
+msgstr "Kijelölések mentése másként..."
+
+#: gtk/window_main_hpaned.glade.h:50 gtk/window_main_vpaned.glade.h:52
 msgid "Search again from the beginning"
 msgstr "Keresés újra az elejétől"
 
-#: gtk/window_main_hpaned.glade.h:50 gtk/window_main_vpaned.glade.h:52
+#: gtk/window_main_hpaned.glade.h:51 gtk/window_main_vpaned.glade.h:53
 msgid "Selected"
 msgstr "Kiválasztott"
 
-#: gtk/window_main_hpaned.glade.h:51 gtk/window_main_vpaned.glade.h:53
+#: gtk/window_main_hpaned.glade.h:52 gtk/window_main_vpaned.glade.h:54
 msgid "Set _Internal Option..."
 msgstr "Belső opció beállítása..."
 
-#: gtk/window_main_hpaned.glade.h:52 gtk/window_main_vpaned.glade.h:54
+#: gtk/window_main_hpaned.glade.h:53 gtk/window_main_vpaned.glade.h:55
 msgid "Show:"
 msgstr "Mutat:"
-
-#: gtk/window_main_hpaned.glade.h:53 gtk/window_main_vpaned.glade.h:55
-msgid "Size:"
-msgstr "Méret:"
 
 #: gtk/window_main_hpaned.glade.h:54 gtk/window_main_vpaned.glade.h:56
 msgid "Stat_us Tree"
@@ -1867,175 +1860,166 @@ msgid "Text _Below Icons"
 msgstr "Szöveg az ikonok alatt"
 
 #: gtk/window_main_hpaned.glade.h:61 gtk/window_main_vpaned.glade.h:63
-#, fuzzy
-msgid "Up_grade All"
-msgstr "Frissít"
-
-#: gtk/window_main_hpaned.glade.h:62
 msgid "Up_grade System"
 msgstr "Rendszer frissítése"
 
-#: gtk/window_main_hpaned.glade.h:63 gtk/window_main_vpaned.glade.h:64
+#: gtk/window_main_hpaned.glade.h:62 gtk/window_main_vpaned.glade.h:64
 msgid "Update package cache"
 msgstr "Csomaggyorsítótár frissítése"
 
-#: gtk/window_main_hpaned.glade.h:64 gtk/window_main_vpaned.glade.h:65
+#: gtk/window_main_hpaned.glade.h:63 gtk/window_main_vpaned.glade.h:65
 msgid "Version:"
 msgstr "Verzió:"
 
-#: gtk/window_main_hpaned.glade.h:65
+#: gtk/window_main_hpaned.glade.h:64
 msgid "View installed documentation of the package in a browser"
 msgstr "A csomag telepített dokumentációjának megnyitása egy böngészőben"
 
-#: gtk/window_main_hpaned.glade.h:66 gtk/window_main_vpaned.glade.h:67
+#: gtk/window_main_hpaned.glade.h:65 gtk/window_main_vpaned.glade.h:67
 msgid "_About"
 msgstr "Névjegy"
 
-#: gtk/window_main_hpaned.glade.h:67 gtk/window_main_vpaned.glade.h:68
-msgid "_Add CD-ROM..."
-msgstr "CD-ROM hozzáadása..."
-
-#: gtk/window_main_hpaned.glade.h:68 gtk/window_main_vpaned.glade.h:69
+#: gtk/window_main_hpaned.glade.h:66 gtk/window_main_vpaned.glade.h:68
 msgid "_Alphabetic Tree"
 msgstr "ABC sorrendű lista"
 
-#: gtk/window_main_hpaned.glade.h:69 gtk/window_main_vpaned.glade.h:70
+#: gtk/window_main_hpaned.glade.h:67 gtk/window_main_vpaned.glade.h:69
 msgid "_Apply Filter"
 msgstr "Szűrő alkalmazása"
+
+#: gtk/window_main_hpaned.glade.h:68 gtk/window_main_vpaned.glade.h:70
+msgid "_Apply Marked Changes"
+msgstr "Kijelölt változtatások alkalmazása"
+
+#: gtk/window_main_hpaned.glade.h:69 gtk/window_main_vpaned.glade.h:71
+msgid "_Clear All Marked Changes"
+msgstr "Minden kijelölt változtatás törlése"
 
 #: gtk/window_main_hpaned.glade.h:70
 msgid "_Collapse All"
 msgstr "Becsukja az ágakat"
 
-#: gtk/window_main_hpaned.glade.h:71 gtk/window_main_vpaned.glade.h:72
+#: gtk/window_main_hpaned.glade.h:71 gtk/window_main_vpaned.glade.h:73
 msgid "_Configure"
 msgstr "Konfigurál"
 
-#: gtk/window_main_hpaned.glade.h:72
+#: gtk/window_main_hpaned.glade.h:72 gtk/window_main_vpaned.glade.h:74
+msgid "_Contents"
+msgstr "Tartalom"
+
+#: gtk/window_main_hpaned.glade.h:73
 msgid "_Documentation"
 msgstr "_Dokumentáció"
 
-#: gtk/window_main_hpaned.glade.h:73 gtk/window_main_vpaned.glade.h:73
-#, fuzzy
+#: gtk/window_main_hpaned.glade.h:74 gtk/window_main_vpaned.glade.h:75
 msgid "_Edit Filters..."
 msgstr "Szűrők szerkesztése..."
 
-#: gtk/window_main_hpaned.glade.h:74 gtk/window_main_vpaned.glade.h:74
-msgid "_Execute"
-msgstr "Végrehajt"
-
-#: gtk/window_main_hpaned.glade.h:75 gtk/window_main_vpaned.glade.h:75
-msgid "_Execute Queued Changes"
-msgstr "Sorban álló változtatások végrehajtása"
-
-#: gtk/window_main_hpaned.glade.h:76 gtk/window_main_vpaned.glade.h:76
+#: gtk/window_main_hpaned.glade.h:75 gtk/window_main_vpaned.glade.h:76
 msgid "_Expand All"
 msgstr "Kinyitja az ágakat"
 
-#: gtk/window_main_hpaned.glade.h:77 gtk/window_main_vpaned.glade.h:77
+#: gtk/window_main_hpaned.glade.h:76 gtk/window_main_vpaned.glade.h:77
 msgid "_File"
 msgstr "_Fájl"
 
-#: gtk/window_main_hpaned.glade.h:78 gtk/window_main_vpaned.glade.h:78
+#: gtk/window_main_hpaned.glade.h:77 gtk/window_main_vpaned.glade.h:78
 msgid "_Find..."
 msgstr "Keresés..."
 
-#: gtk/window_main_hpaned.glade.h:79 gtk/window_main_vpaned.glade.h:79
+#: gtk/window_main_hpaned.glade.h:78 gtk/window_main_vpaned.glade.h:79
 msgid "_Fix Broken Packages"
 msgstr "Törött csomagok javítása"
 
-#: gtk/window_main_hpaned.glade.h:80 gtk/window_main_vpaned.glade.h:80
+#: gtk/window_main_hpaned.glade.h:79 gtk/window_main_vpaned.glade.h:80
 msgid "_Flat List"
 msgstr "Egyszerű lista"
 
-#: gtk/window_main_hpaned.glade.h:81 gtk/window_main_vpaned.glade.h:81
+#: gtk/window_main_hpaned.glade.h:80 gtk/window_main_vpaned.glade.h:81
 msgid "_Help"
 msgstr "_Súgó"
 
-#: gtk/window_main_hpaned.glade.h:82 gtk/window_main_vpaned.glade.h:82
+#: gtk/window_main_hpaned.glade.h:81 gtk/window_main_vpaned.glade.h:82
 msgid "_Hide"
 msgstr "Elrejt"
 
-#: gtk/window_main_hpaned.glade.h:83 gtk/window_main_vpaned.glade.h:83
-#, fuzzy
+#: gtk/window_main_hpaned.glade.h:82 gtk/window_main_vpaned.glade.h:83
 msgid "_Icon Legend"
-msgstr "Csak ikonok"
+msgstr "Ikonmagyarázat"
 
-#: gtk/window_main_hpaned.glade.h:84 gtk/window_main_vpaned.glade.h:84
+#: gtk/window_main_hpaned.glade.h:83 gtk/window_main_vpaned.glade.h:84
 msgid "_Icons Only"
 msgstr "Csak ikonok"
 
-#: gtk/window_main_hpaned.glade.h:86 gtk/window_main_vpaned.glade.h:86
+#: gtk/window_main_hpaned.glade.h:85 gtk/window_main_vpaned.glade.h:86
 msgid "_Install Latest Version"
-msgstr "Legutolsó verzió telepítése"
+msgstr "Legfrissebb verzió telepítése"
 
-#: gtk/window_main_hpaned.glade.h:87 gtk/window_main_vpaned.glade.h:87
-#, fuzzy
+#: gtk/window_main_hpaned.glade.h:86 gtk/window_main_vpaned.glade.h:87
 msgid "_Lock Current Status and Version"
-msgstr "Aktuális verzió megtartása"
+msgstr "Aktuális állapot és verzió zárolása"
 
-#: gtk/window_main_hpaned.glade.h:88 gtk/window_main_vpaned.glade.h:88
+#: gtk/window_main_hpaned.glade.h:87 gtk/window_main_vpaned.glade.h:88
 msgid "_No Changes"
-msgstr "Változtatások visszavonása"
+msgstr "Visszavonás"
 
-#: gtk/window_main_hpaned.glade.h:89 gtk/window_main_vpaned.glade.h:89
+#: gtk/window_main_hpaned.glade.h:88 gtk/window_main_vpaned.glade.h:89
 msgid "_Quick Introduction"
-msgstr ""
+msgstr "Gyors bevezetés"
 
-#: gtk/window_main_hpaned.glade.h:90 gtk/window_main_vpaned.glade.h:90
+#: gtk/window_main_hpaned.glade.h:89 gtk/window_main_vpaned.glade.h:90
 msgid "_Quit"
 msgstr "Kilépés"
 
-#: gtk/window_main_hpaned.glade.h:91 gtk/window_main_vpaned.glade.h:91
+#: gtk/window_main_hpaned.glade.h:90 gtk/window_main_vpaned.glade.h:91
 msgid "_Read Selections..."
-msgstr "Szelekciók olvasása..."
+msgstr "Kijelölések betöltése..."
 
-#: gtk/window_main_hpaned.glade.h:92 gtk/window_main_vpaned.glade.h:92
+#: gtk/window_main_hpaned.glade.h:91 gtk/window_main_vpaned.glade.h:92
 msgid "_Redo"
 msgstr "Újra"
 
-#: gtk/window_main_hpaned.glade.h:93 gtk/window_main_vpaned.glade.h:93
+#: gtk/window_main_hpaned.glade.h:92 gtk/window_main_vpaned.glade.h:93
 msgid "_Refresh"
-msgstr ""
+msgstr "Lista frissítése"
 
-#: gtk/window_main_hpaned.glade.h:94 gtk/window_main_vpaned.glade.h:94
-#, fuzzy
+#: gtk/window_main_hpaned.glade.h:93 gtk/window_main_vpaned.glade.h:94
 msgid "_Refresh Package List"
 msgstr "Csomaglista frissítése"
 
-#: gtk/window_main_hpaned.glade.h:95 gtk/window_main_vpaned.glade.h:95
+#: gtk/window_main_hpaned.glade.h:94 gtk/window_main_vpaned.glade.h:95
 msgid "_Remove"
 msgstr "Törlés"
 
-#: gtk/window_main_hpaned.glade.h:96 gtk/window_main_vpaned.glade.h:96
+#: gtk/window_main_hpaned.glade.h:95 gtk/window_main_vpaned.glade.h:96
 msgid "_Repositories"
-msgstr " Tárolók"
+msgstr "Tárolók"
 
-#: gtk/window_main_hpaned.glade.h:97 gtk/window_main_vpaned.glade.h:97
+#: gtk/window_main_hpaned.glade.h:96 gtk/window_main_vpaned.glade.h:97
 msgid "_Save Selections"
-msgstr "Szelekciók mentése..."
+msgstr "Kijelölések mentése"
 
-#: gtk/window_main_hpaned.glade.h:98 gtk/window_main_vpaned.glade.h:98
+#: gtk/window_main_hpaned.glade.h:97 gtk/window_main_vpaned.glade.h:98
 msgid "_Section Tree"
 msgstr "Szekció szerinti lista"
 
-#: gtk/window_main_hpaned.glade.h:99 gtk/window_main_vpaned.glade.h:99
+#: gtk/window_main_hpaned.glade.h:98 gtk/window_main_vpaned.glade.h:99
 msgid "_Tag Tree"
 msgstr "Címke-fa szerinti lista"
 
-#: gtk/window_main_hpaned.glade.h:100 gtk/window_main_vpaned.glade.h:100
+#: gtk/window_main_hpaned.glade.h:99 gtk/window_main_vpaned.glade.h:100
 msgid "_Text Only"
 msgstr "Csak szöveg"
 
-#: gtk/window_main_hpaned.glade.h:101 gtk/window_main_vpaned.glade.h:101
+#: gtk/window_main_hpaned.glade.h:100 gtk/window_main_vpaned.glade.h:101
 msgid "_Toolbar"
 msgstr "Eszköztár"
 
-#: gtk/window_main_hpaned.glade.h:102 gtk/window_main_vpaned.glade.h:102
+#: gtk/window_main_hpaned.glade.h:101 gtk/window_main_vpaned.glade.h:102
 msgid "_Undo"
 msgstr "Visszavon"
 
-#: gtk/window_main_hpaned.glade.h:104 gtk/window_main_vpaned.glade.h:104
+#: gtk/window_main_hpaned.glade.h:103 gtk/window_main_vpaned.glade.h:104
 msgid "_View"
 msgstr "Nézet"
 
@@ -2045,7 +2029,7 @@ msgstr "<b>Részletek</b>"
 
 #: gtk/window_main_vpaned.glade.h:11
 msgid "<b>Package</b>"
-msgstr "Csomag "
+msgstr "<b>Csomag</b>"
 
 #: gtk/window_main_vpaned.glade.h:16
 msgid ""
@@ -2053,37 +2037,35 @@ msgid ""
 "manager unusable. Changes override the version selected by the package "
 "manager. "
 msgstr ""
-"<b> Figyelem</b>Ez használhatatlanná teheti a csomagkezelődet.\n"
+"<b>Figyelem:</b> ez használhatatlanná teheti a csomagkezelődet.\n"
 "A változtatások figyelmen kívül hagyják a csomagkezelővel kiválasztott "
 "verziót."
 
 #: gtk/window_main_vpaned.glade.h:66
 msgid "View installed online documentation related to the package"
-msgstr "A csomaggal telepített online dokumentáció megtekintése"
+msgstr "A csomaggal kapcsolatos telepített online dokumentáció megtekintése"
 
-#: gtk/window_main_vpaned.glade.h:71
+#: gtk/window_main_vpaned.glade.h:72
 msgid "_Collapse All   "
 msgstr "Becsukja az ágakat"
 
 #: gtk/window_changes.glade.h:1
-msgid ""
-"<span weight=\"bold\" size=\"larger\">Queue additional required changes?</"
-"span>"
+msgid "<span weight=\"bold\" size=\"larger\">Mark required changes?</span>"
 msgstr ""
-"<span weight=\"bold\" size=\"larger\">További szükséges változtatások "
-"sorbaállítása?</span> "
+"<span weight=\"bold\" size=\"larger\">Szükséges változtatások kijelölése</"
+"span> "
 
 #: gtk/window_changes.glade.h:2
-msgid "Queue"
-msgstr "Sorbaállítva"
-
-#: gtk/window_changes.glade.h:3
 msgid ""
 "The chosen action also affects other packages. The following changes are "
 "required in order to proceed."
 msgstr ""
 "A kiválasztott akció más csomagokra is hatással van. A következő "
 "változtatások szükségesek a folytatáshoz."
+
+#: gtk/window_changes.glade.h:3
+msgid "_Mark"
+msgstr "Kijelölés"
 
 #: gtk/window_preferences.glade.h:1 gtk/window_summary.glade.h:1
 msgid " "
@@ -2106,9 +2088,8 @@ msgid "<b>Colors</b>"
 msgstr "<b>Színek</b>"
 
 #: gtk/window_preferences.glade.h:9
-#, fuzzy
 msgid "<b>Columns</b>"
-msgstr "<b>Színek</b>"
+msgstr "<b>Oszlopok</b>"
 
 #: gtk/window_preferences.glade.h:10
 msgid "<b>Distribution</b>"
@@ -2127,21 +2108,20 @@ msgid "<b>Main Window</b>"
 msgstr "<b>Főablak</b>"
 
 #: gtk/window_preferences.glade.h:14
-#, fuzzy
 msgid ""
-"<b>Note:</b> The package list will need to be reloaded and so all queued "
-"changes will get lost. Make sure to execute your changes first."
+"<b>Note:</b> The package list will need to be reloaded and so all marked "
+"changes will get lost. Make sure to apply your changes first."
 msgstr ""
-"<b>Megjegyzés:</b> A csomaglistát újra kell tölteni így minden kiválasztás "
-"elveszik. Először hajtsd végre a változtatásaidat."
+"<b>Megjegyzés:</b> a csomaglistát újra kell tölteni, így minden kijelölt "
+"változtatás elvész. Először alkalmazd a változtatásaidat."
 
 #: gtk/window_preferences.glade.h:15
 msgid ""
 "<b>Note:</b> You will need to restart synaptic for \n"
 "this setting to take effect."
 msgstr ""
-"<b>Megjegyzés</b> Ezen beállítás érvényesítéséhez újra kell indítanod\n"
-" a Synaptic-ot"
+"<b>Megjegyzés:</b> ezen beállítás érvényesítéséhez újra kell indítanod\n"
+" a Synapticot."
 
 #: gtk/window_preferences.glade.h:17
 msgid "<b>Proxy Server</b>"
@@ -2165,50 +2145,37 @@ msgstr "Szabályos kifejezések engedélyezése keresésnél és szűrőkben"
 
 #: gtk/window_preferences.glade.h:21
 msgid "Always Ask"
-msgstr "Mindig kérdez"
+msgstr "Mindig kérdezz"
 
 #: gtk/window_preferences.glade.h:22
-#, fuzzy
-msgid "Ask to confirm changes also affecting other packages"
-msgstr "Rákérdez, ha más csomagra is hat valamely akció."
+msgid "Apply changes in a terminal window"
+msgstr "Változtatások alkalmazása terminálablakban"
 
 #: gtk/window_preferences.glade.h:23
-#, fuzzy
-msgid "Ask to quit after the changes have been executed successfully"
-msgstr "Kérdezzen hogy kilépsz-e a változtatások végrehajtása után"
+msgid "Ask to confirm changes also affecting other packages"
+msgstr "Kérdezz rá a más csomagokra is ható akcióra"
 
 #: gtk/window_preferences.glade.h:24
-#, fuzzy
-msgid "Available (New):"
-msgstr "Elérhető címkék"
+msgid "Ask to quit after the changes have been applied successfully"
+msgstr "Kérdezz, hogy kilépek-e a változtatások sikeres alkalmazása után"
 
 #: gtk/window_preferences.glade.h:25
-#, fuzzy
-msgid "Available (locked):"
-msgstr "Elérhető címkék"
-
-#: gtk/window_preferences.glade.h:26
-#, fuzzy
-msgid "Available: "
-msgstr "Elérhető címkék"
-
-#: gtk/window_preferences.glade.h:27
 msgid "Broken:"
 msgstr "Törött:"
 
-#: gtk/window_preferences.glade.h:28
+#: gtk/window_preferences.glade.h:26
 msgid "Clear"
 msgstr "Törlés"
 
-#: gtk/window_preferences.glade.h:29
+#: gtk/window_preferences.glade.h:27
 msgid "Color"
-msgstr "<b>Színek</b>"
+msgstr "Szín"
 
-#: gtk/window_preferences.glade.h:30
+#: gtk/window_preferences.glade.h:28
 msgid "Color packages by their status"
-msgstr "Csomagok színezése státuszuk szerint"
+msgstr "Csomagok színezése állapotuk szerint"
 
-#: gtk/window_preferences.glade.h:31
+#: gtk/window_preferences.glade.h:29
 msgid ""
 "Comma separated list of hosts and domains that will not be contacted through "
 "the proxy (e.g. localhost, 192.168.1.231, .net)"
@@ -2216,205 +2183,195 @@ msgstr ""
 "Kiszolgálók és tartományok vesszővel elválasztott listája, amikhez ne a "
 "proxy-n keresztül kapcsolódjon (pl:localhost, 192.168.1.231, .net)"
 
-#: gtk/window_preferences.glade.h:32
+#: gtk/window_preferences.glade.h:30
 msgid "Consider recommended packages as dependencies"
 msgstr "Kezelje az ajánlott csomagokat függőségekként"
 
-#: gtk/window_preferences.glade.h:33
+#: gtk/window_preferences.glade.h:31
 msgid "Default"
 msgstr "Alapértelmezett"
 
-#: gtk/window_preferences.glade.h:35
+#: gtk/window_preferences.glade.h:33
 msgid "Default archive: "
-msgstr "Alapértelmezett archívum:"
+msgstr "Alapértelmezett archívum: "
 
-#: gtk/window_preferences.glade.h:36
+#: gtk/window_preferences.glade.h:34
 msgid "Delete downloaded packages after installation"
 msgstr "Letöltött csomagok törlése telepítés után"
 
-#: gtk/window_preferences.glade.h:37
+#: gtk/window_preferences.glade.h:35
 msgid "Delete packages which are no longer available only"
-msgstr ""
+msgstr "Csak a már el nem érhető csomagok törlése"
+
+#: gtk/window_preferences.glade.h:37
+msgid "Direct connection to the internet"
+msgstr "Közvetlen internetkapcsolat"
 
 #: gtk/window_preferences.glade.h:39
-msgid "Direct connection to the internet"
-msgstr "Közvetlen Internetkapcsolat"
-
-#: gtk/window_preferences.glade.h:40
-msgid "Downgrade:"
-msgstr "Visszafejleszt:"
-
-#: gtk/window_preferences.glade.h:41
-msgid "Execute changes in a terminal window"
-msgstr "Változtatások végrehajtása terminálablakban"
-
-#: gtk/window_preferences.glade.h:43
 msgid "FTP proxy: "
 msgstr "FTP proxy: "
 
-#: gtk/window_preferences.glade.h:44
+#: gtk/window_preferences.glade.h:40
 msgid "General"
 msgstr "Általános"
 
-#: gtk/window_preferences.glade.h:45
+#: gtk/window_preferences.glade.h:41
 msgid "HTTP proxy: "
 msgstr "HTTP proxy: "
 
-#: gtk/window_preferences.glade.h:46
+#: gtk/window_preferences.glade.h:42
 msgid "IP address or host name of the ftp proxy server"
 msgstr "Az ftp proxy szerver neve vagy IP címe"
 
-#: gtk/window_preferences.glade.h:47
+#: gtk/window_preferences.glade.h:43
 msgid "IP address or host name of the http proxy server"
 msgstr "A http proxy szerver neve vagy IP címe"
 
-#: gtk/window_preferences.glade.h:48
+#: gtk/window_preferences.glade.h:44
 msgid "Include Configuration"
 msgstr "Konfiguráció bevétele"
 
-#: gtk/window_preferences.glade.h:49
+#: gtk/window_preferences.glade.h:45
 msgid "Include Orphaned Dependencies"
 msgstr "Árva függőségek bevétele"
 
-#: gtk/window_preferences.glade.h:50
-msgid "Install:"
-msgstr "Telepít:"
-
-#: gtk/window_preferences.glade.h:51
-#, fuzzy
+#: gtk/window_preferences.glade.h:46
 msgid "Installed (locked):"
-msgstr "Telepített fájlok"
+msgstr "Telepítve (zárolva):"
 
-#: gtk/window_preferences.glade.h:52
-msgid "Installed size"
-msgstr "Telepített méret"
-
-#: gtk/window_preferences.glade.h:53
+#: gtk/window_preferences.glade.h:47
 msgid "Installed version"
 msgstr "Telepített verzió"
 
-#: gtk/window_preferences.glade.h:54
-#, fuzzy
+#: gtk/window_preferences.glade.h:48
 msgid "Installed:"
-msgstr "Telepítve"
+msgstr "Telepítve:"
 
-#: gtk/window_preferences.glade.h:55
+#: gtk/window_preferences.glade.h:49
 msgid "Latest version"
-msgstr "Legújabb verzió"
+msgstr "Legfrissebb verzió"
 
-#: gtk/window_preferences.glade.h:56
+#: gtk/window_preferences.glade.h:50
 msgid "Layout"
-msgstr "Kiosztás"
+msgstr "Elrendezés"
 
-#: gtk/window_preferences.glade.h:57
+#: gtk/window_preferences.glade.h:51
 msgid "Leave all downloaded packages in the cache"
 msgstr "Letöltött csomagok gyorsítótárban hagyása"
 
-#: gtk/window_preferences.glade.h:58
+#: gtk/window_preferences.glade.h:52
 msgid "Manual proxy configuration"
 msgstr "Kézi proxy konfiguráció"
 
-#: gtk/window_preferences.glade.h:59
-msgid "Move _Down"
-msgstr ""
-
-#: gtk/window_preferences.glade.h:60
-msgid "Move _Up"
-msgstr ""
-
-#: gtk/window_preferences.glade.h:62
+#: gtk/window_preferences.glade.h:54
 msgid "Network"
 msgstr "Hálózat"
 
-#: gtk/window_preferences.glade.h:63
+#: gtk/window_preferences.glade.h:55
+msgid "New in archive:"
+msgstr "Új az archívumban:"
+
+#: gtk/window_preferences.glade.h:56
 msgid "No proxy for: "
-msgstr "Nincs proxy a következőkhöz:"
+msgstr "Nincs proxy a következőkhöz: "
 
-#: gtk/window_preferences.glade.h:64
+#: gtk/window_preferences.glade.h:57
+msgid "Not installed (locked):"
+msgstr "Nincs telepítve (zárolva):"
+
+#: gtk/window_preferences.glade.h:58
+msgid "Not installed: "
+msgstr "Nincs telepítve: "
+
+#: gtk/window_preferences.glade.h:59
 msgid "Number of undo operations:"
-msgstr "A lehetséges Visszavonás műveletek száma"
+msgstr "A lehetséges Visszavonás műveletek száma:"
 
-#: gtk/window_preferences.glade.h:65
-#, fuzzy
+#: gtk/window_preferences.glade.h:60
 msgid "Package List"
-msgstr "Csomaglista frissítése"
+msgstr "Csomaglista"
 
-#: gtk/window_preferences.glade.h:66
+#: gtk/window_preferences.glade.h:61
 msgid "Port number of the http proxy server"
 msgstr "A http proxy szerver portszáma"
 
-#: gtk/window_preferences.glade.h:67
+#: gtk/window_preferences.glade.h:62
 msgid "Port numer of the ftp proxy server"
-msgstr "A ftp proxy szerver portszáma"
+msgstr "Az ftp proxy szerver portszáma"
 
-#: gtk/window_preferences.glade.h:68
+#: gtk/window_preferences.glade.h:63
 msgid "Port: "
 msgstr "Port: "
 
-#: gtk/window_preferences.glade.h:70
-#, fuzzy
-msgid "Purge: "
-msgstr "Port: "
-
-#: gtk/window_preferences.glade.h:71
+#: gtk/window_preferences.glade.h:65
 msgid "Regular expressions are an advanced method of text matching"
 msgstr "A reguláris kifejezések a szövegkeresés haladó eljárásai"
 
-#: gtk/window_preferences.glade.h:72
-#, fuzzy
+#: gtk/window_preferences.glade.h:66
 msgid "Removal of packages: "
-msgstr "Helyettesített csomagok"
+msgstr "Csomagok törlése: "
 
-#: gtk/window_preferences.glade.h:73
-msgid "Remove:"
-msgstr "Törlés:"
+#: gtk/window_preferences.glade.h:67
+msgid "Required space"
+msgstr "Szükséges hely"
 
-#: gtk/window_preferences.glade.h:74
-#, fuzzy
+#: gtk/window_preferences.glade.h:68
 msgid ""
 "Select the default release if more than one is specifed in the sources.list"
 msgstr ""
 "Alapértelmezett kiadás kiválasztása, ha egynél több van megadva a sources."
 "list-ben"
 
-#: gtk/window_preferences.glade.h:77
+#: gtk/window_preferences.glade.h:71
+msgid "System upgrade:"
+msgstr "Rendszerfrissítés:"
+
+#: gtk/window_preferences.glade.h:72
 msgid "Temporary Files"
 msgstr "Átmeneti fájlok"
 
-#: gtk/window_preferences.glade.h:78
+#: gtk/window_preferences.glade.h:73
 msgid ""
 "The position of the column from left to right. A value of -1 hides the column"
 msgstr "Az oszlop helye balról jobbra. A -1 érték elrejti az oszlopot"
 
+#: gtk/window_preferences.glade.h:74
+msgid "To be downgraded:"
+msgstr "Visszafejlesztendő:"
+
+#: gtk/window_preferences.glade.h:75
+msgid "To be installed:"
+msgstr "Telepítendő:"
+
+#: gtk/window_preferences.glade.h:76
+msgid "To be removed including configuration:"
+msgstr "Konfigurációval együtt törlendő:"
+
+#: gtk/window_preferences.glade.h:77
+msgid "To be removed:"
+msgstr "Törlendő:"
+
+#: gtk/window_preferences.glade.h:78
+msgid "To be upgraded:"
+msgstr "Frissítendő:"
+
 #: gtk/window_preferences.glade.h:79
-#, fuzzy
 msgid "Update available:"
-msgstr "Rendelkezésre álló szűrők szerkesztése"
+msgstr "Frissítés elérhető:"
 
 #: gtk/window_preferences.glade.h:80
-#, fuzzy
-msgid "Upgrade of all packages:"
-msgstr "Elérhető csomagok listájának frissítése"
+msgid "Use custom application font"
+msgstr "Egyéb alkalmazás betűtípus használata"
 
 #: gtk/window_preferences.glade.h:81
-msgid "Upgrade:"
-msgstr "Frissít:"
+msgid "Use custom terminal font"
+msgstr "Egyéb terminál betűtípus használata"
 
 #: gtk/window_preferences.glade.h:82
-#, fuzzy
-msgid "Use custom application font"
-msgstr "Egyéb alkalmazás betűtípus"
-
-#: gtk/window_preferences.glade.h:83
-#, fuzzy
-msgid "Use custom terminal font"
-msgstr "Egyéb terminál betűtípus"
-
-#: gtk/window_preferences.glade.h:84
 msgid "_Default Font"
 msgstr "Alapértelmezett betűtípus"
 
-#: gtk/window_preferences.glade.h:85
+#: gtk/window_preferences.glade.h:83
 msgid "_Terminal Font"
 msgstr "Terminál betűtípus"
 
@@ -2448,34 +2405,34 @@ msgstr "<b>Összegzés</b>"
 
 #: gtk/window_summary.glade.h:4
 msgid ""
-"<span weight=\"bold\" size=\"large\">Execute the following changes?</span>"
+"<span weight=\"bold\" size=\"large\">Apply the following changes?</span>"
 msgstr ""
-"<span weight=\"bold\" size=\"large\">A következő változtatások végrehajtása?"
+"<span weight=\"bold\" size=\"large\">Alkalmazzam a következő változtatásokat?"
 "</span>"
 
 #: gtk/window_summary.glade.h:5
+msgid "Apply the changes"
+msgstr "Változtatások alkalmazása"
+
+#: gtk/window_summary.glade.h:6
 msgid "Download package files only"
 msgstr "Csak a csomagfájlok letöltése"
 
-#: gtk/window_summary.glade.h:6
-msgid "Execute the changes"
-msgstr "Változtatások végrehajtása"
-
 #: gtk/window_summary.glade.h:7
-msgid "Return to the main screen"
+msgid "Return to the main window"
 msgstr "Vissza a főablakba"
 
 # FIXME:ezt értelmesebben lehet fordítani?
 #: gtk/window_summary.glade.h:8
 msgid "The package files will ony be retrieved, but not installed or upgraded"
-msgstr "A csomagfájlokat csak letöltöm, de nem telepítem vagy frissítem"
+msgstr "A csomagfájlokat csak letöltöm, de nem telepítek vagy frissítek"
 
 #: gtk/window_summary.glade.h:9
 msgid ""
-"This is your last opportunity to look through the list of queued changes "
-"before they are executed."
+"This is your last opportunity to look through the list of marked changes "
+"before they are applied."
 msgstr ""
-"Ez az utolsó lehetőséged, hogy végrehajtás előtt átnézd a sorbanálló "
+"Ez az utolsó lehetőséged, hogy alkalmazás előtt átnézd a kijelölt "
 "változtatások listáját."
 
 #: gtk/window_summary.glade.h:10
@@ -2487,16 +2444,16 @@ msgid "<b>Current</b>"
 msgstr "<b>Aktuális</b>"
 
 #: gtk/window_filters.glade.h:4
+msgid "<b>Marked</b>"
+msgstr "<b>Kijelölve</b>"
+
+#: gtk/window_filters.glade.h:5
 msgid "<b>Other</b>"
 msgstr "<b>Egyéb</b>"
 
-#: gtk/window_filters.glade.h:5
+#: gtk/window_filters.glade.h:6
 msgid "<b>Rules</b>"
 msgstr "<b>Szabályok</b>"
-
-#: gtk/window_filters.glade.h:6
-msgid "<b>Selected</b>"
-msgstr "<b>Kiválasztott</b>"
 
 #: gtk/window_filters.glade.h:7
 msgid "<b>View</b>"
@@ -2520,15 +2477,15 @@ msgstr "Kijelölés megszüntetése"
 
 #: gtk/window_filters.glade.h:15
 msgid "Exclude"
-msgstr "Nem tartalmaz"
+msgstr "Kihagy"
 
 #: gtk/window_filters.glade.h:16
 msgid "Exclude selected sections"
-msgstr "Kiválasztott szekciók kivétele"
+msgstr "Kiválasztott szekciók kihagyása"
 
 #: gtk/window_filters.glade.h:17 gtk/rgfiltermanager.h:63
 msgid "Excludes"
-msgstr "Nem tartalmazza"
+msgstr "Kihagyja"
 
 #: gtk/window_filters.glade.h:18
 msgid "Expand All"
@@ -2540,19 +2497,19 @@ msgstr "Egyszerű lista"
 
 #: gtk/window_filters.glade.h:21
 msgid "Include"
-msgstr "Tartalmaz"
+msgstr "Bevesz"
 
 #: gtk/window_filters.glade.h:22
 msgid "Include selected sections only"
-msgstr "Csak a kiválasztott szekciók"
+msgstr "Csak a kiválasztott szekciók bevétele"
 
 #: gtk/window_filters.glade.h:23 gtk/rgfiltermanager.h:62
 msgid "Includes"
-msgstr "Tartalmazza"
+msgstr "Beveszi"
 
 #: gtk/window_filters.glade.h:26
 msgid "Invert All"
-msgstr "Kijelölés megfordítása"
+msgstr "Mindent megfordít"
 
 #: gtk/window_filters.glade.h:27
 msgid "Leave Unchanged"
@@ -2572,7 +2529,7 @@ msgstr "Árva"
 
 #: gtk/window_filters.glade.h:34
 msgid "Package Name"
-msgstr "Csomag Neve"
+msgstr "Csomag neve"
 
 #: gtk/window_filters.glade.h:35
 msgid "Packages that are new in the repository since that last \"Update\" "
@@ -2632,7 +2589,7 @@ msgstr "Helyettesített csomagok"
 
 #: gtk/window_filters.glade.h:51
 msgid "Reverse Dependencies"
-msgstr "Ellentétes függőségek"
+msgstr "Fordított függőségek"
 
 #: gtk/window_filters.glade.h:53
 msgid "Section Tree"
@@ -2660,7 +2617,7 @@ msgstr "Telepítendő vagy frissítendő"
 
 #: gtk/window_filters.glade.h:63
 msgid "Tree: "
-msgstr "Fa:"
+msgstr "Fa: "
 
 #: gtk/window_filters.glade.h:64
 msgid "Version Number"
@@ -2668,11 +2625,11 @@ msgstr "Verziószám"
 
 #: gtk/window_repositories.glade.h:3
 msgid "Distribution:"
-msgstr "Disztribúció"
+msgstr "Disztribúció:"
 
 #: gtk/window_repositories.glade.h:5
 msgid "Section(s):"
-msgstr "Szekció(k)"
+msgstr "Szekció(k):"
 
 #: gtk/window_repositories.glade.h:6
 msgid "URI:"
@@ -2700,20 +2657,19 @@ msgstr "rpm-src"
 
 #: gtk/window_rginstall_progress_msgs.glade.h:1
 msgid "Extra output was generated during Package Manager operation"
-msgstr "Extra kimenet készült a csomagkezelő művelet alatt"
+msgstr "A csomagkezelő művelet közben készült extra kimenet"
 
 #: gtk/window_zvtinstallprogress.glade.h:1
 msgid "<b>Terminal Output:</b>"
-msgstr ""
+msgstr "<b>Terminál kimenet:</b>"
 
-#: gtk/window_zvtinstallprogress.glade.h:2
-#, fuzzy
-msgid "Close this dialog after the changes have been executed successfully"
-msgstr "Kérdezzen hogy kilépsz-e a változtatások végrehajtása után"
+#: gtk/window_zvtinstallprogress.glade.h:3
+msgid "Close this dialog after the changes have been applied successfully"
+msgstr "Ezen ablak bezárása a változtatások sikeres alkalmazása után"
 
 #: data/synaptic.desktop.in.h:1
 msgid "Install, remove and upgrade software packages"
-msgstr "Csomagokat telepít, töröl és frissít"
+msgstr "Programcsomagokat telepít, töröl és frissít"
 
 #: data/synaptic.desktop.in.h:2
 msgid "Package Manager"
@@ -2726,272 +2682,100 @@ msgstr "Synaptic csomagkezelő"
 #: gtk/dialog_welcome.glade.h:1
 msgid ""
 "1. Select the package that you wish to install or remove\n"
-"2. Queue the action from the package control, package menu or context menu "
+"2. Mark the change in the package control area, package menu or context menu "
 "of the package\n"
-"3. Execute the queued change(s)"
+"3. Apply the marked change(s)"
 msgstr ""
+"1. Válaszd ki a telepítendő vagy törlendő csomago(ka)t\n"
+"2. Jelöld ki a műveletet a csomagműveleteknél, a Csomag menüvel vagy a "
+"csomag gyorsmenüjével\n"
+"3. Hajtsd végre a kijelölt változtatás(oka)t"
 
 #: gtk/dialog_welcome.glade.h:4
-msgid ""
-"<b>Note:</b> Modifications are not executed instantly. They will be queued "
-"and have to be executed afterwards:"
-msgstr ""
+msgid "<b>Note:</b> Modifications are not applied instantly."
+msgstr "<b>Megjegyzés:</b> A módosítások nem lesznek azonnal végrehajtva."
 
 #: gtk/dialog_welcome.glade.h:5
 msgid "Quick Introduction"
-msgstr ""
+msgstr "Gyors bevezetés"
 
 #: gtk/dialog_welcome.glade.h:6
 msgid "Show this dialog at startup"
-msgstr ""
+msgstr "Indításkor mutasd ezt az ablakot"
 
 #: gtk/dialog_welcome.glade.h:7
 msgid ""
 "The software on your system is organized in so called <i>packages</i>. The "
-"package manager enables you to remove, install or upgrade software packages."
+"package manager enables you to remove, install or upgrade software packages:"
 msgstr ""
+"A rendszereden lévő programok úgynevezett <i>csomagokba</i> vannak "
+"szervezve. A csomagkezelő lehetővé teszi a csomagok törlését, telepítését "
+"vagy frissítését"
 
 #: gtk/rgfiltermanager.h:70
-#, fuzzy
 msgid "Version number"
 msgstr "Verziószám"
 
 #. depends, predepends etc
 #: gtk/rgfiltermanager.h:74
-#, fuzzy
 msgid "Provided packages"
 msgstr "Rendelkezésre bocsátott csomagok"
 
 #. provides and name
 #: gtk/rgfiltermanager.h:75
-#, fuzzy
 msgid "Conflicting packages"
 msgstr "Ütköző csomagok"
 
 #. conflicts
 #: gtk/rgfiltermanager.h:76
-#, fuzzy
 msgid "Replaced packages"
 msgstr "Helyettesített csomagok"
 
 #. replaces/obsoletes
 #: gtk/rgfiltermanager.h:77
-#, fuzzy
 msgid "Suggestions or recommendations"
 msgstr "Javaslatok vagy ajánlatok"
 
 #. suggests/recommends
 #: gtk/rgfiltermanager.h:78
-#, fuzzy
 msgid "Reverse dependencies"
-msgstr "Ellentétes függőségek"
+msgstr "Fordított függőségek"
 
 #: gtk/rgiconlegend.cc:41 gtk/window_iconlegend.glade.h:2
 msgid "Icon Legend"
-msgstr ""
+msgstr "Ikonmagyarázat"
 
-#: gtk/rgmisc.cc:231
-#, fuzzy
-msgid "Queued for installation"
-msgstr ""
-"\n"
-"Amíg a telepítésre készülünk:\n"
-"\n"
+#: gtk/rgmisc.cc:230
+msgid "To be removed including configuration"
+msgstr "Konfigurációval együtt törlendő"
 
 #: gtk/rgmisc.cc:232
-#, fuzzy
-msgid "Queued for upgrade"
-msgstr "Minden lehetséges frissítés sorba állítása"
-
-#: gtk/rgmisc.cc:233
-#, fuzzy
-msgid "Queued for downgrade"
-msgstr "Visszafejlesztendő"
+msgid "Not installed (locked)"
+msgstr "Nincs telepítve (zárolva)"
 
 #: gtk/rgmisc.cc:234
-msgid "Queued for removal"
-msgstr ""
+msgid "Installed (update available)"
+msgstr "Telepítve (frissítés elérhető)"
 
 #: gtk/rgmisc.cc:235
-#, fuzzy
-msgid "Queued for removal including configuration"
-msgstr "Törlés konfigurációval együtt"
-
-#: gtk/rgmisc.cc:236
-#, fuzzy
-msgid "Not installed (available)"
-msgstr "Nincs telepítve"
-
-#: gtk/rgmisc.cc:237
-#, fuzzy
-msgid "Not installed (locked)"
-msgstr "Telepített fájlok"
-
-#: gtk/rgmisc.cc:239
-#, fuzzy
-msgid "Installed (update available)"
-msgstr "Rendelkezésre álló szűrők szerkesztése"
-
-#: gtk/rgmisc.cc:240
-#, fuzzy
 msgid "Installed (locked to the current version)"
-msgstr "Telepített fájlok"
-
-#: gtk/rgmisc.cc:242
-#, fuzzy
-msgid "Not installed (new in archive)"
-msgstr "Nincs telepítve (visszamaradt konfig)"
+msgstr "Telepítve (zárolva az aktuális verzióhoz)"
 
 #: gtk/window_iconlegend.glade.h:1
 msgid ""
 "<b>The following icons are used to indicate the current status of a package:"
 "</b>"
 msgstr ""
+"<b>A következő ikonokat használjuk a csomagok állapotának jelzésére:</b>"
 
-#~ msgid "_Update List"
-#~ msgstr "Lista frissítése"
+#~ msgid "Retrieved %-3lii of %-3li files at %4s B/s - %6s remaining\n"
+#~ msgstr "Elhozva %-3lii/%-3li fájlból, %4s B/s-el, hátravan: %6s\n"
 
-#~ msgid "_Update Package List"
-#~ msgstr "Csomaglista frissítése"
+#~ msgid "(stalled)\n"
+#~ msgstr "(beragadt)\n"
 
-#~ msgid "Version '%s' for '%s' was not found"
-#~ msgstr "%s verzió a(z) %s -ból(ből) nem található"
+#~ msgid "[Processing...] "
+#~ msgstr "[Feldolgozás...] "
 
-#~ msgid "<b>Column Order</b>"
-#~ msgstr "<b>Oszlopok sorrendje</b>"
-
-#, fuzzy
-#~ msgid "<b>Package Changes</b>"
-#~ msgstr "Csomag "
-
-#~ msgid "Columns and Colors"
-#~ msgstr "Oszlopok és színek"
-
-#~ msgid "Default remove: "
-#~ msgstr "Alapértelmezett törlés:"
-
-#~ msgid "Default system upgrade:"
-#~ msgstr "Alapértelmezett rendszerfrissítés:"
-
-#~ msgid "Delete obsolete packages from cache only"
-#~ msgstr "Régi csomagok törlése a gyorsítótárból"
-
-#~ msgid "Distribution Upgrade"
-#~ msgstr "Disztribúció Frissítés"
-
-#~ msgid ""
-#~ "The default upgrade method skips upgrades that introduce conflicts or "
-#~ "require new packages to be installed.\n"
-#~ "\n"
-#~ "Dist-upgrade attempts to resolve conflicts and to fulfill all "
-#~ "dependencies of upgrades in a smart way.\n"
-#~ "\n"
-#~ "<b>Note:</b> If you are upgrading to a new major operating system release "
-#~ "you have to say 'yes' here.\n"
-#~ "\n"
-#~ "This behavior can be changed in the preferences later."
-#~ msgstr ""
-#~ "Az alapértelmezett frissítési eljárás átugorja az ütközést okozó vagy új "
-#~ "csomagokat igénylő frissítéseket.\n"
-#~ "\n"
-#~ "A Disztrófrissítés megpróbálja okosan feloldani az ütközéseket és "
-#~ "teljesíteni a függőségeket. \n"
-#~ "\n"
-#~ "<b>Megjegyzés</b> Ha új operációs rendszer-kiadásra akarsz frissíteni, "
-#~ "mondj igent.\n"
-#~ "\n"
-#~ "Ez a viselkedés a tulajdonságoknál később megváltoztatható."
-
-#, fuzzy
-#~ msgid "%d package is set on hold\n"
-#~ msgid_plural "%d packages are set on hold\n"
-#~ msgstr[0] "Egy csomag megtartásra jelölve\n"
-#~ msgstr[1] "Egy csomag megtartásra jelölve\n"
-
-#, fuzzy
-#~ msgid "Will never be installed"
-#~ msgstr "%s telepítve van/lesz"
-
-#~ msgid "Fetching Files"
-#~ msgstr "Fájlok letöltése"
-
-#~ msgid "Completed all changes"
-#~ msgstr "Minden változtatás befejezve"
-
-#~ msgid "Close dialog after Package Manager is finished"
-#~ msgstr "Párbeszédablak bezárása a csomagkezelő befejeződésekor"
-
-#~ msgid "Package is installed."
-#~ msgstr "A csomag telepítve"
-
-#~ msgid "Package is not installed."
-#~ msgstr "A csomag nincs telepítve."
-
-#~ msgid "Package will be installed."
-#~ msgstr "A csomag telepítve lesz."
-
-#~ msgid "Package will be upgraded."
-#~ msgstr "A csomag frissítve lesz."
-
-#~ msgid "Package will be downgraded."
-#~ msgstr "A csomag vissza lesz fejlesztve."
-
-#~ msgid "Package will be uninstalled."
-#~ msgstr "A csomag el lesz távolítva."
-
-#~ msgid "Package is broken."
-#~ msgstr "A csomag törött."
-
-#~ msgid "Package is pinned."
-#~ msgstr "A csomag bezárva."
-
-#~ msgid "Package is new."
-#~ msgstr "A csomag új."
-
-#~ msgid "Broken dependencies."
-#~ msgstr "Törött függőségek"
-
-#~ msgid ""
-#~ "You have %i broken packages on your system\n"
-#~ "\n"
-#~ "Please try to fix them by visiting the \"Broken\" filter"
-#~ msgstr ""
-#~ "%i törött csomag van a rendszereden\n"
-#~ "\n"
-#~ "Kérlek próbáld meg javítani a \"Törött\" szűrővel"
-
-#~ msgid "%d packages are set on hold\n"
-#~ msgstr "%d csomag megtartásra jelölve\n"
-
-#~ msgid "%d packages are kept back and not upgraded\n"
-#~ msgstr "%d csomag visszatartva, nem lesz frissítve\n"
-
-#~ msgid "1 new package will be installed\n"
-#~ msgstr "1 új csomag lesz telepítve\n"
-
-#~ msgid "1 package will be upgraded\n"
-#~ msgstr "1 csomag lesz frissítve\n"
-
-#~ msgid "1 package will be removed\n"
-#~ msgstr "1 csomag lesz eltávolítva\n"
-
-#~ msgid "1 package will be <b>downgraded</b>\n"
-#~ msgstr "1 csomag </b>vissza</b> lesz fejlesztve.\n"
-
-#~ msgid "<b>Warning:</b> 1 essential package will be removed\n"
-#~ msgstr "<b>Figyelem:</b> 1 alapvető csomag kerül törlésre .\n"
-
-#~ msgid "Tried to dequeue a fetching object"
-#~ msgstr "Próbáltam rendezetlenné tenni egy letöltendő objektumot"
-
-#~ msgid "<b>Latest:</b>"
-#~ msgstr "<b>Legutóbbi verzió:</b>"
-
-#~ msgid "New:"
-#~ msgstr "Új:"
-
-#~ msgid "Keep:"
-#~ msgstr "Megtart:"
-
-#~ msgid "Held:"
-#~ msgstr "Megtartva:"
+#~ msgid "[Receiving...] "
+#~ msgstr "[Letöltés...] "

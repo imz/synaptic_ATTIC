@@ -2,7 +2,7 @@
 <omf>
   <resource>
     <creator>
-     allerlei@renates-welt.de (Sebastian Heinlein)
+     liste@pimpzkru.de (Sebastian Heinlein)
     </creator>
     <title>
      Synaptic Manual
@@ -10,10 +10,10 @@
     <date>
      2003-11-04
     </date>
-    <version identifier="0.1" date="2003-11-04" description="Alpha Release"/>
+    <version identifier="0.2" date="2004-03-05" description="Alpha Release"/>
     <subject category="System"/>
     <description>
-      Managing your software with Synaptic Package Manager
+      Install, remove and upgrade software
     </description>
     <type>
      user's guide
@@ -22,6 +22,6 @@
     <identifier url="file:/usr/share/gnome/help/synaptic/C/synaptic.xml"/>
     <language code="C"/>
     <relation seriesid="ee5521b0-0ec5-11d8-94fb-e4b0c60219b8"/>
-    <rights type="GNU FDL" license.version="1.1" license="http://www.gnu.org/licenses/fdl.html" holder="Connectiva S/A and Michael Vogt"/>
+    <rights type="GNU FDL" license.version="1.2" license="http://www.gnu.org/licenses/fdl.html" holder="Sebastian Heinlein"/>
   </resource>
 </omf>

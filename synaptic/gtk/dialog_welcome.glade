@@ -85,7 +85,7 @@
 		  <child>
 		    <widget class="GtkLabel" id="label2">
 		      <property name="visible">True</property>
-		      <property name="label" translatable="yes">The software on your system is organized in so called &lt;i&gt;packages&lt;/i&gt;. The package manager enables you to remove, install or upgrade software packages.</property>
+		      <property name="label" translatable="yes">The software on your system is organized in so called &lt;i&gt;packages&lt;/i&gt;. The package manager enables you to remove, install or upgrade software packages:</property>
 		      <property name="use_underline">False</property>
 		      <property name="use_markup">True</property>
 		      <property name="justify">GTK_JUSTIFY_LEFT</property>
@@ -106,7 +106,7 @@
 		  <child>
 		    <widget class="GtkLabel" id="label1">
 		      <property name="visible">True</property>
-		      <property name="label" translatable="yes">&lt;b&gt;Note:&lt;/b&gt; Modifications are not executed instantly. They will be queued and have to be executed afterwards:</property>
+		      <property name="label" translatable="yes">&lt;b&gt;Note:&lt;/b&gt; Modifications are not applied instantly.</property>
 		      <property name="use_underline">False</property>
 		      <property name="use_markup">True</property>
 		      <property name="justify">GTK_JUSTIFY_LEFT</property>
@@ -128,8 +128,8 @@
 		    <widget class="GtkLabel" id="label4">
 		      <property name="visible">True</property>
 		      <property name="label" translatable="yes">1. Select the package that you wish to install or remove
-2. Queue the action from the package control, package menu or context menu of the package
-3. Execute the queued change(s)</property>
+2. Mark the change in the package control area, package menu or context menu of the package
+3. Apply the marked change(s)</property>
 		      <property name="use_underline">False</property>
 		      <property name="use_markup">False</property>
 		      <property name="justify">GTK_JUSTIFY_LEFT</property>
@@ -161,7 +161,7 @@
 		  <property name="label" translatable="yes">Show this dialog at startup</property>
 		  <property name="use_underline">True</property>
 		  <property name="relief">GTK_RELIEF_NORMAL</property>
-		  <property name="active">True</property>
+		  <property name="active">False</property>
 		  <property name="inconsistent">False</property>
 		  <property name="draw_indicator">True</property>
 		</widget>

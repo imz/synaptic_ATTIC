@@ -53,7 +53,9 @@ all: omf html
 html: html_timestamp
 
 html_timestamp:  $(docname).xml
-	db2html -o  $(top_builddir)/doc/html $(docname).xml
+	mkdir -p $(top_builddir)/doc/html/$(lang)/figures
+	rm -f $(top_builddir)/doc/html/$(lang)/*html
+	xmlto html -o  $(top_builddir)/doc/html/$(lang)/ --skip-validation $(docname).xml
 	cp  $(top_srcdir)/help/C/figures/*  $(top_builddir)/doc/html/figures
 	touch html_timestamp
 

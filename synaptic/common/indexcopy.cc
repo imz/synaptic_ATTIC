@@ -48,7 +48,7 @@ bool IndexCopy::CopyPackages(string CDROM,string Name,vector<string> &List)
       struct stat Buf;
       if (stat(string(*I + GetFileName()).c_str(),&Buf) != 0 &&
 	  stat(string(*I + GetFileName() + ".gz").c_str(),&Buf) != 0)
-	 return _error->Errno("stat", _("Stat failed for %s"),
+	 return _error->Errno("stat", _("Failed to access %s"),
 			      string(*I + GetFileName()).c_str());
       TotalSize += Buf.st_size;
    }	
@@ -86,7 +86,7 @@ bool IndexCopy::CopyPackages(string CDROM,string Name,vector<string> &List)
 	 // Fork gzip
 	 int Process = fork();
 	 if (Process < 0)
-	    return _error->Errno("fork", _("Internal Error: Couldn't fork gzip. Please report."));
+	    return _error->Errno("fork", _("Unable to start helper process (gzip). Please report."));
 	 
 	 // The child
 	 if (Process == 0)

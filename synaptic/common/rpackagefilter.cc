@@ -422,6 +422,13 @@ bool RPatternPackageFilter::write(ofstream &out, string pad)
     
     for (int i = 0; i < count(); i++) {
 	getPattern(i, type, pat, excl);
+
+	// strip away '"' in string -> if not a pattern containing '"' will
+	// cause a segfault on startup
+	for(int i=0;i<pat.size();i++)
+	   if(pat[i]=='"')
+	      pat[i]=' ';
+
 	out << pad + "  " + TypeName[(int)type] + ";"
 	    << " \"" << pat << "\"; "  
 	    << (excl ? "true;" : "false;") << endl;

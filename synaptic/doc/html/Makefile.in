@@ -174,7 +174,7 @@ sysconfdir = @sysconfdir@
 target_alias = @target_alias@
 
 htmldir = $(datadir)/synaptic/html
-html_DATA = *.html
+html_DATA = C/*.html 
 
 htmlfiguresdir = $(htmldir)/figures
 htmlfigures_DATA = figures/*
@@ -246,7 +246,7 @@ top_distdir = ../..
 distdir = $(top_distdir)/$(PACKAGE)-$(VERSION)
 
 distdir: $(DISTFILES)
-	$(mkinstalldirs) $(distdir)/figures
+	$(mkinstalldirs) $(distdir)/C $(distdir)/figures
 	@srcdirstrip=`echo "$(srcdir)" | sed 's|.|.|g'`; \
 	topsrcdirstrip=`echo "$(top_srcdir)" | sed 's|.|.|g'`; \
 	list='$(DISTFILES)'; for file in $$list; do \

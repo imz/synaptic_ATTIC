@@ -25,6 +25,7 @@
 #define _RGZVTINSTALLPROGRESS_H_
 
 
+#include "rpackagemanager.h"
 #include "rgmainwindow.h"
 #include "rinstallprogress.h"
 #include "rgwindow.h"
@@ -51,7 +52,7 @@ public:
    RGZvtInstallProgress(RGMainWindow *main);
    ~RGZvtInstallProgress() {};
 
-   virtual pkgPackageManager::OrderResult start(pkgPackageManager *pm,
+   virtual pkgPackageManager::OrderResult start(RPackageManager *pm,
 		   				int numPackages = 0,
 						int totalPackages = 0);
 

@@ -1493,6 +1493,9 @@ bool RPackageLister::commitChanges(pkgAcquireStatus *status,
     if (!lockPackageCache(lock))
 	return false;
 
+    // Flush old errors
+    _error->Discard();
+
     pkgAcquire fetcher(status);
 
     assert(_cache->list() != NULL);
@@ -1507,8 +1510,10 @@ bool RPackageLister::commitChanges(pkgAcquireStatus *status,
     }
 #endif
     
-    _packMan = _system->CreatePM(_cache->deps());
-    if (!_packMan->GetArchives(&fetcher, _cache->list(), _records) ||
+    pkgPackageManager *PM;
+    PM = _system->CreatePM(_cache->deps());
+    RPackageManager rPM(PM);
+    if (!PM->GetArchives(&fetcher, _cache->list(), _records) ||
 	_error->PendingError())
 	goto gave_wood;
 
@@ -1523,6 +1528,7 @@ bool RPackageLister::commitChanges(pkgAcquireStatus *status,
 
 	// Print out errors
 	bool Failed = false;
+	int FailCount = 0;
 	for (pkgAcquire::ItemIterator I = fetcher.ItemsBegin();
 	     I != fetcher.ItemsEnd(); 
 	     I++) {
@@ -1541,12 +1547,20 @@ bool RPackageLister::commitChanges(pkgAcquireStatus *status,
 		Transient = true;
 		continue;
 	    }
-	    
+// HACK: just to limit the size of the dialog
+	    // failed
 	    string errm = (*I)->ErrorText;
 	    string tmp = _("Failed to fetch ") + (*I)->DescURI() + "\n"
 		"  " + errm;
 	   
 	    serverError = getServerErrorMessage(errm);
+
+	    FailCount++;
+	    if(FailCount == 6)
+	       tmp = _("More packages failed to fetch. Not displaying.\n") 
+		  + errm;
+	    if(FailCount > 6)
+	       continue;
 
 	    _error->Warning(tmp.c_str());
 	    Failed = true;
@@ -1559,11 +1573,13 @@ bool RPackageLister::commitChanges(pkgAcquireStatus *status,
 
 	if (Failed) {
 	    string message;
+	    stringstream out;
 	   
 	    if (Transient)
 		goto gave_wood;
 
-	    message = _("Some of the packages could not be retrieved from the server(s).\n");
+	    ioprintf(out,_("%i of the packages could not be retrieved from the server(s).\n"),FailCount);
+	    message = out.str();
 	    if (!serverError.empty())
 	       message += "("+serverError+")\n";
 	    message += _("Do you want to continue, ignoring these packages?");
@@ -1572,7 +1588,7 @@ bool RPackageLister::commitChanges(pkgAcquireStatus *status,
 		goto gave_wood;
 	}
 	// Try to deal with missing package files
-	if (Failed == true && _packMan->FixMissing() == false) {
+	if (Failed == true && PM->FixMissing() == false) {
 	    _error->Error(_("Unable to correct missing packages"));
 	    goto gave_wood;
 	}
@@ -1587,7 +1603,7 @@ bool RPackageLister::commitChanges(pkgAcquireStatus *status,
 	    
 	    _cache->releaseLock();
 
-	    pkgPackageManager::OrderResult Res = iprog->start(_packMan, numPackages, numPackagesTotal);
+	    pkgPackageManager::OrderResult Res = iprog->start(&rPM, numPackages, numPackagesTotal);
 	    if (Res == pkgPackageManager::Failed || _error->PendingError()) {
 		if (Transient == false)
 		    goto gave_wood;
@@ -1609,7 +1625,7 @@ bool RPackageLister::commitChanges(pkgAcquireStatus *status,
 	// Reload the fetcher object and loop again for media swapping
 	fetcher.Shutdown();
 
-	if (!_packMan->GetArchives(&fetcher, _cache->list(), _records))
+	if (!PM->GetArchives(&fetcher, _cache->list(), _records))
 	    goto gave_wood;
     }
 
@@ -1619,11 +1635,11 @@ bool RPackageLister::commitChanges(pkgAcquireStatus *status,
     // erase downloaded packages
     cleanPackageCache();
 
-    delete _packMan;
+    delete PM;
     return Ret;
     
 gave_wood:
-    delete _packMan;
+    delete PM;
     
     return false;
 }

@@ -105,12 +105,6 @@ RGFetchProgress::RGFetchProgress(RGWindow *win)
     gtk_tree_view_append_column(GTK_TREE_VIEW(_table), column);
 
 
-#if 0 // dead code rom old interface
-    _statusL = glade_xml_get_widget(_gladeXML, "label_status");
-    gtk_misc_set_alignment(GTK_MISC(_statusL), 0.0f, 0.0f);
-    gtk_label_set_justify(GTK_LABEL(_statusL), GTK_JUSTIFY_LEFT);
-#endif
-
     glade_xml_signal_connect_data(_gladeXML,
 				  "on_button_cancel_clicked",
 				  G_CALLBACK(stopDownload),
@@ -208,42 +202,12 @@ bool RGFetchProgress::Pulse(pkgAcquire *Owner)
 
     pkgAcquireStatus::Pulse(Owner);
 
-#if 0 // dead code from old dialog design (just for reference, will be deleted
-    string str;
-    if (CurrentCPS != 0) {
-	char buf[128];
-	long i;
-	unsigned long ETA = (unsigned long)((TotalBytes - CurrentBytes)/CurrentCPS);
-	i = CurrentItems < TotalItems ? CurrentItems+1 : CurrentItems;
-	snprintf(buf, sizeof(buf), _("Retrieved %-3lii of %-3li files at %4s B/s - %6s remaining\n"),
-		 i, TotalItems,
-		 SizeToStr(CurrentCPS).c_str(),
-		 TimeToStr(ETA).c_str());
-
-		str = string(buf);
-    } else {
-	str = _("(stalled)\n");
-    }
-#endif
-
     for (pkgAcquire::Worker *I = Owner->WorkersBegin(); I != 0;
 	 I = Owner->WorkerStep(I)) {
 
 	if (I->CurrentItem == 0) 
 	    continue;
 
-#if 0 // dead code from old dialog design
-	if (I->CurrentItem == 0) {
-	    if (!I->Status.empty()) {
-		str = str + '[' + I->Status.c_str() + "] ";
-	    } else {
-		str = str + _("[Processing...] ");
-	    }
-	    continue;
-	}
-	
-	str = str + _("[Receiving...] ");
-#endif
 	if (I->TotalSize > 0)
 	    updateStatus(*I->CurrentItem, 
 			 long(double(I->CurrentSize*100.0)/double(I->TotalSize)));
@@ -259,15 +223,11 @@ bool RGFetchProgress::Pulse(pkgAcquire *Owner)
     unsigned long ETA= (unsigned long)((TotalBytes - CurrentBytes)/CurrentCPS);
     long i = CurrentItems < TotalItems ? CurrentItems+1 : CurrentItems;
     gchar *s = g_strdup_printf(_("Retrieved %li of %li files at %s/s - %s remaining"),
-			       i, TotalItems,
+			       i-1, TotalItems,
 			       SizeToStr(CurrentCPS).c_str(),
 			       TimeToStr(ETA).c_str());
     gtk_progress_bar_set_text(GTK_PROGRESS_BAR(_mainProgressBar),s);
     g_free(s);
-
-#if 0 // dead code from old dialog design
-    gtk_label_set_text(GTK_LABEL(_statusL), (char*)str.c_str());
-#endif
 
     RGFlushInterface();
 

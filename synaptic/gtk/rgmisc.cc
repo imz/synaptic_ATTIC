@@ -27,18 +27,6 @@
 #include "i18n.h"
 #include "rgmisc.h"
 
-#if 0
-#include "alert.xpm"
-#include "keepM.xpm"
-#include "brokenM.xpm"
-#include "downgradeM.xpm"
-#include "heldM.xpm"
-#include "installM.xpm"
-#include "removeM.xpm"
-#include "upgradeM.xpm"
-#include "newM.xpm"
-#include "holdM.xpm"
-#endif
 
 
 
@@ -181,8 +169,15 @@ const char *utf8(const char *str)
 
 void RPackageStatus::initColors()
 {
+   //cout << "initColors" << endl;
+   if(_config->FindB("Synaptic::UseStatusColors", TRUE) == FALSE) {
+      for(int i=0;i< N_STATUS_COUNT; i++) 
+	 StatusColors[i] = NULL;
+      return;
+   }
+
     char *default_status_colors[N_STATUS_COUNT] = {
-	"#83a67f", "#eed680", "#ada7c8", "#c1665a", "#df421e",
+	"#83a67f", "#eed680", "#ada7c8", "#df421e", "#990000",
 	NULL, "#bab5ab", NULL, NULL, "#bab5ab", NULL, NULL
     };
     
@@ -209,7 +204,7 @@ void RPackageStatus::initPixbufs()
 	}
 	StatusPixbuf[i] = gdk_pixbuf_new_from_file(filename, NULL);
 	if(StatusPixbuf[i] == NULL)
-	    cerr << "Warning, failed to load: " << filename<< endl;
+	    std::cerr << "Warning, failed to load: " << filename<< std::endl;
 	g_free(filename);
     }
 }
@@ -228,18 +223,18 @@ void RPackageStatus::init()
     memcpy(PackageStatusShortString, status_short, sizeof(status_short));
 
     char *status_long[N_STATUS_COUNT] = {
-	_("Queued for installation"), 
-	_("Queued for upgrade"),
-	_("Queued for downgrade"), 
-	_("Queued for removal"),
-	_("Queued for removal including configuration"), 
-	_("Not installed (available)"), 
+	_("To be installed"), 
+	_("To be upgraded"),
+	_("To be downgraded"), 
+	_("To be removed"),
+	_("To be removed including configuration"), 
+	_("Not installed"), 
 	_("Not installed (locked)"),
 	_("Installed"),
 	_("Installed (update available)"),
 	_("Installed (locked to the current version)"),
 	_("Broken"),
-	_("Not installed (new in archive)") 
+	_("New in archive") 
     };
     memcpy(PackageStatusLongString, status_long, sizeof(status_long));
 
@@ -254,7 +249,8 @@ int RPackageStatus::getStatus(RPackage *pkg)
       RPackage::MarkedStatus s = pkg->getMarkedStatus();
       int other = pkg->getOtherStatus();
 
-      if (pkg->wouldBreak()) 
+      if (pkg->wouldBreak() || (xs == RPackage::SInstalledBroken && 
+				s != RPackage::MRemove) )
 	  return IsBroken;
       
       // FIXME: check is pkg is installed or not installed
@@ -264,7 +260,8 @@ int RPackageStatus::getStatus(RPackage *pkg)
       if(s == RPackage::MKeep && xs == RPackage::SInstalledOutdated)
 	  return InstalledOutdated;
 
-      if ((other & RPackage::ONew) && !(s == RPackage::MInstall)) 
+      if ( (other & RPackage::ONew) && (s != RPackage::MInstall)
+	   && !(xs != RPackage::SNotInstalled) )
 	  return IsNew;
 
       if (xs == RPackage::SInstalledUpdated && s == RPackage::MKeep) 
@@ -276,9 +273,24 @@ int RPackageStatus::getStatus(RPackage *pkg)
       if(s == RPackage::MRemove && (other & RPackage::OPurge))
 	  return ToPurge;
       
+//       cout << "marked status is: " << s << endl;
+//       cout << "package status is: " << xs << endl;
+//       cout << "other status is: " << other << endl;
+
       // the first marked states map to our states, but we don't
       // have Keep, so sub one
-      return (int)s-1;
+      int ret=(int)s;
+      ret--; 
+
+      // never return anything less than zero
+      if(ret<0) {
+	 cerr << "warning: bad state:" << endl
+	      << "marked status is: " << s << endl
+	      << "package status is: " << xs << endl
+	      << "other status is: " << other << endl;
+	 return 0;
+      } else
+	 return ret;
 }
 
 GdkColor *RPackageStatus::getBgColor(RPackage *pkg)
