@@ -12,6 +12,7 @@
   <property name="modal">False</property>
   <property name="resizable">False</property>
   <property name="destroy_with_parent">False</property>
+  <property name="icon">synaptic_mini.xpm</property>
   <property name="has_separator">False</property>
 
   <child internal-child="vbox">
@@ -277,6 +278,7 @@ Copyright (c) 2002,2003 Michael Vogt&lt;/span&gt;</property>
   <property name="modal">False</property>
   <property name="resizable">True</property>
   <property name="destroy_with_parent">False</property>
+  <property name="icon">synaptic_mini.xpm</property>
   <property name="has_separator">False</property>
 
   <child internal-child="vbox">
@@ -450,7 +452,9 @@ Anthony Fok &lt;anthony@thizlinux.com&gt; (Chinese)
 Alwin Meschede &lt;ameschede@gmx.de&gt; (German)
 Liu Songhe &lt;jackliu9999@hotmail.com&gt; (Chinese)
 Jean-Michel Poure &lt;jm@poure.com&gt; (French)
-Ossama Khayat &lt;okhayat@yahoo.com&gt; (Arabic)</property>
+Ossama Khayat &lt;okhayat@yahoo.com&gt; (Arabic)
+Slobodan Sredojevic &lt;ssl@uns.ns.ac.yu&gt; (Serbian)
+Kelemen Gábor &lt;kg0021@stud.unideb.hu&gt; (Hungarian)</property>
 			</widget>
 		      </child>
 		    </widget>

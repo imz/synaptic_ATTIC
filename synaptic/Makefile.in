@@ -82,6 +82,7 @@ INTLTOOL_CAVES_RULE = @INTLTOOL_CAVES_RULE@
 INTLTOOL_DESKTOP_RULE = @INTLTOOL_DESKTOP_RULE@
 INTLTOOL_DIRECTORY_RULE = @INTLTOOL_DIRECTORY_RULE@
 INTLTOOL_EXTRACT = @INTLTOOL_EXTRACT@
+INTLTOOL_KBD_RULE = @INTLTOOL_KBD_RULE@
 INTLTOOL_KEYS_RULE = @INTLTOOL_KEYS_RULE@
 INTLTOOL_MERGE = @INTLTOOL_MERGE@
 INTLTOOL_OAF_RULE = @INTLTOOL_OAF_RULE@
@@ -137,6 +138,8 @@ VTE_LIBS = @VTE_LIBS@
 WINGS = @WINGS@
 WINGS_HDRS = @WINGS_HDRS@
 WINGS_LIBS = @WINGS_LIBS@
+WITH_LUA_FALSE = @WITH_LUA_FALSE@
+WITH_LUA_TRUE = @WITH_LUA_TRUE@
 XGETTEXT = @XGETTEXT@
 ZVT_CFLAGS = @ZVT_CFLAGS@
 ZVT_LIBS = @ZVT_LIBS@
@@ -189,9 +192,9 @@ RECURSIVE_TARGETS = info-recursive dvi-recursive pdf-recursive \
 	check-recursive installcheck-recursive
 DIST_COMMON = README $(srcdir)/Makefile.in $(srcdir)/configure \
 	ABOUT-NLS AUTHORS COPYING ChangeLog INSTALL Makefile.am NEWS \
-	TODO acconfig.h acinclude.m4 aclocal.m4 config.guess \
-	config.h.in config.sub configure configure.in depcomp \
-	install-sh missing mkinstalldirs
+	TODO acinclude.m4 aclocal.m4 config.guess config.h.in \
+	config.sub configure configure.in depcomp install-sh missing \
+	mkinstalldirs
 DIST_SUBDIRS = $(SUBDIRS)
 all: config.h
 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
@@ -224,7 +227,7 @@ stamp-h1: $(srcdir)/config.h.in $(top_builddir)/config.status
 	@rm -f stamp-h1
 	cd $(top_builddir) && $(SHELL) ./config.status config.h
 
-$(srcdir)/config.h.in: @MAINTAINER_MODE_TRUE@ $(top_srcdir)/configure.in $(ACLOCAL_M4) $(top_srcdir)/acconfig.h
+$(srcdir)/config.h.in: @MAINTAINER_MODE_TRUE@ $(top_srcdir)/configure.in $(ACLOCAL_M4) 
 	cd $(top_srcdir) && $(AUTOHEADER)
 	touch $(srcdir)/config.h.in
 

@@ -21,10 +21,11 @@
  */
 
 #include "config.h"
-#include "i18n.h"
 
 #include "rgfindwindow.h"
-#include "gsynaptic.h"
+#include "rgmisc.h"
+
+#include "i18n.h"
 
 void RGFindWindow::show()
 {
@@ -68,15 +69,18 @@ int RGFindWindow::getSearchType()
 
 void RGFindWindow::doFind(GtkWindow *widget, void *data)
 {
-  //cout << "RGFindWindow::doFind()"<<endl;
-  RGFindWindow *me = (RGFindWindow*)data;
+    //cout << "RGFindWindow::doFind()"<<endl;
+    RGFindWindow *me = (RGFindWindow*)data;
 
-  GtkWidget *combo = glade_xml_get_widget(me->_gladeXML, "combo_find");
-  GtkWidget *entry = glade_xml_get_widget(me->_gladeXML, "entry_find");
-  const gchar *str = gtk_entry_get_text(GTK_ENTRY(entry));
+    GtkWidget *combo = glade_xml_get_widget(me->_gladeXML, "combo_find");
+    GtkWidget *entry = glade_xml_get_widget(me->_gladeXML, "entry_find");
+    const gchar *str = gtk_entry_get_text(GTK_ENTRY(entry));
   
-  me->_prevSearches = g_list_prepend(me->_prevSearches,g_strdup(str));
-  gtk_combo_set_popdown_strings (GTK_COMBO(combo), me->_prevSearches);
+    me->_prevSearches = g_list_prepend(me->_prevSearches,g_strdup(str));
+    gtk_combo_set_popdown_strings (GTK_COMBO(combo), me->_prevSearches);
+
+    doClose(widget, data);
+    gtk_dialog_response(GTK_DIALOG(((RGFindWindow*)data)->window()),GTK_RESPONSE_OK);
 }
 
 void RGFindWindow::doClose(GtkWindow *widget, void *data)

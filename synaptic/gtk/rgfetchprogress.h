@@ -42,7 +42,8 @@ class RGFetchProgress : public pkgAcquireStatus, public RGGladeWindow
    GtkListStore *_tableListStore;
    set<int> _tableRows;
 
-   GtkWidget *_statusL;
+   GtkWidget *_mainProgressBar; // GtkProgressBar
+
    PangoLayout *_layout;
    GtkTreeViewColumn *_statusColumn; 
    GtkCellRenderer *_statusRenderer; 

@@ -33,8 +33,6 @@
 #include <map>
 #include <sstream>
 
-#include "i18n.h"
-
 #include "rpackagelister.h"
 #include "rpackagecache.h"
 #include "rpackagefilter.h"
@@ -55,12 +53,16 @@
 #include <apt-pkg/pkgsystem.h>
 #include <apt-pkg/strutl.h>
 
+#ifdef WITH_LUA
+#include <apt-pkg/luaiface.h>
+#endif
+
 #include <algorithm>
 #include <cstdio>
 
-#ifndef HAVE_RPM
 #include "sections_trans.h"
-#endif
+
+#include "i18n.h"
 
 using namespace std;
 
@@ -409,11 +411,13 @@ bool RPackageLister::openCache(bool reset)
     if (reset) {
 	if (!_cache->reset(*_progMeter)) {
 	    _progMeter->Done();
+	    _cacheValid = false;
 	    return false;
 	}
     } else {
 	if (!_cache->open(*_progMeter)) {
 	    _progMeter->Done();
+	    _cacheValid = false;
 	    return false;
         }
     }
@@ -422,10 +426,13 @@ bool RPackageLister::openCache(bool reset)
     pkgDepCache *deps = _cache->deps();
 
     // Apply corrections for half-installed packages
-    if (pkgApplyStatus(*deps) == false)
+    if (pkgApplyStatus(*deps) == false) {
+	_cacheValid = false;
 	return 	_error->Error(_("Internal error recalculating dependency cache. Please report."));
-    
+    }
+
     if (_error->PendingError()) {
+	_cacheValid = false;
 	return 	_error->Error(_("Internal error recalculating dependency cache. Please report."));
     }
 
@@ -442,6 +449,7 @@ bool RPackageLister::openCache(bool reset)
 
     _records = new pkgRecords(*deps);
     if (_error->PendingError()) {
+	_cacheValid = false;
 	return 	_error->Error(_("Internal error recalculating dependency cache. Please report."));
     }
     
@@ -572,6 +580,7 @@ bool RPackageLister::openCache(bool reset)
 
     firstRun=false;
 
+    _cacheValid = true;
     return true;
 }
 
@@ -636,12 +645,11 @@ bool RPackageLister::fixBroken()
     if (_cache->deps()->BrokenCount() == 0)
 	return true;
     
-    pkgProblemResolver Fix(_cache->deps());
-    
-    Fix.InstallProtect();
-    if (Fix.Resolve(true) == false)
-	return false;
-    
+    if (pkgFixBroken(*_cache->deps()) == false || _cache->deps()->BrokenCount() != 0)
+        return _error->Error(_("Unable to correct dependencies"));
+    if (pkgMinimizeUpgrade(*_cache->deps()) == false)
+        return _error->Error(_("Unable to minimize the upgrade set"));
+
     reapplyFilter();
 
     return true;
@@ -653,6 +661,12 @@ bool RPackageLister::upgrade()
     if (pkgAllUpgrade(*_cache->deps()) == false) {
 	return _error->Error(_("Internal Error, AllUpgrade broke stuff. Please report."));
     }
+
+#ifdef WITH_LUA
+   _lua->SetDepCache(_cache->deps());
+   _lua->RunScripts("Scripts::Synaptic::Upgrade", false);
+   _lua->ResetCaches();
+#endif
     
     //reapplyFilter();
     notifyChange(NULL);
@@ -668,6 +682,12 @@ bool RPackageLister::distUpgrade()
 	cout << _("dist upgrade Failed") << endl;
 	return false;
     }
+
+#ifdef WITH_LUA
+   _lua->SetDepCache(_cache->deps());
+   _lua->RunScripts("Scripts::Synaptic::DistUpgrade", false);
+   _lua->ResetCaches();
+#endif
     
     //reapplyFilter();
     notifyChange(NULL);    
@@ -679,7 +699,7 @@ bool RPackageLister::distUpgrade()
 
 void RPackageLister::setFilter(int index)
 {
-    if (index < 0 || index >= _filterL.size() ) {
+    if (index < 0 || (unsigned int)index >= _filterL.size() ) {
 	_filter = NULL;
     } else {
 	_filter = findFilter(index);
@@ -772,49 +792,12 @@ void RPackageLister::addFilteredPackageToTree(tree<pkgPair>& pkgTree,
 	    string sec = pkg->section();
 	    if(itermap.find(sec) == itermap.end()) {
 #ifndef HAVE_RPM
+		string str = trans_section(sec);
+#else
 		string str = sec;
-		string suffix;
-		// baaaa, special case for stupid debian package naming
-		if(str=="non-US/non-free") {
-		    str = _("Non US");
-		    suffix = _("non free");
-		}
-		if(str=="non-US/non-free") {
-		    str = _("Non US");
-		    suffix = _("contrib");
-		}
-		// if we have something like "contrib/web", make "contrib" the 
-		// suffix and translate it independently
-		unsigned int n = str.find("/");
-		if(n != string::npos) {
-		    suffix = str.substr(0,n);
-		    str.erase(0,n+1);
-		    for(int i=0;transtable[i][0] != NULL;i++) {
-			if(suffix == transtable[i][0]) {
-			    suffix = _(transtable[i][1]);
-			    break;
-			}
-		    }
-		}
-		for(int i=0;transtable[i][0] != NULL;i++) {
-		    if(str == transtable[i][0]) {
-			str = _(transtable[i][1]);
-			break;
-		    }
-		}
-		// if we have a suffix, add it
-		if(!suffix.empty()) {
-		    ostringstream out;
-		    ioprintf(out, _("%s <i>(%s)</i>"),
-			     str.c_str(), suffix.c_str());
-		    str = out.str();
-		}
+#endif
 		it = _treeOrganizer.insert(_treeOrganizer.begin(), 
 					   pkgPair(str,NULL));
-#else
-		it = _treeOrganizer.insert(_treeOrganizer.begin(), 
-					   pkgPair(sec,NULL));
-#endif		
 		itermap[sec] = it;
 	    } else {
 		it = itermap[sec];
@@ -1106,8 +1089,6 @@ void RPackageLister::getSummary(int &held, int &kept, int &essential,
 	    held++;
 	    break;
 	case RPackage::MBroken:
-	case RPackage::MPinned:
-	case RPackage::MNew:
 	    /* nothing */
 	    break;
 	}
@@ -1292,8 +1273,6 @@ void RPackageLister::restoreState(RPackageLister::pkgState &state)
 		deps->MarkKeep(*(pkg->package()), false);
 		break;
 	    case RPackage::MBroken:
-	    case RPackage::MPinned:
-	    case RPackage::MNew:
 		/* nothing */
 		break;
 	    }
@@ -1345,8 +1324,6 @@ bool RPackageLister::getStateChanges(RPackageLister::pkgState &state,
 		break;
 
 	    case RPackage::MBroken:
-	    case RPackage::MPinned:
-	    case RPackage::MNew:
 		/* nothing */
 		break;
 	    }
@@ -1411,8 +1388,6 @@ void RPackageLister::getDetailedSummary(vector<RPackage*> &held,
       held.push_back(pkg);
       break;
     case RPackage::MBroken:
-    case RPackage::MPinned:
-    case RPackage::MNew:
 	/* nothing */
 	break;
     }
@@ -1510,6 +1485,7 @@ bool RPackageLister::commitChanges(pkgAcquireStatus *status,
 {
     FileFd lock;
     int numPackages = 0;
+    int numPackagesTotal = 0;
     bool Ret = true;
     
     _updating = true;
@@ -1550,6 +1526,9 @@ bool RPackageLister::commitChanges(pkgAcquireStatus *status,
 	for (pkgAcquire::ItemIterator I = fetcher.ItemsBegin();
 	     I != fetcher.ItemsEnd(); 
 	     I++) {
+
+	    numPackagesTotal += 1;
+
 	    if ((*I)->Status == pkgAcquire::Item::StatDone &&
 		(*I)->Complete)
 	    {
@@ -1608,7 +1587,7 @@ bool RPackageLister::commitChanges(pkgAcquireStatus *status,
 	    
 	    _cache->releaseLock();
 
-	    pkgPackageManager::OrderResult Res = iprog->start(_packMan, numPackages);
+	    pkgPackageManager::OrderResult Res = iprog->start(_packMan, numPackages, numPackagesTotal);
 	    if (Res == pkgPackageManager::Failed || _error->PendingError()) {
 		if (Transient == false)
 		    goto gave_wood;
@@ -1727,8 +1706,6 @@ bool RPackageLister::writeSelections(ostream &out, bool fullState)
 	    case RPackage::MKeep:
 	    case RPackage::MDowngrade:
 	    case RPackage::MBroken:
-	    case RPackage::MPinned:
-	    case RPackage::MNew:
 		/* nothing */
 		break;
 	}
@@ -1738,6 +1715,10 @@ bool RPackageLister::writeSelections(ostream &out, bool fullState)
 	    case RPackage::SInstalledUpdated:
 	    case RPackage::SInstalledOutdated:
 		out << _packages[i]->name() << "   \t   install" << endl;
+		break;
+	    case RPackage::SInstalledBroken:
+	    case RPackage::SNotInstalled:
+		/* nothing */
 		break;
 	    }
 	}

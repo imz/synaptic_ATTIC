@@ -31,9 +31,10 @@
 
 #ifdef HAVE_TERMINAL
 
-class RGZvtInstallProgress : public RInstallProgress, public RGWindow {
+class RGZvtInstallProgress : public RInstallProgress, public RGGladeWindow {
   GtkWidget *_term;
   GtkWidget *_statusL;
+  GtkWidget *_closeB;
   GtkWidget *_closeOnF;
   bool updateFinished;
   pkgPackageManager::OrderResult res;
@@ -51,7 +52,8 @@ public:
    ~RGZvtInstallProgress() {};
 
    virtual pkgPackageManager::OrderResult start(pkgPackageManager *pm,
-		   				int numPackages = 0);
+		   				int numPackages = 0,
+						int totalPackages = 0);
 
 };
 

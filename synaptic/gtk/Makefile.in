@@ -80,6 +80,7 @@ INTLTOOL_CAVES_RULE = @INTLTOOL_CAVES_RULE@
 INTLTOOL_DESKTOP_RULE = @INTLTOOL_DESKTOP_RULE@
 INTLTOOL_DIRECTORY_RULE = @INTLTOOL_DIRECTORY_RULE@
 INTLTOOL_EXTRACT = @INTLTOOL_EXTRACT@
+INTLTOOL_KBD_RULE = @INTLTOOL_KBD_RULE@
 INTLTOOL_KEYS_RULE = @INTLTOOL_KEYS_RULE@
 INTLTOOL_MERGE = @INTLTOOL_MERGE@
 INTLTOOL_OAF_RULE = @INTLTOOL_OAF_RULE@
@@ -135,6 +136,8 @@ VTE_LIBS = @VTE_LIBS@
 WINGS = @WINGS@
 WINGS_HDRS = @WINGS_HDRS@
 WINGS_LIBS = @WINGS_LIBS@
+WITH_LUA_FALSE = @WITH_LUA_FALSE@
+WITH_LUA_TRUE = @WITH_LUA_TRUE@
 XGETTEXT = @XGETTEXT@
 ZVT_CFLAGS = @ZVT_CFLAGS@
 ZVT_LIBS = @ZVT_LIBS@
@@ -176,6 +179,7 @@ INCLUDES = -I${top_srcdir}/common \
 	-DPACKAGE_DATA_DIR=\""$(datadir)"\" \
 	-DPACKAGE_LOCALE_DIR=\""$(prefix)/$(DATADIRNAME)/locale"\" \
 	-DSYNAPTIC_GLADEDIR=\""$(datadir)/synaptic/glade/"\" \
+	-DSYNAPTIC_PIXMAPDIR=\""$(datadir)/synaptic/pixmaps/"\" \
 	@PACKAGE_CFLAGS@ @ZVT_CFLAGS@ @VTE_CFLAGS@ $(LIBTAGCOLL_CFLAGS)
 
 
@@ -191,23 +195,26 @@ synaptic_LDADD = \
 
 
 glade_DATA = \
-        window_main_vpaned.glade window_main_vpaned.glade.strings \
-        window_main_hpaned.glade window_main_hpaned.glade.strings \
-	window_find.glade window_find.glade.strings \
-	window_filters.glade window_filters.glade.strings \
-	window_fetch.glade window_fetch.glade.strings \
-	window_about.glade window_about.glade.strings \
-	window_changes.glade window_changes.glade.strings \
-	window_preferences.glade window_preferences.glade.strings \
-	window_disc_name.glade window_disc_name.glade.strings \
-	window_rginstall_progress.glade window_rginstall_progress.glade.strings \
-	window_rginstall_progress_msgs.glade window_rginstall_progress_msgs.glade.strings \
-	window_setopt.glade window_setopt.glade.strings \
-	window_summary.glade window_summary.glade.strings \
-	window_repositories.glade window_repositories.glade.strings \
-	dialog_quit.glade dialog_quit.glade.strings \
-	dialog_upgrade.glade dialog_upgrade.glade.strings \
-	dialog_locales_warning.glade dialog_locales_warning.glade.strings
+	window_about.glade  \
+	window_changes.glade  \
+	window_disc_name.glade  \
+	window_fetch.glade  \
+	window_find.glade  \
+	window_filters.glade \
+	window_iconlegend.glade \
+	dialog_locales_warning.glade \
+        window_main_vpaned.glade \
+        window_main_hpaned.glade \
+	window_preferences.glade \
+	dialog_quit.glade  \
+	window_rginstall_progress.glade \
+	window_rginstall_progress_msgs.glade \
+	window_repositories.glade \
+	window_setopt.glade  \
+	window_summary.glade \
+	dialog_upgrade.glade \
+	dialog_welcome.glade \
+	window_zvtinstallprogress.glade 
 
 
 EXTRA_DIST = $(glade_DATA) 
@@ -233,6 +240,10 @@ synaptic_SOURCES = \
 	rgfiltermanager.h\
 	rgfindwindow.cc\
 	rgfindwindow.h\
+	rgiconlegend.h\
+	rgiconlegend.cc\
+	rgmisc.cc\
+	rgmisc.h\
 	rgsetoptwindow.cc\
 	rgsetoptwindow.h\
 	rgdummyinstallprogress.cc\
@@ -241,6 +252,8 @@ synaptic_SOURCES = \
 	rgzvtinstallprogress.h\
 	rginstallprogress.cc\
 	rginstallprogress.h\
+	rgslideshow.cc\
+	rgslideshow.h\
 	rgcdscanner.cc\
 	rgcdscanner.h\
 	rgmainwindow.cc\
@@ -275,13 +288,14 @@ am_synaptic_OBJECTS = gsynaptic.$(OBJEXT) gtkpkgtree.$(OBJEXT) \
 	rgaboutpanel.$(OBJEXT) rgcacheprogress.$(OBJEXT) \
 	rgpreferenceswindow.$(OBJEXT) rgfetchprogress.$(OBJEXT) \
 	rgfiltermanager.$(OBJEXT) rgfindwindow.$(OBJEXT) \
+	rgiconlegend.$(OBJEXT) rgmisc.$(OBJEXT) \
 	rgsetoptwindow.$(OBJEXT) rgdummyinstallprogress.$(OBJEXT) \
 	rgzvtinstallprogress.$(OBJEXT) rginstallprogress.$(OBJEXT) \
-	rgcdscanner.$(OBJEXT) rgmainwindow.$(OBJEXT) \
-	rgrepositorywin.$(OBJEXT) rgvendorswindow.$(OBJEXT) \
-	rgsummarywindow.$(OBJEXT) rgchangeswindow.$(OBJEXT) \
-	rguserdialog.$(OBJEXT) rgwindow.$(OBJEXT) \
-	rggladewindow.$(OBJEXT)
+	rgslideshow.$(OBJEXT) rgcdscanner.$(OBJEXT) \
+	rgmainwindow.$(OBJEXT) rgrepositorywin.$(OBJEXT) \
+	rgvendorswindow.$(OBJEXT) rgsummarywindow.$(OBJEXT) \
+	rgchangeswindow.$(OBJEXT) rguserdialog.$(OBJEXT) \
+	rgwindow.$(OBJEXT) rggladewindow.$(OBJEXT)
 synaptic_OBJECTS = $(am_synaptic_OBJECTS)
 synaptic_DEPENDENCIES = ${top_builddir}/common/libsynaptic.a
 synaptic_LDFLAGS =
@@ -301,11 +315,13 @@ am__depfiles_maybe = depfiles
 @AMDEP_TRUE@	./$(DEPDIR)/rgfiltermanager.Po \
 @AMDEP_TRUE@	./$(DEPDIR)/rgfindwindow.Po \
 @AMDEP_TRUE@	./$(DEPDIR)/rggladewindow.Po \
+@AMDEP_TRUE@	./$(DEPDIR)/rgiconlegend.Po \
 @AMDEP_TRUE@	./$(DEPDIR)/rginstallprogress.Po \
-@AMDEP_TRUE@	./$(DEPDIR)/rgmainwindow.Po \
+@AMDEP_TRUE@	./$(DEPDIR)/rgmainwindow.Po ./$(DEPDIR)/rgmisc.Po \
 @AMDEP_TRUE@	./$(DEPDIR)/rgpreferenceswindow.Po \
 @AMDEP_TRUE@	./$(DEPDIR)/rgrepositorywin.Po \
 @AMDEP_TRUE@	./$(DEPDIR)/rgsetoptwindow.Po \
+@AMDEP_TRUE@	./$(DEPDIR)/rgslideshow.Po \
 @AMDEP_TRUE@	./$(DEPDIR)/rgsummarywindow.Po \
 @AMDEP_TRUE@	./$(DEPDIR)/rguserdialog.Po \
 @AMDEP_TRUE@	./$(DEPDIR)/rgvendorswindow.Po \
@@ -382,11 +398,14 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rgfiltermanager.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rgfindwindow.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rggladewindow.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rgiconlegend.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rginstallprogress.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rgmainwindow.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rgmisc.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rgpreferenceswindow.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rgrepositorywin.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rgsetoptwindow.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rgslideshow.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rgsummarywindow.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rguserdialog.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rgvendorswindow.Po@am__quote@

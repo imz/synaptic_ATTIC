@@ -80,6 +80,7 @@ INTLTOOL_CAVES_RULE = @INTLTOOL_CAVES_RULE@
 INTLTOOL_DESKTOP_RULE = @INTLTOOL_DESKTOP_RULE@
 INTLTOOL_DIRECTORY_RULE = @INTLTOOL_DIRECTORY_RULE@
 INTLTOOL_EXTRACT = @INTLTOOL_EXTRACT@
+INTLTOOL_KBD_RULE = @INTLTOOL_KBD_RULE@
 INTLTOOL_KEYS_RULE = @INTLTOOL_KEYS_RULE@
 INTLTOOL_MERGE = @INTLTOOL_MERGE@
 INTLTOOL_OAF_RULE = @INTLTOOL_OAF_RULE@
@@ -135,6 +136,8 @@ VTE_LIBS = @VTE_LIBS@
 WINGS = @WINGS@
 WINGS_HDRS = @WINGS_HDRS@
 WINGS_LIBS = @WINGS_LIBS@
+WITH_LUA_FALSE = @WITH_LUA_FALSE@
+WITH_LUA_TRUE = @WITH_LUA_TRUE@
 XGETTEXT = @XGETTEXT@
 ZVT_CFLAGS = @ZVT_CFLAGS@
 ZVT_LIBS = @ZVT_LIBS@
@@ -211,7 +214,9 @@ libsynaptic_a_SOURCES = \
 	tree.hh \
 	rtagcollfilter.cc \
 	rtagcollfilter.h \
-	ruserdialog.h 
+	ruserdialog.h \
+	sections_trans.h \
+	sections_trans.cc 
 
 subdir = common
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
@@ -229,7 +234,7 @@ am_libsynaptic_a_OBJECTS = rconfiguration.$(OBJEXT) \
 	indexcopy.$(OBJEXT) rpmindexcopy.$(OBJEXT) \
 	raptoptions.$(OBJEXT) rsources.$(OBJEXT) rcacheactor.$(OBJEXT) \
 	rpackagelistactor.$(OBJEXT) rtagcollbuilder.$(OBJEXT) \
-	rtagcollfilter.$(OBJEXT)
+	rtagcollfilter.$(OBJEXT) sections_trans.$(OBJEXT)
 libsynaptic_a_OBJECTS = $(am_libsynaptic_a_OBJECTS)
 
 DEFAULT_INCLUDES =  -I. -I$(srcdir) -I$(top_builddir)
@@ -248,7 +253,8 @@ am__depfiles_maybe = depfiles
 @AMDEP_TRUE@	./$(DEPDIR)/rpackagelister.Po \
 @AMDEP_TRUE@	./$(DEPDIR)/rpmindexcopy.Po ./$(DEPDIR)/rsources.Po \
 @AMDEP_TRUE@	./$(DEPDIR)/rtagcollbuilder.Po \
-@AMDEP_TRUE@	./$(DEPDIR)/rtagcollfilter.Po
+@AMDEP_TRUE@	./$(DEPDIR)/rtagcollfilter.Po \
+@AMDEP_TRUE@	./$(DEPDIR)/sections_trans.Po
 CXXCOMPILE = $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \
 	$(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)
 CXXLD = $(CXX)
@@ -302,6 +308,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rsources.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rtagcollbuilder.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rtagcollfilter.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sections_trans.Po@am__quote@
 
 .cc.o:
 @am__fastdepCXX_TRUE@	if $(CXXCOMPILE) -MT $@ -MD -MP -MF "$(DEPDIR)/$*.Tpo" \

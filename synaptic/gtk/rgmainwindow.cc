@@ -25,7 +25,6 @@
 
 
 #include "config.h"
-#include "i18n.h"
 
 
 #include <cassert>
@@ -64,21 +63,13 @@
 #include "rginstallprogress.h"
 #include "rgdummyinstallprogress.h"
 #include "rgzvtinstallprogress.h"
-#include "gsynaptic.h"
+#include "rgmisc.h"
+#include "sections_trans.h"
 
 // icons and pixmaps
-#include "alert.xpm"
-#include "keepM.xpm"
-#include "brokenM.xpm"
-#include "downgradeM.xpm"
-#include "heldM.xpm"
-#include "installM.xpm"
-#include "removeM.xpm"
-#include "upgradeM.xpm"
-#include "newM.xpm"
-#include "holdM.xpm"
 #include "synaptic_mini.xpm"
 
+#include "i18n.h"
 
 static char *ImportanceNames[] = {
     _("Unknown"),
@@ -99,10 +90,6 @@ enum {DEP_NAME_COLUMN,             /* text */
       DEP_IS_NOT_AVAILABLE_COLOR,  /* foreground */
       DEP_PKG_INFO};               /* additional info (install 
 				      not installed) as text */
-
-GdkPixbuf *StatusPixbuf[13];
-GdkColor *StatusColors[13];
-
 
 #define SELECTED_MENU_INDEX(popup) \
     (int)gtk_object_get_data(GTK_OBJECT(gtk_menu_get_active(GTK_MENU(gtk_option_menu_get_menu(GTK_OPTION_MENU(popup))))), "index")
@@ -285,6 +272,16 @@ void RGMainWindow::showAboutPanel(GtkWidget *self, void *data)
     win->_aboutPanel->show();
 }
 
+void RGMainWindow::showIconLegendPanel(GtkWidget *self, void *data)
+{
+    RGMainWindow *me = (RGMainWindow*)data;
+    
+    if (me->_iconLegendPanel == NULL)
+	me->_iconLegendPanel = new RGIconLegendPanel(me);
+    me->_iconLegendPanel->show();
+}
+
+
 void RGMainWindow::helpAction(GtkWidget *self, void *data)
 {
     RGMainWindow *me = (RGMainWindow*)data;
@@ -295,11 +292,14 @@ void RGMainWindow::helpAction(GtkWidget *self, void *data)
 	system("yelp ghelp:synaptic &");
     else if(is_binary_in_path("mozilla"))
 	system("mozilla " PACKAGE_DATA_DIR "/synaptic/html/index.html &");
+    else if(is_binary_in_path("konqueror")) 
+	system("konqueror " PACKAGE_DATA_DIR "/synaptic/html/index.html &");
     else
 	me->_userDialog->error(_("No help viewer is installed\n\n"
-				"You need either the gnome viewer 'yelp' "
-				"or the 'mozilla' browser to view the"
-				" synaptic manual.\n\n"
+				"You need either the gnome viewer 'yelp', "
+				"'konquoror' or the 'mozilla' browser to "
+				"view the "
+				"synaptic manual.\n\n"
 				"Alternativly you can open the man page "
 				"with 'man synaptic' from the "
 				"command line or view the html version located "
@@ -539,10 +539,10 @@ void RGMainWindow::pkgReconfigureClicked(GtkWidget *self, void *data)
     //cout << "RGMainWindow::pkgReconfigureClicked()" << endl;
 
     RPackage *pkg=NULL;
-    pkg = me->_lister->getElement("libgnome-perl");
+    pkg = me->_lister->getElement("libgnome2-perl");
     if(pkg && pkg->installedVersion() == NULL) {
-	me->_userDialog->error(_("No libgnome-perl installed\n\n"
-				 "You have to install libgnome-perl to "
+	me->_userDialog->error(_("No libgnome2-perl installed\n\n"
+				 "You have to install libgnome2-perl to "
 				 "use dpkg-reconfigure with synaptic"));
 	return;
     }
@@ -1032,7 +1032,6 @@ void RGMainWindow::updatePackageStatus(RPackage *pkg)
 	return;
     }
 
-    bool installed = FALSE;
     RPackage::PackageStatus status = pkg->getStatus();
     RPackage::MarkedStatus mstatus = pkg->getMarkedStatus();
     int other = pkg->getOtherStatus();
@@ -1048,7 +1047,6 @@ void RGMainWindow::updatePackageStatus(RPackage *pkg)
 	gtk_widget_set_sensitive(_purgeM, TRUE);
 	gtk_widget_set_sensitive(_pinM, TRUE);
 	gtk_widget_set_sensitive(_pkgHelp, TRUE);
-	installed = TRUE;
 	break;
 	
      case RPackage::SInstalledOutdated:
@@ -1061,7 +1059,6 @@ void RGMainWindow::updatePackageStatus(RPackage *pkg)
 	gtk_widget_set_sensitive(_remove_w_depsM, TRUE);
 	gtk_widget_set_sensitive(_pinM, TRUE);
 	gtk_widget_set_sensitive(_pkgHelp, TRUE);
-	installed = TRUE;
 	break;
 	
      case RPackage::SInstalledBroken:
@@ -1074,7 +1071,6 @@ void RGMainWindow::updatePackageStatus(RPackage *pkg)
 	gtk_widget_set_sensitive(_remove_w_depsM, TRUE);
 	gtk_widget_set_sensitive(_pinM, FALSE);
 	gtk_widget_set_sensitive(_pkgHelp, TRUE);
-	installed = TRUE;
 	break;
 	
      case RPackage::SNotInstalled:
@@ -1100,48 +1096,26 @@ void RGMainWindow::updatePackageStatus(RPackage *pkg)
     }
 
     _currentB = NULL;
+    setLabel(_gladeXML,"label_state", _(RPackageStatus::pkgStatus.getLongStatusString(pkg)));
     switch (mstatus) {
      case RPackage::MHeld:
      case RPackage::MKeep:
 	_currentB = _actionB[0];
-	if (installed) 
-	    setLabel(_gladeXML,"label_state", _("Package is installed."));
-	else
-	    setLabel(_gladeXML,"label_state", _("Package is not installed."));
 	break;
 
      case RPackage::MInstall:
-	setLabel(_gladeXML,"label_state", _("Package will be installed."));
-	_currentB = _actionB[1];
-	break;
-	
      case RPackage::MUpgrade:
 	_currentB = _actionB[1];
-	setLabel(_gladeXML,"label_state", _("Package will be upgraded."));
-	break;
-	
-     case RPackage::MDowngrade:
 	gtk_widget_set_sensitive(_actionB[1], TRUE);
-	_currentB = _actionB[1];
-	setLabel(_gladeXML,"label_state", _("Package will be downgraded."));
 	break;
 	
      case RPackage::MRemove:
 	_currentB = _actionB[2];
-	setLabel(_gladeXML,"label_state", _("Package will be uninstalled."));
-	break;
-    case RPackage::MBroken:
-      setLabel(_gladeXML,"label_state", _("Package is broken."));
-      break;
-    case RPackage::MPinned:
-    case RPackage::MNew:
-	/* nothing */
 	break;
     }
 
     gtk_widget_set_sensitive(_pkgReconfigure, FALSE);
     if(other & RPackage::OPinned) {
-	setLabel(_gladeXML,"label_state", _("Package is pinned."));
 	gtk_widget_set_sensitive(_actionB[2], FALSE);
 	gtk_widget_set_sensitive(_installM, FALSE);
 	gtk_widget_set_sensitive(_pkgupgradeM, FALSE);
@@ -1149,9 +1123,6 @@ void RGMainWindow::updatePackageStatus(RPackage *pkg)
 	gtk_widget_set_sensitive(_purgeM, FALSE);
 	gtk_widget_set_sensitive(_remove_w_depsM, FALSE);
 	gtk_widget_set_sensitive(_pinM, TRUE);
-    }
-    if(other & RPackage::ONew) {
-	setLabel(_gladeXML,"label_state", _("Package is new."));
     }
 
     if((pkg->dependsOn("debconf")||pkg->dependsOn("debconf-i18n")) && 
@@ -1170,25 +1141,9 @@ void RGMainWindow::updatePackageStatus(RPackage *pkg)
     gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(_pinM), locked);
     _blockActions = FALSE;
 
-    if (pkg->wouldBreak()) {
-      setLabel(_gladeXML,"label_state", _("Broken dependencies."));
-      gtk_image_set_from_pixbuf(GTK_IMAGE(_stateP), 
-				StatusPixbuf[RPackage::MBroken]);
+    gtk_image_set_from_pixbuf(GTK_IMAGE(_stateP), 
+			      RPackageStatus::pkgStatus.getPixbuf(pkg));
 
-    } else if (mstatus==RPackage::MKeep && status==RPackage::SInstalledOutdated) {
-      gtk_image_set_from_pixbuf(GTK_IMAGE(_stateP), 
-				StatusPixbuf[RPackage::MHeld]);
-    }  else if(other & RPackage::ONew) {
-      gtk_image_set_from_pixbuf(GTK_IMAGE(_stateP), 
-				StatusPixbuf[RPackage::MNew]);
-    } else if (locked) {
-      gtk_image_set_from_pixbuf(GTK_IMAGE(_stateP), 
-				StatusPixbuf[RPackage::MPinned]);
-    } else {
-      gtk_image_set_from_pixbuf(GTK_IMAGE(_stateP), 
-				StatusPixbuf[(int)mstatus]);
-    }
-    
     if (gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(_currentB)) == FALSE) {
 	_blockActions = TRUE;
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(_currentB), TRUE);
@@ -1444,7 +1399,7 @@ void RGMainWindow::updatePackageInfo(RPackage *pkg)
 
 	setLabel(_gladeXML,"label_state", "");
 	gtk_label_set_text(GTK_LABEL(_depInfoL), "");
-	gtk_image_set_from_pixbuf(GTK_IMAGE(_stateP), StatusPixbuf[0]);
+	gtk_image_set_from_pixbuf(GTK_IMAGE(_stateP), NULL);
 
 	gtk_widget_set_sensitive(_pkginfo, FALSE);
 
@@ -1485,7 +1440,7 @@ void RGMainWindow::updatePackageInfo(RPackage *pkg)
     g_free(msg);
 
     // package info
-    setLabel(_gladeXML,"label_section", pkg->section());
+    setLabel(_gladeXML,"label_section", _(trans_section(pkg->section()).c_str()));
     setLabel(_gladeXML,"label_priority", pkg->priority());
 #ifdef HAVE_DEBTAGS
     setLabel(_gladeXML,"label_tags", pkg->tags());
@@ -1815,6 +1770,7 @@ void RGMainWindow::doPkgAction(RGMainWindow *me, RGPkgAction action)
 		  failedReason += string(pkg->name()) + ":\n";
 		  failedReason += pkg->showWhyInstBroken();
 		  failedReason += "\n";
+		  pkg->setKeep();
 		  pkg->unsetVersion();
 		  me->_lister->notifyChange(pkg);
 	      }
@@ -1841,42 +1797,6 @@ void RGMainWindow::doPkgAction(RGMainWindow *me, RGPkgAction action)
 }
 
 
-void RGMainWindow::setColors(bool useColors)
-{
-    if(useColors) {
-	/* we use colors */
-	gtk_get_color_from_string(_config->Find("Synaptic::MKeepColor", "").c_str(),
-		      &StatusColors[(int)RPackage::MKeep]);
-	gtk_get_color_from_string(_config->Find("Synaptic::MInstallColor", 
-				    "#ccffcc").c_str(),
-		      &StatusColors[(int)RPackage::MInstall]); 
-	gtk_get_color_from_string(_config->Find("Synaptic::MUpgradeColor", 
-				    "#ffff00").c_str(),
-		      &StatusColors[(int)RPackage::MUpgrade]);
-	gtk_get_color_from_string(_config->Find("Synaptic::MDowngradeColor", "").c_str(),
-		      &StatusColors[(int)RPackage::MDowngrade]);
-	gtk_get_color_from_string(_config->Find("Synaptic::MRemoveColor", 
-				    "#f44e80").c_str(),
-		      &StatusColors[(int)RPackage::MRemove]);
-	gtk_get_color_from_string(_config->Find("Synaptic::MHeldColor", "").c_str(),
-		      &StatusColors[(int)RPackage::MHeld]);
-	gtk_get_color_from_string(_config->Find("Synaptic::MBrokenColor", 
-				    "#e00000").c_str(),
-		      &StatusColors[(int)RPackage::MBroken/*broken*/]);
-	gtk_get_color_from_string(_config->Find("Synaptic::MPinColor", 
-				    "#ccccff").c_str(),
-		      &StatusColors[(int)RPackage::MPinned/*hold=pinned*/]);
-	gtk_get_color_from_string(_config->Find("Synaptic::MNewColor", 
-				    "#ffffaa").c_str(),
-		      &StatusColors[(int)RPackage::MNew/*new*/]);
-    } else {
-	/* no colors */
-	for(int i=0;i<(int)RPackage::MNew;i++)
-	    StatusColors[i] = NULL;
-    }
-}
-
-
 RGMainWindow::RGMainWindow(RPackageLister *packLister, string name)
     : RGGladeWindow(NULL, name), _lister(packLister),  _activeTreeModel(0),
       _treeView(0)
@@ -1894,40 +1814,6 @@ RGMainWindow::RGMainWindow(RPackageLister *packLister, string name)
     _toolbarStyle = (GtkToolbarStyle)_config->FindI("Synaptic::ToolbarState",
 						    (int) GTK_TOOLBAR_BOTH);
 
-    // get the pixbufs
-    StatusPixbuf[(int)RPackage::MKeep] = 	
-      gdk_pixbuf_new_from_xpm_data(keepM_xpm);
-  
-    StatusPixbuf[(int)RPackage::MInstall] = 
-      gdk_pixbuf_new_from_xpm_data(installM_xpm);
-  
-    StatusPixbuf[(int)RPackage::MUpgrade] =
-      gdk_pixbuf_new_from_xpm_data(upgradeM_xpm);
-  
-    StatusPixbuf[(int)RPackage::MDowngrade] =
-      gdk_pixbuf_new_from_xpm_data(downgradeM_xpm);
-  
-    StatusPixbuf[(int)RPackage::MRemove] =
-      gdk_pixbuf_new_from_xpm_data(removeM_xpm);
-  
-    StatusPixbuf[(int)RPackage::MHeld] =
-      gdk_pixbuf_new_from_xpm_data(heldM_xpm);
-  
-    StatusPixbuf[(int)RPackage::MBroken] =
-      gdk_pixbuf_new_from_xpm_data(brokenM_xpm);
-  
-    StatusPixbuf[(int)RPackage::MPinned] =
-      gdk_pixbuf_new_from_xpm_data(pinM_xpm);
-  
-    StatusPixbuf[(int)RPackage::MNew] =
-      gdk_pixbuf_new_from_xpm_data(newM_xpm);
-  
-    StatusPixbuf[10] =
-      gdk_pixbuf_new_from_xpm_data(alert_xpm);
-
-
-    // get some color values
-    setColors(_config->FindB("Synaptic::UseStatusColors", TRUE));
 
     buildInterface();
     
@@ -1993,7 +1879,7 @@ void RGMainWindow::findToolClicked(GtkWidget *self, void *data)
   }
 
   int res = gtk_dialog_run(GTK_DIALOG(me->_findWin->window()));
-  if(res == 0) {
+  if(res == GTK_RESPONSE_OK) {
       gdk_window_set_cursor(me->_findWin->window()->window, me->_busyCursor);
       RFilter *filter = me->_lister->findFilter(0);
       filter->reset();
@@ -2140,13 +2026,19 @@ void RGMainWindow::saveClicked(GtkWidget *self, void *data)
 
 }
 
-// FIXME: instead of RPackage* take a GList* argument to enable
-//        a popup-menu operation on more than one selected pkg
 void RGMainWindow::treeviewPopupMenu(GtkWidget *treeview, 
 				     GdkEventButton *event,
 				     RGMainWindow *me,
-				     RPackage *pkg)
+				     vector<RPackage*> selected_pkgs)
 {
+    // nothing selected, should happen, but we play save
+    if(selected_pkgs.size() == 0)
+	return;
+
+    // FIXME: we take the first pkg and find out available actions,
+    //        we should calc available actions from all selected pkgs.
+    RPackage *pkg=selected_pkgs[0];
+
     RPackage::PackageStatus pstatus =  pkg->getStatus();
     RPackage::MarkedStatus  mstatus = pkg->getMarkedStatus();
 
@@ -2214,27 +2106,30 @@ gboolean RGMainWindow::onButtonPressed(GtkWidget *treeview,
     /* single click with the right mouse button? */
     if (event->type == GDK_BUTTON_PRESS  &&  event->button == 3) {
 	GtkTreeSelection *selection;
+	GtkTreeIter iter;
+
 	selection = gtk_tree_view_get_selection(GTK_TREE_VIEW(treeview));
 	// FIXME: this is gtk2.2
 	if(gtk_tree_view_get_path_at_pos(GTK_TREE_VIEW(treeview),
 					 (int)event->x, (int)event->y,
 					 &path, NULL, NULL, NULL)) {
-	    GtkTreeIter iter;
-	    gtk_tree_model_get_iter(me->_activeTreeModel, &iter,
-				    path);
-	    // FIXME: don't unselected, check for selections
-	    gtk_tree_selection_unselect_all(selection);
+	    vector<RPackage*> selected_pkgs;
+	    GList *li=NULL;
+
+	    // treat right click as selection
 	    gtk_tree_selection_select_path(selection, path);
-	    // check if leaf-node, if not -> return
-	    if(gtk_tree_model_iter_has_child(me->_activeTreeModel,
-					     &iter))
-		return FALSE;
-	    gtk_tree_model_get(me->_activeTreeModel, &iter,
-			       PKG_COLUMN, &pkg, 
-			       -1);
-	    gtk_tree_path_free(path);
-	    //FIXME: make it possible to do a popup operation on a list of pkgs
-	    treeviewPopupMenu(treeview, event, me, pkg);
+	    li = gtk_tree_selection_get_selected_rows(selection,&me->_activeTreeModel);
+	    for(li=g_list_first(li);li != NULL; li = g_list_next(li)) {
+		gtk_tree_model_get_iter(me->_activeTreeModel, &iter, 
+					(GtkTreePath*)(li->data));
+
+		gtk_tree_model_get(me->_activeTreeModel, &iter, 
+				   PKG_COLUMN, &pkg, -1);
+		if(pkg)
+		    selected_pkgs.push_back(pkg);
+	    }
+
+	    treeviewPopupMenu(treeview, event, me, selected_pkgs);
 	    return TRUE; 
 	}	
     }
@@ -2401,8 +2296,12 @@ void RGMainWindow::buildTreeView()
 						     //"text", NAME_COLUMN,
 						     "background-gdk", COLOR_COLUMN,
 						     NULL);
+#if GTK_CHECK_VERSION(2,3,2)
+	gtk_tree_view_column_set_sizing (column, GTK_TREE_VIEW_COLUMN_FIXED);
+	gtk_tree_view_column_set_fixed_width(column, 200);
+#else
 	gtk_tree_view_column_set_sizing (column, GTK_TREE_VIEW_COLUMN_AUTOSIZE);
-	//gtk_tree_view_column_set_fixed_width(column, 200);
+#endif
 
 	//gtk_tree_view_insert_column(GTK_TREE_VIEW(_treeView), column, pos);
 	all_columns.push_back(pair<int,GtkTreeViewColumn *>(pos,column));
@@ -2495,8 +2394,8 @@ void RGMainWindow::buildTreeView()
     if(name_column)
 	gtk_tree_view_set_expander_column(GTK_TREE_VIEW(_treeView),  name_column);
 
-#if GTK_CHECK_VERSION(2,3,0)
-    //#warning build with new fixed_height_mode
+#if GTK_CHECK_VERSION(2,3,2)
+    #warning build with new fixed_height_mode
     GValue value = {0,};
     g_value_init (&value, G_TYPE_BOOLEAN);
     g_value_set_boolean(&value, TRUE);
@@ -2535,6 +2434,11 @@ void RGMainWindow::buildInterface()
     glade_xml_signal_connect_data(_gladeXML,
 				  "on_about_activate",
 				  G_CALLBACK(showAboutPanel),
+				  this); 
+
+    glade_xml_signal_connect_data(_gladeXML,
+				  "on_icon_legend_activate",
+				  G_CALLBACK(showIconLegendPanel),
 				  this); 
 
     glade_xml_signal_connect_data(_gladeXML,
@@ -3278,6 +3182,7 @@ void RGMainWindow::changeTreeDisplayMode(RPackageLister::treeDisplayMode mode)
 
     //cout << "display mode: " << _treeDisplayMode << endl;
     gtk_widget_set_sensitive(GTK_WIDGET(_filterPopup), true);
+    gtk_widget_set_sensitive(GTK_WIDGET(_filterMenu), true);
     gtk_widget_set_sensitive(GTK_WIDGET(glade_xml_get_widget(_gladeXML,"toolbar_find")), true);
     switch(_treeDisplayMode) {
 	case RPackageLister::TREE_DISPLAY_FLAT: 
@@ -3297,6 +3202,7 @@ void RGMainWindow::changeTreeDisplayMode(RPackageLister::treeDisplayMode mode)
 
 	//test_tag_tree(_tagTree);
 	gtk_widget_set_sensitive(GTK_WIDGET(_filterPopup), false);
+	gtk_widget_set_sensitive(GTK_WIDGET(_filterMenu), false);
 	gtk_widget_set_sensitive(GTK_WIDGET(glade_xml_get_widget(_gladeXML,"toolbar_find")), false);
 
 	_activeTreeModel = GTK_TREE_MODEL(_tagTree);
@@ -3315,8 +3221,8 @@ void RGMainWindow::changeTreeDisplayMode(RPackageLister::treeDisplayMode mode)
 	// it should be fast enough with the traditional refreshTable
 	// approach, but this is just a educated guess
 	_pkgCacheObserver = new RCacheActorPkgTree(_lister, _pkgTree, 
-						 GTK_TREE_VIEW(_treeView));
-	_pkgTreePackageListObserver = new RPackageListActorPkgTree(_lister, _pkgTree, GTK_TREE_VIEW(_treeView));
+						   GTK_TREE_VIEW(_treeView));
+	_pkgTreePackageListObserver = new RPackageListActorPkgTree(_lister, _pkgTree,  GTK_TREE_VIEW(_treeView));
     } 
   
     _blockActions = FALSE;
@@ -3678,8 +3584,7 @@ void RGMainWindow::saveState()
       cerr << "Internal Error: error storing raptoptions" << endl;
 }
 
-
-bool RGMainWindow::restoreState()
+bool RGMainWindow::initDebtags()
 {
 #ifdef HAVE_DEBTAGS
     // FIXME: this is not a good place! find a better
@@ -3716,6 +3621,11 @@ bool RGMainWindow::restoreState()
     //coll.output(filter);
     //TagCollection<int> 
 #endif
+}
+
+
+bool RGMainWindow::restoreState()
+{
 
     // see if we have broken packages (might be better in some
     // RGMainWindow::preGuiStart funktion)
@@ -3724,12 +3634,13 @@ bool RGMainWindow::restoreState()
     _lister->getStats(installed, broken, toinstall, toremove,sizeChange);
     if(broken > 0) {
 	gchar *msg;
-	if(broken == 1)
-	    msg = g_strdup_printf(_("You have one broken package on your system\n\n"
-				      "Please try to fix it by visiting the \"Broken\" filter"));
-	else
-	    msg = g_strdup_printf(_("You have %i broken packages on your system\n\n"
-				      "Please try to fix them by visiting the \"Broken\" filter"), broken);
+	if(broken == 1) {
+	    msg = ngettext("You have %d broken package on your system!\n\n"
+			   "Use the \"Broken\" filter to locate it.",
+			   "You have %i broken packages on your system!\n\n"
+			   "Use the \"Broken\" filter to locate them.", broken);
+	    msg = g_strdup_printf(msg, broken);
+	}
 	_userDialog->warning(msg);
 	g_free(msg);
     }

@@ -59,6 +59,10 @@
 #include <apt-pkg/versionmatch.h>
 #include <apt-pkg/version.h>
 
+#ifdef WITH_LUA
+#include <apt-pkg/luaiface.h>
+#endif
+
 #include "raptoptions.h"
 
 
@@ -71,7 +75,7 @@ RPackage::RPackage(RPackageLister *lister, pkgDepCache *depcache,
 		   pkgRecords *records, pkgCache::PkgIterator &pkg)
   : _lister(lister), _records(records), _depcache(depcache), 
     _newPackage(false), _pinnedPackage(false), _orphanedPackage(false),
-     _notify(true)
+    _purge(false),_notify(true)
 {
     _package = new pkgCache::PkgIterator(pkg);
     
@@ -275,6 +279,9 @@ int RPackage::getOtherStatus()
     
     if(_orphanedPackage)
 	status |= OOrphaned;
+
+    if(_purge)
+	status |= OPurge;
 
     if((*_package)->CurrentState == pkgCache::State::ConfigFiles) {
       //cout << "ResidentalConfig found for: "<<name()<<endl;
@@ -848,6 +855,13 @@ void RPackage::setInstall()
 	Fix.Resolve(true);
     }
 
+#ifdef WITH_LUA
+    _lua->SetDepCache(_depcache);
+    _lua->SetGlobal("package", ((pkgCache::Package*)*_package));
+    _lua->RunScripts("Scripts::Synaptic::SetInstall", true);
+    _lua->ResetCaches();
+#endif
+
     if (_notify) 
 	_lister->notifyChange(this);
 }
@@ -865,6 +879,7 @@ void RPackage::setRemove(bool purge)
     Fix.Resolve(true);
     
     _depcache->MarkDelete(*_package, purge);
+    _purge = purge;
     
     if (_notify)
 	_lister->notifyChange(this);
@@ -1025,8 +1040,9 @@ bool RPackage::setVersion(const char* VerTag)
     //cout << "Ver is: " << VerTag << endl;
  
     if (Ver.end() == true) {
-	return _error->Error(_("Version '%s' for '%s' was not found"),
-				 VerTag,_package->Name());
+	return false;
+// 	return _error->Error(_("Version '%s' for '%s' was not found"),
+// 				 VerTag,_package->Name());
     }
 
     //printf("Release: Selected version %s (%s) for %s\n",

@@ -25,10 +25,12 @@
 
 #include <apt-pkg/error.h>
 #include <apt-pkg/configuration.h>
+#include <apt-pkg/sourcelist.h>
 #include <glib.h>
 #include <cassert>
 #include "rgrepositorywin.h"
-#include "gsynaptic.h"
+#include "rguserdialog.h"
+#include "rgmisc.h"
 #include "config.h"
 #include "i18n.h"
 
@@ -320,6 +322,9 @@ bool RGRepositoryEditor::Run()
       _userDialog->warning(_("Ignoring invalid record(s) in sources.list file!"));
       //return false;
   }
+  // keep a backup of the orginal list
+  _savedList.ReadSources();
+
   if(_lst.ReadVendors() == false) {
       _error->Error(_("Cannot read vendors.list file"));
       _userDialog->showErrors();
@@ -560,6 +565,15 @@ void RGRepositoryEditor::DoOK(GtkWidget *, gpointer data)
 
     me->doEdit();
     me->_lst.UpdateSources();
+
+    // check if we actually can parse the sources.list
+    pkgSourceList List;
+    if(!List.ReadMainList()) {
+	me->_userDialog->showErrors();
+	me->_savedList.UpdateSources();
+	return;
+    }
+
     gtk_main_quit();
     me->_applied = true;
 }

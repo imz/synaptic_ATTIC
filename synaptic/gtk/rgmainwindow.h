@@ -45,6 +45,7 @@ using namespace std;
 #endif
 
 #include "rggladewindow.h"
+#include "rgiconlegend.h"
 #include "gtkpkgtree.h"
 #include "gtkpkglist.h"
 #include "gtktagtree.h"
@@ -189,6 +190,7 @@ class RGMainWindow : public RGGladeWindow, public RPackageObserver
    RGFindWindow *_findWin;
    RGSetOptWindow *_setOptWin;
    RGAboutPanel *_aboutPanel;
+   RGIconLegendPanel *_iconLegendPanel;
    
    RGCacheProgress *_cacheProgress;
    RGUserDialog *_userDialog;
@@ -213,7 +215,7 @@ class RGMainWindow : public RGGladeWindow, public RPackageObserver
    static void treeviewPopupMenu(GtkWidget *treeview, 
 				 GdkEventButton *event, 
 				 RGMainWindow *me,
-				 RPackage *pkg);
+				 vector<RPackage*> selected_pkgs);
 
    
    virtual bool close();
@@ -307,6 +309,7 @@ class RGMainWindow : public RGGladeWindow, public RPackageObserver
 
    // help menu
    static void helpAction(GtkWidget *self, void *data); 
+   static void showIconLegendPanel(GtkWidget *self, void *data); 
    static void showAboutPanel(GtkWidget *self, void *data); 
 
    // end menu
@@ -344,13 +347,14 @@ public:
 
    void setInterfaceLocked(bool flag);
    void setTreeLocked(bool flag);
-   void setColors(bool useColors);
    void rebuildTreeView() { buildTreeView(); };
 
    void setStatusText(char *text = NULL);
    
    void saveState();
    bool restoreState();
+   
+   bool initDebtags();
    
    bool showErrors();
    

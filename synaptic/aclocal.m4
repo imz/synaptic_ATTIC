@@ -1809,6 +1809,7 @@ AC_DEFUN(AM_GLIB_GNU_GETTEXT,[GLIB_GNU_GETTEXT($@)])
 AC_DEFUN(AM_GLIB_DEFINE_LOCALEDIR,[GLIB_DEFINE_LOCALEDIR($@)])
 ])dnl
 
+ll## intltool.m4 - Configure intltool for the target system. -*-Shell-script-*-
 
 dnl AC_PROG_INTLTOOL([MINIMUM-VERSION])
 # serial 1 AC_PROG_INTLTOOL
@@ -1844,6 +1845,7 @@ INTLTOOL_SOUNDLIST_RULE='%.soundlist: %.soundlist.in $(INTLTOOL_MERGE) $(wildcar
        INTLTOOL_UI_RULE='%.ui:        %.ui.in        $(INTLTOOL_MERGE) $(wildcard $(top_srcdir)/po/*.po) ; LC_ALL=C $(INTLTOOL_MERGE) $(top_srcdir)/po $< [$]@ -x -u -c $(top_builddir)/po/.intltool-merge-cache'
       INTLTOOL_XML_RULE='%.xml:       %.xml.in       $(INTLTOOL_MERGE) $(wildcard $(top_srcdir)/po/*.po) ; LC_ALL=C $(INTLTOOL_MERGE) $(top_srcdir)/po $< [$]@ -x -u -c $(top_builddir)/po/.intltool-merge-cache'
       INTLTOOL_XAM_RULE='%.xam:       %.xml.in       $(INTLTOOL_MERGE) $(wildcard $(top_srcdir)/po/*.po) ; LC_ALL=C $(INTLTOOL_MERGE) $(top_srcdir)/po $< [$]@ -x -u -c $(top_builddir)/po/.intltool-merge-cache'
+      INTLTOOL_KBD_RULE='%.kbd:       %.kbd.in       $(INTLTOOL_MERGE) $(wildcard $(top_srcdir)/po/*.po) ; LC_ALL=C $(INTLTOOL_MERGE) $(top_srcdir)/po $< [$]@ -x -u -m -c $(top_builddir)/po/.intltool-merge-cache'
     INTLTOOL_CAVES_RULE='%.caves:     %.caves.in     $(INTLTOOL_MERGE) $(wildcard $(top_srcdir)/po/*.po) ; LC_ALL=C $(INTLTOOL_MERGE) $(top_srcdir)/po $< [$]@ -d -u -c $(top_builddir)/po/.intltool-merge-cache'
   INTLTOOL_SCHEMAS_RULE='%.schemas:   %.schemas.in   $(INTLTOOL_MERGE) $(wildcard $(top_srcdir)/po/*.po) ; LC_ALL=C $(INTLTOOL_MERGE) $(top_srcdir)/po $< [$]@ -s -u -c $(top_builddir)/po/.intltool-merge-cache'
     INTLTOOL_THEME_RULE='%.theme:     %.theme.in     $(INTLTOOL_MERGE) $(wildcard $(top_srcdir)/po/*.po) ; LC_ALL=C $(INTLTOOL_MERGE) $(top_srcdir)/po $< [$]@ -d -u -c $(top_builddir)/po/.intltool-merge-cache'
@@ -1859,6 +1861,7 @@ AC_SUBST(INTLTOOL_SHEET_RULE)
 AC_SUBST(INTLTOOL_SOUNDLIST_RULE)
 AC_SUBST(INTLTOOL_UI_RULE)
 AC_SUBST(INTLTOOL_XAM_RULE)
+AC_SUBST(INTLTOOL_KBD_RULE)
 AC_SUBST(INTLTOOL_XML_RULE)
 AC_SUBST(INTLTOOL_CAVES_RULE)
 AC_SUBST(INTLTOOL_SCHEMAS_RULE)
@@ -1880,6 +1883,9 @@ if test -z "$INTLTOOL_PERL"; then
 fi
 if test -z "`$INTLTOOL_PERL -v | fgrep '5.' 2> /dev/null`"; then
    AC_MSG_ERROR([perl 5.x required for intltool])
+fi
+if ! `perl -e "require XML::Parser" 2>/dev/null`; then
+   AC_MSG_ERROR([XML::Parser perl module is required for intltool])
 fi
 
 # Remove file type tags (using []) from po/POTFILES.
@@ -1917,7 +1923,8 @@ fi
 chmod ugo+x intltool-extract
 chmod u+w intltool-extract
 
-sed -e "s:@INTLTOOL_PERL@:${INTLTOOL_PERL}:;" < ${srcdir}/intltool-merge.in > intltool-merge.out
+sed -e "s:@INTLTOOL_PERL@:${INTLTOOL_PERL}:;" \
+    < ${srcdir}/intltool-merge.in > intltool-merge.out
 if cmp -s intltool-merge intltool-merge.out 2>/dev/null; then
   rm -f intltool-merge.out
 else
