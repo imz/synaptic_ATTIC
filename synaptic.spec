@@ -10,7 +10,7 @@
 
 Name: synaptic
 Version: 0.48.2
-Release: alt1
+Release: alt1.1
 
 Summary: Graphical front-end for APT
 Summary(ru_RU.CP1251): Графическая оболочка для APT
@@ -107,6 +107,9 @@ mkdir -p %buildroot%_mandir/ru/man8/
 %doc README* TODO NEWS AUTHORS
 
 %changelog
+* Thu May 13 2004 ALT QA Team Robot <qa-robot@altlinux.org> 0.48.2-alt1.1
+- Rebuilt with libapt-0.5.15cnc6-alt1.
+
 * Mon Apr 12 2004 Sviatoslav Sviridov <svd@altlinux.ru> 0.48.2-alt1
 - 0.48.2
 - updated russian translation
