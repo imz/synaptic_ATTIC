@@ -1,0 +1,204 @@
+0.45 
+ - proxy can be configured with the gui now
+ - updated japanese translation (thanks to Daisuke SUZUKI)
+ - new preferences dialog layout (thanks Sebastian Heinlein)
+ - new filter dialog layout  (thanks Sebastian Heinlein)
+ - when adding filter, they are called "New Filter 1", "New Filter 2" etc
+ - added "search lack", so that the interactive search does not start 
+   immediately
+ - new quit dialog
+ - speedup for the pattern filters
+ - small ui-enhancements in the filter dialog
+ - basic support for distribution selection (if you have more than one
+   distro in your sources.list, you can choose which to use by default)
+ - new about dialog (thanks Sebastian)
+ - support to choose between different versions of a given package 
+
+0.44
+ - two alternative main layouts can be choosen now
+ - "clean cache now" implemented" in preferences window
+ - the search entry in the main window is interactive again 
+ - much improved preferences dialog (thanks to Sebastian Heinlein)
+ - new italian translation (thanks  Mauro Colorio and  Luigi Maselli)
+ - updated spanish translation (thanks Fco. Javier Fernandez)
+ - updated russian translation (thanks  Sviatoslav Sviridov)
+ - new belarussian translation (thanks Vital Khilko)
+ - updated chinese translation (thanks liu jack)
+ - improved main window design (thanks Sebastian Heinlein)
+ - added "rpm-dir" repository support (thanks Panu)
+ - prepeared a lot of strings for better i18n (thanks Jean-Michel POURE)
+
+0.43
+ - the descriptionParser for rpm has changed
+   (the actuall parser is configurable now)
+ - new find and changes dialog layout, more HIG compliant 
+   (thanks to Sebastian Heinlein)
+ - more bugfixes in the PkgTreeView and the new sorting code
+
+0.42
+ - download percentage is now always calculated correctly 
+   (thanks to David Wilson)
+ - save selection on "pin", "update" and "proceed" now
+ - some bugs fixed in the new sortable tree/list
+ - the order of the columns in the treeview is configurable now
+ - updated german translation (thanks to Sebastian Heinlein)
+ - updated spanish translation (thanks to Javier Serrador)
+ - updated japanese translation (thanks to Daisuke SUZUKI)
+
+0.41
+ - updated russian translation
+ - [debian only] debian package tags support
+ - sortable installed size column added
+ - "Information" tab now scrollable
+    
+0.40
+ - updated japanese translation
+ - new status "Obsolete and locally installed" for status view
+ - added depends and provides to the "Find tool" window
+ - more predefined filters (new, residual config, debconf)
+ - added "provides" tab
+ - added "remove with dependencies" feature
+ - default action for delete button can be configured
+
+0.39
+ - "Installed Files" tab (debian only)
+ - added tooltips to status filter tab
+ - reworked search dialog, it's possible to search for 
+   "name, version, description, maintainer" now
+ - better checking if a pkg is not installable 
+ - location of the synaptic.desktop file has changed to better integrate  
+   with the desktop enviroment
+
+0.38 
+ - updated russian translation
+ - works on older distros (gtk2.0 and gcc-2.95+ fixes) for real this time :)
+ - better man-page
+ - if a pkg is not installable, the user gets a warning if the tries to 
+   install it
+ - improved "by Status" tree-view, displays now by:
+   "installed, installed and upgradeable, new in archive, not installed,
+    not installed but residual config"
+ - sources.list reading is more robust. invalid records are ignored and 
+   commented out, comments inside a line are allowed now
+   (e.g. "deb http://ftp.debian.org/debian unstable main # my main source")
+
+0.37
+ - optimisation of the package view, should be faster now 
+   (especially the flat list) 
+ - the "update" button for the rgfiltermanager dialog is gone,
+   all changes to the filters are tracked automaticly
+ - the repository dialog is glade based now
+ - some basic support for sources.list.d (thanks Panu)
+ - load/save changes is implemeted (you can save your changes and 
+   later reload them) 
+ - should build with gtk2.0 again (for all people that use RH8.x or 
+   UnitedLinux 1.0)
+ - a new "not installable" filter was added
+ - search for multiple words improved
+
+0.36
+ - new filter dialog
+ - each filter can have a different view now
+ - more easy way to intall suggested/recommended packages
+ - dialog to auto install recommended/suggested packages
+
+0.35
+ - Synaptic uses a tree view now. Users may select from
+   "Section tree", "Alphabetic tree", "Status tree", or
+   "Raw list" views.
+ - "What will change" dialog, informing how the current selection
+   will change, if the user try to do some action in a package
+   that would require further changes in the current selection.
+ - Now it's possible to include APT-enabled CDROMs in the database
+   using synaptic (apt-cdrom like).
+ - Undo/Redo implemented, allowing one to rollback changes in the
+   selection.
+ - Filter and button for debconf packages (debian only).
+ - Improved progress dialog for rpm installation.
+ - If --with-zvt was used, terminal vizualization during package
+   manager action is now runtime configurable.
+ - Many minor improvements in the user interface, including great
+   new icons.
+ - applied a patch from Mike Snitzer to make it possible to search for 
+   versions.
+ - Bugfixes.
+
+0.32
+ - bugfixes 
+ - translation updates 
+ - toolbar buttons can be configured now
+
+0.31
+ - added residual config filter
+ - added "purge" menu item (basic support)
+ - added easy way to search for pkg name or description 
+ - russian translation, chinese translation 
+   (thanks to Sviatoslav Sviridov and Anthony Fok)
+ - fixed some resize problems (thanks to Laurent Bonnaud)
+ - fixed some problems with the pattern filter (thanks to Scomodo)
+
+0.30
+ - ported to gtk2/libglade2, new gui - no new features
+
+0.28
+ - fixed a bug for rpm users (thanks to Sviatoslav Sviridou)
+ - added turkish translation (thanks to Rail Aliev)
+ - added handleBox for the main button bar
+ - added synaptic desktop file for gnome (needs xsu to work)
+ - added wm icon
+
+0.27:
+ - added tooltip for hold-button
+ - [debian only] added "orphaned" filter (using deborphan)
+ - reworked the rgsummarywindow dialog, nicer now
+ - fixed a nasty memory leak in openCache()
+
+0.26:
+ - SummaryWindow is a bigger now
+ - a man-page was added
+ - colors are now used in the main clist
+
+0.25:
+ - cleanups for the "new" packages filter
+ - added command line arguments (see README for details)
+ - removed some warning if no synaptic files can be found in ~/.synaptic
+ - multiple selection of packages is possible now (use SHIFT/CTRL)
+ - some internal code cleanups
+ - SWIG support for synaptic! a python module with the interface described 
+   in gtk/synapticinterface.h is generated and can be used to script synaptic
+   with python (see README.scripting for details)
+
+0.24:
+ - "hold" feature implemented. If you mark a package as "hold" no
+   upgrade will ever performed on this package 
+   (enable this with "--with-pkg-hold" in configure)
+ - "New Packages" filter improvments (now persistent to a certain extend)
+ - bugfixes and a fix for a nasty memory leak
+ - WINGs version no longer build by default and renamed to wsynaptic
+   (enable it with "--with-wings")
+ - GTK version now called "synaptic"
+ - Implemented vendors.list edition support
+ - Reworked sources.list edition dialog.
+
+0.23:
+ - new repository dialog 
+   (shamelessly stolen from deity-gtk, thanks to Patrick Cole <z@amused.net>)
+ - small ui improvements
+
+0.22:
+ - added working "Suggestions/Recommendations"
+ - added Dependencies display of the available version 
+   (to preview if the newest available version has different dependencies)
+
+0.21:
+ - bugfix in rgfiltermanager.cc
+ - documentation updates
+
+0.20:
+ - filter save/restore works
+ - gtk gui
+ - gtk keybindings
+ - simple "new packages" filter (very basic currently)
+ - support for output into a zvt terminal window (--with-zvt)
+ - new description parser optimized for debian
+ - double click cycle implemented in gtk version

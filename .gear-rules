@@ -1,0 +1,5 @@
+copy: *.8
+copy: *.patch
+copy: *.po
+copy: synaptic
+tar.gz: synaptic-0.45 name=synaptic-0.45

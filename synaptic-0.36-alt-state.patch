@@ -1,0 +1,26 @@
+Index: synaptic/common/rpackagelister.cc
+===================================================================
+--- synaptic/common/rpackagelister.cc	(revision 139)
++++ synaptic/common/rpackagelister.cc	(working copy)
+@@ -923,7 +923,7 @@
+ }
+ 
+ 
+-#ifdef HAVE_RPM
++#ifdef HAVE_RPM_0
+ void RPackageLister::saveState(RPackageLister::pkgState &state)
+ {
+     state.Save(_cache->deps());
+Index: synaptic/common/rpackagelister.h
+===================================================================
+--- synaptic/common/rpackagelister.h	(revision 139)
++++ synaptic/common/rpackagelister.h	(working copy)
+@@ -107,7 +107,7 @@
+    } treeDisplayMode;
+    treeDisplayMode _displayMode;
+ 
+-#ifdef HAVE_RPM
++#ifdef HAVE_RPM_0
+    typedef pkgDepCache::State pkgState;
+ #else
+    typedef vector<RPackage::MarkedStatus> pkgState;
