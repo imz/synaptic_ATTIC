@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: synaptic 0.52\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-11-01 18:15+0100\n"
+"POT-Creation-Date: 2004-11-04 22:37+0100\n"
 "PO-Revision-Date: 2004-09-21 00:56+0200\n"
 "Last-Translator: Roman Maurer <roman@lugos.si>\n"
 "Language-Team: Slovenian <translation-team-sl@lists.sourceforge.net>\n"
@@ -535,7 +535,7 @@ msgstr "Seznam paketov ali datoteke stanja ni moč razčleniti ali odpreti"
 msgid "Internal Error, non-zero counts"
 msgstr "Notranja napaka, neničelni števci"
 
-#: common/rpackagefilter.cc:45 gtk/rgpreferenceswindow.cc:934
+#: common/rpackagefilter.cc:45 gtk/rgpreferenceswindow.cc:899
 #: gtk/window_find.glade.h:6
 msgid "Name"
 msgstr "Ime"
@@ -1013,22 +1013,18 @@ msgstr "Izberite pisavo"
 msgid "ignore"
 msgstr "prezri"
 
-#: gtk/rgpreferenceswindow.cc:791
+#: gtk/rgpreferenceswindow.cc:766
 msgid "Color selection"
 msgstr "Izbor barv"
 
-#: gtk/rgpreferenceswindow.cc:928
+#: gtk/rgpreferenceswindow.cc:893
 #, fuzzy
 msgid "Visible"
 msgstr "Spremenljivka:"
 
-#: gtk/rgpreferenceswindow.cc:1002 gtk/window_preferences.glade.h:64
+#: gtk/rgpreferenceswindow.cc:967 gtk/window_preferences.glade.h:64
 msgid "Preferences"
 msgstr "Nastavitve"
-
-#: gtk/rgfetchprogress.cc:66
-msgid "Downloading Files"
-msgstr "Prenašanje datotek"
 
 #: gtk/rgfetchprogress.cc:96 gtk/rgmainwindow.cc:953
 msgid "Size"
@@ -1038,15 +1034,15 @@ msgstr "Velikost"
 msgid "URI"
 msgstr "URI"
 
-#: gtk/rgfetchprogress.cc:128
+#: gtk/rgfetchprogress.cc:127
 #, c-format
 msgid ""
-"<big><b>%s</b></big>\n"
+"<big><b>%s</b></big> \n"
 "\n"
 "%s"
 msgstr ""
 
-#: gtk/rgfetchprogress.cc:141
+#: gtk/rgfetchprogress.cc:140
 #, c-format
 msgid ""
 "Please insert the disk labeled:\n"
@@ -1057,29 +1053,29 @@ msgstr ""
 "%s\n"
 "v pogon %s"
 
-#: gtk/rgfetchprogress.cc:247
+#: gtk/rgfetchprogress.cc:246
 #, c-format
 msgid "Downloading file %li of %li at %s/s - %s remaining"
 msgstr "Prenašanje datoteke %li od %li pri %s/s - %s preostalih"
 
-#: gtk/rgfetchprogress.cc:252
+#: gtk/rgfetchprogress.cc:251
 #, c-format
 msgid "Downloading file %li of %li"
 msgstr "Prenašanje datoteke %li od %li"
 
-#: gtk/rgfetchprogress.cc:317
+#: gtk/rgfetchprogress.cc:316
 msgid "Queued"
 msgstr "V čakalni vrsti"
 
-#: gtk/rgfetchprogress.cc:320
+#: gtk/rgfetchprogress.cc:319
 msgid "Done"
 msgstr "Opravljeno"
 
-#: gtk/rgfetchprogress.cc:323
+#: gtk/rgfetchprogress.cc:322
 msgid "Hit"
 msgstr "Zadetek"
 
-#: gtk/rgfetchprogress.cc:326
+#: gtk/rgfetchprogress.cc:325
 msgid "Failed"
 msgstr "Neuspešno"
 
@@ -2937,7 +2933,7 @@ msgstr "Nadomeščeni paketi"
 msgid "Icon Legend"
 msgstr "Legenda ikone"
 
-#: gtk/rgiconlegend.cc:73
+#: gtk/rgiconlegend.cc:72
 #, fuzzy
 msgid "Package is supported"
 msgstr "Izbran ni noben paket"
@@ -3004,6 +3000,9 @@ msgstr ""
 "Različice paketa, ki bi jo radi namestili, morda ni več v skladišču. Lahko "
 "gre tudi za težave z izvorom paketa. Osvežite seznam paketov in preverite "
 "izvor paketa (tj. CD ali omrežna povezava)."
+
+#~ msgid "Downloading Files"
+#~ msgstr "Prenašanje datotek"
 
 #, fuzzy
 #~ msgid "Refresh the list of known packages from remote server"

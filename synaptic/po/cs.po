@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Synaptic 0.47\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-11-01 18:15+0100\n"
+"POT-Creation-Date: 2004-11-04 22:37+0100\n"
 "PO-Revision-Date: 2004-06-22 15:26+0100\n"
 "Last-Translator: Keny Otter <keny@email.cz>\n"
 "Language-Team: Czech <keny@email.cz>\n"
@@ -531,7 +531,7 @@ msgstr ""
 msgid "Internal Error, non-zero counts"
 msgstr "Vnitřní chyba, kontrolní součet nesouhlasí"
 
-#: common/rpackagefilter.cc:45 gtk/rgpreferenceswindow.cc:934
+#: common/rpackagefilter.cc:45 gtk/rgpreferenceswindow.cc:899
 #: gtk/window_find.glade.h:6
 msgid "Name"
 msgstr "Název"
@@ -1001,22 +1001,18 @@ msgstr "Vyberte písmo"
 msgid "ignore"
 msgstr "ignorovat"
 
-#: gtk/rgpreferenceswindow.cc:791
+#: gtk/rgpreferenceswindow.cc:766
 msgid "Color selection"
 msgstr "Výběr barev"
 
-#: gtk/rgpreferenceswindow.cc:928
+#: gtk/rgpreferenceswindow.cc:893
 #, fuzzy
 msgid "Visible"
 msgstr "Proměnná:"
 
-#: gtk/rgpreferenceswindow.cc:1002 gtk/window_preferences.glade.h:64
+#: gtk/rgpreferenceswindow.cc:967 gtk/window_preferences.glade.h:64
 msgid "Preferences"
 msgstr "Nastavení"
-
-#: gtk/rgfetchprogress.cc:66
-msgid "Downloading Files"
-msgstr "Stahuji soubory..."
 
 #: gtk/rgfetchprogress.cc:96 gtk/rgmainwindow.cc:953
 msgid "Size"
@@ -1026,15 +1022,15 @@ msgstr "Velikost"
 msgid "URI"
 msgstr "URI"
 
-#: gtk/rgfetchprogress.cc:128
+#: gtk/rgfetchprogress.cc:127
 #, c-format
 msgid ""
-"<big><b>%s</b></big>\n"
+"<big><b>%s</b></big> \n"
 "\n"
 "%s"
 msgstr ""
 
-#: gtk/rgfetchprogress.cc:141
+#: gtk/rgfetchprogress.cc:140
 #, c-format
 msgid ""
 "Please insert the disk labeled:\n"
@@ -1045,29 +1041,29 @@ msgstr ""
 "%s\n"
 "do mechaniky %s"
 
-#: gtk/rgfetchprogress.cc:247
+#: gtk/rgfetchprogress.cc:246
 #, c-format
 msgid "Downloading file %li of %li at %s/s - %s remaining"
 msgstr "Přijato %li z %li souborů rychlostí %s/s - zbývá %s"
 
-#: gtk/rgfetchprogress.cc:252
+#: gtk/rgfetchprogress.cc:251
 #, c-format
 msgid "Downloading file %li of %li"
 msgstr "Stahuji soubor %li z %li"
 
-#: gtk/rgfetchprogress.cc:317
+#: gtk/rgfetchprogress.cc:316
 msgid "Queued"
 msgstr "Dotazuji"
 
-#: gtk/rgfetchprogress.cc:320
+#: gtk/rgfetchprogress.cc:319
 msgid "Done"
 msgstr "Hotovo"
 
-#: gtk/rgfetchprogress.cc:323
+#: gtk/rgfetchprogress.cc:322
 msgid "Hit"
 msgstr "Záznam"
 
-#: gtk/rgfetchprogress.cc:326
+#: gtk/rgfetchprogress.cc:325
 msgid "Failed"
 msgstr "Selhalo"
 
@@ -2915,7 +2911,7 @@ msgstr "Nahrazené balíčky"
 msgid "Icon Legend"
 msgstr "_Popis k ikonám"
 
-#: gtk/rgiconlegend.cc:73
+#: gtk/rgiconlegend.cc:72
 #, fuzzy
 msgid "Package is supported"
 msgstr "Není vybrán žádný balíček."
@@ -2979,6 +2975,9 @@ msgid ""
 "the package. Refresh the package list and check the source of the package (e."
 "g. CD or network connection)."
 msgstr ""
+
+#~ msgid "Downloading Files"
+#~ msgstr "Stahuji soubory..."
 
 #, fuzzy
 #~ msgid "Refresh the list of known packages from remote server"

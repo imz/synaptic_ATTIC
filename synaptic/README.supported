@@ -1,0 +1,21 @@
+Mark distro supported packages in synaptic
+------------------------------------------
+
+
+Synaptic works on quite a few distributions. If you want to tweak synaptic
+so that it marks the packages that are supported by your distribution, you
+have to make sure, that you support the "Label" field in the APT Release 
+file. 
+
+Set the following conf Vars:
+----------------------------
+Synaptic::mark-unsupported=y
+Synaptic::supported-label="Debian Debian-Security"
+Synaptic::supported-components="main updates/main"
+Synaptic::supported-text=_("Package is supported")
+
+And change the label to your Distro label. 
+
+Then change the "pixmap/package-supported.png" to whatever icon you want.
+
+Michael

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-11-01 18:15+0100\n"
+"POT-Creation-Date: 2004-11-04 22:37+0100\n"
 "PO-Revision-Date: 2003-12-14 11:58+0200\n"
 "Last-Translator: Kate <kate@lrn.ru>\n"
 "Language-Team:  <ru@li.org>\n"
@@ -558,7 +558,7 @@ msgstr "Невозможно открыть или обработать файл
 msgid "Internal Error, non-zero counts"
 msgstr "Внутренняя ошибка: Ненулевые счётчики"
 
-#: common/rpackagefilter.cc:45 gtk/rgpreferenceswindow.cc:934
+#: common/rpackagefilter.cc:45 gtk/rgpreferenceswindow.cc:899
 #: gtk/window_find.glade.h:6
 msgid "Name"
 msgstr "Имя"
@@ -1054,23 +1054,18 @@ msgstr "Выберите шрифт"
 msgid "ignore"
 msgstr "игнорировать"
 
-#: gtk/rgpreferenceswindow.cc:791
+#: gtk/rgpreferenceswindow.cc:766
 msgid "Color selection"
 msgstr "Выбор цвета"
 
-#: gtk/rgpreferenceswindow.cc:928
+#: gtk/rgpreferenceswindow.cc:893
 #, fuzzy
 msgid "Visible"
 msgstr "Возможен"
 
-#: gtk/rgpreferenceswindow.cc:1002 gtk/window_preferences.glade.h:64
+#: gtk/rgpreferenceswindow.cc:967 gtk/window_preferences.glade.h:64
 msgid "Preferences"
 msgstr "Параметры"
-
-#: gtk/rgfetchprogress.cc:66
-#, fuzzy
-msgid "Downloading Files"
-msgstr "Загрузить только файлы пакетов"
 
 #: gtk/rgfetchprogress.cc:96 gtk/rgmainwindow.cc:953
 msgid "Size"
@@ -1080,15 +1075,15 @@ msgstr "Размер"
 msgid "URI"
 msgstr "URI"
 
-#: gtk/rgfetchprogress.cc:128
+#: gtk/rgfetchprogress.cc:127
 #, c-format
 msgid ""
-"<big><b>%s</b></big>\n"
+"<big><b>%s</b></big> \n"
 "\n"
 "%s"
 msgstr ""
 
-#: gtk/rgfetchprogress.cc:141
+#: gtk/rgfetchprogress.cc:140
 #, c-format
 msgid ""
 "Please insert the disk labeled:\n"
@@ -1099,29 +1094,29 @@ msgstr ""
 "%s\n"
 "в дисковод %s"
 
-#: gtk/rgfetchprogress.cc:247
+#: gtk/rgfetchprogress.cc:246
 #, fuzzy, c-format
 msgid "Downloading file %li of %li at %s/s - %s remaining"
 msgstr "%-3li/%-3li файлов    %4sB/s  осталось %6s\n"
 
-#: gtk/rgfetchprogress.cc:252
+#: gtk/rgfetchprogress.cc:251
 #, fuzzy, c-format
 msgid "Downloading file %li of %li"
 msgstr "Загрузить только файлы пакетов"
 
-#: gtk/rgfetchprogress.cc:317
+#: gtk/rgfetchprogress.cc:316
 msgid "Queued"
 msgstr "Добавлен в очередь"
 
-#: gtk/rgfetchprogress.cc:320
+#: gtk/rgfetchprogress.cc:319
 msgid "Done"
 msgstr "Готово"
 
-#: gtk/rgfetchprogress.cc:323
+#: gtk/rgfetchprogress.cc:322
 msgid "Hit"
 msgstr "Совпадение"
 
-#: gtk/rgfetchprogress.cc:326
+#: gtk/rgfetchprogress.cc:325
 msgid "Failed"
 msgstr "Неудачно"
 
@@ -3060,7 +3055,7 @@ msgstr "Замещённые пакеты"
 msgid "Icon Legend"
 msgstr ""
 
-#: gtk/rgiconlegend.cc:73
+#: gtk/rgiconlegend.cc:72
 #, fuzzy
 msgid "Package is supported"
 msgstr "Пакет закреплён."
@@ -3120,6 +3115,10 @@ msgid ""
 "the package. Refresh the package list and check the source of the package (e."
 "g. CD or network connection)."
 msgstr ""
+
+#, fuzzy
+#~ msgid "Downloading Files"
+#~ msgstr "Загрузить только файлы пакетов"
 
 #, fuzzy
 #~ msgid "Refresh the list of known packages from remote server"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: synaptic 0.53\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-11-01 18:15+0100\n"
+"POT-Creation-Date: 2004-11-04 22:37+0100\n"
 "PO-Revision-Date: 2004-08-09 14:26+0100\n"
 "Last-Translator: Jordi Mallach <jordi@debian.org>\n"
 "Language-Team: Catalan <debian-l10n-catalan@lists.debian.org>\n"
@@ -546,7 +546,7 @@ msgstr ""
 msgid "Internal Error, non-zero counts"
 msgstr "S'ha produït un error intern, compte no-zero"
 
-#: common/rpackagefilter.cc:45 gtk/rgpreferenceswindow.cc:934
+#: common/rpackagefilter.cc:45 gtk/rgpreferenceswindow.cc:899
 #: gtk/window_find.glade.h:6
 msgid "Name"
 msgstr "Nom"
@@ -1026,21 +1026,17 @@ msgstr "Seleccioneu un tipus de lletra"
 msgid "ignore"
 msgstr "ignora"
 
-#: gtk/rgpreferenceswindow.cc:791
+#: gtk/rgpreferenceswindow.cc:766
 msgid "Color selection"
 msgstr "Selecció de color"
 
-#: gtk/rgpreferenceswindow.cc:928
+#: gtk/rgpreferenceswindow.cc:893
 msgid "Visible"
 msgstr "Visible"
 
-#: gtk/rgpreferenceswindow.cc:1002 gtk/window_preferences.glade.h:64
+#: gtk/rgpreferenceswindow.cc:967 gtk/window_preferences.glade.h:64
 msgid "Preferences"
 msgstr "Preferències"
-
-#: gtk/rgfetchprogress.cc:66
-msgid "Downloading Files"
-msgstr "S'estan descarregant els fitxers"
 
 #: gtk/rgfetchprogress.cc:96 gtk/rgmainwindow.cc:953
 msgid "Size"
@@ -1050,15 +1046,15 @@ msgstr "Mida"
 msgid "URI"
 msgstr "URI"
 
-#: gtk/rgfetchprogress.cc:128
+#: gtk/rgfetchprogress.cc:127
 #, c-format
 msgid ""
-"<big><b>%s</b></big>\n"
+"<big><b>%s</b></big> \n"
 "\n"
 "%s"
 msgstr ""
 
-#: gtk/rgfetchprogress.cc:141
+#: gtk/rgfetchprogress.cc:140
 #, c-format
 msgid ""
 "Please insert the disk labeled:\n"
@@ -1069,29 +1065,29 @@ msgstr ""
 "%s\n"
 "en la unitat %s"
 
-#: gtk/rgfetchprogress.cc:247
+#: gtk/rgfetchprogress.cc:246
 #, c-format
 msgid "Downloading file %li of %li at %s/s - %s remaining"
 msgstr "S'està descarregant el fitxer %li de %li a %s/s - falten %s"
 
-#: gtk/rgfetchprogress.cc:252
+#: gtk/rgfetchprogress.cc:251
 #, c-format
 msgid "Downloading file %li of %li"
 msgstr "S'està descarregant el fitxer %li de %li"
 
-#: gtk/rgfetchprogress.cc:317
+#: gtk/rgfetchprogress.cc:316
 msgid "Queued"
 msgstr "En cua"
 
-#: gtk/rgfetchprogress.cc:320
+#: gtk/rgfetchprogress.cc:319
 msgid "Done"
 msgstr "Fet"
 
-#: gtk/rgfetchprogress.cc:323
+#: gtk/rgfetchprogress.cc:322
 msgid "Hit"
 msgstr "Trobat"
 
-#: gtk/rgfetchprogress.cc:326
+#: gtk/rgfetchprogress.cc:325
 msgid "Failed"
 msgstr "Fallat"
 
@@ -2937,7 +2933,7 @@ msgstr "Paquets que en depenen"
 msgid "Icon Legend"
 msgstr "Llegenda de la icona"
 
-#: gtk/rgiconlegend.cc:73
+#: gtk/rgiconlegend.cc:72
 #, fuzzy
 msgid "Package is supported"
 msgstr "Llista de paquets"
@@ -3006,6 +3002,9 @@ msgstr ""
 "repositori. També poden haver problemes amb la font del paquet. Refresqueu "
 "la llista de paquets i comproveu la font del paquet (p. ex CD o connexió de "
 "xarxa)."
+
+#~ msgid "Downloading Files"
+#~ msgstr "S'estan descarregant els fitxers"
 
 #, fuzzy
 #~ msgid "Refresh the list of known packages from remote server"

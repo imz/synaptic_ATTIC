@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: synaptic\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-11-01 18:15+0100\n"
+"POT-Creation-Date: 2004-11-04 22:37+0100\n"
 "PO-Revision-Date: 2004-08-08 12:33+0300\n"
 "Last-Translator: Erçin EKER <erc.caldera@gmx.net>\n"
 "Language-Team: Turkish <debian-l10n-turkish@lists.debian.org>\n"
@@ -534,7 +534,7 @@ msgstr "Paket listeleri veya \"status\" dosyası işlenemiyor veya açılamıyor
 msgid "Internal Error, non-zero counts"
 msgstr "Dahili Hata, sıfır olmayan sonuç"
 
-#: common/rpackagefilter.cc:45 gtk/rgpreferenceswindow.cc:934
+#: common/rpackagefilter.cc:45 gtk/rgpreferenceswindow.cc:899
 #: gtk/window_find.glade.h:6
 msgid "Name"
 msgstr "İsim"
@@ -1004,21 +1004,17 @@ msgstr "Yazıtipi seç"
 msgid "ignore"
 msgstr "göz ardı et"
 
-#: gtk/rgpreferenceswindow.cc:791
+#: gtk/rgpreferenceswindow.cc:766
 msgid "Color selection"
 msgstr "Renk seçimi"
 
-#: gtk/rgpreferenceswindow.cc:928
+#: gtk/rgpreferenceswindow.cc:893
 msgid "Visible"
 msgstr "Görünür"
 
-#: gtk/rgpreferenceswindow.cc:1002 gtk/window_preferences.glade.h:64
+#: gtk/rgpreferenceswindow.cc:967 gtk/window_preferences.glade.h:64
 msgid "Preferences"
 msgstr "Tercihler"
-
-#: gtk/rgfetchprogress.cc:66
-msgid "Downloading Files"
-msgstr "Dosyalar İndiriliyor"
 
 #: gtk/rgfetchprogress.cc:96 gtk/rgmainwindow.cc:953
 msgid "Size"
@@ -1028,15 +1024,15 @@ msgstr "Boyut"
 msgid "URI"
 msgstr "URI"
 
-#: gtk/rgfetchprogress.cc:128
+#: gtk/rgfetchprogress.cc:127
 #, c-format
 msgid ""
-"<big><b>%s</b></big>\n"
+"<big><b>%s</b></big> \n"
 "\n"
 "%s"
 msgstr ""
 
-#: gtk/rgfetchprogress.cc:141
+#: gtk/rgfetchprogress.cc:140
 #, c-format
 msgid ""
 "Please insert the disk labeled:\n"
@@ -1046,29 +1042,29 @@ msgstr ""
 "Lütfen şu etikete sahip diski %2$s sürücüsüne yerleştirin:\n"
 "%1$s"
 
-#: gtk/rgfetchprogress.cc:247
+#: gtk/rgfetchprogress.cc:246
 #, c-format
 msgid "Downloading file %li of %li at %s/s - %s remaining"
 msgstr "%2$li dosyadan %1$li tanesi %3$s/s hızda aktarıldı - %4$s kaldı"
 
-#: gtk/rgfetchprogress.cc:252
+#: gtk/rgfetchprogress.cc:251
 #, c-format
 msgid "Downloading file %li of %li"
 msgstr "%2$li dosyadan %1$li dosya indiriliyor"
 
-#: gtk/rgfetchprogress.cc:317
+#: gtk/rgfetchprogress.cc:316
 msgid "Queued"
 msgstr "Kuyrukta"
 
-#: gtk/rgfetchprogress.cc:320
+#: gtk/rgfetchprogress.cc:319
 msgid "Done"
 msgstr "Tamamlandı"
 
-#: gtk/rgfetchprogress.cc:323
+#: gtk/rgfetchprogress.cc:322
 msgid "Hit"
 msgstr "Başarılı"
 
-#: gtk/rgfetchprogress.cc:326
+#: gtk/rgfetchprogress.cc:325
 msgid "Failed"
 msgstr "Başarısız"
 
@@ -2895,7 +2891,7 @@ msgstr "Bağımlı paketler"
 msgid "Icon Legend"
 msgstr "Simge Açıklamaları"
 
-#: gtk/rgiconlegend.cc:73
+#: gtk/rgiconlegend.cc:72
 #, fuzzy
 msgid "Package is supported"
 msgstr "Paket Listesi"
@@ -2962,6 +2958,9 @@ msgstr ""
 "Kurmak istediğiniz paketin bu sürümü artık depoda bulunmuyor olabilir ya da "
 "paket kaynağı ile ilgili bir sorun olabilir. Paket listesini yenileyin ve "
 "paket kaynağını denetleyin (ör. CD ya da ağ bağlantısı)."
+
+#~ msgid "Downloading Files"
+#~ msgstr "Dosyalar İndiriliyor"
 
 #, fuzzy
 #~ msgid "Refresh the list of known packages from remote server"

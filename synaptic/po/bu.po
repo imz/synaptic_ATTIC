@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: synaptic_long 0.53.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-11-01 18:15+0100\n"
+"POT-Creation-Date: 2004-11-04 22:37+0100\n"
 "PO-Revision-Date: 2004-09-29 08:06+0300\n"
 "Last-Translator: Vladimir \"Kaladan\" Petkov <vpetkov@i-space.org>\n"
 "Language-Team: Bulgarian <bg@li.org>\n"
@@ -541,7 +541,7 @@ msgstr ""
 msgid "Internal Error, non-zero counts"
 msgstr "Вътрешна грешка: излизане със статус, различен от 0."
 
-#: common/rpackagefilter.cc:45 gtk/rgpreferenceswindow.cc:934
+#: common/rpackagefilter.cc:45 gtk/rgpreferenceswindow.cc:899
 #: gtk/window_find.glade.h:6
 msgid "Name"
 msgstr "Име"
@@ -998,21 +998,17 @@ msgstr "Избор на шрифт"
 msgid "ignore"
 msgstr "игнориране"
 
-#: gtk/rgpreferenceswindow.cc:791
+#: gtk/rgpreferenceswindow.cc:766
 msgid "Color selection"
 msgstr "Избор на цветове"
 
-#: gtk/rgpreferenceswindow.cc:928
+#: gtk/rgpreferenceswindow.cc:893
 msgid "Visible"
 msgstr "Видими"
 
-#: gtk/rgpreferenceswindow.cc:1002 gtk/window_preferences.glade.h:64
+#: gtk/rgpreferenceswindow.cc:967 gtk/window_preferences.glade.h:64
 msgid "Preferences"
 msgstr "Подробности"
-
-#: gtk/rgfetchprogress.cc:66
-msgid "Downloading Files"
-msgstr "Изтегляне на файлове"
 
 #: gtk/rgfetchprogress.cc:96 gtk/rgmainwindow.cc:953
 msgid "Size"
@@ -1022,15 +1018,15 @@ msgstr "Размер"
 msgid "URI"
 msgstr "Адрес"
 
-#: gtk/rgfetchprogress.cc:128
+#: gtk/rgfetchprogress.cc:127
 #, c-format
 msgid ""
-"<big><b>%s</b></big>\n"
+"<big><b>%s</b></big> \n"
 "\n"
 "%s"
 msgstr ""
 
-#: gtk/rgfetchprogress.cc:141
+#: gtk/rgfetchprogress.cc:140
 #, c-format
 msgid ""
 "Please insert the disk labeled:\n"
@@ -1041,29 +1037,29 @@ msgstr ""
 "%s\n"
 "в устройство·%s"
 
-#: gtk/rgfetchprogress.cc:247
+#: gtk/rgfetchprogress.cc:246
 #, c-format
 msgid "Downloading file %li of %li at %s/s - %s remaining"
 msgstr "Изтеглени %li от %li файла с %s/s - %s оставащи"
 
-#: gtk/rgfetchprogress.cc:252
+#: gtk/rgfetchprogress.cc:251
 #, c-format
 msgid "Downloading file %li of %li"
 msgstr "Изтеглени %li от %li файла"
 
-#: gtk/rgfetchprogress.cc:317
+#: gtk/rgfetchprogress.cc:316
 msgid "Queued"
 msgstr "На опашка"
 
-#: gtk/rgfetchprogress.cc:320
+#: gtk/rgfetchprogress.cc:319
 msgid "Done"
 msgstr "Готово"
 
-#: gtk/rgfetchprogress.cc:323
+#: gtk/rgfetchprogress.cc:322
 msgid "Hit"
 msgstr "Попадение"
 
-#: gtk/rgfetchprogress.cc:326
+#: gtk/rgfetchprogress.cc:325
 msgid "Failed"
 msgstr "Неуспешно"
 
@@ -2886,7 +2882,7 @@ msgstr "Зависими пакети"
 msgid "Icon Legend"
 msgstr "Легенда на иконите"
 
-#: gtk/rgiconlegend.cc:73
+#: gtk/rgiconlegend.cc:72
 #, fuzzy
 msgid "Package is supported"
 msgstr "Няма избрани пакети.\n"
@@ -2955,6 +2951,9 @@ msgstr ""
 "хранилището. Възможно е и да има проблем с източника на пакета. Презаредете "
 "списъка с пакетите и проверете източника с пакети (т.е.  CD или мрежова "
 "връзка)."
+
+#~ msgid "Downloading Files"
+#~ msgstr "Изтегляне на файлове"
 
 #, fuzzy
 #~ msgid "Refresh the list of known packages from remote server"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: synaptic 0.53.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-11-01 18:15+0100\n"
+"POT-Creation-Date: 2004-11-04 22:37+0100\n"
 "PO-Revision-Date: 2004-08-06 06:50+0800\n"
 "Last-Translator: Liu Songhe <jackliu9999@msn.com>\n"
 "Language-Team: Chinese (simplified) <i18n-translation@lists.linux.net.cn>\n"
@@ -532,7 +532,7 @@ msgstr "无法解析或打开软件包列表或状态文件。"
 msgid "Internal Error, non-zero counts"
 msgstr "内部错误，非零计数"
 
-#: common/rpackagefilter.cc:45 gtk/rgpreferenceswindow.cc:934
+#: common/rpackagefilter.cc:45 gtk/rgpreferenceswindow.cc:899
 #: gtk/window_find.glade.h:6
 msgid "Name"
 msgstr "名称"
@@ -998,22 +998,18 @@ msgstr "选择字体"
 msgid "ignore"
 msgstr "忽略"
 
-#: gtk/rgpreferenceswindow.cc:791
+#: gtk/rgpreferenceswindow.cc:766
 msgid "Color selection"
 msgstr "颜色选择"
 
 # to choice if some items is visible or not
-#: gtk/rgpreferenceswindow.cc:928
+#: gtk/rgpreferenceswindow.cc:893
 msgid "Visible"
 msgstr "显示项目"
 
-#: gtk/rgpreferenceswindow.cc:1002 gtk/window_preferences.glade.h:64
+#: gtk/rgpreferenceswindow.cc:967 gtk/window_preferences.glade.h:64
 msgid "Preferences"
 msgstr "首选项"
-
-#: gtk/rgfetchprogress.cc:66
-msgid "Downloading Files"
-msgstr "下载文件"
 
 #: gtk/rgfetchprogress.cc:96 gtk/rgmainwindow.cc:953
 msgid "Size"
@@ -1023,15 +1019,15 @@ msgstr "文件大小"
 msgid "URI"
 msgstr "网址"
 
-#: gtk/rgfetchprogress.cc:128
+#: gtk/rgfetchprogress.cc:127
 #, c-format
 msgid ""
-"<big><b>%s</b></big>\n"
+"<big><b>%s</b></big> \n"
 "\n"
 "%s"
 msgstr ""
 
-#: gtk/rgfetchprogress.cc:141
+#: gtk/rgfetchprogress.cc:140
 #, c-format
 msgid ""
 "Please insert the disk labeled:\n"
@@ -1042,29 +1038,29 @@ msgstr ""
 "%s\n"
 "的光盘插入驱动器 %s"
 
-#: gtk/rgfetchprogress.cc:247
+#: gtk/rgfetchprogress.cc:246
 #, c-format
 msgid "Downloading file %li of %li at %s/s - %s remaining"
 msgstr "正在下载文件 %li(属于 %li)  速度 %s/s - 尚余 %s"
 
-#: gtk/rgfetchprogress.cc:252
+#: gtk/rgfetchprogress.cc:251
 #, c-format
 msgid "Downloading file %li of %li"
 msgstr "正在下载文件 %li(属于 %li)"
 
-#: gtk/rgfetchprogress.cc:317
+#: gtk/rgfetchprogress.cc:316
 msgid "Queued"
 msgstr "已列队"
 
-#: gtk/rgfetchprogress.cc:320
+#: gtk/rgfetchprogress.cc:319
 msgid "Done"
 msgstr "已下载"
 
-#: gtk/rgfetchprogress.cc:323
+#: gtk/rgfetchprogress.cc:322
 msgid "Hit"
 msgstr "成功"
 
-#: gtk/rgfetchprogress.cc:326
+#: gtk/rgfetchprogress.cc:325
 msgid "Failed"
 msgstr "失败"
 
@@ -2861,7 +2857,7 @@ msgstr "依赖的软件包"
 msgid "Icon Legend"
 msgstr "图标图例"
 
-#: gtk/rgiconlegend.cc:73
+#: gtk/rgiconlegend.cc:72
 #, fuzzy
 msgid "Package is supported"
 msgstr "此软件包目前被设为永不更新。"
@@ -2924,6 +2920,9 @@ msgstr ""
 "\n"
 "您想安装的软件包版本也许在仓库里已经不再可用了。或许软件包源有问题。刷新软件"
 "包列表并检查软件包源(即 CD 或者网络连接)。"
+
+#~ msgid "Downloading Files"
+#~ msgstr "下载文件"
 
 #, fuzzy
 #~ msgid "Refresh the list of known packages from remote server"

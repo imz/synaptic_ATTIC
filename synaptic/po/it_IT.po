@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.39\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-11-01 18:15+0100\n"
+"POT-Creation-Date: 2004-11-04 22:37+0100\n"
 "PO-Revision-Date: 2004-07-16 21:59+0200\n"
 "Last-Translator: Mauro Colorio <linuxbox at interfree it>\n"
 "Language-Team: italian <tp@lists.linux.it>\n"
@@ -540,7 +540,7 @@ msgstr ""
 msgid "Internal Error, non-zero counts"
 msgstr "Errore interno, 'non-zero counts'"
 
-#: common/rpackagefilter.cc:45 gtk/rgpreferenceswindow.cc:934
+#: common/rpackagefilter.cc:45 gtk/rgpreferenceswindow.cc:899
 #: gtk/window_find.glade.h:6
 msgid "Name"
 msgstr "Nome"
@@ -1021,22 +1021,18 @@ msgstr "Scelta carattere"
 msgid "ignore"
 msgstr "ignora"
 
-#: gtk/rgpreferenceswindow.cc:791
+#: gtk/rgpreferenceswindow.cc:766
 msgid "Color selection"
 msgstr "Selezione colore"
 
-#: gtk/rgpreferenceswindow.cc:928
+#: gtk/rgpreferenceswindow.cc:893
 #, fuzzy
 msgid "Visible"
 msgstr "Variabile:"
 
-#: gtk/rgpreferenceswindow.cc:1002 gtk/window_preferences.glade.h:64
+#: gtk/rgpreferenceswindow.cc:967 gtk/window_preferences.glade.h:64
 msgid "Preferences"
 msgstr "Preferenze"
-
-#: gtk/rgfetchprogress.cc:66
-msgid "Downloading Files"
-msgstr "Scaricamento i file"
 
 #: gtk/rgfetchprogress.cc:96 gtk/rgmainwindow.cc:953
 msgid "Size"
@@ -1046,15 +1042,15 @@ msgstr "Dimensione"
 msgid "URI"
 msgstr "URI"
 
-#: gtk/rgfetchprogress.cc:128
+#: gtk/rgfetchprogress.cc:127
 #, c-format
 msgid ""
-"<big><b>%s</b></big>\n"
+"<big><b>%s</b></big> \n"
 "\n"
 "%s"
 msgstr ""
 
-#: gtk/rgfetchprogress.cc:141
+#: gtk/rgfetchprogress.cc:140
 #, c-format
 msgid ""
 "Please insert the disk labeled:\n"
@@ -1065,29 +1061,29 @@ msgstr ""
 "%s\n"
 "nel lettore %s"
 
-#: gtk/rgfetchprogress.cc:247
+#: gtk/rgfetchprogress.cc:246
 #, c-format
 msgid "Downloading file %li of %li at %s/s - %s remaining"
 msgstr "Scaricamento %li file di %li a %s/s - ne rimangono %s"
 
-#: gtk/rgfetchprogress.cc:252
+#: gtk/rgfetchprogress.cc:251
 #, c-format
 msgid "Downloading file %li of %li"
 msgstr "Scaricamento il file %li di %li"
 
-#: gtk/rgfetchprogress.cc:317
+#: gtk/rgfetchprogress.cc:316
 msgid "Queued"
 msgstr "Accodati"
 
-#: gtk/rgfetchprogress.cc:320
+#: gtk/rgfetchprogress.cc:319
 msgid "Done"
 msgstr "Fatto"
 
-#: gtk/rgfetchprogress.cc:323
+#: gtk/rgfetchprogress.cc:322
 msgid "Hit"
 msgstr "Controllo"
 
-#: gtk/rgfetchprogress.cc:326
+#: gtk/rgfetchprogress.cc:325
 msgid "Failed"
 msgstr "Fallito"
 
@@ -2941,7 +2937,7 @@ msgstr "Pacchetti sostituiti"
 msgid "Icon Legend"
 msgstr "Legenda Icone"
 
-#: gtk/rgiconlegend.cc:73
+#: gtk/rgiconlegend.cc:72
 #, fuzzy
 msgid "Package is supported"
 msgstr "Nessun pacchetto selezionato."
@@ -3010,6 +3006,9 @@ msgstr ""
 "nell'archivio. Oppure potrebbero esserci dei problemi con la sorgente del "
 "pacchetto. AGgiornare la lista dei pacchetti e controllare la sorgente del "
 "pacchetto (es: CD o connessione di rete)."
+
+#~ msgid "Downloading Files"
+#~ msgstr "Scaricamento i file"
 
 #, fuzzy
 #~ msgid "Refresh the list of known packages from remote server"

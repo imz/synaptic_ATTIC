@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Synaptic-0.48\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-11-01 18:15+0100\n"
+"POT-Creation-Date: 2004-11-04 22:37+0100\n"
 "PO-Revision-Date: 2004-02-04 20:58+0100\n"
 "Last-Translator: Слободан Средојевић <ssl@uns.ns.ac.yu>\n"
 "Language-Team: Serbian (sr) <serbiangnome-lista@nongnu.org>\n"
@@ -558,7 +558,7 @@ msgstr ""
 msgid "Internal Error, non-zero counts"
 msgstr "Унутрашња грешка, ненулта повратна вредност"
 
-#: common/rpackagefilter.cc:45 gtk/rgpreferenceswindow.cc:934
+#: common/rpackagefilter.cc:45 gtk/rgpreferenceswindow.cc:899
 #: gtk/window_find.glade.h:6
 msgid "Name"
 msgstr "Име"
@@ -1052,23 +1052,18 @@ msgstr "Изаберите писмо"
 msgid "ignore"
 msgstr "занемари"
 
-#: gtk/rgpreferenceswindow.cc:791
+#: gtk/rgpreferenceswindow.cc:766
 msgid "Color selection"
 msgstr "Избор боја"
 
-#: gtk/rgpreferenceswindow.cc:928
+#: gtk/rgpreferenceswindow.cc:893
 #, fuzzy
 msgid "Visible"
 msgstr "Променљива:"
 
-#: gtk/rgpreferenceswindow.cc:1002 gtk/window_preferences.glade.h:64
+#: gtk/rgpreferenceswindow.cc:967 gtk/window_preferences.glade.h:64
 msgid "Preferences"
 msgstr "Поставке"
-
-#: gtk/rgfetchprogress.cc:66
-#, fuzzy
-msgid "Downloading Files"
-msgstr "Преузимање датотека..."
 
 #: gtk/rgfetchprogress.cc:96 gtk/rgmainwindow.cc:953
 msgid "Size"
@@ -1078,15 +1073,15 @@ msgstr "Величина"
 msgid "URI"
 msgstr "Адреса"
 
-#: gtk/rgfetchprogress.cc:128
+#: gtk/rgfetchprogress.cc:127
 #, c-format
 msgid ""
-"<big><b>%s</b></big>\n"
+"<big><b>%s</b></big> \n"
 "\n"
 "%s"
 msgstr ""
 
-#: gtk/rgfetchprogress.cc:141
+#: gtk/rgfetchprogress.cc:140
 #, c-format
 msgid ""
 "Please insert the disk labeled:\n"
@@ -1097,29 +1092,29 @@ msgstr ""
 "%s\n"
 "у уређај %s"
 
-#: gtk/rgfetchprogress.cc:247
+#: gtk/rgfetchprogress.cc:246
 #, fuzzy, c-format
 msgid "Downloading file %li of %li at %s/s - %s remaining"
 msgstr "Преузето: %li од %li датотека при брзини: %s/s - преостало: %s "
 
-#: gtk/rgfetchprogress.cc:252
+#: gtk/rgfetchprogress.cc:251
 #, fuzzy, c-format
 msgid "Downloading file %li of %li"
 msgstr "Преузимање датотека..."
 
-#: gtk/rgfetchprogress.cc:317
+#: gtk/rgfetchprogress.cc:316
 msgid "Queued"
 msgstr "Стављени у ред"
 
-#: gtk/rgfetchprogress.cc:320
+#: gtk/rgfetchprogress.cc:319
 msgid "Done"
 msgstr "Урађено"
 
-#: gtk/rgfetchprogress.cc:323
+#: gtk/rgfetchprogress.cc:322
 msgid "Hit"
 msgstr "Посећен"
 
-#: gtk/rgfetchprogress.cc:326
+#: gtk/rgfetchprogress.cc:325
 msgid "Failed"
 msgstr "Неуспех"
 
@@ -3045,7 +3040,7 @@ msgstr "Замењени пакети"
 msgid "Icon Legend"
 msgstr "Опис сличица"
 
-#: gtk/rgiconlegend.cc:73
+#: gtk/rgiconlegend.cc:72
 #, fuzzy
 msgid "Package is supported"
 msgstr "Пакет је издвојен."
@@ -3105,6 +3100,10 @@ msgid ""
 "the package. Refresh the package list and check the source of the package (e."
 "g. CD or network connection)."
 msgstr ""
+
+#, fuzzy
+#~ msgid "Downloading Files"
+#~ msgstr "Преузимање датотека..."
 
 #, fuzzy
 #~ msgid "Refresh the list of known packages from remote server"

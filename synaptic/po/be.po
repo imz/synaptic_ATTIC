@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: synaptic-be\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-11-01 18:15+0100\n"
+"POT-Creation-Date: 2004-11-04 22:37+0100\n"
 "PO-Revision-Date: 2003-08-21 13:28+0300\n"
 "Last-Translator: Vital Khilko <dojlid@mova.org>\n"
 "Language-Team: belarusian <i18n@mova.org>\n"
@@ -566,7 +566,7 @@ msgstr "Немагчыма адкрыць ці апрацаваць файл с�
 msgid "Internal Error, non-zero counts"
 msgstr "Нутраная памылка, ненулявыя лічыльнікі"
 
-#: common/rpackagefilter.cc:45 gtk/rgpreferenceswindow.cc:934
+#: common/rpackagefilter.cc:45 gtk/rgpreferenceswindow.cc:899
 #: gtk/window_find.glade.h:6
 msgid "Name"
 msgstr "Назва"
@@ -1040,23 +1040,18 @@ msgstr ""
 msgid "ignore"
 msgstr ""
 
-#: gtk/rgpreferenceswindow.cc:791
+#: gtk/rgpreferenceswindow.cc:766
 msgid "Color selection"
 msgstr "Выбар колера"
 
-#: gtk/rgpreferenceswindow.cc:928
+#: gtk/rgpreferenceswindow.cc:893
 #, fuzzy
 msgid "Visible"
 msgstr "Магчымы"
 
-#: gtk/rgpreferenceswindow.cc:1002 gtk/window_preferences.glade.h:64
+#: gtk/rgpreferenceswindow.cc:967 gtk/window_preferences.glade.h:64
 msgid "Preferences"
 msgstr "Перавагі"
-
-#: gtk/rgfetchprogress.cc:66
-#, fuzzy
-msgid "Downloading Files"
-msgstr "Рэдагаваць фільтар..."
 
 #: gtk/rgfetchprogress.cc:96 gtk/rgmainwindow.cc:953
 msgid "Size"
@@ -1066,15 +1061,15 @@ msgstr "Памер"
 msgid "URI"
 msgstr "URI"
 
-#: gtk/rgfetchprogress.cc:128
+#: gtk/rgfetchprogress.cc:127
 #, c-format
 msgid ""
-"<big><b>%s</b></big>\n"
+"<big><b>%s</b></big> \n"
 "\n"
 "%s"
 msgstr ""
 
-#: gtk/rgfetchprogress.cc:141
+#: gtk/rgfetchprogress.cc:140
 #, fuzzy, c-format
 msgid ""
 "Please insert the disk labeled:\n"
@@ -1082,29 +1077,29 @@ msgid ""
 "in drive %s"
 msgstr "Устаўце, калі ласка, дыск з надпісам:\n"
 
-#: gtk/rgfetchprogress.cc:247
+#: gtk/rgfetchprogress.cc:246
 #, fuzzy, c-format
 msgid "Downloading file %li of %li at %s/s - %s remaining"
 msgstr "%-3li/%-3li файлаў    %4sB/s   засталося %6s\n"
 
-#: gtk/rgfetchprogress.cc:252
+#: gtk/rgfetchprogress.cc:251
 #, fuzzy, c-format
 msgid "Downloading file %li of %li"
 msgstr "Рэдагаваць фільтар..."
 
-#: gtk/rgfetchprogress.cc:317
+#: gtk/rgfetchprogress.cc:316
 msgid "Queued"
 msgstr "Пастаўлены ў чаргу"
 
-#: gtk/rgfetchprogress.cc:320
+#: gtk/rgfetchprogress.cc:319
 msgid "Done"
 msgstr "Зроблена"
 
-#: gtk/rgfetchprogress.cc:323
+#: gtk/rgfetchprogress.cc:322
 msgid "Hit"
 msgstr "Хіт"
 
-#: gtk/rgfetchprogress.cc:326
+#: gtk/rgfetchprogress.cc:325
 msgid "Failed"
 msgstr "Няўдала"
 
@@ -3053,7 +3048,7 @@ msgstr "Усе пакеты"
 msgid "Icon Legend"
 msgstr ""
 
-#: gtk/rgiconlegend.cc:73
+#: gtk/rgiconlegend.cc:72
 #, fuzzy
 msgid "Package is supported"
 msgstr "Пакет замацаваны."
@@ -3113,6 +3108,10 @@ msgid ""
 "the package. Refresh the package list and check the source of the package (e."
 "g. CD or network connection)."
 msgstr ""
+
+#, fuzzy
+#~ msgid "Downloading Files"
+#~ msgstr "Рэдагаваць фільтар..."
 
 #, fuzzy
 #~ msgid "Refresh the list of known packages from remote server"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: synaptic 0.53\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-11-01 18:15+0100\n"
+"POT-Creation-Date: 2004-11-04 22:37+0100\n"
 "PO-Revision-Date: 2004-08-11 16:24+0200\n"
 "Last-Translator: Julien Louis <leonptitlouis@wanadoo.fr>\n"
 "Language-Team: Frend <debian-l10n-french@lists.debian.org>\n"
@@ -545,7 +545,7 @@ msgstr ""
 msgid "Internal Error, non-zero counts"
 msgstr "Erreur interne, compteurs non-nuls"
 
-#: common/rpackagefilter.cc:45 gtk/rgpreferenceswindow.cc:934
+#: common/rpackagefilter.cc:45 gtk/rgpreferenceswindow.cc:899
 #: gtk/window_find.glade.h:6
 msgid "Name"
 msgstr "Nom"
@@ -1035,21 +1035,17 @@ msgstr "Sélectionner la police"
 msgid "ignore"
 msgstr "ignorer"
 
-#: gtk/rgpreferenceswindow.cc:791
+#: gtk/rgpreferenceswindow.cc:766
 msgid "Color selection"
 msgstr "Sélection des couleurs"
 
-#: gtk/rgpreferenceswindow.cc:928
+#: gtk/rgpreferenceswindow.cc:893
 msgid "Visible"
 msgstr "Visible"
 
-#: gtk/rgpreferenceswindow.cc:1002 gtk/window_preferences.glade.h:64
+#: gtk/rgpreferenceswindow.cc:967 gtk/window_preferences.glade.h:64
 msgid "Preferences"
 msgstr "Préférences"
-
-#: gtk/rgfetchprogress.cc:66
-msgid "Downloading Files"
-msgstr "Téléchargement des fichiers"
 
 #: gtk/rgfetchprogress.cc:96 gtk/rgmainwindow.cc:953
 msgid "Size"
@@ -1059,15 +1055,15 @@ msgstr "Taille"
 msgid "URI"
 msgstr "URI"
 
-#: gtk/rgfetchprogress.cc:128
+#: gtk/rgfetchprogress.cc:127
 #, c-format
 msgid ""
-"<big><b>%s</b></big>\n"
+"<big><b>%s</b></big> \n"
 "\n"
 "%s"
 msgstr ""
 
-#: gtk/rgfetchprogress.cc:141
+#: gtk/rgfetchprogress.cc:140
 #, c-format
 msgid ""
 "Please insert the disk labeled:\n"
@@ -1078,29 +1074,29 @@ msgstr ""
 "%s\n"
 "dans le lecteur %s"
 
-#: gtk/rgfetchprogress.cc:247
+#: gtk/rgfetchprogress.cc:246
 #, c-format
 msgid "Downloading file %li of %li at %s/s - %s remaining"
 msgstr "Récupération du fichier %li sur %li à %s/s - %s restantes"
 
-#: gtk/rgfetchprogress.cc:252
+#: gtk/rgfetchprogress.cc:251
 #, c-format
 msgid "Downloading file %li of %li"
 msgstr "Téléchargement du fichier %li sur %li"
 
-#: gtk/rgfetchprogress.cc:317
+#: gtk/rgfetchprogress.cc:316
 msgid "Queued"
 msgstr "En attente"
 
-#: gtk/rgfetchprogress.cc:320
+#: gtk/rgfetchprogress.cc:319
 msgid "Done"
 msgstr "Fait"
 
-#: gtk/rgfetchprogress.cc:323
+#: gtk/rgfetchprogress.cc:322
 msgid "Hit"
 msgstr "Atteint"
 
-#: gtk/rgfetchprogress.cc:326
+#: gtk/rgfetchprogress.cc:325
 msgid "Failed"
 msgstr "Échec"
 
@@ -2942,7 +2938,7 @@ msgstr "Paquets dépendant de"
 msgid "Icon Legend"
 msgstr "Légende de l'icône"
 
-#: gtk/rgiconlegend.cc:73
+#: gtk/rgiconlegend.cc:72
 #, fuzzy
 msgid "Package is supported"
 msgstr "Liste des paquets"
@@ -3011,6 +3007,9 @@ msgstr ""
 "disponible dans le dépôt, ou il semble y avoir des problèmes avec l'accès au "
 "dépôt. Rafraichissez la liste des paquets et vérifier que vous pouvez "
 "accéder au dépôt (par ex. : cédérom ou serveur FTP)."
+
+#~ msgid "Downloading Files"
+#~ msgstr "Téléchargement des fichiers"
 
 #, fuzzy
 #~ msgid "Refresh the list of known packages from remote server"

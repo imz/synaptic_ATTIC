@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: synaptic 0.53\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-11-01 18:15+0100\n"
+"POT-Creation-Date: 2004-11-04 22:37+0100\n"
 "Last-Translator: Vidar Braut Haarr <mabus_at_q1n_org>\n"
 "Language-Team: Norwegian Bokmaal <bokmaal_at_firefox_no>\n"
 "MIME-Version: 1.0\n"
@@ -551,7 +551,7 @@ msgstr "Pakkelisten eller statusfilen kunne ikke bli tolket eller åpnet."
 msgid "Internal Error, non-zero counts"
 msgstr ""
 
-#: common/rpackagefilter.cc:45 gtk/rgpreferenceswindow.cc:934
+#: common/rpackagefilter.cc:45 gtk/rgpreferenceswindow.cc:899
 #: gtk/window_find.glade.h:6
 msgid "Name"
 msgstr "Navn"
@@ -1024,22 +1024,18 @@ msgstr ""
 msgid "ignore"
 msgstr ""
 
-#: gtk/rgpreferenceswindow.cc:791
+#: gtk/rgpreferenceswindow.cc:766
 msgid "Color selection"
 msgstr ""
 
-#: gtk/rgpreferenceswindow.cc:928
+#: gtk/rgpreferenceswindow.cc:893
 #, fuzzy
 msgid "Visible"
 msgstr "Deaktivert"
 
-#: gtk/rgpreferenceswindow.cc:1002 gtk/window_preferences.glade.h:64
+#: gtk/rgpreferenceswindow.cc:967 gtk/window_preferences.glade.h:64
 msgid "Preferences"
 msgstr "Innstillinger"
-
-#: gtk/rgfetchprogress.cc:66
-msgid "Downloading Files"
-msgstr ""
 
 #: gtk/rgfetchprogress.cc:96 gtk/rgmainwindow.cc:953
 msgid "Size"
@@ -1049,15 +1045,15 @@ msgstr "Størrelse"
 msgid "URI"
 msgstr "Nettadresse"
 
-#: gtk/rgfetchprogress.cc:128
+#: gtk/rgfetchprogress.cc:127
 #, c-format
 msgid ""
-"<big><b>%s</b></big>\n"
+"<big><b>%s</b></big> \n"
 "\n"
 "%s"
 msgstr ""
 
-#: gtk/rgfetchprogress.cc:141
+#: gtk/rgfetchprogress.cc:140
 #, fuzzy, c-format
 msgid ""
 "Please insert the disk labeled:\n"
@@ -1065,29 +1061,29 @@ msgid ""
 "in drive %s"
 msgstr "Vennligst sett inn platen med navnet:\n"
 
-#: gtk/rgfetchprogress.cc:247
+#: gtk/rgfetchprogress.cc:246
 #, c-format
 msgid "Downloading file %li of %li at %s/s - %s remaining"
 msgstr ""
 
-#: gtk/rgfetchprogress.cc:252
+#: gtk/rgfetchprogress.cc:251
 #, c-format
 msgid "Downloading file %li of %li"
 msgstr ""
 
-#: gtk/rgfetchprogress.cc:317
+#: gtk/rgfetchprogress.cc:316
 msgid "Queued"
 msgstr "I køen"
 
-#: gtk/rgfetchprogress.cc:320
+#: gtk/rgfetchprogress.cc:319
 msgid "Done"
 msgstr "Ferdig"
 
-#: gtk/rgfetchprogress.cc:323
+#: gtk/rgfetchprogress.cc:322
 msgid "Hit"
 msgstr "Treff"
 
-#: gtk/rgfetchprogress.cc:326
+#: gtk/rgfetchprogress.cc:325
 msgid "Failed"
 msgstr "Feilet"
 
@@ -2942,7 +2938,7 @@ msgid "Icon Legend"
 msgstr ""
 
 # 2004-09-10 this translation is awkward
-#: gtk/rgiconlegend.cc:73
+#: gtk/rgiconlegend.cc:72
 #, fuzzy
 msgid "Package is supported"
 msgstr "Pakken står fast."
