@@ -10,25 +10,30 @@
 
 Name: synaptic
 Version: 0.47
-Release: alt2.1
+Release: alt2.2
 
 Summary: Graphical front-end for APT
 Summary(ru_RU.CP1251): Графическая оболочка для APT
 Group: System/Configuration/Packaging
 License: GPL
-Url: http://savannah.nongnu.org/files/?group=synaptic
+Url: http://www.nongnu.org/synaptic/
 Packager: Sviatoslav Sviridov <svd@altlinux.ru>
 
 Source: http://savannah.nongnu.org/download/synaptic/synaptic.pkg/%version/%name-%version%rel.tar.gz
 Source1: %name-ru.po
 Source2: %name.ru.8
 
+# This patch needed to build synaptic with apt < 0.5.5cnc5 only
 Patch1: synaptic-0.36-alt-state.patch
+
 Patch2: synaptic-0.47-alt-xslt.patch
 
 Requires: %{get_dep rpm}, %{get_dep libapt}
 
-BuildPreReq: libapt-devel >= 0.5.4cnc9, libstdc++3.2-devel
+# Original BuildPreReq was: libapt-devel >= 0.5.4cnc9
+# To build synaptic with apt < 0.5.5cnc5 apply Patch1
+BuildPreReq: libapt-devel >= 0.5.5cnc5
+BuildPreReq: libstdc++3.2-devel
 %if_enabled autotools
 BuildPreReq: intltool
 %endif
@@ -56,7 +61,8 @@ Synaptic - это графическая оболочка для APT (Advanced Package Tool).
 %prep
 %setup -q
 
-%patch1 -p1
+# See comments about this patch above
+#%%patch1 -p1
 %patch2 -p1
 
 %if_with ru_po
@@ -98,6 +104,9 @@ mkdir -p %buildroot%_mandir/ru/man8/
 %doc README* TODO NEWS AUTHORS
 
 %changelog
+* Sun Jan 18 2004 Sviatoslav Sviridov <svd@altlinux.ru> 0.47-alt2.2
+- disabled synaptic-0.36-alt-state.patch
+
 * Thu Jan 15 2004 Dmitry V. Levin <ldv@altlinux.org> 0.47-alt2.1
 - Rebuilt with apt-0.5.15cnc5.
 
