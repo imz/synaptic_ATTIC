@@ -2,12 +2,15 @@
 # $Id: synaptic,v 1.1 2003/04/28 11:30:54 svd Exp $
 
 %define rel %nil
+# '--with ru_po' if we have updated ru.po (Source1)
 %def_with ru_po
+# '--with ru_man' if we have updated russian manpage (Source2)
+%def_without ru_man
 %def_enable autotools
 
 Name: synaptic
 Version: 0.47
-Release: alt1
+Release: alt2
 
 Summary: Graphical front-end for APT
 Summary(ru_RU.CP1251): Графическая оболочка для APT
@@ -74,8 +77,14 @@ Synaptic - это графическая оболочка для APT (Advanced Package Tool).
 
 %install
 %make_install install DESTDIR=%buildroot
-mkdir -p %buildroot%_mandir/ru_RU.KOI8-R/man8/
-%__install -p -m644 %SOURCE2 %buildroot%_mandir/ru_RU.KOI8-R/man8/%name.8
+
+mkdir -p %buildroot%_mandir/ru/man8/
+%if_with ru_man
+%__install -p -m644 %SOURCE2 %buildroot%_mandir/ru/man8/%name.8
+%else
+%__install -p -m644 man/%name.ru.8 %buildroot%_mandir/ru/man8/%name.8
+%endif
+
 %find_lang %name
 
 %files -f %name.lang
@@ -84,10 +93,15 @@ mkdir -p %buildroot%_mandir/ru_RU.KOI8-R/man8/
 %_datadir/gnome/help/%name
 %_datadir/omf/%name
 %_mandir/man8/%name.8.*
-%_mandir/ru_RU.KOI8-R/man8/%name.8.*
+%_mandir/ru/man8/%name.8.*
 %doc README* TODO NEWS AUTHORS
 
 %changelog
+* Tue Jan 13 2004 Sviatoslav Sviridov <svd@altlinux.ru> 0.47-alt2
+- russian manpage moved to %_mandir/ru/man8 (#3470)
+- spec update:
+  + conditional using of original russian manpage or included in src.rpm
+
 * Fri Jan 02 2004 Sviatoslav Sviridov <svd@altlinux.ru> 0.47-alt1
 - updated russian translation from kate@
 
