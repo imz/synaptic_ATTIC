@@ -10,7 +10,7 @@
 
 Name: synaptic
 Version: 0.56
-Release: alt0.2
+Release: alt0.3
 
 Summary: Graphical front-end for APT
 Summary(ru_RU.CP1251): Графическая оболочка для APT
@@ -110,6 +110,9 @@ mkdir -p %buildroot%_mandir/ru/man8/
 %doc README* TODO NEWS AUTHORS
 
 %changelog
+* Thu Feb 03 2005 Sviatoslav Sviridov <svd@altlinux.ru> 0.56-alt0.3
+- Updated russian translation (thanx to Vitaly Lipatov)
+
 * Wed Feb 02 2005 Sviatoslav Sviridov <svd@altlinux.ru> 0.56-alt0.2
 - Updated to 0.56pre2
 - Fixed build dependencies
