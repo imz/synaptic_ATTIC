@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de.po2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-03-12 08:52+0100\n"
-"PO-Revision-Date: 2004-03-11 17:12+0100\n"
+"POT-Creation-Date: 2004-04-09 16:12+0200\n"
+"PO-Revision-Date: 2004-03-15 14:56+0100\n"
 "Last-Translator: Sebastian Heinlein <allerlei@renates-welt.de>\n"
 "Language-Team: GERMAN <synaptic-devel@nongu.org>\n"
 "MIME-Version: 1.0\n"
@@ -151,7 +151,7 @@ msgstr "World Wide Web"
 msgid "Miscellaneous  - Graphical"
 msgstr "Sonstiges - grafisch"
 
-#: common/sections_trans.cc:42 common/rpackage.cc:125 gtk/rgmainwindow.cc:75
+#: common/sections_trans.cc:42 common/rpackage.cc:125 gtk/rgmainwindow.cc:76
 msgid "Unknown"
 msgstr "Unsortiert"
 
@@ -447,7 +447,7 @@ msgstr "Name"
 msgid "Version"
 msgstr "Version"
 
-#: common/rpackagefilter.cc:197 gtk/rgmainwindow.cc:2389
+#: common/rpackagefilter.cc:197 gtk/rgmainwindow.cc:2395
 #: gtk/rgvendorswindow.cc:62 gtk/rgvendorswindow.cc:94
 #: gtk/window_find.glade.h:3 gtk/window_main_hpaned.glade.h:26
 #: gtk/window_main_vpaned.glade.h:27 gtk/window_preferences.glade.h:36
@@ -539,7 +539,7 @@ msgstr "Neu"
 
 #: common/rpackagelister.cc:291 gtk/window_filters.glade.h:50
 msgid "Residual config"
-msgstr "Rückständige Pakete"
+msgstr "Entfernte Pakete mit verbliebener Konfiguration"
 
 #: common/rpackagelister.cc:299
 msgid "Pkg with Debconf"
@@ -587,9 +587,9 @@ msgstr "Installiert und aktualisierbar"
 
 #: common/rpackagelister.cc:849
 msgid "Not installed (residual config)"
-msgstr "Nicht installiert (hinterlassene Konfiguration)"
+msgstr "Nicht installiert (verbliebene Konfiguration)"
 
-#: common/rpackagelister.cc:851 gtk/rgmainwindow.cc:1380
+#: common/rpackagelister.cc:851 gtk/rgmainwindow.cc:1387
 #: gtk/window_filters.glade.h:32 gtk/rgmisc.cc:231
 msgid "Not installed"
 msgstr "Nicht installiert"
@@ -615,7 +615,7 @@ msgstr ""
 "ignoriert oder falls vorhanden ältere Versionen verwendet."
 
 #: common/rpackagelister.cc:1505 common/rpackagelister.cc:1509
-#: gtk/rgrepositorywin.cc:322
+#: gtk/rgrepositorywin.cc:329
 msgid "Ignoring invalid record(s) in sources.list file!"
 msgstr ""
 "Ungültige Einträge von Paketarchiven in der sources.list werden ignoriert."
@@ -847,8 +847,8 @@ msgstr "Wird installiert"
 msgid "To be kept"
 msgstr "Wird zurückgehaltenen"
 
-#: gtk/rgpreferenceswindow.cc:202 gtk/rgzvtinstallprogress.cc:83
-#: gtk/rgmainwindow.cc:3599
+#: gtk/rgpreferenceswindow.cc:202 gtk/rgzvtinstallprogress.cc:109
+#: gtk/rgmainwindow.cc:3605
 msgid "An error occurred while saving configurations."
 msgstr "Ein Fehler trat beim Speichern der Konfiguration auf."
 
@@ -966,16 +966,16 @@ msgstr ""
 "Während der Vorbereitung für die Installation:\n"
 "\n"
 
-#: gtk/rginstallprogress.cc:263 gtk/rgzvtinstallprogress.cc:142
+#: gtk/rginstallprogress.cc:263 gtk/rgzvtinstallprogress.cc:181
 #: gtk/window_zvtinstallprogress.glade.h:2
 msgid "Applying Changes..."
 msgstr "Anwenden der Änderungen..."
 
-#: gtk/rgzvtinstallprogress.cc:61
+#: gtk/rgzvtinstallprogress.cc:83
 msgid "<i>Running...</i>"
 msgstr "<i>Läuft...</i>"
 
-#: gtk/rgzvtinstallprogress.cc:69
+#: gtk/rgzvtinstallprogress.cc:91
 msgid ""
 "\n"
 "Successfully applied all changes. You can close the window now "
@@ -984,7 +984,7 @@ msgstr ""
 "Alle Änderungen wurden erfolgreich angewendet. Das Fenster kann nun "
 "geschlossen werden "
 
-#: gtk/rgzvtinstallprogress.cc:71
+#: gtk/rgzvtinstallprogress.cc:93
 msgid ""
 "\n"
 "Failed to apply all changes! Scroll in this buffer to see what went wrong "
@@ -993,31 +993,38 @@ msgstr ""
 "Es konnten NICHT alle Änderungen erfolgreich angewendet werden! Scrollen Sie "
 "in der Ausgabe zurück, um den Fehler zu lokalisieren "
 
-#: gtk/rgzvtinstallprogress.cc:104
+#: gtk/rgzvtinstallprogress.cc:95
+msgid ""
+"\n"
+"Successfully installed all packages of the current medium. To continue the "
+"installation with the next medium close this window."
+msgstr ""
+
+#: gtk/rgzvtinstallprogress.cc:143
 msgid "<i>Finished</i>"
 msgstr "<i>Fertig</i>"
 
-#: gtk/rgzvtinstallprogress.cc:113
+#: gtk/rgzvtinstallprogress.cc:152
 msgid "<i>Can't close while running</i>"
 msgstr "<i>Schließen erst nach dem Anwenden möglich...</i>"
 
-#: gtk/rgmainwindow.cc:76
+#: gtk/rgmainwindow.cc:77
 msgid "Normal"
 msgstr "Normal"
 
-#: gtk/rgmainwindow.cc:77
+#: gtk/rgmainwindow.cc:78
 msgid "Critical"
 msgstr "Kritisch"
 
-#: gtk/rgmainwindow.cc:78
+#: gtk/rgmainwindow.cc:79
 msgid "Security"
 msgstr "Sicherheit"
 
-#: gtk/rgmainwindow.cc:289
+#: gtk/rgmainwindow.cc:290
 msgid "Starting help viewer..."
 msgstr "Betrachter für die Hilfe wird gestartet..."
 
-#: gtk/rgmainwindow.cc:298
+#: gtk/rgmainwindow.cc:305
 msgid ""
 "No help viewer is installed!\n"
 "\n"
@@ -1037,7 +1044,7 @@ msgstr ""
 "werden. Die HTML Version des Handbuchs befindet sich im Ordner 'synaptic/"
 "html'."
 
-#: gtk/rgmainwindow.cc:543
+#: gtk/rgmainwindow.cc:550
 msgid ""
 "Could not start the configuration tool!\n"
 "You have to install the required package 'libgnome2-perl'."
@@ -1045,44 +1052,44 @@ msgstr ""
 "Konnte Konfigurationswerkzeug nicht starten!\n"
 "Sie müssen das benötigte Paket 'libgnome2-perl' installieren."
 
-#: gtk/rgmainwindow.cc:549
+#: gtk/rgmainwindow.cc:556
 msgid "Starting package configuration tool..."
 msgstr "Konfigurationswerkzeug wird gestartet..."
 
 #. cout << "RGMainWindow::pkgHelpClicked()" << endl;
-#: gtk/rgmainwindow.cc:561
+#: gtk/rgmainwindow.cc:568
 msgid "Starting package documentation viewer..."
 msgstr "Betrachter für die Dokumentation wird gestartet..."
 
-#: gtk/rgmainwindow.cc:673
+#: gtk/rgmainwindow.cc:680
 msgid "Retrieving Index Files..."
 msgstr "Archivverzeichnisse werden heruntergeladen..."
 
-#: gtk/rgmainwindow.cc:675
+#: gtk/rgmainwindow.cc:682
 msgid "Refreshing package list..."
 msgstr "Liste aller Pakete wird aktualisiert..."
 
-#: gtk/rgmainwindow.cc:685 gtk/rgmainwindow.cc:886 gtk/rgmainwindow.cc:1519
-#: gtk/rgmainwindow.cc:2030 gtk/rgmainwindow.cc:2189
+#: gtk/rgmainwindow.cc:692 gtk/rgmainwindow.cc:893 gtk/rgmainwindow.cc:1526
+#: gtk/rgmainwindow.cc:2036 gtk/rgmainwindow.cc:2195
 #, c-format
 msgid "Can't write %s"
 msgstr "Schreibfehler: %s"
 
-#: gtk/rgmainwindow.cc:708 gtk/rgmainwindow.cc:954 gtk/rgmainwindow.cc:1544
-#: gtk/rgmainwindow.cc:1982
+#: gtk/rgmainwindow.cc:715 gtk/rgmainwindow.cc:961 gtk/rgmainwindow.cc:1551
+#: gtk/rgmainwindow.cc:1988
 #, c-format
 msgid "Can't read %s"
 msgstr "Kann %s nicht lesen"
 
-#: gtk/rgmainwindow.cc:776
+#: gtk/rgmainwindow.cc:783
 msgid "Failed to resolve dependency problems!"
 msgstr "Abhängigkeiten konnten nicht korregiert werden!"
 
-#: gtk/rgmainwindow.cc:778
+#: gtk/rgmainwindow.cc:785
 msgid "Successfully fixed dependency problems"
 msgstr "Abhängigkeiten wurden erfolgreich korregiert"
 
-#: gtk/rgmainwindow.cc:793
+#: gtk/rgmainwindow.cc:800
 msgid ""
 "Could not upgrade the system!\n"
 "There are broken packages. Fix broken packages at first."
@@ -1090,19 +1097,19 @@ msgstr ""
 "System konnte nicht aktualierst werden!\n"
 "Es existieren fehlerhafte Pakete. Reparieren Sie diese zuerst."
 
-#: gtk/rgmainwindow.cc:820
+#: gtk/rgmainwindow.cc:827
 msgid "Marking all available upgrades..."
 msgstr "Alle möglichen Aktualisierungen werden markiert..."
 
-#: gtk/rgmainwindow.cc:832
+#: gtk/rgmainwindow.cc:839
 msgid "Successfully marked all available upgrades"
 msgstr "Alle möglichen Aktualisierungen wurden markieren"
 
-#: gtk/rgmainwindow.cc:834
+#: gtk/rgmainwindow.cc:841
 msgid "Failed to mark all available upgrades!"
 msgstr "Fehler beim Markieren aller möglichen Aktualisierungen!"
 
-#: gtk/rgmainwindow.cc:853
+#: gtk/rgmainwindow.cc:860
 msgid ""
 "Could not apply changes!\n"
 "There are broken packages. Fix broken packages at first."
@@ -1110,45 +1117,45 @@ msgstr ""
 "Änderungen konnten nicht angewendet werden!\n"
 "Es existieren fehlerhafte Pakete. Reparieren Sie diese zuerst."
 
-#: gtk/rgmainwindow.cc:873
+#: gtk/rgmainwindow.cc:880
 msgid "Applying marked changes. This may take a while..."
 msgstr ""
 "Markierten Änderungen werden angewendet. Dies kann einige Zeit in Anspruch "
 "nehmen..."
 
-#: gtk/rgmainwindow.cc:877
+#: gtk/rgmainwindow.cc:884
 msgid "Retrieving Package Files..."
 msgstr "Paketdateien werden heruntergeladen..."
 
-#: gtk/rgmainwindow.cc:936
+#: gtk/rgmainwindow.cc:943
 msgid "Do you want to quit Synaptic?"
 msgstr "Wollen Sie Synaptic wirklich beenden?"
 
-#: gtk/rgmainwindow.cc:981 gtk/rgmainwindow.cc:994
+#: gtk/rgmainwindow.cc:988 gtk/rgmainwindow.cc:1001
 msgid "N/A"
 msgstr "Keine Angaben"
 
-#: gtk/rgmainwindow.cc:1409 gtk/window_main_hpaned.glade.h:39
+#: gtk/rgmainwindow.cc:1416 gtk/window_main_hpaned.glade.h:39
 #: gtk/window_main_vpaned.glade.h:41
 msgid "No package is selected.\n"
 msgstr "Kein Paket ist ausgewählt.\n"
 
-#: gtk/rgmainwindow.cc:1431
+#: gtk/rgmainwindow.cc:1438
 msgid "_Downgrade"
 msgstr "_Deaktualisieren"
 
-#: gtk/rgmainwindow.cc:1434 gtk/window_main_hpaned.glade.h:84
+#: gtk/rgmainwindow.cc:1441 gtk/window_main_hpaned.glade.h:84
 #: gtk/window_main_vpaned.glade.h:85
 msgid "_Install"
 msgstr "_Installieren"
 
-#: gtk/rgmainwindow.cc:1437 gtk/window_main_hpaned.glade.h:102
+#: gtk/rgmainwindow.cc:1444 gtk/window_main_hpaned.glade.h:102
 #: gtk/window_main_vpaned.glade.h:103
 msgid "_Upgrade"
 msgstr "_Aktualisieren"
 
 #. standard header in case the installing fails
-#: gtk/rgmainwindow.cc:1763
+#: gtk/rgmainwindow.cc:1770
 msgid ""
 "Some packages could not be installed.\n"
 "\n"
@@ -1158,79 +1165,79 @@ msgstr ""
 "\n"
 "Die folgenden Pakete haben unerfüllbare Abhängigkeiten:\n"
 
-#: gtk/rgmainwindow.cc:1999
+#: gtk/rgmainwindow.cc:2005
 msgid "Open changes"
 msgstr "Änderungen der Paketauswahl öffnen"
 
-#: gtk/rgmainwindow.cc:2206
+#: gtk/rgmainwindow.cc:2212
 msgid "Save changes"
 msgstr "Änderungen der Paketauswahl speichern"
 
-#: gtk/rgmainwindow.cc:2222
+#: gtk/rgmainwindow.cc:2228
 msgid "Save full state, not only changes"
 msgstr "Komplette Paketauswahl und nicht nur Änderungen sichern"
 
-#: gtk/rgmainwindow.cc:2307
+#: gtk/rgmainwindow.cc:2313
 msgid "Package"
 msgstr "Paket"
 
-#: gtk/rgmainwindow.cc:2330
+#: gtk/rgmainwindow.cc:2336
 msgid "Installed Version"
 msgstr "Installierte Version"
 
-#: gtk/rgmainwindow.cc:2346
+#: gtk/rgmainwindow.cc:2352
 msgid "Latest Version"
 msgstr "Neueste Version"
 
-#: gtk/rgmainwindow.cc:2372
+#: gtk/rgmainwindow.cc:2378
 msgid "Required Space"
 msgstr "Benötigter Speicher"
 
-#: gtk/rgmainwindow.cc:2625
+#: gtk/rgmainwindow.cc:2631
 msgid "Update the list of available packages"
 msgstr "Liste verfügbarer Pakete aktualisieren"
 
-#: gtk/rgmainwindow.cc:2629
+#: gtk/rgmainwindow.cc:2635
 msgid "Mark all possible upgrades"
 msgstr "Alle möglichen Aktualisierungen markieren"
 
-#: gtk/rgmainwindow.cc:2633
+#: gtk/rgmainwindow.cc:2639
 msgid "Apply all marked changes"
 msgstr "Alle markierten Änderungen anwenden"
 
-#: gtk/rgmainwindow.cc:3078
+#: gtk/rgmainwindow.cc:3084
 msgid "No Changes"
 msgstr "Unverändert"
 
-#: gtk/rgmainwindow.cc:3086
+#: gtk/rgmainwindow.cc:3092
 msgid "Install"
 msgstr "Installieren"
 
-#: gtk/rgmainwindow.cc:3094
+#: gtk/rgmainwindow.cc:3100
 msgid "Upgrade"
 msgstr "Upgrade"
 
-#: gtk/rgmainwindow.cc:3100 gtk/rgvendorswindow.cc:136
+#: gtk/rgmainwindow.cc:3106 gtk/rgvendorswindow.cc:136
 msgid "Remove"
 msgstr "Entfernen"
 
-#: gtk/rgmainwindow.cc:3108
+#: gtk/rgmainwindow.cc:3114
 msgid "Remove Including Configuration"
 msgstr "Entfernen einschließlich der Konfiguration"
 
-#: gtk/rgmainwindow.cc:3114
+#: gtk/rgmainwindow.cc:3120
 msgid "Remove Including Orphaned Dependencies"
 msgstr "Entfernen einschließlich verwaister Abhängigkeiten"
 
-#: gtk/rgmainwindow.cc:3123
+#: gtk/rgmainwindow.cc:3129
 msgid "Lock Current Version and Status"
 msgstr "Status und Version sperren"
 
-#: gtk/rgmainwindow.cc:3321
+#: gtk/rgmainwindow.cc:3327
 msgid "Do you want to add another CD-ROM?"
 msgstr "Wollen Sie eine weiteres Archiv von CD-ROM hinzufügen?"
 
-#: gtk/rgmainwindow.cc:3350
+#: gtk/rgmainwindow.cc:3356
 msgid ""
 "Removing this package may render the system unusable.\n"
 "Are you sure you want to do that?"
@@ -1238,7 +1245,7 @@ msgstr ""
 "Das Löschen dieses Paketes kann Ihr System unbenutzbar machen.\n"
 "Sind Sie sicher, daß Sie das möchten?"
 
-#: gtk/rgmainwindow.cc:3509
+#: gtk/rgmainwindow.cc:3515
 #, c-format
 msgid ""
 "%i packages listed, %i installed, %i broken. %i to install/upgrade, %i to "
@@ -1247,7 +1254,7 @@ msgstr ""
 "%i Pakete angezeigt, %i installiert, %i fehlerhaft, %i werden installiert/"
 "aktuallisiert, %i werden entfernt, %sB werden frei"
 
-#: gtk/rgmainwindow.cc:3513
+#: gtk/rgmainwindow.cc:3519
 #, c-format
 msgid ""
 "%i packages listed, %i installed, %i broken. %i to install/upgrade, %i to "
@@ -1256,12 +1263,12 @@ msgstr ""
 "%i Pakete angezeigt, %i installiert, %i fehlerhaft, %i werden installiert/"
 "aktuallisiert, %i werden entfernt, weitere %sB werden belegt"
 
-#: gtk/rgmainwindow.cc:3542 gtk/window_main_hpaned.glade.h:19
+#: gtk/rgmainwindow.cc:3548 gtk/window_main_hpaned.glade.h:19
 #: gtk/window_main_vpaned.glade.h:20
 msgid "All Packages"
 msgstr "Alle Pakete"
 
-#: gtk/rgmainwindow.cc:3623
+#: gtk/rgmainwindow.cc:3629
 msgid ""
 "The debtags database is not installed\n"
 "\n"
@@ -1278,7 +1285,7 @@ msgstr ""
 "Entschuldigung für diese Unannehmlichkeit, sie wird hoffentlich in einer der "
 "nächsten Versionen behoben (Patches werden gerne angenommen!)"
 
-#: gtk/rgmainwindow.cc:3657
+#: gtk/rgmainwindow.cc:3663
 #, c-format
 msgid ""
 "You have %d broken package on your system!\n"
@@ -1322,16 +1329,16 @@ msgstr "Distribution"
 msgid "Section(s)"
 msgstr "Sektion"
 
-#: gtk/rgrepositorywin.cc:259 gtk/rgrepositorywin.cc:374
+#: gtk/rgrepositorywin.cc:259 gtk/rgrepositorywin.cc:381
 #: gtk/window_repositories.glade.h:1
 msgid "(no vendor)"
 msgstr "(kein Anbieter)"
 
-#: gtk/rgrepositorywin.cc:329
+#: gtk/rgrepositorywin.cc:336
 msgid "Cannot read vendors.list file"
 msgstr "Die Datei vendors.list konnte nicht gelesen werden"
 
-#: gtk/rgrepositorywin.cc:490
+#: gtk/rgrepositorywin.cc:497
 msgid "Unknown source type"
 msgstr "Unbekannter Archivtyp"
 
@@ -2797,6 +2804,15 @@ msgid ""
 "<b>The following icons are used to indicate the current status of a package:"
 "</b>"
 msgstr "<b>Folgende Icons geben den Status eines Paketes wieder:</b>"
+
+#, fuzzy
+#~ msgid ""
+#~ "\n"
+#~ "Successfully applied changes. There are still pending changes. Hold on"
+#~ msgstr ""
+#~ "\n"
+#~ "Alle Änderungen wurden erfolgreich angewendet. Das Fenster kann nun "
+#~ "geschlossen werden "
 
 #~ msgid "Retrieved %-3lii of %-3li files at %4s B/s - %6s remaining\n"
 #~ msgstr "%-3li von %-3li Dateien mit %4sB/s empfangen - %6s verbleibend\n"

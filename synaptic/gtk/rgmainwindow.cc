@@ -36,6 +36,7 @@
 #include <cmath>
 #include <algorithm>
 #include <fstream>
+#include <pwd.h>
 
 #include <apt-pkg/strutl.h>
 #include <apt-pkg/error.h>
@@ -290,9 +291,15 @@ void RGMainWindow::helpAction(GtkWidget *self, void *data)
  
     if(is_binary_in_path("yelp")) 
 	system("yelp ghelp:synaptic &");
-    else if(is_binary_in_path("mozilla"))
+    else if(is_binary_in_path("mozilla")) {
+       // mozilla eats bookmarks when run under sudo (because it does not
+       // change $HOME)
+       if(getenv("SUDO_USER") != NULL) {
+	  struct passwd *pw = getpwuid(0);
+	  setenv("HOME", pw->pw_dir, 1);
+       }
 	system("mozilla " PACKAGE_DATA_DIR "/synaptic/html/index.html &");
-    else if(is_binary_in_path("konqueror")) 
+    } else if(is_binary_in_path("konqueror")) 
 	system("konqueror " PACKAGE_DATA_DIR "/synaptic/html/index.html &");
     else
 	me->_userDialog->error(_("No help viewer is installed!\n\n"
@@ -669,7 +676,7 @@ void RGMainWindow::updateClicked(GtkWidget *self, void *data)
     me->_fmanagerWin = NULL;
     me->_filterWin = NULL;
 
-    RGFetchProgress *progress = new RGFetchProgress(me);
+    RGFetchProgress *progress = new RGFetchProgress(NULL);
     progress->setTitle(_("Retrieving Index Files..."));
 
     me->setStatusText(_("Refreshing package list..."));
@@ -873,7 +880,7 @@ void RGMainWindow::proceedClicked(GtkWidget *self, void *data)
     me->setStatusText(_("Applying marked changes. This may take a while..."));
 
     // fetch packages
-    RGFetchProgress *fprogress = new RGFetchProgress(me);
+    RGFetchProgress *fprogress = new RGFetchProgress(NULL);
     fprogress->setTitle(_("Retrieving Package Files..."));
 
     // Do not let the treeview access the cache during the update.
@@ -1926,7 +1933,6 @@ void RGMainWindow::findToolClicked(GtkWidget *self, void *data)
 
       me->changeFilter(1);
       gdk_window_set_cursor(me->_findWin->window()->window, NULL);
-      me->_findWin->hide();
   }
 
 }
@@ -2373,7 +2379,7 @@ void RGMainWindow::buildTreeView()
 							  "text", PKG_SIZE_COLUMN,
 							  "background-gdk", COLOR_COLUMN,
 							  NULL);
-	gtk_tree_view_column_set_sizing (column, GTK_TREE_VIEW_COLUMN_FIXED);
+	//gtk_tree_view_column_set_sizing (column, GTK_TREE_VIEW_COLUMN_FIXED);
 	gtk_tree_view_column_set_fixed_width(column, 80);
 	//gtk_tree_view_insert_column (GTK_TREE_VIEW(_treeView), column, pos);
 	all_columns.push_back(pair<int,GtkTreeViewColumn *>(pos,column));

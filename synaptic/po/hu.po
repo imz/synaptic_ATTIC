@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-03-12 08:52+0100\n"
+"POT-Creation-Date: 2004-04-09 16:12+0200\n"
 "PO-Revision-Date: 2004-03-01 23:42+0100\n"
 "Last-Translator: Gabor Kelemen <kg0021@stud.unideb.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -149,7 +149,7 @@ msgstr "World Wide Web"
 msgid "Miscellaneous  - Graphical"
 msgstr "Egyéb - grafika"
 
-#: common/sections_trans.cc:42 common/rpackage.cc:125 gtk/rgmainwindow.cc:75
+#: common/sections_trans.cc:42 common/rpackage.cc:125 gtk/rgmainwindow.cc:76
 msgid "Unknown"
 msgstr "Ismeretlen"
 
@@ -443,7 +443,7 @@ msgstr "Név"
 msgid "Version"
 msgstr "Verzió"
 
-#: common/rpackagefilter.cc:197 gtk/rgmainwindow.cc:2389
+#: common/rpackagefilter.cc:197 gtk/rgmainwindow.cc:2395
 #: gtk/rgvendorswindow.cc:62 gtk/rgvendorswindow.cc:94
 #: gtk/window_find.glade.h:3 gtk/window_main_hpaned.glade.h:26
 #: gtk/window_main_vpaned.glade.h:27 gtk/window_preferences.glade.h:36
@@ -582,7 +582,7 @@ msgstr "Telepített és frissíthető"
 msgid "Not installed (residual config)"
 msgstr "Nincs telepítve (visszamaradt konfig)"
 
-#: common/rpackagelister.cc:851 gtk/rgmainwindow.cc:1380
+#: common/rpackagelister.cc:851 gtk/rgmainwindow.cc:1387
 #: gtk/window_filters.glade.h:32 gtk/rgmisc.cc:231
 msgid "Not installed"
 msgstr "Nincs telepítve"
@@ -608,7 +608,7 @@ msgstr ""
 "régieket használok helyettük."
 
 #: common/rpackagelister.cc:1505 common/rpackagelister.cc:1509
-#: gtk/rgrepositorywin.cc:322
+#: gtk/rgrepositorywin.cc:329
 msgid "Ignoring invalid record(s) in sources.list file!"
 msgstr "A sources.list érvénytelen rekordjainak mellőzése!"
 
@@ -834,8 +834,8 @@ msgstr "Telepítendő"
 msgid "To be kept"
 msgstr "Megtartandó"
 
-#: gtk/rgpreferenceswindow.cc:202 gtk/rgzvtinstallprogress.cc:83
-#: gtk/rgmainwindow.cc:3599
+#: gtk/rgpreferenceswindow.cc:202 gtk/rgzvtinstallprogress.cc:109
+#: gtk/rgmainwindow.cc:3605
 msgid "An error occurred while saving configurations."
 msgstr "Hiba a beállítások mentése közben."
 
@@ -952,16 +952,16 @@ msgstr ""
 "A telepítésre készülve:\n"
 "\n"
 
-#: gtk/rginstallprogress.cc:263 gtk/rgzvtinstallprogress.cc:142
+#: gtk/rginstallprogress.cc:263 gtk/rgzvtinstallprogress.cc:181
 #: gtk/window_zvtinstallprogress.glade.h:2
 msgid "Applying Changes..."
 msgstr "Változtatások alkalmazása..."
 
-#: gtk/rgzvtinstallprogress.cc:61
+#: gtk/rgzvtinstallprogress.cc:83
 msgid "<i>Running...</i>"
 msgstr "<i>Futtatás...</i>"
 
-#: gtk/rgzvtinstallprogress.cc:69
+#: gtk/rgzvtinstallprogress.cc:91
 msgid ""
 "\n"
 "Successfully applied all changes. You can close the window now "
@@ -969,7 +969,7 @@ msgstr ""
 "\n"
 "Minden változtatás sikeresen alkalmazva. Most már bezárhatod az ablakot"
 
-#: gtk/rgzvtinstallprogress.cc:71
+#: gtk/rgzvtinstallprogress.cc:93
 msgid ""
 "\n"
 "Failed to apply all changes! Scroll in this buffer to see what went wrong "
@@ -977,31 +977,38 @@ msgstr ""
 "\n"
 "Nem sikerült minden változtatást alkalmazni! Lejjebb láthatod, mi volt a hiba"
 
-#: gtk/rgzvtinstallprogress.cc:104
+#: gtk/rgzvtinstallprogress.cc:95
+msgid ""
+"\n"
+"Successfully installed all packages of the current medium. To continue the "
+"installation with the next medium close this window."
+msgstr ""
+
+#: gtk/rgzvtinstallprogress.cc:143
 msgid "<i>Finished</i>"
 msgstr "<i>Befejezve</i>"
 
-#: gtk/rgzvtinstallprogress.cc:113
+#: gtk/rgzvtinstallprogress.cc:152
 msgid "<i>Can't close while running</i>"
 msgstr "<i>Futás közben nem zárhatod be</i>"
 
-#: gtk/rgmainwindow.cc:76
+#: gtk/rgmainwindow.cc:77
 msgid "Normal"
 msgstr "Normális"
 
-#: gtk/rgmainwindow.cc:77
+#: gtk/rgmainwindow.cc:78
 msgid "Critical"
 msgstr "Kritikus"
 
-#: gtk/rgmainwindow.cc:78
+#: gtk/rgmainwindow.cc:79
 msgid "Security"
 msgstr "Biztonság"
 
-#: gtk/rgmainwindow.cc:289
+#: gtk/rgmainwindow.cc:290
 msgid "Starting help viewer..."
 msgstr "Súgóböngésző indítása..."
 
-#: gtk/rgmainwindow.cc:298
+#: gtk/rgmainwindow.cc:305
 msgid ""
 "No help viewer is installed!\n"
 "\n"
@@ -1019,7 +1026,7 @@ msgstr ""
 "Alternatívaként megnézheted a html verziót a synaptic/html könyvtárban vagy "
 "megnyithatod parancssorból a man oldalt a 'man synaptic'-kal."
 
-#: gtk/rgmainwindow.cc:543
+#: gtk/rgmainwindow.cc:550
 msgid ""
 "Could not start the configuration tool!\n"
 "You have to install the required package 'libgnome2-perl'."
@@ -1027,44 +1034,44 @@ msgstr ""
 "Nem tudom elindítani a konfigurálóeszközt!\n"
 "Telepítened kell az ehhez szükséges 'libgnome-perl' csomagot."
 
-#: gtk/rgmainwindow.cc:549
+#: gtk/rgmainwindow.cc:556
 msgid "Starting package configuration tool..."
 msgstr "Csomagkonfiguráló eszköz indítása..."
 
 #. cout << "RGMainWindow::pkgHelpClicked()" << endl;
-#: gtk/rgmainwindow.cc:561
+#: gtk/rgmainwindow.cc:568
 msgid "Starting package documentation viewer..."
 msgstr "Csomagdokumentáció-néző indítása..."
 
-#: gtk/rgmainwindow.cc:673
+#: gtk/rgmainwindow.cc:680
 msgid "Retrieving Index Files..."
 msgstr "Index fájlok letöltése..."
 
-#: gtk/rgmainwindow.cc:675
+#: gtk/rgmainwindow.cc:682
 msgid "Refreshing package list..."
 msgstr "Csomaglista frissítése..."
 
-#: gtk/rgmainwindow.cc:685 gtk/rgmainwindow.cc:886 gtk/rgmainwindow.cc:1519
-#: gtk/rgmainwindow.cc:2030 gtk/rgmainwindow.cc:2189
+#: gtk/rgmainwindow.cc:692 gtk/rgmainwindow.cc:893 gtk/rgmainwindow.cc:1526
+#: gtk/rgmainwindow.cc:2036 gtk/rgmainwindow.cc:2195
 #, c-format
 msgid "Can't write %s"
 msgstr "Nem tudom írni a következőt: %s"
 
-#: gtk/rgmainwindow.cc:708 gtk/rgmainwindow.cc:954 gtk/rgmainwindow.cc:1544
-#: gtk/rgmainwindow.cc:1982
+#: gtk/rgmainwindow.cc:715 gtk/rgmainwindow.cc:961 gtk/rgmainwindow.cc:1551
+#: gtk/rgmainwindow.cc:1988
 #, c-format
 msgid "Can't read %s"
 msgstr "Nem tudom olvasni a következőt: %s"
 
-#: gtk/rgmainwindow.cc:776
+#: gtk/rgmainwindow.cc:783
 msgid "Failed to resolve dependency problems!"
 msgstr "Függőségi hibák megoldása sikertelen!"
 
-#: gtk/rgmainwindow.cc:778
+#: gtk/rgmainwindow.cc:785
 msgid "Successfully fixed dependency problems"
 msgstr "Függőségi problémák sikeresen megoldva"
 
-#: gtk/rgmainwindow.cc:793
+#: gtk/rgmainwindow.cc:800
 msgid ""
 "Could not upgrade the system!\n"
 "There are broken packages. Fix broken packages at first."
@@ -1072,19 +1079,19 @@ msgstr ""
 "Nem tudom frissíteni a rendszert!\n"
 "Törött csomagok vannak a rendszereden. Először ezeket javítsd meg."
 
-#: gtk/rgmainwindow.cc:820
+#: gtk/rgmainwindow.cc:827
 msgid "Marking all available upgrades..."
 msgstr "Minden rendelkezésre álló frissítés kijelölése..."
 
-#: gtk/rgmainwindow.cc:832
+#: gtk/rgmainwindow.cc:839
 msgid "Successfully marked all available upgrades"
 msgstr "Minden rendelkezésre álló frissítés sikeresen kijelölve"
 
-#: gtk/rgmainwindow.cc:834
+#: gtk/rgmainwindow.cc:841
 msgid "Failed to mark all available upgrades!"
 msgstr "Minden rendelkezésre álló frissítés kijelölése sikertelen!"
 
-#: gtk/rgmainwindow.cc:853
+#: gtk/rgmainwindow.cc:860
 msgid ""
 "Could not apply changes!\n"
 "There are broken packages. Fix broken packages at first."
@@ -1092,43 +1099,43 @@ msgstr ""
 "Nem lehet alkalmazni a változtatásokat!\n"
 "Törött csomagok vannak a rendszereden. Először ezeket javítsd meg."
 
-#: gtk/rgmainwindow.cc:873
+#: gtk/rgmainwindow.cc:880
 msgid "Applying marked changes. This may take a while..."
 msgstr "Kijelölt változtatások alkalmazása. Ez eltarthat egy ideig..."
 
-#: gtk/rgmainwindow.cc:877
+#: gtk/rgmainwindow.cc:884
 msgid "Retrieving Package Files..."
 msgstr "Csomagfájlok letöltése..."
 
-#: gtk/rgmainwindow.cc:936
+#: gtk/rgmainwindow.cc:943
 msgid "Do you want to quit Synaptic?"
 msgstr "Ki akarsz lépni a Synapticból?"
 
-#: gtk/rgmainwindow.cc:981 gtk/rgmainwindow.cc:994
+#: gtk/rgmainwindow.cc:988 gtk/rgmainwindow.cc:1001
 msgid "N/A"
 msgstr "N/A"
 
-#: gtk/rgmainwindow.cc:1409 gtk/window_main_hpaned.glade.h:39
+#: gtk/rgmainwindow.cc:1416 gtk/window_main_hpaned.glade.h:39
 #: gtk/window_main_vpaned.glade.h:41
 msgid "No package is selected.\n"
 msgstr "Nincs csomag kiválasztva.\n"
 
-#: gtk/rgmainwindow.cc:1431
+#: gtk/rgmainwindow.cc:1438
 msgid "_Downgrade"
 msgstr "Visszafejlesztés"
 
-#: gtk/rgmainwindow.cc:1434 gtk/window_main_hpaned.glade.h:84
+#: gtk/rgmainwindow.cc:1441 gtk/window_main_hpaned.glade.h:84
 #: gtk/window_main_vpaned.glade.h:85
 msgid "_Install"
 msgstr "Telepítés"
 
-#: gtk/rgmainwindow.cc:1437 gtk/window_main_hpaned.glade.h:102
+#: gtk/rgmainwindow.cc:1444 gtk/window_main_hpaned.glade.h:102
 #: gtk/window_main_vpaned.glade.h:103
 msgid "_Upgrade"
 msgstr "Frissítés"
 
 #. standard header in case the installing fails
-#: gtk/rgmainwindow.cc:1763
+#: gtk/rgmainwindow.cc:1770
 msgid ""
 "Some packages could not be installed.\n"
 "\n"
@@ -1138,79 +1145,79 @@ msgstr ""
 "\n"
 "A következő csomagoknak teljesítetlen függőségei vannak:\n"
 
-#: gtk/rgmainwindow.cc:1999
+#: gtk/rgmainwindow.cc:2005
 msgid "Open changes"
 msgstr "Változtatások megnyitása"
 
-#: gtk/rgmainwindow.cc:2206
+#: gtk/rgmainwindow.cc:2212
 msgid "Save changes"
 msgstr "Változtatások mentése"
 
-#: gtk/rgmainwindow.cc:2222
+#: gtk/rgmainwindow.cc:2228
 msgid "Save full state, not only changes"
 msgstr "Teljes állapot mentése, nem csak a változtatások"
 
-#: gtk/rgmainwindow.cc:2307
+#: gtk/rgmainwindow.cc:2313
 msgid "Package"
 msgstr "Csomag"
 
-#: gtk/rgmainwindow.cc:2330
+#: gtk/rgmainwindow.cc:2336
 msgid "Installed Version"
 msgstr "Telepített verzió"
 
-#: gtk/rgmainwindow.cc:2346
+#: gtk/rgmainwindow.cc:2352
 msgid "Latest Version"
 msgstr "Legfrissebb verzió"
 
-#: gtk/rgmainwindow.cc:2372
+#: gtk/rgmainwindow.cc:2378
 msgid "Required Space"
 msgstr "Szükséges hely"
 
-#: gtk/rgmainwindow.cc:2625
+#: gtk/rgmainwindow.cc:2631
 msgid "Update the list of available packages"
 msgstr "Elérhető csomagok listájának frissítése"
 
-#: gtk/rgmainwindow.cc:2629
+#: gtk/rgmainwindow.cc:2635
 msgid "Mark all possible upgrades"
 msgstr "Minden lehetséges frissítés kijelölése"
 
-#: gtk/rgmainwindow.cc:2633
+#: gtk/rgmainwindow.cc:2639
 msgid "Apply all marked changes"
 msgstr "Minden kijelölt változtatás alkalmazása"
 
-#: gtk/rgmainwindow.cc:3078
+#: gtk/rgmainwindow.cc:3084
 msgid "No Changes"
 msgstr "Viszzavonás"
 
-#: gtk/rgmainwindow.cc:3086
+#: gtk/rgmainwindow.cc:3092
 msgid "Install"
 msgstr "Telepítés"
 
-#: gtk/rgmainwindow.cc:3094
+#: gtk/rgmainwindow.cc:3100
 msgid "Upgrade"
 msgstr "Frissítés"
 
-#: gtk/rgmainwindow.cc:3100 gtk/rgvendorswindow.cc:136
+#: gtk/rgmainwindow.cc:3106 gtk/rgvendorswindow.cc:136
 msgid "Remove"
 msgstr "Törlés"
 
-#: gtk/rgmainwindow.cc:3108
+#: gtk/rgmainwindow.cc:3114
 msgid "Remove Including Configuration"
 msgstr "Törlés konfigurációval együtt"
 
-#: gtk/rgmainwindow.cc:3114
+#: gtk/rgmainwindow.cc:3120
 msgid "Remove Including Orphaned Dependencies"
 msgstr "Törlés árva függőségekkel együtt"
 
-#: gtk/rgmainwindow.cc:3123
+#: gtk/rgmainwindow.cc:3129
 msgid "Lock Current Version and Status"
 msgstr "Aktuális verzió és állapot zárolása"
 
-#: gtk/rgmainwindow.cc:3321
+#: gtk/rgmainwindow.cc:3327
 msgid "Do you want to add another CD-ROM?"
 msgstr "Akarsz még egy CD-ROM-ot hozzáadni?"
 
-#: gtk/rgmainwindow.cc:3350
+#: gtk/rgmainwindow.cc:3356
 msgid ""
 "Removing this package may render the system unusable.\n"
 "Are you sure you want to do that?"
@@ -1218,7 +1225,7 @@ msgstr ""
 "Ezen csomag eltávolítása használhatatlanná teheti a rendszert.\n"
 "Biztosan ezt akarod tenni?"
 
-#: gtk/rgmainwindow.cc:3509
+#: gtk/rgmainwindow.cc:3515
 #, c-format
 msgid ""
 "%i packages listed, %i installed, %i broken. %i to install/upgrade, %i to "
@@ -1227,7 +1234,7 @@ msgstr ""
 "%i csomag listázva, %i telepítve, %i törött. %i telepítendő/frissítendő, %i "
 "lesz törölve, %s lesz felszabadítva "
 
-#: gtk/rgmainwindow.cc:3513
+#: gtk/rgmainwindow.cc:3519
 #, c-format
 msgid ""
 "%i packages listed, %i installed, %i broken. %i to install/upgrade, %i to "
@@ -1236,12 +1243,12 @@ msgstr ""
 "%i csomag listázva, %i telepítve, %i törött. %i telepítendő/frissítendő %i "
 "lesz törölve, %s lesz használva"
 
-#: gtk/rgmainwindow.cc:3542 gtk/window_main_hpaned.glade.h:19
+#: gtk/rgmainwindow.cc:3548 gtk/window_main_hpaned.glade.h:19
 #: gtk/window_main_vpaned.glade.h:20
 msgid "All Packages"
 msgstr "Minden csomag"
 
-#: gtk/rgmainwindow.cc:3623
+#: gtk/rgmainwindow.cc:3629
 msgid ""
 "The debtags database is not installed\n"
 "\n"
@@ -1258,7 +1265,7 @@ msgstr ""
 "lesz oldva"
 
 # c-format
-#: gtk/rgmainwindow.cc:3657
+#: gtk/rgmainwindow.cc:3663
 #, c-format
 msgid ""
 "You have %d broken package on your system!\n"
@@ -1302,16 +1309,16 @@ msgstr "Disztribúció"
 msgid "Section(s)"
 msgstr "Szekció(k)"
 
-#: gtk/rgrepositorywin.cc:259 gtk/rgrepositorywin.cc:374
+#: gtk/rgrepositorywin.cc:259 gtk/rgrepositorywin.cc:381
 #: gtk/window_repositories.glade.h:1
 msgid "(no vendor)"
 msgstr "(nincs szállító)"
 
-#: gtk/rgrepositorywin.cc:329
+#: gtk/rgrepositorywin.cc:336
 msgid "Cannot read vendors.list file"
 msgstr "Nem olvasható a vendors.list fájl"
 
-#: gtk/rgrepositorywin.cc:490
+#: gtk/rgrepositorywin.cc:497
 msgid "Unknown source type"
 msgstr "Ismeretlen forrástípus"
 
@@ -2767,6 +2774,14 @@ msgid ""
 "</b>"
 msgstr ""
 "<b>A következő ikonokat használjuk a csomagok állapotának jelzésére:</b>"
+
+#, fuzzy
+#~ msgid ""
+#~ "\n"
+#~ "Successfully applied changes. There are still pending changes. Hold on"
+#~ msgstr ""
+#~ "\n"
+#~ "Minden változtatás sikeresen alkalmazva. Most már bezárhatod az ablakot"
 
 #~ msgid "Retrieved %-3lii of %-3li files at %4s B/s - %6s remaining\n"
 #~ msgstr "Elhozva %-3lii/%-3li fájlból, %4s B/s-el, hátravan: %6s\n"

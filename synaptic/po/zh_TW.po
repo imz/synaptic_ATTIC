@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: synaptic 0.32\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-03-12 08:52+0100\n"
+"POT-Creation-Date: 2004-04-09 16:12+0200\n"
 "PO-Revision-Date: 2004-03-08 13:04+0800\n"
 "Last-Translator: Rex Tsai <chihchun@kalug.linux.org.tw>\n"
 "Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
@@ -147,7 +147,7 @@ msgstr "全球資訊網"
 msgid "Miscellaneous  - Graphical"
 msgstr "其他軟體 - 圖形模式"
 
-#: common/sections_trans.cc:42 common/rpackage.cc:125 gtk/rgmainwindow.cc:75
+#: common/sections_trans.cc:42 common/rpackage.cc:125 gtk/rgmainwindow.cc:76
 msgid "Unknown"
 msgstr "不明"
 
@@ -439,7 +439,7 @@ msgstr "名稱"
 msgid "Version"
 msgstr "版本"
 
-#: common/rpackagefilter.cc:197 gtk/rgmainwindow.cc:2389
+#: common/rpackagefilter.cc:197 gtk/rgmainwindow.cc:2395
 #: gtk/rgvendorswindow.cc:62 gtk/rgvendorswindow.cc:94
 #: gtk/window_find.glade.h:3 gtk/window_main_hpaned.glade.h:26
 #: gtk/window_main_vpaned.glade.h:27 gtk/window_preferences.glade.h:36
@@ -579,7 +579,7 @@ msgstr "已安裝並可升級的套件"
 msgid "Not installed (residual config)"
 msgstr "未安裝(殘餘設定檔)"
 
-#: common/rpackagelister.cc:851 gtk/rgmainwindow.cc:1380
+#: common/rpackagelister.cc:851 gtk/rgmainwindow.cc:1387
 #: gtk/window_filters.glade.h:32 gtk/rgmisc.cc:231
 msgid "Not installed"
 msgstr "未安裝"
@@ -601,7 +601,7 @@ msgid ""
 msgstr "一些索引檔案下載失敗。它們已被略過，或暫由較舊檔案代替。"
 
 #: common/rpackagelister.cc:1505 common/rpackagelister.cc:1509
-#: gtk/rgrepositorywin.cc:322
+#: gtk/rgrepositorywin.cc:329
 msgid "Ignoring invalid record(s) in sources.list file!"
 msgstr "略過套件庫來源清單檔中錯誤的來源!"
 
@@ -818,8 +818,8 @@ msgstr "將會新安裝的套件"
 msgid "To be kept"
 msgstr "將會維持原狀不升級的套件"
 
-#: gtk/rgpreferenceswindow.cc:202 gtk/rgzvtinstallprogress.cc:83
-#: gtk/rgmainwindow.cc:3599
+#: gtk/rgpreferenceswindow.cc:202 gtk/rgzvtinstallprogress.cc:109
+#: gtk/rgmainwindow.cc:3605
 msgid "An error occurred while saving configurations."
 msgstr "儲存設定時發生錯誤。"
 
@@ -937,17 +937,17 @@ msgstr ""
 "正在準備安裝:\n"
 "\n"
 
-#: gtk/rginstallprogress.cc:263 gtk/rgzvtinstallprogress.cc:142
+#: gtk/rginstallprogress.cc:263 gtk/rgzvtinstallprogress.cc:181
 #: gtk/window_zvtinstallprogress.glade.h:2
 #, fuzzy
 msgid "Applying Changes..."
 msgstr "執行變更..."
 
-#: gtk/rgzvtinstallprogress.cc:61
+#: gtk/rgzvtinstallprogress.cc:83
 msgid "<i>Running...</i>"
 msgstr ""
 
-#: gtk/rgzvtinstallprogress.cc:69
+#: gtk/rgzvtinstallprogress.cc:91
 #, fuzzy
 msgid ""
 "\n"
@@ -956,7 +956,7 @@ msgstr ""
 "\n"
 "升級完成 - 您現在可關閉此視窗"
 
-#: gtk/rgzvtinstallprogress.cc:71
+#: gtk/rgzvtinstallprogress.cc:93
 #, fuzzy
 msgid ""
 "\n"
@@ -965,33 +965,40 @@ msgstr ""
 "\n"
 "升級失敗 - 請檢視緩衝區中的錯誤訊息"
 
-#: gtk/rgzvtinstallprogress.cc:104
+#: gtk/rgzvtinstallprogress.cc:95
+msgid ""
+"\n"
+"Successfully installed all packages of the current medium. To continue the "
+"installation with the next medium close this window."
+msgstr ""
+
+#: gtk/rgzvtinstallprogress.cc:143
 msgid "<i>Finished</i>"
 msgstr ""
 
-#: gtk/rgzvtinstallprogress.cc:113
+#: gtk/rgzvtinstallprogress.cc:152
 #, fuzzy
 msgid "<i>Can't close while running</i>"
 msgstr "執行中不可關閉"
 
-#: gtk/rgmainwindow.cc:76
+#: gtk/rgmainwindow.cc:77
 msgid "Normal"
 msgstr "一般"
 
-#: gtk/rgmainwindow.cc:77
+#: gtk/rgmainwindow.cc:78
 msgid "Critical"
 msgstr "重大更新"
 
-#: gtk/rgmainwindow.cc:78
+#: gtk/rgmainwindow.cc:79
 msgid "Security"
 msgstr "安全更新"
 
-#: gtk/rgmainwindow.cc:289
+#: gtk/rgmainwindow.cc:290
 #, fuzzy
 msgid "Starting help viewer..."
 msgstr "啟動說明系統"
 
-#: gtk/rgmainwindow.cc:298
+#: gtk/rgmainwindow.cc:305
 #, fuzzy
 msgid ""
 "No help viewer is installed!\n"
@@ -1009,118 +1016,118 @@ msgstr ""
 "此外，您可以執行 'man synaptic' 來閱讀 man page，或在 'synaptic/html' 目錄中"
 "找到 HTML 版本的手冊。"
 
-#: gtk/rgmainwindow.cc:543
+#: gtk/rgmainwindow.cc:550
 msgid ""
 "Could not start the configuration tool!\n"
 "You have to install the required package 'libgnome2-perl'."
 msgstr ""
 
-#: gtk/rgmainwindow.cc:549
+#: gtk/rgmainwindow.cc:556
 #, fuzzy
 msgid "Starting package configuration tool..."
 msgstr "啟動 dpkg-reconfigure..."
 
 #. cout << "RGMainWindow::pkgHelpClicked()" << endl;
-#: gtk/rgmainwindow.cc:561
+#: gtk/rgmainwindow.cc:568
 #, fuzzy
 msgid "Starting package documentation viewer..."
 msgstr "啟動軟體說明..."
 
-#: gtk/rgmainwindow.cc:673
+#: gtk/rgmainwindow.cc:680
 msgid "Retrieving Index Files..."
 msgstr "正在抓取索引檔案..."
 
-#: gtk/rgmainwindow.cc:675
+#: gtk/rgmainwindow.cc:682
 #, fuzzy
 msgid "Refreshing package list..."
 msgstr "清除套件列表"
 
-#: gtk/rgmainwindow.cc:685 gtk/rgmainwindow.cc:886 gtk/rgmainwindow.cc:1519
-#: gtk/rgmainwindow.cc:2030 gtk/rgmainwindow.cc:2189
+#: gtk/rgmainwindow.cc:692 gtk/rgmainwindow.cc:893 gtk/rgmainwindow.cc:1526
+#: gtk/rgmainwindow.cc:2036 gtk/rgmainwindow.cc:2195
 #, c-format
 msgid "Can't write %s"
 msgstr "無法寫入 %s"
 
-#: gtk/rgmainwindow.cc:708 gtk/rgmainwindow.cc:954 gtk/rgmainwindow.cc:1544
-#: gtk/rgmainwindow.cc:1982
+#: gtk/rgmainwindow.cc:715 gtk/rgmainwindow.cc:961 gtk/rgmainwindow.cc:1551
+#: gtk/rgmainwindow.cc:1988
 #, c-format
 msgid "Can't read %s"
 msgstr "無法讀取 %s"
 
-#: gtk/rgmainwindow.cc:776
+#: gtk/rgmainwindow.cc:783
 #, fuzzy
 msgid "Failed to resolve dependency problems!"
 msgstr "修正套件相依關係的問題"
 
-#: gtk/rgmainwindow.cc:778
+#: gtk/rgmainwindow.cc:785
 #, fuzzy
 msgid "Successfully fixed dependency problems"
 msgstr "修正套件相依關係的問題"
 
-#: gtk/rgmainwindow.cc:793
+#: gtk/rgmainwindow.cc:800
 msgid ""
 "Could not upgrade the system!\n"
 "There are broken packages. Fix broken packages at first."
 msgstr ""
 
-#: gtk/rgmainwindow.cc:820
+#: gtk/rgmainwindow.cc:827
 #, fuzzy
 msgid "Marking all available upgrades..."
 msgstr "此套件將會被升級。"
 
-#: gtk/rgmainwindow.cc:832
+#: gtk/rgmainwindow.cc:839
 #, fuzzy
 msgid "Successfully marked all available upgrades"
 msgstr "佇列將完全升級"
 
-#: gtk/rgmainwindow.cc:834
+#: gtk/rgmainwindow.cc:841
 msgid "Failed to mark all available upgrades!"
 msgstr ""
 
-#: gtk/rgmainwindow.cc:853
+#: gtk/rgmainwindow.cc:860
 msgid ""
 "Could not apply changes!\n"
 "There are broken packages. Fix broken packages at first."
 msgstr ""
 
-#: gtk/rgmainwindow.cc:873
+#: gtk/rgmainwindow.cc:880
 #, fuzzy
 msgid "Applying marked changes. This may take a while..."
 msgstr "執行所選擇的變動...這將花點時間"
 
-#: gtk/rgmainwindow.cc:877
+#: gtk/rgmainwindow.cc:884
 msgid "Retrieving Package Files..."
 msgstr "正在抓取套件檔案..."
 
-#: gtk/rgmainwindow.cc:936
+#: gtk/rgmainwindow.cc:943
 msgid "Do you want to quit Synaptic?"
 msgstr "您想離開 Synaptic 嗎？"
 
-#: gtk/rgmainwindow.cc:981 gtk/rgmainwindow.cc:994
+#: gtk/rgmainwindow.cc:988 gtk/rgmainwindow.cc:1001
 msgid "N/A"
 msgstr "不適用"
 
-#: gtk/rgmainwindow.cc:1409 gtk/window_main_hpaned.glade.h:39
+#: gtk/rgmainwindow.cc:1416 gtk/window_main_hpaned.glade.h:39
 #: gtk/window_main_vpaned.glade.h:41
 msgid "No package is selected.\n"
 msgstr "未選擇套件。\n"
 
-#: gtk/rgmainwindow.cc:1431
+#: gtk/rgmainwindow.cc:1438
 msgid "_Downgrade"
 msgstr "降級(_D)"
 
-#: gtk/rgmainwindow.cc:1434 gtk/window_main_hpaned.glade.h:84
+#: gtk/rgmainwindow.cc:1441 gtk/window_main_hpaned.glade.h:84
 #: gtk/window_main_vpaned.glade.h:85
 msgid "_Install"
 msgstr "安裝(_I)"
 
-#: gtk/rgmainwindow.cc:1437 gtk/window_main_hpaned.glade.h:102
+#: gtk/rgmainwindow.cc:1444 gtk/window_main_hpaned.glade.h:102
 #: gtk/window_main_vpaned.glade.h:103
 msgid "_Upgrade"
 msgstr "升級(_U)"
 
 #. standard header in case the installing fails
-#: gtk/rgmainwindow.cc:1763
+#: gtk/rgmainwindow.cc:1770
 msgid ""
 "Some packages could not be installed.\n"
 "\n"
@@ -1130,82 +1137,82 @@ msgstr ""
 "\n"
 "以下的套件有迷失的相依性:\n"
 
-#: gtk/rgmainwindow.cc:1999
+#: gtk/rgmainwindow.cc:2005
 msgid "Open changes"
 msgstr "開啟變更"
 
-#: gtk/rgmainwindow.cc:2206
+#: gtk/rgmainwindow.cc:2212
 msgid "Save changes"
 msgstr "儲存變更"
 
-#: gtk/rgmainwindow.cc:2222
+#: gtk/rgmainwindow.cc:2228
 msgid "Save full state, not only changes"
 msgstr "儲存所有選擇，不僅只有變更"
 
-#: gtk/rgmainwindow.cc:2307
+#: gtk/rgmainwindow.cc:2313
 msgid "Package"
 msgstr "套件"
 
-#: gtk/rgmainwindow.cc:2330
+#: gtk/rgmainwindow.cc:2336
 msgid "Installed Version"
 msgstr "已安裝安本"
 
-#: gtk/rgmainwindow.cc:2346
+#: gtk/rgmainwindow.cc:2352
 msgid "Latest Version"
 msgstr "最新版本"
 
-#: gtk/rgmainwindow.cc:2372
+#: gtk/rgmainwindow.cc:2378
 msgid "Required Space"
 msgstr ""
 
-#: gtk/rgmainwindow.cc:2625
+#: gtk/rgmainwindow.cc:2631
 msgid "Update the list of available packages"
 msgstr "更新可用軟體列表"
 
-#: gtk/rgmainwindow.cc:2629
+#: gtk/rgmainwindow.cc:2635
 #, fuzzy
 msgid "Mark all possible upgrades"
 msgstr "佇列將完全升級"
 
-#: gtk/rgmainwindow.cc:2633
+#: gtk/rgmainwindow.cc:2639
 #, fuzzy
 msgid "Apply all marked changes"
 msgstr "完成所有變動"
 
-#: gtk/rgmainwindow.cc:3078
+#: gtk/rgmainwindow.cc:3084
 msgid "No Changes"
 msgstr "沒有變動"
 
-#: gtk/rgmainwindow.cc:3086
+#: gtk/rgmainwindow.cc:3092
 msgid "Install"
 msgstr "安裝"
 
-#: gtk/rgmainwindow.cc:3094
+#: gtk/rgmainwindow.cc:3100
 msgid "Upgrade"
 msgstr "升級"
 
-#: gtk/rgmainwindow.cc:3100 gtk/rgvendorswindow.cc:136
+#: gtk/rgmainwindow.cc:3106 gtk/rgvendorswindow.cc:136
 msgid "Remove"
 msgstr "移除"
 
-#: gtk/rgmainwindow.cc:3108
+#: gtk/rgmainwindow.cc:3114
 msgid "Remove Including Configuration"
 msgstr "包含設定檔完全移除"
 
-#: gtk/rgmainwindow.cc:3114
+#: gtk/rgmainwindow.cc:3120
 msgid "Remove Including Orphaned Dependencies"
 msgstr "移除並包含依賴此套件的套件"
 
-#: gtk/rgmainwindow.cc:3123
+#: gtk/rgmainwindow.cc:3129
 #, fuzzy
 msgid "Lock Current Version and Status"
 msgstr "保留現有版本"
 
-#: gtk/rgmainwindow.cc:3321
+#: gtk/rgmainwindow.cc:3327
 msgid "Do you want to add another CD-ROM?"
 msgstr "您希望新增另外一張光碟嗎？"
 
-#: gtk/rgmainwindow.cc:3350
+#: gtk/rgmainwindow.cc:3356
 msgid ""
 "Removing this package may render the system unusable.\n"
 "Are you sure you want to do that?"
@@ -1213,7 +1220,7 @@ msgstr ""
 "移除這個套件或會導致您的系統完全失效。\n"
 "您確定要那樣做嗎?"
 
-#: gtk/rgmainwindow.cc:3509
+#: gtk/rgmainwindow.cc:3515
 #, c-format
 msgid ""
 "%i packages listed, %i installed, %i broken. %i to install/upgrade, %i to "
@@ -1222,7 +1229,7 @@ msgstr ""
 "清單共有 %i 個套件，已安裝 %i 個，損壞的有 %i 個。將安裝/升級 %i 個套件，移"
 "除 %i 個套件；將釋放 %s 磁碟空間"
 
-#: gtk/rgmainwindow.cc:3513
+#: gtk/rgmainwindow.cc:3519
 #, c-format
 msgid ""
 "%i packages listed, %i installed, %i broken. %i to install/upgrade, %i to "
@@ -1231,12 +1238,12 @@ msgstr ""
 "清單共有 %i 個套件，已安裝 %i 個，損壞的有 %i 個。將安裝/升級 %i 個套件，移"
 "除 %i 個套件；將消耗 %s 磁碟空間"
 
-#: gtk/rgmainwindow.cc:3542 gtk/window_main_hpaned.glade.h:19
+#: gtk/rgmainwindow.cc:3548 gtk/window_main_hpaned.glade.h:19
 #: gtk/window_main_vpaned.glade.h:20
 msgid "All Packages"
 msgstr "全部套件"
 
-#: gtk/rgmainwindow.cc:3623
+#: gtk/rgmainwindow.cc:3629
 msgid ""
 "The debtags database is not installed\n"
 "\n"
@@ -1251,7 +1258,7 @@ msgstr ""
 "\n"
 "抱歉造成不便，這個功能將會在下個版本中完成 (歡迎貢獻 patch !)"
 
-#: gtk/rgmainwindow.cc:3657
+#: gtk/rgmainwindow.cc:3663
 #, fuzzy, c-format
 msgid ""
 "You have %d broken package on your system!\n"
@@ -1295,16 +1302,16 @@ msgstr "發行版本"
 msgid "Section(s)"
 msgstr "組別"
 
-#: gtk/rgrepositorywin.cc:259 gtk/rgrepositorywin.cc:374
+#: gtk/rgrepositorywin.cc:259 gtk/rgrepositorywin.cc:381
 #: gtk/window_repositories.glade.h:1
 msgid "(no vendor)"
 msgstr "(無特定包裝商)"
 
-#: gtk/rgrepositorywin.cc:329
+#: gtk/rgrepositorywin.cc:336
 msgid "Cannot read vendors.list file"
 msgstr "無法讀取 vendors.list 套件包裝商清單檔"
 
-#: gtk/rgrepositorywin.cc:490
+#: gtk/rgrepositorywin.cc:497
 msgid "Unknown source type"
 msgstr "套件來源種類不明"
 
@@ -2789,6 +2796,14 @@ msgid ""
 "<b>The following icons are used to indicate the current status of a package:"
 "</b>"
 msgstr ""
+
+#, fuzzy
+#~ msgid ""
+#~ "\n"
+#~ "Successfully applied changes. There are still pending changes. Hold on"
+#~ msgstr ""
+#~ "\n"
+#~ "升級完成 - 您現在可關閉此視窗"
 
 #~ msgid "Version '%s' for '%s' was not found"
 #~ msgstr "套件 %s 版本 %s 未找到"

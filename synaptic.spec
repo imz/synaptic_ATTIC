@@ -9,7 +9,7 @@
 %def_enable autotools
 
 Name: synaptic
-Version: 0.48.1
+Version: 0.48.2
 Release: alt1
 
 Summary: Graphical front-end for APT
@@ -107,6 +107,10 @@ mkdir -p %buildroot%_mandir/ru/man8/
 %doc README* TODO NEWS AUTHORS
 
 %changelog
+* Mon Apr 12 2004 Sviatoslav Sviridov <svd@altlinux.ru> 0.48.2-alt1
+- 0.48.2
+- updated russian translation
+
 * Mon Mar 15 2004 Sviatoslav Sviridov <svd@altlinux.ru> 0.48.1-alt1
 - 0.48.1
 - updated russian translation

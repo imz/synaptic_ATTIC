@@ -50,13 +50,35 @@
 #endif
 #ifdef HAVE_VTE
 #include <vte/vte.h>
+#include <vte/reaper.h>
 #endif
 
 
 using namespace std;
 
+#ifdef HAVE_VTE
+void RGZvtInstallProgress::child_exited(VteReaper *vtereaper,
+					gint child_pid, gint ret, 
+					gpointer data)
+{
+   RGZvtInstallProgress *me = (RGZvtInstallProgress*)data;
+//    cout << "child exited" << endl;
+//    cout << "waitpid returned: " << WEXITSTATUS(ret) << endl;
+   me->res = (pkgPackageManager::OrderResult)WEXITSTATUS(ret);
+
+}
+#endif
+
 void RGZvtInstallProgress::startUpdate()
 {
+#ifdef HAVE_VTE
+   VteReaper* reaper = vte_reaper_get();
+   g_signal_connect(G_OBJECT(reaper), "child-exited",
+		    G_CALLBACK(child_exited),
+		    this);
+ 
+#endif
+
   show();
   gtk_label_set_markup(GTK_LABEL(_statusL), _("<i>Running...</i>"));
   gtk_widget_set_sensitive(_closeB, false);
@@ -69,6 +91,10 @@ void RGZvtInstallProgress::finishUpdate()
     _("\nSuccessfully applied all changes. You can close the window now ");
   string errorMsg = 
     _("\nFailed to apply all changes! Scroll in this buffer to see what went wrong ");
+  string incompleteMsg = 
+     _("\nSuccessfully installed all packages of the current medium. "
+       "To continue the installation with the next medium close "
+       "this window.");
 
   gtk_widget_set_sensitive(_closeB, true);
 
@@ -89,18 +115,31 @@ void RGZvtInstallProgress::finishUpdate()
     hide();
     return;
   }
-  
-  if( res==0 )
+
+  const char *msg = "Please contact the author of this software if this message"
+              "is diplayed";
+  int size;
+  switch( res ) {
+  case 0: // completed
+     msg = finishMsg.c_str();
+     size = finishMsg.size();
+     break;
+  case 1: // failed 
+     msg = errorMsg.c_str();
+     size = errorMsg.size();
+     break;
+  case 2: // incomplete
+     msg = incompleteMsg.c_str();
+     size = incompleteMsg.size();
+    break;
+  }
 #ifdef HAVE_ZVT
-    zvt_term_feed(ZVT_TERM(_term), (char*)finishMsg.c_str(), (long)finishMsg.size());
-  else
-    zvt_term_feed(ZVT_TERM(_term), (char*)errorMsg.c_str(), (long)errorMsg.size());
+   zvt_term_feed(ZVT_TERM(_term), (char*)msg, size);
 #endif
 #ifdef HAVE_VTE
-    vte_terminal_feed(VTE_TERMINAL(_term), utf8(finishMsg.c_str()), (long)finishMsg.size());
-  else
-    vte_terminal_feed(VTE_TERMINAL(_term), utf8(errorMsg.c_str()), (long)errorMsg.size());
+    vte_terminal_feed(VTE_TERMINAL(_term), utf8(msg), size);
 #endif
+
   gtk_label_set_markup(GTK_LABEL(_statusL), _("<i>Finished</i>"));
 }
 
@@ -240,19 +279,21 @@ RGZvtInstallProgress::start(RPackageManager *pm,
    }
 
    if (_child_id == 0) {
+
       // we ignore sigpipe as it is thrown sporadic on
       // debian, kernel 2.6 systems
       struct sigaction new_act;
       memset( &new_act, 0, sizeof( new_act ) );
       new_act.sa_handler = SIG_IGN;
       sigaction( SIGPIPE, &new_act, NULL);
-
+#ifndef HAVE_VTE // vte handles all this internally
       // Close all file descriptors but first 3
       open_max = sysconf(_SC_OPEN_MAX);
       for (int i = 3; i < open_max; i++)
 	 ::close(i);
       // make sure, that term is set correctly
       setenv("TERM","xterm",1);
+#endif
       res = pm->DoInstallPostFork();
       _exit(res);
    }
@@ -264,7 +305,13 @@ RGZvtInstallProgress::start(RPackageManager *pm,
 #ifdef HAVE_ZVT
    res = (pkgPackageManager::OrderResult)zvt_term_closepty(ZVT_TERM(_term));
 #endif
-   //FIXME: how to get the exit-status from vte?
+#ifdef HAVE_VTE
+   //FIXME: we sleep to be sure that we catched the "child-died" signal
+   //       this sucks, but as we don't use vte for now we just need to fix
+   //       it later
+   sleep(1);
+   //cout << "res is: " << (int)res << endl;
+#endif
 
    finishUpdate();
 

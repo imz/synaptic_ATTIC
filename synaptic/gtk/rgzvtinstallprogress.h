@@ -24,11 +24,16 @@
 #ifndef _RGZVTNSTALLPROGRESS_H_
 #define _RGZVTINSTALLPROGRESS_H_
 
-
 #include "rpackagemanager.h"
 #include "rgmainwindow.h"
 #include "rinstallprogress.h"
 #include "rgwindow.h"
+
+#ifdef HAVE_VTE
+#include <vte/vte.h>
+#include <vte/reaper.h>
+#endif
+
 
 #ifdef HAVE_TERMINAL
 
@@ -42,11 +47,15 @@ class RGZvtInstallProgress : public RInstallProgress, public RGGladeWindow {
   static gboolean zvtFocus (GtkWidget *widget, GdkEventButton *event, gpointer user_data);
 
 protected:
-   virtual void startUpdate();
-   virtual void updateInterface();
-   virtual void finishUpdate();
-   static void stopShell(GtkWidget *self, void* data);
-   virtual bool close();
+#ifdef HAVE_VTE
+  static void child_exited(VteReaper *vtereaper,gint child_pid, gint ret,
+			   gpointer data);
+#endif
+  virtual void startUpdate();
+  virtual void updateInterface();
+  virtual void finishUpdate();
+  static void stopShell(GtkWidget *self, void* data);
+  virtual bool close();
 
 public:
    RGZvtInstallProgress(RGMainWindow *main);

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Synaptic-0.48\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-03-12 08:52+0100\n"
+"POT-Creation-Date: 2004-04-09 16:12+0200\n"
 "PO-Revision-Date: 2004-02-04 20:53+0100\n"
 "Last-Translator: Слободан Средојевић <ssl@uns.ns.ac.yu>\n"
 "Language-Team: Serbian (sr) <serbiangnome-lista@nongnu.org>\n"
@@ -154,7 +154,7 @@ msgstr "Internet"
 msgid "Miscellaneous  - Graphical"
 msgstr "Razno — grafika"
 
-#: common/sections_trans.cc:42 common/rpackage.cc:125 gtk/rgmainwindow.cc:75
+#: common/sections_trans.cc:42 common/rpackage.cc:125 gtk/rgmainwindow.cc:76
 msgid "Unknown"
 msgstr "Nepoznato"
 
@@ -454,7 +454,7 @@ msgstr "Ime"
 msgid "Version"
 msgstr "Verzija"
 
-#: common/rpackagefilter.cc:197 gtk/rgmainwindow.cc:2389
+#: common/rpackagefilter.cc:197 gtk/rgmainwindow.cc:2395
 #: gtk/rgvendorswindow.cc:62 gtk/rgvendorswindow.cc:94
 #: gtk/window_find.glade.h:3 gtk/window_main_hpaned.glade.h:26
 #: gtk/window_main_vpaned.glade.h:27 gtk/window_preferences.glade.h:36
@@ -599,7 +599,7 @@ msgstr "Instalirani i nadogradivi"
 msgid "Not installed (residual config)"
 msgstr "Nije instaliran (unutrašnje podešavanje)"
 
-#: common/rpackagelister.cc:851 gtk/rgmainwindow.cc:1380
+#: common/rpackagelister.cc:851 gtk/rgmainwindow.cc:1387
 #: gtk/window_filters.glade.h:32 gtk/rgmisc.cc:231
 msgid "Not installed"
 msgstr "Nisu instalirani"
@@ -625,7 +625,7 @@ msgstr ""
 "stare, koriste umesto njih."
 
 #: common/rpackagelister.cc:1505 common/rpackagelister.cc:1509
-#: gtk/rgrepositorywin.cc:322
+#: gtk/rgrepositorywin.cc:329
 msgid "Ignoring invalid record(s) in sources.list file!"
 msgstr "Zanemarivanje neispravnih stavki u datoteci „sources.list“!"
 
@@ -858,8 +858,8 @@ msgstr "Paketi koji će biti instalirani"
 msgid "To be kept"
 msgstr "Paketi koji će biti pričuvani"
 
-#: gtk/rgpreferenceswindow.cc:202 gtk/rgzvtinstallprogress.cc:83
-#: gtk/rgmainwindow.cc:3599
+#: gtk/rgpreferenceswindow.cc:202 gtk/rgzvtinstallprogress.cc:109
+#: gtk/rgmainwindow.cc:3605
 msgid "An error occurred while saving configurations."
 msgstr "Dogodila se greška prilikom čuvanja podešavanja."
 
@@ -977,17 +977,17 @@ msgstr ""
 "Za vreme pripreme za instalaciju:\n"
 "\n"
 
-#: gtk/rginstallprogress.cc:263 gtk/rgzvtinstallprogress.cc:142
+#: gtk/rginstallprogress.cc:263 gtk/rgzvtinstallprogress.cc:181
 #: gtk/window_zvtinstallprogress.glade.h:2
 #, fuzzy
 msgid "Applying Changes..."
 msgstr "Izvršavanje promena..."
 
-#: gtk/rgzvtinstallprogress.cc:61
+#: gtk/rgzvtinstallprogress.cc:83
 msgid "<i>Running...</i>"
 msgstr "<i>Pokretanje...</i>"
 
-#: gtk/rgzvtinstallprogress.cc:69
+#: gtk/rgzvtinstallprogress.cc:91
 #, fuzzy
 msgid ""
 "\n"
@@ -996,7 +996,7 @@ msgstr ""
 "\n"
 "Nadogradnja je završena — sada možete da zatvorite prozor"
 
-#: gtk/rgzvtinstallprogress.cc:71
+#: gtk/rgzvtinstallprogress.cc:93
 #, fuzzy
 msgid ""
 "\n"
@@ -1005,33 +1005,40 @@ msgstr ""
 "\n"
 "Neuspela nadogradnja - pregledajte poruku kako bi videli šta je loše krenulo"
 
-#: gtk/rgzvtinstallprogress.cc:104
+#: gtk/rgzvtinstallprogress.cc:95
+msgid ""
+"\n"
+"Successfully installed all packages of the current medium. To continue the "
+"installation with the next medium close this window."
+msgstr ""
+
+#: gtk/rgzvtinstallprogress.cc:143
 msgid "<i>Finished</i>"
 msgstr "<i>Završeno</i>"
 
-#: gtk/rgzvtinstallprogress.cc:113
+#: gtk/rgzvtinstallprogress.cc:152
 #, fuzzy
 msgid "<i>Can't close while running</i>"
 msgstr "<i>Ne mogu zatvoriti u toku izvršavanja</i>"
 
-#: gtk/rgmainwindow.cc:76
+#: gtk/rgmainwindow.cc:77
 msgid "Normal"
 msgstr "Normalni"
 
-#: gtk/rgmainwindow.cc:77
+#: gtk/rgmainwindow.cc:78
 msgid "Critical"
 msgstr "Kritično"
 
-#: gtk/rgmainwindow.cc:78
+#: gtk/rgmainwindow.cc:79
 msgid "Security"
 msgstr "Bezbednosni"
 
-#: gtk/rgmainwindow.cc:289
+#: gtk/rgmainwindow.cc:290
 #, fuzzy
 msgid "Starting help viewer..."
 msgstr "Pokrećem sistem pomoći..."
 
-#: gtk/rgmainwindow.cc:298
+#: gtk/rgmainwindow.cc:305
 #, fuzzy
 msgid ""
 "No help viewer is installed!\n"
@@ -1051,118 +1058,118 @@ msgstr ""
 "synaptic“ iz linije naredbi ili gledati html verziju smeštenu u "
 "direktorijumu „synaptic/html."
 
-#: gtk/rgmainwindow.cc:543
+#: gtk/rgmainwindow.cc:550
 msgid ""
 "Could not start the configuration tool!\n"
 "You have to install the required package 'libgnome2-perl'."
 msgstr ""
 
-#: gtk/rgmainwindow.cc:549
+#: gtk/rgmainwindow.cc:556
 #, fuzzy
 msgid "Starting package configuration tool..."
 msgstr "Izvršavam naredbu „dpkg-reconfigure“..."
 
 #. cout << "RGMainWindow::pkgHelpClicked()" << endl;
-#: gtk/rgmainwindow.cc:561
+#: gtk/rgmainwindow.cc:568
 #, fuzzy
 msgid "Starting package documentation viewer..."
 msgstr "Pokrećem pomoć paketa..."
 
-#: gtk/rgmainwindow.cc:673
+#: gtk/rgmainwindow.cc:680
 msgid "Retrieving Index Files..."
 msgstr "Preuzimanje indeks datoteka..."
 
-#: gtk/rgmainwindow.cc:675
+#: gtk/rgmainwindow.cc:682
 #, fuzzy
 msgid "Refreshing package list..."
 msgstr "Čišćenje spiskova paketa..."
 
-#: gtk/rgmainwindow.cc:685 gtk/rgmainwindow.cc:886 gtk/rgmainwindow.cc:1519
-#: gtk/rgmainwindow.cc:2030 gtk/rgmainwindow.cc:2189
+#: gtk/rgmainwindow.cc:692 gtk/rgmainwindow.cc:893 gtk/rgmainwindow.cc:1526
+#: gtk/rgmainwindow.cc:2036 gtk/rgmainwindow.cc:2195
 #, c-format
 msgid "Can't write %s"
 msgstr "Ne mogu da pišem na %s"
 
-#: gtk/rgmainwindow.cc:708 gtk/rgmainwindow.cc:954 gtk/rgmainwindow.cc:1544
-#: gtk/rgmainwindow.cc:1982
+#: gtk/rgmainwindow.cc:715 gtk/rgmainwindow.cc:961 gtk/rgmainwindow.cc:1551
+#: gtk/rgmainwindow.cc:1988
 #, c-format
 msgid "Can't read %s"
 msgstr "Ne mogu da čitam sa %s"
 
-#: gtk/rgmainwindow.cc:776
+#: gtk/rgmainwindow.cc:783
 #, fuzzy
 msgid "Failed to resolve dependency problems!"
 msgstr "Ne mogu da ispravim zavisnosti"
 
-#: gtk/rgmainwindow.cc:778
+#: gtk/rgmainwindow.cc:785
 msgid "Successfully fixed dependency problems"
 msgstr ""
 
-#: gtk/rgmainwindow.cc:793
+#: gtk/rgmainwindow.cc:800
 msgid ""
 "Could not upgrade the system!\n"
 "There are broken packages. Fix broken packages at first."
 msgstr ""
 
-#: gtk/rgmainwindow.cc:820
+#: gtk/rgmainwindow.cc:827
 #, fuzzy
 msgid "Marking all available upgrades..."
 msgstr "Stavi u red sve moguće nadogradnje"
 
-#: gtk/rgmainwindow.cc:832
+#: gtk/rgmainwindow.cc:839
 #, fuzzy
 msgid "Successfully marked all available upgrades"
 msgstr "Stavi u red sve moguće nadogradnje"
 
-#: gtk/rgmainwindow.cc:834
+#: gtk/rgmainwindow.cc:841
 #, fuzzy
 msgid "Failed to mark all available upgrades!"
 msgstr "Stavi u red sve moguće nadogradnje"
 
-#: gtk/rgmainwindow.cc:853
+#: gtk/rgmainwindow.cc:860
 msgid ""
 "Could not apply changes!\n"
 "There are broken packages. Fix broken packages at first."
 msgstr ""
 
-#: gtk/rgmainwindow.cc:873
+#: gtk/rgmainwindow.cc:880
 #, fuzzy
 msgid "Applying marked changes. This may take a while..."
 msgstr "Izvodim odabrane promene... ovo može potrajati"
 
-#: gtk/rgmainwindow.cc:877
+#: gtk/rgmainwindow.cc:884
 msgid "Retrieving Package Files..."
 msgstr "Preuzimam pakete..."
 
-#: gtk/rgmainwindow.cc:936
+#: gtk/rgmainwindow.cc:943
 msgid "Do you want to quit Synaptic?"
 msgstr "Da li želite da napustite Synaptic?"
 
-#: gtk/rgmainwindow.cc:981 gtk/rgmainwindow.cc:994
+#: gtk/rgmainwindow.cc:988 gtk/rgmainwindow.cc:1001
 msgid "N/A"
 msgstr "Nedostupno"
 
-#: gtk/rgmainwindow.cc:1409 gtk/window_main_hpaned.glade.h:39
+#: gtk/rgmainwindow.cc:1416 gtk/window_main_hpaned.glade.h:39
 #: gtk/window_main_vpaned.glade.h:41
 msgid "No package is selected.\n"
 msgstr "Nijedan paket nije izabran.\n"
 
-#: gtk/rgmainwindow.cc:1431
+#: gtk/rgmainwindow.cc:1438
 msgid "_Downgrade"
 msgstr "_Starija verzija"
 
-#: gtk/rgmainwindow.cc:1434 gtk/window_main_hpaned.glade.h:84
+#: gtk/rgmainwindow.cc:1441 gtk/window_main_hpaned.glade.h:84
 #: gtk/window_main_vpaned.glade.h:85
 msgid "_Install"
 msgstr "_Instaliraj"
 
-#: gtk/rgmainwindow.cc:1437 gtk/window_main_hpaned.glade.h:102
+#: gtk/rgmainwindow.cc:1444 gtk/window_main_hpaned.glade.h:102
 #: gtk/window_main_vpaned.glade.h:103
 msgid "_Upgrade"
 msgstr "Nad_ogradi"
 
 #. standard header in case the installing fails
-#: gtk/rgmainwindow.cc:1763
+#: gtk/rgmainwindow.cc:1770
 msgid ""
 "Some packages could not be installed.\n"
 "\n"
@@ -1172,81 +1179,81 @@ msgstr ""
 "\n"
 "Sledeći paketi nemaju zadovoljene zavisnosti:\n"
 
-#: gtk/rgmainwindow.cc:1999
+#: gtk/rgmainwindow.cc:2005
 msgid "Open changes"
 msgstr "Učitaj odabrane promene"
 
-#: gtk/rgmainwindow.cc:2206
+#: gtk/rgmainwindow.cc:2212
 msgid "Save changes"
 msgstr "Sačuvaj odabrane promene"
 
-#: gtk/rgmainwindow.cc:2222
+#: gtk/rgmainwindow.cc:2228
 msgid "Save full state, not only changes"
 msgstr "Sačuvaj puno stanje, ne samo promene"
 
-#: gtk/rgmainwindow.cc:2307
+#: gtk/rgmainwindow.cc:2313
 msgid "Package"
 msgstr "Paket"
 
-#: gtk/rgmainwindow.cc:2330
+#: gtk/rgmainwindow.cc:2336
 msgid "Installed Version"
 msgstr "Instalirana verzija"
 
-#: gtk/rgmainwindow.cc:2346
+#: gtk/rgmainwindow.cc:2352
 msgid "Latest Version"
 msgstr "Najnovija verzija"
 
-#: gtk/rgmainwindow.cc:2372
+#: gtk/rgmainwindow.cc:2378
 msgid "Required Space"
 msgstr "Zahtevan prostor"
 
-#: gtk/rgmainwindow.cc:2625
+#: gtk/rgmainwindow.cc:2631
 msgid "Update the list of available packages"
 msgstr "Osveži spisak dostupnih paketa"
 
-#: gtk/rgmainwindow.cc:2629
+#: gtk/rgmainwindow.cc:2635
 #, fuzzy
 msgid "Mark all possible upgrades"
 msgstr "Stavi u red sve moguće nadogradnje"
 
-#: gtk/rgmainwindow.cc:2633
+#: gtk/rgmainwindow.cc:2639
 #, fuzzy
 msgid "Apply all marked changes"
 msgstr "Završene sve promene"
 
-#: gtk/rgmainwindow.cc:3078
+#: gtk/rgmainwindow.cc:3084
 msgid "No Changes"
 msgstr "Nema izmena"
 
-#: gtk/rgmainwindow.cc:3086
+#: gtk/rgmainwindow.cc:3092
 msgid "Install"
 msgstr "Instaliraj"
 
-#: gtk/rgmainwindow.cc:3094
+#: gtk/rgmainwindow.cc:3100
 msgid "Upgrade"
 msgstr "Nadogradi"
 
-#: gtk/rgmainwindow.cc:3100 gtk/rgvendorswindow.cc:136
+#: gtk/rgmainwindow.cc:3106 gtk/rgvendorswindow.cc:136
 msgid "Remove"
 msgstr "Ukloni"
 
-#: gtk/rgmainwindow.cc:3108
+#: gtk/rgmainwindow.cc:3114
 msgid "Remove Including Configuration"
 msgstr "Ukloni uključujuća podešavanja"
 
-#: gtk/rgmainwindow.cc:3114
+#: gtk/rgmainwindow.cc:3120
 msgid "Remove Including Orphaned Dependencies"
 msgstr "Ukloni uključujuće napuštene zavisnosti"
 
-#: gtk/rgmainwindow.cc:3123
+#: gtk/rgmainwindow.cc:3129
 msgid "Lock Current Version and Status"
 msgstr "Zaključaj tekuću verziju i stanje"
 
-#: gtk/rgmainwindow.cc:3321
+#: gtk/rgmainwindow.cc:3327
 msgid "Do you want to add another CD-ROM?"
 msgstr "Da li želite da dodate još jedan cd uređaj?"
 
-#: gtk/rgmainwindow.cc:3350
+#: gtk/rgmainwindow.cc:3356
 msgid ""
 "Removing this package may render the system unusable.\n"
 "Are you sure you want to do that?"
@@ -1255,7 +1262,7 @@ msgstr ""
 "Da li ste sigurni da želite to da uradite?"
 
 # bug: plural form, split please
-#: gtk/rgmainwindow.cc:3509
+#: gtk/rgmainwindow.cc:3515
 #, c-format
 msgid ""
 "%i packages listed, %i installed, %i broken. %i to install/upgrade, %i to "
@@ -1265,7 +1272,7 @@ msgstr ""
 "(nadograđeno), %i će biti uklonjeno; %s prostora će biti oslobođeno"
 
 # bug: plural form, split please
-#: gtk/rgmainwindow.cc:3513
+#: gtk/rgmainwindow.cc:3519
 #, c-format
 msgid ""
 "%i packages listed, %i installed, %i broken. %i to install/upgrade, %i to "
@@ -1274,12 +1281,12 @@ msgstr ""
 "U spisku je %i paketa, %i instaliranih i %i oštećenih. %i će biti instalirano"
 "(nadograđeno), %i će biti uklonjeno; %s prostora će biti oslobođeno"
 
-#: gtk/rgmainwindow.cc:3542 gtk/window_main_hpaned.glade.h:19
+#: gtk/rgmainwindow.cc:3548 gtk/window_main_hpaned.glade.h:19
 #: gtk/window_main_vpaned.glade.h:20
 msgid "All Packages"
 msgstr "Svi paketi"
 
-#: gtk/rgmainwindow.cc:3623
+#: gtk/rgmainwindow.cc:3629
 msgid ""
 "The debtags database is not installed\n"
 "\n"
@@ -1295,7 +1302,7 @@ msgstr ""
 "Izvinite zbog ove neprijatnosti koja će biti otklonjena u nekoj od sledećih "
 "verzija (zakrpe su dobrodošle)!"
 
-#: gtk/rgmainwindow.cc:3657
+#: gtk/rgmainwindow.cc:3663
 #, c-format
 msgid ""
 "You have %d broken package on your system!\n"
@@ -1343,16 +1350,16 @@ msgstr "Distribucija"
 msgid "Section(s)"
 msgstr "Odeljak(ci)"
 
-#: gtk/rgrepositorywin.cc:259 gtk/rgrepositorywin.cc:374
+#: gtk/rgrepositorywin.cc:259 gtk/rgrepositorywin.cc:381
 #: gtk/window_repositories.glade.h:1
 msgid "(no vendor)"
 msgstr "(nije naveden isporučivalac)"
 
-#: gtk/rgrepositorywin.cc:329
+#: gtk/rgrepositorywin.cc:336
 msgid "Cannot read vendors.list file"
 msgstr "Ne mogu da pročitam „vendors.list“ datoteku"
 
-#: gtk/rgrepositorywin.cc:490
+#: gtk/rgrepositorywin.cc:497
 msgid "Unknown source type"
 msgstr "Nepoznata vrsta izvora"
 
@@ -2843,6 +2850,14 @@ msgid ""
 "</b>"
 msgstr ""
 "<b>Sledeće sličice se koriste za označavanje tekućeg stanja paketa:</b>"
+
+#, fuzzy
+#~ msgid ""
+#~ "\n"
+#~ "Successfully applied changes. There are still pending changes. Hold on"
+#~ msgstr ""
+#~ "\n"
+#~ "Nadogradnja je završena — sada možete da zatvorite prozor"
 
 # bug: ova poruka će biti uklonjena u sledećem pregledu koda
 #~ msgid "Retrieved %-3lii of %-3li files at %4s B/s - %6s remaining\n"

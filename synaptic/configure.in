@@ -1,7 +1,7 @@
 dnl Process this file with autoconf to produce a configure script.
 AC_INIT(configure.in)
 
-AM_INIT_AUTOMAKE(synaptic, 0.48.1)
+AM_INIT_AUTOMAKE(synaptic, 0.48.2)
 AM_CONFIG_HEADER(config.h)
 AM_MAINTAINER_MODE
 
@@ -155,7 +155,7 @@ AC_ARG_WITH(debtags,
 dnl check for libvte
 AC_ARG_WITH(vte, 
 	      [--with-vte  compile with libvte support (terminal output)], 
-	      [pkg_modules="vte >= 0.10.11"
+	      [pkg_modules="vte >= 0.10.10"
 	      PKG_CHECK_MODULES(VTE, [$pkg_modules])
 	      AC_DEFINE(HAVE_VTE, 1, [build with VTE as output terminal])
 	      AC_DEFINE(HAVE_TERMINAL, 1, [build with a terminal widget]) 

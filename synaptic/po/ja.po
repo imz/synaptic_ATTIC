@@ -1,15 +1,15 @@
 # Japanese message catalog for synaptic
 # Copyright (C) 2003 Daisuke SUZUKI <daisuke@linux.or.jp>
 # This file is distributed under the same license as the synaptic package.
-# Daisuke SUZUKI <daisuke@linux.or.jp>, 2003
+# Daisuke SUZUKI <daisuke@linux.or.jp>, 2003, 2004
 # 
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: synaptic 0.48\n"
+"Project-Id-Version: synaptic 0.48.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-03-12 08:52+0100\n"
-"PO-Revision-Date: 2004-02-27 16:27+0900\n"
+"POT-Creation-Date: 2004-04-09 16:12+0200\n"
+"PO-Revision-Date: 2004-03-13 02:24+0900\n"
 "Last-Translator: Daisuke SUZUKI <daisuke@linux.or.jp>\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -149,7 +149,7 @@ msgstr "ワールドワイドウェブ"
 msgid "Miscellaneous  - Graphical"
 msgstr "その他 - グラフィカル"
 
-#: common/sections_trans.cc:42 common/rpackage.cc:125 gtk/rgmainwindow.cc:75
+#: common/sections_trans.cc:42 common/rpackage.cc:125 gtk/rgmainwindow.cc:76
 msgid "Unknown"
 msgstr "不明"
 
@@ -450,7 +450,7 @@ msgstr "パッケージ名"
 msgid "Version"
 msgstr "バージョン"
 
-#: common/rpackagefilter.cc:197 gtk/rgmainwindow.cc:2389
+#: common/rpackagefilter.cc:197 gtk/rgmainwindow.cc:2395
 #: gtk/rgvendorswindow.cc:62 gtk/rgvendorswindow.cc:94
 #: gtk/window_find.glade.h:3 gtk/window_main_hpaned.glade.h:26
 #: gtk/window_main_vpaned.glade.h:27 gtk/window_preferences.glade.h:36
@@ -590,7 +590,7 @@ msgstr "インストール済かつアップグレード可能"
 msgid "Not installed (residual config)"
 msgstr "未インストール (未設定)"
 
-#: common/rpackagelister.cc:851 gtk/rgmainwindow.cc:1380
+#: common/rpackagelister.cc:851 gtk/rgmainwindow.cc:1387
 #: gtk/window_filters.glade.h:32 gtk/rgmisc.cc:231
 msgid "Not installed"
 msgstr "未インストール"
@@ -616,7 +616,7 @@ msgstr ""
 "いはかわりに古いものが使用されます。"
 
 #: common/rpackagelister.cc:1505 common/rpackagelister.cc:1509
-#: gtk/rgrepositorywin.cc:322
+#: gtk/rgrepositorywin.cc:329
 msgid "Ignoring invalid record(s) in sources.list file!"
 msgstr "sources.list ファイル内の不正なレコードを無視します"
 
@@ -626,12 +626,12 @@ msgstr "取得に失敗: "
 
 #: common/rpackagelister.cc:1560
 msgid "More packages failed to fetch. Not displaying.\n"
-msgstr ""
+msgstr "多くのパッケージの取得に失敗しました。すべては表示されません。\n"
 
 #: common/rpackagelister.cc:1581
-#, fuzzy, c-format
+#, c-format
 msgid "%i of the packages could not be retrieved from the server(s).\n"
-msgstr "いくつかのパッケージがサーバから取得できませんでした。\n"
+msgstr "%i 個のパッケージがサーバから取得できませんでした。\n"
 
 #: common/rpackagelister.cc:1585
 msgid "Do you want to continue, ignoring these packages?"
@@ -841,8 +841,8 @@ msgstr "インストールされるパッケージ"
 msgid "To be kept"
 msgstr "保留されるパッケージ"
 
-#: gtk/rgpreferenceswindow.cc:202 gtk/rgzvtinstallprogress.cc:83
-#: gtk/rgmainwindow.cc:3599
+#: gtk/rgpreferenceswindow.cc:202 gtk/rgzvtinstallprogress.cc:109
+#: gtk/rgmainwindow.cc:3605
 msgid "An error occurred while saving configurations."
 msgstr "設定を保存中にエラーが発生しました。"
 
@@ -959,61 +959,64 @@ msgstr ""
 "インストール準備中に:\n"
 "\n"
 
-#: gtk/rginstallprogress.cc:263 gtk/rgzvtinstallprogress.cc:142
+#: gtk/rginstallprogress.cc:263 gtk/rgzvtinstallprogress.cc:181
 #: gtk/window_zvtinstallprogress.glade.h:2
 msgid "Applying Changes..."
 msgstr "変更を適用しています..."
 
-#: gtk/rgzvtinstallprogress.cc:61
+#: gtk/rgzvtinstallprogress.cc:83
 msgid "<i>Running...</i>"
 msgstr "<i>実行中...</i>"
 
-#: gtk/rgzvtinstallprogress.cc:69
-#, fuzzy
+#: gtk/rgzvtinstallprogress.cc:91
 msgid ""
 "\n"
 "Successfully applied all changes. You can close the window now "
 msgstr ""
 "\n"
-"更新終了 - このウインドウを閉じて下さい"
+"正常に変更の適用されました - このウインドウを閉じて下さい"
 
-#: gtk/rgzvtinstallprogress.cc:71
-#, fuzzy
+#: gtk/rgzvtinstallprogress.cc:93
 msgid ""
 "\n"
 "Failed to apply all changes! Scroll in this buffer to see what went wrong "
 msgstr ""
 "\n"
-"更新に失敗しました。 - このバッファをスクロールしてなにが問題であったかを確認"
-"してください"
+"変更の適用に失敗しました! このバッファをスクロールしてなにが問題であったかを"
+"確認してください"
 
-#: gtk/rgzvtinstallprogress.cc:104
+#: gtk/rgzvtinstallprogress.cc:95
+msgid ""
+"\n"
+"Successfully installed all packages of the current medium. To continue the "
+"installation with the next medium close this window."
+msgstr ""
+
+#: gtk/rgzvtinstallprogress.cc:143
 msgid "<i>Finished</i>"
 msgstr "<i>完了</i>"
 
-#: gtk/rgzvtinstallprogress.cc:113
+#: gtk/rgzvtinstallprogress.cc:152
 msgid "<i>Can't close while running</i>"
 msgstr "<i>実行中に閉じることはできません</i>"
 
-#: gtk/rgmainwindow.cc:76
+#: gtk/rgmainwindow.cc:77
 msgid "Normal"
 msgstr "ノーマル"
 
-#: gtk/rgmainwindow.cc:77
+#: gtk/rgmainwindow.cc:78
 msgid "Critical"
 msgstr "クリティカル"
 
-#: gtk/rgmainwindow.cc:78
+#: gtk/rgmainwindow.cc:79
 msgid "Security"
 msgstr "セキュリティ"
 
-#: gtk/rgmainwindow.cc:289
-#, fuzzy
+#: gtk/rgmainwindow.cc:290
 msgid "Starting help viewer..."
-msgstr "ヘルプシステムを開始しています..."
+msgstr "ヘルプビューアを開始しています..."
 
-#: gtk/rgmainwindow.cc:298
-#, fuzzy
+#: gtk/rgmainwindow.cc:305
 msgid ""
 "No help viewer is installed!\n"
 "\n"
@@ -1025,126 +1028,123 @@ msgid ""
 msgstr ""
 "ヘルプビュアーがインストールされていません\n"
 "\n"
-"synaptic のマニュアルを表示するには GNOMEビュアーの 'yelp' かウェブブラウザ "
-"'mozilla' のどちらかが必要です。\n"
+"synaptic のマニュアルを表示するには GNOMEヘルプビュアーの 'yelp' か、ウェブブ"
+"ラウザの 'mozilla' または 'konqueror' が必要です。\n"
 "\n"
 "また、コマンドラインから 'man synaptic' を実行してマニュアルページを参照した"
 "り、'synaptic/html' フォルダにある HTML バージョンのマニュアルを参照すること"
 "もできます。"
 
-#: gtk/rgmainwindow.cc:543
+#: gtk/rgmainwindow.cc:550
 msgid ""
 "Could not start the configuration tool!\n"
 "You have to install the required package 'libgnome2-perl'."
 msgstr ""
+"設定ツールを起動することができません!\n"
+"要求されたパッケージ 'libgnome2-perl' をインストールする必要があります。"
 
-#: gtk/rgmainwindow.cc:549
-#, fuzzy
+#: gtk/rgmainwindow.cc:556
 msgid "Starting package configuration tool..."
-msgstr "dpkg-reconfigure を開始しています..."
+msgstr "パッケージ設定ツールを開始しています..."
 
 #. cout << "RGMainWindow::pkgHelpClicked()" << endl;
-#: gtk/rgmainwindow.cc:561
-#, fuzzy
+#: gtk/rgmainwindow.cc:568
 msgid "Starting package documentation viewer..."
-msgstr "パッケージヘルプを開始しています..."
+msgstr "パッケージドキュメントビューアを開始しています..."
 
-#: gtk/rgmainwindow.cc:673
+#: gtk/rgmainwindow.cc:680
 msgid "Retrieving Index Files..."
 msgstr "インデックスファイルを取得中..."
 
-#: gtk/rgmainwindow.cc:675
-#, fuzzy
+#: gtk/rgmainwindow.cc:682
 msgid "Refreshing package list..."
-msgstr "パッケージリストを削除しています..."
+msgstr "パッケージリストを更新しています..."
 
-#: gtk/rgmainwindow.cc:685 gtk/rgmainwindow.cc:886 gtk/rgmainwindow.cc:1519
-#: gtk/rgmainwindow.cc:2030 gtk/rgmainwindow.cc:2189
+#: gtk/rgmainwindow.cc:692 gtk/rgmainwindow.cc:893 gtk/rgmainwindow.cc:1526
+#: gtk/rgmainwindow.cc:2036 gtk/rgmainwindow.cc:2195
 #, c-format
 msgid "Can't write %s"
 msgstr "%s を書き込むことができません"
 
-#: gtk/rgmainwindow.cc:708 gtk/rgmainwindow.cc:954 gtk/rgmainwindow.cc:1544
-#: gtk/rgmainwindow.cc:1982
+#: gtk/rgmainwindow.cc:715 gtk/rgmainwindow.cc:961 gtk/rgmainwindow.cc:1551
+#: gtk/rgmainwindow.cc:1988
 #, c-format
 msgid "Can't read %s"
 msgstr "%s を読むことができません"
 
-#: gtk/rgmainwindow.cc:776
-#, fuzzy
+#: gtk/rgmainwindow.cc:783
 msgid "Failed to resolve dependency problems!"
-msgstr "依存問題の修正"
+msgstr "依存問題の解消に失敗しました!"
 
-#: gtk/rgmainwindow.cc:778
-#, fuzzy
+#: gtk/rgmainwindow.cc:785
 msgid "Successfully fixed dependency problems"
-msgstr "依存問題の修正"
+msgstr "依存問題の解消に成功しました"
 
-#: gtk/rgmainwindow.cc:793
+#: gtk/rgmainwindow.cc:800
 msgid ""
 "Could not upgrade the system!\n"
 "There are broken packages. Fix broken packages at first."
 msgstr ""
+"システムをアップグレードすることができません!\n"
+"破損パッケージが存在します。最初に破損パッケージの修復を行ってください。"
 
-#: gtk/rgmainwindow.cc:820
-#, fuzzy
+#: gtk/rgmainwindow.cc:827
 msgid "Marking all available upgrades..."
-msgstr "全ての可能なアップグレードを選択します"
+msgstr "全ての可能なアップグレードを選択しています..."
 
-#: gtk/rgmainwindow.cc:832
-#, fuzzy
+#: gtk/rgmainwindow.cc:839
 msgid "Successfully marked all available upgrades"
-msgstr "全ての可能なアップグレードを選択します"
+msgstr "全ての可能なアップグレードの選択に成功しました"
 
-#: gtk/rgmainwindow.cc:834
-#, fuzzy
+#: gtk/rgmainwindow.cc:841
 msgid "Failed to mark all available upgrades!"
-msgstr "全ての可能なアップグレードを選択します"
+msgstr "全ての可能なアップグレードの選択に失敗しました"
 
-#: gtk/rgmainwindow.cc:853
+#: gtk/rgmainwindow.cc:860
 msgid ""
 "Could not apply changes!\n"
 "There are broken packages. Fix broken packages at first."
 msgstr ""
+"変更を適用することができません!\n"
+"破損パッケージが存在します。最初に破損パッケージを修復してください。"
 
-#: gtk/rgmainwindow.cc:873
-#, fuzzy
+#: gtk/rgmainwindow.cc:880
 msgid "Applying marked changes. This may take a while..."
-msgstr "選択の変更を適用中... しばらく時間がかかる場合があります"
+msgstr "選択された変更を適用しています. しばらくお待ちください..."
 
-#: gtk/rgmainwindow.cc:877
+#: gtk/rgmainwindow.cc:884
 msgid "Retrieving Package Files..."
 msgstr "パッケージファイルの取得中..."
 
-#: gtk/rgmainwindow.cc:936
+#: gtk/rgmainwindow.cc:943
 msgid "Do you want to quit Synaptic?"
 msgstr "Synaptic を終了しますか?"
 
-#: gtk/rgmainwindow.cc:981 gtk/rgmainwindow.cc:994
+#: gtk/rgmainwindow.cc:988 gtk/rgmainwindow.cc:1001
 msgid "N/A"
 msgstr "N/A"
 
-#: gtk/rgmainwindow.cc:1409 gtk/window_main_hpaned.glade.h:39
+#: gtk/rgmainwindow.cc:1416 gtk/window_main_hpaned.glade.h:39
 #: gtk/window_main_vpaned.glade.h:41
 msgid "No package is selected.\n"
 msgstr "パッケージは選択されていません。\n"
 
-#: gtk/rgmainwindow.cc:1431
+#: gtk/rgmainwindow.cc:1438
 msgid "_Downgrade"
 msgstr "ダウングレード(_D)"
 
-#: gtk/rgmainwindow.cc:1434 gtk/window_main_hpaned.glade.h:84
+#: gtk/rgmainwindow.cc:1441 gtk/window_main_hpaned.glade.h:84
 #: gtk/window_main_vpaned.glade.h:85
 msgid "_Install"
 msgstr "インストール(_I)"
 
-#: gtk/rgmainwindow.cc:1437 gtk/window_main_hpaned.glade.h:102
+#: gtk/rgmainwindow.cc:1444 gtk/window_main_hpaned.glade.h:102
 #: gtk/window_main_vpaned.glade.h:103
 msgid "_Upgrade"
 msgstr "アップグレード(_U)"
 
 #. standard header in case the installing fails
-#: gtk/rgmainwindow.cc:1763
+#: gtk/rgmainwindow.cc:1770
 msgid ""
 "Some packages could not be installed.\n"
 "\n"
@@ -1154,79 +1154,79 @@ msgstr ""
 "\n"
 "以下のパッケージに未解決の依存関係が存在します:\n"
 
-#: gtk/rgmainwindow.cc:1999
+#: gtk/rgmainwindow.cc:2005
 msgid "Open changes"
 msgstr "変更履歴を開く"
 
-#: gtk/rgmainwindow.cc:2206
+#: gtk/rgmainwindow.cc:2212
 msgid "Save changes"
 msgstr "変更履歴を保存する"
 
-#: gtk/rgmainwindow.cc:2222
+#: gtk/rgmainwindow.cc:2228
 msgid "Save full state, not only changes"
 msgstr "変更だけでなく、全ての状態を保存します"
 
-#: gtk/rgmainwindow.cc:2307
+#: gtk/rgmainwindow.cc:2313
 msgid "Package"
 msgstr "パッケージ"
 
-#: gtk/rgmainwindow.cc:2330
+#: gtk/rgmainwindow.cc:2336
 msgid "Installed Version"
 msgstr "インストール済バージョン"
 
-#: gtk/rgmainwindow.cc:2346
+#: gtk/rgmainwindow.cc:2352
 msgid "Latest Version"
 msgstr "最新バージョン"
 
-#: gtk/rgmainwindow.cc:2372
+#: gtk/rgmainwindow.cc:2378
 msgid "Required Space"
 msgstr "必要な容量"
 
-#: gtk/rgmainwindow.cc:2625
+#: gtk/rgmainwindow.cc:2631
 msgid "Update the list of available packages"
 msgstr "パッケージリストの更新"
 
-#: gtk/rgmainwindow.cc:2629
+#: gtk/rgmainwindow.cc:2635
 msgid "Mark all possible upgrades"
 msgstr "全ての可能なアップグレードを選択します"
 
-#: gtk/rgmainwindow.cc:2633
+#: gtk/rgmainwindow.cc:2639
 msgid "Apply all marked changes"
 msgstr "全ての選択された変更を適用する"
 
-#: gtk/rgmainwindow.cc:3078
+#: gtk/rgmainwindow.cc:3084
 msgid "No Changes"
 msgstr "変更しない"
 
-#: gtk/rgmainwindow.cc:3086
+#: gtk/rgmainwindow.cc:3092
 msgid "Install"
 msgstr "インストール"
 
-#: gtk/rgmainwindow.cc:3094
+#: gtk/rgmainwindow.cc:3100
 msgid "Upgrade"
 msgstr "アップグレード"
 
-#: gtk/rgmainwindow.cc:3100 gtk/rgvendorswindow.cc:136
+#: gtk/rgmainwindow.cc:3106 gtk/rgvendorswindow.cc:136
 msgid "Remove"
 msgstr "削除"
 
-#: gtk/rgmainwindow.cc:3108
+#: gtk/rgmainwindow.cc:3114
 msgid "Remove Including Configuration"
 msgstr "読み込まれた設定を削除する"
 
-#: gtk/rgmainwindow.cc:3114
+#: gtk/rgmainwindow.cc:3120
 msgid "Remove Including Orphaned Dependencies"
 msgstr "Orphanされた依存関係を削除する"
 
-#: gtk/rgmainwindow.cc:3123
+#: gtk/rgmainwindow.cc:3129
 msgid "Lock Current Version and Status"
 msgstr "現在のバージョンおよび状態にロックする"
 
-#: gtk/rgmainwindow.cc:3321
+#: gtk/rgmainwindow.cc:3327
 msgid "Do you want to add another CD-ROM?"
 msgstr "ほかのCD-ROMを追加しますか?"
 
-#: gtk/rgmainwindow.cc:3350
+#: gtk/rgmainwindow.cc:3356
 msgid ""
 "Removing this package may render the system unusable.\n"
 "Are you sure you want to do that?"
@@ -1234,7 +1234,7 @@ msgstr ""
 "このパッケージを削除するとシステムが動作不能になる可能性があります\n"
 "本当にこれを実行してもよろしいですか?"
 
-#: gtk/rgmainwindow.cc:3509
+#: gtk/rgmainwindow.cc:3515
 #, c-format
 msgid ""
 "%i packages listed, %i installed, %i broken. %i to install/upgrade, %i to "
@@ -1243,7 +1243,7 @@ msgstr ""
 "全 %i パッケージ (インストール済: %i 個, 破損 %i 個, インストールまたはアップ"
 "グレード指定: %i 個, 削除指定: %i) ; %sB が開放されます"
 
-#: gtk/rgmainwindow.cc:3513
+#: gtk/rgmainwindow.cc:3519
 #, c-format
 msgid ""
 "%i packages listed, %i installed, %i broken. %i to install/upgrade, %i to "
@@ -1252,12 +1252,12 @@ msgstr ""
 "全 %i パッケージ (インストール済: %i 個, 破損 %i 個, インストールまたはアップ"
 "グレード指定: %i 個, 削除指定: %i) ; %sB が消費されます"
 
-#: gtk/rgmainwindow.cc:3542 gtk/window_main_hpaned.glade.h:19
+#: gtk/rgmainwindow.cc:3548 gtk/window_main_hpaned.glade.h:19
 #: gtk/window_main_vpaned.glade.h:20
 msgid "All Packages"
 msgstr "全てのパッケージ"
 
-#: gtk/rgmainwindow.cc:3623
+#: gtk/rgmainwindow.cc:3629
 msgid ""
 "The debtags database is not installed\n"
 "\n"
@@ -1272,8 +1272,8 @@ msgstr ""
 "不便をおかけして申し訳ありません。将来のバージョンではこの手動処理は必要なく"
 "なる予定です。(パッチをお待ちしています)"
 
-#: gtk/rgmainwindow.cc:3657
-#, c-format
+#: gtk/rgmainwindow.cc:3663
+#, fuzzy, c-format
 msgid ""
 "You have %d broken package on your system!\n"
 "\n"
@@ -1285,7 +1285,7 @@ msgid_plural ""
 msgstr[0] ""
 "このシステムには %d 個の破損パッケージがあります。\n"
 "\n"
-"\"破損パッケージ\"フィルタを参照して修復を試みてください。"
+"\"破損パッケージ\"フィルタを参照して確認してください。"
 
 #: gtk/rgrepositorywin.cc:101 gtk/window_repositories.glade.h:4
 msgid "Repositories"
@@ -1312,16 +1312,16 @@ msgstr "ディストリビューション"
 msgid "Section(s)"
 msgstr "セクション"
 
-#: gtk/rgrepositorywin.cc:259 gtk/rgrepositorywin.cc:374
+#: gtk/rgrepositorywin.cc:259 gtk/rgrepositorywin.cc:381
 #: gtk/window_repositories.glade.h:1
 msgid "(no vendor)"
 msgstr "(ベンダなし)"
 
-#: gtk/rgrepositorywin.cc:329
+#: gtk/rgrepositorywin.cc:336
 msgid "Cannot read vendors.list file"
 msgstr "vendors.list ファイルを読み込むことができません"
 
-#: gtk/rgrepositorywin.cc:490
+#: gtk/rgrepositorywin.cc:497
 msgid "Unknown source type"
 msgstr "不明なソースタイプです"
 
@@ -1466,13 +1466,12 @@ msgid "Find"
 msgstr "検索"
 
 #: gtk/window_about.glade.h:1
-#, fuzzy
 msgid ""
 "<span size=\"small\">Copyright (c) 2001-2004 Conectiva S/A \n"
 "Copyright (c) 2002-2004 Michael Vogt</span>"
 msgstr ""
-"<span size=\"small\">Copyright (c) 2001-2003 Connectiva S/A \n"
-"Copyright (c) 2002,2003 Michael Vogt</span>"
+"<span size=\"small\">Copyright (c) 2001-2004 Connectiva S/A \n"
+"Copyright (c) 2002-2004 Michael Vogt</span>"
 
 #: gtk/window_about.glade.h:3
 msgid "<span size=\"xx-large\" weight=\"bold\">Synaptic version</span>"
@@ -2771,6 +2770,14 @@ msgid ""
 msgstr ""
 "<b>以下のアイコンがパッケージの現在状態を表すために使用されています</b>"
 
+#, fuzzy
+#~ msgid ""
+#~ "\n"
+#~ "Successfully applied changes. There are still pending changes. Hold on"
+#~ msgstr ""
+#~ "\n"
+#~ "正常に変更の適用されました - このウインドウを閉じて下さい"
+
 #~ msgid "Retrieved %-3lii of %-3li files at %4s B/s - %6s remaining\n"
 #~ msgstr "%-3li/%-3li 個のファイルを取得 (%4s B/秒) - 残り時間 %6s\n"
 
@@ -2839,21 +2846,6 @@ msgstr ""
 
 #~ msgid "Execute the queued changes"
 #~ msgstr "選択された変更を適用する"
-
-#~ msgid ""
-#~ "You have %d broken package on your system!\n"
-#~ "\n"
-#~ "Use the \"Broken\" filter to locate it.You have %i broken packages on "
-#~ "your system!\n"
-#~ "\n"
-#~ "Use the \"Broken\" filter to locate them."
-#~ msgstr ""
-#~ "このシステムには %d 個の破損パッケージがあります。\n"
-#~ "\n"
-#~ "\"破損パッケージ\"フィルタを参照して修復を試みてください。このシステムに"
-#~ "は %i 個の破損パッケージがあります。\n"
-#~ "\n"
-#~ "\"破損パッケージ\"フィルタを参照して修復を試みてください。"
 
 #~ msgid "Size:"
 #~ msgstr "サイズ:"
