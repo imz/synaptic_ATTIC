@@ -10,13 +10,14 @@
 
 Name: synaptic
 Version: 0.47
-Release: alt2
+Release: alt2.1
 
 Summary: Graphical front-end for APT
 Summary(ru_RU.CP1251): Графическая оболочка для APT
 Group: System/Configuration/Packaging
 License: GPL
-URL: http://savannah.nongnu.org/files/?group=synaptic
+Url: http://savannah.nongnu.org/files/?group=synaptic
+Packager: Sviatoslav Sviridov <svd@altlinux.ru>
 
 Source: http://savannah.nongnu.org/download/synaptic/synaptic.pkg/%version/%name-%version%rel.tar.gz
 Source1: %name-ru.po
@@ -97,6 +98,9 @@ mkdir -p %buildroot%_mandir/ru/man8/
 %doc README* TODO NEWS AUTHORS
 
 %changelog
+* Thu Jan 15 2004 Dmitry V. Levin <ldv@altlinux.org> 0.47-alt2.1
+- Rebuilt with apt-0.5.15cnc5.
+
 * Tue Jan 13 2004 Sviatoslav Sviridov <svd@altlinux.ru> 0.47-alt2
 - russian manpage moved to %_mandir/ru/man8 (#3470)
 - spec update:
