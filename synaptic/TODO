@@ -1,0 +1,132 @@
+Renate's extraordinary wish list:
+ - copy desktop file to the KDE menu - $KDEPREFIX/applnk/Settingsmenu
+   "kde-config --prefix"
+ - enable glade support in download and execute window
+ - possibility to resume failed installation of half installed packages
+   Execute should be available if there are outstanding packages 
+   (difficult!)
+ - icons in status list - use icons from gtk theme
+ - do not use ithe same sentence for singular and plural in summary
+ - exchange gtk popups with glade files to fulfil HIG and have nicer alert boxes
+
+Unsorted:
+ - Please add hyperlink support in package info for example
+ - Please allow users to delete default filters and add an option to
+   restore in prefs (or make them not deletable at all)
+ - "crash handler" that automatically save the selections on a synaptic
+   segfault (and present a dialog to reread them on the next start)
+ - if download failed, use a special dialog to show it
+ 
+ - ask on debian-deity if it is possible to get a "DeletePin" function.
+   this way, we can do default release pining without rereading the cache
+   (see policy.cc:pkgPolicy::pkgPolicy())
+
+ "Install from multiple Distributions patch":
+   - save selected distribution when doing a "save selection"
+   - when "open cache" is called, make sure that the correct distribution 
+     is selected for save/restore
+   - fix "undo/redo"
+ 
+ - download window scrollbar shouldn't always scroll, make two areas, one with
+   active jobs and one with completted jobs? 
+
+Configure:
+   - allways give the correct path in the synaptic.desktop file
+     (currently hardcoded)
+
+GUI:
+   - allow clicking in the depedency list so that the click takes
+     you to the package
+   - add TaskView view to show tasks (add just a new view). 
+   - add native debconf reconfigure frontend using the cmdpipe interface
+     to debconf (cool!)
+   - try to get synaptic into base-config
+   - add non-root mode 
+   - add something that lets the user see if a certain package is already
+     in the cache
+   - add reduced view? (always ignore this package)
+   - add ignore option for unwanted packages (use RPackageView?!)
+   - add context menu in the dependency list to install/remove/upgrade
+   - changesWindow should also support installing recommends/suggested pkgs
+   - add a sources.list wizard for debian (like base-config)?
+   - make a the used font in the treeview configurable 
+   - add a button to undo all programmed changes 
+	(do we need this now that we have a "real" undo?)
+
+Filter:
+   - add "immutable" filters that can be configured via /etc/synaptic/filters
+   - dependencies of selected package
+   - dependents of selected package
+
+General:
+   - add something like aptitude Last-change support, so that you can
+     track what pkgs where installed to fullfill some dependencies
+     (and have the option to remove them again automatically)
+     [might be enough to use "remove with dependencies" ?]
+   - make deporhan a native synaptic filter (should be easy)
+   - make log-file
+   - current task support is broken, try to fix it
+   - implement raptoptions save/restore for getFlags/setFlags [not needed?]
+   - implement font size choser [half-done see FAQ]
+
+
+Done:
+   - hide seperator_hold on rpm based systems, too (?)
+   - deactivate "do not modify" in the package menu if no modification was
+     queued or no package is selected
+   - split up the label_info (main window) into several labels
+   - implement new glade version of dialog_summary
+   - disable all package actions if "hold current version" is activated
+   - "hold current version" in the package menu should represent the hold status
+     (it is already an "Ankreuzfeld")
+   - deactivate font selector in the prefs if user defined font is not activated
+   - add context-menu on right-click (del/inst/upgr/show descr in own window,
+   - context menus in the package list
+   - GtkTextView for package name and short desc (textview_pkgcommon)
+   - add a dialog that show what dependency is unmet if a pkg can not be
+     installed (like ShowBroken() in apt-get.cc)
+   - add a tab that shows all version of the package 
+     (like apt-cache showpkg)
+   - enable different sorting methods for the tree (e.g. size)
+   - implement proxy settings 
+   - implement a new (interactive) search function
+   - config option what the default action of ("delete") button is
+   - "removed but residual config" should win against 
+     "obsolete or locally installed" in by status view
+   - add remove with deps menu entry 
+   - add "Provides" tab (done)
+   - obsolete packages (installed, but no install version available)
+     (named "not installable")
+   - add missing functionality in rpackagefilter line 183 (Provides filter)
+   - display all files of a installed packages (like dpkg -L or apt-file) 
+     [can't do this in a portable way]
+   - add easy way to install suggested/recommended
+   - convert all GtkCList to GtkTreeView (done)
+   - make it possible to filter for maintainer
+   - make a options to install recommended package automatically or
+     semi-automatically with a dialog (done)
+   - add something that adds cdrom uris to the sources
+   - implement "undo" :) 
+   - configure whether we want text under icons or not (done)
+   - problem if a pkglist is not available on startup (rpm only)
+   - implement some kind of deborphan functionality (make it a filter)
+   - filter for "residual configuration" (removed, but still configuration)
+   - make a extra warning if packages are deleted (via Summary Window)
+   - label with short description resizes the gui (ugly)
+   - add filters to menu (done)
+   - make easy way to filter for description 
+   - make more than one package selectable and allow "install", "keep" etc
+     on this groups (done)
+   - remove the update button in rgsrcwindow.cc (done)
+   - add more key-shortcuts (done)
+   - add repository dialog (done)
+   - new packages in repository (done)
+   - add cmdline argument for selecting a initial filter (done)
+   - test for "swig" in configure.in (done)
+   - get rid of all gtk_widget_set_usize() [mostly gone]
+   - use colors to show different stuff about the package 
+     (e.g. blue if upgradeable, red if broken etc) [done]
+   - some online-help/mini-tutorial (partly done)
+   - handle "|" case in WDepends (partly)
+   - implement "Hold package" (partly)   
+   - add man-page and localised man-page (done)

@@ -1,0 +1,21 @@
+--- synaptic-0.47/xmldocs.make.xslt	2003-12-15 23:01:37 +0200
++++ synaptic-0.47/xmldocs.make	2003-12-15 23:27:34 +0200
+@@ -44,6 +44,7 @@
+ 
+ EXTRA_DIST = $(xml_files) $(omffile)
+ CLEANFILES = omf_timestamp html_timestamp
++HTML_OUT_ENCODING="ISO-8859-1"
+ 
+ # If the following file is in a subdir (like help/) you need to add that to the path
+ include $(top_srcdir)/omf.make
+@@ -53,7 +54,9 @@
+ html: html_timestamp
+ 
+ html_timestamp:  $(docname).xml
+-	db2html -o  $(top_builddir)/doc/html $(docname).xml
++	xsltproc --nonet --stringparam base.dir $(top_builddir)/doc/html \
++		--stringparam chunker.output.encoding $(HTML_OUT_ENCODING) \
++		http://docbook.sourceforge.net/release/xsl/current/html/chunk.xsl $(docname).xml
+ 	cp  $(top_srcdir)/help/C/figures/*  $(top_builddir)/doc/html/figures
+ 	touch html_timestamp
+ 

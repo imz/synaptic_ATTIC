@@ -1,344 +1,361 @@
-# Russian translations for synaptic package.
-# Copyright (C) 2002 THE synaptic'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the synaptic package.
-# Sviatoslav Sviridov <svd@altlinux.ru>, 2002-2003.
-# Vitaly Lipatov <lav@altlinux.ru>, 2003.
-# Kate <kate@lrn.ru>, 2003.
+# Chinese (traditional, Hong Kong) message translation for synaptic.
+# Copyright (C) 2001, 2002, 2003 Free Software Foundation, Inc.
+# Anthony Fok <anthony@thizlinux.com>, 2002, 2003.
+# ThizLinux Laboratory Ltd. (Hong Kong SAR, China)
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: ru\n"
+"Project-Id-Version: synaptic 0.32\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2003-11-29 14:29+0100\n"
-"PO-Revision-Date: 2003-12-14 11:58+0200\n"
-"Last-Translator: Kate <kate@lrn.ru>\n"
-"Language-Team:  <ru@li.org>\n"
+"POT-Creation-Date: 2003-12-02 07:28+0100\n"
+"PO-Revision-Date: 2002-01-21 09:49+0800\n"
+"Last-Translator: Anthony Fok <anthony@thizlinux.com>\n"
+"Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=KOI8-R\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
-"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: KBabel 1.0.2\n"
 
 #: common/sections_trans.h:5
 msgid "System Administration"
-msgstr "Администрирование системы"
+msgstr ""
 
 #: common/sections_trans.h:6
+#, fuzzy
 msgid "Base System"
-msgstr "Основная система"
+msgstr "Е█┤Г╢ (_G)"
 
 #: common/sections_trans.h:7
+#, fuzzy
 msgid "Communication"
-msgstr "Связь"
+msgstr "Ф▄┤Д╩╓"
 
 #: common/sections_trans.h:8
 msgid "Development"
-msgstr "Средства разработки"
+msgstr ""
 
 #: common/sections_trans.h:9 gtk/window_main_vpaned.glade.strings:85
 msgid "Documentation"
-msgstr "Руководство"
+msgstr ""
 
 #: common/sections_trans.h:10
+#, fuzzy
 msgid "Editors"
-msgstr "Редакторы"
+msgstr "Г╥╗Х╪╞Г╞╘И│╦Е≥╗..."
 
 #: common/sections_trans.h:11
 msgid "Electronics"
-msgstr "Электроника"
+msgstr ""
 
 #: common/sections_trans.h:12
 msgid "Embedded Devices"
-msgstr "Внутренние устройства"
+msgstr ""
 
 #: common/sections_trans.h:13
 msgid "Games and Amusement"
-msgstr "Игры и развлечения"
+msgstr ""
 
 #: common/sections_trans.h:14
 msgid "GNOME Desktop Environment"
-msgstr "Рабочий стол GNOME"
+msgstr ""
 
 #: common/sections_trans.h:15
 msgid "Graphics"
-msgstr "Графика"
+msgstr ""
 
 #: common/sections_trans.h:16
 msgid "Amateur Radio"
-msgstr "Любительское радио"
+msgstr ""
 
 #: common/sections_trans.h:17
 msgid "Interpreted Computer Languages"
-msgstr "Языки программирования"
+msgstr ""
 
 #: common/sections_trans.h:18
 msgid "KDE Desktop Environment"
-msgstr "Рабочий стол KDE"
+msgstr ""
 
 #: common/sections_trans.h:19
 msgid "Libraries - Development"
-msgstr "Библиотеки - Разработка"
+msgstr ""
 
 #: common/sections_trans.h:20
 msgid "Libraries"
-msgstr "Библиотеки"
+msgstr ""
 
 #: common/sections_trans.h:21
 msgid "Email"
-msgstr "Почта"
+msgstr ""
 
 #: common/sections_trans.h:22
 msgid "Mathematics"
-msgstr "Математика"
+msgstr ""
 
 #: common/sections_trans.h:23
 msgid "Miscellaneous - Text Based"
-msgstr "Разное - Для работы с текстом"
+msgstr ""
 
 #: common/sections_trans.h:24
+#, fuzzy
 msgid "Networking"
-msgstr "Сеть"
+msgstr "Х┴╡Е╫╘"
 
 #: common/sections_trans.h:25
+#, fuzzy
 msgid "Newsgroup"
-msgstr "Конференция"
+msgstr "Ф√╟Е╒·"
 
 #: common/sections_trans.h:26
 msgid "Libraries - Old"
-msgstr "Библиотеки - Старое"
+msgstr ""
 
 #: common/sections_trans.h:27
 msgid "Cross Platform"
-msgstr "Межплатформенные"
+msgstr ""
 
 #: common/sections_trans.h:28
+#, fuzzy
 msgid "Perl Programming Language"
-msgstr "Язык программирования Perl"
+msgstr "Ф╜ёЕ°╗И─╡Х║▄Д©╝Ф■╧"
 
 #: common/sections_trans.h:29
 msgid "Python Programming Language"
-msgstr "Язык программирования Python "
+msgstr ""
 
 #: common/sections_trans.h:30
 msgid "Science"
-msgstr "Наука"
+msgstr ""
 
 #: common/sections_trans.h:31
 msgid "Shells"
-msgstr "Диалоговые оболочки"
+msgstr ""
 
 #: common/sections_trans.h:32
 msgid "Multimedia"
-msgstr "Мультимедиа"
+msgstr ""
 
 #: common/sections_trans.h:33
 msgid "TeX Authoring"
-msgstr "TeX Авторы"
+msgstr ""
 
 #: common/sections_trans.h:34
 msgid "Word Processing"
-msgstr "Обработка текстов"
+msgstr ""
 
 #: common/sections_trans.h:35
+#, fuzzy
 msgid "Utilities"
-msgstr "Утилиты"
+msgstr "Г╞╘И│╦Е≥╗"
 
 #: common/sections_trans.h:36
 msgid "World Wide Web"
-msgstr "World Wide Web"
+msgstr ""
 
 #: common/sections_trans.h:37
 msgid "Miscellaneous  - Graphical"
-msgstr "Разное - Графика"
+msgstr ""
 
 #: common/sections_trans.h:38 common/rpackage.cc:121 gtk/rgmainwindow.cc:84
 msgid "Unknown"
-msgstr "Неизвестный"
+msgstr "Д╦█Ф≤▌"
 
 #: common/sections_trans.h:39
 msgid "Converted From RPM by Alien"
-msgstr "Из RMP преобразовал Alien"
+msgstr ""
 
 #: common/sections_trans.h:41
 msgid "Restricted On Export"
-msgstr "Экспорт ограничен"
+msgstr ""
 
 #: common/sections_trans.h:42 common/rpackagelister.cc:780
+#, fuzzy
 msgid "non free"
-msgstr "не свободный"
+msgstr "И┤▀Ф■╬"
 
 #: common/sections_trans.h:43 common/rpackagelister.cc:784
 msgid "contrib"
-msgstr "сопутствующий"
+msgstr ""
 
 #: common/indexcopy.cc:51 common/rpmindexcopy.cc:75
 #, c-format
 msgid "Stat failed for %s"
-msgstr "Ошибка stat() для %s"
+msgstr ""
 
 #: common/indexcopy.cc:82 common/rpmindexcopy.cc:112
+#, fuzzy
 msgid "Unable to create a tmp file"
-msgstr "Невозможно создать временный файл"
+msgstr "Г└║ФЁ∙Х╝─Е▐√ CD-ROM ХЁ┤Ф√≥Е╨╚ %s"
 
 #: common/indexcopy.cc:89
 msgid "Internal Error: Couldn't fork gzip. Please report."
-msgstr "Внутренняя ошибка: Невозможно запустить qzip. Пожалуйста, сообщите об этом разработчикам."
+msgstr ""
 
 #: common/indexcopy.cc:110
 msgid "gzip failed, perhaps the disk is full."
-msgstr "Ошибка сжатия, возможно, диск переполнен."
+msgstr ""
 
 #: common/indexcopy.cc:131
+#, fuzzy
 msgid "Failed to reopen fd"
-msgstr "Ошибка открытия фалового дескриптора"
+msgstr "И√▀Е∙÷ %s.new Е╓╠Ф∙≈"
 
 #: common/indexcopy.cc:234 common/indexcopy.cc:261 common/rpmindexcopy.cc:175
 #: common/rpmindexcopy.cc:216
+#, fuzzy
 msgid "Failed to rename"
-msgstr "Ошибка переименования"
+msgstr "И√▀Е∙÷ %s.new Е╓╠Ф∙≈"
 
 #: common/indexcopy.cc:285
 msgid "No valid records were found."
-msgstr "Записей не найдено."
+msgstr ""
 
 #: common/indexcopy.cc:464
 msgid "Cannot find filename or size tag"
-msgstr "Невозможно найти тэг с именем файла или размером"
+msgstr ""
 
 #: common/indexcopy.cc:505
 msgid "Error parsing file record"
-msgstr "Ошибка анализа записи файла"
+msgstr ""
 
 #: common/rcdscanner.cc:112 common/rcdscanner.cc:165
 #, c-format
 msgid "Failed to open %s.new"
-msgstr "Ошибка открытия %s.new"
+msgstr "И√▀Е∙÷ %s.new Е╓╠Ф∙≈"
 
 #: common/rcdscanner.cc:139 common/rcdscanner.cc:257
 #, c-format
 msgid "Failed to rename %s.new to %s"
-msgstr "Ошибка переименования %s.new в %s"
+msgstr ""
 
 #: common/rcdscanner.cc:208 common/rcdscanner.cc:246
 msgid "Internal error"
-msgstr "Внутренняя ошибка"
+msgstr "Е┘╖И┐╗И▄╞Х╙╓"
 
 #: common/rcdscanner.cc:269
 msgid "Preparing..."
-msgstr "Подготовка..."
+msgstr ""
 
 #: common/rcdscanner.cc:283
 #, c-format
 msgid "Unable to read the cdrom database %s"
-msgstr "Невозможно прочитать базу данных диска %s"
+msgstr "Г└║ФЁ∙Х╝─Е▐√ CD-ROM ХЁ┤Ф√≥Е╨╚ %s"
 
 #: common/rcdscanner.cc:292 common/rcdscanner.cc:334 common/rcdscanner.cc:436
+#, fuzzy
 msgid "Unmounting CD-ROM..."
-msgstr "Размонтирование CD-ROM..."
+msgstr "Ф╜ёЕ°╗Хё²Х╪┴ CD-ROM..."
 
 #: common/rcdscanner.cc:295
+#, fuzzy
 msgid "Waiting for disc..."
-msgstr "Ожидание диска..."
+msgstr "Ф╜ёЕ°╗Ф▌┐Ф▐▐Е┘┴Г╒÷..."
 
 #: common/rcdscanner.cc:296
 msgid "Insert a disc in the drive."
-msgstr "Вставьте диск."
+msgstr ""
 
 #. Mount the new CDROM
 #: common/rcdscanner.cc:300
 msgid "Mounting CD-ROM..."
-msgstr "Монтирование CD-ROM..."
+msgstr "Ф╜ёЕ°╗Хё²Х╪┴ CD-ROM..."
 
 #: common/rcdscanner.cc:303
 msgid "Failed to mount the cdrom."
-msgstr "Ошибка монтирования CD-ROM."
+msgstr ""
 
 #: common/rcdscanner.cc:307
+#, fuzzy
 msgid "Identifying disc..."
-msgstr "Определение диска..."
+msgstr "Ф╜ёЕ°╗Х╜≤Е┬╔Е┘┴Г╒÷..."
 
 #: common/rcdscanner.cc:310
+#, fuzzy
 msgid "Couldn't identify disc."
-msgstr "Невозможно определить диск."
+msgstr "Г└║ФЁ∙Х╜≤Е┬╔Е┘┴Г╒÷"
 
 #: common/rcdscanner.cc:313
+#, fuzzy
 msgid "Scanning disc..."
-msgstr "Сканирование диска..."
+msgstr "Ф╜ёЕ°╗Ф▌┐Ф▐▐Е┘┴Г╒÷..."
 
 #: common/rcdscanner.cc:328
+#, fuzzy
 msgid "Cleaning package lists..."
-msgstr "Очистка списков пакетов..."
+msgstr "Е╔≈Д╩╤Д╦╩Ф╦┘Е√╝Д╫©Г■╗Х┴╡Е╫╘И║╞Г╓╨"
 
 #: common/rcdscanner.cc:341
-msgid "Unable to locate any package files. Perhaps this is not an APT enabled disc."
-msgstr "Невозможно найти файлы пакетов. Возможно, этот диск не предназначен для использования с APT."
+msgid ""
+"Unable to locate any package files. Perhaps this is not an APT enabled disc."
+msgstr ""
 
 #: common/rcdscanner.cc:394
 msgid "Disc not successfuly scanned."
-msgstr "Неудачное сканирование диска."
+msgstr ""
 
 #: common/rcdscanner.cc:398
 msgid "Empty disc name."
-msgstr "Пустое имя диска."
+msgstr ""
 
 #: common/rcdscanner.cc:401
+#, fuzzy
 msgid "Registering disc..."
-msgstr "Регистрация диска..."
+msgstr "Ф╜ёЕ°╗Х╜≤Е┬╔Е┘┴Г╒÷..."
 
 #: common/rcdscanner.cc:416
+#, fuzzy
 msgid "Copying package lists..."
-msgstr "Копирование списков пакетов..."
+msgstr "Е╬·Д╪╨Ф°█Е≥╗Ф⌡╢Ф√╟Е╔≈Д╩╤Ф╦┘Е√╝..."
 
 #: common/rcdscanner.cc:425
 msgid "Writing sources list..."
-msgstr "Запись списка иcходных текстов..."
+msgstr ""
 
 #: common/rcdscanner.cc:440
+#, fuzzy
 msgid "Done!"
-msgstr "Готово!"
+msgstr "Е╥╡Д╦▀Х╪┴"
 
 #: common/rcdscanner.cc:540
-#, c-format
+#, fuzzy, c-format
 msgid "Failed to stat %s%s"
-msgstr "Ошибка доступа к %s%s"
+msgstr "И√▀Е∙÷ %s.new Е╓╠Ф∙≈"
 
 #: common/rcdscanner.cc:646 common/rcdscanner.cc:750
-#, c-format
+#, fuzzy, c-format
 msgid "Unable to change to %s"
-msgstr "Невозможно перейти в %s"
+msgstr "Г└║ФЁ∙Х╝─Е▐√Г⌡╝И▄└ %s"
 
 #: common/rcdscanner.cc:688
-#, c-format
+#, fuzzy, c-format
 msgid "Unable to read %s"
-msgstr "Невозможно прочитать %s"
+msgstr "Г└║ФЁ∙Х╝─Е▐√Г⌡╝И▄└ %s"
 
 #: common/rconfiguration.cc:82 common/rconfiguration.cc:179
-#, c-format
+#, fuzzy, c-format
 msgid "ERROR: couldn't open %s for writing"
-msgstr "Ошибка: Невозможно открыть %s для записи"
+msgstr "Д╦█Х┐╫И√▀Е∙÷ %s И─╡Х║▄Е╞╚Е┘╔"
 
 #: common/rconfiguration.cc:107
+#, fuzzy
 msgid "ERROR: Could not get password entry for superuser"
-msgstr "Ошибка: Невозможно прочитать пароль суперпользователя"
+msgstr "Г└║ФЁ∙Е▐√Е╬≈Х╤┘Г╢ Д╫©Г■╗Х─┘Г └Е╞├Г╒╪Х╪╦Е┘╔"
 
 #: common/rconfiguration.cc:115
-#, c-format
+#, fuzzy, c-format
 msgid "ERROR: could not create configuration directory %s"
-msgstr "Ошибка: Невозможно создать каталог для конфигурации %s"
+msgstr "Г└║ФЁ∙Е╩╨Г╚▀Х╗╜Е╝ Ф╙■Г⌡╝И▄└ %s"
 
 #: common/rconfiguration.cc:204
 #, c-format
 msgid "couldn't open %s for writing"
-msgstr "Невозможно открыть %s для записи"
+msgstr "Д╦█Х┐╫И√▀Е∙÷ %s И─╡Х║▄Е╞╚Е┘╔"
 
 #: common/rpackage.cc:211
 msgid "The list of installed files is only available for installed packages"
-msgstr "В списке установленных файлов отображаются только установленные пакеты."
+msgstr ""
 
 #: common/rpackage.cc:412
 msgid "OH SHIT DUNNO WTF IS GOIN ON!"
-msgstr "Я не представляю, что происходит!"
+msgstr "ГЁ÷ГЁ∙Д╨├О╪│Г≥╪Г■÷Д╨├Д╩─И╨╪Д╨▀Е▒╒О╪÷"
 
 #: common/rpackage.cc:593
 #, c-format
@@ -349,94 +366,90 @@ msgid ""
 "never uploaded, has been obsoleted or is not available with the contents of "
 "sources.list\n"
 msgstr ""
-"\n"
-"Нет доступной версии пакета %s, однако он упоминается в базе данных.\n"
-"Обычно это значит, что он упоминается как зависимость, но не был добавлен в репозиторий, устарел или не может быть получен, исползуя текущее содержимое sources.list\n"
 
 #: common/rpackage.cc:660
 msgid " or"
-msgstr " или"
+msgstr ""
 
 #: common/rpackage.cc:757
 #, c-format
 msgid "%s is/will be installed"
-msgstr "%s уже/будет установлен"
+msgstr "%s Е╥╡Е╝┴Хё²Ф┬√Е╟┤Ф°┐Е╝┴Хё²"
 
 #: common/rpackage.cc:762
 msgid "package is not installable"
-msgstr "пакет не может быть установлен"
+msgstr "Ф╜╓Е╔≈Д╩╤Д╦█Х┐╫Е╝┴Хё²"
 
 #: common/rpackage.cc:764
 msgid "package is a virtual package"
-msgstr "пакет является виртуальным"
+msgstr "Ф╜╓Е╔≈Д╩╤Ф≤╞Д╦─Е─▀Х≥⌡Ф⌠╛Е╔≈Д╩╤"
 
 #: common/rpackage.cc:766
 msgid "package is/will not be installed"
-msgstr "пакет не установлен/не будет установлен"
+msgstr "Ф╜╓Е╔≈Д╩╤Ф°╙Е╝┴Хё²О╪▄Д╧÷Д╦█Ф°┐Х╒╚Е╝┴Хё²"
 
 #: common/rpackage.cc:769
 msgid "dependency is satisfied"
-msgstr "зависимости разрешены"
+msgstr "Е╥╡Г╛╕Е░┬Г⌡╦Д╬²Ф─╖Х╕│Ф╠┌"
 
 #: common/rpackage.cc:933
 msgid "Invalid record in the preferences file, no Package header"
-msgstr "Неверная запись в файле параметров, нет заголовка пакета"
+msgstr ""
 
 #: common/rpackage.cc:1028
 #, c-format
 msgid "Version '%s' for '%s' was not found"
-msgstr "Версия '%s' для '%s' не найдена"
+msgstr ""
 
 #: common/rpackagecache.cc:51
 msgid ""
 "The list of sources could not be read.\n"
 "Go to the repository dialog to correct the problem."
 msgstr ""
-"Невозможно прочитать список источников обновлений.\n"
-"Исправьте ошибку в окне конфигурирования репозиториев."
 
 #: common/rpackagecache.cc:57
 msgid "The package lists or status file could not be parsed or opened."
-msgstr "Невозможно открыть или обработать файл состояния или списки пакетов."
+msgstr "Г└║ФЁ∙Е┬├Ф·░Ф┬√И√▀Е∙÷Е╔≈Д╩╤Ф╦┘Е√╝Ф┬√Г▀─Ф┘▀Ф╙■Ф║┬Ц─┌"
 
 #: common/rpackagecache.cc:92
 msgid "Internal Error, non-zero counts"
-msgstr "Внутренняя ошибка: Ненулевые счётчики"
+msgstr ""
 
 #: common/rpackagefilter.cc:42 gtk/rgfetchprogress.cc:80
 #: gtk/window_preferences.glade.strings:45 gtk/window_filters.glade.strings:56
 msgid "Status"
-msgstr "Состояние"
+msgstr "Г▀─Ф┘▀"
 
 #. g_object_set(G_OBJECT(renderer), "editable", TRUE, NULL);
 #: common/rpackagefilter.cc:43 gtk/rgfiltermanager.cc:201
 msgid "Pattern"
-msgstr "Шаблон"
+msgstr "Ф╗ёФ²©"
 
 #: common/rpackagefilter.cc:44 gtk/window_filters.glade.strings:59
 msgid "Section"
-msgstr "Раздел"
+msgstr "Г╣└Е┬╔"
 
 #: common/rpackagefilter.cc:45
 msgid "Priority"
-msgstr "Приоритет"
+msgstr "Е└╙Е┘┬Г╢ "
 
 #: common/rpackagefilter.cc:46
 msgid "ReducedView"
-msgstr "Сокращённый вид"
+msgstr ""
 
-# This is filter name, it's better to not translate it
 #: common/rpackagefilter.cc:50 gtk/window_filters.glade.strings:77
+#, fuzzy
 msgid "Tags"
-msgstr "Теги"
+msgstr "Д╩╩Е▀≥"
 
 #: common/rpackagefilter.cc:194 gtk/window_preferences.glade.strings:51
 msgid "Name"
-msgstr "Имя"
+msgstr "Е░█Г╗╠"
 
 #: common/rpackagefilter.cc:195 gtk/window_find.glade.strings:12
+#, fuzzy
 msgid "Version"
-msgstr "Версия"
+msgstr "    Ц──Ц──Г┴┬Ф°╛"
 
 #: common/rpackagefilter.cc:196 gtk/rgmainwindow.cc:2477
 #: gtk/rgvendorswindow.cc:62 gtk/rgvendorswindow.cc:94
@@ -444,123 +457,119 @@ msgstr "Версия"
 #: gtk/window_main_vpaned.glade.strings:101
 #: gtk/window_preferences.glade.strings:55 gtk/window_filters.glade.strings:62
 msgid "Description"
-msgstr "Описание"
+msgstr "Е╔≈Д╩╤Ф▐▐Х©╟"
 
 #: common/rpackagefilter.cc:197 gtk/window_find.glade.strings:14
 #: gtk/window_filters.glade.strings:63
 msgid "Maintainer"
-msgstr "Разработчик"
+msgstr ""
 
 #: common/rpackagefilter.cc:198 gtk/window_find.glade.strings:15
 msgid "Depends"
-msgstr "Зависит"
+msgstr "Д╬²ХЁ╢"
 
 #: common/rpackagefilter.cc:199 gtk/window_find.glade.strings:16
 msgid "Provides"
-msgstr "Предоставляет"
+msgstr "Ф▐░Д╬⌡"
 
 #: common/rpackagefilter.cc:200
 msgid "Conflicts"
-msgstr "Конфликтует с"
+msgstr "Д╦█Г⌡╦Е╝╧"
 
 #: common/rpackagefilter.cc:201
 msgid "Replaces"
-msgstr "Заменяет"
+msgstr "Е▐√Д╩ё"
 
 #: common/rpackagefilter.cc:202
 msgid "WeakDepends"
-msgstr "Слабые зависимости"
+msgstr ""
 
 #: common/rpackagefilter.cc:203
 msgid "ReverseDepends"
-msgstr "Обратные зависимости"
+msgstr ""
 
 #: common/rpackagefilter.cc:658
-#, c-format
+#, fuzzy, c-format
 msgid "Internal Error: Could not open ReducedView file %s"
-msgstr "Внутренняя ошибка: Невозможно открыть файл сокращёного вида%s"
+msgstr ":Г└║ФЁ∙И√▀Е∙÷И║╞Г╓╨"
 
 #: common/rpackagefilter.cc:685
 #, c-format
 msgid "Bad regular expression '%s' in ReducedView file."
-msgstr "Плохое регулярное выражение '%s' в файле сокращённого вида."
+msgstr ""
 
 #: common/rpackagefilter.cc:755
+#, fuzzy
 msgid "unkown"
-msgstr "неизвестный"
+msgstr "Д╦█Ф≤▌"
 
 #: common/rpackagelister.cc:222
 msgid "Search Filter"
-msgstr "Фильтр поиска"
+msgstr "Ф░°Е╟▀Г╞╘И│╦Е≥╗"
 
-# This is filter name, it's better to not translate it
 #: common/rpackagelister.cc:229 common/rpackagelister.cc:863
 #: gtk/window_filters.glade.strings:26
 msgid "Installed"
-msgstr "Установленные"
+msgstr "Е╥╡Е╝┴Хё²"
 
-# This is filter name, it's better to not translate it
 #: common/rpackagelister.cc:236
 msgid "Not Installed"
-msgstr "Не установленные"
+msgstr "Ф°╙Е╝┴Хё²"
 
-# This is filter name, it's better to not translate it
 #: common/rpackagelister.cc:244
 msgid "Tasks"
-msgstr "Задачи"
+msgstr "Д╩╩Е▀≥"
 
 #: common/rpackagelister.cc:250
 msgid "Reduced View"
-msgstr "Сокращённый вид"
+msgstr ""
 
-# This is filter name, it's better to not translate it
 #: common/rpackagelister.cc:258
 msgid "Upgradable"
-msgstr "Обновляемые"
+msgstr "Е▐╞Е█┤Г╢ "
 
-# This is filter name, it's better to not translate it
 #: common/rpackagelister.cc:265 gtk/window_filters.glade.strings:52
 msgid "Broken"
-msgstr "С ошибками"
+msgstr "Е╝┴Хё²Д╦█Е╝▄Ф∙╢"
 
 #: common/rpackagelister.cc:274 gtk/rgsummarywindow.cc:276
+#, fuzzy
 msgid "Queued Changes"
-msgstr "Очередь изменений"
+msgstr "И═░Ф°÷Х╝┼Е▀∙"
 
 #: common/rpackagelister.cc:281 gtk/window_filters.glade.strings:44
 msgid "New in archive"
-msgstr "Новые в архиве"
+msgstr ""
 
 #: common/rpackagelister.cc:289 gtk/window_filters.glade.strings:30
+#, fuzzy
 msgid "Residual config"
-msgstr "Остаточная конфигурация"
+msgstr "Е╥╡Г╖╩И≥╓Д╫├Е╟ Е╜≤Х┬┼Х╗╜Е╝ Ф╙■Г └Е╔≈Д╩╤"
 
 #: common/rpackagelister.cc:297
 msgid "Pkg with Debconf"
-msgstr "Пакеты с файлами конфигурации"
+msgstr ""
 
 #: common/rpackagelister.cc:304
+#, fuzzy
 msgid "Obsolete or locally installed"
-msgstr "Устаревшие или установленные локально"
+msgstr "Ф°╙Е╝┴Хё²"
 
 #: common/rpackagelister.cc:426 common/rpackagelister.cc:429
 #: common/rpackagelister.cc:445
+#, fuzzy
 msgid "Internal error recalculating dependency cache. Please report."
-msgstr ""
-"Внутренняя ошибка при обновлении кэша зависимостей. "
-"Пожалуйста, сообщите об этом разработчику."
+msgstr "И┤█Ф√╟Х╗┬Г╝≈Г⌡╦Д╬²И≈°Д©┌Ф≥┌Е┤╨Г▐╬Е┘╖И┐╗И▄╞Х╙╓Ц─┌"
 
 #: common/rpackagelister.cc:654
 msgid "Internal Error, AllUpgrade broke stuff. Please report."
 msgstr ""
-"Внутренняя ошибка при выполнении функции pkgAllUpgrade. "
-"Пожалуйста, сообщите об этом разработчику."
 
 #: common/rpackagelister.cc:668
+#, fuzzy
 msgid "dist upgrade Failed"
-msgstr "Ошибка pkgDistUpgrade"
+msgstr "Е┘╗И²╒Е█┤Г╢ (_D)"
 
-# special case for stupid debian package naming
 #: common/rpackagelister.cc:779 common/rpackagelister.cc:783
 msgid "Non US"
 msgstr ""
@@ -568,97 +577,98 @@ msgstr ""
 #: common/rpackagelister.cc:808
 #, c-format
 msgid "%s <i>(%s)</i>"
-msgstr "%s <i>(%s)</i>"
+msgstr ""
 
 #: common/rpackagelister.cc:855
+#, fuzzy
 msgid "New in repository"
-msgstr "Новые в репозитории"
+msgstr "Ф√╟Е╒·Е╔≈Д╩╤Е╨╚"
 
 #: common/rpackagelister.cc:858
 msgid "Obsolete and locally installed"
-msgstr "Устаревшие и установленные локально"
+msgstr ""
 
 #: common/rpackagelister.cc:861 gtk/window_filters.glade.strings:28
+#, fuzzy
 msgid "Installed and upgradable"
-msgstr "Установленные и обновляемые"
+msgstr "Е╥╡Е╝┴Хё²Д╦╕Е▐╞Е█┤Г╢ Г └Е╔≈Д╩╤"
 
 #: common/rpackagelister.cc:866
+#, fuzzy
 msgid "Not installed (residual config)"
-msgstr "Не установленные (остаточная конфигурация)"
+msgstr "Е╥╡Г╖╩И≥╓Д╫├Е╟ Е╜≤Х┬┼Х╗╜Е╝ Ф╙■Г └Е╔≈Д╩╤"
 
-# This is filter name, it's better to not translate it
 #: common/rpackagelister.cc:868 gtk/rgmainwindow.cc:1413
 #: gtk/window_filters.glade.strings:32
+#, fuzzy
 msgid "Not installed"
-msgstr "Не установленные"
+msgstr "Ф°╙Е╝┴Хё²"
 
 #: common/rpackagelister.cc:1447
 msgid "Unable to lock the list directory"
-msgstr "Невозможно заблокировать каталог списков"
+msgstr "Г└║ФЁ∙И▌√Д╫▐Ф╦┘Е√╝Г⌡╝И▄└"
 
 #: common/rpackagelister.cc:1469
 msgid ""
 "Release files for some repositories could not be retrieved or authenticated. "
 "Such repositories are being ignored."
-msgstr ""
-"Версии файлов для некоторых репозиториев не могут быть получены или "
-"проверены.\n"
-"Такие репозитории игнорируются."
+msgstr "Г└║ФЁ∙Ф┼⌠Е▐√Ф┬√Х╙█Х╜┴Ф÷░Д╨⌡Е╔≈Д╩╤Е╨╚Г └ Release Ф╙■О╪▄Ф ╚Ф≥┌Г∙╔И│▌И┌ёД╨⌡Е╔≈Д╩╤Е╨╚Ц─┌"
 
 #: common/rpackagelister.cc:1501
 msgid ""
 "Some index files failed to download, they have been ignored, or old ones "
 "used instead."
-msgstr ""
-"Не удалось загрузить некоторые индексные файлы, они были пропущены "
-"или использовались предыдущие версии."
+msgstr "Д╦─Д╨⌡Г╢╒Е╪∙Ф╙■Ф║┬Д╦▀Х╪┴Е╓╠Ф∙≈Ц─┌Е╝┐Е─▒Е╥╡Х╒╚Г∙╔И│▌О╪▄Ф┬√Ф ╚Г■╠Х╪┐Х┬┼Ф╙■Ф║┬Д╩ёФ⌡©Ц─┌"
 
 #: common/rpackagelister.cc:1526 common/rpackagelister.cc:1530
 #: gtk/rgrepositorywin.cc:320
+#, fuzzy
 msgid "Ignoring invalid record(s) in sources.list file!"
-msgstr "Пропущены недействительные записи в файле sources.list!"
+msgstr "Г└║ФЁ∙Х╝─Е▐√ sources.list Е╔≈Д╩╤Е╨╚Д╬├Ф╨░Ф╦┘Е√╝Ф╙■"
 
 #: common/rpackagelister.cc:1567
+#, fuzzy
 msgid "Failed to fetch "
-msgstr "Не удалось загрузить "
+msgstr "Ф⌠╥Е▐√ hash Ф╙■Ф║┬Е╓╠Ф∙≈: "
 
 #: common/rpackagelister.cc:1587
 msgid "Some of the packages could not be retrieved from the server(s).\n"
-msgstr "Некоторые из пакетов не могут быть получены с сервера(ов).\n"
+msgstr "Ф°┴Д╨⌡Е╔≈Д╩╤Ф°╙Х┐╫Е╬·Д╪╨Ф°█Е≥╗Ф┼⌠Е▐√Ц─┌\n"
 
 #: common/rpackagelister.cc:1590
 msgid "Do you want to continue, ignoring these packages?"
-msgstr "Желаете ли вы продолжить, пропустив эти пакеты?"
+msgstr "Ф┌╗Ф┐ЁГ∙╔И│▌И─≥Д╨⌡Е╔≈Д╩╤О╪▄Г╧╪Г╨▄И─╡Х║▄Е≈▌?"
 
 #: common/rpackagelister.cc:1597
+#, fuzzy
 msgid "Unable to correct missing packages"
-msgstr "Невозможно исправить отсутствующие пакеты"
+msgstr "Г└║ФЁ∙Ф⌡╢Ф╜ёГ╪╨Е╟▒Г └Е╔≈Д╩╤"
 
-#: common/rpackagelister.cc:1660
+#: common/rpackagelister.cc:1661
 msgid "Unable to lock the download directory"
-msgstr "Невозможно заблокировать каталог для скачивания"
+msgstr "Г└║ФЁ∙И▌√Д╫▐Д╦▀Х╪┴Е█─Г⌡╝И▄└"
 
-#: common/rpackagelister.cc:1763
-#, c-format
+#: common/rpackagelister.cc:1764
+#, fuzzy, c-format
 msgid "Line %u too long in selection file."
-msgstr "Строка %u слишком длинная в файле выбора."
+msgstr "Х┤╙Е▀∙И│╦Ф⌠┤Е█┤Г╢ Е╔≈Д╩╤Е╓╠Ф∙≈Ц─┌"
 
-#: common/rpackagelister.cc:1777 common/rpackagelister.cc:1781
+#: common/rpackagelister.cc:1778 common/rpackagelister.cc:1782
 #, c-format
 msgid "Malformed line %u in selection file"
-msgstr "Неверная строка %u в фале выбора"
+msgstr ""
 
-#: common/rpackagelister.cc:1793
+#: common/rpackagelister.cc:1794
 msgid "Setting selections..."
-msgstr "Устанавливается выделение..."
+msgstr ""
 
 #: common/rpmindexcopy.cc:119
 msgid "Internal Error: couldn't fork bzip2. Please report."
-msgstr "Внутренняя ошибка: Невозможно запустить bzip2. Пожалуйста, сообщите об этом разработчику."
+msgstr ""
 
 #: common/rpmindexcopy.cc:139
 msgid "bzip2 failed, perhaps the disk is full."
-msgstr "Ошибка bzip2, возможно, диск переполнен."
+msgstr ""
 
 #. vim:sts=3:sw=3
 #.
@@ -667,14 +677,15 @@ msgstr "Ошибка bzip2, возможно, диск переполнен."
 #. * DO NOT compile it as part of your application.
 #.
 #: gtk/dialog_quit.glade.strings:7
-msgid "<span weight=\"bold\" size=\"large\">Quit and ignore queued changes?</span>"
-msgstr "<span weight=\"bold\" size=\"large\">Выйти не сохраняя изменения?</span>"
+msgid ""
+"<span weight=\"bold\" size=\"large\">Quit and ignore queued changes?</span>"
+msgstr ""
 
 #: gtk/dialog_quit.glade.strings:8
 msgid ""
 "There are still changes in the queue that have not been executed. They will "
 "get lost if you choose to quit 'Synaptic'."
-msgstr "Информация об измениях статуса пакетов будет потеряна при выходе из Synaptic."
+msgstr ""
 
 #.
 #. * Translatable strings file generated by Glade.
@@ -685,7 +696,7 @@ msgstr "Информация об измениях статуса пакетов будет потеряна при выходе из Syna
 msgid ""
 "<span weight=\"bold\" size=\"large\">Enable smart upgrade (dist-upgrade)?</"
 "span>"
-msgstr "<span weight=\"bold\" size=\"larger\"> Запустить обновление дистрибутива?</span>"
+msgstr ""
 
 #: gtk/dialog_upgrade.glade.strings:8
 msgid ""
@@ -700,18 +711,10 @@ msgid ""
 "\n"
 "This behavior can be changed in the preferences later."
 msgstr ""
-"Обновление по умолчанию пропускает конфликтующие и зависимые пакеты.\n "
-"\n"
-"Обновление дистрибутива пытается разрешить конфликты и ответить зависимостям "
-"оптимальным способом\n"
-"\n"
-"<b>Примечание:</b> Если вы обновляете операционную систему, нажмите 'Да'. \n"
-"\n"
-"Режим обновления можно изменить позже в параметрах."
 
 #: gtk/dialog_upgrade.glade.strings:15
 msgid "Remember the answer for further upgrades"
-msgstr "Запомнить ответ для дальнейших обновлений."
+msgstr ""
 
 #.
 #. * Translatable strings file generated by Glade.
@@ -723,8 +726,6 @@ msgid ""
 "<span weight=\"bold\" size=\"large\">Incorrect or incompatible locale "
 "settings</span>"
 msgstr ""
-"<span weight=\"bold\" size=\"large\"> Неправильные или несовместимые "
-"локальные настройки.</span>"
 
 #: gtk/dialog_locales_warning.glade.strings:8
 msgid ""
@@ -739,61 +740,54 @@ msgid ""
 "<i>synaptic-devel@nongnu.org</i> \n"
 "Include the output of the \"locale\" command in your email."
 msgstr ""
-"Может последовать аварийное завершение Synaptic!\n"
-"\n"
-"Xlib не поддерживает выбранный вами язык\n"
-"\n "
-"Используйте локальные настройки \"fr_FR\" или \"fr_FR@euro\", "
-"но не \"fr_FR.iso8859-15@euro\".\n"
-"\n"
-"Обратитесь за помощью или объяснениями в рассылку:\n"
-"<i>synaptic-devel@nongnu.org</i> \n"
-"В сообщение вложите выходные данные команды \"locale\""
-
-#: gtk/gsynaptic.cc:57
-msgid "Usage: synaptic [options]\n"
-msgstr "Использование: synaptic [опции]\n"
 
 #: gtk/gsynaptic.cc:58
-msgid "-h   This help text\n"
-msgstr "-h   Это текст помощи\n"
+#, fuzzy
+msgid "Usage: synaptic [options]\n"
+msgstr "Х╗╜Е╝  Synaptic И│╦И═┘"
 
 #: gtk/gsynaptic.cc:59
-msgid "-r   Open in the repository screen\n"
-msgstr "-r   Открыть в окне репозитория\n"
+msgid "-h   This help text\n"
+msgstr ""
 
 #: gtk/gsynaptic.cc:60
-msgid "-f=? Give a alternative filter file\n"
-msgstr "-f=? Задать альтернативный файл фильтров\n"
+msgid "-r   Open in the repository screen\n"
+msgstr ""
 
 #: gtk/gsynaptic.cc:61
-msgid "-i=? Start with the initialFilter with the number given\n"
-msgstr "-i=? Задать номер фильтра, используемого после запуска\n"
+msgid "-f=? Give a alternative filter file\n"
+msgstr ""
 
 #: gtk/gsynaptic.cc:62
+msgid "-i=? Start with the initialFilter with the number given\n"
+msgstr ""
+
+#: gtk/gsynaptic.cc:63
 msgid "-o=? Set an arbitary configuration option, eg -o dir::cache=/tmp\n"
-msgstr "-o=? Установить произвольную опцию, например, -o dir::cache=/tmp\n"
+msgstr ""
 
-#: gtk/gsynaptic.cc:207
+#: gtk/gsynaptic.cc:209
 msgid "You must run this program as the root user."
-msgstr "Вы должны запускать эту программу как пользователь root."
+msgstr "Ф┌╗Е©┘И═┬Д╩╔ root Д╫©Г■╗Х─┘Х╨╚Д╩╫Е÷╥Х║▄Ф╜╓Г╗▀Е╪▐Ц─┌"
 
-#: gtk/gsynaptic.cc:243
+#: gtk/gsynaptic.cc:252
+#, fuzzy
 msgid "Synaptic Package Manager "
-msgstr "Менеджер пакетов Synaptic"
+msgstr "Е╔≈Д╩╤Х╝┼Ф⌡╢"
 
 #: gtk/rgcdscanner.cc:61
+#, fuzzy
 msgid "Scanning CD-ROM..."
-msgstr "Сканирование CD-ROM..."
+msgstr "Ф╜ёЕ°╗Хё²Х╪┴ CD-ROM..."
 
 #: gtk/rgcdscanner.cc:94
 msgid "Invalid disc name!"
-msgstr "Неверное имя диска!"
+msgstr ""
 
 #: gtk/rgaboutpanel.cc:54 gtk/window_about.glade.strings:8
 #: gtk/window_about.glade.strings:17
 msgid "Credits"
-msgstr "Благодарности"
+msgstr ""
 
 #.
 #. * Translatable strings file generated by Glade.
@@ -801,50 +795,53 @@ msgstr "Благодарности"
 #. * DO NOT compile it as part of your application.
 #.
 #: gtk/rgaboutpanel.cc:72 gtk/window_about.glade.strings:7
+#, fuzzy
 msgid "About Synaptic"
-msgstr "О Synaptic"
+msgstr "SynapticЦ─▄Ф√╟Г╚▀Е╬≈Ц─█"
 
 #: gtk/rgchangeswindow.cc:69
 msgid "Package changes"
-msgstr "Изменения в пакетах"
+msgstr "Е╔≈Д╩╤Х╝┼Ф⌡╢"
 
 #: gtk/rgchangeswindow.cc:102 gtk/rgsummarywindow.cc:111
 #: gtk/window_filters.glade.strings:40
 msgid "To be removed"
-msgstr "Для удаления"
+msgstr "Е╟┤Ф°┐Г╖╩И≥╓Г └Е╔≈Д╩╤"
 
 #: gtk/rgchangeswindow.cc:117
+#, fuzzy
 msgid "To be downgraded"
-msgstr "Для понижения версии"
+msgstr "Е╟┤Ф°┐Е█┤Г╢ Г └Е╔≈Д╩╤"
 
 #: gtk/rgchangeswindow.cc:132 gtk/rgsummarywindow.cc:125
 msgid "To be upgraded"
-msgstr "Для обновления"
+msgstr "Е╟┤Ф°┐Е█┤Г╢ Г └Е╔≈Д╩╤"
 
 #: gtk/rgchangeswindow.cc:146 gtk/rgsummarywindow.cc:139
 msgid "To be installed"
-msgstr "Для установки"
+msgstr "Е╟┤Ф°┐Ф√╟Е╝┴Хё²Г └Е╔≈Д╩╤"
 
 #: gtk/rgchangeswindow.cc:160 gtk/window_filters.glade.strings:36
+#, fuzzy
 msgid "To be kept"
-msgstr "Для сохранения"
+msgstr "Е╟┤Ф°┐Г╤╜Ф▄│Е▌÷Г▀─Д╦█Е█┤Г╢ Г └Е╔≈Д╩╤"
 
-#: gtk/rgpreferenceswindow.cc:245 gtk/rgzvtinstallprogress.cc:79
+#: gtk/rgpreferenceswindow.cc:245 gtk/rgzvtinstallprogress.cc:80
 #: gtk/rgmainwindow.cc:3674
 msgid "An error occurred while saving configurations."
-msgstr "Произошла ошибка при сохранении конфигураций."
+msgstr "Е└╡Е╜≤Х╗╜Е╝ Ф≥┌Г≥╪Г■÷И▄╞Х╙╓Ц─┌"
 
 #: gtk/rgpreferenceswindow.cc:288
 msgid "Choose font"
-msgstr "Выберите шрифт"
+msgstr ""
 
 #: gtk/rgpreferenceswindow.cc:539
 msgid "Color selection"
-msgstr "Выбор цвета"
+msgstr ""
 
 #: gtk/rgpreferenceswindow.cc:718
 msgid "ignore"
-msgstr "игнорировать"
+msgstr ""
 
 #.
 #. * Translatable strings file generated by Glade.
@@ -853,63 +850,61 @@ msgstr "игнорировать"
 #.
 #: gtk/rgpreferenceswindow.cc:760 gtk/window_preferences.glade.strings:7
 msgid "Preferences"
-msgstr "Параметры"
+msgstr "Е│▐Е╔╫Х╗╜Е╝ "
 
 #: gtk/rgfetchprogress.cc:63
 msgid "Fetching Files"
-msgstr "Загрузка файлов"
+msgstr "Е▐√Е╬≈Ф╙■Ф║┬Д╦╜"
 
 #: gtk/rgfetchprogress.cc:91 gtk/rgmainwindow.cc:2460
 msgid "Size"
-msgstr "Размер"
+msgstr "Ф╙■Ф║┬Е╓╖Е╟▐"
 
 #: gtk/rgfetchprogress.cc:98 gtk/rgrepositorywin.cc:152
 msgid "URI"
-msgstr "URI"
+msgstr "Г╤╡Е²─"
 
 #: gtk/rgfetchprogress.cc:129
-#, c-format
+#, fuzzy, c-format
 msgid ""
 "Please insert the disk labeled:\n"
 "%s\n"
 "in drive %s"
-msgstr ""
-"Вставьте, пожалуйста, диск с меткой:\n"
-"%s\n"
-"в дисковод %s"
+msgstr "Х╚▀Ф┼┼Ф╗≥Г╠╓Г┌╨О╪ \n"
 
 #: gtk/rgfetchprogress.cc:211
-#, c-format
+#, fuzzy, c-format
 msgid "%-3li/%-3li files    %4s B/s  ETA %6s\n"
-msgstr "%-3li/%-3li файлов    %4sB/s  осталось %6s\n"
+msgstr "%-3li/%-3li Ф╙■Ф║┬    %4sB/s   Е╟ И╓≤ %6s\n"
 
 #: gtk/rgfetchprogress.cc:218
 msgid "(stalled)\n"
-msgstr "(остановлен)\n"
+msgstr "(Е│°И═⌠)\n"
 
 #: gtk/rgfetchprogress.cc:230
 msgid "[Processing...] "
-msgstr "[Обработка...]"
+msgstr ""
 
 #: gtk/rgfetchprogress.cc:235
+#, fuzzy
 msgid "[Receiving...] "
-msgstr "[Получение данных] "
+msgstr "[Ф▌╔Ф■╤Д╦╜]"
 
 #: gtk/rgfetchprogress.cc:304
 msgid "Queued"
-msgstr "Добавлен в очередь"
+msgstr "Е╥╡Д╫┤Е┬≈"
 
 #: gtk/rgfetchprogress.cc:307
 msgid "Done"
-msgstr "Готово"
+msgstr "Е╥╡Д╦▀Х╪┴"
 
 #: gtk/rgfetchprogress.cc:310
 msgid "Hit"
-msgstr "Совпадение"
+msgstr "Е╥╡Ф°┴"
 
 #: gtk/rgfetchprogress.cc:313
 msgid "Failed"
-msgstr "Неудачно"
+msgstr "Е╓╠Ф∙≈"
 
 #.
 #. * Translatable strings file generated by Glade.
@@ -918,47 +913,52 @@ msgstr "Неудачно"
 #.
 #: gtk/rgfiltermanager.cc:47 gtk/window_filters.glade.strings:7
 msgid "Filters"
-msgstr "Фильтры"
+msgstr "Г╞╘И│╦Е≥╗"
 
 #: gtk/rgfiltermanager.cc:187
+#, fuzzy
 msgid "Field"
-msgstr "Поле"
+msgstr "Е╓╠Ф∙≈"
 
 #: gtk/rgfiltermanager.cc:193
+#, fuzzy
 msgid "Operator"
-msgstr "Оператор"
+msgstr "Ф⌠█Д╫°Ф▒≤Х╕│"
 
 #: gtk/rgfiltermanager.cc:220
+#, fuzzy
 msgid "Available Tags"
-msgstr "Доступные теги"
+msgstr "Ф°─Ф√╟Г┴┬Ф°╛"
 
 #: gtk/rgfiltermanager.cc:233
+#, fuzzy
 msgid "Included Tags"
-msgstr "Включённые теги"
+msgstr "Е▄┘Ф▀╛"
 
 #: gtk/rgfiltermanager.cc:245
+#, fuzzy
 msgid "Excluded Tags"
-msgstr "Исключённые теги"
+msgstr "Д╦█Е▄┘Ф▀╛"
 
 #: gtk/rgfiltermanager.cc:1033
-#, c-format
+#, fuzzy, c-format
 msgid "New Filter %i"
-msgstr "Новый фильтр %i"
+msgstr "Ф√╟Г╞╘И│╦Е≥╗"
 
 #: gtk/rginstallprogress.cc:41 gtk/window_rginstall_progress_msgs.glade.h:2
+#, fuzzy
 msgid "Package Manager output"
-msgstr "Вывод менеджера пакетов"
+msgstr "Е╔≈Д╩╤Х╝┼Ф⌡╢"
 
 #: gtk/rginstallprogress.cc:81
-#, c-format
+#, fuzzy, c-format
 msgid ""
 "\n"
 "While installing package %s:\n"
 "\n"
 msgstr ""
 "\n"
-"Во время установки пакета %s:\n"
-"\n"
+"Е╥╡Е╝┴Хё²Е╔≈Д╩╤:\n"
 
 #: gtk/rginstallprogress.cc:85
 msgid ""
@@ -966,68 +966,64 @@ msgid ""
 "While preparing for installation:\n"
 "\n"
 msgstr ""
-"\n"
-"Во время подготовки к установке:\n"
-"\n"
 
 #.
 #. * Translatable strings file generated by Glade.
 #. * Add this file to your project's POTFILES.in.
 #. * DO NOT compile it as part of your application.
 #.
-#: gtk/rginstallprogress.cc:257 gtk/rgzvtinstallprogress.cc:137
+#: gtk/rginstallprogress.cc:257 gtk/rgzvtinstallprogress.cc:138
 #: gtk/window_rginstall_progress.glade.strings:7
 msgid "Performing Changes"
-msgstr "Внесение изменений"
+msgstr "Ф╜ёЕ°╗И─╡Х║▄Д©╝Ф■╧"
 
-#: gtk/rgzvtinstallprogress.cc:60
+#: gtk/rgzvtinstallprogress.cc:61
+#, fuzzy
 msgid "Executing changes..."
-msgstr "Внесение изменений..."
+msgstr "Д╦█Е▄┘Ф▀╛Е╥╡И│╦Г └Г╣└Е┬╔"
 
-#: gtk/rgzvtinstallprogress.cc:67
+#: gtk/rgzvtinstallprogress.cc:68
 msgid ""
 "\n"
 "Update finished - You can close the window now"
 msgstr ""
-"\n"
-"Обновление завершено. Вы можете закрыть это окно."
 
-#: gtk/rgzvtinstallprogress.cc:69
+#: gtk/rgzvtinstallprogress.cc:70
 msgid ""
 "\n"
 "Update failed - Scroll in this buffer to see what went wrong"
 msgstr ""
-"\n"
-"Обновление не было выполнено - смотрите лог установки для определения "
-"причины"
 
-#: gtk/rgzvtinstallprogress.cc:100
+#: gtk/rgzvtinstallprogress.cc:101
+#, fuzzy
 msgid "Completed all changes"
-msgstr "Все изменения внесены"
+msgstr "Е╔≈Д╩╤Х╝┼Ф⌡╢"
 
-#: gtk/rgzvtinstallprogress.cc:109
+#: gtk/rgzvtinstallprogress.cc:110
 msgid "Can't close while executing"
-msgstr "Не закрывать во время работы"
+msgstr ""
 
-#: gtk/rgzvtinstallprogress.cc:200
+#: gtk/rgzvtinstallprogress.cc:201
+#, fuzzy
 msgid "Close dialog after Package Manager is finished"
-msgstr "Закрыть окно после завершения работы менеджера пакетов"
+msgstr "dpkg Е÷╥Х║▄Е╝▄Г∙╒Е╬▄Х┤╙Г■╠И≈°И√┴Ф╜╓Е╟█Х╘╠Ф║├"
 
 #: gtk/rgmainwindow.cc:85
 msgid "Normal"
-msgstr "Нормальный"
+msgstr "Д╦─Х┬╛"
 
 #: gtk/rgmainwindow.cc:86
 msgid "Critical"
-msgstr "Критический"
+msgstr "И┤█Е╓╖Ф⌡╢Ф√╟"
 
 #: gtk/rgmainwindow.cc:87
 msgid "Security"
-msgstr "Безопасность"
+msgstr "Е╝┴Е┘╗Ф⌡╢Ф√╟"
 
 #: gtk/rgmainwindow.cc:292
+#, fuzzy
 msgid "Starting help system..."
-msgstr "Открытие системы помощи"
+msgstr "Ф⌡╢Ф√╟Е╔≈Д╩╤Ф╦┘Е√╝Г╥╘Х║²Е█─ (apt-get update)"
 
 #: gtk/rgmainwindow.cc:299
 msgid ""
@@ -1039,12 +1035,6 @@ msgid ""
 "Alternativly you can open the man page with 'man synaptic' from the command "
 "line or view the html version located in the 'synaptic/html' folder."
 msgstr ""
-"Не установлена программа для просмотра помощи.\n"
-"\n"
-"Вам необходимо установить GNOME viewer или 'mozilla'\n"
-"\n"
-"Также вы можете получить информацию о Synaptic, набрав в командной строке "
-"'man synaptic' или просмотрев html-версию в папке 'synaptic/html'."
 
 #: gtk/rgmainwindow.cc:544
 msgid ""
@@ -1052,150 +1042,152 @@ msgid ""
 "\n"
 "You have to install libgnome-perl to use dpkg-reconfigure with synaptic"
 msgstr ""
-"Пакет libgnome-perl не установлен\n"
-"\n"
-"Вам необходимо установить libgnome-perl чтобы использовать dpkg-reconfigure "
-"в synaptic"
 
 #: gtk/rgmainwindow.cc:550
 msgid "Starting dpkg-reconfigure..."
-msgstr "Запуск dpkg-reconfigure..."
+msgstr ""
 
 #. cout << "RGMainWindow::pkgHelpClicked()" << endl;
 #: gtk/rgmainwindow.cc:562
+#, fuzzy
 msgid "Starting package help..."
-msgstr "Открытие помощи по пакету..."
+msgstr "Ф⌡╢Ф√╟Е╔≈Д╩╤Ф╦┘Е√╝Г╥╘Х║²Е█─ (apt-get update)"
 
 #: gtk/rgmainwindow.cc:663
+#, fuzzy
 msgid "Retrieving Index Files..."
-msgstr "Получение индексных файлов..."
+msgstr "Ф╜ёЕ°╗Ф┼⌠Е▐√Г╢╒Е╪∙Ф╙■Ф║┬"
 
 #: gtk/rgmainwindow.cc:665
 msgid "Updating Package Lists from Servers..."
-msgstr "Обновление списка пакетов с серверов..."
+msgstr "Е╬·Д╪╨Ф°█Е≥╗Ф⌡╢Ф√╟Е╔≈Д╩╤Ф╦┘Е√╝..."
 
 #: gtk/rgmainwindow.cc:675 gtk/rgmainwindow.cc:874 gtk/rgmainwindow.cc:1552
 #: gtk/rgmainwindow.cc:2131 gtk/rgmainwindow.cc:2281
 #, c-format
 msgid "Can't write %s"
-msgstr "Невозможно записать %s"
+msgstr ""
 
 #: gtk/rgmainwindow.cc:698 gtk/rgmainwindow.cc:942 gtk/rgmainwindow.cc:1577
 #: gtk/rgmainwindow.cc:2083
-#, c-format
+#, fuzzy, c-format
 msgid "Can't read %s"
-msgstr "Невозможно прочитать %s"
+msgstr "Г└║ФЁ∙Х╝─Е▐√Г⌡╝И▄└ %s"
 
 #: gtk/rgmainwindow.cc:766
 msgid "Dependency problem resolver failed."
-msgstr "Ошибка разрешения конфликта зависимостей."
+msgstr "Ф°╙Х┐╫Х╖ёФ╠╨Г⌡╦Д╬²Ф─╖Е∙▐И║▄Ц─┌"
 
 #: gtk/rgmainwindow.cc:768
 msgid "Dependency problems successfully fixed."
-msgstr "Конфликты зависимостей успешно разрешены."
+msgstr "Г⌡╦Д╬²Ф─╖Е∙▐И║▄Ф┬░Е┼÷Д©╝Ф╜ёД╨├Ц─┌"
 
 #: gtk/rgmainwindow.cc:783
 msgid ""
 "Automatic upgrade selection not possible\n"
 "with broken packages. Please fix them first."
 msgstr ""
-"Пакеты с ошибками автоматически выделить для обновления невозможно.\n"
-"Пожалуйста, исправьте их сначала."
+"ГЁ╩Г╣╠Д╦┼Д╩█Ф°┴Е╔≈Д╩╤Е╝┴Хё²Д╦█Е╝▄Ф∙╢Ф┬√Г⌡╦Д╬²И≈°Д©┌Ф°┴Е∙▐И║▄О╪▄\n"
+"Ф┴─Д╩╔Ф°╙Х┐╫Х┤╙Е▀∙И│╦Ф⌠┤Е█┤Г╢ Е╔≈Д╩╤Ц─┌Х╚▀Е┘┬Д©╝Ф╜ёЕ∙▐И║▄Ц─┌"
 
 #: gtk/rgmainwindow.cc:809
 msgid "Performing automatic selection of upgradadable packages..."
-msgstr "Выполняется автоматическое выделение обновляемых пакетов..."
+msgstr "Ф╜ёЕ°╗Х┤╙Е▀∙И│╦Ф⌠┤Е▐╞Е█┤Г╢ Е╔≈Д╩╤..."
 
 #: gtk/rgmainwindow.cc:821
 msgid "Automatic selection of upgradadable packages done."
-msgstr "Автоматическое выделение обновляемых пакетов завершено."
+msgstr "Х┤╙Е▀∙И│╦Ф⌠┤Е▐╞Е█┤Г╢ Е╔≈Д╩╤Е╝▄Ф┬░Ц─┌"
 
 #: gtk/rgmainwindow.cc:823
 msgid "Automatic upgrade selection failed."
-msgstr "Не удалось выполнить автоматическое выделение для обновления."
+msgstr "Х┤╙Е▀∙И│╦Ф⌠┤Е█┤Г╢ Е╔≈Д╩╤Е╓╠Ф∙≈Ц─┌"
 
 #: gtk/rgmainwindow.cc:842
 msgid ""
 "Operation not possible with broken packages.\n"
 "Please fix them first."
 msgstr ""
-"Операция над пакетами с ошибками невозможна.\n"
-"Пожалуйста, исправьте их сначала."
+"ГЁ╩Г╣╠Д╦┼Д╩█Ф°┴Е╔≈Д╩╤Е╝┴Хё²Д╦█Е╝▄Ф∙╢Ф┬√Г⌡╦Д╬²И≈°Д©┌Ф°┴Е∙▐И║▄О╪▄\n"
+"Ф°╙Х┐╫И─╡Х║▄И─≥И═┘Ф⌠█Д╫°Ц─┌Х╚▀Е┘┬Д©╝Ф╜ёЕ∙▐И║▄Ц─┌"
 
 #: gtk/rgmainwindow.cc:861
 msgid "Performing selected changes... this may take a while"
-msgstr "Внесение изменений... Это может занять некоторое время"
+msgstr ""
 
 #: gtk/rgmainwindow.cc:865
+#, fuzzy
 msgid "Retrieving Package Files..."
-msgstr "Получение файлов пакетов..."
+msgstr "Ф╜ёЕ°╗Ф┼⌠Е▐√Е╔≈Д╩╤Ф╙■Ф║┬"
 
 #: gtk/rgmainwindow.cc:924
 msgid "Do you want to quit Synaptic?"
-msgstr "Вы хотите выйти из Synaptic?"
+msgstr ""
 
 #: gtk/rgmainwindow.cc:969 gtk/rgmainwindow.cc:982
 msgid "N/A"
-msgstr "N/A"
+msgstr "Д╦█И│╘Г■╗"
 
 #: gtk/rgmainwindow.cc:1108
 msgid "Package is installed."
-msgstr "Пакет установлен."
+msgstr "Е╔≈Д╩╤Е╥╡Е╝┴Хё²Ц─┌"
 
 #: gtk/rgmainwindow.cc:1110
 msgid "Package is not installed."
-msgstr "Пакет не установлен."
+msgstr "Ф╜╓Е╔≈Д╩╤Ф╡▓Ф°┴Е╝┴Хё²Ц─┌"
 
 #: gtk/rgmainwindow.cc:1114
 msgid "Package will be installed."
-msgstr "Пакет будет установлен."
+msgstr "Ф╜╓Е╔≈Д╩╤Е╟┤Ф°┐Х╒╚Е╝┴Хё²Ц─┌"
 
 #: gtk/rgmainwindow.cc:1120
 msgid "Package will be upgraded."
-msgstr "Пакет будет обновлён."
+msgstr "Ф╜╓Е╔≈Д╩╤Е╟┤Ф°┐Х╒╚Е█┤Г╢ Ц─┌"
 
 #: gtk/rgmainwindow.cc:1126
+#, fuzzy
 msgid "Package will be downgraded."
-msgstr "Будет установлена старая версия пакета"
+msgstr "Ф╜╓Е╔≈Д╩╤Е╟┤Ф°┐Х╒╚Е█┤Г╢ Ц─┌"
 
 #: gtk/rgmainwindow.cc:1131
 msgid "Package will be uninstalled."
-msgstr "Пакет будет удалён."
+msgstr "Ф╜╓Е╔≈Д╩╤Е╟┤Ф°┐Х╒╚Х╖ёИ≥╓Е╝┴Хё²Ц─┌"
 
 #: gtk/rgmainwindow.cc:1134
 msgid "Package is broken."
-msgstr "Пакет с ошибками."
+msgstr "Ф╜╓Е╔≈Д╩╤Ф°╙Е╝▄Ф∙╢Е╝┴Хё²Ц─┌"
 
 #: gtk/rgmainwindow.cc:1144
 msgid "Package is pinned."
-msgstr "Пакет закреплён."
+msgstr "Ф╜╓Е╔≈Д╩╤Г⌡╝Е┴█Х╒╚Х╗╜Г┌╨Ф╟╦Д╦█Ф⌡╢Ф√╟Ц─┌"
 
 #: gtk/rgmainwindow.cc:1154
 msgid "Package is new."
-msgstr "Новый пакет."
+msgstr "И─≥Ф≤╞Ф√╟Г └Е╔≈Д╩╤Ц─┌"
 
 #: gtk/rgmainwindow.cc:1174
 msgid "Broken dependencies."
-msgstr "Неразрешённые зависимости."
+msgstr "Г⌡╦Д╬²И≈°Д©┌Ф°┴Е∙▐И║▄Ц─┌"
 
 #: gtk/rgmainwindow.cc:1442 gtk/window_main_hpaned.glade.strings:75
 #: gtk/window_main_vpaned.glade.strings:72
+#, fuzzy
 msgid "No package is selected.\n"
-msgstr "Пакеты не выбраны.\n"
+msgstr "Е╔≈Д╩╤Е╥╡Е╝┴Хё²Ц─┌"
 
 #: gtk/rgmainwindow.cc:1464
+#, fuzzy
 msgid "_Downgrade"
-msgstr "_Понизить версию"
+msgstr "Е█┤Г╢ "
 
 #: gtk/rgmainwindow.cc:1467 gtk/window_main_hpaned.glade.strings:113
 #: gtk/window_main_vpaned.glade.strings:81
 msgid "_Install"
-msgstr "_Установить"
+msgstr "Е╝┴Хё²(_I)"
 
 #: gtk/rgmainwindow.cc:1470 gtk/window_main_hpaned.glade.strings:25
 #: gtk/window_main_vpaned.glade.strings:25
 msgid "_Upgrade"
-msgstr "_Обновить"
+msgstr "Е█┤Г╢ (_U)"
 
 #. standard header in case the installing fails
 #: gtk/rgmainwindow.cc:1796
@@ -1204,112 +1196,117 @@ msgid ""
 "\n"
 "The following packages have unmet dependencies:\n"
 msgstr ""
-"Некоторые пакеты не могут быть установлены.\n"
-"\n"
-"Следующие пакеты имеют неразрешённые зависимости:\n"
 
 #: gtk/rgmainwindow.cc:2100
+#, fuzzy
 msgid "Open changes"
-msgstr "Открыть изменения"
+msgstr "Е╔≈Д╩╤Х╝┼Ф⌡╢"
 
 #: gtk/rgmainwindow.cc:2298
+#, fuzzy
 msgid "Save changes"
-msgstr "Сохранить изменения"
+msgstr "Е╔≈Д╩╤Х╝┼Ф⌡╢"
 
 #: gtk/rgmainwindow.cc:2314
 msgid "Save full state, not only changes"
-msgstr "Сохранить всё состояние (не только изменения)"
+msgstr ""
 
 #: gtk/rgmainwindow.cc:2399
 msgid "Package"
-msgstr "Пакет"
+msgstr "Е╔≈Д╩╤"
 
-# This is filter name, it's better to not translate it
 #: gtk/rgmainwindow.cc:2418
+#, fuzzy
 msgid "Installed Version"
-msgstr "Установленная версия"
+msgstr "Е╥╡Е╝┴Хё²"
 
-# This is filter name, it's better to not translate it
 #: gtk/rgmainwindow.cc:2434
+#, fuzzy
 msgid "Latest Version"
-msgstr "Последняя версия"
+msgstr "Е╥╡Е╝┴Хё²"
 
 #: gtk/rgmainwindow.cc:2702
+#, fuzzy
 msgid "Update the list of available packages"
-msgstr "Обновить список доступных пакетов"
+msgstr "Ф╜╓Е╔≈Д╩╤Ф≤╞Д╦─Е─▀Х≥⌡Ф⌠╛Е╔≈Д╩╤"
 
 #: gtk/rgmainwindow.cc:2706
 msgid "Queue all possible upgrades"
-msgstr "Добавить в очередь все возможные обновления"
+msgstr ""
 
 #: gtk/rgmainwindow.cc:2710
+#, fuzzy
 msgid "Execute the queued changes"
-msgstr "Внести изменения из очереди"
+msgstr "Д╦█Е▄┘Ф▀╛Е╥╡И│╦Г └Г╣└Е┬╔"
 
 #: gtk/rgmainwindow.cc:3155
+#, fuzzy
 msgid "No Changes"
-msgstr "Без изменений"
+msgstr "И═░Ф°÷Х╝┼Е▀∙"
 
 #: gtk/rgmainwindow.cc:3163
 msgid "Install"
-msgstr "Установить"
+msgstr "Е╝┴Хё²"
 
 #: gtk/rgmainwindow.cc:3171 gtk/window_preferences.glade.strings:26
+#, fuzzy
 msgid "Upgrade"
-msgstr "Обновить"
+msgstr "Е█┤Г╢ (_U)"
 
 #: gtk/rgmainwindow.cc:3177 gtk/rgvendorswindow.cc:136
 msgid "Remove"
-msgstr "Удалить"
+msgstr "Г╖╩И≥╓"
 
 #: gtk/rgmainwindow.cc:3185
 msgid "Remove Including Configuration"
-msgstr "Удалить с конфигурацией"
+msgstr ""
 
 #: gtk/rgmainwindow.cc:3191
+#, fuzzy
 msgid "Remove Including Orphaned Dependencies"
-msgstr "Удалить учитывая зависимости"
+msgstr "Г╖╩И≥╓Д╬²ХЁ╢Ф╜╓Е╔≈Д╩╤Г └Е╔≈Д╩╤"
 
 #: gtk/rgmainwindow.cc:3200
+#, fuzzy
 msgid "Hold Current Version"
-msgstr "Оставить текущую версию"
+msgstr "    Ц──Ц──Г┴┬Ф°╛"
 
 #: gtk/rgmainwindow.cc:3396
 msgid "Do you want to add another CD-ROM?"
-msgstr "Добавить другой CD-ROM?"
+msgstr ""
 
 #: gtk/rgmainwindow.cc:3425
 msgid ""
 "Removing this package may render the system unusable.\n"
 "Are you sure you want to do that?"
 msgstr ""
-"Удаление этого пакета может привести систему в нерабочее состояние.\n"
-"Вы действительно хотите это сделать?"
+"Г╖╩И≥╓И─≥Е─▀Е╔≈Д╩╤Ф┬√Ф°┐Е╟▌Х┤╢Ф┌╗Г └ГЁ╩Г╣╠Е╝▄Е┘╗Е╓╠Ф∙┬Ц─┌\n"
+"Ф┌╗Г╒╨Е╝ Х╕│И┌ёФ╗ёЕ│ Е≈▌?"
 
 #: gtk/rgmainwindow.cc:3584
-#, c-format
+#, fuzzy, c-format
 msgid ""
 "%i packages listed, %i installed, %i broken. %i to install/upgrade, %i to "
 "remove; %s will be freed"
 msgstr ""
-"%i пакетов в списке, %i установлено, %i с ошибками. %i для установки/"
-"обновления, %i для удаления; %s B будет освобождено"
+"Ф╦┘Е√╝Е┘╠Ф°┴ %1$i Е─▀Е╔≈Д╩╤О╪▄Е╥╡Е╝┴Хё² %2$i Е─▀О╪▄Её·Г └Ф°┴ %3$i Е─▀Ц─┌Е╟┤Е╝┴Хё²/Е█┤Г╢  %4$i Е─▀Е╔≈"
+"Д╩╤О╪▄Г╖╩И≥╓ %5$i Е─▀Е╔≈Д╩╤О╪⌡Е╟┤%7$s %6$sB Гё│Г╒÷Г╘╨И√⌠Ц─┌"
 
 #: gtk/rgmainwindow.cc:3588
-#, c-format
+#, fuzzy, c-format
 msgid ""
 "%i packages listed, %i installed, %i broken. %i to install/upgrade, %i to "
 "remove; %s will be used"
 msgstr ""
-"%i пакетов в списке, %i установлено, %i с ошибками. %i для установки/"
-"обновления, %i для удаления; %s B будет использовано"
+"Ф╦┘Е√╝Е┘╠Ф°┴ %1$i Е─▀Е╔≈Д╩╤О╪▄Е╥╡Е╝┴Хё² %2$i Е─▀О╪▄Её·Г └Ф°┴ %3$i Е─▀Ц─┌Е╟┤Е╝┴Хё²/Е█┤Г╢  %4$i Е─▀Е╔≈"
+"Д╩╤О╪▄Г╖╩И≥╓ %5$i Е─▀Е╔≈Д╩╤О╪⌡Е╟┤%7$s %6$sB Гё│Г╒÷Г╘╨И√⌠Ц─┌"
 
 #: gtk/rgmainwindow.cc:3617 gtk/window_main_hpaned.glade.strings:33
 #: gtk/window_main_hpaned.glade.strings:67
 #: gtk/window_main_vpaned.glade.strings:33
 #: gtk/window_main_vpaned.glade.strings:67
 msgid "All Packages"
-msgstr "Все пакеты"
+msgstr "Е┘╗И┐╗Е╔≈Д╩╤"
 
 #: gtk/rgmainwindow.cc:3699
 msgid ""
@@ -1320,12 +1317,6 @@ msgid ""
 "Sorry for this inconvenience, it will go away in one of the next versions "
 "(patches are welcome)!"
 msgstr ""
-"База данных debtags не установлена\n"
-"\n"
-"Выполните, пожалуйста, \"debtags update\" для получения базы данных.\n"
-"\n"
-"Извините за неудобства, это будет исправлено в одной из следующих версий "
-"(патчи приветствуются)!"
 
 #: gtk/rgmainwindow.cc:3728
 msgid ""
@@ -1333,9 +1324,6 @@ msgid ""
 "\n"
 "Please try to fix it by visiting the \"Broken\" filter"
 msgstr ""
-"На вашей машине установлен один пакет с ошибками.\n"
-"\n"
-"Попробуйте его исправить, зайдя в фильтр \"С ошибками\""
 
 #: gtk/rgmainwindow.cc:3731
 #, c-format
@@ -1344,9 +1332,6 @@ msgid ""
 "\n"
 "Please try to fix them by visiting the \"Broken\" filter"
 msgstr ""
-"На вашей машине установлено %i пакетов с ошибками.\n"
-"\n"
-"Попробуйте их исправить, зайдя в фильтр \"С ошибками\""
 
 #.
 #. * Translatable strings file generated by Glade.
@@ -1355,237 +1340,244 @@ msgstr ""
 #.
 #: gtk/rgrepositorywin.cc:99 gtk/window_repositories.glade.strings:7
 msgid "Repositories"
-msgstr "Репозитории"
+msgstr "Е╔≈Д╩╤Е╨╚"
 
 #: gtk/rgrepositorywin.cc:124
+#, fuzzy
 msgid "Enabled"
-msgstr "Разрешён"
+msgstr "Е│°Г■╗"
 
 #: gtk/rgrepositorywin.cc:134
 msgid "Type"
-msgstr "Тип"
+msgstr "Г╗╝И║·"
 
 #: gtk/rgrepositorywin.cc:143 gtk/rgvendorswindow.cc:62
 #: gtk/rgvendorswindow.cc:80
 msgid "Vendor"
-msgstr "Поставщик"
+msgstr "Г≥╪Х║▄Е∙├"
 
 #: gtk/rgrepositorywin.cc:161
 msgid "Distribution"
-msgstr "Дистрибутив"
+msgstr "Г≥╪Х║▄Г┴┬Ф°╛"
 
 #: gtk/rgrepositorywin.cc:170
 msgid "Section(s)"
-msgstr "Раздел(ы)"
+msgstr "Г╣└Е┬╔"
 
 #: gtk/rgrepositorywin.cc:257 gtk/rgrepositorywin.cc:369
 #: gtk/window_repositories.glade.strings:15
 msgid "(no vendor)"
-msgstr "(нет поставщика)"
+msgstr "(Г└║Г┴╧Е╝ Е▄┘Хё²Е∙├)"
 
 #: gtk/rgrepositorywin.cc:324
 msgid "Cannot read vendors.list file"
-msgstr "Невозможно прочитать файл vendors.list"
+msgstr "Г└║ФЁ∙Х╝─Е▐√ vendors.list Е╔≈Д╩╤Е▄┘Хё²Е∙├Ф╦┘Е√╝Ф╙■"
 
 #: gtk/rgrepositorywin.cc:485
 msgid "Unknown source type"
-msgstr "Неизвестный тип источника"
+msgstr "Е╔≈Д╩╤Д╬├Ф╨░Г╗╝И║·Д╦█Ф≤▌"
 
 #: gtk/rgsummarywindow.cc:81
 msgid "(ESSENTIAL) to be removed"
-msgstr "(ВАЖНО) будет удален"
+msgstr "(Е©┘И°─Е╔≈Д╩╤) Е╟┤Ф°┐Х╒╚Г╖╩И≥╓"
 
 #: gtk/rgsummarywindow.cc:96
 msgid "To be DOWNGRADED"
-msgstr "Будет установлена УСТАРЕВШАЯ ВЕРСИЯ"
+msgstr ""
 
 #: gtk/rgsummarywindow.cc:153
 msgid "To be kept back"
-msgstr "Будут сохранены"
+msgstr "Е╟┤Ф°┐Г╤╜Ф▄│Е▌÷Г▀─Д╦█Е█┤Г╢ Г └Е╔≈Д╩╤"
 
 #: gtk/rgsummarywindow.cc:209
-#, c-format
+#, fuzzy, c-format
 msgid "<b>%s</b> (<b>essential</b>) will be removed\n"
-msgstr "<b>%s</b> (<b>важных</b>) будет удалено\n"
+msgstr ": (Е©┘И°─Е╔≈Д╩╤) Е╟┤Ф°┐Х╒╚Г╖╩И≥╓\n"
 
 #: gtk/rgsummarywindow.cc:216
-#, c-format
+#, fuzzy, c-format
 msgid "<b>%s</b> will be <b>downgraded</b>\n"
-msgstr "<b>версия</b><b>%s</b> будет <b>понижена</b>\n"
+msgstr ": Е╟┤Ф°┐Х╒╚Г╖╩И≥╓\n"
 
 #: gtk/rgsummarywindow.cc:223
-#, c-format
+#, fuzzy, c-format
 msgid "<b>%s</b> will be removed\n"
-msgstr "<b>%s</b> будет удален\n"
+msgstr ": Е╟┤Ф°┐Х╒╚Г╖╩И≥╓\n"
 
 #: gtk/rgsummarywindow.cc:230
-#, c-format
+#, fuzzy, c-format
 msgid "<b>%s</b> (version <i>%s</i>) will be upgraded to version <i>%s</i>\n"
-msgstr "<b>%s</b> (версия <i>%s</i>) будет повышена до версии <i>%s</i>\n"
+msgstr ": Е╟┤Ф°┐Х╒╚Е╝┴Хё²\n"
 
 #: gtk/rgsummarywindow.cc:237
-#, c-format
+#, fuzzy, c-format
 msgid "<b>%s</b> (version <i>%s</i>) will be installed\n"
-msgstr "<b>%s</b> (версия <i>%s</i>) будет установлена\n"
+msgstr ": Е╟┤Ф°┐Х╒╚Е╝┴Хё²\n"
 
 #: gtk/rgsummarywindow.cc:256
 msgid "Summary"
-msgstr "Краткое описание"
+msgstr "Ф▒≤Х╕│"
 
 #: gtk/rgsummarywindow.cc:318
+#, fuzzy
 msgid "1 package is set on hold\n"
-msgstr "Пакет оставлен\n"
+msgstr "Е╔≈Д╩╤Е╥╡Е╝┴Хё²Ц─┌"
 
 #: gtk/rgsummarywindow.cc:320
-#, c-format
+#, fuzzy, c-format
 msgid "%d packages are set on hold\n"
-msgstr "%d пакетов оставлено\n"
+msgstr "%d Е─▀%sГ╤╜Ф▄│Е▌÷Г▀─О╪⌡\n"
 
 #: gtk/rgsummarywindow.cc:323
+#, fuzzy
 msgid "1 package is kept back and not upgraded\n"
-msgstr "Версия одного пакета была сохранена\n"
+msgstr "%d Е─▀%sГ╤╜Ф▄│Е▌÷Г▀─Д╦█Е█┤Г╢ О╪⌡\n"
 
 #: gtk/rgsummarywindow.cc:325
-#, c-format
+#, fuzzy, c-format
 msgid "%d packages are kept back and not upgraded\n"
-msgstr "Версии %d пакетов были сохранены\n"
+msgstr "%d Е─▀%sГ╤╜Ф▄│Е▌÷Г▀─Д╦█Е█┤Г╢ О╪⌡\n"
 
 #: gtk/rgsummarywindow.cc:329
+#, fuzzy
 msgid "1 new package will be installed\n"
-msgstr "Пакет будет установлен.\n"
+msgstr "Ф╜╓Е╔≈Д╩╤Е╟┤Ф°┐Х╒╚Е╝┴Хё²Ц─┌"
 
 #: gtk/rgsummarywindow.cc:331
-#, c-format
+#, fuzzy, c-format
 msgid "%d new packages will be installed\n"
-msgstr "%d новых пакетов будет установлено\n"
+msgstr "Е╟┤Ф°┐Ф√╟Е╝┴Хё² %d Е─▀%sО╪⌡\n"
 
 #: gtk/rgsummarywindow.cc:335
+#, fuzzy
 msgid "1 package will be upgraded\n"
-msgstr "Пакет будет обновлён\n"
+msgstr "Ф╜╓Е╔≈Д╩╤Е╟┤Ф°┐Х╒╚Е█┤Г╢ Ц─┌"
 
 #: gtk/rgsummarywindow.cc:337
-#, c-format
+#, fuzzy, c-format
 msgid "%d packages will be upgraded\n"
-msgstr "%d пакетов будет обновлено\n"
+msgstr "Ф╜╓Е╔≈Д╩╤Е╟┤Ф°┐Х╒╚Е█┤Г╢ Ц─┌"
 
 #: gtk/rgsummarywindow.cc:342
+#, fuzzy
 msgid "1 package will be removed\n"
-msgstr "Один пакет будет удалён\n"
+msgstr "Ф╜╓Е╔≈Д╩╤Е╟┤Ф°┐Х╒╚Е█┤Г╢ Ц─┌"
 
 #: gtk/rgsummarywindow.cc:344
-#, c-format
+#, fuzzy, c-format
 msgid "%d packages will be removed\n"
-msgstr "%d пакетов будет удалено\n"
+msgstr "Е╟┤Ф°┐Г╖╩И≥╓ %d Е─▀%sО╪⌡\n"
 
 #: gtk/rgsummarywindow.cc:349
+#, fuzzy
 msgid "1 package will be <b>downgraded</b>\n"
-msgstr "У одного пакета будет <b>понижена версия</b>\n"
+msgstr "Ф╜╓Е╔≈Д╩╤Е╟┤Ф°┐Х╒╚Е█┤Г╢ Ц─┌"
 
 #: gtk/rgsummarywindow.cc:351
-#, c-format
+#, fuzzy, c-format
 msgid "%d packages will be <b>downgraded</b>\n"
-msgstr "У %d пакетов будет <b>понижена версия</b>\n"
+msgstr "Ф╜╓Е╔≈Д╩╤Е╟┤Ф°┐Х╒╚Е█┤Г╢ Ц─┌"
 
 #: gtk/rgsummarywindow.cc:356
+#, fuzzy
 msgid "<b>Warning:</b> 1 essential package will be removed\n"
-msgstr "<b>Внимание:</b> Будет удалён важный пакет\n"
+msgstr "Х╜╕Е▒┼: %d Е─▀Е©┘Х╕│Г └%sЕ╟┤Ф°┐Х╒╚Г╖╩И≥╓!\n"
 
 #: gtk/rgsummarywindow.cc:358
-#, c-format
+#, fuzzy, c-format
 msgid "<b>Warning:</b> %d essential packages will be removed\n"
-msgstr "<b>Внимание:</b> Будет удалено %d важных пакетов\n"
+msgstr "Х╜╕Е▒┼: %d Е─▀Е©┘Х╕│Г └%sЕ╟┤Ф°┐Х╒╚Г╖╩И≥╓!\n"
 
 #: gtk/rgsummarywindow.cc:368
-#, c-format
+#, fuzzy, c-format
 msgid "%s of extra space will be used"
-msgstr "%s будет использовано"
+msgstr "Е╟┤Ф°┐Ф√╟Е╝┴Хё² %d Е─▀%sО╪⌡\n"
 
 #: gtk/rgsummarywindow.cc:371
-#, c-format
+#, fuzzy, c-format
 msgid "%s of extra space will be freed"
-msgstr "%s будет освобождено"
+msgstr "Е╟┤Ф°┐Г╖╩И≥╓ %d Е─▀%sО╪⌡\n"
 
 #: gtk/rgsummarywindow.cc:377
-#, c-format
+#, fuzzy, c-format
 msgid ""
 "\n"
 "%s have to be downloaded"
 msgstr ""
 "\n"
-"%s необходимо загрузить."
+"И°─Х╕│Д╦▀Х╪┴ %sBЦ─┌"
 
 #: gtk/rgsummarywindow.cc:401
+#, fuzzy
 msgid ""
 "Essential packages will be removed.\n"
 "This may render your system unusable!\n"
 msgstr ""
-"Важные пакеты будут удалены.\n"
-"Это может привести систему в нерабочее состояние!\n"
+"Е╟┤Х╕│Г╖╩И≥╓ГЁ╩Г╣╠Е©┘И°─Г └Е╔≈Д╩╤Ц─┌\n"
+"И┌ёФ╗ёФ°┐Д╩╓Ф┌╗Г └ГЁ╩Г╣╠Д╦█Х┐╫Д╫©Г■╗!!!\n"
 
 #. ignore some stupid error messages
 #: gtk/rguserdialog.cc:133
 msgid "Tried to dequeue a fetching object"
-msgstr "Попытка убрать из очереди загружаемый объект"
+msgstr ""
 
 #: gtk/rgvendorswindow.cc:39
+#, fuzzy
 msgid "Setup Vendors"
-msgstr "Установить поставщиков"
+msgstr "Х╗╜Е╝ Е╔≈Д╩╤Е╨╚"
 
 #: gtk/rgvendorswindow.cc:62 gtk/rgvendorswindow.cc:107
 msgid "FingerPrint"
-msgstr "Отпечаток ключа"
+msgstr ""
 
 #: gtk/rgvendorswindow.cc:128
 msgid "OK"
-msgstr "OK"
+msgstr "Г╒╨Е╝ "
 
 #: gtk/rgvendorswindow.cc:132
 msgid "Add"
-msgstr "Добавить"
+msgstr "Ф√╟Е╒·"
 
 #: gtk/rgvendorswindow.cc:140
+#, fuzzy
 msgid "Cancel"
-msgstr "Отменить"
+msgstr "Е▐√Ф╤┬"
 
 #: gtk/rgfindwindow.cc:113
+#, fuzzy
 msgid "Find"
-msgstr "Найти"
+msgstr "Е╟▀Ф┴╬"
 
 #: gtk/window_about.glade.strings:9
 msgid "<span size=\"xx-large\" weight=\"bold\">Synaptic version</span>"
-msgstr "<span size=\"xx-large\" weight=\"bold\">Версия Synaptic</span>"
+msgstr ""
 
 #: gtk/window_about.glade.strings:10
+#, fuzzy
 msgid "Package management software using apt."
-msgstr "ПО для управления пакетами при помощи APT."
+msgstr "Е╔≈Д╩╤Х╝┼Ф⌡╢"
 
 #: gtk/window_about.glade.strings:11
 msgid "Debtag support is enabled."
-msgstr "Поддержка debtag включена."
+msgstr ""
 
 #: gtk/window_about.glade.strings:12
 msgid ""
 "Visit the home page at \n"
 "http://www.nongnu.org/synaptic/"
 msgstr ""
-"Посетите домашнюю страницу \n"
-"http//www.nongnu.org/synaptic"
 
 #: gtk/window_about.glade.strings:14
 msgid ""
 "This software is licensed under the terms of the GNU General Public License, "
 "Version 2"
 msgstr ""
-"Эта программа подписана GNU General Public License, "
-"Version 2"
 
 #: gtk/window_about.glade.strings:15
 msgid ""
 "<span size=\"small\">Copyright (c) 2001-2003 Connectiva S/A \n"
 "Copyright (c) 2002,2003 Michael Vogt</span>"
 msgstr ""
-"<span size=\"small\">Copyright (c) 2001-2003 Connectiva S/A \n"
-"Copyright (c) 2002,2003 Michael Vogt</span>"
 
 #: gtk/window_about.glade.strings:18
 msgid ""
@@ -1602,22 +1594,10 @@ msgid ""
 "Panu Matilainen <pmatilai@welho.com>\n"
 "Sviatoslav Sviridov <svd@lintec.minsk.by>"
 msgstr ""
-"Автор\n"
-"Alfredo K. Kojima <kojima@windowmaker.org>\n"
-"\n"
-"Разработчики:\n"
-"Michael Vogt <mvo@debian.org>\n"
-"Gustavo Niemeyer <niemeyer@conectiva.com>\n"
-"\n"
-"Соавторы:\n"
-"Enrico Zini <enrico@debian.org>\n"
-"Sebastian Heinlein <allerlei@renates-welt.de>\n"
-"Panu Matilainen <pmatilai@welho.com>\n"
-"Sviatoslav Sviridov <svd@lintec.minsk.by>"
 
 #: gtk/window_about.glade.strings:30
 msgid "Written by"
-msgstr "Авторы"
+msgstr ""
 
 #: gtk/window_about.glade.strings:31
 msgid ""
@@ -1643,31 +1623,10 @@ msgid ""
 "Jean-Michel Poure <jm@poure.com> (French)\n"
 "Ossama Khayat <okhayat@yahoo.com> (Arabic)"
 msgstr ""
-"Vital Khilko <dojlid@mova.org> (Белорусский)\n"
-"Keld Simonsen <keld@dkuug.dk> (Датский)\n"
-"Michael Vogt <mvo@debian.org> (Немецкий)\n"
-"Sebastain Heinlein <allerlei@renates-welt.de> (Немецкий)\n"
-"Francisco Javier F. Serrador <serrador@arrakis.es> (Испанский)\n"
-"Mathieu Roy <yeupou@gnu.org> (Французский)\n"
-"Mauro Colorio <linuxbox@interfree.it> (Итальянский)\n"
-"Luigi Maselli <metnik at tiscali it> (Итальянский)\n"
-"Daisuke Suzuki <daisuke@linux.or.jp> (Японский)\n"
-"Vincent van Adrighem <V.vanAdrighem@dirck.mine.nu> (Голландский)\n"
-"Emil <emil5@go2.pl> (Польский)\n"
-"Marcia Norie Nakaza <norie@conectiva.com.br> (Португальский)\n"
-"Arnaldo Carvalho de Melo <acme@conectiva.com.br> (Португальский)\n"
-"Sviatoslav Sviridov <svd@altlinux.ru> (Русский)\n"
-"Vitaly Lipatov <lav@altlinux.ru> (Русский)\n"
-"Rail Aliev <rail@iqchoice.com> (Турецкий)\n"
-"Anthony Fok <anthony@thizlinux.com> (Китайский)\n"
-"Alwin Meschede <ameschede@gmx.de> (Немецкий)\n"
-"Liu Songhe <jackliu9999@hotmail.com> (Китайский)\n"
-"Jean-Michel Poure <jm@poure.com> (Французский)\n"
-"Ossama Khayat <okhayat@yahoo.com> (Арабский)"
 
 #: gtk/window_about.glade.strings:52
 msgid "Translated by"
-msgstr "Перевод"
+msgstr ""
 
 #: gtk/window_about.glade.strings:53
 msgid ""
@@ -1678,16 +1637,10 @@ msgid ""
 "Manual:\n"
 "Sebastian Heinlein <allerlei@renates-welt.de>"
 msgstr ""
-"Информация в Man:\n"
-"Wybo Dekker <wybo@servalys.nl>\n"
-"Michael Vogt <mvo@debian.org>\n"
-"\n"
-"Руководство:\n"
-"Sebastian Heinlein <allerlei@renates-welt.de>"
 
 #: gtk/window_about.glade.strings:59
 msgid "Documented by"
-msgstr "Документацию вёл"
+msgstr ""
 
 #.
 #. * Translatable strings file generated by Glade.
@@ -1696,11 +1649,12 @@ msgstr "Документацию вёл"
 #.
 #: gtk/window_find.glade.strings:7
 msgid "Show only packages matching the searched terms."
-msgstr "Отображать пакеты, соответствующие запросу"
+msgstr ""
 
 #: gtk/window_find.glade.strings:8
+#, fuzzy
 msgid "Search for:"
-msgstr "Найти:"
+msgstr "Ф░°Е╟▀"
 
 #: gtk/window_find.glade.strings:9 gtk/window_main_hpaned.glade.strings:62
 #: gtk/window_main_vpaned.glade.strings:62
@@ -1717,12 +1671,14 @@ msgid "*"
 msgstr "*"
 
 #: gtk/window_find.glade.strings:10
+#, fuzzy
 msgid "Search in:"
-msgstr "Поиск в"
+msgstr "Ф░°Е╟▀"
 
 #: gtk/window_find.glade.strings:11
+#, fuzzy
 msgid "Package name"
-msgstr "Имя пакета"
+msgstr "Е╔≈Д╩╤Е░█Г╗╠"
 
 #.
 #. * Translatable strings file generated by Glade.
@@ -1762,8 +1718,9 @@ msgstr "Имя пакета"
 #: gtk/window_summary.glade.strings:14 gtk/window_filters.glade.strings:10
 #: gtk/window_filters.glade.strings:22 gtk/window_filters.glade.strings:24
 #: gtk/window_filters.glade.strings:34 gtk/window_filters.glade.strings:42
+#, fuzzy
 msgid "    "
-msgstr "    "
+msgstr "    Ц──Ф≈╔Ф°÷"
 
 #.
 #. * Translatable strings file generated by Glade.
@@ -1773,357 +1730,404 @@ msgstr "    "
 #: gtk/window_main_hpaned.glade.strings:7
 #: gtk/window_main_vpaned.glade.strings:7
 msgid "Synaptic"
-msgstr "Synaptic"
+msgstr "SynapticЦ─▄Ф√╟Г╚▀Е╬≈Ц─█"
 
 #: gtk/window_main_hpaned.glade.strings:8
 #: gtk/window_main_vpaned.glade.strings:8
 msgid "_File"
-msgstr "_Файл"
+msgstr "Ф╙■Ф║┬(_F)"
 
 #: gtk/window_main_hpaned.glade.strings:9
 #: gtk/window_main_vpaned.glade.strings:9
+#, fuzzy
 msgid "_Read Selections..."
-msgstr "_Открыть..."
+msgstr "Г╣└Е┬╔"
 
 #: gtk/window_main_hpaned.glade.strings:10
 #: gtk/window_main_vpaned.glade.strings:10
+#, fuzzy
 msgid "_Save Selections"
-msgstr "_Сохранить выделенное"
+msgstr "Г╣└Е┬╔"
 
 #: gtk/window_main_hpaned.glade.strings:11
 #: gtk/window_main_vpaned.glade.strings:11
+#, fuzzy
 msgid "Save Selections _As..."
-msgstr "Сохранить выделенное _как..."
+msgstr "Г╣└Е┬╔"
 
 #: gtk/window_main_hpaned.glade.strings:12
 #: gtk/window_main_vpaned.glade.strings:12
+#, fuzzy
 msgid "_Quit"
-msgstr "Вый_ти"
+msgstr "И⌡╒И√▀"
 
 #: gtk/window_main_hpaned.glade.strings:13
 #: gtk/window_main_vpaned.glade.strings:13
+#, fuzzy
 msgid "Ac_tions"
-msgstr "Д_ействия"
+msgstr "Е▀∙Д╫°"
 
 #: gtk/window_main_hpaned.glade.strings:14
 #: gtk/window_main_vpaned.glade.strings:14
 msgid "_Undo"
-msgstr "Отмен_а"
+msgstr ""
 
 #: gtk/window_main_hpaned.glade.strings:15
 #: gtk/window_main_vpaned.glade.strings:15
+#, fuzzy
 msgid "_Redo"
-msgstr "Назад_"
+msgstr "Г╖╩И≥╓(_R)"
 
 #: gtk/window_main_hpaned.glade.strings:16
 #: gtk/window_main_vpaned.glade.strings:16
+#, fuzzy
 msgid "Clear All _Queued Changes"
-msgstr "Очистить_ очередь изменений"
+msgstr "И═░Ф°÷Х╝┼Е▀∙"
 
 #: gtk/window_main_hpaned.glade.strings:17
+#, fuzzy
 msgid "_Update Package List"
-msgstr "_Получить сведения о пакетах"
+msgstr "Ф⌡╢Ф√╟Е╔≈Д╩╤Ф╦┘Е√╝ (apt-get update)"
 
 #: gtk/window_main_hpaned.glade.strings:18
 #: gtk/window_main_vpaned.glade.strings:18
+#, fuzzy
 msgid "_Add CD-ROM..."
-msgstr "Добавить _CD-ROM..."
+msgstr "Е┼═ CD-ROM"
 
 #: gtk/window_main_hpaned.glade.strings:19
 #: gtk/window_main_vpaned.glade.strings:19
+#, fuzzy
 msgid "_Fix Broken Packages"
-msgstr "_Исправить пакеты \"с ошибками\""
+msgstr "Д©╝Ф╜ёФ°╙Е╝▄Ф∙╢Е╝┴Хё²Г └Е╔≈Д╩╤ (apt-get -f install)"
 
 #: gtk/window_main_hpaned.glade.strings:20
 #: gtk/window_main_hpaned.glade.strings:57
 #: gtk/window_main_vpaned.glade.strings:20
 #: gtk/window_main_vpaned.glade.strings:57
+#, fuzzy
 msgid "Up_grade System"
-msgstr "О_бновить"
+msgstr "Е█┤Г╢ (_G)"
 
 #: gtk/window_main_hpaned.glade.strings:21
 #: gtk/window_main_vpaned.glade.strings:21
+#, fuzzy
 msgid "_Execute Queued Changes"
-msgstr "_Внести изменения из очереди"
+msgstr "И═░Ф°÷Х╝┼Е▀∙"
 
 #: gtk/window_main_hpaned.glade.strings:22
 #: gtk/window_main_vpaned.glade.strings:22
+#, fuzzy
 msgid "Pac_kage"
-msgstr "Па_кет"
+msgstr "Е╔≈Д╩╤"
 
 #: gtk/window_main_hpaned.glade.strings:23
 #: gtk/window_main_hpaned.glade.strings:117
 #: gtk/window_main_vpaned.glade.strings:23
 #: gtk/window_main_vpaned.glade.strings:77
+#, fuzzy
 msgid "_No Changes"
-msgstr "_Без изменений"
+msgstr "И═░Ф°÷Х╝┼Е▀∙"
 
-# This is filter name, it's better to not translate it
 #: gtk/window_main_hpaned.glade.strings:24
 #: gtk/window_main_vpaned.glade.strings:24
+#, fuzzy
 msgid "_Install Latest Version"
-msgstr "_Установить последнюю версию"
+msgstr "Е╥╡Е╝┴Хё²"
 
 #: gtk/window_main_hpaned.glade.strings:26
 #: gtk/window_main_hpaned.glade.strings:115
 #: gtk/window_main_vpaned.glade.strings:26
 #: gtk/window_main_vpaned.glade.strings:79
 msgid "_Remove"
-msgstr "Удали_ть"
+msgstr "Г╖╩И≥╓(_R)"
 
 #: gtk/window_main_hpaned.glade.strings:27
 #: gtk/window_main_vpaned.glade.strings:27
 msgid "Remove Including _Configuration"
-msgstr "Удалить вклю_чая конфигурацию"
+msgstr ""
 
 #: gtk/window_main_hpaned.glade.strings:28
 #: gtk/window_main_vpaned.glade.strings:28
+#, fuzzy
 msgid "Remove Including Orphaned _Dependencies"
-msgstr "Удалить учитывая _зависимости"
+msgstr "Г╖╩И≥╓Д╬²ХЁ╢Ф╜╓Е╔≈Д╩╤Г └Е╔≈Д╩╤"
 
 #: gtk/window_main_hpaned.glade.strings:29
 #: gtk/window_main_vpaned.glade.strings:29
 msgid "_Hold Current Version"
-msgstr "Удерж_ать текущую версию"
+msgstr ""
 
 #: gtk/window_main_hpaned.glade.strings:30
 #: gtk/window_main_vpaned.glade.strings:30
+#, fuzzy
 msgid "_Find..."
-msgstr "Окн_о поиска"
+msgstr "Е╟▀Ф┴╬Ф√┤Е╜≈:"
 
 #: gtk/window_main_hpaned.glade.strings:31
 #: gtk/window_main_vpaned.glade.strings:31
+#, fuzzy
 msgid "_View"
-msgstr "_Вид"
+msgstr "Ф╙■Ф║┬(_F)"
 
 #: gtk/window_main_hpaned.glade.strings:32
 #: gtk/window_main_vpaned.glade.strings:32
+#, fuzzy
 msgid "_Apply Filter"
-msgstr "_Применить фильтр"
+msgstr "Г╞╘И│╦Е≥╗"
 
 #: gtk/window_main_hpaned.glade.strings:34
 #: gtk/window_main_vpaned.glade.strings:34
+#, fuzzy
 msgid "_Edit Filters"
-msgstr "_Редактировать фильтр"
+msgstr "Г╥╗Х╪╞Г╞╘И│╦Е≥╗..."
 
 #: gtk/window_main_hpaned.glade.strings:35
 #: gtk/window_main_vpaned.glade.strings:35
+#, fuzzy
 msgid "_Expand All"
-msgstr "_Развернуть всё"
+msgstr "Е█┤Г╢ (_G)"
 
 #: gtk/window_main_hpaned.glade.strings:36
 msgid "_Collapse All"
-msgstr "_Свернуть всё"
+msgstr ""
 
 #: gtk/window_main_hpaned.glade.strings:37
 #: gtk/window_main_vpaned.glade.strings:37
+#, fuzzy
 msgid "_Section Tree"
-msgstr "_Дерево разделов"
+msgstr "Г╣└Е┬╔"
 
 #: gtk/window_main_hpaned.glade.strings:38
 #: gtk/window_main_vpaned.glade.strings:38
 msgid "_Alphabetic Tree"
-msgstr "_Алфавитное дерево"
+msgstr ""
 
 #: gtk/window_main_hpaned.glade.strings:39
 #: gtk/window_main_vpaned.glade.strings:39
+#, fuzzy
 msgid "Stat_us Tree"
-msgstr "Дерево с_остояний"
+msgstr "Г▀─Ф┘▀"
 
 #: gtk/window_main_hpaned.glade.strings:40
 #: gtk/window_main_vpaned.glade.strings:40
+#, fuzzy
 msgid "_Tag Tree"
-msgstr "Дерево _тегов"
+msgstr "Г▀─Ф┘▀"
 
 #: gtk/window_main_hpaned.glade.strings:41
 #: gtk/window_main_vpaned.glade.strings:41
+#, fuzzy
 msgid "_Flat List"
-msgstr "Обычный с_писок"
+msgstr "Ф⌡╢Ф√╟Ф╦┘Е√╝(_L)"
 
 #: gtk/window_main_hpaned.glade.strings:42
 #: gtk/window_main_vpaned.glade.strings:42
+#, fuzzy
 msgid "Prefere_nces"
-msgstr "Парам_етры"
+msgstr "Е│▐Е╔╫Х╗╜Е╝ "
 
 #: gtk/window_main_hpaned.glade.strings:43
 #: gtk/window_main_vpaned.glade.strings:43
 msgid "_Repositories"
-msgstr "_Репозитории"
+msgstr "Е╔≈Д╩╤Е╨╚(_R)"
 
 #: gtk/window_main_hpaned.glade.strings:44
 #: gtk/window_main_vpaned.glade.strings:44
 msgid "Set _Internal Option..."
-msgstr "_Установить внутренний параметр..."
+msgstr ""
 
 #: gtk/window_main_hpaned.glade.strings:45
 #: gtk/window_main_vpaned.glade.strings:45
 msgid "_Toolbar"
-msgstr "_Панель инструментов"
+msgstr ""
 
 #: gtk/window_main_hpaned.glade.strings:46
 #: gtk/window_main_vpaned.glade.strings:46
 msgid "_Icons Only"
-msgstr "Только _иконки"
+msgstr ""
 
 #: gtk/window_main_hpaned.glade.strings:47
 #: gtk/window_main_vpaned.glade.strings:47
+#, fuzzy
 msgid "_Text Only"
-msgstr "Только _текст"
+msgstr "Ф┴╬Д╦▀Д╦─Е─▀"
 
 #: gtk/window_main_hpaned.glade.strings:48
 #: gtk/window_main_vpaned.glade.strings:48
 msgid "Text _Below Icons"
-msgstr "Текст _под иконками"
+msgstr ""
 
 #: gtk/window_main_hpaned.glade.strings:49
 #: gtk/window_main_vpaned.glade.strings:49
 msgid "Text Be_side Icons"
-msgstr "Текст _под иконками"
+msgstr ""
 
 #: gtk/window_main_hpaned.glade.strings:50
 #: gtk/window_main_vpaned.glade.strings:50
+#, fuzzy
 msgid "_Hide"
-msgstr "_Скрыть"
+msgstr "Ф╙■Ф║┬(_F)"
 
 #: gtk/window_main_hpaned.glade.strings:51
 #: gtk/window_main_hpaned.glade.strings:52
 #: gtk/window_main_vpaned.glade.strings:51
 #: gtk/window_main_vpaned.glade.strings:52
 msgid "_Help"
-msgstr "_Помощь"
+msgstr "Х╙╙Ф≤▌(_H)"
 
 #: gtk/window_main_hpaned.glade.strings:53
 #: gtk/window_main_vpaned.glade.strings:53
+#, fuzzy
 msgid "_About"
-msgstr "_О программе"
+msgstr "И≈°Ф√╪"
 
 #: gtk/window_main_hpaned.glade.strings:54
 #: gtk/window_main_vpaned.glade.strings:54
 msgid "Update package cache"
-msgstr "Получить сведения о пакетах"
+msgstr "Ф⌡╢Ф√╟Е╔≈Д╩╤Ф╦┘Е√╝Г╥╘Х║²Е█─ (apt-get update)"
 
 #: gtk/window_main_hpaned.glade.strings:55
 #: gtk/window_main_vpaned.glade.strings:55
+#, fuzzy
 msgid "_Update List"
-msgstr "_Обновить список"
+msgstr "Ф⌡╢Ф√╟Ф╦┘Е√╝(_L)"
 
 #: gtk/window_main_hpaned.glade.strings:56
 #: gtk/window_main_vpaned.glade.strings:56
 msgid "Mark packages for upgrade, except those with new dependencies"
-msgstr "Отметить пакеты для обновления, кроме пакетов с новыми зависимостями"
+msgstr "Ф╗≥Х╗≤Е▐╞Е█┤Г╢ Г └Е╔≈Д╩╤О╪▄Д╫├Д╦█Е▄┘Ф▀╛Ф°┴Ф√╟Г⌡╦Д╬²И≈°Д©┌Г └Е╔≈Д╩╤ (apt-get upgrade)"
 
 #: gtk/window_main_hpaned.glade.strings:58
 #: gtk/window_main_vpaned.glade.strings:58
 msgid "Commit (and download if necessary) selected changes on packages"
-msgstr "Выполнить (и загрузить при необходимости) выбранные действия с пакетами"
+msgstr "Е╞╕Х║▄Е╥╡И│╦Ф⌠┤Е╟█Е╔≈Д╩╤Г └Х╝┼Ф⌡╢О╪▄Д╦╕Ф°┴И°─Х╕│Ф≥┌Д╦▀Х╪┴Е╔≈Д╩╤"
 
 #: gtk/window_main_hpaned.glade.strings:59
 #: gtk/window_main_vpaned.glade.strings:59
+#, fuzzy
 msgid "_Execute"
-msgstr "В_ыполнить"
+msgstr "Д╦█Е▄┘Ф▀╛"
 
 #: gtk/window_main_hpaned.glade.strings:60
 #: gtk/window_main_vpaned.glade.strings:60
+#, fuzzy
 msgid "Find:"
-msgstr "Найти:"
+msgstr "Е╟▀Ф┴╬"
 
 #: gtk/window_main_hpaned.glade.strings:61
 #: gtk/window_main_vpaned.glade.strings:61
+#, fuzzy
 msgid "Find a package name in the list of shown packages below"
-msgstr "Найти имя пакета в списке отображаемых пакетов"
+msgstr "И│╦Ф⌠┤Е╔≈Д╩╤Г╞╘И│╦Е≥╗"
 
 #: gtk/window_main_hpaned.glade.strings:63
 #: gtk/window_main_vpaned.glade.strings:63
+#, fuzzy
 msgid "Find next"
-msgstr "Найти далее"
+msgstr "Е╟▀Ф┴╬Ф√┤Е╜≈:"
 
 #: gtk/window_main_hpaned.glade.strings:64
 #: gtk/window_main_vpaned.glade.strings:64
 msgid "Search again from the beginning"
-msgstr "Поиск с начала"
+msgstr ""
 
 #: gtk/window_main_hpaned.glade.strings:65
 #: gtk/window_main_vpaned.glade.strings:65
 msgid "Show:"
-msgstr "Показать:"
+msgstr ""
 
 #: gtk/window_main_hpaned.glade.strings:66
 #: gtk/window_main_vpaned.glade.strings:66
+#, fuzzy
 msgid "Filter the list of shown packages"
-msgstr "Отфильтровать список отображаемых пакетов"
+msgstr "И│╦Ф⌠┤Е╔≈Д╩╤Г╞╘И│╦Е≥╗"
 
 #: gtk/window_main_hpaned.glade.strings:68
 #: gtk/window_main_vpaned.glade.strings:68
+#, fuzzy
 msgid "Edit the available filters"
-msgstr "Редактировать доступные фильтры"
+msgstr "Г╥╗Х╪╞Е╥╡И│╦Г └Г╞╘И│╦Е≥╗"
 
 #: gtk/window_main_hpaned.glade.strings:69
 #: gtk/window_main_vpaned.glade.strings:69
 msgid "Filters..."
-msgstr "Фильтры..."
+msgstr "Г╞╘И│╦Е≥╗..."
 
 #: gtk/window_main_hpaned.glade.strings:70
+#, fuzzy
 msgid "<b>Package:</b>"
-msgstr "<b>Пакет:</b>"
+msgstr "Д╦─Х┬╛ХЁ┤Х╗┼"
 
 #: gtk/window_main_hpaned.glade.strings:71
 #: gtk/window_main_vpaned.glade.strings:91
+#, fuzzy
 msgid "<b>Section:</b>"
-msgstr "<b>Раздел:</b>"
+msgstr "Е▀∙Д╫°"
 
 #: gtk/window_main_hpaned.glade.strings:72
 #: gtk/window_main_vpaned.glade.strings:90
+#, fuzzy
 msgid "<b>Priority:</b>"
-msgstr "<b>Приоритет:</b>"
+msgstr "Х┴╡Е╫╘"
 
 #: gtk/window_main_hpaned.glade.strings:73
 #: gtk/window_main_vpaned.glade.strings:89
+#, fuzzy
 msgid "<b>Maintainer:</b>"
-msgstr "<b>Разработчик:</b>"
+msgstr "Е▀∙Д╫°"
 
 #: gtk/window_main_hpaned.glade.strings:74
 #: gtk/window_main_vpaned.glade.strings:88
+#, fuzzy
 msgid "<b>Status:</b>"
-msgstr "<b>Статус:</b>"
+msgstr "Е▀∙Д╫°"
 
 #: gtk/window_main_hpaned.glade.strings:77
 #: gtk/window_main_vpaned.glade.strings:92
+#, fuzzy
 msgid "<b>Tags:</b>"
-msgstr "<b>Теги:</b>"
+msgstr "Е▀∙Д╫°"
 
 #: gtk/window_main_hpaned.glade.strings:78
 #: gtk/window_main_hpaned.glade.strings:80
 #: gtk/window_main_vpaned.glade.strings:95
 #: gtk/window_main_vpaned.glade.strings:97
+#, fuzzy
 msgid "Size:"
-msgstr "Размер:"
+msgstr "Ф╙■Ф║┬Е╓╖Е╟▐"
 
 #: gtk/window_main_hpaned.glade.strings:79
 #: gtk/window_main_hpaned.glade.strings:81
 #: gtk/window_main_vpaned.glade.strings:94
 #: gtk/window_main_vpaned.glade.strings:96
+#, fuzzy
 msgid "Version:"
-msgstr "Версия:"
+msgstr "    Ц──Ц──Г┴┬Ф°╛"
 
 #: gtk/window_main_hpaned.glade.strings:82
 #: gtk/window_main_vpaned.glade.strings:98
+#, fuzzy
 msgid "Download:"
-msgstr "Скачать:"
+msgstr "Е█┤Г╢ "
 
 #: gtk/window_main_hpaned.glade.strings:83
 #: gtk/window_main_vpaned.glade.strings:99
+#, fuzzy
 msgid "<b>Latest:</b>"
-msgstr "<b>Последнее:</b>"
+msgstr "Е▀∙Д╫°"
 
 #: gtk/window_main_hpaned.glade.strings:84
 #: gtk/window_main_vpaned.glade.strings:93
+#, fuzzy
 msgid "<b>Installed:</b>"
-msgstr "<b>Установленное:</b>"
+msgstr "Д╦─Х┬╛ХЁ┤Х╗┼"
 
 #: gtk/window_main_hpaned.glade.strings:85
 #: gtk/window_main_vpaned.glade.strings:100
+#, fuzzy
 msgid "Common"
-msgstr "Общее"
+msgstr "Ф▄┤Д╩╓"
 
 #: gtk/window_main_hpaned.glade.strings:87
 #: gtk/window_main_hpaned.glade.strings:103
@@ -2131,141 +2135,157 @@ msgstr "Общее"
 #: gtk/window_main_vpaned.glade.strings:119
 #: gtk/window_filters.glade.strings:64
 msgid "Dependencies"
-msgstr "Зависимости"
+msgstr "Ф╜╓Е╔≈Д╩╤Д╬²ХЁ╢Г └Е╔≈Д╩╤"
 
 #: gtk/window_main_hpaned.glade.strings:88
 #: gtk/window_main_vpaned.glade.strings:103
 msgid "Packages Depending on this One"
-msgstr "Пакеты, зависящие от этого"
+msgstr ""
 
 #: gtk/window_main_hpaned.glade.strings:89
 #: gtk/window_main_vpaned.glade.strings:104
+#, fuzzy
 msgid "Dependencies of the Latest Version"
-msgstr "Зависимости для последней версии"
+msgstr "Ф╜╓Е╔≈Д╩╤Д╬²ХЁ╢Г └Е╔≈Д╩╤"
 
 #: gtk/window_main_hpaned.glade.strings:90
 #: gtk/window_main_vpaned.glade.strings:105
 #: gtk/window_filters.glade.strings:65
+#, fuzzy
 msgid "Provided Packages"
-msgstr "Предоставляемые пакеты"
+msgstr "Е╟▀Ф┴╬Е╔≈Д╩╤"
 
 #: gtk/window_main_hpaned.glade.strings:91
 #: gtk/window_main_vpaned.glade.strings:106
+#, fuzzy
 msgid "Suggestions and Recommendations"
-msgstr "Предложения и рекомендации"
+msgstr "Е╩╨Х╜╟Е▓▄Ф▌╗Х√╕"
 
 #: gtk/window_main_hpaned.glade.strings:98
 #: gtk/window_main_vpaned.glade.strings:113
+#, fuzzy
 msgid "<b>Install</b>"
-msgstr "<b>Установить</b>"
+msgstr "Д╦─Х┬╛ХЁ┤Х╗┼"
 
 #: gtk/window_main_hpaned.glade.strings:99
 #: gtk/window_main_vpaned.glade.strings:115
 msgid "Recommended"
-msgstr "Рекомендовано"
+msgstr "Ф▌╗Х√╕"
 
 #: gtk/window_main_hpaned.glade.strings:100
 #: gtk/window_main_vpaned.glade.strings:116
+#, fuzzy
 msgid "Suggested"
-msgstr "Желательно"
+msgstr "Е╩╨Х╜╟"
 
 #: gtk/window_main_hpaned.glade.strings:101
 #: gtk/window_main_vpaned.glade.strings:117
+#, fuzzy
 msgid "Selected"
-msgstr "Выбранные"
+msgstr "Е┬╙И≥╓"
 
 #: gtk/window_main_hpaned.glade.strings:104
 #: gtk/window_main_vpaned.glade.strings:120
+#, fuzzy
 msgid "Installed Files"
-msgstr "Установленные файлы"
+msgstr "Е╥╡Е╝┴Хё²"
 
 #: gtk/window_main_hpaned.glade.strings:105
 #: gtk/window_main_vpaned.glade.strings:121
+#, fuzzy
 msgid "<b>Available Versions</b>"
-msgstr "<b>Доступные версии</b>"
+msgstr "Ф°─Ф√╟Г┴┬Ф°╛"
 
 #: gtk/window_main_hpaned.glade.strings:107
 msgid ""
 "<b>Warning:</b> This can render your package manager unusable.\n"
 "Changes override the version selected by the package manager. "
 msgstr ""
-"<b>Внимание:</b>Это может привести менеджер пакетов в нерабочее состояние.\n"
-"Изменения перекрывают версию, выбранную менеджером пакетов. "
 
 #: gtk/window_main_hpaned.glade.strings:109
 #: gtk/window_main_vpaned.glade.strings:125
 #: gtk/window_preferences.glade.strings:111
+#, fuzzy
 msgid "Expert"
-msgstr "Эксперт"
+msgstr "Д╦█Е▄┘Ф▀╛"
 
 #: gtk/window_main_hpaned.glade.strings:110
 #: gtk/window_main_vpaned.glade.strings:74
+#, fuzzy
 msgid "<b>Package Control</b>"
-msgstr "<b>Управление пакетами</b>"
+msgstr "Д╦─Х┬╛ХЁ┤Х╗┼"
 
 #: gtk/window_main_hpaned.glade.strings:111
 #: gtk/window_main_vpaned.glade.strings:114
 #: gtk/window_preferences.glade.strings:30
+#, fuzzy
 msgid "     "
-msgstr "     "
+msgstr "    Ц──Ф≈╔Ф°÷"
 
 #: gtk/window_main_hpaned.glade.strings:112
 #: gtk/window_main_vpaned.glade.strings:80
 msgid "Install the latest version of the package"
-msgstr "Установить последнюю версию пакета"
+msgstr ""
 
 #: gtk/window_main_hpaned.glade.strings:114
 #: gtk/window_main_vpaned.glade.strings:78
+#, fuzzy
 msgid "Deinstall the package"
-msgstr "Удалить пакет"
+msgstr ""
+"\n"
+"Е╥╡Е╝┴Хё²Е╔≈Д╩╤:\n"
 
 #: gtk/window_main_hpaned.glade.strings:116
 #: gtk/window_main_vpaned.glade.strings:76
 msgid "Keep the package as supplied before and forget selected changes"
-msgstr "Оставить пакет в исходном состоянии и отменить изменения из очереди"
+msgstr ""
 
 #: gtk/window_main_hpaned.glade.strings:118
 #: gtk/window_main_vpaned.glade.strings:82
 msgid "Configure the package using the debconf configuration system"
-msgstr "Сконфигурировать пакет с использованием системы кофигурирования debconf"
+msgstr ""
 
 #: gtk/window_main_hpaned.glade.strings:119
 #: gtk/window_main_vpaned.glade.strings:83
+#, fuzzy
 msgid "_Configure"
-msgstr "Скон_фигурировать"
+msgstr "Г╧╪Г╨▄"
 
 #: gtk/window_main_hpaned.glade.strings:120
 msgid "View installed documentation of the package in a browser"
-msgstr "Посмотреть установленную справку по пакету"
+msgstr ""
 
 #: gtk/window_main_hpaned.glade.strings:121
 msgid "_Documentation"
-msgstr "_Документация"
+msgstr ""
 
 #: gtk/window_main_hpaned.glade.strings:122
 #: gtk/window_main_vpaned.glade.strings:126
 msgid "Synaptic - an apt frontend"
-msgstr "Synaptic apt-ориентирован"
+msgstr ""
 
 #: gtk/window_main_vpaned.glade.strings:17
+#, fuzzy
 msgid "U_pdate Package List"
-msgstr "_Получить сведения о пакетах"
+msgstr "Ф⌡╢Ф√╟Е╔≈Д╩╤Ф╦┘Е√╝ (apt-get update)"
 
 #: gtk/window_main_vpaned.glade.strings:36
 msgid "_Collapse All   "
-msgstr "_Свернуть всё"
+msgstr ""
 
 #: gtk/window_main_vpaned.glade.strings:70
+#, fuzzy
 msgid "<b>Package</b>"
-msgstr "<b>Пакет</b>"
+msgstr "Д╦─Х┬╛ХЁ┤Х╗┼"
 
 #: gtk/window_main_vpaned.glade.strings:84
 msgid "View installed online documentation related to the package"
-msgstr "Посмотреть установленную справку по пакету"
+msgstr ""
 
 #: gtk/window_main_vpaned.glade.strings:86
+#, fuzzy
 msgid "<b>Details</b>"
-msgstr "<b>Подробности</b>"
+msgstr "Е▀∙Д╫°"
 
 #: gtk/window_main_vpaned.glade.strings:123
 msgid ""
@@ -2273,9 +2293,6 @@ msgid ""
 "manager unusable. Changes override the version selected by the package "
 "manager. "
 msgstr ""
-"<b>Внимание:</b>Это может привести менеджера пакетов в нерабочее "
-"состояние.\n"
-"Изменения перекрывают версию, выбранную менеджером пакетов. "
 
 #.
 #. * Translatable strings file generated by Glade.
@@ -2283,72 +2300,76 @@ msgstr ""
 #. * DO NOT compile it as part of your application.
 #.
 #: gtk/window_changes.glade.strings:7
+#, fuzzy
 msgid "Queue"
-msgstr "Добавить в очередь"
+msgstr "Е╥╡Д╫┤Е┬≈"
 
 #: gtk/window_changes.glade.strings:8
 msgid ""
 "<span weight=\"bold\" size=\"larger\">Queue additional required changes?</"
 "span>"
 msgstr ""
-"<span weight=\"bold\" size=\"larger\">Добавить в очередь необходимые "
-"изменения?</span>"
 
 #: gtk/window_changes.glade.strings:9
 msgid ""
 "The chosen action also affects other packages. The following changes are "
 "required in order to proceed."
 msgstr ""
-"Выбранное изменение влияет на другие пакеты. Необходимо также выполнить "
-"следующие действия."
 
 #: gtk/window_preferences.glade.strings:8
+#, fuzzy
 msgid "<b>General</b>"
-msgstr "<b>Основное</b>"
+msgstr "Д╦─Х┬╛ХЁ┤Х╗┼"
 
 #: gtk/window_preferences.glade.strings:10
+#, fuzzy
 msgid "Regular expressions are an advanced method of text matching"
-msgstr "Регулярные выражения - это лучший способ сопоставления текста"
+msgstr "Ф░°Е╟▀Ф┬√Е▄╧И┘█Ф≥┌Д╫©Г■╗Ф╜ёХ╕▐Х║╗И│■Е╪▐"
 
 #: gtk/window_preferences.glade.strings:11
+#, fuzzy
 msgid "Allow regular expressions in searches and filters"
-msgstr "Использовать регулярные выражения при поиске и в фильтрах"
+msgstr "Ф░°Е╟▀Ф┬√Е▄╧И┘█Ф≥┌Д╫©Г■╗Ф╜ёХ╕▐Х║╗И│■Е╪▐"
 
 #: gtk/window_preferences.glade.strings:12
 msgid "Consider recommended packages as dependencies"
-msgstr "Рассматривать рекомендуемые пакеты как зависимости"
+msgstr ""
 
 #: gtk/window_preferences.glade.strings:13
+#, fuzzy
 msgid "<b>Actions</b>"
-msgstr "<b>Действия</b>"
+msgstr "Е▀∙Д╫°"
 
 #: gtk/window_preferences.glade.strings:15
 msgid "Execute changes in a terminal window"
-msgstr "Выполнить изменения в окне терминала"
+msgstr ""
 
 #: gtk/window_preferences.glade.strings:16
 msgid "Ask to quit after the changes have been executed"
-msgstr "Запрашивать выход после внесения изменений"
+msgstr ""
 
 #: gtk/window_preferences.glade.strings:17
 msgid "Confirm actions also affecting other packages"
-msgstr "Подтверждать действия, влияющие на другие пакеты"
+msgstr ""
 
 #: gtk/window_preferences.glade.strings:18
+#, fuzzy
 msgid "Default"
-msgstr "По умолчанию"
+msgstr "Е┬╙И≥╓"
 
 #: gtk/window_preferences.glade.strings:19
 msgid "Include Configuration"
-msgstr "Включая конфигурацию"
+msgstr ""
 
 #: gtk/window_preferences.glade.strings:20
+#, fuzzy
 msgid "Include Orphaned Dependencies"
-msgstr "Удалить учитывая зависимости"
+msgstr "Г╖╩И≥╓Д╬²ХЁ╢Ф╜╓Е╔≈Д╩╤Г └Е╔≈Д╩╤"
 
 #: gtk/window_preferences.glade.strings:21
+#, fuzzy
 msgid "Default remove: "
-msgstr "Удалить по умолчанию: "
+msgstr "Е█┤Г╢ "
 
 #: gtk/window_preferences.glade.strings:22 gtk/window_summary.glade.strings:16
 msgid " "
@@ -2356,71 +2377,73 @@ msgstr " "
 
 #: gtk/window_preferences.glade.strings:23
 msgid "Number of undo operations:"
-msgstr "Количество возможных операций отмены:"
+msgstr ""
 
 #: gtk/window_preferences.glade.strings:24
+#, fuzzy
 msgid "Default system upgrade:"
-msgstr "Обновление системы по умолчанию:"
+msgstr "Е█┤Г╢ "
 
 #: gtk/window_preferences.glade.strings:25
 msgid "Always Ask"
-msgstr "Всегда задавать этот вопрос"
+msgstr ""
 
 #: gtk/window_preferences.glade.strings:27
+#, fuzzy
 msgid "Distribution Upgrade"
-msgstr "Обновить дистрибутив"
+msgstr "Е┘╗И²╒Е█┤Г╢  (apt-get dist-upgrade)"
 
 #: gtk/window_preferences.glade.strings:28
 msgid "General"
-msgstr "Основное"
+msgstr "Д╦─Х┬╛ХЁ┤Х╗┼"
 
 #: gtk/window_preferences.glade.strings:29
 msgid "<b>Main Window</b>"
-msgstr "<b>Главное окно</b>"
+msgstr ""
 
 #: gtk/window_preferences.glade.strings:31
 msgid ""
 "1 = Package list\n"
 "2 = Package details"
 msgstr ""
-"1 = Список пакетов\n"
-"2 = Информация о пакетах"
 
 #: gtk/window_preferences.glade.strings:33
 msgid ""
 "<b>Note:</b> You will need to restart synaptic for \n"
 "this setting to take effect."
 msgstr ""
-"<b>Внимание:</b> Вам необходимо будет перезапустить synaptic для того,\n"
-"чтобы эти установки вступили в силу."
 
 #: gtk/window_preferences.glade.strings:35
+#, fuzzy
 msgid "<b>Fonts</b>"
-msgstr "<b>Шрифты</b>"
+msgstr "Е▀∙Д╫°"
 
 #: gtk/window_preferences.glade.strings:37
+#, fuzzy
 msgid "Custom application font"
-msgstr "Шрифт приложения по умолчанию"
+msgstr "Е┬╙И≥╓"
 
 #: gtk/window_preferences.glade.strings:38
 msgid "Custom terminal font"
-msgstr "Стандартный шрифт терминала"
+msgstr ""
 
 #: gtk/window_preferences.glade.strings:39
+#, fuzzy
 msgid "_Default Font"
-msgstr "_Шрифт по умолчанию"
+msgstr "Е┬╙И≥╓"
 
 #: gtk/window_preferences.glade.strings:40
 msgid "_Terminal Font"
-msgstr "_Шрифт терминала"
+msgstr ""
 
 #: gtk/window_preferences.glade.strings:41
 msgid "Layout"
-msgstr "Внешний вид"
+msgstr ""
 
 #: gtk/window_preferences.glade.strings:42
+#, fuzzy
 msgid "<b>Column Order</b>"
-msgstr "<b>Порядок колонок</b>"
+msgstr "Х┴╡Е╫╘"
 
 #: gtk/window_preferences.glade.strings:44
 #: gtk/window_preferences.glade.strings:46
@@ -2428,34 +2451,38 @@ msgstr "<b>Порядок колонок</b>"
 #: gtk/window_preferences.glade.strings:50
 #: gtk/window_preferences.glade.strings:52
 #: gtk/window_preferences.glade.strings:54
-msgid "The position of the column from left to right. A value of -1 hides the column"
-msgstr "Позиция колонки слева направо. Значение -1 скрывает колонку"
+msgid ""
+"The position of the column from left to right. A value of -1 hides the column"
+msgstr ""
 
-# This is filter name, it's better to not translate it
 #: gtk/window_preferences.glade.strings:47
+#, fuzzy
 msgid "Installed version"
-msgstr "Установленная версия"
+msgstr "Е╥╡Е╝┴Хё²"
 
 #: gtk/window_preferences.glade.strings:49
+#, fuzzy
 msgid "Installed size"
-msgstr "Установленный размер"
+msgstr "Е╥╡Е╝┴Хё²"
 
-# This is filter name, it's better to not translate it
 #: gtk/window_preferences.glade.strings:53
+#, fuzzy
 msgid "Latest version"
-msgstr "Последняя версия"
+msgstr "Е╥╡Е╝┴Хё²"
 
 #: gtk/window_preferences.glade.strings:56
+#, fuzzy
 msgid "<b>Colors</b>"
-msgstr "<b>Цвета</b>"
+msgstr "Х┴╡Е╫╘"
 
 #: gtk/window_preferences.glade.strings:58
 msgid "Color packages by their status"
-msgstr "Раскрашивать пакеты в зависимости от статуса"
+msgstr ""
 
 #: gtk/window_preferences.glade.strings:60
+#, fuzzy
 msgid "Upgrade:"
-msgstr "Обновить:"
+msgstr "Е█┤Г╢ "
 
 #: gtk/window_preferences.glade.strings:61
 #: gtk/window_preferences.glade.strings:63
@@ -2466,156 +2493,164 @@ msgstr "Обновить:"
 #: gtk/window_preferences.glade.strings:73
 #: gtk/window_preferences.glade.strings:75
 #: gtk/window_preferences.glade.strings:77
+#, fuzzy
 msgid "Color"
-msgstr "Цвет"
+msgstr "Х┴╡Е╫╘"
 
 #: gtk/window_preferences.glade.strings:62
+#, fuzzy
 msgid "Downgrade:"
-msgstr "Понизить версию:"
+msgstr "Е█┤Г╢ "
 
 #: gtk/window_preferences.glade.strings:64
+#, fuzzy
 msgid "New:"
-msgstr "Создать:"
+msgstr "Ф√╟Е╒·"
 
-# This is filter name, it's better to not translate it
 #: gtk/window_preferences.glade.strings:66
+#, fuzzy
 msgid "Broken:"
-msgstr "С ошибками:"
+msgstr "Е╝┴Хё²Д╦█Е╝▄Ф∙╢"
 
 #: gtk/window_preferences.glade.strings:68
+#, fuzzy
 msgid "Remove:"
-msgstr "Удалить:"
+msgstr "Г╖╩И≥╓"
 
 #: gtk/window_preferences.glade.strings:70
+#, fuzzy
 msgid "Install:"
-msgstr "Установить:"
+msgstr "Е╝┴Хё²"
 
 #: gtk/window_preferences.glade.strings:72
+#, fuzzy
 msgid "Keep:"
-msgstr "Сохранить:"
+msgstr "Г╤╜Ф▄│Е▌÷Г▀─"
 
 #: gtk/window_preferences.glade.strings:74
+#, fuzzy
 msgid "Held:"
-msgstr "Оставленные:"
+msgstr "Д©²Г∙≥Ф╟╦Д╦█Ф⌡╢Ф√╟ (Hold)"
 
 #: gtk/window_preferences.glade.strings:76
+#, fuzzy
 msgid "Pin:"
-msgstr "Закреплённые:"
+msgstr "Ф╗≥Х╗≤Г┌╨Ф╟╦Д╦█Е█┤Г╢ Г └Е╔≈Д╩╤"
 
 #: gtk/window_preferences.glade.strings:78
 msgid "Columns and Colors"
-msgstr "Колонки и цвета"
+msgstr ""
 
 #: gtk/window_preferences.glade.strings:79
+#, fuzzy
 msgid "<b>Temporary Files</b>"
-msgstr "<b>Временные файлы</b>"
+msgstr "Д╦─Х┬╛ХЁ┤Х╗┼"
 
 #: gtk/window_preferences.glade.strings:81
+#, fuzzy
 msgid "Leave all downloaded packages in the cache"
-msgstr "Оставить все загруженные пакеты в кэше"
+msgstr "Ф┼┼Е╥╡Д╦▀Х╪┴Г └Е╔≈Д╩╤Г∙≥Е°╗Г╥╘Х║²Е█─Хё▐"
 
 #: gtk/window_preferences.glade.strings:82
 msgid "Delete downloaded packages after installation"
-msgstr "Удалить загруженные пакеты после установки"
+msgstr "Е╝┴Хё²Е╬▄Е┬╙И≥╓Е╥╡Д╦▀Х╪┴Г └Е╔≈Д╩╤"
 
 #: gtk/window_preferences.glade.strings:83
+#, fuzzy
 msgid "Delete obsolete packages from cache only"
-msgstr "Удалить устаревшие пакеты только из кэша"
+msgstr "Е┬╙И≥╓Г╥╘Х║²Е█─Хё▐И│▌Х┬┼Г └Е╔≈Д╩╤"
 
 #: gtk/window_preferences.glade.strings:84
 msgid "Clear"
-msgstr "Очистить"
+msgstr "Ф╦┘И≥╓"
 
 #: gtk/window_preferences.glade.strings:85
+#, fuzzy
 msgid "Temporary Files"
-msgstr "Временные файлы"
+msgstr "Д╦─Х┬╛ХЁ┤Х╗┼"
 
 #: gtk/window_preferences.glade.strings:86
+#, fuzzy
 msgid "<b>Proxy Server</b>"
-msgstr "<b>Прокси сервер</b>"
+msgstr "Е▀∙Д╫°"
 
 #: gtk/window_preferences.glade.strings:88
 msgid "Direct connection to the internet"
-msgstr "Прямое подключение к интернет"
+msgstr ""
 
 #: gtk/window_preferences.glade.strings:89
 msgid "Manual proxy configuration"
-msgstr "Ручная настройка прокси сервера"
+msgstr ""
 
 #: gtk/window_preferences.glade.strings:91
 msgid "IP address or host name of the http proxy server"
-msgstr "IP адрес или имя хоста http прокси сервера"
+msgstr ""
 
 #: gtk/window_preferences.glade.strings:93
 #: gtk/window_preferences.glade.strings:97
 msgid "Port: "
-msgstr "Порт:"
+msgstr ""
 
 #: gtk/window_preferences.glade.strings:94
 msgid "Port number of the http proxy server"
-msgstr "Номер порта для http прокси сервера"
+msgstr ""
 
 #: gtk/window_preferences.glade.strings:95
 msgid "IP address or host name of the ftp proxy server"
-msgstr "IP адрес или имя ftp прокси сервера"
+msgstr ""
 
 #: gtk/window_preferences.glade.strings:98
 msgid "Port numer of the ftp proxy server"
-msgstr "Номер порта для ftp прокси сервера"
+msgstr ""
 
 #: gtk/window_preferences.glade.strings:99
 msgid "No proxy for: "
-msgstr "Не использовать прокси для: "
+msgstr ""
 
 #: gtk/window_preferences.glade.strings:100
 msgid "FTP proxy: "
-msgstr "FTP прокси: "
+msgstr ""
 
 #: gtk/window_preferences.glade.strings:101
 msgid "HTTP proxy: "
-msgstr "HTTP прокси: "
+msgstr ""
 
 #: gtk/window_preferences.glade.strings:102
 msgid ""
 "Comma separated list of hosts and domains that will not be contacted through "
 "the proxy (e.g. localhost, 192.168.1.231, .net)"
 msgstr ""
-"Хосты и домены, для доступа к которым не будет "
-"использоваться прокси, следует разделять запятой "
-"(например, localhost, 192.168.1.231, .net)"
 
 #: gtk/window_preferences.glade.strings:104
+#, fuzzy
 msgid "Network"
-msgstr "Сеть"
+msgstr "Х┴╡Е╫╘"
 
 #: gtk/window_preferences.glade.strings:105
 msgid ""
 "<span size=\"large\" weight=\"bold\">These settings affect the core of your "
 "system. Consider changes carefully.</span>"
 msgstr ""
-"<span size=\"large\" weight=\"bold\">Данные установки влияют на ядро вашей "
-"системы. Используйте очень осторожно.</span>"
 
 #: gtk/window_preferences.glade.strings:106
+#, fuzzy
 msgid "<b>Distribution</b>"
-msgstr "<b>Дистрибутив</b>"
+msgstr "Г≥╪Х║▄Г┴┬Ф°╛"
 
 #: gtk/window_preferences.glade.strings:108
 msgid "Default archive: "
-msgstr "Архив по умолчанию: "
+msgstr ""
 
 #: gtk/window_preferences.glade.strings:109
-msgid "Select the default release if more then one is specifed in the sources.list"
-msgstr "Выбирать релиз по умолчанию, если более одного указано в sources.list"
+msgid ""
+"Select the default release if more then one is specifed in the sources.list"
+msgstr ""
 
 #: gtk/window_preferences.glade.strings:110
 msgid ""
 "<b>Note:</b> The package list will need to be reloaded and so all selections "
 "will be lost. Make sure to execute your changes first."
 msgstr ""
-"<b>Внимание:</b> Необходимо будет перезагрузить список пакетов, в связи с "
-"чем пропадут все предполагающиеся изменения. Убедитесь, что все изменения "
-"внесены."
 
 #.
 #. * Translatable strings file generated by Glade.
@@ -2623,12 +2658,13 @@ msgstr ""
 #. * DO NOT compile it as part of your application.
 #.
 #: gtk/window_disc_name.glade.strings:7
+#, fuzzy
 msgid "Disc name"
-msgstr "Имя диска"
+msgstr "Ф⌡╢Ф▐⌡Е┘┴Г╒÷"
 
 #: gtk/window_disc_name.glade.strings:8
 msgid "Enter the disc name"
-msgstr "Введите имя диска"
+msgstr ""
 
 #.
 #. * Translatable strings file generated by Glade.
@@ -2637,19 +2673,20 @@ msgstr "Введите имя диска"
 #.
 #: gtk/window_setopt.glade.strings:7
 msgid "<span size=\"large\" weight=\"bold\">Set an internal option</span>"
-msgstr "<span size=\"large\" weight=\"bold\">Установить внутренние настройки</span>"
+msgstr ""
 
 #: gtk/window_setopt.glade.strings:8
 msgid "Only experts should use this."
-msgstr "Только для экспертов."
+msgstr ""
 
 #: gtk/window_setopt.glade.strings:11
 msgid "Value:"
-msgstr "Объём:"
+msgstr ""
 
 #: gtk/window_setopt.glade.strings:12
+#, fuzzy
 msgid "Variable:"
-msgstr "Переменная:"
+msgstr "Ф°─Ф√╟Г┴┬Ф°╛"
 
 #.
 #. * Translatable strings file generated by Glade.
@@ -2658,569 +2695,519 @@ msgstr "Переменная:"
 #.
 #: gtk/window_summary.glade.strings:7
 msgid "Return to the main screen"
-msgstr "Вернуться в главное окно"
+msgstr ""
 
 #: gtk/window_summary.glade.strings:8
+#, fuzzy
 msgid "Execute the changes"
-msgstr "Внести изменения"
+msgstr "Д╦█Е▄┘Ф▀╛Е╥╡И│╦Г └Г╣└Е┬╔"
 
 #: gtk/window_summary.glade.strings:9
-msgid "<span weight=\"bold\" size=\"large\">Execute the following changes?</span>"
-msgstr "<span weight=\"bold\" size=\"larger\">Внести слудующие изменения?</span>"
+msgid ""
+"<span weight=\"bold\" size=\"large\">Execute the following changes?</span>"
+msgstr ""
 
 #: gtk/window_summary.glade.strings:10
 msgid ""
 "This is your last opportunity to look through the list of queued changes "
 "before they are executed."
-msgstr "Проверьте список изменений перед тем, как они будут внесены."
+msgstr ""
 
 #: gtk/window_summary.glade.strings:11
+#, fuzzy
 msgid "<b>Summary</b>"
-msgstr "<b>Краткое описание</b>"
+msgstr "Е▀∙Д╫°"
 
 #: gtk/window_summary.glade.strings:15
+#, fuzzy
 msgid "_Show Details"
-msgstr "_Показать детали"
+msgstr "И║╞Г╓╨Х╘ЁГ╢╟ХЁ┤Ф√≥"
 
 #: gtk/window_summary.glade.strings:17
+#, fuzzy
 msgid "The package files will ony be retrieved, but not installed or upgraded"
-msgstr "Пакеты, которые будут только получены, а не установлены или обновлены"
+msgstr "Ф╜╓Е╔≈Д╩╤Е╟┤Ф°┐Х╒╚Е╝┴Хё²Ц─┌"
 
 #: gtk/window_summary.glade.strings:18
+#, fuzzy
 msgid "Download package files only"
-msgstr "Загрузить только файлы пакетов"
+msgstr "Е╝┴Хё²Е╬▄Е┬╙И≥╓Е╥╡Д╦▀Х╪┴Г └Е╔≈Д╩╤"
 
 #: gtk/window_filters.glade.strings:9
+#, fuzzy
 msgid "<b>View</b>"
-msgstr "<b>Вид</b>"
+msgstr "Е▀∙Д╫°"
 
 #: gtk/window_filters.glade.strings:11
 msgid "Sorting:"
-msgstr "Сортировка:"
+msgstr ""
 
 #: gtk/window_filters.glade.strings:12 gtk/window_filters.glade.strings:18
+#, fuzzy
 msgid "Leave Unchanged"
-msgstr "Оставить без изменений"
+msgstr "Е╔≈Д╩╤Х╝┼Ф⌡╢"
 
 #: gtk/window_filters.glade.strings:13
+#, fuzzy
 msgid "Section Tree"
-msgstr "Дерево разделов"
+msgstr "Г╣└Е┬╔"
 
 #: gtk/window_filters.glade.strings:14
 msgid "Alphabetic Tree"
-msgstr "Алфавитное дерево"
+msgstr ""
 
 #: gtk/window_filters.glade.strings:15
+#, fuzzy
 msgid "Status Tree"
-msgstr "Дерево состояний"
+msgstr "Г▀─Ф┘▀"
 
 #: gtk/window_filters.glade.strings:16
+#, fuzzy
 msgid "Flat List"
-msgstr "Обычный список"
+msgstr "Ф⌡╢Ф√╟Ф╦┘Е√╝(_L)"
 
 #: gtk/window_filters.glade.strings:17
+#, fuzzy
 msgid "Tree: "
-msgstr "Дерево: "
+msgstr "Ф┴╬Д╦▀Д╦─Е─▀"
 
 #: gtk/window_filters.glade.strings:19
+#, fuzzy
 msgid "Expand All"
-msgstr "Развернуть всё"
+msgstr "Е█┤Г╢ (_G)"
 
 #: gtk/window_filters.glade.strings:20
 msgid "Collapse All"
-msgstr "Свернуть всё"
+msgstr ""
 
 #: gtk/window_filters.glade.strings:21
+#, fuzzy
 msgid "<b>Rules</b>"
-msgstr "<b>Правила</b>"
+msgstr "Е▀∙Д╫°"
 
 #: gtk/window_filters.glade.strings:23
+#, fuzzy
 msgid "<b>Current</b>"
-msgstr "<b>Текущие</b>"
+msgstr "Х┴╡Е╫╘"
 
 #: gtk/window_filters.glade.strings:25
+#, fuzzy
 msgid "Packages that have been installed and are up to date"
-msgstr "Установленные и не нуждающиеся в обновлении пакеты"
+msgstr "Ф╜╓Е╔≈Д╩╤Е╟┤Ф°┐Х╒╚Е╝┴Хё²Ц─┌"
 
 #: gtk/window_filters.glade.strings:27
+#, fuzzy
 msgid "Packages that have been installed and a later version is available"
-msgstr "Установленные пакеты, для которых доступна новая версия"
+msgstr "Ф╜╓Е╔≈Д╩╤Е╟┤Ф°┐Х╒╚Е╝┴Хё²Ц─┌"
 
 #: gtk/window_filters.glade.strings:29
 msgid "Packages that have been removed except their configuration files"
-msgstr "Удалённые пакеты, для которых в системе остались конфигурационные файлы"
+msgstr ""
 
 #: gtk/window_filters.glade.strings:31
+#, fuzzy
 msgid "Packages that have not been installed"
-msgstr "Не установленные пакеты"
+msgstr "Ф╜╓Е╔≈Д╩╤Ф╡▓Ф°┴Е╝┴Хё²Ц─┌"
 
 #: gtk/window_filters.glade.strings:33
+#, fuzzy
 msgid "<b>Selected</b>"
-msgstr "<b>Выбранные</b>"
+msgstr "Е▀∙Д╫°"
 
 #: gtk/window_filters.glade.strings:35
+#, fuzzy
 msgid "Packages that will be kept"
-msgstr "Пакеты, которые будут оставлены"
+msgstr "Ф╜╓Е╔≈Д╩╤Е╟┤Ф°┐Х╒╚Е█┤Г╢ Ц─┌"
 
 #: gtk/window_filters.glade.strings:37
+#, fuzzy
 msgid "Packages that will be installed or upgraded"
-msgstr "Пакеты, которые будут установлены или обновлены"
+msgstr "Ф╜╓Е╔≈Д╩╤Е╟┤Ф°┐Х╒╚Е╝┴Хё²Ц─┌"
 
 #: gtk/window_filters.glade.strings:38
+#, fuzzy
 msgid "To be installed or upgraded"
-msgstr "Для установки или обновления"
+msgstr "Е╟┤Ф°┐Е█┤Г╢ Г └Е╔≈Д╩╤"
 
 #: gtk/window_filters.glade.strings:39
+#, fuzzy
 msgid "Packages that will be removed"
-msgstr "Пакеты, которые будут удалены"
+msgstr "Ф╜╓Е╔≈Д╩╤Е╟┤Ф°┐Х╒╚Е█┤Г╢ Ц─┌"
 
 #: gtk/window_filters.glade.strings:41
+#, fuzzy
 msgid "<b>Other</b>"
-msgstr "<b>Остальные</b>"
+msgstr "Е▀∙Д╫°"
 
 #: gtk/window_filters.glade.strings:43
 msgid "Packages that are new in the repository since that last \"Update\" "
-msgstr "Пакеты, появившиеся в репозитории после последнего \"обновления\""
+msgstr ""
 
 #: gtk/window_filters.glade.strings:45
+#, fuzzy
 msgid "Packages that will never be upgraded"
-msgstr "Пакет, которые никогда не будут обновлены"
+msgstr "Ф╜╓Е╔≈Д╩╤Е╟┤Ф°┐Х╒╚Е█┤Г╢ Ц─┌"
 
 #: gtk/window_filters.glade.strings:46
 msgid "Pinned"
-msgstr "Закреплённые"
+msgstr "Ф╗≥Х╗≤Г┌╨Ф╟╦Д╦█Е█┤Г╢ Г └Е╔≈Д╩╤"
 
 #: gtk/window_filters.glade.strings:47
 msgid "Library packages that are no longer needed (deborphan is required)"
-msgstr "Пакеты библиотек, которые больше не нужны (для работы требуется deborphan)"
+msgstr ""
 
 #: gtk/window_filters.glade.strings:48
 msgid "Orphaned"
-msgstr "\"Заброшенные\""
+msgstr "Е├█Ф╡▓Ф°┴Д╨╨Г╤╜Х╜╥Г └Ц─▄Е╜╓Е┘▓Ц─█Е╔≈Д╩╤"
 
 #: gtk/window_filters.glade.strings:49
 msgid "Packages that are not available in any repository"
-msgstr "Недоступные ни в одном репозитории пакеты"
+msgstr ""
 
 #: gtk/window_filters.glade.strings:50
+#, fuzzy
 msgid "Not (no longer) installable"
-msgstr "Не устанавливаемые"
+msgstr "Ф°╙Е╝┴Хё²"
 
 #: gtk/window_filters.glade.strings:51
+#, fuzzy
 msgid "Packages with broken dependencies"
-msgstr "Пакеты с нарушенными зависимостями"
+msgstr "Г⌡╦Д╬²И≈°Д©┌Ф°┴Е∙▐И║▄Ц─┌"
 
 #: gtk/window_filters.glade.strings:53
+#, fuzzy
 msgid "Select All"
-msgstr "Выделить всё"
+msgstr "Е┬╙И≥╓"
 
 #: gtk/window_filters.glade.strings:54
+#, fuzzy
 msgid "Deselect All"
-msgstr "Очистить всё"
+msgstr "Е┬╙И≥╓"
 
 #: gtk/window_filters.glade.strings:55
+#, fuzzy
 msgid "Invert All"
-msgstr "Инвертировать всё"
+msgstr "Е╝┴Хё²"
 
 #: gtk/window_filters.glade.strings:57
+#, fuzzy
 msgid "Include selected sections only"
-msgstr "Включать только выбранные разделы"
+msgstr "Е▐╙Е▄┘Ф▀╛Е╥╡И│╦Г └Г╣└Е┬╔"
 
 #: gtk/window_filters.glade.strings:58
+#, fuzzy
 msgid "Exclude selected sections"
-msgstr "Исключать выбранные разделы"
+msgstr "Д╦█Е▄┘Ф▀╛Е╥╡И│╦Г └Г╣└Е┬╔"
 
 #: gtk/window_filters.glade.strings:60
+#, fuzzy
 msgid "Package Name"
-msgstr "Имя пакета"
+msgstr "Е╔≈Д╩╤Е░█Г╗╠"
 
 #: gtk/window_filters.glade.strings:61
+#, fuzzy
 msgid "Version Number"
-msgstr "Номер версии"
+msgstr "    Ц──Ц──Г┴┬Ф°╛"
 
 #: gtk/window_filters.glade.strings:66
+#, fuzzy
 msgid "Conflicting Packages"
-msgstr "Конфликтующие пакеты"
+msgstr "Ф╜ёЕ°╗И─╡Х║▄Д©╝Ф■╧"
 
 #: gtk/window_filters.glade.strings:67
+#, fuzzy
 msgid "Replaced Packages"
-msgstr "Замещённые пакеты"
+msgstr "Е┘╗И┐╗Е╔≈Д╩╤"
 
 #: gtk/window_filters.glade.strings:68
+#, fuzzy
 msgid "Suggestions or Recommendations"
-msgstr "Предложения и рекомендации"
+msgstr "Е╩╨Х╜╟Е▓▄Ф▌╗Х√╕"
 
 #: gtk/window_filters.glade.strings:69
+#, fuzzy
 msgid "Reverse Dependencies"
-msgstr "Обратные зависимости"
+msgstr "Е▐█Е░▒Д╬²ХЁ╢Г └Е╔≈Д╩╤Г┌╨"
 
 #: gtk/window_filters.glade.strings:70
+#, fuzzy
 msgid "Includes"
-msgstr "Включает"
+msgstr "Е▄┘Ф▀╛"
 
 #: gtk/window_filters.glade.strings:71
+#, fuzzy
 msgid "Excludes"
-msgstr "Исключает"
+msgstr "Д╦█Е▄┘Ф▀╛"
 
 #: gtk/window_filters.glade.strings:73
+#, fuzzy
 msgid "Properties"
-msgstr "Свойства"
+msgstr "Ф▐░Д╬⌡"
 
 #: gtk/window_filters.glade.strings:75
 msgid "Include"
-msgstr "Включить"
+msgstr "Е▄┘Ф▀╛"
 
 #: gtk/window_filters.glade.strings:76
 msgid "Exclude"
-msgstr "Исключить"
+msgstr "Д╦█Е▄┘Ф▀╛"
 
 #: gtk/window_repositories.glade.strings:8
+#, fuzzy
 msgid "URI:"
-msgstr "URI:"
+msgstr "Г╤╡Е²─"
 
 #: gtk/window_repositories.glade.strings:9
+#, fuzzy
 msgid "Distribution:"
-msgstr "Дистрибутив:"
+msgstr "Г≥╪Х║▄Г┴┬Ф°╛"
 
 #: gtk/window_repositories.glade.strings:10
+#, fuzzy
 msgid "Section(s):"
-msgstr "Раздел(ы):"
+msgstr "Г╣└Е┬╔"
 
 #: gtk/window_repositories.glade.strings:11
 msgid "deb"
-msgstr "deb"
+msgstr ""
 
 #: gtk/window_repositories.glade.strings:12
 msgid "deb-src"
-msgstr "deb-src"
+msgstr ""
 
 #: gtk/window_repositories.glade.strings:13
 msgid "rpm"
-msgstr "rpm"
+msgstr ""
 
 #: gtk/window_repositories.glade.strings:14
 msgid "rpm-src"
-msgstr "rpm-src"
+msgstr ""
 
 #: gtk/window_repositories.glade.strings:16
+#, fuzzy
 msgid "Vendors..."
-msgstr "Поставщики..."
+msgstr "Г≥╪Х║▄Е∙├"
 
 #: gtk/window_rginstall_progress_msgs.glade.h:1
 msgid "Extra output was generated during Package Manager operation"
-msgstr "Во время работы менеджера пакетов был сгенерировал дополнительный вывод"
+msgstr ""
 
 #: data/synaptic.desktop.in.h:1
+#, fuzzy
 msgid "Install, remove and upgrade software packages"
-msgstr "Установить, удалить и обновить пакеты"
+msgstr "Е╥╡Е╝┴Хё²Д╦╕Е▐╞Е█┤Г╢ Г └Е╔≈Д╩╤"
 
 #: data/synaptic.desktop.in.h:2
+#, fuzzy
 msgid "Package Manager"
-msgstr "Менеджер пакетов"
+msgstr "Е╔≈Д╩╤Е░█Г╗╠"
 
 #: data/synaptic.desktop.in.h:3
+#, fuzzy
 msgid "Synaptic Package Manager"
-msgstr "Программа управления пакетами Synaptic"
+msgstr "Е╔≈Д╩╤Х╝┼Ф⌡╢"
 
 #, fuzzy
 #~ msgid "<b>Mainainer:</b>"
-#~ msgstr "<b>Главное окно</b>"
+#~ msgstr "Е▀∙Д╫°"
 
 #~ msgid "[Working] "
-#~ msgstr "[Работаем] "
+#~ msgstr "[Е╥╔Д╫°Д╦╜]"
 
+#, fuzzy
 #~ msgid "Package Manager running"
-#~ msgstr "Менеджер пакетов запущен"
+#~ msgstr "Е╔≈Д╩╤Х╝┼Ф⌡╢"
 
+#, fuzzy
 #~ msgid "Package Manager finished"
-#~ msgstr "Менеджер пакетов завершил работу"
-
-#~ msgid "Can't close, Package Manager still runing"
-#~ msgstr "Невозможно закрыть, менеджер пакетов всё ещё работает"
+#~ msgstr "Е╔≈Д╩╤Х╝┼Ф⌡╢"
 
 #, fuzzy
 #~ msgid "Name:"
-#~ msgstr "Имя"
+#~ msgstr "Е░█Г╗╠"
 
+#, fuzzy
 #~ msgid "unknown"
-#~ msgstr "неизвестный"
+#~ msgstr "Д╦█Ф≤▌"
 
+#, fuzzy
 #~ msgid "not installed"
-#~ msgstr "не установлен"
+#~ msgstr "Ф°╙Е╝┴Хё²"
 
 #, fuzzy
 #~ msgid "1 package will be <b>DOWNGRADED</b>\n"
-#~ msgstr "%d %s будет ПОНИЖЕНА ВЕРСИЯ;\n"
+#~ msgstr "Е╟┤Ф°┐Г╖╩И≥╓ %d Е─▀%sО╪⌡\n"
 
 #, fuzzy
 #~ msgid "%d packages will be <b>DOWNGRADED</b>\n"
-#~ msgstr "%d %s будет ПОНИЖЕНА ВЕРСИЯ;\n"
+#~ msgstr "Е╟┤Ф°┐Г╖╩И≥╓ %d Е─▀%sО╪⌡\n"
 
-#~ msgid "Couldn't fork gzip"
-#~ msgstr "Невозможно запустить gzip"
-
-#~ msgid "Missed: "
-#~ msgstr "Упущен: "
-
-#~ msgid "Missed(2): "
-#~ msgstr "Упущен(2): "
-
-#~ msgid "Wrong Size: "
-#~ msgstr "Неверный размер: "
-
-#~ msgid "Alot of entries were discarded, something may be wrong."
-#~ msgstr "Слишком много элементов было отброшено, что-то может быть не так."
-
+#, fuzzy
 #~ msgid "but %s is to be installed"
-#~ msgstr "но будет установлен %s"
+#~ msgstr "%s Е╥╡Е╝┴Хё²Ф┬√Е╟┤Ф°┐Е╝┴Хё²"
 
+#, fuzzy
 #~ msgid "but it is not installable"
-#~ msgstr "но он не может быть установлен"
+#~ msgstr "Ф╜╓Е╔≈Д╩╤Д╦█Х┐╫Е╝┴Хё²"
 
+#, fuzzy
 #~ msgid "but it is a virtual package"
-#~ msgstr "но пакет является виртуальным"
+#~ msgstr "Ф╜╓Е╔≈Д╩╤Ф≤╞Д╦─Е─▀Х≥⌡Ф⌠╛Е╔≈Д╩╤"
 
-#~ msgid "but it is not going to be installed"
-#~ msgstr "но пакет не будет установлен"
-
-#~ msgid "empty filter name!? should _never_ happen, please report"
-#~ msgstr ""
-#~ "пустое имя фильтра!? этого не должно быть _никогда_, пожалуйста отправьте "
-#~ "информацию об ошибке"
-
-#~ msgid ""
-#~ "filter name is longer than 55 chars!? Will be truncated.Please report"
-#~ msgstr ""
-#~ "имя фильтра содержит более чем 55 символов!? Будет обрезано.  Пожалуйста, "
-#~ "отправьте информацию об ошибке"
-
+#, fuzzy
 #~ msgid "Package "
-#~ msgstr "Пакет "
+#~ msgstr "Е╔≈Д╩╤"
 
-#~ msgid " has no section?!"
-#~ msgstr " не имеет секции?!"
-
-#~ msgid "Couldn't fork bzip2"
-#~ msgstr "Невозможно запустить bzip2"
-
-#~ msgid "can't fork children, so I die"
-#~ msgstr "can't fork children, so I die"
-
-#~ msgid " not found"
-#~ msgstr "не найден"
-
-#~ msgid "gtk_tree_model_get returned no text"
-#~ msgstr "gtk_tree_model_get returned no text"
-
-#~ msgid "clickedRecInstall called with invalid parm: "
-#~ msgstr "clickedRecInstall вызвана с неверным параметром: "
-
+#, fuzzy
 #~ msgid "%s %s: will be Upgraded to %s\n"
-#~ msgstr "%s %s: будет обновлён до %s\n"
+#~ msgstr ": Е╟┤Ф°┐Е█┤Г╢ Е┬╟ "
 
 #~ msgid "packages"
-#~ msgstr "пакетов"
+#~ msgstr "Е╔≈Д╩╤"
 
 #~ msgid "package"
-#~ msgstr "пакет"
+#~ msgstr "Е╔≈Д╩╤"
 
 #, fuzzy
 #~ msgid "%d %s will be upgraded\n"
-#~ msgstr "%d %s будет обновлено;\n"
+#~ msgstr "Е╟┤Ф°┐Е█┤Г╢  %d Е─▀%sО╪⌡\n"
 
 #, fuzzy
 #~ msgid "label_name"
-#~ msgstr "Называются"
+#~ msgstr "Е░█Г╗╠Г┌╨"
 
 #, fuzzy
 #~ msgid "label_summary"
-#~ msgstr "Краткое описание"
+#~ msgstr "Ф▒≤Х╕│"
 
+#, fuzzy
 #~ msgid "_Tag tree"
-#~ msgstr "Дерево _тегов"
+#~ msgstr "Г▀─Ф┘▀"
 
+#, fuzzy
 #~ msgid "_Flat list"
-#~ msgstr "О_бычный список"
+#~ msgstr "Ф⌡╢Ф√╟Ф╦┘Е√╝(_L)"
 
 #, fuzzy
 #~ msgid "Installed and upgradeble"
-#~ msgstr "Установленные и обновляемые"
+#~ msgstr "Е╥╡Е╝┴Хё²Д╦╕Е▐╞Е█┤Г╢ Г └Е╔≈Д╩╤"
 
 #, fuzzy
 #~ msgid "<b>Common</b>"
-#~ msgstr "Цвета"
+#~ msgstr "Х┴╡Е╫╘"
 
 #, fuzzy
 #~ msgid "<b>Priority</b>"
-#~ msgstr "Приоритет"
+#~ msgstr "Е└╙Е┘┬Г╢ "
 
 #, fuzzy
 #~ msgid "No changes"
-#~ msgstr "_Выполнить изменения"
+#~ msgstr "И═░Ф°÷Х╝┼Е▀∙"
 
 #, fuzzy
 #~ msgid "Configure"
-#~ msgstr "Скон_фигурировать"
+#~ msgstr "Г╧╪Г╨▄"
 
-# This is filter name, it's better to not translate it
 #, fuzzy
 #~ msgid "Install Latest Version"
-#~ msgstr "_Установить последнюю версию"
-
-#, fuzzy
-#~ msgid "_Remove Including Configuration"
-#~ msgstr "Включая конфигурацию"
+#~ msgstr "Е╥╡Е╝┴Хё²"
 
 #, fuzzy
 #~ msgid "Execute"
-#~ msgstr "В_ыполнить"
+#~ msgstr "Д╦█Е▄┘Ф▀╛"
 
+#, fuzzy
 #~ msgid "Apply"
-#~ msgstr "Применить"
+#~ msgstr "Е╔≈Г■╗"
 
 #~ msgid ""
 #~ "\n"
 #~ "Installed Package:\n"
 #~ msgstr ""
 #~ "\n"
-#~ "Установленный пакет:\n"
+#~ "Е╥╡Е╝┴Хё²Е╔≈Д╩╤:\n"
 
+#, fuzzy
 #~ msgid "\tVersion"
-#~ msgstr "\tВерсия"
+#~ msgstr "    Ц──Ц──Г┴┬Ф°╛"
 
+#, fuzzy
 #~ msgid "\tSize"
-#~ msgstr "\tРазмер"
+#~ msgstr "Ф╙■Ф║┬Е╓╖Е╟▐"
 
 #~ msgid ""
 #~ "\n"
 #~ "Available Package:\n"
 #~ msgstr ""
 #~ "\n"
-#~ "Доступный пакет:\n"
+#~ "Ф°─Ф√╟Г┴┬Е╔≈Д╩╤:\n"
 
+#, fuzzy
 #~ msgid "\tPackage Size"
-#~ msgstr "\tРазмер пакета"
+#~ msgstr "    Е╔≈Д╩╤Е╓╖Е╟▐"
 
 #~ msgid "Keep"
-#~ msgstr "Сохранить"
+#~ msgstr "Г╤╜Ф▄│Е▌÷Г▀─"
 
 #, fuzzy
 #~ msgid "Status:"
-#~ msgstr "Состояние"
+#~ msgstr "Г▀─Ф┘▀"
 
-#~ msgid "window1"
-#~ msgstr "window1"
-
-#~ msgid "label43"
-#~ msgstr "label43"
-
-#~ msgid "label_dep_info"
-#~ msgstr "label_dep_info"
-
-#~ msgid "label53"
-#~ msgstr "label53"
-
-#~ msgid "label54"
-#~ msgstr "label54"
-
-#~ msgid "label_availdep_info"
-#~ msgstr "label_availdep_info"
-
-#~ msgid "label55"
-#~ msgstr "label55"
-
-#~ msgid "label68"
-#~ msgstr "label68"
-
-#~ msgid "label56"
-#~ msgstr "label56"
-
-#~ msgid ""
-#~ "<span weight=\"bold\" size=\"large\">Your locale settings are not "
-#~ "supported by your Xlib</span>"
-#~ msgstr ""
-#~ "<span weight=\"bold\" size=\"large\">Ваши языковые настройки не "
-#~ "поддерживаются вашей версией Xlib</span>"
-
+#, fuzzy
 #~ msgid "Include Dependencies"
-#~ msgstr "Включая зависимости"
-
-#~ msgid "_Purge with Configuration"
-#~ msgstr "Вычистить вместе с кон_фигурацией"
-
-#~ msgid ""
-#~ "<b>Note:</b> This allows you to override the version selected by the "
-#~ "package manager. Use with care."
-#~ msgstr ""
-#~ "<b>Внимание:</b> Здесь можно перекрыть версию, выбранную менеджером "
-#~ "пакетов. Используйте осторожно."
-
-#~ msgid "Do _Not Modify"
-#~ msgstr "_Не изменять"
+#~ msgstr "Ф╜╓Е╔≈Д╩╤Д╬²ХЁ╢Г └Е╔≈Д╩╤"
 
 #~ msgid "URL"
-#~ msgstr "URL"
+#~ msgstr "Д╦▀Х╪┴Г╤╡Е²─"
 
 #, fuzzy
 #~ msgid "Unable to start yelp"
-#~ msgstr "Невозможно прочитать %s"
+#~ msgstr "Г└║ФЁ∙Х╝─Е▐√Г⌡╝И▄└ %s"
 
+#, fuzzy
 #~ msgid "Available Version"
-#~ msgstr "Доступен"
+#~ msgstr "Ф°─Ф√╟Г┴┬Ф°╛"
 
-#~ msgid "Inst. Size"
-#~ msgstr "Уст. размер"
-
-#~ msgid ""
-#~ "Search for a pattern and show matching packages in the main view only."
-#~ msgstr ""
-#~ "Выполнить поиск по образцу и показать в основном списке только найденные "
-#~ "пакеты."
-
-#~ msgid "<b>Search In</b>"
-#~ msgstr "<b>Искать в</b>"
-
+#, fuzzy
 #~ msgid "_Hold"
-#~ msgstr "Удер_жать"
+#~ msgstr "Д©²Г∙≥Ф╟╦Д╦█Ф⌡╢Ф√╟ (Hold)"
 
 #, fuzzy
 #~ msgid "_Search..."
-#~ msgstr "П_оиск"
+#~ msgstr "Ф░°Е╟▀"
 
-#~ msgid "Status modification:"
-#~ msgstr "Изменение статуса:"
-
+#, fuzzy
 #~ msgid "Exclude the package from upgrades"
-#~ msgstr "Запретить обновление пакета"
+#~ msgstr "Д╦█Е▄┘Ф▀╛Е╥╡И│╦Г └Г╣└Е┬╔"
 
+#, fuzzy
 #~ msgid "   "
-#~ msgstr "   "
+#~ msgstr "    Ц──Ф≈╔Ф°÷"
 
+#, fuzzy
 #~ msgid "Remove package: "
-#~ msgstr "Удалить пакет: "
+#~ msgstr "Е╔≈Д╩╤"
 
 #, fuzzy
 #~ msgid "Normal Upgrade"
-#~ msgstr "Обновить:"
+#~ msgstr "Е█┤Г╢ "
 
+#, fuzzy
 #~ msgid "<b>Dependencies</b>"
-#~ msgstr "<b>Зависимости</b>"
+#~ msgstr "Ф╜╓Е╔≈Д╩╤Д╬²ХЁ╢Г └Е╔≈Д╩╤"
 
+#, fuzzy
 #~ msgid "Available version"
-#~ msgstr "Доступенная версия"
+#~ msgstr "Ф°─Ф√╟Г┴┬Ф°╛"
 
-# This is filter name, it's better to not translate it
 #~ msgid "Programmed Changes"
-#~ msgstr "Запланированные изменения"
-
-#~ msgid "Upgrade every installed package to the latest version"
-#~ msgstr "Обновить все установленные пакеты до последней версии"
+#~ msgstr "Е╟┤Х╕│И─╡Х║▄Г └Д©╝Ф■╧"
 
 #~ msgid "Perform package download only."
-#~ msgstr "Выполнить только загрузку пакетов."
+#~ msgstr "Е▐╙Д╦▀Х╪┴Е╔≈Д╩╤О╪▄Д╦█Е╝┴Хё²Ц─┌"
 
 #~ msgid "Proceed"
-#~ msgstr "Выполнить"
+#~ msgstr "И─╡Х║▄"
 
 #, fuzzy
 #~ msgid ""
@@ -3228,7 +3215,7 @@ msgstr "Программа управления пакетами Synaptic"
 #~ "%s B will be used after finished.\n"
 #~ msgstr ""
 #~ "\n"
-#~ "%sB будет использовано.\n"
+#~ "Е╝▄Ф┬░Е╬▄Е╟┤Д╫©Г■╗ %sB Гё│Г╒÷Г╘╨И√⌠Ц─┌\n"
 
 #, fuzzy
 #~ msgid ""
@@ -3236,224 +3223,187 @@ msgstr "Программа управления пакетами Synaptic"
 #~ "%s B will be freed after finished.\n"
 #~ msgstr ""
 #~ "\n"
-#~ "%sB будет освобождено.\n"
-
-#~ msgid "Advanced Search"
-#~ msgstr "Расширенный поиск"
+#~ "Е╝▄Ф┬░Е╬▄Е╟┤И┤▀Ф■╬ %sB Гё│Г╒÷Г╘╨И√⌠Ц─┌\n"
 
 #~ msgid "Performing selection for distribution upgrade..."
-#~ msgstr "Выполняется выделение для обновления дистрибутива..."
+#~ msgstr "Ф╜ёЕ°╗Г┌╨Е┘╗И²╒Е█┤Г╢ Х┤╙Е▀∙И│╦Ф⌠┤Е╔≈Д╩╤..."
 
 #~ msgid "Selection for distribution upgrade done."
-#~ msgstr "Выделение для обновления дистрибутива завершено."
+#~ msgstr "Г┌╨Е┘╗И²╒Е█┤Г╢ Х┤╙Е▀∙И│╦Ф⌠┤Е╔≈Д╩╤Е╝▄Ф┬░Ц─┌"
 
 #~ msgid "Selection for distribution upgrade failed."
-#~ msgstr "Не удалось выполнить выделение для обновления дистрибутива."
-
-#~ msgid ""
-#~ "Upgrade every installed package to the latest version. Also include "
-#~ "upgrades depending on not yet installed packages"
-#~ msgstr ""
-#~ "Обновить все установленные пакеты до последней версии, включая обновление "
-#~ "пакетов, зависимых от ещё не установленных пакетов"
+#~ msgstr "Г┌╨Е┘╗И²╒Е█┤Г╢ Х┤╙Е▀∙И│╦Ф⌠┤Е╔≈Д╩╤Е╓╠Ф∙≈Ц─┌"
 
 #~ msgid "_Keep"
-#~ msgstr "Со_хранить"
-
-#~ msgid "Advanced _Search..."
-#~ msgstr "Расширенный п_оиск..."
+#~ msgstr "Г╤╜Ф▄│Е▌÷Г▀─(_K)"
 
 #~ msgid "Up_grade all"
-#~ msgstr "Об_новить"
+#~ msgstr "Е█┤Г╢ (_G)"
 
 #~ msgid ""
 #~ "Upgrade installed distribution, including packages with new dependencies"
-#~ msgstr ""
-#~ "Обновить установленный дистрибутив, включая пакеты с новыми зависимостями"
+#~ msgstr "Е█┤Г╢ Е╥╡Е╝┴Хё²Г └Г≥╪Х║▄Г┴┬Ф°╛О╪▄Е▄┘Ф▀╛Ф°┴Ф√╟Г⌡╦Д╬²И≈°Д©┌Г └Е╔≈Д╩╤ (apt-get dist-upgrade)"
 
 #~ msgid "_Dist Upgrade"
-#~ msgstr "_Обновить всё"
-
-#~ msgid "Advanced _Search"
-#~ msgstr "Расширенный _поиск"
-
-#~ msgid "Set generic option"
-#~ msgstr "Установить произволный параметр"
+#~ msgstr "Е┘╗И²╒Е█┤Г╢ (_D)"
 
 #~ msgid "Information"
-#~ msgstr "Информация"
+#~ msgstr "Е╔≈Д╩╤ХЁ┤Х╗┼"
 
 #~ msgid "Never upgrade this package"
-#~ msgstr "Никогда не обновлять этот пакет"
+#~ msgstr "Ф╟╦Д╦█Е█┤Г╢ Ф╜╓Е╔≈Д╩╤"
 
 #, fuzzy
 #~ msgid "Hold package"
-#~ msgstr ""
-#~ "Удержать\n"
-#~ "пакет"
-
-#~ msgid "Reconfigure"
-#~ msgstr "Перенастроить"
+#~ msgstr "Ф╟╦Д╦█Е█┤Г╢ "
 
 #~ msgid "Show Pkg Help"
-#~ msgstr "Показать помощь по пакету"
+#~ msgstr "И║╞Г╓╨Е╔≈Д╩╤Х╙╙Ф≤▌"
 
 #, fuzzy
 #~ msgid "Pkg Help"
-#~ msgstr "Показать помощь по пакету"
+#~ msgstr "И║╞Г╓╨Е╔≈Д╩╤Х╙╙Ф≤▌"
 
 #, fuzzy
 #~ msgid "Hold pkg"
-#~ msgstr ""
-#~ "Удержать\n"
-#~ "пакет"
+#~ msgstr "Ф╟╦Д╦█Е█┤Г╢ "
 
 #, fuzzy
 #~ msgid "Find Tool"
-#~ msgstr "Окно поиска"
+#~ msgstr "Е╟▀Ф┴╬Ф√┤Е╜≈:"
 
 #, fuzzy
 #~ msgid "_Apply"
-#~ msgstr "Применить"
+#~ msgstr "Е╔≈Г■╗"
 
 #, fuzzy
 #~ msgid "_Edit..."
-#~ msgstr "Изменить"
+#~ msgstr "Г╥╗Х╪╞"
 
 #, fuzzy
 #~ msgid "Pattern:"
-#~ msgstr "Шаблон"
+#~ msgstr "Ф╗ёФ²©"
 
 #, fuzzy
 #~ msgid "Show/Hide searched fields"
-#~ msgstr "Искать поля:"
+#~ msgstr "Ф░°Е╟▀Г╞╘И│╦Е≥╗"
 
 #, fuzzy
 #~ msgid "Next match"
-#~ msgstr "Нет совпадений."
+#~ msgstr "Ф╡▓Ф°┴Е▄╧И┘█Г └Е╔≈Д╩╤Ц─┌"
 
+#, fuzzy
 #~ msgid "Select none"
-#~ msgstr "Ничего не выделять"
+#~ msgstr "Е┬╙И≥╓"
 
 #, fuzzy
 #~ msgid "Decription"
-#~ msgstr "Описание"
+#~ msgstr "Е╔≈Д╩╤Ф▐▐Х©╟"
 
 #, fuzzy
 #~ msgid "Suggested or recommended"
-#~ msgstr "предлагается и рекомендуется"
+#~ msgstr "Е╩╨Х╜╟Е▓▄Ф▌╗Х√╕"
 
 #, fuzzy
 #~ msgid "includes"
-#~ msgstr "Включить"
+#~ msgstr "Е▄┘Ф▀╛"
 
 #, fuzzy
 #~ msgid "excludes"
-#~ msgstr "Исключить"
+#~ msgstr "Д╦█Е▄┘Ф▀╛"
 
+#, fuzzy
 #~ msgid "To be marked for removal"
-#~ msgstr "Отметить для удаления"
+#~ msgstr "Е╥╡Ф╗≥Х╗≤Х╕│Г╖╩И≥╓Г └Е╔≈Д╩╤"
 
+#, fuzzy
 #~ msgid "To be marked for upgrade"
-#~ msgstr "Отметить для обновления"
+#~ msgstr "Е╟┤Ф°┐Е█┤Г╢ Г └Е╔≈Д╩╤"
 
+#, fuzzy
 #~ msgid "To be marked for installation"
-#~ msgstr "Отметить для установки"
+#~ msgstr "Ф╗≥Х╗≤Е╔≈Д╩╤О╪▄И═░Е┌≥Е╝┴Хё²Ф┬√Е█┤Г╢ "
 
+#, fuzzy
 #~ msgid "Set preferences"
-#~ msgstr "Установки"
+#~ msgstr "Е│▐Е╔╫Х╗╜Е╝ "
 
 #~ msgid "Package Filters"
-#~ msgstr "Фильтры пакетов"
+#~ msgstr "Е╔≈Д╩╤Г╞╘И│╦Е≥╗"
 
+# Х╜╞Х╗╩: Do (Include|Exclude)
 #~ msgid "Do"
-#~ msgstr "Выполнить"
+#~ msgstr "И│╦Ф⌠┤..."
 
-#~ msgid "What"
-#~ msgstr "Условие"
-
-#~ msgid "OH SHIT!!"
-#~ msgstr "OH SHIT!!"
-
+#, fuzzy
 #~ msgid "Find tool"
-#~ msgstr "Окно поиска"
+#~ msgstr "Е╟▀Ф┴╬Ф√┤Е╜≈:"
 
 #~ msgid "Actions"
-#~ msgstr "Д_ействия"
+#~ msgstr "Е▀∙Д╫°"
 
+#, fuzzy
 #~ msgid "Remove with dependencies"
-#~ msgstr "Удалить учитывая зависимости"
+#~ msgstr "Г╖╩И≥╓Д╬²ХЁ╢Ф╜╓Е╔≈Д╩╤Г └Е╔≈Д╩╤"
 
 #~ msgid "All packages"
-#~ msgstr "Все пакеты"
+#~ msgstr "Е┘╗И┐╗Е╔≈Д╩╤"
 
-#~ msgid "View"
-#~ msgstr "_Вид"
-
+#, fuzzy
 #~ msgid "Expand all"
-#~ msgstr "Развернуть всё"
+#~ msgstr "Е█┤Г╢ (_G)"
 
-#~ msgid "Collapse all   "
-#~ msgstr "Свернуть всё"
-
+#, fuzzy
 #~ msgid "Section tree"
-#~ msgstr "Дерево разделов"
+#~ msgstr "Г╣└Е┬╔"
 
-#~ msgid "Alphabetic tree"
-#~ msgstr "Алфавитное дерево"
-
+#, fuzzy
 #~ msgid "Status tree"
-#~ msgstr "Дерево состояний"
+#~ msgstr "Г▀─Ф┘▀"
 
 #~ msgid "_Settings"
-#~ msgstr "_Установки"
+#~ msgstr "Х╗╜Е╝ (_S)"
 
-#~ msgid "Set _generic option"
-#~ msgstr "Установить _произвольный параметр"
-
-#~ msgid "Pixmaps"
-#~ msgstr "Иконки"
-
+#, fuzzy
 #~ msgid "Text"
-#~ msgstr "Текст"
-
-#~ msgid "Both"
-#~ msgstr "Иконки и текст"
+#~ msgstr "Ф┴╬Д╦▀Д╦─Е─▀"
 
 #~ msgid "About..."
-#~ msgstr "О программе..."
+#~ msgstr "И≈°Ф√╪..."
 
 #~ msgid "_Proceed"
-#~ msgstr "_Выполнить"
+#~ msgstr "И─╡Х║▄(_P)"
 
 #~ msgid "Select package filter"
-#~ msgstr "Выбрать фильтр пакетов"
+#~ msgstr "И│╦Ф⌠┤Е╔≈Д╩╤Г╞╘И│╦Е≥╗"
 
 #~ msgid "Open package filter editor"
-#~ msgstr "Открыть редактор фильтра пакетов"
+#~ msgstr "И√▀Е∙÷Е╔≈Д╩╤Г╞╘И│╦Г╥╗Х╪╞Е≥╗"
 
 #~ msgid "What it depends on"
-#~ msgstr "От чего зависит"
+#~ msgstr "Ф┴─Д╬²ХЁ╢Г └Е╔≈Д╩╤"
 
 #~ msgid "What depends on it"
-#~ msgstr "Что от него зависит"
+#~ msgstr "Д╬²ХЁ╢Ф╜╓Е╔≈Д╩╤Г └Е┘╤Д╩√Е╔≈Д╩╤"
 
 #~ msgid "What it would depend on"
-#~ msgstr "От чего будет зависеть"
+#~ msgstr "Е╝┐Ф°┐Д╬²ХЁ╢Г └Е╔≈Д╩╤"
 
+#, fuzzy
 #~ msgid "What it provides"
-#~ msgstr "Предоставляет"
+#~ msgstr "Ф▐░Д╬⌡"
 
 #~ msgid ""
 #~ "Keep selected package as is in the system, unmarking selections over it"
-#~ msgstr "Сохранить выбранные пакеты в системе, сняв с них выделение"
+#~ msgstr "Ф┼┼Е╥╡И│╦Г └Е╔≈Д╩╤Г╤╜Ф▄│Е▌÷Г▀─О╪▄Е▐√Ф╤┬Е╥╡Ф°┴Г └И│╦Ф⌠┤Ф╗≥Х╗≤"
 
 #~ msgid "Mark selected package for installation/upgrade"
-#~ msgstr "Пометить выбранные пакеты для установки/обновления"
+#~ msgstr "Ф╗≥Х╗≤Е╔≈Д╩╤О╪▄И═░Е┌≥Е╝┴Хё²Ф┬√Е█┤Г╢ "
 
 #~ msgid "Mark selected package for removal from system"
-#~ msgstr "Пометить выбранные пакеты для удаления из системы"
+#~ msgstr "Ф╗≥Х╗≤Е╔≈Д╩╤О╪▄И═░Е┌≥Е╬·ГЁ╩Г╣╠Г╖╩И≥╓"
 
+#, fuzzy
 #~ msgid ""
 #~ "\n"
 #~ "Copyright (c) 2001-2003 Conectiva S/A\n"
@@ -3470,247 +3420,186 @@ msgstr "Программа управления пакетами Synaptic"
 #~ "GNU General Public License, Version 2\n"
 #~ msgstr ""
 #~ "\n"
-#~ "Copyright (c) 2001-2003 Conectiva S/A\n"
-#~ "Copyright (c) 2002,2003 Michael Vogt\n"
+#~ "Г┴┬Ф╛┼Ф┴─Ф°┴ (c) 2001 Alfredo K. Kojima\n"
+#~ "Ц──Ц──Ц──Ц── (c) 2002, 2003 Michael Vogt\n"
 #~ "\n"
-#~ "Авторы:\n"
-#~ "Alfredo K. Kojima <kojima@windowmaker.org>\n"
-#~ "Gustavo Niemeyer <niemeyer@conectiva.com>\n"
-#~ "Michael Vogt <mvo@debian.org>\n"
+#~ "Д╫°Х─┘О╪ Alfredo K. Kojima <kojima@windowmaker.org>\n"
+#~ "Ц──Ц──Ц──Gustavo Niemeyer <niemeyer@conectiva.com>\n"
+#~ "Ц──Ц──Ц──Michael Vogt <mvo@debian.org> \n"
 #~ "\n"
-#~ "Дополнительная информация по адресу http://www.nongnu.org/synaptic\n"
+#~ "Е°√Г╓╨Е╬· KDE Е▐√Е╬≈О╪▄Х╛╧Ф╜╓Х┤╢Х╛²Ц─┌\n"
+#~ "APT Е╬▄Г╚╞О╪ Jason Gunthorpe <jgg@debian.org>\n"
+#~ "Д╦╜Ф√┤Д╩▀И²╒О╪ Е█ЁФ≥┌ГЁ╩Г╣╠Г╖▒Г═■Ф°┴И≥░Е┘╛Е▐╦ ThizLinux Laboratory Ltd.\n"
 #~ "\n"
-#~ "This software is licensed under the terms of the\n"
-#~ "GNU General Public License, Version 2\n"
+#~ "Ф°╛Х╩÷Д╩╤Ф≤╞Д╩╔ GNU И─ Г■╗Е┘╛Е┘╠Х╗╠Е▐╞Х╜┴ (Г╛╛Д╨▄Г┴┬) Г └Ф╒²Ф╛╬Г≥╪Х║▄Г └Ц─┌\n"
 
 #~ msgid "Cache"
-#~ msgstr "Кэш"
+#~ msgstr "Г╥╘Х║²Е█─"
 
-# This is filter name, it's better to not translate it
 #, fuzzy
 #~ msgid "stable"
-#~ msgstr "Установленные"
+#~ msgstr "Е╥╡Е╝┴Хё²"
 
 #, fuzzy
 #~ msgid "testing"
-#~ msgstr "_Установки"
+#~ msgstr "Х╗╜Е╝ (_S)"
 
-# This is filter name, it's better to not translate it
 #, fuzzy
 #~ msgid "unstable"
-#~ msgstr "Установленные"
+#~ msgstr "Е╥╡Е╝┴Хё²"
 
-#~ msgid ""
-#~ "The selected package couldn't be installed/upgraded.\n"
-#~ "\n"
-#~ "This is most probably caused by unmet dependencies that are not available "
-#~ "in any repository."
-#~ msgstr ""
-#~ "Выбранный пакет не может быть установлен/обновлён.\n"
-#~ "\n"
-#~ "Это может происходить из-за неудовлетворённых зависимостей на пакеты,\n"
-#~ "которые не доступны ни в одном репозитории."
-
+#, fuzzy
 #~ msgid ""
 #~ "There are unsaved changes. Are you sure\n"
 #~ "you want to quit Synaptic?"
-#~ msgstr ""
-#~ "Некоторые изменения не сохранены. Вы уверены, что\n"
-#~ "желаете выйти из Synaptic?"
-
-#~ msgid " Processed by using Prefix '"
-#~ msgstr " Обраотан с использованием префикса '"
-
-#~ msgid "' and chop "
-#~ msgstr "' и усечён "
-
-#~ msgid " records"
-#~ msgstr "  пакетов"
-
-#~ msgid " with "
-#~ msgstr " с "
-
-#~ msgid " missing files"
-#~ msgstr " недостающими файлами"
-
-#~ msgid " and"
-#~ msgstr " и"
-
-#~ msgid " mismatched files"
-#~ msgstr " несовпадающими файлами"
-
-#~ msgid "Failed, "
-#~ msgstr "Ошибка, "
-
-#~ msgid "    Version"
-#~ msgstr "    Версия"
-
-#~ msgid "    Size"
-#~ msgstr "    Размер"
+#~ msgstr "Х╝┼Ф⌡╢Е╟ Ф°╙Е└╡Е╜≤О╪▄Ф┌╗Г╒╨Е╝ Х╕│И⌡╒И√▀ Synaptic Е≈▌?"
 
 #, fuzzy
-#~ msgid "Text: "
-#~ msgstr "Текст"
+#~ msgid "Failed, "
+#~ msgstr "Е╓╠Ф∙≈"
+
+#~ msgid "    Version"
+#~ msgstr "    Ц──Ц──Г┴┬Ф°╛"
+
+#~ msgid "    Size"
+#~ msgstr "    Е╝┴Хё²Е╓╖Е╟▐"
 
 #, fuzzy
 #~ msgid "<b>Included fields</b>"
-#~ msgstr "Включённые теги"
+#~ msgstr "Е▄┘Ф▀╛"
 
 #~ msgid "Purge"
-#~ msgstr "Очистить"
+#~ msgstr "Е╬╧Е╨∙И▐÷И≥╓ (Purge)"
 
 #, fuzzy
 #~ msgid "_Open Selection"
-#~ msgstr "_Сохранить состояние выделений"
+#~ msgstr "Г╣└Е┬╔"
 
 #, fuzzy
 #~ msgid "_Save Selection"
-#~ msgstr "_Сохранить состояние выделений"
-
-#, fuzzy
-#~ msgid "Save Selection _As"
-#~ msgstr "Сохранить состояние выделений _как..."
+#~ msgstr "Г╣└Е┬╔"
 
 #, fuzzy
 #~ msgid "Update Package Cache"
-#~ msgstr "Получить сведения о пакетах"
+#~ msgstr "Ф⌡╢Ф√╟Е╔≈Д╩╤Ф╦┘Е√╝Г╥╘Х║²Е█─ (apt-get update)"
 
 #, fuzzy
 #~ msgid "Pa_ckage"
-#~ msgstr "Пакет"
+#~ msgstr "Е╔≈Д╩╤"
 
-#, fuzzy
 #~ msgid "_Update"
-#~ msgstr "Обновить"
+#~ msgstr "Ф⌡╢Ф√╟Ф╦┘Е√╝(_U)"
 
 #, fuzzy
 #~ msgid "Up_grade All"
-#~ msgstr "Об_новить"
+#~ msgstr "Е█┤Г╢ (_G)"
 
 #, fuzzy
 #~ msgid "Search: "
-#~ msgstr "Поис_к"
+#~ msgstr "Ф░°Е╟▀"
 
 #, fuzzy
 #~ msgid "Open the filter editor"
-#~ msgstr "Открыть редактор фильтра пакетов"
+#~ msgstr "И√▀Е∙÷Е╔≈Д╩╤Г╞╘И│╦Г╥╗Х╪╞Е≥╗"
 
 #, fuzzy
 #~ msgid "Suggested and Recommended Packages"
-#~ msgstr "предлагается и рекомендуется"
+#~ msgstr "Е╩╨Х╜╟Е▓▄Ф▌╗Х√╕"
 
 #, fuzzy
-#~ msgid "Use terminal window when running the package manager"
-#~ msgstr "Использовать окно терминала при запуске менеджера пакетов."
-
-#~ msgid "Ask to quit after proceeding"
-#~ msgstr "Подтверждать выход после обработки"
-
 #~ msgid "Delete with dependencies"
-#~ msgstr "Удалить учитывая зависимости"
+#~ msgstr "Г╖╩И≥╓Д╬²ХЁ╢Ф╜╓Е╔≈Д╩╤Г └Е╔≈Д╩╤"
 
 #, fuzzy
-#~ msgid "Ask when more packages are going to be affected by some action"
-#~ msgstr ""
-#~ "Спрашивать, когда дополнительные пакеты будут затронуты\n"
-#~ "при выполнении некоторых действий."
-
 #~ msgid "Automatically select recommended packages on actions"
-#~ msgstr "Автоматически выделять рекомендуемые пакеты."
+#~ msgstr "Х┤╙Е▀∙И│╦Ф⌠┤Е▐╞Е█┤Г╢ Е╔≈Д╩╤Е╝▄Ф┬░Ц─┌"
 
+#, fuzzy
 #~ msgid "Use colors in main package list"
-#~ msgstr "Использовать цвета в основном списке пакетов"
-
-#~ msgid "Filter Manager"
-#~ msgstr "Менеджер фильтров"
+#~ msgstr ""
+#~ "Е╔≈Д╩╤Д╦╩Ф╦┘Е√╝Д╫©Г■╗Х┴╡Е╫╘Х║╗Г╓╨\n"
+#~ "(Х╕│И┤█Ф√╟Е∙÷Е▀∙Г╗▀Е╪▐Е╬▄Ф┴█Г■÷Ф∙┬)"
 
 #~ msgid "by Section"
-#~ msgstr "по разделам"
+#~ msgstr "Ф▄┴Г╣└Е┬╔Г╞╘И│╦"
 
+#, fuzzy
 #~ msgid "Include packages that are ..."
-#~ msgstr "Включать пакеты, которые..."
+#~ msgstr "Е▄┘Ф▀╛Д╩╔Д╦▀Г▀─Ф┘▀Г └Е╔≈Д╩╤..."
 
+#, fuzzy
 #~ msgid "Marked to keep"
-#~ msgstr "Отмеченные для сохранения"
+#~ msgstr "Е╥╡Ф╗≥Х╗≤Х╕│Д©²Г∙≥Г └Е╔≈Д╩╤"
 
 #~ msgid "Marked to Install/Upgrade"
-#~ msgstr "Отмеченные для установки/обновления"
+#~ msgstr "Е╥╡Ф╗≥Х╗≤Х╕│Е╝┴Хё²Ф┬√Е█┤Г╢ Г └Е╔≈Д╩╤"
 
+#, fuzzy
 #~ msgid "Marked to remove"
-#~ msgstr "Отмеченные для удаления"
+#~ msgstr "Е╥╡Ф╗≥Х╗≤Х╕│Г╖╩И≥╓Г └Е╔≈Д╩╤"
 
+#, fuzzy
 #~ msgid "Packages that are broken"
-#~ msgstr "\"Сломанные\" пакеты"
+#~ msgstr "Ф╜╓Е╔≈Д╩╤Ф°╙Е╝▄Ф∙╢Е╝┴Хё²Ц─┌"
 
 #~ msgid "by Status"
-#~ msgstr "по состоянию"
+#~ msgstr "Ф▄┴Г▀─Ф┘▀Г╞╘И│╦"
 
-#~ msgid "in Version"
-#~ msgstr "в версии"
-
+#, fuzzy
 #~ msgid "in decription"
-#~ msgstr "в описании"
+#~ msgstr "Ф▐▐Х©╟Г┌╨"
 
-#~ msgid "in Maintainer"
-#~ msgstr "в поле \"Мэйнтейнер\""
-
+#, fuzzy
 #~ msgid "depends on"
-#~ msgstr "Зависят от"
+#~ msgstr "Д╬²ХЁ╢Е╔≈Д╩╤Г┌╨"
 
+#, fuzzy
 #~ msgid "provides"
-#~ msgstr "Предоставляют"
+#~ msgstr "Ф▐░Д╬⌡"
 
+#, fuzzy
 #~ msgid "conflicts with"
-#~ msgstr "Конфликтуют с"
+#~ msgstr "Д╦█Г⌡╦Е╝╧Е╔≈Д╩╤Г┌╨"
 
+#, fuzzy
 #~ msgid "relaces"
-#~ msgstr "Заменяют"
+#~ msgstr "Е▐√Д╩ё"
 
+#, fuzzy
 #~ msgid "suggests or recommends"
-#~ msgstr "Предлагают или рекомендуют"
+#~ msgstr "Е╩╨Х╜╟Ф┬√Ф▌╗Х√╕Г └Е╔≈Д╩╤Г┌╨"
 
 #~ msgid "by Package"
-#~ msgstr "по пакетам"
+#~ msgstr "Ф▄┴Е╔≈Д╩╤ХЁ┤Х╗┼Г╞╘И│╦"
 
+#, fuzzy
 #~ msgid "by Tags"
-#~ msgstr "по тегам"
-
-#~ msgid "Change View for this filter:"
-#~ msgstr "Изменить вид для этого фильтра:"
-
-#~ msgid "Change View: "
-#~ msgstr "Изменить вид: "
-
-#~ msgid "Manipulate Tree: "
-#~ msgstr "Изменить дерево: "
-
-#~ msgid "View Mode"
-#~ msgstr "Вид"
+#~ msgstr "Ф▄┴Г▀─Ф┘▀Г╞╘И│╦"
 
 #~ msgid ""
 #~ "\n"
 #~ "in drive "
 #~ msgstr ""
 #~ "\n"
-#~ "в дисковод "
+#~ "Г └Е┘┴Г╒÷Ф▐▓Е┘╔Е┘┴Г╒÷Ф╘÷ "
 
 #~ msgid "used"
-#~ msgstr "использовано"
+#~ msgstr "Д╫©Г■╗"
 
 #~ msgid "Not Relevant"
-#~ msgstr "Не уместный"
+#~ msgstr "Г└║И≈°Д©┌"
 
 #~ msgid "Possible"
-#~ msgstr "Возможен"
+#~ msgstr "Е▐╞Д╩╔"
 
 #~ msgid "Package Upgrade"
-#~ msgstr "Обновление пакета"
+#~ msgstr "Е█┤Г╢ Е╔≈Д╩╤"
 
 #~ msgid "    Importance"
-#~ msgstr "    Важность"
+#~ msgstr "    И┤█Х╕│Ф─╖"
 
 #~ msgid "    Date"
-#~ msgstr "    Дата"
+#~ msgstr "    Ц──Ф≈╔Ф°÷"
 
 #~ msgid ""
 #~ "Copyright (c) 2001 Conectiva S/A\n"
@@ -3722,242 +3611,295 @@ msgstr "Программа управления пакетами Synaptic"
 #~ "This software is licensed under the terms of the\n"
 #~ "GNU General Public License, Version 2"
 #~ msgstr ""
-#~ "Copyright (c) 2001 Conectiva S/A\n"
+#~ "Г┴┬Ф╛┼Ф┴─Ф°┴ (c) 2001 Conectiva S/A\n"
 #~ "\n"
-#~ "Author: Alfredo K. Kojima <kojima@conectiva.com.br>\n"
-#~ "Icons shamelessly ripped from KDE\n"
-#~ "APT backend: Jason Gunthorpe <jgg@debian.org>\n"
+#~ "Д╫°Х─┘: Alfredo K. Kojima <kojima@conectiva.com.br>\n"
+#~ "Е°√Г╓╨Д╧┐Е╬· KDE И╘∙Е┌╡Е°╟Е▐√Е╬≈\n"
+#~ "APT Е╬▄Г╚╞: Jason Gunthorpe <jgg@debian.org>\n"
+#~ "Д╦╜Ф√┤Е▄√: Е█ЁФ≥┌ГЁ╩Г╣╠Г╖▒Г═■Ф°┴И≥░Е┘╛Е▐╦\n"
 #~ "\n"
-#~ "This software is licensed under the terms of the\n"
-#~ "GNU General Public License, Version 2"
+#~ "Ф°╛Х╩÷Д╩╤Ф≤╞Д╩╔ GNU И─ Г■╗Е┘╛Е┘╠Х╗╠Е▐╞Х╜┴ (Г╛╛Д╨▄Г┴┬) Г └Ф╒²Ф╛╬Г≥╪Х║▄Г └Ц─┌"
 
 #~ msgid "Dismiss"
-#~ msgstr "Отменить"
+#~ msgstr "И≈°И√┴"
 
 #~ msgid "Error"
-#~ msgstr "Ошибка"
+#~ msgstr "И▄╞Х╙╓"
 
 #~ msgid ""
 #~ "Use text-only buttons in main window\n"
 #~ "(requires a restart to take effect)"
 #~ msgstr ""
-#~ "Использовать только текстовые кнопки в главном окне\n"
-#~ "(требует перезапуска для вступления в силу)"
+#~ "Д╦╩Х╕√Г╙≈Д╫©Г■╗Г╢■Ф√┤Е╜≈Ф▄┴И┬∙\n"
+#~ "(Х╕│И┤█Ф√╟Е∙÷Е▀∙Г╗▀Е╪▐Е╬▄Ф┴█Г■÷Ф∙┬)"
 
 #~ msgid "Options"
-#~ msgstr "Параметры"
+#~ msgstr "И│╦И═┘"
 
 #~ msgid "Delete obsoleted packages from cache"
-#~ msgstr "Удалить устаревшие пакеты из кэша"
+#~ msgstr "Е┬╙И≥╓Е°╗Г╥╘Х║²Е█─Хё▐Е╓╙Х┬┼Г └Е╔≈Д╩╤"
 
 #~ msgid "Close"
-#~ msgstr "Закрыть"
+#~ msgstr "И≈°И√┴"
 
 #~ msgid "Save"
-#~ msgstr "Сохранить"
+#~ msgstr "Е└╡Е╜≤"
 
 #~ msgid "Disk Change"
-#~ msgstr "Смена диска"
-
-#~ msgid "Continue"
-#~ msgstr "Продолжить"
+#~ msgstr "Ф⌡╢Ф▐⌡Е┘┴Г╒÷"
 
 #~ msgid "Include Only Selected Sections"
-#~ msgstr "Включать только выбранные разделы"
+#~ msgstr "Е▐╙Е▄┘Ф▀╛Е╥╡И│╦Г └Г╣└Е┬╔"
 
 #~ msgid "Include packages that are..."
-#~ msgstr "Включать пакеты, которые..."
+#~ msgstr "Е▄┘Ф▀╛Д╩╔Д╦▀Г▀─Ф┘▀Г └Е╔≈Д╩╤..."
 
 #~ msgid "Installed and Upgradable"
-#~ msgstr "Установленные и обновляемые"
+#~ msgstr "Е╥╡Е╝┴Хё²Д╦╕Е▐╞Е█┤Г╢ Г └Е╔≈Д╩╤"
 
 #~ msgid "Marked to Keep"
-#~ msgstr "Отмеченные для сохранения"
+#~ msgstr "Е╥╡Ф╗≥Х╗≤Х╕│Д©²Г∙≥Г └Е╔≈Д╩╤"
 
 #~ msgid "Marked to Remove"
-#~ msgstr "Отмеченные для удаления"
+#~ msgstr "Е╥╡Ф╗≥Х╗≤Х╕│Г╖╩И≥╓Г └Е╔≈Д╩╤"
 
 #~ msgid "are Named"
-#~ msgstr "Называются"
+#~ msgstr "Е░█Г╗╠Г┌╨"
 
 #~ msgid "in Description"
-#~ msgstr "в описании"
+#~ msgstr "Ф▐▐Х©╟Г┌╨"
 
 #~ msgid "Depends on"
-#~ msgstr "Зависят от"
+#~ msgstr "Д╬²ХЁ╢Е╔≈Д╩╤Г┌╨"
 
 #~ msgid "Conflicts with"
-#~ msgstr "Конфликтуют с"
+#~ msgstr "Д╦█Г⌡╦Е╝╧Е╔≈Д╩╤Г┌╨"
 
 #~ msgid "Suggests"
-#~ msgstr "Предлагает"
+#~ msgstr "Е╩╨Х╜╟"
 
 #~ msgid "Excl."
-#~ msgstr "Исключая"
+#~ msgstr "Д╦█Е▄┘Ф▀╛"
 
 #~ msgid "Packages that"
-#~ msgstr "Пакеты, которые"
+#~ msgstr "Е╔≈Д╩╤Г └..."
 
 #~ msgid "Set"
-#~ msgstr "Установить"
+#~ msgstr "Х╗╜Е╝ "
 
 #~ msgid "Package Listing Filter  -  "
-#~ msgstr "Фильтр списка пакетов  -  "
+#~ msgstr "Е╔≈Д╩╤Ф╦┘Е√╝Г╞╘И│╦Е≥╗  -  "
 
 #~ msgid "No match."
-#~ msgstr "Нет совпадений."
+#~ msgstr "Ф╡▓Ф°┴Е▄╧И┘█Г └Е╔≈Д╩╤Ц─┌"
 
 #~ msgid "No more matches."
-#~ msgstr "Нет больше совпадений."
+#~ msgstr "Ф╡▓Ф°┴Е┘╤Д╩√Е▄╧И┘█Г └Е╔≈Д╩╤Ц─┌"
 
 #~ msgid "Ok"
-#~ msgstr "Ok"
+#~ msgstr "Г╒╨Е╝ "
 
 #~ msgid ""
 #~ "Performing selected changes... See the terminal from where you started "
 #~ "Synaptic for more information."
 #~ msgstr ""
-#~ "Выполняются выбранные изменения... Дополнительную информацию Вы можете "
-#~ "увидеть в терминале, из которого запущен Synaptic."
+#~ "Ф╜ёЕ°╗И─╡Х║▄Е╥╡И│╦Г └Ф⌡╢Ф■╧... Х╚▀Х╕▀Ф┌╗И√▀Е∙÷ Synaptic Г └Г╣┌Г╚╞Ф╘÷О╪▄Д╩╔Е▐√Е╬≈Ф⌡╢Е╓ ХЁ┤Х╗┼Ц─┌"
 
 #~ msgid "Warning"
-#~ msgstr "Предупреждение"
+#~ msgstr "Х╜╕Е▒┼"
+
+#~ msgid "Update"
+#~ msgstr "Ф⌡╢Ф√╟Ф╦┘Е√╝"
 
 #~ msgid "Fix Broken"
-#~ msgstr "Исправить"
+#~ msgstr "Д©╝Ф╜ёЕ∙▐И║▄"
 
 #~ msgid "Fix dependency problems"
-#~ msgstr "Исправить проблемы в зависимостях"
+#~ msgstr "Д©╝Ф╜ёЕ╔≈Д╩╤Г⌡╦Д╬²И≈°Д©┌Г └Е∙▐И║▄"
 
 #~ msgid "DistUpgrade"
-#~ msgstr ""
-#~ "Обновить\n"
-#~ "дистрибутив"
+#~ msgstr "Е┘╗И²╒Е█┤Г╢ "
 
 #~ msgid "Proceed!"
-#~ msgstr "Выполнить!"
+#~ msgstr "И─╡Х║▄О╪│"
 
 #~ msgid "Configure Synaptic options"
-#~ msgstr "Настроить Synaptic"
+#~ msgstr "Х╗╜Е╝  Synaptic И│╦И═┘"
 
 #~ msgid "No automatic upgrade (hold)"
-#~ msgstr "Не обновлять автоматически (удержать)"
+#~ msgstr "Д╦█Х┤╙Е▀∙Е█┤Г╢  (Д©²Г∙≥Х┬┼Г┴┬)"
 
 #~ msgid "Descr."
-#~ msgstr "Описание"
+#~ msgstr "Ф▐▐Х©╟"
 
 #~ msgid "Depends."
-#~ msgstr "Зависимости"
+#~ msgstr "Д╬²ХЁ╢"
 
 #~ msgid "Remove With Dependencies"
-#~ msgstr "Удалить вместе с зависимостями"
+#~ msgstr "Г╖╩И≥╓Д╬²ХЁ╢Ф╜╓Е╔≈Д╩╤Г └Е╔≈Д╩╤"
 
 #~ msgid "Remove all packages that this one depends on"
-#~ msgstr "Удалить все пакеты, от которых зависит этот"
+#~ msgstr "Д╦─Д╫╣Е┘╗И┐╗Г╖╩И≥╓Д╬²ХЁ╢Ф╜╓Е╔≈Д╩╤Г └Е╔≈Д╩╤"
 
 #~ msgid "Install Recommended"
-#~ msgstr "Установить рекомендуемое"
+#~ msgstr "Е╝┴Хё²Ф▌╗Х√╕Е╔≈Д╩╤"
 
 #~ msgid "Install Suggested"
-#~ msgstr "Установить предлагаемое"
+#~ msgstr "Е╝┴Хё²Е╩╨Х╜╟Е╔≈Д╩╤"
 
 #~ msgid "Install Selected"
-#~ msgstr "Установить выбранное"
+#~ msgstr "Е╝┴Хё²Е╥╡И│╦Е╔≈Д╩╤"
 
 #~ msgid "Switch to package search panel"
-#~ msgstr "Переключиться на панель поиска пакетов"
+#~ msgstr "Е┬┤Ф▐⌡Х┤ЁЕ╔≈Д╩╤Ф░°Е╟▀И²╒Ф²©"
 
 #~ msgid "Switch to package filter panel"
-#~ msgstr "Переключиться на панель фильтра пакетов"
+#~ msgstr "Е┬┤Ф▐⌡Х┤ЁЕ╔≈Д╩╤Г╞╘И│╦И²╒Ф²©"
 
 #~ msgid "Next"
-#~ msgstr "Следующий"
+#~ msgstr "Ф┴╬Д╦▀Д╦─Е─▀"
 
 #~ msgid "Find next package matching pattern"
-#~ msgstr "Найти следующий пакет, удовлетворяющий шаблону"
+#~ msgstr "Ф┴╬Д╦▀Д╦─Е─▀Г╛╕Е░┬Ф╗ёЕ╪▐Г └Е╔≈Д╩╤"
 
 #~ msgid "To Filter"
-#~ msgstr "К фильтру"
+#~ msgstr "Е┬╟Г╞╘И│╦Е≥╗"
 
 #~ msgid ""
 #~ "Make a filter in 'Search Filter' showing all packages matching the pattern"
-#~ msgstr ""
-#~ "Создать фильтр 'Search Filter', отображающий все пакеты, удовлетворяющие "
-#~ "шаблону"
+#~ msgstr "Е°╗Ц─▄Ф░°Е╟▀Г╞╘И│╦Е≥╗Ц─█Хё╫Д╫°Г╞╘И│╦Е≥╗О╪▄И║╞Г╓╨Ф┴─Ф°┴Е▄╧И┘█Ф╗ёФ²©Г └Е╔≈Д╩╤"
 
 #~ msgid ""
 #~ "There are unsaved changes, are you sure\n"
 #~ "you want to quit Synaptic?"
-#~ msgstr ""
-#~ "Некоторые изменения не сохранены, Вы уверены, что\n"
-#~ "желаете выйти из Synaptic?"
+#~ msgstr "Х╝┼Ф⌡╢Е╟ Ф°╙Е└╡Е╜≤О╪▄Ф┌╗Г╒╨Е╝ Х╕│И⌡╒И√▀ Synaptic Е≈▌?"
 
 #~ msgid "Components"
-#~ msgstr "Компоненты"
+#~ msgstr "Е┘┐Д╩╤"
 
 #~ msgid "Add Repository"
-#~ msgstr "Добавить репозиторий"
-
-#~ msgid "Setup Package Repositories (still not working!)"
-#~ msgstr "Настроить репозитории пакетов (всё ещё не работает!)"
-
-#~ msgid "BUFFER OVERFLOW DETECTED, ABORTING"
-#~ msgstr "ОБНАРУЖЕНО ПЕРЕПОЛНЕНИЕ БУФЕРА, ПРЕРЫВАЕМ РАБОТУ"
+#~ msgstr "Ф√╟Е╒·Е╔≈Д╩╤Е╨╚"
 
 #~ msgid "WARNING!!!"
-#~ msgstr "ВНИМАНИЕ!!!"
+#~ msgstr "Х╜╕Е▒┼!!!"
 
 #~ msgid "Proceed System Breakage"
-#~ msgstr "Выполнить ломку системы"
+#~ msgstr "Г╒╨Е╝ Ф░≈Её·ГЁ╩Г╣╠"
 
 #~ msgid ":could not open display"
-#~ msgstr ":невозможно открыть дисплей"
+#~ msgstr ":Г└║ФЁ∙И√▀Е∙÷И║╞Г╓╨"
 
+#, fuzzy
 #~ msgid "Description "
-#~ msgstr "Описание "
-
-#~ msgid "<b><u>Position (use -1 to disable)</u></b>"
-#~ msgstr "<b><u>Позиция (используйте -1 чтобы не отображать)</u></b>"
+#~ msgstr "Е╔≈Д╩╤Ф▐▐Х©╟"
 
 #~ msgid ""
 #~ "There are unsaved changes.\n"
 #~ "Synaptic must reopen its cache.\n"
 #~ "Your changes will be lost. Are you sure?"
 #~ msgstr ""
-#~ "Существуют несохранённые изменения.\n"
-#~ "Synaptic должен переоткрыть кэш.\n"
-#~ "Ваши изменения будут потеряны. Вы уверены?"
+#~ "Х╝┼Ф⌡╢Е╟ Ф°╙Е└╡Е╜≤Ц─┌\n"
+#~ "Synaptic Е©┘И═┬И┤█Ф√╟И√▀Е∙÷Е╝┐Г └Г╥╘Х║²Е█─Ц─┌\n"
+#~ "Ф┌╗Ф┴─Е│ Г └Х╝┼Ф⌡╢Е╟┤Ф°┐И│╨Е╓╠Ц─┌Ф┌╗Г╒╨Е╝ Х╕│И─≥Ф╗ёЕ│ Е≈▌О╪÷"
 
-#~ msgid ""
-#~ "\n"
-#~ "This operation requires the following changes.\n"
-#~ msgstr ""
-#~ "\n"
-#~ "Эта операция требует следующих изменений.\n"
-
+#, fuzzy
 #~ msgid "Find Name"
-#~ msgstr "Найти имя"
+#~ msgstr "Е╟▀Ф┴╬Е╔≈Д╩╤"
 
+#, fuzzy
 #~ msgid "Find Description"
-#~ msgstr "Найти описание"
-
-#~ msgid "Debconf "
-#~ msgstr "Debconf "
+#~ msgstr "Ф▐▐Х©╟Г┌╨"
 
 #~ msgid "The list of sources could not be read."
-#~ msgstr "Невозможно прочитать список исходных пакетов."
+#~ msgstr "Г└║ФЁ∙Х╝─Е▐√Е╔≈Д╩╤Д╬├Ф╨░Ф╦┘Е√╝"
 
 #~ msgid "Invalid URL"
-#~ msgstr "Неверный URL"
+#~ msgstr "Г└║Ф∙┬Г └ URL"
+
+#, fuzzy
+#~ msgid "Exapnd all"
+#~ msgstr "Е█┤Г╢ (_G)"
+
+#~ msgid "Use text-only buttons in main window"
+#~ msgstr "Д╦╩Х╕√Г╙≈Хё▐Д╫©Г■╗Г └Ф▄┴И┬∙Е┐┘И║╞Г╓╨Ф√┤Е╜≈"
+
+#, fuzzy
+#~ msgid "MKeepColor"
+#~ msgstr "Х┴╡Е╫╘"
+
+#, fuzzy
+#~ msgid "MInstallColor"
+#~ msgstr "Е╝┴Хё²"
+
+#, fuzzy
+#~ msgid "MUpgradeColor"
+#~ msgstr "Е█┤Г╢ "
+
+#, fuzzy
+#~ msgid "MRemoveColor"
+#~ msgstr "Г╖╩И≥╓"
+
+#, fuzzy
+#~ msgid "MHeldColor"
+#~ msgstr "Х┴╡Е╫╘"
+
+#, fuzzy
+#~ msgid "MBrokenColor"
+#~ msgstr "Е╝┴Хё²Д╦█Е╝▄Ф∙╢"
+
+#, fuzzy
+#~ msgid "MPinColor"
+#~ msgstr "Х┴╡Е╫╘"
+
+#~ msgid "_Next"
+#~ msgstr "Ф┴╬Д╦▀Д╦─Е─▀(_N)"
+
+#~ msgid "To filter"
+#~ msgstr "Д╩╔Д╫°Г╞╘И│╦"
+
+#~ msgid "Could not mount CD-ROM"
+#~ msgstr "Г└║ФЁ∙Хё²Х╪┴ CD-ROM..."
+
+#~ msgid "Error Scanning Disc"
+#~ msgstr "Ф▌┐Ф▐▐Е┘┴Г╒÷Ф≥┌Е┤╨Г▐╬И▄╞Х╙╓"
+
+#~ msgid "Could not change directory to %s"
+#~ msgstr "Г└║ФЁ∙Ф┼┼Г⌡╝И▄└Х╝┼Ф⌡╢Г┌╨ %s"
+
+#~ msgid "_DistUpgrade"
+#~ msgstr "Е┘╗И²╒Е█┤Г╢ (_D)"
+
+#~ msgid "_Proceed!"
+#~ msgstr "И─╡Х║▄(_P)!"
+
+#~ msgid "Manage package repositories"
+#~ msgstr "Г╝║Г░├Е╔≈Д╩╤Ф╙■Ф║┬Е╨╚"
 
 #~ msgid ""
-#~ "More than 2000 pkg will be displayed. \n"
-#~ " The list is rather slow to display them. Are you sure?"
+#~ "\n"
+#~ "Summary of the changes\n"
 #~ msgstr ""
-#~ "Более 2000 пакетов будет показано.\n"
-#~ "Список слишком медленный, чтобы отобразить их. Вы уверены?"
+#~ "\n"
+#~ "Х╝┼Ф⌡╢Ф▒≤Х╕│\n"
 
-#~ msgid "Exapnd all"
-#~ msgstr "Развернуть всё"
+#~ msgid "Perform package download only"
+#~ msgstr "Е▐╙Д╦▀Х╪┴Е╔≈Д╩╤О╪▄Д╦█Е╝┴Хё²"
 
+#~ msgid "dpkg is running"
+#~ msgstr "dpkg Е÷╥Х║▄Д╦╜"
 
+#~ msgid "Could not retrieve digitally signed hash file"
+#~ msgstr "Г└║ФЁ∙Е▐√Е╬≈Ф∙╦Г╒╪Г╟╫Е░█Г └ hash Ф╙■Ф║┬"
+
+#~ msgid ""
+#~ "Some of the signed hash files could not be retrieved. Aborting update."
+#~ msgstr "Ф°╙Х┐╫Е▐√Е╬≈Д╦─Д╨⌡Е╥╡Г╟╫Е░█Г └ hash Ф╙■Ф║┬Ц─┌Д╦╜Ф╜╒Ф⌡╢Ф√╟Ц─┌"
+
+#~ msgid "Some of the index files had mismatching MD5 sums!"
+#~ msgstr "Д╦─Д╨⌡Г╢╒Е╪∙Ф╙■Ф║┬Г └ MD5 Е▓▄Д╦█Г⌡╦Г╛╕О╪│"
+
+#~ msgid " will not be authenticated."
+#~ msgstr " Д╦█Ф°┐Х╒╚Х╙█Х╜┴Ц─┌"
+
+#~ msgid "Dependents"
+#~ msgstr "Д╬²ХЁ╢Ф╜╓Е╔≈Д╩╤Г └Е╔≈Д╩╤"
