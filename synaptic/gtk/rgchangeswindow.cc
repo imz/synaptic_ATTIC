@@ -33,6 +33,7 @@
 
 #include <stdio.h>
 #include <string>
+#include <cassert>
 
 #include "rgchangeswindow.h"
 
@@ -51,7 +52,7 @@ RGChangesWindow::RGChangesWindow(RGWindow *wwin)
    GtkTreeViewColumn *column;
    column = gtk_tree_view_column_new_with_attributes(_("Package changes"),
                                                      renderer,
-                                                     "text", PKG_COLUMN, NULL);
+                                                     "markup", PKG_COLUMN, NULL);
    /* Add the column to the view. */
    gtk_tree_view_append_column(GTK_TREE_VIEW(_tree), column);
    gtk_widget_show(_tree);
@@ -69,9 +70,34 @@ void RGChangesWindow::confirm(RPackageLister *lister,
 			      vector<RPackage *> &notAuthenticated)
 {
    GtkTreeIter iter, iter_child;
- 
+   GtkWidget *label;
+
+   if(!(toInstall.size() || toReInstall.size() || toUpgrade.size() ||
+	toRemove.size() || toDowngrade.size())) {
+      // we have no changes other than authentication warnings
+      label = glade_xml_get_widget(_gladeXML, "label_changes_header");
+      gtk_widget_hide(label);
+      label = glade_xml_get_widget(_gladeXML, "label_secondary");
+      gtk_widget_hide(label);
+   }
+
   if (notAuthenticated.size() > 0) {
-      /* removed */
+      label = glade_xml_get_widget(_gladeXML, "label_auth_warning");
+      assert(label);
+      // FIXME: make this a message from a trust class (and remeber to
+      // change the text in rgsummarywindow then too)
+      gchar *msg = g_strdup_printf("<span weight=\"bold\" size=\"larger\">%s"
+				   "</span>\n\n%s",
+				   _("Warning"), 
+				   _("You are about to install software that "
+				     "<b>can't be authenticated</b>! Doing "
+				     "this could allow a malicious individual "
+				     "to damage or take control of your "
+				     "system."));
+      gtk_label_set_markup(GTK_LABEL(label), msg);
+      gtk_widget_show(label);
+      g_free(msg);
+
       gtk_tree_store_append(_treeStore, &iter, NULL);
       gtk_tree_store_set(_treeStore, &iter,
                          PKG_COLUMN, _("NOT AUTHENTICATED"), -1);
@@ -85,15 +111,17 @@ void RGChangesWindow::confirm(RPackageLister *lister,
 
    if (toRemove.size() > 0) {
       /* removed */
+      gchar *str = g_strdup_printf("<b>%s</b>", _("To be removed"));
       gtk_tree_store_append(_treeStore, &iter, NULL);
       gtk_tree_store_set(_treeStore, &iter,
-                         PKG_COLUMN, _("To be removed"), -1);
+                         PKG_COLUMN, str, -1);
       for (vector<RPackage *>::const_iterator p = toRemove.begin();
            p != toRemove.end(); p++) {
          gtk_tree_store_append(_treeStore, &iter_child, &iter);
          gtk_tree_store_set(_treeStore, &iter_child,
                             PKG_COLUMN, (*p)->name(), -1);
       }
+      g_free(str);
    }
 
    if (toDowngrade.size() > 0) {
@@ -109,6 +137,17 @@ void RGChangesWindow::confirm(RPackageLister *lister,
       }
    }
 
+   if (toInstall.size() > 0) {
+      gtk_tree_store_append(_treeStore, &iter, NULL);
+      gtk_tree_store_set(_treeStore, &iter,
+                         PKG_COLUMN, _("To be installed"), -1);
+      for (vector<RPackage *>::const_iterator p = toInstall.begin();
+           p != toInstall.end(); p++) {
+         gtk_tree_store_append(_treeStore, &iter_child, &iter);
+         gtk_tree_store_set(_treeStore, &iter_child,
+                            PKG_COLUMN, (*p)->name(), -1);
+      }
+   }
 
    if (toUpgrade.size() > 0) {
       gtk_tree_store_append(_treeStore, &iter, NULL);
@@ -116,18 +155,6 @@ void RGChangesWindow::confirm(RPackageLister *lister,
                          PKG_COLUMN, _("To be upgraded"), -1);
       for (vector<RPackage *>::const_iterator p = toUpgrade.begin();
            p != toUpgrade.end(); p++) {
-         gtk_tree_store_append(_treeStore, &iter_child, &iter);
-         gtk_tree_store_set(_treeStore, &iter_child,
-                            PKG_COLUMN, (*p)->name(), -1);
-      }
-   }
-
-   if (toInstall.size() > 0) {
-      gtk_tree_store_append(_treeStore, &iter, NULL);
-      gtk_tree_store_set(_treeStore, &iter,
-                         PKG_COLUMN, _("To be installed"), -1);
-      for (vector<RPackage *>::const_iterator p = toInstall.begin();
-           p != toInstall.end(); p++) {
          gtk_tree_store_append(_treeStore, &iter_child, &iter);
          gtk_tree_store_set(_treeStore, &iter_child,
                             PKG_COLUMN, (*p)->name(), -1);

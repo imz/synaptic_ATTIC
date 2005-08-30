@@ -69,7 +69,6 @@ EXEEXT = @EXEEXT@
 GETTEXT_PACKAGE = @GETTEXT_PACKAGE@
 GMOFILES = @GMOFILES@
 GMSGFMT = @GMSGFMT@
-ICONV = @ICONV@
 INSTALL_DATA = @INSTALL_DATA@
 INSTALL_PROGRAM = @INSTALL_PROGRAM@
 INSTALL_SCRIPT = @INSTALL_SCRIPT@
@@ -80,9 +79,12 @@ INTLTOOL_CAVES_RULE = @INTLTOOL_CAVES_RULE@
 INTLTOOL_DESKTOP_RULE = @INTLTOOL_DESKTOP_RULE@
 INTLTOOL_DIRECTORY_RULE = @INTLTOOL_DIRECTORY_RULE@
 INTLTOOL_EXTRACT = @INTLTOOL_EXTRACT@
+INTLTOOL_ICONV = @INTLTOOL_ICONV@
 INTLTOOL_KBD_RULE = @INTLTOOL_KBD_RULE@
 INTLTOOL_KEYS_RULE = @INTLTOOL_KEYS_RULE@
 INTLTOOL_MERGE = @INTLTOOL_MERGE@
+INTLTOOL_MSGFMT = @INTLTOOL_MSGFMT@
+INTLTOOL_MSGMERGE = @INTLTOOL_MSGMERGE@
 INTLTOOL_OAF_RULE = @INTLTOOL_OAF_RULE@
 INTLTOOL_PERL = @INTLTOOL_PERL@
 INTLTOOL_PONG_RULE = @INTLTOOL_PONG_RULE@
@@ -95,13 +97,12 @@ INTLTOOL_THEME_RULE = @INTLTOOL_THEME_RULE@
 INTLTOOL_UI_RULE = @INTLTOOL_UI_RULE@
 INTLTOOL_UPDATE = @INTLTOOL_UPDATE@
 INTLTOOL_XAM_RULE = @INTLTOOL_XAM_RULE@
+INTLTOOL_XGETTEXT = @INTLTOOL_XGETTEXT@
 INTLTOOL_XML_NOMERGE_RULE = @INTLTOOL_XML_NOMERGE_RULE@
 INTLTOOL_XML_RULE = @INTLTOOL_XML_RULE@
 LDFLAGS = @LDFLAGS@
 LIBOBJS = @LIBOBJS@
 LIBS = @LIBS@
-LIBTAGCOLL_CFLAGS = @LIBTAGCOLL_CFLAGS@
-LIBTAGCOLL_LIBS = @LIBTAGCOLL_LIBS@
 LTLIBOBJS = @LTLIBOBJS@
 MAINT = @MAINT@
 MAINTAINER_MODE_FALSE = @MAINTAINER_MODE_FALSE@
@@ -109,7 +110,6 @@ MAINTAINER_MODE_TRUE = @MAINTAINER_MODE_TRUE@
 MAKEINFO = @MAKEINFO@
 MKINSTALLDIRS = @MKINSTALLDIRS@
 MSGFMT = @MSGFMT@
-MSGMERGE = @MSGMERGE@
 OBJEXT = @OBJEXT@
 PACKAGE = @PACKAGE@
 PACKAGE_BUGREPORT = @PACKAGE_BUGREPORT@
@@ -176,7 +176,8 @@ noinst_LIBRARIES = libsynaptic.a
 
 INCLUDES = -I/usr/include/apt-pkg @RPM_HDRS@ @DEB_HDRS@ @PACKAGE_CFLAGS@ \
 	$(LIBTAGCOLL_CFLAGS) \
-	-DSYNAPTICLOCALEDIR=\""$(synapticlocaledir)"\"
+	-DSYNAPTICLOCALEDIR=\""$(synapticlocaledir)"\" \
+	-DSYNAPTICSTATEDIR=\""$(localstatedir)"\"
 
 
 libsynaptic_a_SOURCES = \
@@ -184,6 +185,8 @@ libsynaptic_a_SOURCES = \
 	pkg_acqfile.h\
 	rconfiguration.cc\
 	rconfiguration.h\
+	rswig.h\
+	rswig.cc\
 	rinstallprogress.cc\
 	rinstallprogress.h\
 	rpackage.cc\
@@ -215,7 +218,6 @@ libsynaptic_a_SOURCES = \
 	rtagcollbuilder.h \
 	i18n.h \
 	sections_trans.h \
-	tree.hh \
 	rtagcollfilter.cc \
 	rtagcollfilter.h \
 	ruserdialog.h \
@@ -233,14 +235,15 @@ LIBRARIES = $(noinst_LIBRARIES)
 libsynaptic_a_AR = $(AR) cru
 libsynaptic_a_LIBADD =
 am_libsynaptic_a_OBJECTS = pkg_acqfile.$(OBJEXT) \
-	rconfiguration.$(OBJEXT) rinstallprogress.$(OBJEXT) \
-	rpackage.$(OBJEXT) rpackagecache.$(OBJEXT) \
-	rpackagefilter.$(OBJEXT) rpackagelister.$(OBJEXT) \
-	rpackageview.$(OBJEXT) rcdscanner.$(OBJEXT) indexcopy.$(OBJEXT) \
-	rpmindexcopy.$(OBJEXT) raptoptions.$(OBJEXT) rsources.$(OBJEXT) \
-	rcacheactor.$(OBJEXT) rpackagelistactor.$(OBJEXT) \
-	rtagcollbuilder.$(OBJEXT) rtagcollfilter.$(OBJEXT) \
-	ruserdialog.$(OBJEXT) sections_trans.$(OBJEXT)
+	rconfiguration.$(OBJEXT) rswig.$(OBJEXT) \
+	rinstallprogress.$(OBJEXT) rpackage.$(OBJEXT) \
+	rpackagecache.$(OBJEXT) rpackagefilter.$(OBJEXT) \
+	rpackagelister.$(OBJEXT) rpackageview.$(OBJEXT) \
+	rcdscanner.$(OBJEXT) indexcopy.$(OBJEXT) rpmindexcopy.$(OBJEXT) \
+	raptoptions.$(OBJEXT) rsources.$(OBJEXT) rcacheactor.$(OBJEXT) \
+	rpackagelistactor.$(OBJEXT) rtagcollbuilder.$(OBJEXT) \
+	rtagcollfilter.$(OBJEXT) ruserdialog.$(OBJEXT) \
+	sections_trans.$(OBJEXT)
 libsynaptic_a_OBJECTS = $(am_libsynaptic_a_OBJECTS)
 
 DEFAULT_INCLUDES =  -I. -I$(srcdir) -I$(top_builddir)
@@ -260,7 +263,7 @@ am__depfiles_maybe = depfiles
 @AMDEP_TRUE@	./$(DEPDIR)/rpackagelister.Po \
 @AMDEP_TRUE@	./$(DEPDIR)/rpackageview.Po \
 @AMDEP_TRUE@	./$(DEPDIR)/rpmindexcopy.Po ./$(DEPDIR)/rsources.Po \
-@AMDEP_TRUE@	./$(DEPDIR)/rtagcollbuilder.Po \
+@AMDEP_TRUE@	./$(DEPDIR)/rswig.Po ./$(DEPDIR)/rtagcollbuilder.Po \
 @AMDEP_TRUE@	./$(DEPDIR)/rtagcollfilter.Po \
 @AMDEP_TRUE@	./$(DEPDIR)/ruserdialog.Po \
 @AMDEP_TRUE@	./$(DEPDIR)/sections_trans.Po
@@ -317,6 +320,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rpackageview.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rpmindexcopy.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rsources.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rswig.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rtagcollbuilder.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rtagcollfilter.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ruserdialog.Po@am__quote@

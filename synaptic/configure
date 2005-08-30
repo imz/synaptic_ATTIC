@@ -309,7 +309,7 @@ ac_includes_default="\
 # include <unistd.h>
 #endif"
 
-ac_subst_vars='SHELL PATH_SEPARATOR PACKAGE_NAME PACKAGE_TARNAME PACKAGE_VERSION PACKAGE_STRING PACKAGE_BUGREPORT exec_prefix prefix program_transform_name bindir sbindir libexecdir datadir sysconfdir sharedstatedir localstatedir libdir includedir oldincludedir infodir mandir build_alias host_alias target_alias DEFS ECHO_C ECHO_N ECHO_T LIBS INSTALL_PROGRAM INSTALL_SCRIPT INSTALL_DATA CYGPATH_W PACKAGE VERSION ACLOCAL AUTOCONF AUTOMAKE AUTOHEADER MAKEINFO AMTAR install_sh STRIP ac_ct_STRIP INSTALL_STRIP_PROGRAM AWK SET_MAKE am__leading_dot MAINTAINER_MODE_TRUE MAINTAINER_MODE_FALSE MAINT CC CFLAGS LDFLAGS CPPFLAGS ac_ct_CC EXEEXT OBJEXT DEPDIR am__include am__quote AMDEP_TRUE AMDEP_FALSE AMDEPBACKSLASH CCDEPMODE am__fastdepCC_TRUE am__fastdepCC_FALSE CPP EGREP CXX CXXFLAGS ac_ct_CXX CXXDEPMODE am__fastdepCXX_TRUE am__fastdepCXX_FALSE RANLIB ac_ct_RANLIB USE_NLS MSGFMT GMSGFMT XGETTEXT CATALOGS CATOBJEXT DATADIRNAME GMOFILES INSTOBJEXT INTLLIBS PO_IN_DATADIR_TRUE PO_IN_DATADIR_FALSE POFILES POSUB MKINSTALLDIRS GETTEXT_PACKAGE INTLTOOL_DESKTOP_RULE INTLTOOL_DIRECTORY_RULE INTLTOOL_KEYS_RULE INTLTOOL_PROP_RULE INTLTOOL_OAF_RULE INTLTOOL_PONG_RULE INTLTOOL_SERVER_RULE INTLTOOL_SHEET_RULE INTLTOOL_SOUNDLIST_RULE INTLTOOL_UI_RULE INTLTOOL_XAM_RULE INTLTOOL_KBD_RULE INTLTOOL_XML_RULE INTLTOOL_XML_NOMERGE_RULE INTLTOOL_CAVES_RULE INTLTOOL_SCHEMAS_RULE INTLTOOL_THEME_RULE INTLTOOL_EXTRACT INTLTOOL_MERGE INTLTOOL_UPDATE INTLTOOL_PERL ICONV MSGMERGE mkdir_p synapticlocaledir XMLTO PKG_CONFIG PACKAGE_CFLAGS PACKAGE_LIBS BUILD_gtk RPM_LIBS RPM_HDRS WITH_LUA_TRUE WITH_LUA_FALSE DEB_HDRS DEB_LIBS CXXCPP LIBTAGCOLL_CFLAGS LIBTAGCOLL_LIBS VTE_CFLAGS VTE_LIBS LIBOBJS LTLIBOBJS'
+ac_subst_vars='SHELL PATH_SEPARATOR PACKAGE_NAME PACKAGE_TARNAME PACKAGE_VERSION PACKAGE_STRING PACKAGE_BUGREPORT exec_prefix prefix program_transform_name bindir sbindir libexecdir datadir sysconfdir sharedstatedir localstatedir libdir includedir oldincludedir infodir mandir build_alias host_alias target_alias DEFS ECHO_C ECHO_N ECHO_T LIBS INSTALL_PROGRAM INSTALL_SCRIPT INSTALL_DATA CYGPATH_W PACKAGE VERSION ACLOCAL AUTOCONF AUTOMAKE AUTOHEADER MAKEINFO AMTAR install_sh STRIP ac_ct_STRIP INSTALL_STRIP_PROGRAM AWK SET_MAKE am__leading_dot MAINTAINER_MODE_TRUE MAINTAINER_MODE_FALSE MAINT CC CFLAGS LDFLAGS CPPFLAGS ac_ct_CC EXEEXT OBJEXT DEPDIR am__include am__quote AMDEP_TRUE AMDEP_FALSE AMDEPBACKSLASH CCDEPMODE am__fastdepCC_TRUE am__fastdepCC_FALSE CPP EGREP CXX CXXFLAGS ac_ct_CXX CXXDEPMODE am__fastdepCXX_TRUE am__fastdepCXX_FALSE RANLIB ac_ct_RANLIB USE_NLS MSGFMT GMSGFMT XGETTEXT CATALOGS CATOBJEXT DATADIRNAME GMOFILES INSTOBJEXT INTLLIBS PO_IN_DATADIR_TRUE PO_IN_DATADIR_FALSE POFILES POSUB MKINSTALLDIRS GETTEXT_PACKAGE INTLTOOL_DESKTOP_RULE INTLTOOL_DIRECTORY_RULE INTLTOOL_KEYS_RULE INTLTOOL_PROP_RULE INTLTOOL_OAF_RULE INTLTOOL_PONG_RULE INTLTOOL_SERVER_RULE INTLTOOL_SHEET_RULE INTLTOOL_SOUNDLIST_RULE INTLTOOL_UI_RULE INTLTOOL_XAM_RULE INTLTOOL_KBD_RULE INTLTOOL_XML_RULE INTLTOOL_XML_NOMERGE_RULE INTLTOOL_CAVES_RULE INTLTOOL_SCHEMAS_RULE INTLTOOL_THEME_RULE INTLTOOL_EXTRACT INTLTOOL_MERGE INTLTOOL_UPDATE INTLTOOL_PERL INTLTOOL_ICONV INTLTOOL_MSGFMT INTLTOOL_MSGMERGE INTLTOOL_XGETTEXT mkdir_p synapticlocaledir XMLTO PKG_CONFIG PACKAGE_CFLAGS PACKAGE_LIBS BUILD_gtk RPM_LIBS RPM_HDRS WITH_LUA_TRUE WITH_LUA_FALSE DEB_HDRS DEB_LIBS CXXCPP VTE_CFLAGS VTE_LIBS LIBOBJS LTLIBOBJS'
 ac_subst_files=''
 
 # Initialize some variables set by options.
@@ -1598,7 +1598,7 @@ fi
 
 # Define the identity of the package.
  PACKAGE=synaptic
- VERSION=0.56
+ VERSION=0.57.2
 
 
 cat >>confdefs.h <<_ACEOF
@@ -4826,7 +4826,7 @@ else
 fi
 
 
-ALL_LINGUAS="ar pt_BR es fr de tr zh_CN zh_HK zh_TW ru nl ja be it_IT pl cs hu sr sr@Latn da he ca ko bg no nb sl bu pt_PT lt"
+ALL_LINGUAS="ar pt_BR es fr de tr zh_CN zh_HK zh_TW ru nl ja be it pl cs hu sr sr@Latn da he ca ko bg no nb sl pt_PT lt el xh mk"
 # On IRIX 5.3, sys/types and inttypes.h are conflicting.
 
 
@@ -5279,7 +5279,7 @@ cat >>conftest.$ac_ext <<_ACEOF
 int
 main ()
 {
-return (int) ngettext ("","", 1)
+return !ngettext ("","", 1)
   ;
   return 0;
 }
@@ -5337,7 +5337,7 @@ cat >>conftest.$ac_ext <<_ACEOF
 int
 main ()
 {
-return (int) dgettext ("","")
+return !dgettext ("","")
   ;
   return 0;
 }
@@ -6592,12 +6592,12 @@ fi
 set dummy iconv; ac_word=$2
 echo "$as_me:$LINENO: checking for $ac_word" >&5
 echo $ECHO_N "checking for $ac_word... $ECHO_C" >&6
-if test "${ac_cv_path_ICONV+set}" = set; then
+if test "${ac_cv_path_INTLTOOL_ICONV+set}" = set; then
   echo $ECHO_N "(cached) $ECHO_C" >&6
 else
-  case $ICONV in
+  case $INTLTOOL_ICONV in
   [\\/]* | ?:[\\/]*)
-  ac_cv_path_ICONV="$ICONV" # Let the user override the test with a path.
+  ac_cv_path_INTLTOOL_ICONV="$INTLTOOL_ICONV" # Let the user override the test with a path.
   ;;
   *)
   as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
@@ -6607,22 +6607,22 @@ do
   test -z "$as_dir" && as_dir=.
   for ac_exec_ext in '' $ac_executable_extensions; do
   if $as_executable_p "$as_dir/$ac_word$ac_exec_ext"; then
-    ac_cv_path_ICONV="$as_dir/$ac_word$ac_exec_ext"
+    ac_cv_path_INTLTOOL_ICONV="$as_dir/$ac_word$ac_exec_ext"
     echo "$as_me:$LINENO: found $as_dir/$ac_word$ac_exec_ext" >&5
     break 2
   fi
 done
 done
 
-  test -z "$ac_cv_path_ICONV" && ac_cv_path_ICONV="iconv"
+  test -z "$ac_cv_path_INTLTOOL_ICONV" && ac_cv_path_INTLTOOL_ICONV="iconv"
   ;;
 esac
 fi
-ICONV=$ac_cv_path_ICONV
+INTLTOOL_ICONV=$ac_cv_path_INTLTOOL_ICONV
 
-if test -n "$ICONV"; then
-  echo "$as_me:$LINENO: result: $ICONV" >&5
-echo "${ECHO_T}$ICONV" >&6
+if test -n "$INTLTOOL_ICONV"; then
+  echo "$as_me:$LINENO: result: $INTLTOOL_ICONV" >&5
+echo "${ECHO_T}$INTLTOOL_ICONV" >&6
 else
   echo "$as_me:$LINENO: result: no" >&5
 echo "${ECHO_T}no" >&6
@@ -6632,12 +6632,12 @@ fi
 set dummy msgfmt; ac_word=$2
 echo "$as_me:$LINENO: checking for $ac_word" >&5
 echo $ECHO_N "checking for $ac_word... $ECHO_C" >&6
-if test "${ac_cv_path_MSGFMT+set}" = set; then
+if test "${ac_cv_path_INTLTOOL_MSGFMT+set}" = set; then
   echo $ECHO_N "(cached) $ECHO_C" >&6
 else
-  case $MSGFMT in
+  case $INTLTOOL_MSGFMT in
   [\\/]* | ?:[\\/]*)
-  ac_cv_path_MSGFMT="$MSGFMT" # Let the user override the test with a path.
+  ac_cv_path_INTLTOOL_MSGFMT="$INTLTOOL_MSGFMT" # Let the user override the test with a path.
   ;;
   *)
   as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
@@ -6647,22 +6647,22 @@ do
   test -z "$as_dir" && as_dir=.
   for ac_exec_ext in '' $ac_executable_extensions; do
   if $as_executable_p "$as_dir/$ac_word$ac_exec_ext"; then
-    ac_cv_path_MSGFMT="$as_dir/$ac_word$ac_exec_ext"
+    ac_cv_path_INTLTOOL_MSGFMT="$as_dir/$ac_word$ac_exec_ext"
     echo "$as_me:$LINENO: found $as_dir/$ac_word$ac_exec_ext" >&5
     break 2
   fi
 done
 done
 
-  test -z "$ac_cv_path_MSGFMT" && ac_cv_path_MSGFMT="msgfmt"
+  test -z "$ac_cv_path_INTLTOOL_MSGFMT" && ac_cv_path_INTLTOOL_MSGFMT="msgfmt"
   ;;
 esac
 fi
-MSGFMT=$ac_cv_path_MSGFMT
+INTLTOOL_MSGFMT=$ac_cv_path_INTLTOOL_MSGFMT
 
-if test -n "$MSGFMT"; then
-  echo "$as_me:$LINENO: result: $MSGFMT" >&5
-echo "${ECHO_T}$MSGFMT" >&6
+if test -n "$INTLTOOL_MSGFMT"; then
+  echo "$as_me:$LINENO: result: $INTLTOOL_MSGFMT" >&5
+echo "${ECHO_T}$INTLTOOL_MSGFMT" >&6
 else
   echo "$as_me:$LINENO: result: no" >&5
 echo "${ECHO_T}no" >&6
@@ -6672,12 +6672,12 @@ fi
 set dummy msgmerge; ac_word=$2
 echo "$as_me:$LINENO: checking for $ac_word" >&5
 echo $ECHO_N "checking for $ac_word... $ECHO_C" >&6
-if test "${ac_cv_path_MSGMERGE+set}" = set; then
+if test "${ac_cv_path_INTLTOOL_MSGMERGE+set}" = set; then
   echo $ECHO_N "(cached) $ECHO_C" >&6
 else
-  case $MSGMERGE in
+  case $INTLTOOL_MSGMERGE in
   [\\/]* | ?:[\\/]*)
-  ac_cv_path_MSGMERGE="$MSGMERGE" # Let the user override the test with a path.
+  ac_cv_path_INTLTOOL_MSGMERGE="$INTLTOOL_MSGMERGE" # Let the user override the test with a path.
   ;;
   *)
   as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
@@ -6687,22 +6687,22 @@ do
   test -z "$as_dir" && as_dir=.
   for ac_exec_ext in '' $ac_executable_extensions; do
   if $as_executable_p "$as_dir/$ac_word$ac_exec_ext"; then
-    ac_cv_path_MSGMERGE="$as_dir/$ac_word$ac_exec_ext"
+    ac_cv_path_INTLTOOL_MSGMERGE="$as_dir/$ac_word$ac_exec_ext"
     echo "$as_me:$LINENO: found $as_dir/$ac_word$ac_exec_ext" >&5
     break 2
   fi
 done
 done
 
-  test -z "$ac_cv_path_MSGMERGE" && ac_cv_path_MSGMERGE="msgmerge"
+  test -z "$ac_cv_path_INTLTOOL_MSGMERGE" && ac_cv_path_INTLTOOL_MSGMERGE="msgmerge"
   ;;
 esac
 fi
-MSGMERGE=$ac_cv_path_MSGMERGE
+INTLTOOL_MSGMERGE=$ac_cv_path_INTLTOOL_MSGMERGE
 
-if test -n "$MSGMERGE"; then
-  echo "$as_me:$LINENO: result: $MSGMERGE" >&5
-echo "${ECHO_T}$MSGMERGE" >&6
+if test -n "$INTLTOOL_MSGMERGE"; then
+  echo "$as_me:$LINENO: result: $INTLTOOL_MSGMERGE" >&5
+echo "${ECHO_T}$INTLTOOL_MSGMERGE" >&6
 else
   echo "$as_me:$LINENO: result: no" >&5
 echo "${ECHO_T}no" >&6
@@ -6712,12 +6712,12 @@ fi
 set dummy xgettext; ac_word=$2
 echo "$as_me:$LINENO: checking for $ac_word" >&5
 echo $ECHO_N "checking for $ac_word... $ECHO_C" >&6
-if test "${ac_cv_path_XGETTEXT+set}" = set; then
+if test "${ac_cv_path_INTLTOOL_XGETTEXT+set}" = set; then
   echo $ECHO_N "(cached) $ECHO_C" >&6
 else
-  case $XGETTEXT in
+  case $INTLTOOL_XGETTEXT in
   [\\/]* | ?:[\\/]*)
-  ac_cv_path_XGETTEXT="$XGETTEXT" # Let the user override the test with a path.
+  ac_cv_path_INTLTOOL_XGETTEXT="$INTLTOOL_XGETTEXT" # Let the user override the test with a path.
   ;;
   *)
   as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
@@ -6727,22 +6727,22 @@ do
   test -z "$as_dir" && as_dir=.
   for ac_exec_ext in '' $ac_executable_extensions; do
   if $as_executable_p "$as_dir/$ac_word$ac_exec_ext"; then
-    ac_cv_path_XGETTEXT="$as_dir/$ac_word$ac_exec_ext"
+    ac_cv_path_INTLTOOL_XGETTEXT="$as_dir/$ac_word$ac_exec_ext"
     echo "$as_me:$LINENO: found $as_dir/$ac_word$ac_exec_ext" >&5
     break 2
   fi
 done
 done
 
-  test -z "$ac_cv_path_XGETTEXT" && ac_cv_path_XGETTEXT="xgettext"
+  test -z "$ac_cv_path_INTLTOOL_XGETTEXT" && ac_cv_path_INTLTOOL_XGETTEXT="xgettext"
   ;;
 esac
 fi
-XGETTEXT=$ac_cv_path_XGETTEXT
+INTLTOOL_XGETTEXT=$ac_cv_path_INTLTOOL_XGETTEXT
 
-if test -n "$XGETTEXT"; then
-  echo "$as_me:$LINENO: result: $XGETTEXT" >&5
-echo "${ECHO_T}$XGETTEXT" >&6
+if test -n "$INTLTOOL_XGETTEXT"; then
+  echo "$as_me:$LINENO: result: $INTLTOOL_XGETTEXT" >&5
+echo "${ECHO_T}$INTLTOOL_XGETTEXT" >&6
 else
   echo "$as_me:$LINENO: result: no" >&5
 echo "${ECHO_T}no" >&6
@@ -8325,6 +8325,8 @@ _ACEOF
 esac
 
 
+
+
 echo "$as_me:$LINENO: checking for working strcoll" >&5
 echo $ECHO_N "checking for working strcoll... $ECHO_C" >&6
 if test "${ac_cv_func_strcoll_works+set}" = set; then
@@ -8515,25 +8517,7 @@ fi;
 # Check whether --with-nice-dpkg-status or --without-nice-dpkg-status was given.
 if test "${with_nice_dpkg_status+set}" = set; then
   withval="$with_nice_dpkg_status"
-
-cat >>confdefs.h <<\_ACEOF
-#define WITH_DPKG_STATUSFD 1
-_ACEOF
-
-
-fi;
-
-
-
-# Check whether --with-debtags or --without-debtags was given.
-if test "${with_debtags+set}" = set; then
-  withval="$with_debtags"
-
-cat >>confdefs.h <<\_ACEOF
-#define HAVE_DEBTAGS 1
-_ACEOF
-
-
+  pkg_modules="vte >= 0.10.11"
 
   succeeded=no
 
@@ -8588,32 +8572,32 @@ fi
   else
      PKG_CONFIG_MIN_VERSION=0.9.0
      if $PKG_CONFIG --atleast-pkgconfig-version $PKG_CONFIG_MIN_VERSION; then
-        echo "$as_me:$LINENO: checking for libtagcoll" >&5
-echo $ECHO_N "checking for libtagcoll... $ECHO_C" >&6
+        echo "$as_me:$LINENO: checking for $pkg_modules" >&5
+echo $ECHO_N "checking for $pkg_modules... $ECHO_C" >&6
 
-        if $PKG_CONFIG --exists "libtagcoll" ; then
+        if $PKG_CONFIG --exists "$pkg_modules" ; then
             echo "$as_me:$LINENO: result: yes" >&5
 echo "${ECHO_T}yes" >&6
             succeeded=yes
 
-            echo "$as_me:$LINENO: checking LIBTAGCOLL_CFLAGS" >&5
-echo $ECHO_N "checking LIBTAGCOLL_CFLAGS... $ECHO_C" >&6
-            LIBTAGCOLL_CFLAGS=`$PKG_CONFIG --cflags "libtagcoll"`
-            echo "$as_me:$LINENO: result: $LIBTAGCOLL_CFLAGS" >&5
-echo "${ECHO_T}$LIBTAGCOLL_CFLAGS" >&6
+            echo "$as_me:$LINENO: checking VTE_CFLAGS" >&5
+echo $ECHO_N "checking VTE_CFLAGS... $ECHO_C" >&6
+            VTE_CFLAGS=`$PKG_CONFIG --cflags "$pkg_modules"`
+            echo "$as_me:$LINENO: result: $VTE_CFLAGS" >&5
+echo "${ECHO_T}$VTE_CFLAGS" >&6
 
-            echo "$as_me:$LINENO: checking LIBTAGCOLL_LIBS" >&5
-echo $ECHO_N "checking LIBTAGCOLL_LIBS... $ECHO_C" >&6
-            LIBTAGCOLL_LIBS=`$PKG_CONFIG --libs "libtagcoll"`
-            echo "$as_me:$LINENO: result: $LIBTAGCOLL_LIBS" >&5
-echo "${ECHO_T}$LIBTAGCOLL_LIBS" >&6
+            echo "$as_me:$LINENO: checking VTE_LIBS" >&5
+echo $ECHO_N "checking VTE_LIBS... $ECHO_C" >&6
+            VTE_LIBS=`$PKG_CONFIG --libs "$pkg_modules"`
+            echo "$as_me:$LINENO: result: $VTE_LIBS" >&5
+echo "${ECHO_T}$VTE_LIBS" >&6
         else
-            LIBTAGCOLL_CFLAGS=""
-            LIBTAGCOLL_LIBS=""
+            VTE_CFLAGS=""
+            VTE_LIBS=""
             ## If we have a custom action on failure, don't print errors, but
             ## do set a variable so people can do so.
-            LIBTAGCOLL_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "libtagcoll"`
-            echo $LIBTAGCOLL_PKG_ERRORS
+            VTE_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "$pkg_modules"`
+            echo $VTE_PKG_ERRORS
         fi
 
 
@@ -8627,14 +8611,31 @@ echo "${ECHO_T}$LIBTAGCOLL_LIBS" >&6
   if test $succeeded = yes; then
      :
   else
-     { { echo "$as_me:$LINENO: error: Library requirements (libtagcoll) not met; consider adjusting the PKG_CONFIG_PATH environment variable if your libraries are in a nonstandard prefix so pkg-config can find them." >&5
-echo "$as_me: error: Library requirements (libtagcoll) not met; consider adjusting the PKG_CONFIG_PATH environment variable if your libraries are in a nonstandard prefix so pkg-config can find them." >&2;}
+     { { echo "$as_me:$LINENO: error: Library requirements ($pkg_modules) not met; consider adjusting the PKG_CONFIG_PATH environment variable if your libraries are in a nonstandard prefix so pkg-config can find them." >&5
+echo "$as_me: error: Library requirements ($pkg_modules) not met; consider adjusting the PKG_CONFIG_PATH environment variable if your libraries are in a nonstandard prefix so pkg-config can find them." >&2;}
    { (exit 1); exit 1; }; }
   fi
 
 
+cat >>confdefs.h <<\_ACEOF
+#define WITH_DPKG_STATUSFD 1
+_ACEOF
 
 
+
+fi;
+
+
+
+# Check whether --with-debtags or --without-debtags was given.
+if test "${with_debtags+set}" = set; then
+  withval="$with_debtags"
+
+cat >>confdefs.h <<\_ACEOF
+#define HAVE_DEBTAGS 1
+_ACEOF
+
+	LIBTAGCOLL_DEFS
 
 
 fi;
@@ -8757,6 +8758,159 @@ _ACEOF
 
 
 fi;
+
+ac_ext=cc
+ac_cpp='$CXXCPP $CPPFLAGS'
+ac_compile='$CXX -c $CXXFLAGS $CPPFLAGS conftest.$ac_ext >&5'
+ac_link='$CXX -o conftest$ac_exeext $CXXFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
+ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
+
+if test "${ac_cv_header_apt_pkg_cdrom_h+set}" = set; then
+  echo "$as_me:$LINENO: checking for apt-pkg/cdrom.h" >&5
+echo $ECHO_N "checking for apt-pkg/cdrom.h... $ECHO_C" >&6
+if test "${ac_cv_header_apt_pkg_cdrom_h+set}" = set; then
+  echo $ECHO_N "(cached) $ECHO_C" >&6
+fi
+echo "$as_me:$LINENO: result: $ac_cv_header_apt_pkg_cdrom_h" >&5
+echo "${ECHO_T}$ac_cv_header_apt_pkg_cdrom_h" >&6
+else
+  # Is the header compilable?
+echo "$as_me:$LINENO: checking apt-pkg/cdrom.h usability" >&5
+echo $ECHO_N "checking apt-pkg/cdrom.h usability... $ECHO_C" >&6
+cat >conftest.$ac_ext <<_ACEOF
+/* confdefs.h.  */
+_ACEOF
+cat confdefs.h >>conftest.$ac_ext
+cat >>conftest.$ac_ext <<_ACEOF
+/* end confdefs.h.  */
+$ac_includes_default
+#include <apt-pkg/cdrom.h>
+_ACEOF
+rm -f conftest.$ac_objext
+if { (eval echo "$as_me:$LINENO: \"$ac_compile\"") >&5
+  (eval $ac_compile) 2>conftest.er1
+  ac_status=$?
+  grep -v '^ *+' conftest.er1 >conftest.err
+  rm -f conftest.er1
+  cat conftest.err >&5
+  echo "$as_me:$LINENO: \$? = $ac_status" >&5
+  (exit $ac_status); } &&
+	 { ac_try='test -z "$ac_cxx_werror_flag"			 || test ! -s conftest.err'
+  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
+  (eval $ac_try) 2>&5
+  ac_status=$?
+  echo "$as_me:$LINENO: \$? = $ac_status" >&5
+  (exit $ac_status); }; } &&
+	 { ac_try='test -s conftest.$ac_objext'
+  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
+  (eval $ac_try) 2>&5
+  ac_status=$?
+  echo "$as_me:$LINENO: \$? = $ac_status" >&5
+  (exit $ac_status); }; }; then
+  ac_header_compiler=yes
+else
+  echo "$as_me: failed program was:" >&5
+sed 's/^/| /' conftest.$ac_ext >&5
+
+ac_header_compiler=no
+fi
+rm -f conftest.err conftest.$ac_objext conftest.$ac_ext
+echo "$as_me:$LINENO: result: $ac_header_compiler" >&5
+echo "${ECHO_T}$ac_header_compiler" >&6
+
+# Is the header present?
+echo "$as_me:$LINENO: checking apt-pkg/cdrom.h presence" >&5
+echo $ECHO_N "checking apt-pkg/cdrom.h presence... $ECHO_C" >&6
+cat >conftest.$ac_ext <<_ACEOF
+/* confdefs.h.  */
+_ACEOF
+cat confdefs.h >>conftest.$ac_ext
+cat >>conftest.$ac_ext <<_ACEOF
+/* end confdefs.h.  */
+#include <apt-pkg/cdrom.h>
+_ACEOF
+if { (eval echo "$as_me:$LINENO: \"$ac_cpp conftest.$ac_ext\"") >&5
+  (eval $ac_cpp conftest.$ac_ext) 2>conftest.er1
+  ac_status=$?
+  grep -v '^ *+' conftest.er1 >conftest.err
+  rm -f conftest.er1
+  cat conftest.err >&5
+  echo "$as_me:$LINENO: \$? = $ac_status" >&5
+  (exit $ac_status); } >/dev/null; then
+  if test -s conftest.err; then
+    ac_cpp_err=$ac_cxx_preproc_warn_flag
+    ac_cpp_err=$ac_cpp_err$ac_cxx_werror_flag
+  else
+    ac_cpp_err=
+  fi
+else
+  ac_cpp_err=yes
+fi
+if test -z "$ac_cpp_err"; then
+  ac_header_preproc=yes
+else
+  echo "$as_me: failed program was:" >&5
+sed 's/^/| /' conftest.$ac_ext >&5
+
+  ac_header_preproc=no
+fi
+rm -f conftest.err conftest.$ac_ext
+echo "$as_me:$LINENO: result: $ac_header_preproc" >&5
+echo "${ECHO_T}$ac_header_preproc" >&6
+
+# So?  What about this header?
+case $ac_header_compiler:$ac_header_preproc:$ac_cxx_preproc_warn_flag in
+  yes:no: )
+    { echo "$as_me:$LINENO: WARNING: apt-pkg/cdrom.h: accepted by the compiler, rejected by the preprocessor!" >&5
+echo "$as_me: WARNING: apt-pkg/cdrom.h: accepted by the compiler, rejected by the preprocessor!" >&2;}
+    { echo "$as_me:$LINENO: WARNING: apt-pkg/cdrom.h: proceeding with the compiler's result" >&5
+echo "$as_me: WARNING: apt-pkg/cdrom.h: proceeding with the compiler's result" >&2;}
+    ac_header_preproc=yes
+    ;;
+  no:yes:* )
+    { echo "$as_me:$LINENO: WARNING: apt-pkg/cdrom.h: present but cannot be compiled" >&5
+echo "$as_me: WARNING: apt-pkg/cdrom.h: present but cannot be compiled" >&2;}
+    { echo "$as_me:$LINENO: WARNING: apt-pkg/cdrom.h:     check for missing prerequisite headers?" >&5
+echo "$as_me: WARNING: apt-pkg/cdrom.h:     check for missing prerequisite headers?" >&2;}
+    { echo "$as_me:$LINENO: WARNING: apt-pkg/cdrom.h: see the Autoconf documentation" >&5
+echo "$as_me: WARNING: apt-pkg/cdrom.h: see the Autoconf documentation" >&2;}
+    { echo "$as_me:$LINENO: WARNING: apt-pkg/cdrom.h:     section \"Present But Cannot Be Compiled\"" >&5
+echo "$as_me: WARNING: apt-pkg/cdrom.h:     section \"Present But Cannot Be Compiled\"" >&2;}
+    { echo "$as_me:$LINENO: WARNING: apt-pkg/cdrom.h: proceeding with the preprocessor's result" >&5
+echo "$as_me: WARNING: apt-pkg/cdrom.h: proceeding with the preprocessor's result" >&2;}
+    { echo "$as_me:$LINENO: WARNING: apt-pkg/cdrom.h: in the future, the compiler will take precedence" >&5
+echo "$as_me: WARNING: apt-pkg/cdrom.h: in the future, the compiler will take precedence" >&2;}
+    (
+      cat <<\_ASBOX
+## ------------------------------------------ ##
+## Report this to the AC_PACKAGE_NAME lists.  ##
+## ------------------------------------------ ##
+_ASBOX
+    ) |
+      sed "s/^/$as_me: WARNING:     /" >&2
+    ;;
+esac
+echo "$as_me:$LINENO: checking for apt-pkg/cdrom.h" >&5
+echo $ECHO_N "checking for apt-pkg/cdrom.h... $ECHO_C" >&6
+if test "${ac_cv_header_apt_pkg_cdrom_h+set}" = set; then
+  echo $ECHO_N "(cached) $ECHO_C" >&6
+else
+  ac_cv_header_apt_pkg_cdrom_h=$ac_header_preproc
+fi
+echo "$as_me:$LINENO: result: $ac_cv_header_apt_pkg_cdrom_h" >&5
+echo "${ECHO_T}$ac_cv_header_apt_pkg_cdrom_h" >&6
+
+fi
+if test $ac_cv_header_apt_pkg_cdrom_h = yes; then
+
+cat >>confdefs.h <<\_ACEOF
+#define HAVE_APTPKG_CDROM 1
+_ACEOF
+
+fi
+
+
+
 
                                                                                                                                             ac_config_files="$ac_config_files common/Makefile gtk/Makefile data/Makefile man/Makefile pixmaps/Makefile po/Makefile.in help/Makefile help/C/Makefile help/es/Makefile doc/Makefile doc/html/Makefile doc/html/C/Makefile doc/html/es/Makefile Makefile"
           ac_config_commands="$ac_config_commands default"
@@ -9336,8 +9490,9 @@ cat >>$CONFIG_STATUS <<_ACEOF
 AMDEP_TRUE="$AMDEP_TRUE" ac_aux_dir="$ac_aux_dir"
 
 INTLTOOL_PERL='${INTLTOOL_PERL}' ac_aux_dir=${ac_aux_dir}
-INTLTOOL_EXTRACT='${INTLTOOL_EXTRACT}' ICONV='${ICONV}'
-MSGFMT='${MSGFMT}' MSGMERGE='${MSGMERGE}' XGETTEXT='${XGETTEXT}'
+INTLTOOL_EXTRACT='${INTLTOOL_EXTRACT}' ICONV='${INTLTOOL_ICONV}'
+MSGFMT='${INTLTOOL_MSGFMT}' MSGMERGE='${INTLTOOL_MSGMERGE}'
+XGETTEXT='${INTLTOOL_XGETTEXT}'
 
 _ACEOF
 
@@ -9537,8 +9692,10 @@ s,@INTLTOOL_EXTRACT@,$INTLTOOL_EXTRACT,;t t
 s,@INTLTOOL_MERGE@,$INTLTOOL_MERGE,;t t
 s,@INTLTOOL_UPDATE@,$INTLTOOL_UPDATE,;t t
 s,@INTLTOOL_PERL@,$INTLTOOL_PERL,;t t
-s,@ICONV@,$ICONV,;t t
-s,@MSGMERGE@,$MSGMERGE,;t t
+s,@INTLTOOL_ICONV@,$INTLTOOL_ICONV,;t t
+s,@INTLTOOL_MSGFMT@,$INTLTOOL_MSGFMT,;t t
+s,@INTLTOOL_MSGMERGE@,$INTLTOOL_MSGMERGE,;t t
+s,@INTLTOOL_XGETTEXT@,$INTLTOOL_XGETTEXT,;t t
 s,@mkdir_p@,$mkdir_p,;t t
 s,@synapticlocaledir@,$synapticlocaledir,;t t
 s,@XMLTO@,$XMLTO,;t t
@@ -9553,8 +9710,6 @@ s,@WITH_LUA_FALSE@,$WITH_LUA_FALSE,;t t
 s,@DEB_HDRS@,$DEB_HDRS,;t t
 s,@DEB_LIBS@,$DEB_LIBS,;t t
 s,@CXXCPP@,$CXXCPP,;t t
-s,@LIBTAGCOLL_CFLAGS@,$LIBTAGCOLL_CFLAGS,;t t
-s,@LIBTAGCOLL_LIBS@,$LIBTAGCOLL_LIBS,;t t
 s,@VTE_CFLAGS@,$VTE_CFLAGS,;t t
 s,@VTE_LIBS@,$VTE_LIBS,;t t
 s,@LIBOBJS@,$LIBOBJS,;t t
@@ -10253,12 +10408,12 @@ done
       esac ;;
     intltool )
 
-intltool_edit="-e 's:@INTLTOOL_EXTRACT@:`pwd`/intltool-extract:g' \
-               -e 's:@INTLTOOL_ICONV@:${ICONV}:g' \
-               -e 's:@INTLTOOL_MSGFMT@:${MSGFMT}:g' \
-               -e 's:@INTLTOOL_MSGMERGE@:${MSGMERGE}:g' \
-               -e 's:@INTLTOOL_XGETTEXT@:${XGETTEXT}:g' \
-               -e 's:@INTLTOOL_PERL@:${INTLTOOL_PERL}:g'"
+intltool_edit="-e 's#@INTLTOOL_EXTRACT@#`pwd`/intltool-extract#g' \
+               -e 's#@INTLTOOL_ICONV@#${INTLTOOL_ICONV}#g' \
+               -e 's#@INTLTOOL_MSGFMT@#${INTLTOOL_MSGFMT}#g' \
+               -e 's#@INTLTOOL_MSGMERGE@#${INTLTOOL_MSGMERGE}#g' \
+               -e 's#@INTLTOOL_XGETTEXT@#${INTLTOOL_XGETTEXT}#g' \
+               -e 's#@INTLTOOL_PERL@#${INTLTOOL_PERL}#g'"
 
 eval sed ${intltool_edit} < ${ac_aux_dir}/intltool-extract.in \
   > intltool-extract.out

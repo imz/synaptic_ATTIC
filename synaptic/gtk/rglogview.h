@@ -30,15 +30,30 @@
 class RGLogView : public RGGladeWindow {
  protected:
    static void cbCloseClicked(GtkWidget *self, void *data);
+   static void cbButtonFind(GtkWidget *self, void *data);
    static void cbTreeSelectionChanged(GtkTreeSelection *selection, 
 				      gpointer data);
+   static gboolean filter_func(GtkTreeModel *model, GtkTreeIter *iter,
+			       gpointer data);
 
+   // some widgets
    GtkWidget *_treeView;
+   GtkWidget *_entryFind;
    GtkWidget *_textView;
+   GtkTextTag *_markTag;
+
+   // data
+   const gchar *findStr;
+   GtkTreeModel *_realModel;
+
+   // set new logbuffer text
+   void clearLogBuf();
+   void appendLogBuf(string text);
 
  public:
    RGLogView(RGWindow *parent);
 
+   virtual void show();
    void readLogs();
 
    virtual ~RGLogView() {};

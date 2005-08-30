@@ -1,4 +1,5 @@
-/* rgcdscanner.h
+/* rgcdscanner.h - copy of the apt-cdrom.cc stuff for apt's without a library 
+ *                 interface
  *
  * Copyright (c) 2000, 2001 Conectiva S/A
  *
@@ -23,6 +24,9 @@
 #ifndef RGCDSCANNER_H
 #define RGCDSCANNER_H
 
+#include <config.h>
+#ifndef HAVE_APTPKG_CDROM
+
 #include "rcdscanner.h"
 #include "rggladewindow.h"
 
@@ -44,4 +48,5 @@ class RGCDScanner:public RCDScanProgress, public RGWindow {
 
 };
 
+#endif
 #endif

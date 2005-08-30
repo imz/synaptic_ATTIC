@@ -56,8 +56,8 @@ void RGTermInstallProgress::child_exited(VteReaper *vtereaper,
 {
    RGTermInstallProgress *me = (RGTermInstallProgress*)data;
    if(child_pid == me->_child_id) {
-//       cout << "child exited" << endl;
-//       cout << "waitpid returned: " << WEXITSTATUS(ret) << endl;
+//        cout << "child exited" << endl;
+//        cout << "waitpid returned: " << WEXITSTATUS(ret) << endl;
       me->res = (pkgPackageManager::OrderResult)WEXITSTATUS(ret);
       me->child_has_exited=true;
    }
@@ -71,7 +71,19 @@ void RGTermInstallProgress::startUpdate()
 		    G_CALLBACK(child_exited),
 		    this);
  
-   show();
+   // check if we run embedded
+   int id = _config->FindI("Volatile::PlugProgressInto", -1);
+   //cout << "Plug ID: " << id << endl;
+   if (id > 0) {
+      gtk_widget_hide(glade_xml_get_widget(_gladeXML, "window_zvtinstallprogress"));
+      GtkWidget *vbox = glade_xml_get_widget(_gladeXML, "vbox_terminstall_progress");
+      _sock =  gtk_plug_new(id);
+      gtk_widget_reparent(vbox, _sock);
+      gtk_widget_show(_sock);
+   } else {
+      show();
+   }
+
    gtk_label_set_markup(GTK_LABEL(_statusL), _("<i>Running...</i>"));
    gtk_widget_set_sensitive(_closeB, false);
    RGFlushInterface();
@@ -79,17 +91,10 @@ void RGTermInstallProgress::startUpdate()
 
 void RGTermInstallProgress::finishUpdate()
 {
-   string finishMsg = _("\nSuccessfully applied all changes. You can close the window now ");
-   string errorMsg = _("\nFailed to apply all changes! Scroll in this buffer to see what went wrong ");
-   string incompleteMsg = 
-      _("\nSuccessfully installed all packages of the current medium. "
-	"To continue the installation with the next medium close "
-	"this window.");
-
    gtk_widget_set_sensitive(_closeB, true);
    
    RGFlushInterface();
-   updateFinished = true;
+   _updateFinished = true;
 
    _config->Set("Synaptic::closeZvt", 
 		gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(_closeOnF))
@@ -107,24 +112,8 @@ void RGTermInstallProgress::finishUpdate()
       return;
    }
 
-   const char *msg = "Please contact the author of this software if this "
-      " message is diplayed";
-   int size;
-   switch( res ) {
-   case 0: // completed
-      msg = finishMsg.c_str();
-      size = finishMsg.size();
-      break;
-   case 1: // failed 
-      msg = errorMsg.c_str();
-      size = errorMsg.size();
-      break;
-   case 2: // incomplete
-      msg = incompleteMsg.c_str();
-      size = incompleteMsg.size();
-      break;
-   }
-   vte_terminal_feed(VTE_TERMINAL(_term), utf8_to_locale(msg), size);
+   const char *msg = _(getResultStr(res));
+   vte_terminal_feed(VTE_TERMINAL(_term), utf8_to_locale(msg), strlen(msg));
    gtk_label_set_markup(GTK_LABEL(_statusL), _("<i>Finished</i>"));
    if(res == 0)
       gtk_widget_grab_focus(GTK_WIDGET(_closeB));
@@ -134,14 +123,18 @@ void RGTermInstallProgress::stopShell(GtkWidget *self, void* data)
 {
    RGTermInstallProgress *me = (RGTermInstallProgress*)data;  
 
-   if(!me->updateFinished) {
+   if(!me->_updateFinished) {
       gtk_label_set_markup(GTK_LABEL(me->_statusL), 
 			   _("<i>Can't close while running</i>"));
       return;
    } 
 
    RGFlushInterface();
-   me->hide();
+   if(me->_sock != NULL) {
+      gtk_widget_destroy(me->_sock);
+   } else {
+      me->hide();
+   }
 }
 
 bool RGTermInstallProgress::close()
@@ -162,8 +155,7 @@ gboolean RGTermInstallProgress::zvtFocus (GtkWidget *widget,
 }
 
 RGTermInstallProgress::RGTermInstallProgress(RGMainWindow *main) 
-    : RInstallProgress(), RGGladeWindow(main, "zvtinstallprogress"),
-      updateFinished(false)
+   : RInstallProgress(), RGGladeWindow(main, "zvtinstallprogress"), _sock(NULL)
 {
    setTitle(_("Applying Changes"));
 
@@ -197,8 +189,12 @@ RGTermInstallProgress::RGTermInstallProgress(RGMainWindow *main)
    _closeB = glade_xml_get_widget(_gladeXML, "button_close");
    gtk_signal_connect(GTK_OBJECT(_closeB), "clicked",
 		      (GtkSignalFunc)stopShell, this);
-   skipTaskbar(true);
+
+   if(_config->FindB("Volatile::Non-Interactive", false)) 
+      gtk_widget_hide(_closeOnF);
+   
 }
+
 
 
 

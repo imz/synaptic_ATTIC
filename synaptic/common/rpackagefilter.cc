@@ -40,7 +40,6 @@
 
 using namespace std;
 
-// don't translate this, they are only used in the filter file
 char *RPatternPackageFilter::TypeName[] = {
    N_("Name"),
    N_("Description"),
@@ -220,7 +219,7 @@ bool RPatternPackageFilter::filterMaintainer(Pattern pat, RPackage *pkg)
 bool RPatternPackageFilter::filterDepends(Pattern pat, RPackage *pkg,
 					  pkgCache::Dep::DepType filterType)
 {
-   vector<RPackage::DepInformation> deps = pkg->enumDeps();
+   vector<DepInformation> deps = pkg->enumDeps();
    for(unsigned int i=0;i<deps.size();i++) {
       if(deps[i].type == filterType) {
 	    if (regexec(pat.regexps[0], deps[i].name, 0, NULL, 0) == 0) {
@@ -265,7 +264,7 @@ bool RPatternPackageFilter::filterWeakDepends(Pattern pat, RPackage *pkg)
 
 bool RPatternPackageFilter::filterRDepends(Pattern pat, RPackage *pkg)
 {
-   vector<RPackage::DepInformation> deps = pkg->enumRDeps();
+   vector<DepInformation> deps = pkg->enumRDeps();
    for(unsigned int i=0;i<deps.size();i++) {
       if (regexec(pat.regexps[0], deps[i].name, 0, NULL, 0) == 0) {
 	 return true;
@@ -645,7 +644,7 @@ void RReducedViewPackageFilter::addFile(string FileName)
 {
    FileFd F(FileName, FileFd::ReadOnly);
    if (_error->PendingError()) {
-      _error->Error(_("Internal Error: Could not open ReducedView file %s"),
+      _error->Error("Internal Error: Could not open ReducedView file %s",
                     FileName.c_str());
       return;
    }

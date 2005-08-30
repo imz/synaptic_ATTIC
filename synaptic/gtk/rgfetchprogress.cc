@@ -49,16 +49,25 @@ enum {
 
 enum {
    FETCH_PIXMAP_COLUMN,
-   SIZE_COLUMN,
-   URL_COLUMN,
+   FETCH_SIZE_COLUMN,
+   FETCH_DESCR_COLUMN,
+   FETCH_URL_COLUMN,
    N_FETCH_COLUMNS
 };
 
 static const int COLUMN_PERCENT_WIDTH=100;
 static const int COLUMN_PERCENT_HEIGHT=18;
 
+
+bool RGFetchProgress::close()
+{
+   stopDownload(NULL, this);
+   
+   return TRUE;
+}
+
 RGFetchProgress::RGFetchProgress(RGWindow *win)
-   : RGGladeWindow(win, "fetch"), _cursorDirty(false)
+   : RGGladeWindow(win, "fetch"), _cursorDirty(false), _sock(NULL)
 {
    GtkCellRenderer *renderer;
    GtkTreeViewColumn *column;
@@ -67,9 +76,10 @@ RGFetchProgress::RGFetchProgress(RGWindow *win)
    assert(_mainProgressBar);
 
    _table = glade_xml_get_widget(_gladeXML, "treeview_fetch");
-   _tableListStore = gtk_list_store_new(3,
+   _tableListStore = gtk_list_store_new(N_FETCH_COLUMNS,
                                         GDK_TYPE_PIXBUF,
-                                        G_TYPE_STRING, G_TYPE_STRING);
+                                        G_TYPE_STRING, G_TYPE_STRING, 
+					G_TYPE_STRING);
    gtk_tree_view_set_model(GTK_TREE_VIEW(_table),
                            GTK_TREE_MODEL(_tableListStore));
 
@@ -88,14 +98,22 @@ RGFetchProgress::RGFetchProgress(RGWindow *win)
    /* size */
    renderer = gtk_cell_renderer_text_new();
    column = gtk_tree_view_column_new_with_attributes(_("Size"), renderer,
-                                                     "text", SIZE_COLUMN,
+                                                     "text", FETCH_SIZE_COLUMN,
                                                      NULL);
+   gtk_tree_view_append_column(GTK_TREE_VIEW(_table), column);
+
+   /* descr */
+   renderer = gtk_cell_renderer_text_new();
+   column = gtk_tree_view_column_new_with_attributes(_("Package"), renderer,
+                                                     "text",FETCH_DESCR_COLUMN,
+						     NULL);
    gtk_tree_view_append_column(GTK_TREE_VIEW(_table), column);
 
    /* url */
    renderer = gtk_cell_renderer_text_new();
    column = gtk_tree_view_column_new_with_attributes(_("URI"), renderer,
-                                                     "text", URL_COLUMN, NULL);
+                                                     "text", FETCH_URL_COLUMN, 
+						     NULL);
    gtk_tree_view_append_column(GTK_TREE_VIEW(_table), column);
 
 
@@ -105,6 +123,20 @@ RGFetchProgress::RGFetchProgress(RGWindow *win)
 
    PangoContext *context = gdk_pango_context_get();
    _layout = pango_layout_new(context);
+
+   // check if we should run embedded somewhere
+   // we need to make the window show before we obtain the _gc
+   int id = _config->FindI("Volatile::PlugProgressInto", -1);
+   //cout << "Plug ID: " << id << endl;
+   if (id > 0) {
+      gtk_widget_hide(glade_xml_get_widget(_gladeXML, "window_fetch"));
+      GtkWidget *vbox = glade_xml_get_widget(_gladeXML, "vbox_fetch");
+      _sock =  gtk_plug_new(id);
+      gtk_widget_reparent(vbox, _sock);
+      gtk_widget_show_all(_sock);
+      _win = _sock;
+   } 
+   show();
 
    GtkStyle *style = gtk_widget_get_style(_win);
    _font = style->font_desc;
@@ -121,8 +153,7 @@ RGFetchProgress::RGFetchProgress(RGWindow *win)
    assert(expander);
    g_signal_connect (expander, "notify::expanded",
 		     G_CALLBACK (expanderActivate), this);
-   
-   skipTaskbar(true);
+
 }
 
 void RGFetchProgress::expanderActivate(GObject    *object,
@@ -150,7 +181,7 @@ void RGFetchProgress::cursorChanged(GtkTreeView *self, void *data)
 void RGFetchProgress::setDescription(string mainText, string secondText)
 {
    gtk_window_set_title(GTK_WINDOW(_win), mainText.c_str());
-   gchar *str = g_strdup_printf(_("<big><b>%s</b></big> \n\n%s"),
+   gchar *str = g_strdup_printf("<big><b>%s</b></big> \n\n%s",
 				  mainText.c_str(), secondText.c_str());
    gtk_label_set_markup(GTK_LABEL(glade_xml_get_widget(_gladeXML, "label_description")), str);
 			
@@ -162,17 +193,24 @@ bool RGFetchProgress::MediaChange(string Media, string Drive)
 {
    gchar *msg;
 
-   msg =
-      g_strdup_printf(_("Please insert the disk labeled:\n%s\nin drive %s"),
-                      Media.c_str(), Drive.c_str());
+   msg = g_strdup_printf(_("Please insert the disk labeled:\n%s\nin drive %s"),
+			 Media.c_str(), Drive.c_str());
 
    RGUserDialog userDialog(this);
-   bool res = !userDialog.proceed(msg);
+   _cancelled = !userDialog.proceed(msg);
 
    RGFlushInterface();
    g_free(msg);
+   return true;
 
+
+
+#if 0 // this code can be used when apt fixed ubuntu #2281 (patch pending)
+   bool res = !userDialog.proceed(msg);
    //cout << "Media change " << res << endl;
+
+   RGFlushInterface();
+   g_free(msg);
 
    if(res) {
       return false;
@@ -180,6 +218,7 @@ bool RGFetchProgress::MediaChange(string Media, string Drive)
       Update = true;
       return true;
    }
+#endif
 }
 
 
@@ -189,6 +228,7 @@ void RGFetchProgress::updateStatus(pkgAcquire::ItemDesc & Itm, int status)
 
    if (Itm.Owner->ID == 0) {
       Item item;
+      item.descr = Itm.ShortDesc;
       item.uri = Itm.Description;
       item.size = string(SizeToStr(Itm.Owner->FileSize));
       item.status = status;
@@ -274,14 +314,15 @@ bool RGFetchProgress::Pulse(pkgAcquire * Owner)
    long i = CurrentItems < TotalItems ? CurrentItems + 1 : CurrentItems;
    gchar *s;
    if (CurrentCPS != 0 && ETA != 0) {
-      s = g_strdup_printf(_("Downloading file %li of %li at %s/s - %s remaining"),
-			  i, TotalItems,
+      s = g_strdup_printf(_("Download rate: %s/s - %s remaining"),
 			  SizeToStr(CurrentCPS).c_str(),
 			  TimeToStr(ETA).c_str());
+      gtk_label_set_text(GTK_LABEL(glade_xml_get_widget(_gladeXML, "label_eta")),s);
+      g_free(s);
    } else {
-      s = g_strdup_printf(_("Downloading file %li of %li"), i, TotalItems);
+      gtk_label_set_text(GTK_LABEL(glade_xml_get_widget(_gladeXML, "label_eta")),_("Download rate: unknown"));
    }
-
+   s = g_strdup_printf(_("Downloading file %li of %li"), i, TotalItems);
    gtk_progress_bar_set_text(GTK_PROGRESS_BAR(_mainProgressBar), s);
    g_free(s);
 
@@ -296,7 +337,7 @@ void RGFetchProgress::Start()
    //cout << "RGFetchProgress::Start()" << endl;
    pkgAcquireStatus::Start();
    _cancelled = false;
-   show();
+
    RGFlushInterface();
 }
 
@@ -305,7 +346,11 @@ void RGFetchProgress::Stop()
 {
    //cout << "RGFetchProgress::Stop()" << endl;
    RGFlushInterface();
-   hide();
+   if(_sock != NULL) {
+      gtk_widget_destroy(_sock);
+   } else {
+      hide();
+   }
    pkgAcquireStatus::Stop();
 
    //FIXME: this needs to be handled in a better way (gtk-2 maybe?)
@@ -413,8 +458,9 @@ void RGFetchProgress::refreshTable(int row, bool append)
    }
    gtk_list_store_set(_tableListStore, &iter,
                       FETCH_PIXMAP_COLUMN, buf,
-                      SIZE_COLUMN, _items[row].size.c_str(),
-                      URL_COLUMN, _items[row].uri.c_str(), -1);
+                      FETCH_SIZE_COLUMN, _items[row].size.c_str(),
+                      FETCH_DESCR_COLUMN, _items[row].descr.c_str(),
+                      FETCH_URL_COLUMN, _items[row].uri.c_str(), -1);
    path = gtk_tree_model_get_path(GTK_TREE_MODEL(_tableListStore), &iter);
    if(!_cursorDirty)
       gtk_tree_view_scroll_to_cell(GTK_TREE_VIEW(_table),

@@ -86,6 +86,23 @@ void RGSummaryWindow::buildTree(RGSummaryWindow *me)
 
 #ifdef WITH_APT_AUTH
    if(notAuthenticated.size() > 0) {
+      GtkWidget *label;
+      label = glade_xml_get_widget(me->_gladeXML, "label_auth_warning");
+      assert(label);
+      // FIXME: make this a message from a trust class (and remeber to
+      // change the text in rgchangeswindow then too)
+      gchar *msg = g_strdup_printf("<span weight=\"bold\" size=\"larger\">%s"
+				   "</span>\n\n%s",
+				   _("Warning"), 
+				   _("You are about to install software that "
+				     "<b>can't be authenticated</b>! Doing "
+				     "this could allow a malicious individual "
+				     "to damage or take control of your "
+				     "system."));
+      gtk_label_set_markup(GTK_LABEL(label), msg);
+      gtk_widget_show(label);
+      g_free(msg);
+
       /* not authenticated */
       gtk_tree_store_append(me->_treeStore, &iter, NULL);
       gtk_tree_store_set(me->_treeStore, &iter,
@@ -105,7 +122,8 @@ void RGSummaryWindow::buildTree(RGSummaryWindow *me)
       /* (Essentail) removed */
       gtk_tree_store_append(me->_treeStore, &iter, NULL);
       gtk_tree_store_set(me->_treeStore, &iter,
-                         PKG_COLUMN, _("(ESSENTIAL) to be removed"), -1);
+                         PKG_COLUMN, _("<b>(ESSENTIAL) to be removed</b>"), 
+			 -1);
 
       for (vector<RPackage *>::const_iterator p = essential.begin();
            p != essential.end(); p++) {
@@ -118,7 +136,7 @@ void RGSummaryWindow::buildTree(RGSummaryWindow *me)
       /* removed */
       gtk_tree_store_append(me->_treeStore, &iter, NULL);
       gtk_tree_store_set(me->_treeStore, &iter,
-                         PKG_COLUMN, _("To be DOWNGRADED"), -1);
+                         PKG_COLUMN, _("<b>To be DOWNGRADED</b>"), -1);
       for (vector<RPackage *>::const_iterator p = toDowngrade.begin();
            p != toDowngrade.end(); p++) {
          gtk_tree_store_append(me->_treeStore, &iter_child, &iter);
@@ -131,7 +149,7 @@ void RGSummaryWindow::buildTree(RGSummaryWindow *me)
       /* removed */
       gtk_tree_store_append(me->_treeStore, &iter, NULL);
       gtk_tree_store_set(me->_treeStore, &iter,
-                         PKG_COLUMN, _("To be removed"), -1);
+                         PKG_COLUMN, _("<b>To be removed</b>"), -1);
       for (vector<RPackage *>::const_iterator p = toRemove.begin();
            p != toRemove.end(); p++) {
          gtk_tree_store_append(me->_treeStore, &iter_child, &iter);
@@ -144,7 +162,7 @@ void RGSummaryWindow::buildTree(RGSummaryWindow *me)
       /* removed */
       gtk_tree_store_append(me->_treeStore, &iter, NULL);
       gtk_tree_store_set(me->_treeStore, &iter,
-                         PKG_COLUMN, _("To be completely removed (including configuration files)"), 
+                         PKG_COLUMN, _("<b>To be completely removed (including configuration files)</b>"), 
 			 -1);
       for (vector<RPackage *>::const_iterator p = toPurge.begin();
            p != toPurge.end(); p++) {
@@ -354,7 +372,7 @@ RGSummaryWindow::RGSummaryWindow(RGWindow *wwin, RPackageLister *lister)
    GtkTreeViewColumn *column;
    column = gtk_tree_view_column_new_with_attributes(_("Marked Changes"),
                                                      renderer,
-                                                     "text", PKG_COLUMN, NULL);
+                                                     "markup", PKG_COLUMN, NULL);
    /* Add the column to the view. */
    gtk_tree_view_append_column(GTK_TREE_VIEW(_tree), column);
    gtk_widget_show(_tree);
@@ -478,7 +496,10 @@ RGSummaryWindow::RGSummaryWindow(RGWindow *wwin, RPackageLister *lister)
    gtk_label_set_markup(GTK_LABEL(_summarySpaceL), msg_space->str);
    g_string_free(msg, TRUE);
    g_string_free(msg_space, TRUE);
-   skipTaskbar(true);
+   if(!_config->FindB("Volatile::HideMainwindow", false))
+      skipTaskbar(true);
+   else
+      skipTaskbar(false);
 }
 
 
@@ -486,7 +507,7 @@ RGSummaryWindow::RGSummaryWindow(RGWindow *wwin, RPackageLister *lister)
 bool RGSummaryWindow::showAndConfirm()
 {
    gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(_dlonlyB),
-                                _config->FindB("Synaptic::Download-Only",
+                                _config->FindB("Volatile::Download-Only",
                                                false));
 
    show();
@@ -500,7 +521,7 @@ bool RGSummaryWindow::showAndConfirm()
                              , false) == false)
       return false;
 
-   _config->Set("Synaptic::Download-Only",
+   _config->Set("Volatile::Download-Only",
                 gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(_dlonlyB)) ?
                 "true" : "false");
 #ifdef HAVE_RPM

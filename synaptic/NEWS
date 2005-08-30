@@ -1,3 +1,47 @@
+0.57.2:
+ - if no changes are detected in the terminal window in 
+   rgdebinstallprogress after a certain timeout the expander 
+   is opened (assuming that something hangs inside)
+ - updated Chinese/Traditional translation (thanks to Woodman Tuen)
+ - updated Bulgarian translation (thanks to Yavor Doganov)
+ - updated Catalan translation (thanks to Jordi)
+0.57:
+ - updated Bulgarian translation (thanks to Yavor Doganov)
+ - updated Spanish translation (thanks to Jorge Bernal)
+ - updated Brasilian translation (thanks to Andre Luis Lopes)
+ - set title in repository window
+ - various bugfixes (should build on rpm fine again)
+ - dist-upgrade is default when when hiting upgrade 
+0.56.1:
+ - minor bugfix
+0.56
+ - "History" added (log of what changed)
+ - Sources in the sources.list editor can be moved Up and Down
+   (thanks to Norberto Lopes)
+ - new configure switch "--with-apt-authentication"
+ - new configure switch "--with-nice-dpkg-status"
+ - HIGified the old "Expert" Preferences 
+ - switched to gtk2.4 file dialogs
+ - new runtime switch "--add-cdrom /dev/xxx"
+ - new runtime switch "--dist-upgrade-mode"
+ - new runtime switch "--update-at-startup"
+ - autoclean cache by default now 
+ - Translation updates:
+   * Danish (da): Thanks to Morten Brix Pedersen
+   * Dutch (nl): Thanks to Vincent van Adrighem 
+   * Greek (el): Thanks to Kostas Papadimas 
+   * Italian (it): Thanks to Marco Colombo
+   * Catalan (ca): Thanks to Jordi Mallach
+   * Hungarian (hu): Thanks to Gabor Kelemen
+   * Spanish (es): Thanks to Jorge Bernal
+   * Lithuanian (lt): Thanks to Zygimantas Berucka 
+   * Russian (ru): Thanks to Vitaly Lipatov
+   * Chinese (zh_CN): Thanks to Liu Songhe
+   * Turkish (tr): Thanks to  Erçin EKER
+   * Macedonian (mk): Thanks to Arangel Angov
+   * French (fr): Thanks to Jean-Luc Coulon
+   * Xhosa (xh): Thanks to Canonical Ltd 
+
 0.55
  - new columns: "component", "section", "suppported"
  - support to mark packages as supported by the distribution,

@@ -21,6 +21,9 @@
  */
 
 
+#ifndef _RGFETCHPROGRESS_H_
+#define _RGFETCHPROGRESS_H_
+
 #include <apt-pkg/acquire.h>
 
 #include <vector>
@@ -28,9 +31,11 @@
 #include "rggladewindow.h"
 
 
+
 class RGFetchProgress : public pkgAcquireStatus, public RGGladeWindow {
 
    struct Item {
+      string descr;
       string uri;
       string size;
       int status;
@@ -43,6 +48,8 @@ class RGFetchProgress : public pkgAcquireStatus, public RGGladeWindow {
    set<int> _tableRows;
 
    GtkWidget *_mainProgressBar; // GtkProgressBar
+
+   GtkWidget *_sock;
 
    PangoLayout *_layout;
    GtkTreeViewColumn *_statusColumn;
@@ -74,6 +81,7 @@ class RGFetchProgress : public pkgAcquireStatus, public RGGladeWindow {
    virtual void Fail(pkgAcquire::ItemDesc &Itm);
    virtual void Start();
    virtual void Stop();
+   virtual bool close();
 
    bool Pulse(pkgAcquire * Owner);
 
@@ -83,3 +91,5 @@ class RGFetchProgress : public pkgAcquireStatus, public RGGladeWindow {
 
    RGFetchProgress(RGWindow *win);
 };
+
+#endif

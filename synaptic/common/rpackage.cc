@@ -45,6 +45,8 @@
 #include <assert.h>
 #include <sstream>
 
+
+
 #include <apt-pkg/pkgrecords.h>
 #include <apt-pkg/depcache.h>
 #include <apt-pkg/srcrecords.h>
@@ -112,7 +114,6 @@ const char *RPackage::srcPackage()
 {
    pkgCache::VerIterator ver = _package->VersionList();
    pkgRecords::Parser &rec=_records->Lookup(ver.FileList());
-   
    const char *s=rec.SourcePkg().empty()?name():rec.SourcePkg().c_str();
  
    return s;
@@ -380,7 +381,7 @@ bool RPackage::nextWDeps(const char *&type, const char *&what,
 }
 #endif
 
-vector<RPackage::DepInformation> RPackage::enumRDeps()
+vector<DepInformation> RPackage::enumRDeps()
 {
    vector<DepInformation> deps;
    DepInformation dep;
@@ -389,7 +390,7 @@ vector<RPackage::DepInformation> RPackage::enumRDeps()
    for(pkgCache::DepIterator D = _package->RevDependsList(); D.end() != true; D++) {
       // clear old values
       dep.isOr=dep.isVirtual=false;
-      dep.name=dep.version=dep.versionComp=dep.typeStr=NULL;
+      dep.name=dep.version=dep.versionComp=NULL;
 
       // check target and or-depends status
       pkgCache::PkgIterator Trg = D.TargetPkg();
@@ -398,7 +399,9 @@ vector<RPackage::DepInformation> RPackage::enumRDeps()
 	 dep.versionComp = "";
       }
 
-      dep.typeStr=_("Dependency of");
+      //FIXME: HACK ALARM, we need a "RDepends" type, so we use the last
+      // one in pkg-dep
+      dep.type = (pkgCache::Dep::DepType)(pkgCache::Dep::Obsoletes+1);
       dep.name = D.ParentPkg().Name();
 
       if(Trg->VersionList == 0)
@@ -541,10 +544,14 @@ string RPackage::showWhyInstBroken()
 	       requiredVersion = "("+string(Start.CompType())+string(Start.TargetVer())+")";
             if (Ver.end() == false) {
                if (FirstOr == false)
+		  // TRANSLATORS: dependency error message, example:
+		  // "apt 0.5.4 but 0.5.3 is to be installed"
                   ioprintf(out, _("\t%s %s but %s is to be installed"),
                            Start.TargetPkg().Name(), requiredVersion.c_str(),
 			   Ver.VerStr());
                else
+		  // TRANSLATORS: dependency error message, example:
+		  // "Depends: apt 0.5.4 but 0.5.3 is to be installed"
                   ioprintf(out, _(" %s: %s %s but %s is to be installed"),
                            End.DepType(), Start.TargetPkg().Name(),
 			   requiredVersion.c_str(), Ver.VerStr());
@@ -553,23 +560,35 @@ string RPackage::showWhyInstBroken()
                    true) {
                   if (Targ->ProvidesList == 0)
                      if (FirstOr == false)
+			// TRANSLATORS: dependency error message, example:
+			// "apt 0.5.4 but it is not installable"
                         ioprintf(out, _("\t%s %s but it is not installable"),
                                  Start.TargetPkg().Name(), 
 				 requiredVersion.c_str());
                      else
+			// TRANSLATORS: dependency error message, example:
+			// "Depends: apt 0.5.4  but it is not installable",
                         ioprintf(out, "%s: %s %s but it is not installable",
                                  End.DepType(), Start.TargetPkg().Name(),
 				 requiredVersion.c_str());
                   else if (FirstOr == false)
+		     // TRANSLATORS: dependency error message, example:
+		     // "apt but it is a virtual package"
                      ioprintf(out, _("\t%s but it is a virtual package"),
                               Start.TargetPkg().Name());
                   else
+		     // TRANSLATORS: dependency error message, example:
+		     // "Depends: apt but it is a virtual package"
                      ioprintf(out, _("%s: %s but it is a virtual package"),
                               End.DepType(), Start.TargetPkg().Name());
                } else if (FirstOr == false)
+		  // TRANSLATORS: dependency error message, example:
+		  // "apt but it is not going to be installed"
                   ioprintf(out, _("\t%s but it is not going to be installed"),
                            Start.TargetPkg().Name());
                else
+		  // TRANSLATORS: dependency error message, example:
+		  // "Depends: apt but it is not going to be installed"
                   ioprintf(out, _("%s: %s but it is not going to be installed"),
                            End.DepType(), Start.TargetPkg().Name());
             }
@@ -601,7 +620,7 @@ string RPackage::showWhyInstBroken()
 }
 
 
-vector<RPackage::DepInformation> RPackage::enumDeps(bool useCanidateVersion)
+vector<DepInformation> RPackage::enumDeps(bool useCanidateVersion)
 {
    vector<DepInformation> deps;
    DepInformation dep;
@@ -620,7 +639,7 @@ vector<RPackage::DepInformation> RPackage::enumDeps(bool useCanidateVersion)
 
       // clear old values
       dep.isOr=dep.isVirtual=dep.isSatisfied=false;
-      dep.name=dep.version=dep.versionComp=dep.typeStr=NULL;
+      dep.name=dep.version=dep.versionComp=NULL;
 
       // check target and or-depends status
       pkgCache::PkgIterator Trg = D.TargetPkg();
@@ -629,21 +648,18 @@ vector<RPackage::DepInformation> RPackage::enumDeps(bool useCanidateVersion)
 
       // common information
       dep.type = (pkgCache::Dep::DepType)D->Type;
-      dep.typeStr = D.DepType();
       dep.name = Trg.Name();
 
       // satisfied
       if (((*_depcache)[D] & pkgDepCache::DepGInstall) ==
           pkgDepCache::DepGInstall)
          dep.isSatisfied = true;
-
       if (Trg->VersionList == 0) {
 	 dep.isVirtual = true;
       } else {
 	 dep.version=D.TargetVer();
 	 dep.versionComp=D.CompType();
       }
-
       deps.push_back(dep);
    }
 
@@ -747,8 +763,6 @@ void RPackage::setInstall()
 void RPackage::setReInstall(bool flag)
 {
     _depcache->SetReInstall(*_package, flag);
-    _config->Set("APT::Get::ReInstall", flag);
-    
     if (_notify)
 	_lister->notifyChange(this);
 }
@@ -765,32 +779,13 @@ void RPackage::setRemove(bool purge)
    Fix.InstallProtect();
    Fix.Resolve(true);
 
+   _depcache->SetReInstall(*_package, false);
    _depcache->MarkDelete(*_package, purge);
 
    if (_notify)
       _lister->notifyChange(this);
 }
 
-void create_tmpfile(const char *pattern, char **filename, FILE **out)
-{
-   char *tmpdir = NULL;
-
-   // remove from pin-file
-   if (!((tmpdir = getenv("TMPDIR")))) {
-      tmpdir = getenv("TMP");
-   }
-   if (!tmpdir) {
-      tmpdir = "/tmp";
-   }
-   *filename = (char *)malloc(strlen(tmpdir) + strlen(pattern) + 2);
-   assert(filename);
-
-   strcpy(*filename, tmpdir);
-   strcat(*filename, "/");
-   strcat(*filename, pattern);
-   int tmp_fd = mkstemp(*filename);
-   *out = fdopen(tmp_fd, "w+b");
-}
 
 string RPackage::getChangelogFile(pkgAcquire *fetcher)
 {
@@ -809,7 +804,10 @@ string RPackage::getChangelogFile(pkgAcquire *fetcher)
    if(srcpkg.size()>3 && srcpkg[0]=='l' && srcpkg[1]=='i' && srcpkg[2]=='b')
       prefix=std::string("lib")+srcpkg[3];
 
-   string verstr = availableVersion();
+   string verstr;
+   if(availableVersion() != NULL) 
+      verstr = availableVersion();
+   
    if(verstr.find(':')!=verstr.npos)
       verstr=string(verstr, verstr.find(':')+1);
    char uri[512];
@@ -823,7 +821,7 @@ string RPackage::getChangelogFile(pkgAcquire *fetcher)
    //cout << "uri is: " << uri << endl;
 
    // no need to translate this, the changelog is in english anyway
-   string filename = RConfDir()+"/tmp_cl";
+   string filename = RTmpDir()+"/tmp_cl";
    ofstream out(filename.c_str());
    out << "Failed to fetch the changelog for " << name() << endl;
    out << "URI was: " << uri << endl;
@@ -851,11 +849,9 @@ string RPackage::getCanidateOrigin()
 void RPackage::setPinned(bool flag)
 {
    FILE *out;
-   char pattern[] = "syn-XXXXXX";
-   char *filename = NULL;
    struct stat stat_buf;
 
-   string File =RConfDir() + "/preferences";
+   string File =RStateDir() + "/preferences";
 
    _boolFlags = flag ? (_boolFlags | FPinned) : (_boolFlags & FPinned);
 
@@ -879,7 +875,9 @@ void RPackage::setPinned(bool flag)
    } else {
       // delete package from pinning file
       stat(File.c_str(), &stat_buf);
-      create_tmpfile(pattern, &filename, &out);
+      // create a tmp_pin file in the internal dir
+      string filename = RTmpDir()+"/tmp_pin";
+      FILE *out = fopen(filename.c_str(),"w");
       if (out == NULL)
          cerr << "error opening tmpfile: " << filename << endl;
       FileFd Fd(File, FileFd::ReadOnly);
@@ -905,9 +903,9 @@ void RPackage::setPinned(bool flag)
          }
       }
       fflush(out);
-      rename(filename, File.c_str());
+      rename(filename.c_str(), File.c_str());
       chmod(File.c_str(), stat_buf.st_mode);
-      free(filename);
+      fclose(out);
    }
 }
 

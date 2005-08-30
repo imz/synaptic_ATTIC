@@ -173,7 +173,7 @@ void RPackageViewSearch::addPackage(RPackage *pkg)
       break;
    case RPatternPackageFilter::Depends: 
       {
-	 vector<RPackage::DepInformation> d = pkg->enumDeps(true);
+	 vector<DepInformation> d = pkg->enumDeps(true);
 	 for(unsigned int i=0;i<d.size();i++)
 	    str += string(d[i].name);
 	 break; 
@@ -437,7 +437,9 @@ void RPackageViewFilter::makePresetFilters()
       filter->preset = true;
       filter->pattern.addPattern(RPatternPackageFilter::Depends,
                                  "^debconf", false);
-      filter->setName("Pkg with Debconf"); _("Pkg with Debconf");
+      // TRANSLATORS: This is a filter that will give you all packages
+      // with debconf support (that can be reconfigured with debconf)
+      filter->setName("Package with Debconf"); _("Package with Debconf");
       registerFilter(filter);
    }
 #endif

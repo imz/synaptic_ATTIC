@@ -37,6 +37,9 @@
 #include <algorithm>
 #include <fstream>
 
+#include <sys/types.h>
+#include <sys/wait.h>
+
 #include <apt-pkg/strutl.h>
 #include <apt-pkg/error.h>
 #include <apt-pkg/configuration.h>
@@ -56,6 +59,7 @@
 #include "rgsummarywindow.h"
 #include "rgchangeswindow.h"
 #include "rgcdscanner.h"
+#include "rgpkgcdrom.h"
 #include "rgsetoptwindow.h"
 
 #include "rgfetchprogress.h"
@@ -74,12 +78,6 @@
 
 #include "i18n.h"
 
-static char *ImportanceNames[] = {
-   _("Unknown"),
-   _("Normal"),
-   _("Critical"),
-   _("Security")
-};
 
 
 enum { WHAT_IT_DEPENDS_ON,
@@ -395,6 +393,7 @@ void RGMainWindow::updatePackageInfo(RPackage *pkg)
    // enable remove if package is installed
    if(flags & RPackage::FInstalled)
       gtk_widget_set_sensitive(_removeM, TRUE);
+
    // enable purge if package is installed or has residual config
    if(flags & RPackage::FInstalled || flags & RPackage::FResidualConfig)
       gtk_widget_set_sensitive(_purgeM, TRUE);
@@ -518,13 +517,14 @@ bool RGMainWindow::askStateChange(RPackageLister::pkgState state,
    return changed;
 }
 
+#if 0
 void RGMainWindow::installAllWeakDepends(RPackage *pkg, 
 					 pkgCache::Dep::DepType type)
 {
    //cout << "RGMainWindow::installWeakDepends()" << endl;
    if(pkg == NULL) return;
    
-   vector<RPackage::DepInformation> deps = pkg->enumDeps();
+   vector<DepInformation> deps = pkg->enumDeps();
    for(unsigned int i=0;i<deps.size();i++) {
       if(deps[i].type == type) {
 	 if(!deps[i].isVirtual) {
@@ -534,6 +534,7 @@ void RGMainWindow::installAllWeakDepends(RPackage *pkg,
       }
    } 
 }
+#endif
 
 void RGMainWindow::pkgAction(RGPkgAction action)
 {
@@ -586,12 +587,14 @@ void RGMainWindow::pkgAction(RGPkgAction action)
          case PKG_INSTALL:     // install
             instPkgs.push_back(pkg);
             pkgInstallHelper(pkg, false);
+#if 0 // handled in the pkgCache now (where it belongs)
 	    if(_config->FindB("Synaptic::UseRecommends", false)) {
 	       installAllWeakDepends(pkg, pkgCache::Dep::Recommends);
 	    }
 	    if(_config->FindB("Synaptic::UseSuggests", false)) {
 	       installAllWeakDepends(pkg, pkgCache::Dep::Suggests);
 	    }
+#endif
             break;
          case PKG_INSTALL_FROM_VERSION:     // install with specific version
             pkgInstallHelper(pkg, false);
@@ -689,7 +692,7 @@ bool RGMainWindow::checkForFailedInst(vector<RPackage *> instPkgs)
 RGMainWindow::RGMainWindow(RPackageLister *packLister, string name)
    : RGGladeWindow(NULL, name), _lister(packLister), _pkgList(0), 
      _treeView(0), _tasksWin(0), _iconLegendPanel(0), _pkgDetails(0),
-     _logView(0)
+     _logView(0), _installProgress(0), _fetchProgress(0)
 {
    assert(_win);
 
@@ -793,8 +796,7 @@ void RGMainWindow::buildTreeView()
    visible = _config->FindI("Synaptic::supportedColumnVisible", true);
    if(visible) {
       renderer = gtk_cell_renderer_pixbuf_new();
-      // TRANSLATORS: Column header for the column "Supported" in the package list
-      column = gtk_tree_view_column_new_with_attributes(_(" "), renderer,
+      column = gtk_tree_view_column_new_with_attributes(" ", renderer,
                                                         "pixbuf",
                                                         SUPPORTED_COLUMN, 
 							NULL);
@@ -1011,6 +1013,8 @@ void RGMainWindow::buildInterface()
    gtk_window_move(GTK_WINDOW(_win),
                    _config->FindI("Synaptic::windowX", 100),
                    _config->FindI("Synaptic::windowY", 100));
+   if(_config->FindB("Synaptic::Maximized",false))
+      gtk_window_maximize(GTK_WINDOW(_win));
    RGFlushInterface();
 
 
@@ -1194,17 +1198,17 @@ void RGMainWindow::buildInterface()
 
    // Workaround for a bug in libglade.
    button = glade_xml_get_widget(_gladeXML, "button_update");
-   gtk_tooltips_set_tip(GTK_TOOLTIPS(_tooltips), button,
-                        _("Reload the package information to become"
-                          " informed about new, removed or upgraded "
-                          " software packages."), "");
+   gtk_tool_item_set_tooltip(GTK_TOOL_ITEM(button), GTK_TOOLTIPS(_tooltips), 
+			     _("Reload the package information to become "
+			       "informed about new, removed or upgraded "
+			       "software packages."), "");
 
    button = glade_xml_get_widget(_gladeXML, "button_upgrade");
-   gtk_tooltips_set_tip(GTK_TOOLTIPS(_tooltips), button,
+   gtk_tool_item_set_tooltip(GTK_TOOL_ITEM(button), GTK_TOOLTIPS(_tooltips),
                         _("Mark all possible upgrades"), "");
 
    button = glade_xml_get_widget(_gladeXML, "button_procceed");
-   gtk_tooltips_set_tip(GTK_TOOLTIPS(_tooltips), button,
+   gtk_tool_item_set_tooltip(GTK_TOOL_ITEM(button), GTK_TOOLTIPS(_tooltips), 
                         _("Apply all marked changes"), "");
 
    _pkgCommonTextView = glade_xml_get_widget(_gladeXML, "text_descr");
@@ -1641,6 +1645,10 @@ void RGMainWindow::saveState()
    _config->Set("Synaptic::windowX", x);
    _config->Set("Synaptic::windowY", y);
    _config->Set("Synaptic::ToolbarState", (int)_toolbarStyle);
+   if(gdk_window_get_state(_win->window) & GDK_WINDOW_STATE_MAXIMIZED)
+      _config->Set("Synaptic::Maximized", true);
+   else
+      _config->Set("Synaptic::Maximized", false);
 
    if (!RWriteConfigFile(*_config)) {
       _error->Error(_("An error occurred while saving configurations."));
@@ -1714,7 +1722,8 @@ void RGMainWindow::setInterfaceLocked(bool flag)
          return;
 
       gtk_widget_set_sensitive(_win, FALSE);
-      gdk_window_set_cursor(_win->window, _busyCursor);
+      if(GTK_WIDGET_VISIBLE(_win))
+	 gdk_window_set_cursor(_win->window, _busyCursor);
    } else {
       assert(_interfaceLocked > 0);
 
@@ -1723,7 +1732,8 @@ void RGMainWindow::setInterfaceLocked(bool flag)
          return;
 
       gtk_widget_set_sensitive(_win, TRUE);
-      gdk_window_set_cursor(_win->window, NULL);
+      if(GTK_WIDGET_VISIBLE(_win))
+	 gdk_window_set_cursor(_win->window, NULL);
    }
 
    // fast enough with the new fixed-height mode
@@ -1820,7 +1830,7 @@ void RGMainWindow::cbChangelogDialog(GtkWidget *self, void *data)
       return;
     
    me->setInterfaceLocked(TRUE);
-   RGFetchProgress *status= new RGFetchProgress(me);;
+   RGFetchProgress *status = new RGFetchProgress(me);;
    status->setDescription(_("Downloading changelog"),
 			  _("The changelog contains information about the"
              " changes and closed bugs in each version of"
@@ -1861,6 +1871,9 @@ void RGMainWindow::cbChangelogDialog(GtkWidget *self, void *data)
    }
    
    dia.run();
+
+   // clean up
+   delete status;
    unlink(filename.c_str());
    me->setInterfaceLocked(FALSE);
 }
@@ -1925,7 +1938,7 @@ void RGMainWindow::cbAddCDROM(GtkWidget *self, void *data)
    scan.hide();
    if (updateCache) {
       me->setTreeLocked(TRUE);
-      me->_lister->openCache(TRUE);
+      me->_lister->openCache();
       me->setTreeLocked(FALSE);
       me->refreshTable(me->selectedPackage());
    }
@@ -2070,31 +2083,101 @@ void RGMainWindow::cbDetailsWindow(GtkWidget *self, void *data)
    me->_pkgDetails->show();
 }
 
+// helper to hide the "please wait" message
+static void plug_added(GtkWidget *sock, void *data)
+{
+   gtk_widget_show(sock);
+   gtk_widget_hide(GTK_WIDGET(data));
+}
+
+static gboolean kill_repos(GtkWidget *self, GdkEvent *event, void *data)
+{
+   GPid pid = *(GPid*)data;
+   kill(pid, SIGQUIT);
+   return TRUE;
+}
+
 void RGMainWindow::cbShowSourcesWindow(GtkWidget *self, void *data)
 {
-   RGMainWindow *win = (RGMainWindow *) data;
+   RGMainWindow *me = (RGMainWindow *) data;
 
+   // FIXME: make this all go into the repository window
    bool Changed = false;
+   bool ForceReload = _config->FindB("Synaptic::UpdateAfterSrcChange",false);
    {
-      RGRepositoryEditor w(win);
-      Changed = w.Run();
-      
+      if(!g_file_test("/usr/bin/gnome-software-properties", 
+		      G_FILE_TEST_IS_EXECUTABLE) 
+	 || _config->FindB("Synaptic::dontUseGnomeSoftwareProperties", false)) 
+      {
+	 RGRepositoryEditor w(me);
+	 Changed = w.Run();
+      } else {
+	 // use gnome-software-properties window
+	 me->setInterfaceLocked(TRUE);
+	 ForceReload = true;
+	 GPid pid;
+	 int status;
+	 char *argv[5];
+	 GtkWidget *win = gtk_window_new(GTK_WINDOW_TOPLEVEL);
+	 gtk_window_set_title(GTK_WINDOW(win), _("Repositories"));
+	 gtk_window_set_default_size(GTK_WINDOW(win),400,500);
+	 gtk_container_set_border_width(GTK_CONTAINER(win), 6);
+	 gtk_window_set_transient_for(GTK_WINDOW(win), GTK_WINDOW(me->_win));
+	 gtk_window_set_skip_taskbar_hint(GTK_WINDOW(win), TRUE);
+	 GtkWidget *vbox = gtk_vbox_new(FALSE, 12);
+	 gtk_container_add(GTK_CONTAINER(win), vbox);
+	 gtk_widget_show(vbox);
+
+	 GtkWidget *label = gtk_label_new("");
+	 gtk_label_set_markup(GTK_LABEL(label),
+			      _("<big><b>Building repository dialog</b></big>\n\n"
+				"Please wait."));
+	 gtk_box_pack_start_defaults(GTK_BOX(vbox), label);
+	 gtk_widget_show(label);
+	 
+	 GtkWidget *sock = gtk_socket_new();
+	 g_signal_connect(G_OBJECT(sock), "plug-added", 
+			  G_CALLBACK(plug_added),  label);
+	 gtk_box_pack_start_defaults(GTK_BOX(vbox), sock);
+	 
+	 argv[0] = "/usr/bin/gnome-software-properties";
+	 argv[1] = "-n";
+	 argv[2] = "-p";
+	 argv[3] = g_strdup_printf("%i", gtk_socket_get_id(GTK_SOCKET(sock)));
+	 argv[4] = NULL;
+	 
+	 g_spawn_async(NULL, argv, NULL,(GSpawnFlags)G_SPAWN_DO_NOT_REAP_CHILD,
+		       NULL, NULL, &pid, NULL);
+	 // kill the child if the window is deleted
+ 	 g_signal_connect(G_OBJECT(win), "delete-event", 
+ 			  G_CALLBACK(kill_repos), &pid);
+	 gtk_widget_show_all(win);
+	 while(waitpid(pid, &status, WNOHANG) == 0) {
+	    usleep(50000);
+	    RGFlushInterface();
+	 }
+	 Changed = WEXITSTATUS(status);    
+	 gtk_widget_destroy(win);
+	 me->setInterfaceLocked(FALSE);
+      }
    }
    RGFlushInterface();
 
    // auto update after repostitory change
-   if (Changed == true && 
-       _config->FindB("Synaptic::UpdateAfterSrcChange",false)) {
-      win->cbUpdateClicked(NULL, data);
+   if (Changed == true && ForceReload) {
+      me->cbUpdateClicked(NULL, data);
    } else if(Changed == true && 
 	     _config->FindB("Synaptic::AskForUpdateAfterSrcChange",true)) {
       // ask for update after repo change
       GtkWidget *cb, *dialog;
-      dialog = gtk_message_dialog_new (GTK_WINDOW(win->window()),
+      dialog = gtk_message_dialog_new (GTK_WINDOW(me->window()),
 				       GTK_DIALOG_DESTROY_WITH_PARENT,
 				       GTK_MESSAGE_INFO,
 				       GTK_BUTTONS_CLOSE,
 				       _("Repositories changed"));
+      // TRANSLATORS: this message appears when the user added/removed 
+      // a repostiory (sources.list entry) a reload (apt-get udpate) is 
+      // needed then
       gchar *msgstr = _("The repository information "
 			"has changed. "
 			"You have to click on the "
@@ -2225,7 +2308,7 @@ void RGMainWindow::cbHelpAction(GtkWidget *self, void *data)
                                "You need either the GNOME help viewer 'yelp', "
                                "the 'konqueror' browser or the 'mozilla' "
                                "browser to view the synaptic manual.\n\n"
-                               "Alternativly you can open the man page "
+                               "Alternatively you can open the man page "
                                "with 'man synaptic' from the "
                                "command line or view the html version located "
                                "in the 'synaptic/html' folder."));
@@ -2257,7 +2340,8 @@ void RGMainWindow::cbShowFilterManagerWindow(GtkWidget *self, void *data)
    }
 
    me->_fmanagerWin->readFilters();
-   if(gtk_dialog_run(GTK_DIALOG(me->_fmanagerWin->window()))) {
+   int res = gtk_dialog_run(GTK_DIALOG(me->_fmanagerWin->window()));
+   if(res == GTK_RESPONSE_OK) {
       me->setInterfaceLocked(TRUE);
 
       me->_lister->filterView()->refreshFilters();
@@ -2315,7 +2399,7 @@ void RGMainWindow::cbClearAllChangesClicked(GtkWidget *self, void *data)
    me->setTreeLocked(TRUE);
 
    // reset
-   me->_lister->openCache(TRUE);
+   me->_lister->openCache();
 
    me->setTreeLocked(FALSE);
    me->_lister->registerObserver(me);
@@ -2417,7 +2501,7 @@ void RGMainWindow::cbChangedView(GtkWidget *self, void *data)
    //   cout << "cbChangedView()"<<endl;
 
    RGMainWindow *me = (RGMainWindow *) data; 
-   int view = (int)gtk_object_get_data(GTK_OBJECT(self), "index");
+   long view = (long)gtk_object_get_data(GTK_OBJECT(self), "index");
    me->changeView(view);
 }
 
@@ -2430,6 +2514,25 @@ void RGMainWindow::cbChangedSubView(GtkTreeSelection *selection,
    me->refreshTable(NULL);
    me->setBusyCursor(false);
    me->updatePackageInfo(NULL);
+}
+
+void RGMainWindow::activeWindowToForeground()
+{
+   //cout << "activeWindowToForeground: " << getpid() << endl;
+
+   // easy, we have a main window
+   if(_config->FindB("Volatile::HideMainwindow", false) == false) {
+      gtk_window_present(GTK_WINDOW(window()));
+      return;
+   }
+
+   // harder, we run without mainWindow (in non-interactive mode most likly)
+   if( _fetchProgress && GTK_WIDGET_VISIBLE(_fetchProgress->window()))
+      gtk_window_present(GTK_WINDOW(_fetchProgress->window()));
+   else if(_installProgress && GTK_WIDGET_VISIBLE(_installProgress->window()))
+      gtk_window_present(GTK_WINDOW(_installProgress->window()));
+   else
+      g_critical("activeWindowToForeground(): no active window found\n");
 }
 
 void RGMainWindow::cbProceedClicked(GtkWidget *self, void *data)
@@ -2472,7 +2575,7 @@ void RGMainWindow::cbProceedClicked(GtkWidget *self, void *data)
    me->setStatusText(_("Applying marked changes. This may take a while..."));
 
    // fetch packages
-   RGFetchProgress *fprogress = new RGFetchProgress(me);
+   RGFetchProgress *fprogress=me->_fetchProgress = new RGFetchProgress(me);
    fprogress->setDescription(_("Downloading package files"), 
 			     _("The package files will be cached locally for installation."));
 
@@ -2492,11 +2595,16 @@ void RGMainWindow::cbProceedClicked(GtkWidget *self, void *data)
 
 
    RInstallProgress *iprogress;
-#ifdef HAVE_TERMINAL
+#ifdef HAVE_TERMINAL 
 #ifdef HAVE_RPM
    bool UseTerminal = false;
 #else
+   // no RPM
+   #ifdef WITH_DPKG_STATUSFD
+   bool UseTerminal = false;
+   #else
    bool UseTerminal = true;
+   #endif // DPKG
 #endif // HAVE_RPM
    RGTermInstallProgress *term = NULL;
    if (_config->FindB("Synaptic::UseTerminal", UseTerminal) == true)
@@ -2505,20 +2613,21 @@ void RGMainWindow::cbProceedClicked(GtkWidget *self, void *data)
 #endif // HAVE_TERMINAL
 
 
-
 #ifdef HAVE_RPM
       iprogress = new RGInstallProgress(me, me->_lister);
 #else 
   #ifdef WITH_DPKG_STATUSFD
-      iprogress = new RGDebInstallProgress(me,me->_lister);
+      iprogress = new RGDebInstallProgress(me,me->_lister, me->_userDialog);
   #else 
    iprogress = new RGDummyInstallProgress();
   #endif // WITH_DPKG_STATUSFD
 #endif // HAVE_RPM
+   me->_installProgress = dynamic_cast<RGWindow*>(iprogress);
 
    //bool result = me->_lister->commitChanges(fprogress, iprogress);
    me->_lister->commitChanges(fprogress, iprogress);
 
+   // FIXME: move this into the terminal class
 #ifdef HAVE_TERMINAL
    // wait until the term dialog is closed
    if (term != NULL) {
@@ -2529,27 +2638,12 @@ void RGMainWindow::cbProceedClicked(GtkWidget *self, void *data)
    }
 #endif
    delete fprogress;
+   me->_fetchProgress = NULL;
    delete iprogress;
+   me->_installProgress = NULL;
 
    if (_config->FindB("Synaptic::IgnorePMOutput", false) == false) {
       me->showErrors();
-#if 0
-      if (!_error->empty()) {
-	 string FullMessage,message;
-	 while (!_error->empty()) {
-	    _error->PopMessage(message);
-	    // Ignore some stupid error messages.
-	    if (message == "Tried to dequeue a fetching object")
-	       continue;
-	    FullMessage += message;
-	 }
-	 RGGladeUserDialog dia(me,"download_error");
-	 GtkWidget *tv = glade_xml_get_widget(dia.getGladeXML(), "textview");
-	 GtkTextBuffer *tb = gtk_text_view_get_buffer(GTK_TEXT_VIEW(tv));
-	 gtk_text_buffer_set_text(tb, utf8(FullMessage.c_str()), -1);
-	 dia.run();
-      }
-#endif
    } else {
       _error->Discard();
    }
@@ -2565,9 +2659,9 @@ void RGMainWindow::cbProceedClicked(GtkWidget *self, void *data)
       exit(0);
    }
 
-   if (_config->FindB("Synaptic::Download-Only", false) == false) {
+   if (_config->FindB("Volatile::Download-Only", false) == false) {
       // reset the cache
-      if (!me->_lister->openCache(true)) {
+      if (!me->_lister->openCache()) {
          me->showErrors();
          exit(1);
       }
@@ -2613,7 +2707,7 @@ void RGMainWindow::cbUpdateClicked(GtkWidget *self, void *data)
 //xxx    delete me->_fmanagerWin;
    me->_fmanagerWin = NULL;
 
-   RGFetchProgress *progress = new RGFetchProgress(me);
+   RGFetchProgress *progress=me->_fetchProgress= new RGFetchProgress(me);
    progress->setDescription(_("Downloading package information"),
 			    _("The repositories will be checked for new, removed "
                "or upgraded software packages."));
@@ -2649,11 +2743,12 @@ void RGMainWindow::cbUpdateClicked(GtkWidget *self, void *data)
       _config->Set("Synaptic::update::last",time(NULL));
    }
    delete progress;
+   me->_fetchProgress=NULL;
 
    // show errors and warnings (like the gpg failures for the package list)
    me->showErrors();
 
-   if(me->_lister->openCache(TRUE))
+   if(me->_lister->openCache())
       me->showErrors();
 
    // reread saved selections
@@ -2708,7 +2803,7 @@ void RGMainWindow::cbUpgradeClicked(GtkWidget *self, void *data)
    }
    // check if we have saved upgrade type
    UpgradeType upgrade =
-      (UpgradeType) _config->FindI("Synaptic::UpgradeType", UPGRADE_ASK);
+      (UpgradeType) _config->FindI("Synaptic::UpgradeType", UPGRADE_DIST);
 
    // special case for non-interactive upgrades
    if(_config->FindB("Volatile::Non-Interactive", false)) 
@@ -2754,11 +2849,17 @@ void RGMainWindow::cbUpgradeClicked(GtkWidget *self, void *data)
    me->setStatusText(_("Marking all available upgrades..."));
 
    me->_lister->saveUndoState();
+   
+   RPackageLister::pkgState state;
+   me->_lister->saveState(state);
 
    if (dist_upgrade)
       res = me->_lister->distUpgrade();
    else
       res = me->_lister->upgrade();
+
+   // mvo: do we really want this?
+   me->askStateChange(state, vector<RPackage*>());
 
    me->refreshTable(pkg);
 
@@ -2817,7 +2918,7 @@ void RGMainWindow::cbMenuPinClicked(GtkWidget *self, void *data)
       _roptions->setPackageLock(pkg->name(), active);
       li = g_list_next(li);
    }
-   me->_lister->openCache(TRUE);
+   me->_lister->openCache();
 
    // reread saved selections
    ifstream in(file);
@@ -2910,24 +3011,19 @@ void RGMainWindow::cbTreeviewPopupMenu(GtkWidget *treeview,
             oneclickitem = item->data;
       }
 
-      if ((flags & RPackage::FInstalled) && !(flags & RPackage::FRemove)) {
-
-         // Remove buttons (remove)
-         if (i == 4) {
+      // remove
+      if (i == 4 &&  (flags & RPackage::FInstalled) 
+	  && (!(flags & RPackage::FRemove) || (flags & RPackage::FPurge)) ) {
             gtk_widget_set_sensitive(GTK_WIDGET(item->data), TRUE);
-            if (i == 4 && oneclickitem == NULL)
+            if (oneclickitem == NULL)
                oneclickitem = item->data;
-         }
-
-         // Purge
-         if (i == 5) {
-            gtk_widget_set_sensitive(GTK_WIDGET(item->data), TRUE);
-	 }
       }
 
-      if (i == 5 && (flags & RPackage::FResidualConfig)
-          && !(flags & RPackage::FRemove)) {
-         gtk_widget_set_sensitive(GTK_WIDGET(item->data), TRUE);
+      // Purge
+      if (i == 5 
+	  && (flags&RPackage::FInstalled || flags&RPackage::FResidualConfig) 
+	  && !(flags & RPackage::FPurge) ) {
+	 gtk_widget_set_sensitive(GTK_WIDGET(item->data), TRUE);
       }
 
       // Seperator is i==6 (hide on left click)
@@ -2993,7 +3089,7 @@ GtkWidget* RGMainWindow::buildWeakDependsMenu(RPackage *pkg,
 
    GtkWidget *menu = gtk_menu_new();
    GtkWidget *item;
-   vector<RPackage::DepInformation> deps = pkg->enumDeps();
+   vector<DepInformation> deps = pkg->enumDeps();
    for(unsigned int i=0;i<deps.size();i++) {
       if(deps[i].type == type) {
 	 // not virtual

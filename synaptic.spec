@@ -1,16 +1,16 @@
 # hey Emacs, its -*- mode: rpm-spec; coding: cyrillic-cp1251; -*-
 # $Id: synaptic,v 1.1 2003/04/28 11:30:54 svd Exp $
 
-%define rel pre2
 # '--with ru_po' if we have updated ru.po (Source1)
 %def_with ru_po
 # '--with ru_man' if we have updated russian manpage (Source2)
 %def_without ru_man
 %def_enable autotools
 
+%define rel %nil
 Name: synaptic
-Version: 0.56
-Release: alt0.3
+Version: 0.57.2
+Release: alt1
 
 Summary: Graphical front-end for APT
 Summary(ru_RU.CP1251): Графическая оболочка для APT
@@ -22,6 +22,8 @@ Packager: Sviatoslav Sviridov <svd@altlinux.ru>
 Source: http://people.debian.org/~mvo/synaptic/%name-%version%rel.tar.gz
 Source1: %name-ru.po
 Source2: %name.ru.8
+Source3: package-supported.png
+Source4: %name.conf
 
 # This patch needed to build synaptic with apt < 0.5.5cnc5 only
 Patch1: synaptic-0.36-alt-state.patch
@@ -75,6 +77,8 @@ Synaptic - это графическая оболочка для APT (Advanced Package Tool).
 %__install -p -m644 %SOURCE1 po/ru.po
 %endif
 
+%__install -p -m644 %SOURCE3 pixmaps/package-supported.png
+
 %build
 intltoolize --force
 %if_enabled autotools
@@ -91,25 +95,38 @@ intltoolize --force
 %install
 %make_install install DESTDIR=%buildroot
 
-mkdir -p %buildroot%_mandir/ru/man8/
+%__mkdir_p %buildroot%_mandir/ru/man8/
 %if_with ru_man
 %__install -p -m644 %SOURCE2 %buildroot%_mandir/ru/man8/%name.8
 %else
 %__install -p -m644 man/%name.ru.8 %buildroot%_mandir/ru/man8/%name.8
 %endif
 
+%__mkdir_p %buildroot%_sysconfdir/apt/apt.conf.d
+%__install -p -m644 %SOURCE4 %buildroot%_sysconfdir/apt/apt.conf.d/%name.conf
+
 %find_lang %name
 
 %files -f %name.lang
+%config(noreplace) %_sysconfdir/apt/apt.conf.d/%name.conf
 %_sbindir/*
 %_datadir/%name
 %_datadir/gnome/help/%name
 %_datadir/omf/%name
+#_datadir/pixmaps/%name.png
 %_mandir/man8/%name.8.*
 %_mandir/ru/man8/%name.8.*
 %doc README* TODO NEWS AUTHORS
 
 %changelog
+* Sat Aug 27 2005 Sviatoslav Sviridov <svd@altlinux.ru> 0.57.2-alt1
+- Updated to 0.57.2
+- Updated russian translation
+- Added synaptic.conf in /etc/apt/apt.conf.d/
+  + Enabled "mark-unsupported" option
+- https://bugzilla.altlinux.org/images/favicon.ico used to mark
+  supported packages
+
 * Thu Feb 03 2005 Sviatoslav Sviridov <svd@altlinux.ru> 0.56-alt0.3
 - Updated russian translation (thanx to Vitaly Lipatov)
 

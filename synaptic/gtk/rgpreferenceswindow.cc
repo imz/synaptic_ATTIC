@@ -50,6 +50,22 @@ const char *RGPreferencesWindow::column_visible_names[] =
 const gboolean RGPreferencesWindow::column_visible_defaults[] = 
    { TRUE, TRUE, TRUE, FALSE, FALSE, TRUE, TRUE, TRUE, FALSE, TRUE }; 
 
+#if !GTK_CHECK_VERSION(2,6,0)
+gchar *
+gtk_combo_box_get_active_text (GtkComboBox *combo_box)
+{
+  GtkTreeIter iter;
+  gchar *text = NULL;
+
+  GtkTreeModel* model = gtk_combo_box_get_model(combo_box);
+
+  if (gtk_combo_box_get_active_iter (combo_box, &iter))
+    gtk_tree_model_get (model, &iter, 0, &text, -1);
+
+  return text;
+}
+#endif
+
 void RGPreferencesWindow::cbArchiveSelection(GtkWidget *self, void *data)
 {
    RGPreferencesWindow *me = (RGPreferencesWindow *) data;
@@ -59,9 +75,12 @@ void RGPreferencesWindow::cbArchiveSelection(GtkWidget *self, void *data)
    if(me->_blockAction)
       return;
 
-   me->_defaultDistro = gtk_combo_box_get_active_text(GTK_COMBO_BOX(self));
-   //cout << "new default distro: " << me->_defaultDistro << endl;
-   me->distroChanged = true;
+   gchar *s=gtk_combo_box_get_active_text(GTK_COMBO_BOX(self));
+   if(s!=NULL) {
+      me->_defaultDistro = s;
+      //cout << "new default distro: " << me->_defaultDistro << endl;
+      me->distroChanged = true;
+   }
 }
 
 void RGPreferencesWindow::cbRadioDistributionChanged(GtkWidget *self, 
@@ -77,7 +96,9 @@ void RGPreferencesWindow::cbRadioDistributionChanged(GtkWidget *self,
    gchar *defaultDistro = (gchar*)g_object_get_data(G_OBJECT(self),"defaultDistro");
    if(strcmp(defaultDistro, "distro") == 0) {
       gtk_widget_set_sensitive(GTK_WIDGET(me->_comboDefaultDistro),TRUE);
-      me->_defaultDistro = gtk_combo_box_get_active_text(GTK_COMBO_BOX(me->_comboDefaultDistro));
+      gchar *s = gtk_combo_box_get_active_text(GTK_COMBO_BOX(me->_comboDefaultDistro));
+      if(s!=NULL)
+	 me->_defaultDistro = s;
    } else {
       gtk_widget_set_sensitive(GTK_WIDGET(me->_comboDefaultDistro),FALSE);
       me->_defaultDistro = defaultDistro;
@@ -275,7 +296,7 @@ void RGPreferencesWindow::saveColors()
    _config->Set("Synaptic::UseStatusColors", newval ? "true" : "false");
 }
 
-void RGPreferencesWindow::saveTempFiles()
+void RGPreferencesWindow::saveFiles()
 {
    bool newval;
 
@@ -284,7 +305,16 @@ void RGPreferencesWindow::saveTempFiles()
    _config->Set("Synaptic::CleanCache", newval ? "true" : "false");
    newval = gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(_cacheAutoClean));
    _config->Set("Synaptic::AutoCleanCache", newval ? "true" : "false");
-   
+
+   // history
+   newval = gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(_delHistory));
+   if(!newval) {
+      _config->Set("Synaptic::delHistory", -1);
+      return;
+   }
+   int delHistory= gtk_spin_button_get_value(GTK_SPIN_BUTTON(_spinDelHistory));
+   _config->Set("Synaptic::delHistory", delHistory);
+   _lister->cleanCommitLog();
 }
 
 void RGPreferencesWindow::saveNetwork()
@@ -339,7 +369,7 @@ void RGPreferencesWindow::saveAction(GtkWidget *self, void *data)
    me->saveGeneral();
    me->saveColumnsAndFonts();
    me->saveColors();
-   me->saveTempFiles();
+   me->saveFiles();
    me->saveNetwork();
    me->saveDistribution();
 
@@ -365,7 +395,7 @@ void RGPreferencesWindow::doneAction(GtkWidget *self, void *data)
       me->hide();
       me->_lister->unregisterObserver(me->_mainWin);
       me->_mainWin->setTreeLocked(TRUE);
-      me->_lister->openCache(TRUE);
+      me->_lister->openCache();
       me->_mainWin->setTreeLocked(FALSE);
       me->_lister->registerObserver(me->_mainWin);
       me->_mainWin->refreshTable();
@@ -449,7 +479,7 @@ void RGPreferencesWindow::readGeneral()
 
    // System upgrade:
    // upgradeType (ask=-1,normal=0,dist-upgrade=1)
-   int i = _config->FindI("Synaptic::upgradeType", -1);
+   int i = _config->FindI("Synaptic::upgradeType", 1);
    gtk_option_menu_set_history(GTK_OPTION_MENU(glade_xml_get_widget(_gladeXML, "optionmenu_upgrade_method")), i + 1);
 
    i = _config->FindI("Synaptic::update::type", 0);
@@ -474,8 +504,10 @@ void RGPreferencesWindow::readGeneral()
    gtk_widget_set_sensitive(GTK_WIDGET(_optionUseTerminal), false);
    _config->Set("Synaptic::UseTerminal", false);
 #else
-#ifndef HAVE_RPM
+#ifndef HAVE_RPM 
+#ifndef WITH_DPKG_STATUSFD
    UseTerminal = true;
+#endif
 #endif
 #endif
    gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(_optionUseTerminal),
@@ -533,18 +565,15 @@ void RGPreferencesWindow::readColors()
 
 }
 
-void RGPreferencesWindow::readTempFiles()
+void RGPreferencesWindow::readFiles()
 {
    // <b>Temporary Files</b>
-   gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(_cacheClean),
-                                _config->FindB("Synaptic::CleanCache", false));
-
-   gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(_cacheAutoClean),
-                                _config->FindB("Synaptic::AutoCleanCache",
-                                               false));
-
    bool postClean = _config->FindB("Synaptic::CleanCache", false);
-   bool postAutoClean = _config->FindB("Synaptic::AutoCleanCache", false);
+   bool postAutoClean = _config->FindB("Synaptic::AutoCleanCache", true);
+
+   gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(_cacheClean), postClean);
+   gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(_cacheAutoClean), 
+				postAutoClean);
 
    if (postClean)
       gtk_button_clicked(GTK_BUTTON(_cacheClean));
@@ -553,6 +582,15 @@ void RGPreferencesWindow::readTempFiles()
    else
       gtk_button_clicked(GTK_BUTTON(_cacheLeave));
 
+   // history
+   int delHistory = _config->FindI("Synaptic::delHistory", -1);
+   if(delHistory < 0) 
+      gtk_button_clicked(GTK_BUTTON(_keepHistory));
+   else {
+      gtk_button_clicked(GTK_BUTTON(_delHistory));      
+      gtk_spin_button_set_value(GTK_SPIN_BUTTON(_spinDelHistory), 
+				delHistory);      
+   }
 }
 
 void RGPreferencesWindow::readNetwork()
@@ -604,6 +642,13 @@ void RGPreferencesWindow::readDistribution()
 				 "on_radiobutton_distribution_group_changed",
 				 G_CALLBACK(cbRadioDistributionChanged),
 				 this);
+
+   // clear the combo box
+   GtkTreeModel *model = gtk_combo_box_get_model(GTK_COMBO_BOX(_comboDefaultDistro));
+   int num = gtk_tree_model_iter_n_children(model, NULL);
+   for(;num >= 0;num--)
+      gtk_combo_box_remove_text(GTK_COMBO_BOX(_comboDefaultDistro), num);
+
    if(defaultDistro == "") {
       button = ignore;
       gtk_widget_set_sensitive(GTK_WIDGET(_comboDefaultDistro),FALSE);
@@ -624,7 +669,7 @@ void RGPreferencesWindow::readDistribution()
 
    for (unsigned int i = 0; i < archives.size(); i++) {
       //cout << "archive: " << archives[i] << endl;
-      // ignore "now", it's a combobox item now
+      // ignore "now", it's a toggle button item now
       if(archives[i] == "now")
 	 continue;
       gtk_combo_box_append_text(GTK_COMBO_BOX(_comboDefaultDistro),
@@ -645,7 +690,7 @@ void RGPreferencesWindow::show()
    readGeneral();
    readColumnsAndFonts();
    readColors();
-   readTempFiles();
+   readFiles();
    readNetwork();
    readDistribution();
 
@@ -874,8 +919,13 @@ RGPreferencesWindow::RGPreferencesWindow(RGWindow *win,
    _optionAskQuit = glade_xml_get_widget(_gladeXML, "check_ask_quit");
    _optionOneClick = glade_xml_get_widget(_gladeXML, "check_oneclick");
 
+   // cache
    _cacheLeave = glade_xml_get_widget(_gladeXML, "radio_cache_leave");
    _cacheClean = glade_xml_get_widget(_gladeXML, "radio_cache_del_after");
+   // history
+   _delHistory = glade_xml_get_widget(_gladeXML, "radio_delete_history");
+   _keepHistory = glade_xml_get_widget(_gladeXML, "radio_keep_history");
+   _spinDelHistory = glade_xml_get_widget(_gladeXML, "spin_del_history");
    _cacheAutoClean =
       glade_xml_get_widget(_gladeXML, "radio_cache_del_obsolete");
    _useProxy = glade_xml_get_widget(_gladeXML, "radio_use_proxy");
@@ -894,24 +944,24 @@ RGPreferencesWindow::RGPreferencesWindow(RGWindow *win,
    GtkTooltips *tips = gtk_tooltips_new();
    gtk_tooltips_set_tip(GTK_TOOLTIPS(tips),
 			glade_xml_get_widget(_gladeXML,"radiobutton_distro"),
-		       "Prefer package versions from the selected "
+		       _("Prefer package versions from the selected "
 		       "distribution when upgrading packages. If you "
-		       "manually force a verison from a different "
+		       "manually force a version from a different "
 		       "distribution, the package version will follow "
 		       "that distribution until it enters the default "
-		       "distribution.","");
+		       "distribution."),"");
    gtk_tooltips_set_tip(GTK_TOOLTIPS(tips),
 			glade_xml_get_widget(_gladeXML,"radiobutton_now"),
-		       "Never upgrade to a new version automatically. "
-			"Be _very_ carefull with this option as you will "
-			"not get security updates automatically! "
-		       "If you manually force a verison "
+		       _("Never upgrade to a new version automatically. "
+			    "Be _very_ careful with this option as you will "
+			    "not get security updates automatically! "
+		       "If you manually force a version "
 		       "the package version will follow "
-		       "the choosen distribution.","");
+		       "the choosen distribution."),"");
    gtk_tooltips_set_tip(GTK_TOOLTIPS(tips),
 			glade_xml_get_widget(_gladeXML,"radiobutton_ignore"),
-			"Let synaptic pick the best version for you. "
-			"If unsure use this option. ","");
+			_("Let synaptic pick the best version for you. "
+			"If unsure use this option. "),"");
 
 
    // hide the "remove with configuration" from rpm users

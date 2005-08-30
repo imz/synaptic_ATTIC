@@ -1,7 +1,7 @@
 dnl Process this file with autoconf to produce a configure script.
 AC_INIT(configure.in)
 
-AM_INIT_AUTOMAKE(synaptic, 0.56)
+AM_INIT_AUTOMAKE(synaptic, 0.57.2)
 AM_CONFIG_HEADER(config.h)
 AM_MAINTAINER_MODE
 
@@ -15,7 +15,7 @@ AC_PROG_MAKE_SET
 AC_PROG_RANLIB
 
 dnl i18n
-ALL_LINGUAS="ar pt_BR es fr de tr zh_CN zh_HK zh_TW ru nl ja be it_IT pl cs hu sr sr@Latn da he ca ko bg no nb sl bu pt_PT lt"
+ALL_LINGUAS="ar pt_BR es fr de tr zh_CN zh_HK zh_TW ru nl ja be it pl cs hu sr sr@Latn da he ca ko bg no nb sl pt_PT lt el xh mk"
 AM_GLIB_GNU_GETTEXT
 GETTEXT_PACKAGE=synaptic
 AC_SUBST(GETTEXT_PACKAGE)
@@ -143,6 +143,8 @@ dnl Checks for typedefs, structures, and compiler characteristics.
 AC_C_CONST
 AC_C_INLINE
 
+
+
 dnl Checks for library functions.
 AC_FUNC_STRCOLL
 AC_CHECK_FUNCS(regcomp strdup iconv)
@@ -159,7 +161,10 @@ AC_ARG_WITH(apt-authentication,
 
 AC_ARG_WITH(nice-dpkg-status, 
 	[--with-nice-dpkg-status build with support for dpkg progress bar],
+	[pkg_modules="vte >= 0.10.11"
+	PKG_CHECK_MODULES(VTE, [$pkg_modules])
         AC_DEFINE(WITH_DPKG_STATUSFD, 1, [build with dpkg progress bar] )
+	]
 )
 
 
@@ -181,6 +186,12 @@ AC_ARG_WITH(vte,
 	      AC_SUBST(VTE_LIBS)
 	      ]
 	      )
+
+AC_LANG([C++])
+AC_CHECK_HEADER(apt-pkg/cdrom.h, 
+                AC_DEFINE(HAVE_APTPKG_CDROM, 1, 
+		[whether apt-pkg/cdrom.h is present]) )
+
 
 AC_OUTPUT([
 common/Makefile 

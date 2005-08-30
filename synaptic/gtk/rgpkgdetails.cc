@@ -21,6 +21,8 @@
  * USA
  */
 
+#include "config.h"
+
 #include <cassert>
 #include "rgwindow.h"
 #include "rgmainwindow.h"
@@ -28,6 +30,8 @@
 #include "rggladewindow.h"
 #include "rpackage.h"
 #include "sections_trans.h"
+
+
 
 RGPkgDetailsWindow::RGPkgDetailsWindow(RGWindow *parent)
    : RGGladeWindow(parent, "details")
@@ -48,7 +52,7 @@ void RGPkgDetailsWindow::cbCloseClicked(GtkWidget *self, void *data)
 }
 
 vector<string> 
-RGPkgDetailsWindow::formatDepInformation(vector<RPackage::DepInformation> deps)
+RGPkgDetailsWindow::formatDepInformation(vector<DepInformation> deps)
 {
    vector<string> depStrings;
    string depStr;
@@ -57,7 +61,7 @@ RGPkgDetailsWindow::formatDepInformation(vector<RPackage::DepInformation> deps)
       depStr="";
 
       // type in bold (Depends, PreDepends)
-      depStr += string("<b>") + deps[i].typeStr + string(":</b> ");
+      depStr += string("<b>") + _(DepTypeStr[deps[i].type]) + string(":</b> ");
 
       // virutal is italic
       if(deps[i].isVirtual) {
@@ -126,7 +130,7 @@ void RGPkgDetailsWindow::fillInValues(RGGladeWindow *me, RPackage *pkg,
    me->setTextView("text_descr", descr.c_str(), true);
 
    // build dependency lists
-   vector<RPackage::DepInformation> deps;
+   vector<DepInformation> deps;
    deps = pkg->enumDeps();
    me->setTreeList("treeview_deplist", formatDepInformation(deps), true);
    
@@ -154,6 +158,10 @@ void RGPkgDetailsWindow::fillInValues(RGGladeWindow *me, RPackage *pkg,
    vector<string> list;
    vector<pair<string,string> > versions = pkg->getAvailableVersions();
    for(int i=0;i<versions.size();i++) {
+      // TRANSLATORS: this the format of the available versions in 
+      // the "Properties/Available versions" window
+      // e.g. "0.56 (unstable)"
+      //      "0.53.4 (testing)"
       str = g_strdup_printf(_("%s (%s)"), 
 			    versions[i].first.c_str(), 
 			    versions[i].second.c_str());

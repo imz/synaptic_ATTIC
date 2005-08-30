@@ -131,7 +131,6 @@ EXEEXT = @EXEEXT@
 GETTEXT_PACKAGE = @GETTEXT_PACKAGE@
 GMOFILES = @GMOFILES@
 GMSGFMT = @GMSGFMT@
-ICONV = @ICONV@
 INSTALL_DATA = @INSTALL_DATA@
 INSTALL_PROGRAM = @INSTALL_PROGRAM@
 INSTALL_SCRIPT = @INSTALL_SCRIPT@
@@ -142,9 +141,12 @@ INTLTOOL_CAVES_RULE = @INTLTOOL_CAVES_RULE@
 INTLTOOL_DESKTOP_RULE = @INTLTOOL_DESKTOP_RULE@
 INTLTOOL_DIRECTORY_RULE = @INTLTOOL_DIRECTORY_RULE@
 INTLTOOL_EXTRACT = @INTLTOOL_EXTRACT@
+INTLTOOL_ICONV = @INTLTOOL_ICONV@
 INTLTOOL_KBD_RULE = @INTLTOOL_KBD_RULE@
 INTLTOOL_KEYS_RULE = @INTLTOOL_KEYS_RULE@
 INTLTOOL_MERGE = @INTLTOOL_MERGE@
+INTLTOOL_MSGFMT = @INTLTOOL_MSGFMT@
+INTLTOOL_MSGMERGE = @INTLTOOL_MSGMERGE@
 INTLTOOL_OAF_RULE = @INTLTOOL_OAF_RULE@
 INTLTOOL_PERL = @INTLTOOL_PERL@
 INTLTOOL_PONG_RULE = @INTLTOOL_PONG_RULE@
@@ -157,13 +159,12 @@ INTLTOOL_THEME_RULE = @INTLTOOL_THEME_RULE@
 INTLTOOL_UI_RULE = @INTLTOOL_UI_RULE@
 INTLTOOL_UPDATE = @INTLTOOL_UPDATE@
 INTLTOOL_XAM_RULE = @INTLTOOL_XAM_RULE@
+INTLTOOL_XGETTEXT = @INTLTOOL_XGETTEXT@
 INTLTOOL_XML_NOMERGE_RULE = @INTLTOOL_XML_NOMERGE_RULE@
 INTLTOOL_XML_RULE = @INTLTOOL_XML_RULE@
 LDFLAGS = @LDFLAGS@
 LIBOBJS = @LIBOBJS@
 LIBS = @LIBS@
-LIBTAGCOLL_CFLAGS = @LIBTAGCOLL_CFLAGS@
-LIBTAGCOLL_LIBS = @LIBTAGCOLL_LIBS@
 LTLIBOBJS = @LTLIBOBJS@
 MAINT = @MAINT@
 MAINTAINER_MODE_FALSE = @MAINTAINER_MODE_FALSE@
@@ -171,7 +172,6 @@ MAINTAINER_MODE_TRUE = @MAINTAINER_MODE_TRUE@
 MAKEINFO = @MAKEINFO@
 MKINSTALLDIRS = @MKINSTALLDIRS@
 MSGFMT = @MSGFMT@
-MSGMERGE = @MSGMERGE@
 OBJEXT = @OBJEXT@
 PACKAGE = @PACKAGE@
 PACKAGE_BUGREPORT = @PACKAGE_BUGREPORT@
@@ -423,13 +423,13 @@ uninstall-local-omf:
 
 # If the following file is in a subdir (like help/) you need to add that to the path
 
-all: omf 
+all: omf html
 
 html: html_timestamp
 
 html_timestamp:  $(docname).xml
 	rm -f $(top_builddir)/doc/html/$(lang)/*html
-	xmlto html -o  $(top_builddir)/doc/html/$(lang) --skip-validation $(docname).xml
+	xmlto html -o  $(top_builddir)/doc/html/$(lang) --skip-validation $(srcdir)/$(docname).xml
 	mkdir -p  $(top_builddir)/doc/html/$(lang)/figures
 	cp  $(top_srcdir)/help/$(lang)/figures/*  $(top_builddir)/doc/html/$(lang)/figures
 	touch html_timestamp
@@ -439,7 +439,7 @@ $(docname).xml: $(entities)
 	cd $(srcdir);   \
 	cp $(entities) $$ourdir
 
-app-dist-hook:
+app-dist-hook: html
 	if test "$(figdir)"; then \
 	  $(mkinstalldirs) $(distdir)/$(figdir); \
 	  for file in $(srcdir)/$(figdir)/*.png; do \
@@ -448,7 +448,7 @@ app-dist-hook:
 	  done \
 	fi
 
-install-data-local: omf
+install-data-local: omf 
 	$(mkinstalldirs) $(DESTDIR)$(docdir)
 	for file in $(xml_files); do \
 	  cp $(srcdir)/$$file $(DESTDIR)$(docdir); \

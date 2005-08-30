@@ -101,6 +101,9 @@ bool RGGladeWindow::setLabel(const char *widget_name, const long value)
    }
    // we can never have values of zero or less
    if (value <= 0)
+      // TRANSLATORS: this is a abbreviation for "not applicable" (on forms)
+      // happens when e.g. a package has no installed version (or no
+      // downloadable version)
       strVal = _("N/A");
    else
       strVal = SizeToStr(value);
@@ -200,13 +203,15 @@ bool RGGladeWindow::setPixmap(const char *widget_name, GdkPixbuf *value)
 void RGGladeWindow::setBusyCursor(bool flag) 
 {
    if(flag) {
-      gdk_window_set_cursor(window()->window, _busyCursor);
+      if(GTK_WIDGET_VISIBLE(_win))
+	 gdk_window_set_cursor(window()->window, _busyCursor);
 #if GTK_CHECK_VERSION(2,4,0)
       // if we don't iterate here, the busy cursor is not shown
       while (gtk_events_pending())
 	 gtk_main_iteration();
 #endif
    } else {
-      gdk_window_set_cursor(window()->window, NULL);
+      if(GTK_WIDGET_VISIBLE(_win))
+	 gdk_window_set_cursor(window()->window, NULL);
    }
 }

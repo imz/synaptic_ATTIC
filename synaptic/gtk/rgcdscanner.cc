@@ -1,4 +1,4 @@
-/* rgcdscanner.cc
+/* rgcdscanner.cc - "old" apt-cdrom.cc copied interface
  *
  * Copyright (c) 2000, 2001 Conectiva S/A
  *
@@ -21,6 +21,8 @@
  */
 
 #include "config.h"
+#ifndef HAVE_APTPKG_CDROM
+
 #include "rgmainwindow.h"
 #include "rgcdscanner.h"
 #include "gsynaptic.h"
@@ -154,4 +156,5 @@ bool RGDiscName::run(string &discName)
    return _userConfirmed;
 }
 
+#endif
 // vim:sts=4:sw=4

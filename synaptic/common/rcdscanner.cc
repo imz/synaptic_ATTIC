@@ -20,6 +20,8 @@
  * USA
  */
 
+#include<config.h>
+#ifndef HAVE_APTPKG_CDROM
 
 #include <sys/stat.h>
 #include <sys/fcntl.h>
@@ -170,7 +172,7 @@ bool RCDScanner::writeSourceList(vector<string> &list, bool pkg)
       ShortOldURI2 = "cdrom:" + _cdOldName + "/";
    }
 
-   const char *Type;
+   string Type;
 
    if (pkg)
       Type = pkgSourceType().c_str();
@@ -375,7 +377,7 @@ bool RCDScanner::setDiscName(string name)
 bool RCDScanner::finish(RCDScanProgress *progress)
 {
    if (_scannedOk == false) {
-      return _error->Error(_("Disc not successfuly scanned."));
+      return _error->Error(_("Disc not successfully scanned."));
    }
 
    if (_cdName.empty() == true) {
@@ -725,4 +727,5 @@ bool RCDScanner::scanDirectory(string CD, RCDScanProgress *progress,
    return !_error->PendingError();
 }
 
+#endif
 // vim:sts=4:sw=4

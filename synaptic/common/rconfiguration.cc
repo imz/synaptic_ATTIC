@@ -77,6 +77,11 @@ bool RWriteConfigFile(Configuration &Conf)
 {
    const Configuration::Item *Synaptic;
 
+   // when running non-interactivly don't save any config (there should be no 
+   // need)
+   if(_config->FindB("Volatile::Non-Interactive", false) == true) 
+      return true;
+
    ofstream cfile(ConfigFilePath.c_str(), ios::out);
    if (!cfile != 0)
       return _error->Errno("ofstream",
@@ -131,6 +136,40 @@ string RConfDir()
          endl;
    return confDir;
 }
+
+string RStateDir()
+{
+   struct stat stbuf;
+   static string stateDir = string(SYNAPTICSTATEDIR);
+   if (stat(stateDir.c_str(), &stbuf) < 0) {
+      if (mkdir(stateDir.c_str(), 0755) < 0) {
+	 _error->Errno("mkdir",
+		       _("ERROR: could not create state directory %s"),
+		       stateDir.c_str());
+	 return "";
+      }
+   }
+
+   return stateDir;
+}
+
+// we use the ConfDir for now to store very small tmpfiles
+string RTmpDir()
+{
+   struct stat stbuf;
+   static string tmpDir = RConfDir() + string("/tmp/");
+   if (stat(tmpDir.c_str(), &stbuf) < 0) {
+      if (mkdir(tmpDir.c_str(), 0700) < 0) {
+	 _error->Errno("mkdir",
+		       _("ERROR: could not create tmp directory %s"),
+		       tmpDir.c_str());
+	 return "";
+      }
+   }
+
+   return tmpDir;
+}
+
 
 string RLogDir()
 {

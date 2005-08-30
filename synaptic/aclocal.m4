@@ -1551,7 +1551,7 @@ glib_DEFUN([GLIB_WITH_NLS],
         [AC_TRY_LINK([
 #include <libintl.h>
 ],
-         [return (int) ngettext ("","", 1)],
+         [return !ngettext ("","", 1)],
 	  gt_cv_func_ngettext_libc=yes,
           gt_cv_func_ngettext_libc=no)
         ])
@@ -1561,7 +1561,7 @@ glib_DEFUN([GLIB_WITH_NLS],
         	[AC_TRY_LINK([
 #include <libintl.h>
 ],
-	          [return (int) dgettext ("","")],
+	          [return !dgettext ("","")],
 		  gt_cv_func_dgettext_libc=yes,
 	          gt_cv_func_dgettext_libc=no)
         	])
@@ -1829,7 +1829,7 @@ AC_DEFUN([AM_GLIB_DEFINE_LOCALEDIR],[GLIB_DEFINE_LOCALEDIR($@)])
 
 
 dnl IT_PROG_INTLTOOL([MINIMUM-VERSION], [no-xml])
-# serial 1 IT_PROG_INTLTOOL
+# serial 2 IT_PROG_INTLTOOL
 AC_DEFUN([IT_PROG_INTLTOOL],
 [
 
@@ -1912,10 +1912,10 @@ if test "x$2" != "xno-xml"; then
    fi
 fi
 
-AC_PATH_PROG(ICONV, iconv, iconv)
-AC_PATH_PROG(MSGFMT, msgfmt, msgfmt)
-AC_PATH_PROG(MSGMERGE, msgmerge, msgmerge)
-AC_PATH_PROG(XGETTEXT, xgettext, xgettext)
+AC_PATH_PROG(INTLTOOL_ICONV, iconv, iconv)
+AC_PATH_PROG(INTLTOOL_MSGFMT, msgfmt, msgfmt)
+AC_PATH_PROG(INTLTOOL_MSGMERGE, msgmerge, msgmerge)
+AC_PATH_PROG(INTLTOOL_XGETTEXT, xgettext, xgettext)
 
 # Remove file type tags (using []) from po/POTFILES.
 
@@ -1969,12 +1969,12 @@ AC_SUBST([mkdir_p])
 
 AC_CONFIG_COMMANDS([intltool], [
 
-intltool_edit="-e 's:@INTLTOOL_EXTRACT@:`pwd`/intltool-extract:g' \
-               -e 's:@INTLTOOL_ICONV@:${ICONV}:g' \
-               -e 's:@INTLTOOL_MSGFMT@:${MSGFMT}:g' \
-               -e 's:@INTLTOOL_MSGMERGE@:${MSGMERGE}:g' \
-               -e 's:@INTLTOOL_XGETTEXT@:${XGETTEXT}:g' \
-               -e 's:@INTLTOOL_PERL@:${INTLTOOL_PERL}:g'"
+intltool_edit="-e 's#@INTLTOOL_EXTRACT@#`pwd`/intltool-extract#g' \
+               -e 's#@INTLTOOL_ICONV@#${INTLTOOL_ICONV}#g' \
+               -e 's#@INTLTOOL_MSGFMT@#${INTLTOOL_MSGFMT}#g' \
+               -e 's#@INTLTOOL_MSGMERGE@#${INTLTOOL_MSGMERGE}#g' \
+               -e 's#@INTLTOOL_XGETTEXT@#${INTLTOOL_XGETTEXT}#g' \
+               -e 's#@INTLTOOL_PERL@#${INTLTOOL_PERL}#g'"
 
 eval sed ${intltool_edit} < ${ac_aux_dir}/intltool-extract.in \
   > intltool-extract.out
@@ -2007,8 +2007,9 @@ chmod ugo+x intltool-update
 chmod u+w intltool-update
 
 ], INTLTOOL_PERL='${INTLTOOL_PERL}' ac_aux_dir=${ac_aux_dir}
-INTLTOOL_EXTRACT='${INTLTOOL_EXTRACT}' ICONV='${ICONV}'
-MSGFMT='${MSGFMT}' MSGMERGE='${MSGMERGE}' XGETTEXT='${XGETTEXT}')
+INTLTOOL_EXTRACT='${INTLTOOL_EXTRACT}' ICONV='${INTLTOOL_ICONV}'
+MSGFMT='${INTLTOOL_MSGFMT}' MSGMERGE='${INTLTOOL_MSGMERGE}'
+XGETTEXT='${INTLTOOL_XGETTEXT}')
 
 ])
 
@@ -2073,14 +2074,4 @@ AC_DEFUN(PKG_CHECK_MODULES, [
 ])
 
 
-
-# LIBTAGCOLL_DEFS([LIBTAGCOLL_REQS=libtagcoll])
-# ---------------------------------------
-AC_DEFUN([LIBTAGCOLL_DEFS],
-[
-	dnl Import libtagcoll data
-	PKG_CHECK_MODULES(LIBTAGCOLL,m4_default([$1], libtagcoll))
-	AC_SUBST(LIBTAGCOLL_CFLAGS)
-	AC_SUBST(LIBTAGCOLL_LIBS)
-])
 

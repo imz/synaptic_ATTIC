@@ -4,13 +4,16 @@ noinst_LIBRARIES = libsynaptic.a
 
 INCLUDES = -I/usr/include/apt-pkg @RPM_HDRS@ @DEB_HDRS@ @PACKAGE_CFLAGS@ \
 	$(LIBTAGCOLL_CFLAGS) \
-	-DSYNAPTICLOCALEDIR=\""$(synapticlocaledir)"\"
+	-DSYNAPTICLOCALEDIR=\""$(synapticlocaledir)"\" \
+	-DSYNAPTICSTATEDIR=\""$(localstatedir)"\"
 
 libsynaptic_a_SOURCES =\
 	pkg_acqfile.cc\
 	pkg_acqfile.h\
 	rconfiguration.cc\
 	rconfiguration.h\
+	rswig.h\
+	rswig.cc\
 	rinstallprogress.cc\
 	rinstallprogress.h\
 	rpackage.cc\
@@ -42,7 +45,6 @@ libsynaptic_a_SOURCES =\
 	rtagcollbuilder.h \
 	i18n.h \
 	sections_trans.h \
-	tree.hh \
 	rtagcollfilter.cc \
 	rtagcollfilter.h \
 	ruserdialog.h \

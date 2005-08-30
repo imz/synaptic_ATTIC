@@ -37,14 +37,19 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/stat.h>
+#include <fcntl.h>
 #include <signal.h>
 #include <cassert>
+#include <errno.h>
+#include <fstream>
 
 #include "rgmainwindow.h"
 #include "rguserdialog.h"
 #include "locale.h"
 #include "stdio.h"
 #include "rgmisc.h"
+
+
 
 typedef enum {
    UPDATE_ASK,
@@ -65,14 +70,17 @@ bool ShowHelp(CommandLine & CmdL)
       _("Usage: synaptic [options]\n") <<
       _("-h   This help text\n") <<
       _("-r   Open in the repository screen\n") <<
-      _("-f=? Give a alternative filter file\n") <<
-      _("-i=? Start with the initialFilter with the number given\n") <<
+      _("-f=? Give an alternative filter file\n") <<
+      _("-t   Give an alternative main window title (e.g. hostname with `uname -n`)\n") <<
+      _("-i=? Start with the initial Filter with given name\n") <<
       _("-o=? Set an arbitary configuration option, eg -o dir::cache=/tmp\n")<<
-      _("--upgrade-mode  Call Refresh, Upgrade and display changes\n") <<
-      _("--dist-upgrade-mode  Call Refresh, DistUpgrade and display changes\n") <<
+      _("--upgrade-mode  Call Upgrade and display changes\n") <<
+      _("--dist-upgrade-mode  Call DistUpgrade and display changes\n") <<
+      _("--update-at-startup  Call \"Reload\" on startup\n")<<
       _("--non-interactive Never prompt for user input\n") << 
-      _("--task-window Open with task window\n");
-      _("--add-cdrom Add a cdrom at startup\n");
+      _("--task-window Open with task window\n") <<
+      _("--add-cdrom Add a cdrom at startup (needs path for cdrom)\n") <<
+      _("--ask-cdrom Ask for adding a cdrom and exit\n");
    exit(0);
 }
 
@@ -88,6 +96,8 @@ CommandLine::Args Args[] = {
    , {
    0, "set-selections", "Volatile::Set-Selections", 0}
    , {
+   0, "set-selections-file", "Volatile::Set-Selections-File", CommandLine::HasArg}
+   , {
    0, "non-interactive", "Volatile::Non-Interactive", 0}
    , {
    0, "upgrade-mode", "Volatile::Upgrade-Mode", 0}
@@ -95,6 +105,16 @@ CommandLine::Args Args[] = {
    0, "dist-upgrade-mode", "Volatile::DistUpgrade-Mode", 0}
    , {
    0, "add-cdrom", "Volatile::AddCdrom-Mode", CommandLine::HasArg}
+   , {
+   0, "ask-cdrom", "Volatile::AskCdrom-Mode", 0}
+   , {
+   0, "plug-progress-into", "Volatile::PlugProgressInto", CommandLine::HasArg}
+   , {
+   0, "progress-str", "Volatile::InstallProgressStr", CommandLine::HasArg} 
+   , {
+   0, "finish-str", "Volatile::InstallFinishedStr", CommandLine::HasArg} 
+   , {
+   't', "title", "Volatile::MyName", CommandLine::HasArg}
    , {
    0, "update-at-startup", "Volatile::Update-Mode", 0}
    , {
@@ -145,9 +165,9 @@ void welcome_dialog(RGMainWindow *mainWindow)
 
 void update_check(RGMainWindow *mainWindow, RPackageLister *lister)
 {
-   //cout << "update_check" << endl;
+   struct stat st;
 
-   // check updates
+   // check when the last update happend updates
    UpdateType update =
       (UpdateType) _config->FindI("Synaptic::update::type", UPDATE_ASK);
    if(update != UPDATE_CLOSE) {
@@ -158,12 +178,17 @@ void update_check(RGMainWindow *mainWindow, RPackageLister *lister)
       // check for the mtime of the various package lists
       vector<string> filenames = lister->getPolicyArchives(true);
       for (int i=0;i<filenames.size();i++) {
-	 struct stat st;
 	 stat(filenames[i].c_str(), &st);
-// 	 cout << "file: " << filenames[i] << " " 
-// 	      << ctime(&st.st_mtime) << endl;
 	 if(filenames[i] != "/var/lib/dpkg/status")
 	    lastUpdate = max(lastUpdate, (int)st.st_mtime);
+      }
+      
+      // new apt uses this
+      string update_stamp = _config->FindDir("Dir::State","var/lib/apt");
+      update_stamp += "update-stamp";
+      if(FileExists(update_stamp)) {
+	 stat(update_stamp.c_str(), &st);
+	 lastUpdate = max(lastUpdate, (int)st.st_mtime);
       }
 
       // 3600s=1h 
@@ -186,6 +211,172 @@ void update_check(RGMainWindow *mainWindow, RPackageLister *lister)
 	       mainWindow->cbUpdateClicked(NULL, mainWindow);
 	 }
       }
+   }
+}
+
+
+// lock stuff
+static int sigterm_unix_signal_pipe_fds[2];
+static GIOChannel *sigterm_iochn;
+
+static void 
+handle_sigusr1 (int value)
+{
+   static char marker[1] = {'S'};
+
+   /* write a 'S' character to the other end to tell about
+    * the signal. Note that 'the other end' is a GIOChannel thingy
+    * that is only called from the mainloop - thus this is how we
+    * defer this since UNIX signal handlers are evil
+    *
+    * Oh, and write(2) is indeed reentrant */
+   write (sigterm_unix_signal_pipe_fds[1], marker, 1);
+}
+
+static gboolean
+sigterm_iochn_data (GIOChannel *source, 
+		    GIOCondition condition, 
+		    gpointer user_data)
+{
+   GError *err = NULL;
+   gchar data[1];
+   gsize bytes_read;
+   
+   RGMainWindow *me = (RGMainWindow *)user_data;
+
+   /* Empty the pipe */
+   if (G_IO_STATUS_NORMAL != 
+       g_io_channel_read_chars (source, data, 1, &bytes_read, &err)) {
+      g_warning("Error emptying callout notify pipe: %s", err->message);
+      g_error_free (err);
+      return TRUE;
+   }
+   if(data[0] == 'S')
+      me->activeWindowToForeground();
+
+   return TRUE;
+}
+
+// test if a lock is aquired already, return 0 if no lock is found, 
+// the pid of the locking application or -1 on error
+pid_t TestLock(string File)
+{
+   int FD = open(File.c_str(),0);
+   if(FD < 0) {
+      if(errno == ENOENT) {
+	 // File does not exist, no there can't be a lock
+	 return 0; 
+      } else {
+	 //cout << "open, errno: " << errno << endl;
+	 //perror("open");
+	 return(-1);
+      }
+   }
+   struct flock fl;
+   fl.l_type = F_WRLCK;
+   fl.l_whence = SEEK_SET;
+   fl.l_start = 0;
+   fl.l_len = 0;
+   if (fcntl(FD, F_GETLK, &fl) < 0) {
+      int Tmp = errno;
+      close(FD);
+      cerr << "fcntl error" << endl;
+      errno = Tmp;
+      return(-1);
+   }
+   close(FD);
+   // lock is available
+   if(fl.l_type == F_UNLCK)
+      return(0);
+   // file is locked by another process
+   return (fl.l_pid);
+}
+
+// check if we can get a lock, must be done after we read the configuration
+// if a lock is found and the app is synaptic send it a "come to foreground"
+// signal (USR1) or if not synaptic display a error and exit
+// 1. check if there is another synaptic running
+//    a) if so, check if it runs interactive and we are not running interactive
+//       *) if so, send signal and show message
+//       *) if not, send signal
+// 2. check if we can get a /var/lib/dpkg/lock 
+//    *) if not, show message and fail
+void check_and_aquire_lock()
+{
+   GtkWidget *dia;
+   gchar *msg = NULL;
+   pid_t LockedApp, runsNonInteractive;
+   bool weNonInteractive;
+
+   string SynapticLock = RConfDir()+"/lock";
+   string SynapticNonInteractiveLock = RConfDir()+"/lock.non-interactive";
+   weNonInteractive = _config->FindB("Volatile::Non-Interactive", false);
+
+   // 1. test for another synaptic
+   LockedApp = TestLock(SynapticLock);
+   if(LockedApp > 0) {
+      runsNonInteractive = TestLock(SynapticNonInteractiveLock);
+      //cout << "runsNonIteractive: " << runsNonInteractive << endl;
+      //cout << "weNonIteractive: " << weNonInteractive << endl;
+      if(weNonInteractive && runsNonInteractive <= 0) {
+	 // message that we can't turn a non-interactive into a interactive
+	 // one
+	 msg = g_strdup_printf("<big><b>%s</b></big>\n\n%s",
+			       _("Another synaptic is running"),
+			       _("There is another synaptic running in "
+				 "interactive mode. Please close it first. "
+				 ));
+      } else if(!weNonInteractive && runsNonInteractive) {
+	 msg = g_strdup_printf("<big><b>%s</b></big>\n\n%s",
+			       _("Another synaptic is running"),
+			       _("There is another synaptic running in "
+				 "non-interactive mode. Please wait for it "
+				 "to finish first."
+				 ));
+      }
+
+      if(msg != NULL) {
+	 dia = gtk_message_dialog_new_with_markup(NULL, GTK_DIALOG_MODAL,
+						  GTK_MESSAGE_ERROR, 
+						  GTK_BUTTONS_CLOSE, msg);
+	 gtk_dialog_run(GTK_DIALOG(dia));
+	 gtk_widget_destroy(dia);
+	 g_free(msg);
+      }
+
+      cout << "Another synaptic is running. Trying to bring it to the foreground" << endl;
+      kill(LockedApp, SIGUSR1);
+      exit(0);
+   }
+
+   // 2. test if we can get a lock
+   string AdminDir = flNotFile(_config->Find("Dir::State::status"));
+   LockedApp = TestLock(AdminDir + "lock");
+   if (LockedApp > 0) {
+      msg = g_strdup_printf("<big><b>%s</b></big>\n\n%s",
+			    _("Unable to get exclusive lock"),
+			    _("This usually means that another "
+			      "package management application "
+			      "(like apt-get or aptitude) "
+			      "already running. Please close that "
+			      "application first."));
+      dia = gtk_message_dialog_new_with_markup(NULL, GTK_DIALOG_MODAL,
+					       GTK_MESSAGE_ERROR, 
+					       GTK_BUTTONS_CLOSE, msg);
+      gtk_dialog_run(GTK_DIALOG(dia));
+      g_free(msg);
+      exit(0);
+   }
+   
+   // we can't get a lock?!?
+   if(GetLock(SynapticLock, true) < 0) {
+      _error->DumpErrors();
+      exit(1);
+   }
+   // if we run nonInteracitvely, get a seond lock
+   if(weNonInteractive && GetLock(SynapticNonInteractiveLock, true) < 0) {
+      _error->DumpErrors();
+      exit(1);
    }
 }
 
@@ -215,8 +406,6 @@ int main(int argc, char **argv)
       userDialog.showErrors();
       exit(1);
    }
-   // read configuration early
-   _roptions->restore();
 
    // read the cmdline
    CommandLine CmdL(Args, _config);
@@ -225,6 +414,16 @@ int main(int argc, char **argv)
       userDialog.showErrors();
       exit(1);
    }
+   
+   bool UpdateMode = _config->FindB("Volatile::Update-Mode",false);
+   bool NonInteractive = _config->FindB("Volatile::Non-Interactive", false);
+
+   // check if there is another application runing and
+   // act accordingly
+   check_and_aquire_lock();
+
+   // read configuration early
+   _roptions->restore();
 
    if (_config->FindB("help") == true)
       ShowHelp(CmdL);
@@ -238,6 +437,23 @@ int main(int argc, char **argv)
    RPackageLister *packageLister = new RPackageLister();
    RGMainWindow *mainWindow = new RGMainWindow(packageLister, "main");
 
+   // install a sigusr1 signal handler and put window into 
+   // foreground when called. use the io_watch trick because gtk is not
+   // reentrant
+   // SIGUSR1 handling via pipes  
+   if (pipe (sigterm_unix_signal_pipe_fds) != 0) {
+      g_warning ("Could not setup pipe, errno=%d", errno);
+      return 1;
+   }
+   sigterm_iochn = g_io_channel_unix_new (sigterm_unix_signal_pipe_fds[0]);
+   if (sigterm_iochn == NULL) {
+      g_warning("Could not create GIOChannel");
+      return 1;
+   }
+   g_io_add_watch (sigterm_iochn, G_IO_IN, sigterm_iochn_data, mainWindow);
+   signal (SIGUSR1, handle_sigusr1);
+   // -------------------------------------------------------------
+
    // read which default distro to use
    string s = _config->Find("Synaptic::DefaultDistro", "");
    if (s != "")
@@ -248,6 +464,10 @@ int main(int argc, char **argv)
 #else
    mainWindow->setTitle(_config->Find("Synaptic::MyName", "Synaptic"));
 #endif
+   // this is for stuff like "synaptic -t `uname -n`"
+   s = _config->Find("Volatile::MyName","");
+   if(s.size() > 0)
+      mainWindow->setTitle(s);
    
    if(_config->FindB("Volatile::HideMainwindow", false))
       mainWindow->hide();
@@ -258,29 +478,57 @@ int main(int argc, char **argv)
 
    mainWindow->setInterfaceLocked(true);
 
-   if (!packageLister->openCache(false))
-      mainWindow->showErrors();
+   string cd_mount_point = _config->Find("Volatile::AddCdrom-Mode", "");
+   if(!cd_mount_point.empty()) {
+      _config->Set("Acquire::cdrom::mount",cd_mount_point);
+      _config->Set("APT::CDROM::NoMount", true);
+      mainWindow->cbAddCDROM(NULL, mainWindow);
+   } else if(_config->FindB("Volatile::AskCdrom-Mode",false)) {
+      mainWindow->cbAddCDROM(NULL, mainWindow);
+      return 0;
+   }
 
+   //no need to open a cache that will invalid after the update
+   if(!UpdateMode) {
+      mainWindow->setTreeLocked(true);
+      packageLister->openCache();
+      mainWindow->restoreState();
+      mainWindow->showErrors();
+      mainWindow->setTreeLocked(false);
+   }
+   
    if (_config->FindB("Volatile::startInRepositories", false)) {
       mainWindow->cbShowSourcesWindow(NULL, mainWindow);
    }
 
+   // selections from stdin
    if (_config->FindB("Volatile::Set-Selections", false) == true) {
       packageLister->unregisterObserver(mainWindow);
       packageLister->readSelections(cin);
       packageLister->registerObserver(mainWindow);
    }
 
-   mainWindow->setInterfaceLocked(false);
-   mainWindow->restoreState();
-   mainWindow->showErrors();
+   // selections from a file
+   string selections_filename;
+   selections_filename =_config->Find("Volatile::Set-Selections-File", "");
+   if (selections_filename != "") {
+      packageLister->unregisterObserver(mainWindow);
+      ifstream selfile(selections_filename.c_str());
+      packageLister->readSelections(selfile);
+      selfile.close();
+      packageLister->registerObserver(mainWindow);
+   }
 
-   
-   string cd_mount_point = _config->Find("Volatile::AddCdrom-Mode", "");
-   if(!cd_mount_point.empty()) {
-      _config->Set("Acquire::cdrom::mount",cd_mount_point);
-      _config->Set("APT::CDROM::NoMount", true);
-      mainWindow->cbAddCDROM(NULL, mainWindow);
+   mainWindow->setInterfaceLocked(false);
+
+   if(UpdateMode) {
+      mainWindow->cbUpdateClicked(NULL, mainWindow);
+      mainWindow->setTreeLocked(true);
+      packageLister->openCache();
+      mainWindow->restoreState();
+      mainWindow->setTreeLocked(false);
+      mainWindow->showErrors();
+      mainWindow->changeView(PACKAGE_VIEW_STATUS, _("Installed (upgradable)"));
    }
 
    if(_config->FindB("Volatile::Upgrade-Mode",false) 
@@ -289,21 +537,21 @@ int main(int argc, char **argv)
       mainWindow->changeView(PACKAGE_VIEW_CUSTOM, _("Marked Changes"));
    }
 
-   if(_config->FindB("Volatile::Update-Mode",false)) {
-      mainWindow->cbUpdateClicked(NULL, mainWindow);
-      mainWindow->changeView(PACKAGE_VIEW_STATUS, _("Installed (upgradable)"));
-   }
-
    if(_config->FindB("Volatile::TaskWindow",false)) {
       mainWindow->cbTasksClicked(NULL, mainWindow);
    }
 
-   if (_config->FindB("Volatile::Non-Interactive", false)) {
+   string filter = _config->Find("Volatile::initialFilter","");
+   if(filter != "")
+      mainWindow->changeView(PACKAGE_VIEW_CUSTOM, filter);
+
+   if (NonInteractive) {
       mainWindow->cbProceedClicked(NULL, mainWindow);
    } else {
       welcome_dialog(mainWindow);
+#if 0
       update_check(mainWindow, packageLister);
-      
+#endif 
       gtk_main();
    }
 

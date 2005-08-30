@@ -36,6 +36,7 @@
 #include <apt-pkg/pkgcache.h>
 #include <apt-pkg/acquire.h>
 #include "rconfiguration.h"
+#include "i18n.h"
 
 using namespace std;
 
@@ -44,6 +45,24 @@ class RPackageLister;
 class pkgRecords;
 
 enum { NO_PARSER, DEB_PARSER, STRIP_WS_PARSER, RPM_PARSER };
+
+// taken from apt (pkgcache.cc) to make our life easier 
+// (and added "RDepends" after "Obsoletes"
+static const char *DepTypeStr[] = 
+   {"",_("Depends"),_("PreDepends"),_("Suggests"),
+    _("Recommends"),_("Conflicts"),_("Replaces"),
+    _("Obsoletes"), _("Dependency of")};
+
+typedef struct  {
+   pkgCache::Dep::DepType type; // type as enum
+   const char* name;            // target pkg name
+   const char* version;         // target version  
+   const char* versionComp;     // target version compare type ( << , > etc)
+   bool isSatisfied;            // dependecy is satified 
+   bool isVirtual;              // package is virtual
+   bool isOr;                   // or dependency (with next pkg)
+} DepInformation;
+
 
 class RPackage {
 
@@ -66,17 +85,6 @@ class RPackage {
    int _boolFlags;
 
  public:
-
-   typedef struct  {
-      pkgCache::Dep::DepType type; // type as enum
-      const char* typeStr;         // type (depends, preDepends, etc) as str
-      const char* name;            // target pkg name
-      const char* version;         // target version  
-      const char* versionComp;     // target version compare type ( << , > etc)
-      bool isSatisfied;            // dependecy is satified 
-      bool isVirtual;              // package is virtual
-      bool isOr;                   // or dependency (with next pkg)
-   } DepInformation;
 
    enum Flags {
       FKeep             = 1 << 0,
@@ -157,7 +165,7 @@ class RPackage {
    vector<DepInformation> enumDeps(bool useCanidateVersion=false);
 
    // reverse dependencies
-   vector<RPackage::DepInformation> enumRDeps();
+   vector<DepInformation> enumRDeps();
 
    int getFlags();
 

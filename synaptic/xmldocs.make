@@ -48,13 +48,13 @@ CLEANFILES = omf_timestamp html_timestamp
 # If the following file is in a subdir (like help/) you need to add that to the path
 include $(top_srcdir)/omf.make
 
-all: omf 
+all: omf html
 
 html: html_timestamp
 
 html_timestamp:  $(docname).xml
 	rm -f $(top_builddir)/doc/html/$(lang)/*html
-	xmlto html -o  $(top_builddir)/doc/html/$(lang) --skip-validation $(docname).xml
+	xmlto html -o  $(top_builddir)/doc/html/$(lang) --skip-validation $(srcdir)/$(docname).xml
 	mkdir -p  $(top_builddir)/doc/html/$(lang)/figures
 	cp  $(top_srcdir)/help/$(lang)/figures/*  $(top_builddir)/doc/html/$(lang)/figures
 	touch html_timestamp
@@ -64,7 +64,7 @@ $(docname).xml: $(entities)
 	cd $(srcdir);   \
 	cp $(entities) $$ourdir
 
-app-dist-hook:
+app-dist-hook: html
 	if test "$(figdir)"; then \
 	  $(mkinstalldirs) $(distdir)/$(figdir); \
 	  for file in $(srcdir)/$(figdir)/*.png; do \
@@ -73,7 +73,7 @@ app-dist-hook:
 	  done \
 	fi
 
-install-data-local: omf
+install-data-local: omf 
 	$(mkinstalldirs) $(DESTDIR)$(docdir)
 	for file in $(xml_files); do \
 	  cp $(srcdir)/$$file $(DESTDIR)$(docdir); \

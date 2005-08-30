@@ -44,8 +44,18 @@ bool RPackageOptionsFile(ofstream &out);
 bool RPackageOptionsFile(ifstream &in);
 
 
-// get the default conf dir, very small temp files might be placed here too
+// get the default conf dir
 string RConfDir();
+
+// this needs to be a safe tmp dir (like /root/.synaptic/tmp) to store
+// small files like changelogs or pinfiles (preferences)
+string RTmpDir();
+
+// state dir - we store the locked packages (preferences file) here
+//             possible other stuff in the future
+string RStateDir();
+
+// we store the commit history here
 string RLogDir();
 
 #endif

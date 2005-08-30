@@ -32,7 +32,10 @@
 #include <unistd.h>
 #include <map>
 #include <sstream>
-#include <ctime>
+#include <dirent.h>
+#include <sys/stat.h>
+#include <unistd.h>
+#include <time.h>
 
 #include "rpackagelister.h"
 #include "rpackagecache.h"
@@ -43,6 +46,7 @@
 #include "rcacheactor.h"
 
 #include <apt-pkg/error.h>
+#include <apt-pkg/progress.h>
 #include <apt-pkg/algorithms.h>
 #include <apt-pkg/pkgrecords.h>
 #include <apt-pkg/configuration.h>
@@ -68,7 +72,7 @@
 using namespace std;
 
 RPackageLister::RPackageLister()
-   : _records(0)
+   : _records(0), _progMeter(new OpProgress)
 {
    _cache = new RPackageCache();
 
@@ -95,6 +99,7 @@ RPackageLister::RPackageLister()
 
    _pkgStatus.init();
 
+   cleanCommitLog();
 #if 0
    string Recommends = _config->Find("Synaptic::RecommendsFile",
                                      "/etc/apt/metadata");
@@ -268,25 +273,17 @@ bool RPackageLister::upgradable()
    return _cache != NULL && _cache->deps() != NULL;
 }
 
-bool RPackageLister::openCache(bool reset)
+bool RPackageLister::openCache(bool lock)
 {
    static bool firstRun = true;
 
    // Flush old errors
    _error->Discard();
 
-   if (reset) {
-      if (!_cache->reset(*_progMeter)) {
-         _progMeter->Done();
-         _cacheValid = false;
-         return false;
-      }
-   } else {
-      if (!_cache->open(*_progMeter)) {
-         _progMeter->Done();
-         _cacheValid = false;
-         return false;
-      }
+   if (!_cache->open(*_progMeter,lock)) {
+      _progMeter->Done();
+      _cacheValid = false;
+      return false;
    }
    _progMeter->Done();
 
@@ -392,8 +389,7 @@ bool RPackageLister::openCache(bool reset)
 
    _updating = false;
 
-   if (reset)
-      reapplyFilter();
+   reapplyFilter();
 
    // mvo: put it here for now
    notifyCacheOpen();
@@ -1338,11 +1334,8 @@ bool RPackageLister::commitChanges(pkgAcquireStatus *status,
 
    pkgPackageManager *PM;
    PM = _system->CreatePM(_cache->deps());
-#ifdef WITH_DPKG_STATUSFD
-   pkgPackageManager *rPM = PM;
-#else
    RPackageManager *rPM = new RPackageManager(PM);
-#endif
+
    if (!PM->GetArchives(&fetcher, _cache->list(), _records) ||
        _error->PendingError())
       goto gave_wood;
@@ -1392,7 +1385,7 @@ bool RPackageLister::commitChanges(pkgAcquireStatus *status,
          Failed = true;
       }
 
-      if (_config->FindB("Synaptic::Download-Only", false)) {
+      if (_config->FindB("Volatile::Download-Only", false)) {
          _updating = false;
          return !Failed;
       }
@@ -1466,16 +1459,12 @@ bool RPackageLister::commitChanges(pkgAcquireStatus *status,
       writeCommitLog();
 
    delete PM;
-#ifndef WITH_DPKG_STATUSFD
    delete rPM;
-#endif
    return Ret;
 
  gave_wood:
    delete PM;
-#ifndef WITH_DPKG_STATUSFD
    delete rPM;
-#endif
    return false;
 }
 
@@ -1495,6 +1484,39 @@ void RPackageLister::writeCommitLog()
    fputs(_logEntry.c_str(), f);
    fclose(f);
 
+}
+
+void RPackageLister::cleanCommitLog()
+{
+   int maxKeep = _config->FindI("Synaptic::delHistory", -1);
+   //cout << "RPackageLister::cleanCommitLog(): " << maxKeep << endl;
+   if(maxKeep < 0)
+      return;
+   
+   string logfile, entry;
+   struct stat buf;
+   struct dirent *dent;
+   time_t now = time(NULL);
+   DIR *dir = opendir(RLogDir().c_str());
+   while((dent=readdir(dir)) != NULL) {
+      entry = string(dent->d_name);
+      if(logfile == "." || logfile == "..")
+	 continue;
+      logfile = RLogDir()+entry;
+      if(stat(logfile.c_str(), &buf) != 0) {
+	 cerr << "logfile: " << logfile << endl;
+	 perror("cleanCommitLog(), stat: ");
+	 continue;
+      }
+      if((buf.st_mtime+(60*60*24*maxKeep)) < now) {
+// 	 cout << "older than " << maxKeep << " days: " << logfile << endl;
+// 	 cout << "now: " << now 
+// 	      << " ctime: " << buf.st_mtime+(60*60*24*maxKeep) << endl;
+	 unlink(logfile.c_str());
+      }
+
+   }
+   closedir(dir);
 }
 
 void RPackageLister::makeCommitLog()
@@ -1721,15 +1743,18 @@ bool RPackageLister::readSelections(istream &in)
            I != actionMap.end(); I++) {
          Pkg = Cache.FindPkg((*I).first);
          if (Pkg.end() == false) {
-            Fix.Clear(Pkg);
-            Fix.Protect(Pkg);
+	    Fix.Clear(Pkg);
+	    Fix.Protect(Pkg);
             switch ((*I).second) {
                case ACTION_INSTALL:
-                  Cache.MarkInstall(Pkg, true);
+		  if(_config->FindB("Volatile::SetSelectionsNoFix","false"))
+		     Cache.MarkInstall(Pkg, false);
+		  else
+		     Cache.MarkInstall(Pkg, true);
                   break;
 
                case ACTION_UNINSTALL:
-                  Fix.Remove(Pkg);
+		  Fix.Remove(Pkg);
                   Cache.MarkDelete(Pkg, false);
                   break;
             }

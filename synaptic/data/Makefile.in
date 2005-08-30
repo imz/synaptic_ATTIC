@@ -69,7 +69,6 @@ EXEEXT = @EXEEXT@
 GETTEXT_PACKAGE = @GETTEXT_PACKAGE@
 GMOFILES = @GMOFILES@
 GMSGFMT = @GMSGFMT@
-ICONV = @ICONV@
 INSTALL_DATA = @INSTALL_DATA@
 INSTALL_PROGRAM = @INSTALL_PROGRAM@
 INSTALL_SCRIPT = @INSTALL_SCRIPT@
@@ -80,9 +79,12 @@ INTLTOOL_CAVES_RULE = @INTLTOOL_CAVES_RULE@
 INTLTOOL_DESKTOP_RULE = @INTLTOOL_DESKTOP_RULE@
 INTLTOOL_DIRECTORY_RULE = @INTLTOOL_DIRECTORY_RULE@
 INTLTOOL_EXTRACT = @INTLTOOL_EXTRACT@
+INTLTOOL_ICONV = @INTLTOOL_ICONV@
 INTLTOOL_KBD_RULE = @INTLTOOL_KBD_RULE@
 INTLTOOL_KEYS_RULE = @INTLTOOL_KEYS_RULE@
 INTLTOOL_MERGE = @INTLTOOL_MERGE@
+INTLTOOL_MSGFMT = @INTLTOOL_MSGFMT@
+INTLTOOL_MSGMERGE = @INTLTOOL_MSGMERGE@
 INTLTOOL_OAF_RULE = @INTLTOOL_OAF_RULE@
 INTLTOOL_PERL = @INTLTOOL_PERL@
 INTLTOOL_PONG_RULE = @INTLTOOL_PONG_RULE@
@@ -95,13 +97,12 @@ INTLTOOL_THEME_RULE = @INTLTOOL_THEME_RULE@
 INTLTOOL_UI_RULE = @INTLTOOL_UI_RULE@
 INTLTOOL_UPDATE = @INTLTOOL_UPDATE@
 INTLTOOL_XAM_RULE = @INTLTOOL_XAM_RULE@
+INTLTOOL_XGETTEXT = @INTLTOOL_XGETTEXT@
 INTLTOOL_XML_NOMERGE_RULE = @INTLTOOL_XML_NOMERGE_RULE@
 INTLTOOL_XML_RULE = @INTLTOOL_XML_RULE@
 LDFLAGS = @LDFLAGS@
 LIBOBJS = @LIBOBJS@
 LIBS = @LIBS@
-LIBTAGCOLL_CFLAGS = @LIBTAGCOLL_CFLAGS@
-LIBTAGCOLL_LIBS = @LIBTAGCOLL_LIBS@
 LTLIBOBJS = @LTLIBOBJS@
 MAINT = @MAINT@
 MAINTAINER_MODE_FALSE = @MAINTAINER_MODE_FALSE@
@@ -109,7 +110,6 @@ MAINTAINER_MODE_TRUE = @MAINTAINER_MODE_TRUE@
 MAKEINFO = @MAKEINFO@
 MKINSTALLDIRS = @MKINSTALLDIRS@
 MSGFMT = @MSGFMT@
-MSGMERGE = @MSGMERGE@
 OBJEXT = @OBJEXT@
 PACKAGE = @PACKAGE@
 PACKAGE_BUGREPORT = @PACKAGE_BUGREPORT@
@@ -180,9 +180,15 @@ systemdir = $(sysconfdir)/X11/sysconfig
 system_in_files = synaptic.desktop.in
 system_DATA = $(system_in_files:.desktop.in=.desktop)
 
+kdeappdir = $(datadir)/applications
+kdeapp_in_files = synaptic-kde.desktop.in
+kdeapp_DATA = $(kdeapp_in_files:.desktop.in=.desktop)
+
 EXTRA_DIST = $(desktop_in_files) \
 		$(desktop_DATA) \
-		$(system_in_files)
+		$(system_in_files) \
+		$(kdeapp_in_files) \
+		$(kdeapp_DATA) 
 
 subdir = data
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
@@ -190,7 +196,7 @@ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
 CONFIG_HEADER = $(top_builddir)/config.h
 CONFIG_CLEAN_FILES =
 DIST_SOURCES =
-DATA = $(desktop_DATA) $(system_DATA)
+DATA = $(desktop_DATA) $(kdeapp_DATA) $(system_DATA)
 
 DIST_COMMON = $(srcdir)/Makefile.in Makefile.am
 all: all-am
@@ -219,6 +225,24 @@ uninstall-desktopDATA:
 	  f="`echo $$p | sed -e 's|^.*/||'`"; \
 	  echo " rm -f $(DESTDIR)$(desktopdir)/$$f"; \
 	  rm -f $(DESTDIR)$(desktopdir)/$$f; \
+	done
+kdeappDATA_INSTALL = $(INSTALL_DATA)
+install-kdeappDATA: $(kdeapp_DATA)
+	@$(NORMAL_INSTALL)
+	$(mkinstalldirs) $(DESTDIR)$(kdeappdir)
+	@list='$(kdeapp_DATA)'; for p in $$list; do \
+	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+	  f="`echo $$p | sed -e 's|^.*/||'`"; \
+	  echo " $(kdeappDATA_INSTALL) $$d$$p $(DESTDIR)$(kdeappdir)/$$f"; \
+	  $(kdeappDATA_INSTALL) $$d$$p $(DESTDIR)$(kdeappdir)/$$f; \
+	done
+
+uninstall-kdeappDATA:
+	@$(NORMAL_UNINSTALL)
+	@list='$(kdeapp_DATA)'; for p in $$list; do \
+	  f="`echo $$p | sed -e 's|^.*/||'`"; \
+	  echo " rm -f $(DESTDIR)$(kdeappdir)/$$f"; \
+	  rm -f $(DESTDIR)$(kdeappdir)/$$f; \
 	done
 systemDATA_INSTALL = $(INSTALL_DATA)
 install-systemDATA: $(system_DATA)
@@ -281,7 +305,7 @@ check: check-am
 all-am: Makefile $(DATA)
 
 installdirs:
-	$(mkinstalldirs) $(DESTDIR)$(desktopdir) $(DESTDIR)$(systemdir)
+	$(mkinstalldirs) $(DESTDIR)$(desktopdir) $(DESTDIR)$(kdeappdir) $(DESTDIR)$(systemdir)
 install: install-am
 install-exec: install-exec-am
 install-data: install-data-am
@@ -322,7 +346,8 @@ info: info-am
 
 info-am:
 
-install-data-am: install-desktopDATA install-systemDATA
+install-data-am: install-desktopDATA install-kdeappDATA \
+	install-systemDATA
 
 install-exec-am:
 
@@ -349,17 +374,17 @@ ps: ps-am
 ps-am:
 
 uninstall-am: uninstall-desktopDATA uninstall-info-am \
-	uninstall-systemDATA
+	uninstall-kdeappDATA uninstall-systemDATA
 
 .PHONY: all all-am check check-am clean clean-generic distclean \
 	distclean-generic distdir dvi dvi-am info info-am install \
 	install-am install-data install-data-am install-desktopDATA \
 	install-exec install-exec-am install-info install-info-am \
-	install-man install-strip install-systemDATA installcheck \
-	installcheck-am installdirs maintainer-clean \
+	install-kdeappDATA install-man install-strip install-systemDATA \
+	installcheck installcheck-am installdirs maintainer-clean \
 	maintainer-clean-generic mostlyclean mostlyclean-generic pdf \
 	pdf-am ps ps-am uninstall uninstall-am uninstall-desktopDATA \
-	uninstall-info-am uninstall-systemDATA
+	uninstall-info-am uninstall-kdeappDATA uninstall-systemDATA
 
 @INTLTOOL_DESKTOP_RULE@
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
