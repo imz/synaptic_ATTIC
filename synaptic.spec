@@ -10,7 +10,7 @@
 %define rel %nil
 Name: synaptic
 Version: 0.57.2
-Release: alt1
+Release: alt1.1
 
 Summary: Graphical front-end for APT
 Summary(ru_RU.CP1251): Графическая оболочка для APT
@@ -119,6 +119,9 @@ intltoolize --force
 %doc README* TODO NEWS AUTHORS
 
 %changelog
+* Mon Apr 03 2006 ALT QA Team Robot <qa-robot@altlinux.org> 0.57.2-alt1.1
+- Rebuilt with libapt-0.5.15lorg2.
+
 * Sat Aug 27 2005 Sviatoslav Sviridov <svd@altlinux.ru> 0.57.2-alt1
 - Updated to 0.57.2
 - Updated russian translation
