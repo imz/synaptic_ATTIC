@@ -1,0 +1,22 @@
+--- common/rpackagefilter.h 
++++ common/rpackagefilter.h.fixed
+@@ -130,7 +130,7 @@
+    bool and_mode; // patterns are applied in "AND" mode if true, "OR" if false
+ 
+    inline bool filterName(Pattern pat, RPackage *pkg);
+-   inline bool RPatternPackageFilter::filterVersion(Pattern pat, RPackage *pkg);
++   inline bool filterVersion(Pattern pat, RPackage *pkg);
+    inline bool filterDescription(Pattern pat, RPackage *pkg);
+    inline bool filterMaintainer(Pattern pat, RPackage *pkg);
+    inline bool filterDepends(Pattern pat, RPackage *pkg, 
+--- common/rpackagelister.cc 
++++ common/rpackagelister.cc.fixed 
+@@ -607,7 +607,7 @@
+    bool _ascent;
+    RPackageStatus _status;
+  public:
+-   supportedSortFunc::supportedSortFunc(bool ascent, RPackageStatus &s) 
++   supportedSortFunc(bool ascent, RPackageStatus &s) 
+       : _ascent(ascent), _status(s) {};
+    bool operator() (RPackage *x, RPackage *y) {
+       if(_ascent)
