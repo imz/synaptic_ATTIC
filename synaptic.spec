@@ -10,7 +10,7 @@
 %define rel %nil
 Name: synaptic
 Version: 0.57.2
-Release: alt2
+Release: alt2.1
 
 Summary: Graphical front-end for APT
 Summary(ru_RU.CP1251): Графическая оболочка для APT
@@ -134,6 +134,9 @@ intltoolize --force
 %exclude %_datadir/pixmaps/%name.png
 
 %changelog
+* Wed Oct 18 2006 Michael Shigorin <mike@altlinux.org> 0.57.2-alt2.1
+- NMU: rebuilt against current libvte
+
 * Fri Jun 16 2006 Alexey Rusakov <ktirf@altlinux.ru> 0.57.2-alt2
 - fixed building with GCC4.
 - squeezed buildreqs.
