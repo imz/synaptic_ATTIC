@@ -10,7 +10,7 @@
 %define rel %nil
 Name: synaptic
 Version: 0.57.2
-Release: alt2.1
+Release: alt2.2
 
 Summary: Graphical front-end for APT
 Summary(ru_RU.CP1251): Графическая оболочка для APT
@@ -80,18 +80,18 @@ Synaptic - это графическая оболочка для APT (Advanced Package Tool).
 
 %if_with ru_po
 # installing own translation
-%__install -p -m644 %SOURCE1 po/ru.po
+install -p -m644 %SOURCE1 po/ru.po
 %endif
 
-%__install -p -m644 %SOURCE3 pixmaps/package-supported.png
+install -p -m644 %SOURCE3 pixmaps/package-supported.png
 
 %build
 intltoolize --force
 %if_enabled autotools
-%__aclocal
-%__autoheader
-%__automake -a -c
-%__autoconf
+aclocal
+autoheader
+automake -a -c
+autoconf
 %endif
 
 %add_optflags -fno-exceptions
@@ -101,15 +101,15 @@ intltoolize --force
 %install
 %make_install install DESTDIR=%buildroot
 
-%__mkdir_p %buildroot%_mandir/ru/man8/
+mkdir -p %buildroot%_mandir/ru/man8/
 %if_with ru_man
-%__install -p -m644 %SOURCE2 %buildroot%_mandir/ru/man8/%name.8
+install -p -m644 %SOURCE2 %buildroot%_mandir/ru/man8/%name.8
 %else
-%__install -p -m644 man/%name.ru.8 %buildroot%_mandir/ru/man8/%name.8
+install -p -m644 man/%name.ru.8 %buildroot%_mandir/ru/man8/%name.8
 %endif
 
-%__mkdir_p %buildroot%_sysconfdir/apt/apt.conf.d
-%__install -p -m644 %SOURCE4 %buildroot%_sysconfdir/apt/apt.conf.d/%name.conf
+mkdir -p %buildroot%_sysconfdir/apt/apt.conf.d
+install -p -m644 %SOURCE4 %buildroot%_sysconfdir/apt/apt.conf.d/%name.conf
 
 %find_lang %name
 
@@ -124,7 +124,7 @@ intltoolize --force
 %_datadir/%name
 %_datadir/gnome/help/%name
 %_datadir/omf/%name
-%_mandir/man8/%name.8.*
+%_man8dir/%name.8.*
 %_mandir/ru/man8/%name.8.*
 %config(noreplace) %_sysconfdir/apt/apt.conf.d/%name.conf
 %_sysconfdir/X11/sysconfig/%name.desktop
@@ -134,6 +134,10 @@ intltoolize --force
 %exclude %_datadir/pixmaps/%name.png
 
 %changelog
+* Sun Dec 17 2006 Michael Shigorin <mike@altlinux.org> 0.57.2-alt2.2
+- NMU: applied ru.po patch by Vitaly Lipatov (lav@); fixes #4533
+- spec macro abuse cleanup
+
 * Wed Oct 18 2006 Michael Shigorin <mike@altlinux.org> 0.57.2-alt2.1
 - NMU: rebuilt against current libvte
 

@@ -1,16 +1,16 @@
 # Russian translations for synaptic package.
 # Copyright (C) 2002-2005 THE synaptic'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the synaptic package.
-# Sviatoslav Sviridov <svd@altlinux.ru>, 2002-2003.
+# Sviatoslav Sviridov <svd@altlinux.ru>, 2002-2005.
 # Vitaly Lipatov <lav@altlinux.ru>, 2003-2005.
 # Kate <kate@lrn.ru>, 2003.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: synaptic 0.56\n"
+"Project-Id-Version: synaptic 0.57.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-08-30 02:59+0300\n"
-"PO-Revision-Date: 2005-08-30 03:19+0300\n"
+"PO-Revision-Date: 2005-09-05 12:39+0300\n"
 "Last-Translator: Vitaly Lipatov <lav@altlinux.ru>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -206,7 +206,7 @@ msgstr "Экспорт ограничен"
 #. TRANSLATORS: Alias for the Debian package section "non free"
 #: ../common/sections_trans.cc:87 ../common/sections_trans.cc:104
 msgid "non free"
-msgstr "не свободный"
+msgstr "несвободный"
 
 #. TRANSLATORS: Alias for the Debian package section "contrib"
 #. Free software that depends on non-free software
@@ -372,7 +372,7 @@ msgstr "Ошибка: Невозможно создать каталог нас�
 #: ../common/rconfiguration.cc:147
 #, c-format
 msgid "ERROR: could not create state directory %s"
-msgstr "ОШИБКА: невозможно создать каталог состяния %s"
+msgstr "ОШИБКА: невозможно создать каталог состояния %s"
 
 #: ../common/rconfiguration.cc:164
 #, c-format
@@ -915,7 +915,7 @@ msgstr "Синтаксическая ошибка в строке %s"
 #: ../common/rsources.cc:458
 #, c-format
 msgid "Vendor block %s is invalid"
-msgstr ""
+msgstr "Блок %s поставщика неверен"
 
 #. vim:sts=4:sw=4
 #: ../gtk/dialog_quit.glade.h:1
@@ -1007,9 +1007,8 @@ msgstr ""
 "`uname -n`)\n"
 
 #: ../gtk/gsynaptic.cc:75
-#, fuzzy
 msgid "-i=? Start with the initial Filter with given name\n"
-msgstr "-i=? Начать с фильтра, имеющего указанный номер\n"
+msgstr "-i=? Начать с первого же фильтра, имеющего указанный номер\n"
 
 #: ../gtk/gsynaptic.cc:76
 msgid "-o=? Set an arbitary configuration option, eg -o dir::cache=/tmp\n"
@@ -3254,7 +3253,7 @@ msgid ""
 "required repositories are added and enabled in the preferences."
 msgstr ""
 "<span weight=\"bold\" size=\"larger\">Невозможно отметить все пакеты для "
-"установки или обновления/span>\n"
+"установки или обновления</span>\n"
 "\n"
 "Следующие пакет имеют неразрешимые зависимости. Будьте уверены, что все "
 "необходимые репозитории добавлены и включены в настройках."
