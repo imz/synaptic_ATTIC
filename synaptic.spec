@@ -35,6 +35,7 @@ Patch5: synaptic-0.57.2-gcc4-fix.patch
 
 Requires: %{get_dep rpm}, %{get_dep libapt}
 
+BuildRequires(pre): libapt-devel
 # Original BuildPreReq was: libapt-devel >= 0.5.4cnc9
 # To build synaptic with apt < 0.5.5cnc5 apply Patch1
 BuildPreReq: libapt-devel >= 0.5.5cnc5
