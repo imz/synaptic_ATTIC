@@ -1189,7 +1189,6 @@ void RGMainWindow::buildInterface()
    gtk_widget_hide(_pkgReconfigureM);
    gtk_widget_hide(_pkgHelpM);
    gtk_widget_hide(_dl_changelogM);
-   gtk_widget_hide(glade_xml_get_widget(_gladeXML,"menu_changelog_separator"));
    gtk_widget_hide(glade_xml_get_widget(_gladeXML,"separator_debian"));
 #endif
    
