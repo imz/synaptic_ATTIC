@@ -10,7 +10,7 @@
 %define rel %nil
 Name: synaptic
 Version: 0.57.2
-Release: alt2.2
+Release: alt2.3
 
 Summary: Graphical front-end for APT
 Summary(ru_RU.CP1251): Графическая оболочка для APT
@@ -135,6 +135,9 @@ install -p -m644 %SOURCE4 %buildroot%_sysconfdir/apt/apt.conf.d/%name.conf
 %exclude %_datadir/pixmaps/%name.png
 
 %changelog
+* Wed Jul 18 2007 Anton V. Boyarshinov <boyarsh@altlinux.ru> 0.57.2-alt2.3
+- Ported the fix for 'Pin package' segfault from upstream. (avm@) 
+
 * Sun Dec 17 2006 Michael Shigorin <mike@altlinux.org> 0.57.2-alt2.2
 - NMU: applied ru.po patch by Vitaly Lipatov (lav@); fixes #4533
 - spec macro abuse cleanup
