@@ -10,7 +10,7 @@
 %define rel %nil
 Name: synaptic
 Version: 0.57.2
-Release: alt2.3
+Release: alt2.4
 
 Summary: Graphical front-end for APT
 Summary(ru_RU.CP1251): Графическая оболочка для APT
@@ -32,6 +32,7 @@ Patch2: synaptic-0.47-alt-xslt.patch
 Patch3: synaptic-0.51-alt-rpmgroups-intl.patch
 Patch4: synaptic-0.56-alt-build-fix.diff
 Patch5: synaptic-0.57.2-gcc4-fix.patch
+Patch6: synaptic-0.57.2-gcc43-fix.patch
 
 Requires: %{get_dep rpm}, %{get_dep libapt}
 
@@ -78,6 +79,7 @@ Synaptic - это графическая оболочка для APT (Advanced Package Tool).
 #%%patch3 -p1
 %patch4 -p1
 %patch5
+%patch6 -p1
 
 %if_with ru_po
 # installing own translation
@@ -114,12 +116,6 @@ install -p -m644 %SOURCE4 %buildroot%_sysconfdir/apt/apt.conf.d/%name.conf
 
 %find_lang %name
 
-%post
-%update_scrollkeeper
-
-%postun
-%clean_scrollkeeper
-
 %files -f %name.lang
 %_sbindir/*
 %_datadir/%name
@@ -135,6 +131,9 @@ install -p -m644 %SOURCE4 %buildroot%_sysconfdir/apt/apt.conf.d/%name.conf
 %exclude %_datadir/pixmaps/%name.png
 
 %changelog
+* Fri Dec 12 2008 Fr. Br. George <george@altlinux.ru> 0.57.2-alt2.4
+- Fix GCC4.3.x build
+
 * Wed Jul 18 2007 Anton V. Boyarshinov <boyarsh@altlinux.ru> 0.57.2-alt2.3
 - Ported the fix for 'Pin package' segfault from upstream. (avm@) 
 
