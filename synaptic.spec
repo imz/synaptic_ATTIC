@@ -10,7 +10,7 @@
 %define rel %nil
 Name: synaptic
 Version: 0.57.2
-Release: alt2.4
+Release: alt2.5
 
 Summary: Graphical front-end for APT
 Summary(ru_RU.CP1251): Графическая оболочка для APT
@@ -133,6 +133,9 @@ install -p -m644 %SOURCE4 %buildroot%_sysconfdir/apt/apt.conf.d/%name.conf
 %exclude %_datadir/pixmaps/%name.png
 
 %changelog
+* Sat Jan 10 2009 Slava Semushin <php-coder@altlinux.ru> 0.57.2-alt2.5
+- NMU: fixed typo in translation (Closes: #15137)
+
 * Fri Dec 12 2008 Fr. Br. George <george@altlinux.ru> 0.57.2-alt2.4
 - Fix GCC4.3.x build
 
