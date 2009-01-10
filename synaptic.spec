@@ -84,6 +84,8 @@ Synaptic - это графическая оболочка для APT (Advanced Package Tool).
 %if_with ru_po
 # installing own translation
 install -p -m644 %SOURCE1 po/ru.po
+# remove gmo file to tell autotools recreate it
+rm -fv -- po/ru.gmo
 %endif
 
 install -p -m644 %SOURCE3 pixmaps/package-supported.png
