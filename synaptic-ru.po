@@ -1892,7 +1892,7 @@ msgstr "<b>%s</b> (<b>важных</b>) будет удалено\n"
 #: ../gtk/rgsummarywindow.cc:271
 #, c-format
 msgid "<b>%s</b> will be <b>downgraded</b>\n"
-msgstr "<b>версия</b><b>%s</b> будет <b>понижена</b>\n"
+msgstr "версия <b>%s</b> будет <b>понижена</b>\n"
 
 #: ../gtk/rgsummarywindow.cc:279
 #, c-format
