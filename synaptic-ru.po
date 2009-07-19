@@ -1,17 +1,17 @@
-# Russian translations for synaptic package.
+# Russian translation for synaptic package.
 # Copyright (C) 2002-2005 THE synaptic'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the synaptic package.
 # Sviatoslav Sviridov <svd@altlinux.ru>, 2002-2005.
-# Vitaly Lipatov <lav@altlinux.ru>, 2003-2005.
 # Kate <kate@lrn.ru>, 2003.
+# Vitaly Lipatov <lav@altlinux.ru>, 2003-2005, 2009.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: synaptic 0.57.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-08-30 02:59+0300\n"
-"PO-Revision-Date: 2005-09-05 12:39+0300\n"
-"Last-Translator: Vitaly Lipatov <lav@altlinux.ru>\n"
+"POT-Creation-Date: 2009-07-16 18:12+0400\n"
+"PO-Revision-Date: 2009-07-16 18:34+0400\n"
+"Last-Translator: Alexandre Prokoudine <alexandre.prokoudine@gmail.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -500,27 +500,27 @@ msgstr "Неверная запись в файле параметров, нет
 
 #: ../common/rpackage.cc:1274
 msgid "Marked for installation"
-msgstr "Для установки"
+msgstr "Будут установлены"
 
 #: ../common/rpackage.cc:1275
 msgid "Marked for re-installation"
-msgstr "Для повторной установки"
+msgstr "Будут повторно установлены"
 
 #: ../common/rpackage.cc:1276
 msgid "Marked for upgrade"
-msgstr "Для обновления"
+msgstr "Будут обновлены"
 
 #: ../common/rpackage.cc:1277
 msgid "Marked for downgrade"
-msgstr "Для понижения версии"
+msgstr "Будет установлена более ранняя версия"
 
 #: ../common/rpackage.cc:1278
 msgid "Marked for removal"
-msgstr "Для удаления"
+msgstr "Будут удалены"
 
 #: ../common/rpackage.cc:1279
 msgid "Marked for complete removal"
-msgstr "Для полного удаления"
+msgstr "Будут удалены полностью"
 
 # This is filter name, it's better to not translate it
 #: ../common/rpackage.cc:1280 ../common/rpackageview.cc:123
@@ -1423,6 +1423,7 @@ msgstr ""
 "\n"
 
 #: ../gtk/rginstallprogress.cc:87
+#, c-format
 msgid ""
 "\n"
 "While preparing for installation:\n"
@@ -1611,28 +1612,28 @@ msgid_plural ""
 "\n"
 "Use the \"Broken\" filter to locate them."
 msgstr[0] ""
-"На вашей машине установлено %i пакетов с ошибками.\n"
+"На вашей машине установлен %i пакет с ошибками.\n"
 "\n"
-"Попробуйте их исправить, зайдя в фильтр \"С ошибками\"."
+"Попробуйте их исправить, зайдя в фильтр «С ошибками»."
 msgstr[1] ""
-"На вашей машине установлено %i пакетов с ошибками.\n"
+"На вашей машине установлено %i пакета с ошибками.\n"
 "\n"
-"Попробуйте их исправить, зайдя в фильтр \"С ошибками\""
+"Попробуйте их исправить, зайдя в фильтр «С ошибками»."
 msgstr[2] ""
 "На вашей машине установлено %i пакетов с ошибками.\n"
 "\n"
-"Попробуйте их исправить, зайдя в фильтр \"С ошибками\""
+"Попробуйте их исправить, зайдя в фильтр «С ошибками»."
 
 #: ../gtk/rgmainwindow.cc:1834
 msgid "Downloading changelog"
-msgstr "Журнал загрузки"
+msgstr "Скачивается история изменений"
 
 #: ../gtk/rgmainwindow.cc:1835
 msgid ""
 "The changelog contains information about the changes and closed bugs in each "
 "version of the package."
 msgstr ""
-"Список изменений содержит информацию об изменениях и исправленных ошибках "
+"История изменений содержит информацию об изменениях и исправленных ошибках "
 "каждой версии пакета."
 
 #. TRANSLATORS: Title of the changelog dialog - %s is the name of the package
@@ -1643,7 +1644,7 @@ msgstr "История изменений %s"
 
 #: ../gtk/rgmainwindow.cc:1936
 msgid "Do you want to add another CD-ROM?"
-msgstr "Добавить другой компакт-диск?"
+msgstr "Добавить еще один компакт-диск?"
 
 #: ../gtk/rgmainwindow.cc:1970 ../gtk/rgmainwindow.cc:2026
 msgid "Open changes"
@@ -1696,7 +1697,7 @@ msgstr "Больше не показывать это сообщение"
 #: ../gtk/rgmainwindow.cc:2246
 #, c-format
 msgid "Found %i packages"
-msgstr "Найдено %i пакет(ов)"
+msgstr "Найдено пакетов: %i"
 
 #: ../gtk/rgmainwindow.cc:2287
 msgid "Starting help viewer..."
@@ -1874,7 +1875,7 @@ msgstr "<b>Будет установлена УСТАРЕВШАЯ ВЕРСИЯ</
 
 #: ../gtk/rgsummarywindow.cc:152
 msgid "<b>To be removed</b>"
-msgstr "<b>Для удаления</b>"
+msgstr "<b>Будут удалены</b>"
 
 #: ../gtk/rgsummarywindow.cc:165
 msgid "<b>To be completely removed (including configuration files)</b>"
@@ -2047,7 +2048,7 @@ msgstr "Отменить"
 #. downloadable version)
 #: ../gtk/rggladewindow.cc:89 ../gtk/rggladewindow.cc:107
 msgid "N/A"
-msgstr "N/A"
+msgstr "Н/Д"
 
 #: ../gtk/rgfindwindow.cc:128
 msgid "Find"
@@ -2212,11 +2213,11 @@ msgstr "Synaptic"
 
 #: ../gtk/window_main.glade.h:40
 msgid "Text Be_side Icons"
-msgstr "Текст _под пиктограммами"
+msgstr "Текст _рядом со значками"
 
 #: ../gtk/window_main.glade.h:41
 msgid "Text _Below Icons"
-msgstr "Текст _под пиктограммами"
+msgstr "Текст _под значками"
 
 #: ../gtk/window_main.glade.h:42
 msgid "U_nmark"
@@ -2264,7 +2265,7 @@ msgstr "Загрузить _историю изменений"
 
 #: ../gtk/window_main.glade.h:53
 msgid "_Edit"
-msgstr "_Редактирование"
+msgstr "_Правка"
 
 #: ../gtk/window_main.glade.h:54
 msgid "_File"
@@ -2284,7 +2285,7 @@ msgstr "_Указать версию..."
 
 #: ../gtk/window_main.glade.h:58
 msgid "_Help"
-msgstr "_Помощь"
+msgstr "_Справка"
 
 #: ../gtk/window_main.glade.h:59
 msgid "_Hide"
@@ -2296,7 +2297,7 @@ msgstr "_История"
 
 #: ../gtk/window_main.glade.h:61
 msgid "_Icons Only"
-msgstr "Только _пиктограммы"
+msgstr "Только _значки"
 
 #: ../gtk/window_main.glade.h:62
 msgid "_Lock Version"
@@ -2308,7 +2309,7 @@ msgstr "_Отметить для обновления..."
 
 #: ../gtk/window_main.glade.h:64
 msgid "_Package"
-msgstr "_Пакет"
+msgstr "П_акет"
 
 #: ../gtk/window_main.glade.h:65
 msgid "_Properties"
@@ -2320,7 +2321,7 @@ msgstr "_Краткое описание"
 
 #: ../gtk/window_main.glade.h:67
 msgid "_Quit"
-msgstr "В_ыйти"
+msgstr "В_ыход"
 
 #: ../gtk/window_main.glade.h:68
 msgid "_Read Markings..."
@@ -2356,7 +2357,7 @@ msgstr "_Установить внутренний параметр..."
 
 #: ../gtk/window_main.glade.h:76
 msgid "_Settings"
-msgstr "_Настройки"
+msgstr "Пара_метры"
 
 #: ../gtk/window_main.glade.h:77
 msgid "_Text Only"
@@ -2368,7 +2369,7 @@ msgstr "_Панель инструментов"
 
 #: ../gtk/window_main.glade.h:79
 msgid "_Undo"
-msgstr "_Отказаться"
+msgstr "_Отменить"
 
 #: ../gtk/window_about.glade.h:1
 msgid ""
@@ -2388,7 +2389,7 @@ msgstr "Поддержка debtag включена."
 
 #: ../gtk/window_about.glade.h:7
 msgid "Documented by"
-msgstr "Документацию вёл"
+msgstr "Документация"
 
 #: ../gtk/window_about.glade.h:8
 msgid ""
@@ -3387,157 +3388,3 @@ msgstr "История"
 msgid "History of installed, upgraded and removed software packages."
 msgstr "История установленных, обновлённых и удалённых пакетов программ."
 
-#, fuzzy
-#~ msgid "could not open recommends file %s"
-#~ msgstr "Внутренняя ошибка: Невозможно открыть файл сокращённого вида%s"
-
-#, fuzzy
-#~ msgid "Bad regular expression '%s' in Recommends file."
-#~ msgstr "Плохое регулярное выражение '%s' в файле сокращённого вида."
-
-#~ msgid "Internal Error: Couldn't fork gzip. Please report."
-#~ msgstr ""
-#~ "Внутренняя ошибка: Невозможно запустить gzip. Пожалуйста, сообщите об "
-#~ "этом разработчикам."
-
-#~ msgid "Internal Error: couldn't fork bzip2. Please report."
-#~ msgstr ""
-#~ "Внутренняя ошибка: Невозможно запустить bzip2. Пожалуйста, сообщите об "
-#~ "этом разработчикам."
-
-#~ msgid ""
-#~ "<big><b>%s</b></big> \n"
-#~ "\n"
-#~ "%s"
-#~ msgstr ""
-#~ "<big><b>%s</b></big> \n"
-#~ "\n"
-#~ "%s"
-
-#~ msgid "Normal"
-#~ msgstr "Нормальный"
-
-#~ msgid "Critical"
-#~ msgstr "Критический"
-
-#~ msgid "Security"
-#~ msgstr "Безопасность"
-
-# This is filter name, it's better to not translate it
-#~ msgid "Installation finished"
-#~ msgstr "Установка завершена"
-
-#~ msgid "%s is/will be installed"
-#~ msgstr "%s уже/будет установлен"
-
-#~ msgid "package is not installable"
-#~ msgstr "пакет не может быть установлен"
-
-#~ msgid "package is a virtual package"
-#~ msgstr "пакет является виртуальным"
-
-#~ msgid "package is/will not be installed"
-#~ msgstr "пакет не установлен/не будет установлен"
-
-#~ msgid "dependency is satisfied"
-#~ msgstr "зависимости разрешены"
-
-#~ msgid ""
-#~ "\n"
-#~ "The follwoing packages are DOWNGRADED:\n"
-#~ msgstr ""
-#~ "\n"
-#~ "Следующие пакеты возвращены к прежним версиям:\n"
-
-#~ msgid ""
-#~ "\n"
-#~ "The follwoing packages are removed:\n"
-#~ msgstr ""
-#~ "\n"
-#~ "Следующие пакеты удалены:\n"
-
-#~ msgid ""
-#~ "\n"
-#~ "The follwoing packages are upgraded:\n"
-#~ msgstr ""
-#~ "\n"
-#~ "Следующие пакеты обновлены:\n"
-
-#~ msgid ""
-#~ "\n"
-#~ "The follwoing packages are installed:\n"
-#~ msgstr ""
-#~ "\n"
-#~ "Следующие пакеты установлены:\n"
-
-#~ msgid ""
-#~ "\n"
-#~ "The follwoing packages are re-installed:\n"
-#~ msgstr ""
-#~ "\n"
-#~ "Следующие пакеты переустановлены:\n"
-
-#~ msgid "ignore"
-#~ msgstr "игнорировать"
-
-#~ msgid "To be not upgraded"
-#~ msgstr "Не будут обновлены"
-
-#~ msgid "View Commit Log"
-#~ msgstr "Просмотреть журнал изменений"
-
-#~ msgid "<b>Distribution</b>"
-#~ msgstr "<b>Дистрибутив</b>"
-
-#~ msgid ""
-#~ "<b>Note:</b> The package information must be reloaded and all marked "
-#~ "changes will be lost. Make sure to apply your changes first."
-#~ msgstr ""
-#~ "<b>Внимание:</b> Необходимо будет получить заново список пакетов, в связи "
-#~ "с чем пропадут все предполагающиеся изменения. Убедитесь, что все "
-#~ "изменения внесены."
-
-#~ msgid "Default archive: "
-#~ msgstr "Архив по умолчанию: "
-
-#~ msgid "Expert"
-#~ msgstr "Эксперт"
-
-#~ msgid ""
-#~ "Select the default release if more than one is specifed in the sources."
-#~ "list"
-#~ msgstr ""
-#~ "Выбирать релиз по умолчанию, если более одного указано в sources.list"
-
-#~ msgid "Temporary Files"
-#~ msgstr "Временные файлы"
-
-#~ msgid ""
-#~ "<b><big>The grafical user interface (xlib) does not support your chosen "
-#~ "language environment</big></b>\n"
-#~ "\n"
-#~ "Synaptic can crash if you decide to continue with unchanged localisation "
-#~ "preferences. Language values like \"fr_FR.iso8859-15@euro\" are not "
-#~ "supported. Use values like \"fr_FR\" or \"fr_FR@euro\" for your "
-#~ "language.\n"
-#~ "\n"
-#~ "Contact the mailing list for comments or help:\n"
-#~ "<i>synaptic-devel@nongnu.org</i> \n"
-#~ "Include the output of the \"locale\" command in your email."
-#~ msgstr ""
-#~ "<b><big>Графический интерфейс пользователя (XLib) не поддерживает "
-#~ "выбранные языковые настройки</big></b>\n"
-#~ "\n"
-#~ "Может последовать аварийное завершение Synaptic!\n"
-#~ " Используйте локальные настройки \"fr_FR\" или \"fr_FR@euro\", но не "
-#~ "\"fr_FR.iso8859-15@euro\".\n"
-#~ "\n"
-#~ "Обратитесь за помощью или объяснениями в рассылку:\n"
-#~ "<i>synaptic-devel@nongnu.org</i> \n"
-#~ "В сообщение вложите выходные данные команды \"locale\""
-
-#~ msgid "Save changes"
-#~ msgstr "Сохранить изменения"
-
-#~ msgid "Downloading Files"
-#~ msgstr "Загружаются файлы"
