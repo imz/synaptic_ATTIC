@@ -10,7 +10,7 @@
 %define rel %nil
 Name: synaptic
 Version: 0.57.2
-Release: alt2.7.1
+Release: alt3
 
 Summary: Graphical front-end for APT
 Summary(ru_RU.CP1251): Графическая оболочка для APT
@@ -133,6 +133,9 @@ install -p -m644 %SOURCE4 %buildroot%_sysconfdir/apt/apt.conf.d/%name.conf
 %exclude %_datadir/pixmaps/%name.png
 
 %changelog
+* Mon Nov 01 2010 Lenar Shakirov <snejok@altlinux.ru> 0.57.2-alt3
+- Supported labels: sisyphus fixed, additional labels added (closes: #20538)
+
 * Mon Dec 21 2009 Alexey I. Froloff <raorn@altlinux.org> 0.57.2-alt2.7.1
 - NMU:
   + rebuilt with apt 0.5.15lorg2-alt31.1
