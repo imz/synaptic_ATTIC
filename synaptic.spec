@@ -9,8 +9,8 @@
 
 %define rel %nil
 Name: synaptic
-Version: 0.57.2
-Release: alt4
+Version: 0.57.3
+Release: alt1
 
 Summary: Graphical front-end for APT
 Summary(ru_RU.CP1251): Графическая оболочка для APT
@@ -104,7 +104,7 @@ autoconf
 %make_build
 
 %install
-%make_install install DESTDIR=%buildroot
+%makeinstall_std
 
 mkdir -p %buildroot%_mandir/ru/man8/
 %if_with ru_man
@@ -126,13 +126,17 @@ install -p -m644 %SOURCE4 %buildroot%_sysconfdir/apt/apt.conf.d/%name.conf
 %_man8dir/%name.8.*
 %_mandir/ru/man8/%name.8.*
 %config(noreplace) %_sysconfdir/apt/apt.conf.d/%name.conf
-%_sysconfdir/X11/sysconfig/%name.desktop
 %doc README* TODO NEWS AUTHORS
 
 %exclude %_desktopdir/%{name}*.desktop
 %exclude %_datadir/pixmaps/%name.png
 
 %changelog
+* Fri Jan 21 2011 Lenar Shakirov <snejok@altlinux.ru> 0.57.3-alt1
+- New version
+- Spec cleaned: thanks to rpmcs!
+- %_sysconfdir/X11/sysconfig/%name.desktop dropped
+
 * Tue Nov 09 2010 Lenar Shakirov <snejok@altlinux.ru> 0.57.2-alt4
 - gcc 4.5 related fixes: synaptic-0.57.2-gcc4-fix.patch updated
 
@@ -166,7 +170,7 @@ install -p -m644 %SOURCE4 %buildroot%_sysconfdir/apt/apt.conf.d/%name.conf
 - Fix GCC4.3.x build
 
 * Wed Jul 18 2007 Anton V. Boyarshinov <boyarsh@altlinux.ru> 0.57.2-alt2.3
-- Ported the fix for 'Pin package' segfault from upstream. (avm@) 
+- Ported the fix for 'Pin package' segfault from upstream. (avm@)
 
 * Sun Dec 17 2006 Michael Shigorin <mike@altlinux.org> 0.57.2-alt2.2
 - NMU: applied ru.po patch by Vitaly Lipatov (lav@); fixes #4533
@@ -186,7 +190,7 @@ install -p -m644 %SOURCE4 %buildroot%_sysconfdir/apt/apt.conf.d/%name.conf
 * Sat Aug 27 2005 Sviatoslav Sviridov <svd@altlinux.ru> 0.57.2-alt1
 - Updated to 0.57.2
 - Updated russian translation
-- Added synaptic.conf in /etc/apt/apt.conf.d/
+- Added synaptic.conf in %_sysconfdir/apt/apt.conf.d/
   + Enabled "mark-unsupported" option
 - https://bugzilla.altlinux.org/images/favicon.ico used to mark
   supported packages
@@ -294,7 +298,7 @@ install -p -m644 %SOURCE4 %buildroot%_sysconfdir/apt/apt.conf.d/%name.conf
 - 0.44:
   + two alternative main layouts can be choosen now
   + "clean cache now" implemented" in preferences window
-  + the search entry in the main window is interactive again 
+  + the search entry in the main window is interactive again
   + much improved preferences dialog (thanks to Sebastian Heinlein)
   + new italian translation (thanks  Mauro Colorio and  Luigi Maselli)
   + updated spanish translation (thanks Fco. Javier Fernandez)
