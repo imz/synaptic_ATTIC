@@ -4,4 +4,4 @@ copy: *.diff
 copy: *.patch
 copy: *.png
 copy: *.po
-tar.gz: synaptic
+tar: synaptic

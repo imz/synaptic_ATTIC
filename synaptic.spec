@@ -7,10 +7,9 @@
 %def_without ru_man
 %def_enable autotools
 
-%define rel %nil
 Name: synaptic
 Version: 0.57.3
-Release: alt1
+Release: alt2
 
 Summary: Graphical front-end for APT
 Summary(ru_RU.CP1251): Графическая оболочка для APT
@@ -19,17 +18,12 @@ License: GPL
 Url: http://www.nongnu.org/synaptic/
 Packager: Sviatoslav Sviridov <svd@altlinux.ru>
 
-Source: http://people.debian.org/~mvo/synaptic/%name-%version%rel.tar.gz
+Source: http://people.debian.org/~mvo/synaptic/%name-%version.tar
 Source1: %name-ru.po
 Source2: %name.ru.8
 Source3: package-supported.png
 Source4: %name.conf
 
-# This patch needed to build synaptic with apt < 0.5.5cnc5 only
-Patch1: synaptic-0.36-alt-state.patch
-
-Patch2: synaptic-0.47-alt-xslt.patch
-Patch3: synaptic-0.51-alt-rpmgroups-intl.patch
 Patch4: synaptic-0.56-alt-build-fix.diff
 Patch5: synaptic-0.57.2-gcc4-fix.patch
 Patch6: synaptic-0.57.2-gcc43-fix.patch
@@ -37,8 +31,6 @@ Patch6: synaptic-0.57.2-gcc43-fix.patch
 Requires: %{get_dep rpm}, %{get_dep libapt}
 
 BuildRequires(pre): libapt-devel
-# Original BuildPreReq was: libapt-devel >= 0.5.4cnc9
-# To build synaptic with apt < 0.5.5cnc5 apply Patch1
 BuildPreReq: libapt-devel >= 0.5.5cnc5
 %if_enabled autotools
 BuildPreReq: intltool
@@ -71,12 +63,8 @@ Synaptic - это графическая оболочка для APT (Advanced Package Tool).
 очень длинным спискам пакетов.
 
 %prep
-%setup -q
+%setup
 
-# See comments about this patch above
-#%%patch1 -p1
-#%%patch2 -p1
-#%%patch3 -p1
 %patch4 -p1
 %patch5
 %patch6 -p1
@@ -132,6 +120,11 @@ install -p -m644 %SOURCE4 %buildroot%_sysconfdir/apt/apt.conf.d/%name.conf
 %exclude %_datadir/pixmaps/%name.png
 
 %changelog
+* Mon Jan 31 2011 Lenar Shakirov <snejok@altlinux.ru> 0.57.3-alt2
+- Unneeded old patches removed
+- .gear-rules -> .gear/rules: .tar.gz - > .tar for sources
+- Spec cleaned
+
 * Fri Jan 21 2011 Lenar Shakirov <snejok@altlinux.ru> 0.57.3-alt1
 - New version
 - Spec cleaned: thanks to rpmcs!
