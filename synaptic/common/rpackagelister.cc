@@ -400,12 +400,12 @@ bool RPackageLister::openCache()
 #endif
    }
 
+   // Truncate due to virtual packages which were skipped above.
+   _packages.resize(count);
+
    // refresh the views
    for (unsigned int i = 0; i != _views.size(); i++)
       _views[i]->refresh();
-
-   // Truncate due to virtual packages which were skipped above.
-   _packages.resize(count);
 
    applyInitialSelection();
 
@@ -1802,7 +1802,7 @@ bool RPackageLister::readSelections(istream &in)
 	    Fix.Protect(Pkg);
             switch ((*I).second) {
                case ACTION_INSTALL:
-		  if(_config->FindB("Volatile::SetSelectionsNoFix","false"))
+		  if(_config->FindB("Volatile::SetSelectionsNoFix",false))
 		     Cache.MarkInstall(Pkg, false);
 		  else
 		     Cache.MarkInstall(Pkg, true);
@@ -1865,7 +1865,9 @@ bool RPackageLister::addArchiveToCache(string archive, string &pkgname)
    
    // correct version?
    string debVer = tag.FindS("Version");
-   string candVer = pkg->availableVersion();
+   string candVer = "_invalid_";
+   if(pkg->availableVersion() != NULL)
+      candVer = pkg->availableVersion();
    if(debVer != candVer) {
       cerr << "Ignoring " << pkgname << " (different versions: "
 	   << debVer << " != " << candVer  << endl;
