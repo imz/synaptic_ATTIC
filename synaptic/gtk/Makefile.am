@@ -6,7 +6,7 @@ INCLUDES= -I${top_srcdir}/common \
 	-DPACKAGE_LOCALE_DIR=\""$(prefix)/$(DATADIRNAME)/locale"\" \
 	-DSYNAPTIC_GLADEDIR=\""$(datadir)/synaptic/glade/"\" \
 	-DSYNAPTIC_PIXMAPDIR=\""$(datadir)/synaptic/pixmaps/"\" \
-	@PACKAGE_CFLAGS@ @VTE_CFLAGS@ $(LIBTAGCOLL_CFLAGS)
+	@PACKAGE_CFLAGS@ @VTE_CFLAGS@ @LP_CFLAGS@ $(LIBTAGCOLL_CFLAGS)
 
 sbin_PROGRAMS = synaptic 
 
@@ -14,9 +14,9 @@ sbin_PROGRAMS = synaptic
 
 synaptic_LDADD = \
 	${top_builddir}/common/libsynaptic.a\
-	-lapt-pkg @RPM_LIBS@ @DEB_LIBS@ \
-	@PACKAGE_LIBS@ @VTE_LIBS@ \
-	-lpthread $(LIBTAGCOLL_LIBS) 
+	-lapt-pkg -lapt-inst @RPM_LIBS@ @DEB_LIBS@ \
+	@PACKAGE_LIBS@ @VTE_LIBS@ @LP_LIBS@\
+	-lpthread $(LIBTAGCOLL_LIBS)  
 
 glade_DATA =                            \
 	window_about.glade  \

@@ -1,7 +1,7 @@
 dnl Process this file with autoconf to produce a configure script.
 AC_INIT(configure.in)
 
-AM_INIT_AUTOMAKE(synaptic, 0.57.5)
+AM_INIT_AUTOMAKE(synaptic, 0.57.8)
 AM_CONFIG_HEADER(config.h)
 AM_MAINTAINER_MODE
 
@@ -15,7 +15,7 @@ AC_PROG_MAKE_SET
 AC_PROG_RANLIB
 
 dnl i18n
-ALL_LINGUAS="ar pt_BR es fr de tr zh_CN zh_HK zh_TW ru nl ja be it pl cs hu sr sr@Latn da he ca ko bg no nb sl pt_PT lt el xh mk ro hi"
+ALL_LINGUAS="ar pt_BR es fr gl de tr zh_CN zh_TW ru nl ja be it pl cs hu sr sr@Latn da he ca ko bg no nb sl pt lt el xh mk ro hi sv fi"
 AM_GLIB_GNU_GETTEXT
 GETTEXT_PACKAGE=synaptic
 AC_SUBST(GETTEXT_PACKAGE)
@@ -123,6 +123,16 @@ DEB_HDRS=""
 AC_SUBST(DEB_HDRS)
 DEB_LIBS=""
 AC_SUBST(DEB_LIBS)
+
+# launchpad integration
+AC_ARG_WITH(launchpad-integration,
+ 	[--launchpad-integration   build with launchpad-integration],
+	[PKG_CHECK_MODULES(LP, ["launchpad-integration"])
+	 AC_DEFINE(WITH_LAUNCHPAD_INTEGRATION, 1, [build with launchpad-integration] )
+	]
+)
+AC_SUBST(LP_CFLAGS)
+AC_SUBST(LP_LIBS)
 
 
 dnl Checks for header files.
