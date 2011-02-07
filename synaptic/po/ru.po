@@ -248,16 +248,6 @@ msgstr "Невозможно найти тэг с названием файла 
 msgid "Error parsing file record"
 msgstr "Ошибка анализа записи файла"
 
-#: ../common/rcacheactor.cc:58
-#, fuzzy, c-format
-msgid "could not open recommends file %s"
-msgstr "Внутренняя ошибка: Невозможно открыть файл сокращённого вида%s"
-
-#: ../common/rcacheactor.cc:84
-#, fuzzy, c-format
-msgid "Bad regular expression '%s' in Recommends file."
-msgstr "Плохое регулярное выражение '%s' в файле сокращённого вида."
-
 #: ../common/rcdscanner.cc:112 ../common/rcdscanner.cc:162
 #, c-format
 msgid "Failed to open %s.new"
@@ -380,9 +370,9 @@ msgid "ERROR: could not create configuration directory %s"
 msgstr "Ошибка: Невозможно создать каталог настроек %s"
 
 #: ../common/rconfiguration.cc:147
-#, fuzzy, c-format
+#, c-format
 msgid "ERROR: could not create state directory %s"
-msgstr "ОШИБКА: невозможно создать временный каталог %s"
+msgstr "ОШИБКА: невозможно создать каталог состяния %s"
 
 #: ../common/rconfiguration.cc:164
 #, c-format
@@ -573,9 +563,8 @@ msgid "Depends"
 msgstr "Зависит от"
 
 #: ../common/rpackage.h:52
-#, fuzzy
 msgid "PreDepends"
-msgstr "Зависит от"
+msgstr ""
 
 #: ../common/rpackage.h:52 ../common/rpackagefilter.cc:53
 msgid "Suggests"
@@ -921,7 +910,7 @@ msgstr "Невозможно прочитать %s"
 #: ../common/rsources.cc:131
 #, c-format
 msgid "Syntax error in line %s"
-msgstr ""
+msgstr "Синтаксическая ошибка в строке %s"
 
 #: ../common/rsources.cc:458
 #, c-format
@@ -1047,14 +1036,12 @@ msgid "--task-window Open with task window\n"
 msgstr "--task-window Открыть с окном задач\n"
 
 #: ../gtk/gsynaptic.cc:82
-#, fuzzy
 msgid "--add-cdrom Add a cdrom at startup (needs path for cdrom)\n"
-msgstr "--add-cdrom Добавить компакт-диск при запуске\n"
+msgstr "--add-cdrom Добавить компакт-диск при запуске (требуется путь к устройству)\n"
 
 #: ../gtk/gsynaptic.cc:83
-#, fuzzy
 msgid "--ask-cdrom Ask for adding a cdrom and exit\n"
-msgstr "--add-cdrom Добавить компакт-диск при запуске\n"
+msgstr "--ask-cdrom Запросить добавление компакт-диска и выйти\n"
 
 #: ../gtk/gsynaptic.cc:325 ../gtk/gsynaptic.cc:331
 msgid "Another synaptic is running"
@@ -1883,24 +1870,20 @@ msgid "Unknown source type"
 msgstr "Неизвестный тип источника"
 
 #: ../gtk/rgsummarywindow.cc:125
-#, fuzzy
 msgid "<b>(ESSENTIAL) to be removed</b>"
-msgstr "(ВАЖНО) будет удалён"
+msgstr "<b>(ВАЖНО) будет удалён</b>"
 
 #: ../gtk/rgsummarywindow.cc:139
-#, fuzzy
 msgid "<b>To be DOWNGRADED</b>"
-msgstr "Будет установлена УСТАРЕВШАЯ ВЕРСИЯ"
+msgstr "<b>Будет установлена УСТАРЕВШАЯ ВЕРСИЯ</b>"
 
 #: ../gtk/rgsummarywindow.cc:152
-#, fuzzy
 msgid "<b>To be removed</b>"
-msgstr "Для удаления"
+msgstr "<b>Для удаления</b>"
 
 #: ../gtk/rgsummarywindow.cc:165
-#, fuzzy
 msgid "<b>To be completely removed (including configuration files)</b>"
-msgstr "Будут полностью удалены (включая конфигурационные файлы)"
+msgstr "<b>Будут полностью удалены (включая конфигурационные файлы)</b>"
 
 #: ../gtk/rgsummarywindow.cc:217
 msgid "Unchanged"
@@ -2069,7 +2052,7 @@ msgstr "Отменить"
 #. downloadable version)
 #: ../gtk/rggladewindow.cc:89 ../gtk/rggladewindow.cc:107
 msgid "N/A"
-msgstr ""
+msgstr "N/A"
 
 #: ../gtk/rgfindwindow.cc:128
 msgid "Find"
@@ -2596,11 +2579,11 @@ msgstr "Всегда задавать этот вопрос"
 
 #: ../gtk/window_preferences.glade.h:16
 msgid "Always prefer the highest version"
-msgstr "Всегда предпочитать новейшую версию"
+msgstr "Всегда предпочитать _новейшую версию"
 
 #: ../gtk/window_preferences.glade.h:17
 msgid "Always prefer the installed version"
-msgstr "Всегда предпочитать установленную версию"
+msgstr "Всегда предпочитать _установленную версию"
 
 #: ../gtk/window_preferences.glade.h:18
 msgid "Apply changes in a terminal window"
@@ -3042,7 +3025,6 @@ msgid "Orphaned"
 msgstr "\"Заброшенные\""
 
 #: ../gtk/window_filters.glade.h:40
-#, fuzzy
 msgid "Packages that are new in the repository since that last \"Reload\""
 msgstr "Пакеты, появившиеся в репозитории после последнего обновления списков"
 
@@ -3332,9 +3314,8 @@ msgid "Dependent packages"
 msgstr "Зависящие пакеты"
 
 #: ../gtk/rgpkgcdrom.cc:68
-#, fuzzy
 msgid "Please insert a disc in the drive."
-msgstr "Вставьте диск."
+msgstr "Вставьте диск в привод."
 
 #: ../gtk/rgiconlegend.cc:41 ../gtk/window_iconlegend.glade.h:2
 msgid "Icon Legend"
@@ -3411,6 +3392,14 @@ msgstr "История"
 #: ../gtk/window_logview.glade.h:2
 msgid "History of installed, upgraded and removed software packages."
 msgstr "История установленных, обновлённых и удалённых пакетов программ."
+
+#, fuzzy
+#~ msgid "could not open recommends file %s"
+#~ msgstr "Внутренняя ошибка: Невозможно открыть файл сокращённого вида%s"
+
+#, fuzzy
+#~ msgid "Bad regular expression '%s' in Recommends file."
+#~ msgstr "Плохое регулярное выражение '%s' в файле сокращённого вида."
 
 #~ msgid "Internal Error: Couldn't fork gzip. Please report."
 #~ msgstr ""

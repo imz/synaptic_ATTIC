@@ -250,16 +250,6 @@ msgstr "Αδυναμία εύρεσης όνοματος αρχείου ή tag �
 msgid "Error parsing file record"
 msgstr "Σφάλμα ανάλυσης εγγραφής αρχείου"
 
-#: ../common/rcacheactor.cc:58
-#, c-format
-msgid "could not open recommends file %s"
-msgstr ""
-
-#: ../common/rcacheactor.cc:84
-#, fuzzy, c-format
-msgid "Bad regular expression '%s' in Recommends file."
-msgstr "Εσφαλμένη κανονική έκφραση '%s' στο αρχείο ReducedView."
-
 #: ../common/rcdscanner.cc:112 ../common/rcdscanner.cc:162
 #, c-format
 msgid "Failed to open %s.new"
@@ -384,7 +374,7 @@ msgstr "ΣΦΑΛΜΑ: αδυναμία δημιουργίας καταλόγου
 #: ../common/rconfiguration.cc:147
 #, c-format
 msgid "ERROR: could not create state directory %s"
-msgstr "ΣΦΑΛΜΑ: αδυναμία δημιουργίας  καταλόγου state %s"
+msgstr "ΣΦΑΛΜΑ: αδυναμία δημιουργίας καταλόγου state %s"
 
 #: ../common/rconfiguration.cc:164
 #, c-format
@@ -431,8 +421,7 @@ msgstr ""
 
 #: ../common/rpackage.cc:199
 msgid "The list of installed files is only available for installed packages"
-msgstr ""
-"Η λίστα εγκατεστημένων αρχείων είναι μόνο διαθέσιμη για εγκατεστημένα πακέτα"
+msgstr "Η λίστα εγκατεστημένων αρχείων είναι μόνο διαθέσιμη για εγκατεστημένα πακέτα"
 
 #: ../common/rpackage.cc:398
 msgid "or dependency"
@@ -508,8 +497,7 @@ msgstr "ή"
 
 #: ../common/rpackage.cc:893
 msgid "Invalid record in the preferences file, no Package header"
-msgstr ""
-"Μη έγκυρη εγγραφή στο αρχείο προτιμήσεων, δεν υπάρχει επικεφαλίδα πακέτου"
+msgstr "Μη έγκυρη εγγραφή στο αρχείο προτιμήσεων, δεν υπάρχει επικεφαλίδα πακέτου"
 
 #: ../common/rpackage.cc:1274
 msgid "Marked for installation"
@@ -572,9 +560,8 @@ msgid "Depends"
 msgstr "Εξαρτάται"
 
 #: ../common/rpackage.h:52
-#, fuzzy
 msgid "PreDepends"
-msgstr "Εξαρτάται"
+msgstr "Προ-Εξαρτάται"
 
 #: ../common/rpackage.h:52 ../common/rpackagefilter.cc:53
 msgid "Suggests"
@@ -594,12 +581,11 @@ msgstr "Αντικαθιστά"
 
 #: ../common/rpackage.h:54
 msgid "Obsoletes"
-msgstr ""
+msgstr "Απαρχαιώνει"
 
 #: ../common/rpackage.h:54
-#, fuzzy
 msgid "Dependency of"
-msgstr "Εξαρτήσεις"
+msgstr "Εξάρτηση του"
 
 #: ../common/rpackagecache.cc:71
 msgid ""
@@ -686,8 +672,7 @@ msgstr "Εσφαλμένη κανονική έκφραση '%s' στο αρχε�
 #: ../common/rpackagelister.cc:315
 #, c-format
 msgid "Internal error opening cache (%d). Please report."
-msgstr ""
-"Εσωτερικό σφάλμα κατά το άνοιγμα της cache (%d). Παρακαλώ αναφέρετε το "
+msgstr "Εσωτερικό σφάλμα κατά το άνοιγμα της cache (%d). Παρακαλώ αναφέρετε το "
 "σφάλμα."
 
 #: ../common/rpackagelister.cc:453
@@ -724,7 +709,7 @@ msgstr ""
 "Τα αρχεία έκδοσης για κάποια repositories δεν μπορούν να ανακτηθούν ή να "
 "πιστοποιηθούν.Τέτοια repositories αγνοούνται."
 
-#: ../common/rpackagelister.cc:1325 ../common/rpackagelister.cc:1331
+#: ../common/rpackagelister.cc:1330 ../common/rpackagelister.cc:1336
 #: ../gtk/rgrepositorywin.cc:342
 msgid "Ignoring invalid record(s) in sources.list file!"
 msgstr "Αγνόηση μη έγκυρων εγγραφών στο αρχείο sources.list!"
@@ -733,7 +718,7 @@ msgstr "Αγνόηση μη έγκυρων εγγραφών στο αρχείο 
 #. The first %s is the URL and the second
 #. one is a detailed error message that
 #. is provided by apt
-#: ../common/rpackagelister.cc:1379
+#: ../common/rpackagelister.cc:1389
 #, c-format
 msgid ""
 "Failed to fetch %s\n"
@@ -744,21 +729,20 @@ msgstr ""
 "  %s\n"
 "\n"
 
-#: ../common/rpackagelister.cc:1403
+#: ../common/rpackagelister.cc:1413
 msgid "Some of the packages could not be retrieved from the server(s).\n"
-msgstr ""
-"Κάποια από τα πακέτα δεν είναι δυνατόν να ανακτηθούν από τους εξυπηρετητές.\n"
+msgstr "Κάποια από τα πακέτα δεν είναι δυνατόν να ανακτηθούν από τους εξυπηρετητές.\n"
 
-#: ../common/rpackagelister.cc:1406
+#: ../common/rpackagelister.cc:1416
 msgid "Do you want to continue, ignoring these packages?"
 msgstr "Θέλετε να συνεχίσετε, αγνοώντας αυτά τα πακέτα;"
 
-#: ../common/rpackagelister.cc:1413
+#: ../common/rpackagelister.cc:1423
 msgid "Unable to correct missing packages"
 msgstr "Αδυναμία διόρθωσης πακέτων που λείπουν"
 
 #. _logEntry += _("\n<b>Removed the following ESSENTIAL packages:</b>\n");
-#: ../common/rpackagelister.cc:1553
+#: ../common/rpackagelister.cc:1563
 msgid ""
 "\n"
 "Removed the following ESSENTIAL packages:\n"
@@ -767,7 +751,7 @@ msgstr ""
 "Τα ακόλουθα ΑΠΑΡΑΙΤΗΤΑ πακέτα απομακρύνονται:\n"
 
 #. _logEntry += _("\n<b>Downgraded the following packages:</b>\n");
-#: ../common/rpackagelister.cc:1562
+#: ../common/rpackagelister.cc:1572
 msgid ""
 "\n"
 "Downgraded the following packages:\n"
@@ -776,7 +760,7 @@ msgstr ""
 "Υποβάθμιση των ακόλουθων πακέτων:\n"
 
 #. _logEntry += _("\n<b>Completely removed the following packages:</b>\n");
-#: ../common/rpackagelister.cc:1571
+#: ../common/rpackagelister.cc:1581
 msgid ""
 "\n"
 "Completely removed the following packages:\n"
@@ -785,7 +769,7 @@ msgstr ""
 "Ολοκληρωτική απομάκρυνση των ακόλουθων πακέτων:\n"
 
 #. _logEntry += _("\n<b>Removed the following packages:</b>\n");
-#: ../common/rpackagelister.cc:1580
+#: ../common/rpackagelister.cc:1590
 msgid ""
 "\n"
 "Removed the following packages:\n"
@@ -794,7 +778,7 @@ msgstr ""
 "Απομάκρυνση των ακόλουθων πακέτων:\n"
 
 #. _logEntry += _("\n<b>Upgraded the following packages:</b>\n");
-#: ../common/rpackagelister.cc:1589
+#: ../common/rpackagelister.cc:1599
 msgid ""
 "\n"
 "Upgraded the following packages:\n"
@@ -803,7 +787,7 @@ msgstr ""
 "Αναβάθμιση των ακόλουθων πακέτων:\n"
 
 #. _logEntry += _("\n<b>Installed the following packages:</b>\n");
-#: ../common/rpackagelister.cc:1600
+#: ../common/rpackagelister.cc:1610
 msgid ""
 "\n"
 "Installed the following packages:\n"
@@ -812,7 +796,7 @@ msgstr ""
 "Εγκατάσταση των ακόλουθων πακέτων:\n"
 
 #. _logEntry += _("\n<b>Reinstalled the following packages:</b>\n");
-#: ../common/rpackagelister.cc:1610
+#: ../common/rpackagelister.cc:1620
 msgid ""
 "\n"
 "Reinstalled the following packages:\n"
@@ -820,21 +804,21 @@ msgstr ""
 "\n"
 "Επανεγκατάσταση των ακόλουθων πακέτων:\n"
 
-#: ../common/rpackagelister.cc:1627
+#: ../common/rpackagelister.cc:1637
 msgid "Unable to lock the download directory"
 msgstr "Αδυναμία κλειδώματος του καταλόγου λήψης αρχείων"
 
-#: ../common/rpackagelister.cc:1705
+#: ../common/rpackagelister.cc:1715
 #, c-format
 msgid "Line %u too long in markings file."
 msgstr "Η γραμμή %u είναι πολύ μεγάλη στο αρχείο σημειώσεων."
 
-#: ../common/rpackagelister.cc:1719 ../common/rpackagelister.cc:1723
+#: ../common/rpackagelister.cc:1729 ../common/rpackagelister.cc:1733
 #, c-format
 msgid "Malformed line %u in markings file"
 msgstr "Κακοδιατυπωμένη γραμμή %u στο αρχείο σημειώσεων"
 
-#: ../common/rpackagelister.cc:1735
+#: ../common/rpackagelister.cc:1745
 msgid "Setting markings..."
 msgstr "Ρύθμιση σημειώσεων..."
 
@@ -919,12 +903,12 @@ msgstr "Αδυναμία ανάγνωσης %s"
 #: ../common/rsources.cc:131
 #, c-format
 msgid "Syntax error in line %s"
-msgstr ""
+msgstr "Σφάλμα σύνταξης στη γραμμή %s"
 
 #: ../common/rsources.cc:458
 #, c-format
 msgid "Vendor block %s is invalid"
-msgstr ""
+msgstr "Vendor block %s δεν είναι έγκυρο"
 
 #. vim:sts=4:sw=4
 #: ../gtk/dialog_quit.glade.h:1
@@ -1453,16 +1437,16 @@ msgstr ""
 "Το σύστημα APT αναφέρει:\n"
 "%s"
 
-#: ../gtk/rglogview.cc:267
+#: ../gtk/rglogview.cc:278
 msgid "Not found"
 msgstr "Δεν βρέθηκε"
 
-#: ../gtk/rglogview.cc:269
+#: ../gtk/rglogview.cc:280
 msgid ""
 "Expression was found, please see the list on the left for matching entries."
 msgstr "Η έκφραση βρέθηκε, δείτε την λίστα στα αριστερά για τα αποτελέσματα."
 
-#: ../gtk/rgpkgdetails.cc:107
+#: ../gtk/rgpkgdetails.cc:106
 #, c-format
 msgid "%s Properties"
 msgstr "Ιδιότητες %s"
@@ -1471,7 +1455,7 @@ msgstr "Ιδιότητες %s"
 #. the "Properties/Available versions" window
 #. e.g. "0.56 (unstable)"
 #. "0.53.4 (testing)"
-#: ../gtk/rgpkgdetails.cc:165
+#: ../gtk/rgpkgdetails.cc:164
 #, c-format
 msgid "%s (%s)"
 msgstr "%s (%s)"
@@ -1615,15 +1599,13 @@ msgid ""
 "You have %d broken package on your system!\n"
 "\n"
 "Use the \"Broken\" filter to locate it."
-msgid_plural ""
 "You have %i broken packages on your system!\n"
 "\n"
 "Use the \"Broken\" filter to locate them."
-msgstr[0] ""
+msgstr ""
 "Έχετε %d κατεστραμμένο πακέτο στο σύστημα σας!\n"
 "\n"
 "Χρησιμοποιήστε το φίλτρο \"Κατεστραμμένα\" για να το εντοπίσετε."
-msgstr[1] ""
 "Έχετε %d κατεστραμμένα πακέτα στο σύστημα σας!\n"
 "\n"
 "Χρησιμοποιήστε το φίλτρο \"Κατεστραμμένα\" για να το εντοπίσετε."
@@ -1872,24 +1854,20 @@ msgid "Unknown source type"
 msgstr "Άγνωστο είδος πηγής"
 
 #: ../gtk/rgsummarywindow.cc:125
-#, fuzzy
 msgid "<b>(ESSENTIAL) to be removed</b>"
-msgstr "(ΑΠΑΡΑΙΤΗΤΑ) προς απομάκρυνση"
+msgstr "<b>(ΑΠΑΡΑΙΤΗΤΑ) προς απομάκρυνση</b>"
 
 #: ../gtk/rgsummarywindow.cc:139
-#, fuzzy
 msgid "<b>To be DOWNGRADED</b>"
-msgstr "Προς ΥΠΟΒΑΘΜΙΣΗ"
+msgstr "<b>Προς ΥΠΟΒΑΘΜΙΣΗ</b>"
 
 #: ../gtk/rgsummarywindow.cc:152
-#, fuzzy
 msgid "<b>To be removed</b>"
-msgstr "Προς απομάκρυνση"
+msgstr "<b>Προς απομάκρυνση</b>"
 
 #: ../gtk/rgsummarywindow.cc:165
-#, fuzzy
 msgid "<b>To be completely removed (including configuration files)</b>"
-msgstr "Θα απομακρυνθεί ολοκληρωτικά (μαζί με τα αρχεία ρυθμίσεων)"
+msgstr "<b>Θα απομακρυνθεί ολοκληρωτικά (μαζί με τα αρχεία ρυθμίσεων)</b>"
 
 #: ../gtk/rgsummarywindow.cc:217
 msgid "Unchanged"
@@ -2048,11 +2026,11 @@ msgstr "Ακύρωση"
 #. TRANSLATORS: this is a abbreviation for "not applicable" (on forms)
 #. happens when e.g. a package has no installed version (or no
 #. downloadable version)
-#: ../gtk/rggladewindow.cc:89 ../gtk/rggladewindow.cc:107
+#: ../gtk/rggladewindow.cc:90 ../gtk/rggladewindow.cc:108
 msgid "N/A"
 msgstr "N/A"
 
-#: ../gtk/rgfindwindow.cc:128
+#: ../gtk/rgfindwindow.cc:129
 msgid "Find"
 msgstr "Εύρεση"
 
@@ -3299,7 +3277,6 @@ msgid "Dependent packages"
 msgstr "Εξαρτώμενα πακέτα"
 
 #: ../gtk/rgpkgcdrom.cc:68
-#, fuzzy
 msgid "Please insert a disc in the drive."
 msgstr "Εισάγετε ένα δίσκο στον οδηγό."
 
@@ -3382,3 +3359,37 @@ msgid "History of installed, upgraded and removed software packages."
 msgstr ""
 "Ιστορικό από εγκατεστημένα, απομακρυνθέντα και αναβαθμισμένα πακέτα "
 "λογισμικού"
+
+#, fuzzy
+#~ msgid "Bad regular expression '%s' in Recommends file."
+#~ msgstr "Εσφαλμένη κανονική έκφραση '%s' στο αρχείο ReducedView."
+
+#~ msgid "Preparing for removal %s"
+#~ msgstr "Προετοιμασία για  απομάκρυνση %s"
+
+#~ msgid "Removing %s"
+#~ msgstr "Απομάκρυνση %s"
+
+#~ msgid "Removed %s"
+#~ msgstr "Απομακρυνθέντα %s"
+
+#~ msgid "Removing with config %s"
+#~ msgstr "Απομάκρυνση μαζί με ρυθμίσεις %s"
+
+#~ msgid "Removed with config %s"
+#~ msgstr "Απομακρυνθέντα μαζί με τις ρυθμίσεις %s"
+
+#~ msgid "Preparing %s"
+#~ msgstr "Προετοιμασία %s"
+
+#~ msgid "Unpacking %s"
+#~ msgstr "Αποσυμπίεση %s"
+
+#~ msgid "Configuring %s"
+#~ msgstr "Ρύθμιση %s"
+
+#~ msgid "Installed %s"
+#~ msgstr "Εγκατεστημένα %s"
+
+#~ msgid "Installing %s"
+#~ msgstr "Εγκατάσταση %s"
