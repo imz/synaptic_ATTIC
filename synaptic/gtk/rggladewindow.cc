@@ -39,15 +39,17 @@ RGGladeWindow::RGGladeWindow(RGWindow *parent, string name, string mainName)
 
    // for development
    gchar *filename = NULL;
+   gchar *local_filename = NULL;
    gchar *main_widget = NULL;
 
    filename = g_strdup_printf("window_%s.glade", name.c_str());
+   local_filename = g_strdup_printf("glade/%s", filename);
    if (mainName.empty())
       main_widget = g_strdup_printf("window_%s", name.c_str());
    else
       main_widget = g_strdup_printf("window_%s", mainName.c_str());
-   if (FileExists(filename)) {
-      _gladeXML = glade_xml_new(filename, main_widget, NULL);
+   if (FileExists(local_filename)) {
+      _gladeXML = glade_xml_new(local_filename, main_widget, NULL);
    } else {
       g_free(filename);
       filename =
@@ -66,6 +68,7 @@ RGGladeWindow::RGGladeWindow(RGWindow *parent, string name, string mainName)
 			   GTK_WIN_POS_CENTER_ON_PARENT);
 
    g_free(filename);
+   g_free(local_filename);
    g_free(main_widget);
 
    //gtk_window_set_title(GTK_WINDOW(_win), (char *)name.c_str());
@@ -74,7 +77,20 @@ RGGladeWindow::RGGladeWindow(RGWindow *parent, string name, string mainName)
    gtk_signal_connect(GTK_OBJECT(_win), "delete-event",
                       (GtkSignalFunc) windowCloseCallback, this);
    _topBox = NULL;
-   //gtk_widget_realize(_win);
+
+   // honor foreign parent windows (to make embedding easy)
+   int id = _config->FindI("Volatile::ParentWindowId", -1);
+   if (id > 0) {
+      GdkWindow *win = gdk_window_foreign_new(id);
+      gtk_widget_realize(_win);
+      gdk_window_set_transient_for(GDK_WINDOW(_win->window), win);
+   }
+   // if we have no parent, don't skip the taskbar hint
+   if(_config->FindB("Volatile::HideMainwindow",false) && id < 0)
+   {
+      gtk_window_set_skip_taskbar_hint(GTK_WINDOW(_win), FALSE);
+      gtk_window_set_urgency_hint(GTK_WINDOW(_win), TRUE);
+   }
 
 }
 
@@ -86,9 +102,11 @@ bool RGGladeWindow::setLabel(const char *widget_name, const char *value)
       return false;
    }
 
-   if (!value)
-      value = _("N/A");
-   gtk_label_set_label(GTK_LABEL(widget), utf8(value));
+   const gchar *utf8value=utf8(value);
+
+   if (!utf8value)
+      utf8value = _("N/A");
+   gtk_label_set_label(GTK_LABEL(widget), utf8value);
    return true;
 }
 
@@ -166,7 +184,10 @@ bool RGGladeWindow::setTextView(const char *widget_name,
    }
 
    GtkTextBuffer *buffer = gtk_text_view_get_buffer (GTK_TEXT_VIEW (view));
-   gtk_text_buffer_set_text (buffer, utf8(value), -1);
+   const gchar *utf8value = utf8(value);
+   if(!utf8value)
+      utf8value = _("N/A");
+   gtk_text_buffer_set_text (buffer, utf8value, -1);
 
    if(use_headline) {
       GtkTextTagTable *tag_table = gtk_text_buffer_get_tag_table(buffer);

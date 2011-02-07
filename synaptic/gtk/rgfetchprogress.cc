@@ -136,7 +136,11 @@ RGFetchProgress::RGFetchProgress(RGWindow *win)
       gtk_widget_show_all(_sock);
       _win = _sock;
    } 
-   show();
+   gtk_widget_realize(_win);
+
+   // reset the urgency hint here (gtk seems to like showing it for
+   // dialogs that come up)
+   gtk_window_set_urgency_hint(GTK_WINDOW(_win), FALSE);
 
    GtkStyle *style = gtk_widget_get_style(_win);
    _font = style->font_desc;
@@ -283,6 +287,10 @@ bool RGFetchProgress::Pulse(pkgAcquire * Owner)
    //cout << "RGFetchProgress::Pulse(pkgAcquire *Owner)" << endl;
 
    pkgAcquireStatus::Pulse(Owner);
+
+   // only show here if there is actually something to download/get
+   if (TotalBytes > 0 && !GTK_WIDGET_VISIBLE(_win))
+      show();
 
    for (pkgAcquire::Worker * I = Owner->WorkersBegin(); I != 0;
         I = Owner->WorkerStep(I)) {

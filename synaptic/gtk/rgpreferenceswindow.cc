@@ -66,6 +66,20 @@ gtk_combo_box_get_active_text (GtkComboBox *combo_box)
 }
 #endif
 
+void RGPreferencesWindow::cbHttpProxyEntryChanged(GtkWidget *self, void *data)
+{
+   // this function strips http:// from a entred proxy url
+   RGPreferencesWindow *me = (RGPreferencesWindow *) data;
+   const gchar *text = gtk_entry_get_text(GTK_ENTRY(self));
+   gchar *new_text = NULL;
+   if(g_str_has_prefix(text, "http://")) {
+      new_text = g_strdup_printf("%s", &text[strlen("http://")]);
+      gtk_entry_set_text(GTK_ENTRY(self), new_text);
+   }
+   if(new_text != NULL)
+      g_free(new_text);
+}
+
 void RGPreferencesWindow::cbArchiveSelection(GtkWidget *self, void *data)
 {
    RGPreferencesWindow *me = (RGPreferencesWindow *) data;
@@ -110,6 +124,7 @@ void RGPreferencesWindow::cbRadioDistributionChanged(GtkWidget *self,
 void RGPreferencesWindow::applyProxySettings()
 {
    string http, ftp, noProxy;
+   string httpUser, httpPass;
    gchar *s;
    int httpPort, ftpPort;
 
@@ -132,9 +147,19 @@ void RGPreferencesWindow::applyProxySettings()
       ftp = _config->Find("Synaptic::ftpProxy", "");
       ftpPort = _config->FindI("Synaptic::ftpProxyPort", 3128);
       noProxy = _config->Find("Synaptic::noProxy", "");
+      httpUser = _config->Find("Synaptic::httpProxy", "");
+      httpPass = _config->Find("Synaptic::httpProxy", "");
 
       if(!http.empty()) {
 	 s = g_strdup_printf("http://%s:%i", http.c_str(), httpPort);
+	 _config->Set("Acquire::http::Proxy", s);
+	 g_free(s);
+      }
+      // setup the proxy 
+      if(!httpUser.empty() && !httpPass.empty()) {
+	 s = g_strdup_printf("http://%s:%s@%s:%i", 
+			     httpUser.c_str(), httpPass.c_str(),
+			     http.c_str(), httpPort);
 	 _config->Set("Acquire::http::Proxy", s);
 	 g_free(s);
       }
@@ -406,13 +431,15 @@ void RGPreferencesWindow::doneAction(GtkWidget *self, void *data)
 void RGPreferencesWindow::changeFontAction(GtkWidget *self, void *data)
 {
    const char *fontName, *propName;
-
+   
    switch (GPOINTER_TO_INT(data)) {
       case FONT_DEFAULT:
          propName = "Synaptic::FontName";
+	      fontName = "sans 10";
          break;
       case FONT_TERMINAL:
          propName = "Synaptic::TerminalFontName";
+	      fontName = "monospace 10";
          break;
       default:
          cerr << "changeFontAction called with unknown argument" << endl;
@@ -666,6 +693,11 @@ void RGPreferencesWindow::readDistribution()
    // set up combo-box
    g_signal_connect(G_OBJECT(_comboDefaultDistro), "changed",
 		    G_CALLBACK(cbArchiveSelection), this);
+
+   glade_xml_signal_connect_data(GLADE_XML(_gladeXML),
+				 "on_entry_http_proxy_changed",
+				 G_CALLBACK(cbHttpProxyEntryChanged),
+				 this);
 
    for (unsigned int i = 0; i < archives.size(); i++) {
       //cout << "archive: " << archives[i] << endl;
@@ -1035,6 +1067,11 @@ RGPreferencesWindow::RGPreferencesWindow(RGWindow *win,
                                  G_CALLBACK(useProxyToggled), this);
 
    glade_xml_signal_connect_data(_gladeXML,
+                                 "on_button_authentication_clicked",
+                                 G_CALLBACK(buttonAuthenticationClicked),
+                                 this);
+
+   glade_xml_signal_connect_data(_gladeXML,
                                  "on_button_default_font_clicked",
                                  G_CALLBACK(changeFontAction),
                                  GINT_TO_POINTER(FONT_DEFAULT));
@@ -1050,7 +1087,6 @@ RGPreferencesWindow::RGPreferencesWindow(RGWindow *win,
                                  "on_button_terminal_font_clicked",
                                  G_CALLBACK(changeFontAction),
                                  GINT_TO_POINTER(FONT_TERMINAL));
-
 
    checkbuttonUserTerminalFontToggled(NULL, this);
    checkbuttonUserFontToggled(NULL, this);
@@ -1072,6 +1108,40 @@ RGPreferencesWindow::RGPreferencesWindow(RGWindow *win,
 
    skipTaskbar(true);
    setTitle(_("Preferences"));
+}
+
+void 
+RGPreferencesWindow::buttonAuthenticationClicked(GtkWidget *self, void *data)
+{
+   RGPreferencesWindow *me = (RGPreferencesWindow *)data;
+
+   RGGladeUserDialog dia(me, "authentication");
+   GladeXML *dia_xml = dia.getGladeXML();
+   GtkWidget *entry_user = glade_xml_get_widget(dia_xml,"entry_username");
+   GtkWidget *entry_pass = glade_xml_get_widget(dia_xml,"entry_password");
+
+   // now set the values
+   {
+      string now_user =  _config->Find("Synaptic::httpProxyUser","");
+      cout << now_user << endl;
+      gtk_entry_set_text(GTK_ENTRY(entry_user), now_user.c_str());
+      string now_pass =   _config->Find("Synaptic::httpProxyPass","");
+      cout << now_pass << endl;
+      gtk_entry_set_text(GTK_ENTRY(entry_pass), now_pass.c_str());
+   }
+
+   int res = dia.run();
+
+   if(!res) 
+      return;
+
+   // get the entered data
+   const gchar *user = gtk_entry_get_text(GTK_ENTRY(entry_user));
+   const gchar *pass = gtk_entry_get_text(GTK_ENTRY(entry_pass));
+   
+   // write out the configuration   
+   _config->Set("Synaptic::httpProxyUser",user);
+   _config->Set("Synaptic::httpProxyPass",pass);
 }
 
 // vim:ts=3:sw=3:et

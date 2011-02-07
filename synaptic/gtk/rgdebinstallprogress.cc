@@ -48,10 +48,6 @@
 
 #include "i18n.h"
 
-// timeout in sec until the expander is expanded
-static const int RGTERMINAL_TIMEOUT=60;
-
-
 void RGDebInstallProgress::child_exited(VteReaper *vtereaper,
 					gint child_pid, gint ret, 
 					gpointer data)
@@ -292,7 +288,6 @@ void RGDebInstallProgress::startUpdate()
 
    // check if we run embedded
    int id = _config->FindI("Volatile::PlugProgressInto", -1);
-   //cout << "Plug ID: " << id << endl;
    if (id > 0) {
       GtkWidget *vbox = glade_xml_get_widget(_gladeXML, "vbox_rgdebinstall_progress");
       _sock =  gtk_plug_new(id);
@@ -315,6 +310,7 @@ void RGDebInstallProgress::cbCancel(GtkWidget *self, void *data)
    //kill(me->_child_id, SIGKILL);
    
 }
+
 
 void RGDebInstallProgress::cbClose(GtkWidget *self, void *data)
 {
@@ -361,6 +357,10 @@ RGDebInstallProgress::RGDebInstallProgress(RGMainWindow *main,
      _totalActions(0), _progress(0), _sock(0), _userDialog(0)
 
 {
+   // timeout in sec until the expander is expanded 
+   // (bigger nowdays because of the gconf stuff)
+   _terminalTimeout=_config->FindI("Synaptic::TerminalTimeout",120);
+
    prepare(lister);
    setTitle(_("Applying Changes"));
 
@@ -373,6 +373,10 @@ RGDebInstallProgress::RGDebInstallProgress(RGMainWindow *main,
    _pbarTotal = glade_xml_get_widget(_gladeXML, "progress_total");
    gtk_progress_bar_set_pulse_step(GTK_PROGRESS_BAR(_pbarTotal), 0.025);
    _autoClose = glade_xml_get_widget(_gladeXML, "checkbutton_auto_close");
+   // we don't save options in non-interactive mode, so there is no 
+   // point in showing this here
+   if(_config->FindB("Volatile::Non-Interactive", false))
+      gtk_widget_hide(_autoClose);
    gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(_autoClose), 
 				_config->FindB("Synaptic::closeZvt", false));
    //_image = glade_xml_get_widget(_gladeXML, "image");
@@ -411,6 +415,9 @@ RGDebInstallProgress::RGDebInstallProgress(RGMainWindow *main,
 
    if(_userDialog == NULL)
       _userDialog = new RGUserDialog(this);
+
+   
+   gtk_window_set_urgency_hint(GTK_WINDOW(_win), FALSE);
 
    // init the timer
    last_term_action = time(NULL);
@@ -471,6 +478,10 @@ void RGDebInstallProgress::updateInterface()
 	    _startCounting = true;
 	 }
 
+	 // reset the urgency hint, something changed on the terminal
+	 if(gtk_window_get_urgency_hint(GTK_WINDOW(_win)))
+	    gtk_window_set_urgency_hint(GTK_WINDOW(_win), FALSE);
+
 	 float val = atof(percent)/100.0;
  	 //cout << "progress: " << val << endl;
 	 gtk_progress_bar_set_fraction(GTK_PROGRESS_BAR(_pbarTotal), val);
@@ -498,13 +509,20 @@ void RGDebInstallProgress::updateInterface()
    }
 
 
-   if ((now - last_term_action) > RGTERMINAL_TIMEOUT) {
-      cout << "no statusfd changes/content updates in terminal for " 
-	   << RGTERMINAL_TIMEOUT << "seconds" << endl;
+   if ((now - last_term_action) > _terminalTimeout) {
+      // get some debug info
+      gchar *s;
+      gtk_label_get(GTK_LABEL(_label_status), &s);
+      g_warning("no statusfd changes/content updates in terminal for %i" 
+		" seconds",_terminalTimeout);
+      g_warning("TerminalTimeout in step: %s", s);
+      // now expand the terminal
       GtkWidget *w;
       w = glade_xml_get_widget(_gladeXML, "expander_terminal");
       gtk_expander_set_expanded(GTK_EXPANDER(w), TRUE);
       last_term_action = time(NULL);
+      // try to get the attention of the user
+      gtk_window_set_urgency_hint(GTK_WINDOW(_win), TRUE);
    } 
 
 
@@ -541,6 +559,12 @@ pkgPackageManager::OrderResult RGDebInstallProgress::start(RPackageManager *pm,
 
       // dump errors into cerr (pass it to the parent process)	
       _error->DumpErrors();
+
+      // HACK: try to correct the situation
+      if(res == pkgPackageManager::Failed) {
+	 cerr << _("A package failed to install.  Trying to recover:") << endl;
+	 system("dpkg --configure -a");
+      }
 
       ::close(fd[0]);
       ::close(fd[1]);
@@ -591,7 +615,7 @@ void RGDebInstallProgress::finishUpdate()
    if(res == 0) {
       gtk_widget_grab_focus(_closeB);
       if(autoClose)
-	 _updateFinished = True;
+	 _updateFinished = true;
    }
 
    string s = _config->Find("Volatile::InstallFinishedStr",

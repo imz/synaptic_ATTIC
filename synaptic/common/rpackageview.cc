@@ -71,6 +71,19 @@ void RPackageView::clearSelection()
    _selectedView.clear();
 }
 
+void RPackageView::refresh()
+{
+   if(_config->FindB("Debug::Synaptic::View",false))
+      ioprintf(clog, "RPackageView::refresh(): '%s'\n",
+	       getName().c_str());
+
+   _view.clear();
+   for(unsigned int i=0;i<_all.size();i++) {
+      if(_all[i])
+	 addPackage(_all[i]);
+   }
+}
+
 void RPackageViewSections::addPackage(RPackage *package)
 {
    string str = trans_section(package->section());
@@ -125,7 +138,9 @@ void RPackageViewStatus::addPackage(RPackage *pkg)
    _view[str].push_back(pkg);
 
    str.clear();
-   if (flags & RPackage::FNew)
+   if (flags & RPackage::FNowBroken)
+      str = _("Broken dependencies");
+   else if (flags & RPackage::FNew)
       str = _("New in repository");
    else if (flags & RPackage::FPinned) 
       str = _("Pinned");
@@ -144,6 +159,7 @@ void RPackageViewStatus::addPackage(RPackage *pkg)
    if(!str.empty())
       _view[str].push_back(pkg);
 }
+
 
 //------------------------------------------------------------------
 
@@ -166,6 +182,7 @@ void RPackageViewSearch::addPackage(RPackage *pkg)
       break;
    case RPatternPackageFilter::Description:
       str = pkg->name();
+      str += string(pkg->summary());
       str += string(pkg->description());
       break;
    case RPatternPackageFilter::Maintainer:
@@ -233,7 +250,7 @@ int RPackageViewSearch::setSearch(string aSearchName, int type,
    for(unsigned int i=0;i<_all.size();i++) 
       if(_all[i]) 
 	 addPackage(_all[i]);
-         
+
    return found;
 }
 
@@ -290,6 +307,14 @@ RPackageViewFilter::iterator RPackageViewFilter::begin()
 
    return _selectedView.begin(); 
 }
+
+void RPackageViewFilter::refresh()
+{
+   //cout << "RPackageViewFilter::refresh() " << endl;
+
+   refreshFilters();
+}
+
 
 vector<string> RPackageViewFilter::getFilterNames()
 {
@@ -450,5 +475,15 @@ void RPackageViewFilter::makePresetFilters()
    registerFilter(filter);
 }
 
+void RPackageViewOrigin::addPackage(RPackage *package)
+{
+   string component =  package->component();
+   string origin = package->getCanidateOrigin();
+   if(origin == "")
+      origin = _("Local");
+   if(component == "")
+      component = _("Unknown");
+   _view[origin+"/"+component].push_back(package);
+ };
 
 // vim:sts=3:sw=3

@@ -108,6 +108,8 @@ CommandLine::Args Args[] = {
    , {
    0, "ask-cdrom", "Volatile::AskCdrom-Mode", 0}
    , {
+   0, "parent-window-id", "Volatile::ParentWindowId", CommandLine::HasArg}
+   , {
    0, "plug-progress-into", "Volatile::PlugProgressInto", CommandLine::HasArg}
    , {
    0, "progress-str", "Volatile::InstallProgressStr", CommandLine::HasArg} 
@@ -303,6 +305,9 @@ pid_t TestLock(string File)
 //    *) if not, show message and fail
 void check_and_aquire_lock()
 {
+   if (getuid() != 0) 
+      return;
+
    GtkWidget *dia;
    gchar *msg = NULL;
    pid_t LockedApp, runsNonInteractive;
@@ -326,7 +331,7 @@ void check_and_aquire_lock()
 			       _("There is another synaptic running in "
 				 "interactive mode. Please close it first. "
 				 ));
-      } else if(!weNonInteractive && runsNonInteractive) {
+      } else if(runsNonInteractive > 0) {
 	 msg = g_strdup_printf("<big><b>%s</b></big>\n\n%s",
 			       _("Another synaptic is running"),
 			       _("There is another synaptic running in "
@@ -365,7 +370,7 @@ void check_and_aquire_lock()
 					       GTK_BUTTONS_CLOSE, msg);
       gtk_dialog_run(GTK_DIALOG(dia));
       g_free(msg);
-      exit(0);
+      exit(1);
    }
    
    // we can't get a lock?!?
@@ -397,8 +402,14 @@ int main(int argc, char **argv)
 
    if (getuid() != 0) {
       RGUserDialog userDialog;
-      userDialog.error(_("You must run this program as the root user."));
-      exit(1);
+      userDialog.warning(g_strdup_printf("<b><big>%s</big></b>\n\n%s",
+                                         _("Starting without administrative "
+                                           "privileges"),
+				         _("You will not be able to apply any "
+				           "any changes. But you can still "
+					   "export the marked changes or "
+					   "create a download script "
+					   "for them.")));
    }
 
    if (!RInitConfiguration("synaptic.conf")) {

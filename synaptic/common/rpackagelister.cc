@@ -90,6 +90,7 @@ RPackageLister::RPackageLister()
    // keep order in sync with rpackageview.h 
    _views.push_back(new RPackageViewSections(_packages));
    _views.push_back(new RPackageViewStatus(_packages));
+   _views.push_back(new RPackageViewOrigin(_packages));
    _filterView = new RPackageViewFilter(_packages);
    _views.push_back(_filterView);
    _searchView =  new RPackageViewSearch(_packages);
@@ -149,15 +150,20 @@ vector<string> RPackageLister::getSubViews()
 
 bool RPackageLister::setSubView(string newSubView)
 {
+   if(_config->FindB("Debug::Synaptic::View",false))
+      ioprintf(clog, "RPackageLister::setSubView(): newSubView '%s'\n", 
+	       newSubView.size() > 0 ? newSubView.c_str() : "(empty)");
+
    if(newSubView.empty())
       _selectedView->showAll();
    else
       _selectedView->setSelected(newSubView);
-   notifyPreChange(NULL);
 
-   reapplyFilter();
+   notifyChange(NULL);
 
-   notifyPostChange(NULL);
+   if(_config->FindB("Debug::Synaptic::View",false))
+      ioprintf(clog, "/RPackageLister::setSubView(): newSubView '%s'\n", 
+	       newSubView.size() > 0 ? newSubView.c_str() : "(empty)");
 
    return true;
 }
@@ -184,8 +190,11 @@ void RPackageLister::notifyPreChange(RPackage *pkg)
 
 void RPackageLister::notifyPostChange(RPackage *pkg)
 {
-   reapplyFilter();
+   if(_config->FindB("Debug::Synaptic::View",false))
+      ioprintf(clog, "RPackageLister::notifyPostChange(): '%s'\n",
+	       pkg == NULL ? "NULL" : pkg->name());
 
+   reapplyFilter();
 
    for (vector<RPackageObserver *>::const_iterator I =
         _packageObservers.begin(); I != _packageObservers.end(); I++) {
@@ -278,12 +287,20 @@ bool RPackageLister::upgradable()
    return _cache != NULL && _cache->deps() != NULL;
 }
 
-bool RPackageLister::openCache(bool lock)
+bool RPackageLister::openCache()
 {
    static bool firstRun = true;
 
+   if(_config->FindB("Debug::Synaptic::View",false))
+      clog << "RPackageLister::openCache()" << endl;
+
    // Flush old errors
    _error->Discard();
+
+   // only lock if we run as root
+   bool lock = true;
+   if(getuid() != 0)
+      lock = false;
 
    if (!_cache->open(*_progMeter,lock)) {
       _progMeter->Done();
@@ -374,9 +391,6 @@ bool RPackageLister::openCache(bool lock)
       if (_roptions->getPackageLock(pkgName.c_str())) 
 	 pkg->setPinned(true);
 
-      for (unsigned int i = 0; i != _views.size(); i++)
-         _views[i]->addPackage(pkg);
-
       // Gather list of sections.
       if (I.Section())
          sectionSet.insert(I.Section());
@@ -385,6 +399,10 @@ bool RPackageLister::openCache(bool lock)
          cerr << "Package " << I.Name() << " has no section?!" << endl;
 #endif
    }
+
+   // refresh the views
+   for (unsigned int i = 0; i != _views.size(); i++)
+      _views[i]->refresh();
 
    // Truncate due to virtual packages which were skipped above.
    _packages.resize(count);
@@ -535,7 +553,8 @@ void RPackageLister::reapplyFilter()
    if (_updating)
       return;
 
-   //   cout << "RPackageLister::reapplyFilter()" << endl;
+   if(_config->FindB("Debug::Synaptic::View",false))
+      clog << "RPackageLister::reapplyFilter()" << endl;
 
    _viewPackages.clear();
    _viewPackagesIndex.clear();
@@ -548,6 +567,7 @@ void RPackageLister::reapplyFilter()
          _viewPackages.push_back(*I);
       }
    }
+
 
    sortPackages(_sortMode);
 }
@@ -584,8 +604,8 @@ struct sectionSortFunc {
 // version string compare
 int verstrcmp(const char *x, const char *y)
 {
-   if(x && y)
-      return strcmp(x,y) < 0;
+   if(x && y) 
+      return _system->VS->CmpVersion(x, y) < 0;
    
    // if we compare with a non-existring version
    if(y == NULL)
@@ -611,7 +631,7 @@ struct supportedSortFunc {
    bool _ascent;
    RPackageStatus _status;
  public:
-   supportedSortFunc::supportedSortFunc(bool ascent, RPackageStatus &s) 
+   supportedSortFunc(bool ascent, RPackageStatus &s) 
       : _ascent(ascent), _status(s) {};
    bool operator() (RPackage *x, RPackage *y) {
       if(_ascent)
@@ -629,6 +649,9 @@ void RPackageLister::sortPackages(vector<RPackage *> &packages,
    _sortMode = mode;
    if (packages.empty())
       return;
+
+   if(_config->FindB("Debug::Synaptic::View",false))
+      clog << "RPackageLister::sortPackages(): " << packages.size() << endl;
 
    switch(mode) {
    case LIST_SORT_NAME:
@@ -1298,7 +1321,7 @@ bool RPackageLister::updateCache(pkgAcquireStatus *status, string &error)
    }
 
    // Clean out any old list files
-   if (_config->FindB("APT::Get::List-Cleanup", true) == true) {
+   if (!Failed && _config->FindB("APT::Get::List-Cleanup", true) == true) {
       if (Fetcher.Clean(_config->FindDir("Dir::State::lists")) == false ||
           Fetcher.Clean(_config->FindDir("Dir::State::lists") + "partial/") ==
           false)
@@ -1697,6 +1720,10 @@ bool RPackageLister::cleanPackageCache(bool forceClean)
    return true;
 }
 
+void RPackageLister::refreshView()
+{
+   _selectedView->refresh();
+}
 
 bool RPackageLister::writeSelections(ostream &out, bool fullState)
 {
@@ -1805,6 +1832,7 @@ bool RPackageLister::readSelections(istream &in)
 
 bool RPackageLister::addArchiveToCache(string archive, string &pkgname)
 {
+#ifndef HAVE_RPM
    //cout << "addArchiveToCache() " << archive << endl;
 
    // do sanity checking on the file (do we need this 
@@ -1867,6 +1895,10 @@ bool RPackageLister::addArchiveToCache(string archive, string &pkgname)
    CopyFile(in, out);
 
    return true;
+#else
+   return false;
+#endif
 }
+
 
 // vim:ts=3:sw=3:et

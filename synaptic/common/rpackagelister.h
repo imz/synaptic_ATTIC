@@ -204,6 +204,9 @@ class RPackageLister {
 
    // this needs a different name, something like refresh
    void reapplyFilter();
+   
+   // refresh view 
+   void refreshView();
 
    // is is exposed for the stuff like filter manager window
    RPackageViewFilter *filterView() { return _filterView; };
@@ -266,8 +269,8 @@ class RPackageLister {
 			vector<RPackage *> &notAuthenticated,
                         vector<RPackage *> &exclude, bool sorted = true);
 
-   // open it with lock
-   bool openCache(bool lock=true);
+   // open (lock if run as root)
+   bool openCache();
    bool fixBroken();
    bool check();
    bool upgradable();
