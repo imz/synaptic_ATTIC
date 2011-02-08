@@ -1,0 +1,11 @@
+--- synaptic-0.57.7/configure.in.orig	2010-10-18 12:39:32 +0400
++++ synaptic-0.57.7/configure.in	2010-10-18 13:51:20 +0400
+@@ -121,7 +121,7 @@
+ 
+ DEB_HDRS=""
+ AC_SUBST(DEB_HDRS)
+-DEB_LIBS="-lapt-inst"
++DEB_LIBS=""
+ AC_SUBST(DEB_LIBS)
+ 
+ # launchpad integration

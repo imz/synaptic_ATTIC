@@ -8,11 +8,11 @@
 %def_enable autotools
 
 Name: synaptic
-Version: 0.57.3
-Release: alt2
+Version: 0.58
+Release: alt1
 
 Summary: Graphical front-end for APT
-Summary(ru_RU.CP1251): Графическая оболочка для APT
+Summary(ru_RU.UTF-8): Р“СЂР°С„РёС‡РµСЃРєР°СЏ РѕР±РѕР»РѕС‡РєР° РґР»СЏ APT
 Group: System/Configuration/Packaging
 License: GPL
 Url: http://www.nongnu.org/synaptic/
@@ -27,6 +27,7 @@ Source4: %name.conf
 Patch4: synaptic-0.56-alt-build-fix.diff
 Patch5: synaptic-0.57.2-gcc4-fix.patch
 Patch6: synaptic-0.57.2-gcc43-fix.patch
+Patch7: synaptic-0.58-alt-build-fix.patch
 
 Requires: %{get_dep rpm}, %{get_dep libapt}
 
@@ -53,14 +54,14 @@ powerful package filtering system. That greatly simplifies the interface
 while giving a lot more flexibility to browse through very long package
 lists.
 
-%description -l ru_RU.CP1251
-Synaptic - это графическая оболочка для APT (Advanced Package Tool).
-Она значительно проще в использовании, чем другие оболочки для APT.
+%description -l ru_RU.UTF-8
+Synaptic - СЌС‚Рѕ РіСЂР°С„РёС‡РµСЃРєР°СЏ РѕР±РѕР»РѕС‡РєР° РґР»СЏ APT (Advanced Package Tool).
+РћРЅР° Р·РЅР°С‡РёС‚РµР»СЊРЅРѕ РїСЂРѕС‰Рµ РІ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёРё, С‡РµРј РґСЂСѓРіРёРµ РѕР±РѕР»РѕС‡РєРё РґР»СЏ APT.
 
-Вместо использования дерева для отображения пакетов synaptic основан
-на мощной системе фильтрации пакетов. Это значительно упрощает интерфейс
-и вместе с тем предоставляет гораздо больше гибкости при навигации по
-очень длинным спискам пакетов.
+Р’РјРµСЃС‚Рѕ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёСЏ РґРµСЂРµРІР° РґР»СЏ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ РїР°РєРµС‚РѕРІ synaptic РѕСЃРЅРѕРІР°РЅ
+РЅР° РјРѕС‰РЅРѕР№ СЃРёСЃС‚РµРјРµ С„РёР»СЊС‚СЂР°С†РёРё РїР°РєРµС‚РѕРІ. Р­С‚Рѕ Р·РЅР°С‡РёС‚РµР»СЊРЅРѕ СѓРїСЂРѕС‰Р°РµС‚ РёРЅС‚РµСЂС„РµР№СЃ
+Рё РІРјРµСЃС‚Рµ СЃ С‚РµРј РїСЂРµРґРѕСЃС‚Р°РІР»СЏРµС‚ РіРѕСЂР°Р·РґРѕ Р±РѕР»СЊС€Рµ РіРёР±РєРѕСЃС‚Рё РїСЂРё РЅР°РІРёРіР°С†РёРё РїРѕ
+РѕС‡РµРЅСЊ РґР»РёРЅРЅС‹Рј СЃРїРёСЃРєР°Рј РїР°РєРµС‚РѕРІ.
 
 %prep
 %setup
@@ -68,6 +69,7 @@ Synaptic - это графическая оболочка для APT (Advanced Package Tool).
 %patch4 -p1
 %patch5
 %patch6 -p1
+%patch7 -p1
 
 %if_with ru_po
 # installing own translation
@@ -76,7 +78,7 @@ install -p -m644 %SOURCE1 po/ru.po
 rm -fv -- po/ru.gmo
 %endif
 
-install -p -m644 %SOURCE3 pixmaps/package-supported.png
+install -p -m644 %SOURCE3 pixmaps/hicolor/16x16/package-supported.png
 
 %build
 intltoolize --force
@@ -113,6 +115,7 @@ install -p -m644 %SOURCE4 %buildroot%_sysconfdir/apt/apt.conf.d/%name.conf
 %_datadir/omf/%name
 %_man8dir/%name.8.*
 %_mandir/ru/man8/%name.8.*
+%_iconsdir/hicolor/*/actions/*
 %config(noreplace) %_sysconfdir/apt/apt.conf.d/%name.conf
 %doc README* TODO NEWS AUTHORS
 
@@ -120,6 +123,12 @@ install -p -m644 %SOURCE4 %buildroot%_sysconfdir/apt/apt.conf.d/%name.conf
 %exclude %_datadir/pixmaps/%name.png
 
 %changelog
+* Mon Feb 07 2011 Lenar Shakirov <snejok@altlinux.ru> 0.58-alt1
+- 0.58 (closes: 7871)
+- synaptic-0.58-alt-build-fix.patch added
+- Spec converted to utf8
+- Supported icon's packaging fixed
+
 * Mon Jan 31 2011 Lenar Shakirov <snejok@altlinux.ru> 0.57.3-alt2
 - Unneeded old patches removed
 - .gear-rules -> .gear/rules: .tar.gz - > .tar for sources
