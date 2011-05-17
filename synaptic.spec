@@ -9,7 +9,7 @@
 
 Name: synaptic
 Version: 0.58
-Release: alt2
+Release: alt3
 
 Summary: Graphical front-end for APT
 Summary(ru_RU.UTF-8): Графическая оболочка для APT
@@ -29,7 +29,7 @@ Patch5: synaptic-0.57.2-gcc4-fix.patch
 Patch6: synaptic-0.57.2-gcc43-fix.patch
 Patch7: synaptic-0.58-alt-build-fix.patch
 
-Requires: %{get_dep rpm}, %{get_dep libapt}
+Requires: rpm, libapt
 
 BuildRequires(pre): libapt-devel
 BuildPreReq: libapt-devel >= 0.5.5cnc5
@@ -106,13 +106,11 @@ install -p -m644 man/%name.ru.8 %buildroot%_mandir/ru/man8/%name.8
 mkdir -p %buildroot%_sysconfdir/apt/apt.conf.d
 install -p -m644 %SOURCE4 %buildroot%_sysconfdir/apt/apt.conf.d/%name.conf
 
-%find_lang %name
+%find_lang --with-gnome %name
 
 %files -f %name.lang
 %_sbindir/*
 %_datadir/%name
-%_datadir/gnome/help/%name
-%_datadir/omf/%name
 %_man8dir/%name.8.*
 %_mandir/ru/man8/%name.8.*
 %_iconsdir/hicolor/*/actions/*
@@ -123,6 +121,11 @@ install -p -m644 %SOURCE4 %buildroot%_sysconfdir/apt/apt.conf.d/%name.conf
 %exclude %_datadir/pixmaps/%name.png
 
 %changelog
+* Tue May 17 2011 Lenar Shakirov <snejok@altlinux.ru> 0.58-alt3
+- Thanks to repocop for the patches:
+  * versioned Requires removed
+  * add --with-gnome option to find_lang
+
 * Thu Feb 24 2011 Lenar Shakirov <snejok@altlinux.ru> 0.58-alt2
 - Russian localization updated
 - (ALT #15002, #12946, #6224, #17499)
