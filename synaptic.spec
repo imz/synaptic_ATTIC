@@ -9,7 +9,7 @@
 
 Name: synaptic
 Version: 0.58
-Release: alt3
+Release: alt4
 
 Summary: Graphical front-end for APT
 Summary(ru_RU.UTF-8): Графическая оболочка для APT
@@ -125,6 +125,9 @@ install -p -m644 %SOURCE4 %buildroot%_sysconfdir/apt/apt.conf.d/%name.conf
 %exclude %_datadir/pixmaps/%name.png
 
 %changelog
+* Mon Aug 29 2011 Lenar Shakirov <snejok@altlinux.ru> 0.58-alt4
+- Ukrainian l10n added: thanks to Roman Savochenko (rom_as@)
+
 * Tue May 17 2011 Lenar Shakirov <snejok@altlinux.ru> 0.58-alt3
 - Thanks to repocop for the patches:
   * versioned Requires removed
