@@ -23,6 +23,7 @@ Source1: %name-ru.po
 Source2: %name.ru.8
 Source3: package-supported.png
 Source4: %name.conf
+Source5: %name-uk.po
 
 Patch4: synaptic-0.56-alt-build-fix.diff
 Patch5: synaptic-0.57.2-gcc4-fix.patch
@@ -77,6 +78,9 @@ install -p -m644 %SOURCE1 po/ru.po
 # remove gmo file to tell autotools recreate it
 rm -fv -- po/ru.gmo
 %endif
+install -p -m644 %SOURCE5 po/uk.po
+rm -fv -- po/uk.gmo
+sed 's/ ru / ru uk /' -i configure.in
 
 install -p -m644 %SOURCE3 pixmaps/hicolor/16x16/package-supported.png
 
