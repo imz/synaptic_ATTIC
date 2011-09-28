@@ -3402,6 +3402,15 @@ msgstr "<i>Завершено</i>"
 msgid "<i>Can't close while running</i>"
 msgstr "<i>Невозможно закрыть во время работы</i>"
 
+msgid "Always Ask"
+msgstr "Всегда задавать этот вопрос"
+
+msgid "Automatically"
+msgstr "Автоматически"
+
+msgid "Ignore"
+msgstr "Игнорировать"
+
 #~ msgid ""
 #~ "\n"
 #~ "Failed to apply all changes! Scroll in the terminal buffer to see what "
@@ -3463,17 +3472,8 @@ msgstr "<i>Невозможно закрыть во время работы</i>"
 #~ msgid "_Custom"
 #~ msgstr "_Пользовательское"
 
-#~ msgid "Always Ask"
-#~ msgstr "Всегда задавать этот вопрос"
-
-#~ msgid "Automatically"
-#~ msgstr "Автоматически"
-
 #~ msgid "Completely"
 #~ msgstr "Полностью"
-
-#~ msgid "Ignore"
-#~ msgstr "Игнорировать"
 
 #~ msgid "Keep Configuration"
 #~ msgstr "Сохранить настройки"

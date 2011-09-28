@@ -506,7 +506,7 @@ void RGMainWindow::cbInstallFromVersion(GtkWidget *self, void *data)
 }
 
 bool RGMainWindow::askStateChange(RPackageLister::pkgState state, 
-				  vector<RPackage *> exclude)
+				  vector<RPackage *> &exclude)
 {
    vector<RPackage *> toKeep;
    vector<RPackage *> toInstall;
@@ -591,14 +591,6 @@ void RGMainWindow::pkgAction(RGPkgAction action)
          case PKG_INSTALL:     // install
             instPkgs.push_back(pkg);
             pkgInstallHelper(pkg, false);
-#if 0 // handled in the pkgCache now (where it belongs)
-	    if(_config->FindB("Synaptic::UseRecommends", false)) {
-	       installAllWeakDepends(pkg, pkgCache::Dep::Recommends);
-	    }
-	    if(_config->FindB("Synaptic::UseSuggests", false)) {
-	       installAllWeakDepends(pkg, pkgCache::Dep::Suggests);
-	    }
-#endif
             break;
          case PKG_INSTALL_FROM_VERSION:     // install with specific version
             pkgInstallHelper(pkg, false);
@@ -1990,7 +1982,10 @@ void RGMainWindow::cbAddCDROM(GtkWidget *self, void *data)
    scan.hide();
    if (updateCache) {
       me->setTreeLocked(TRUE);
-      me->_lister->openCache();
+      if (!me->_lister->openCache()) {
+         me->showErrors();
+         exit(1);
+      }
       me->setTreeLocked(FALSE);
       me->refreshTable(me->selectedPackage());
    }
@@ -2157,7 +2152,7 @@ void RGMainWindow::cbShowSourcesWindow(GtkWidget *self, void *data)
    bool Changed = false;
    bool ForceReload = _config->FindB("Synaptic::UpdateAfterSrcChange",false);
    
-   if(!g_file_test("/usr/bin/software-properties", 
+   if(!g_file_test("/usr/bin/software-properties-gtk", 
 		   G_FILE_TEST_IS_EXECUTABLE) 
       || _config->FindB("Synaptic::dontUseGnomeSoftwareProperties", false)) 
    {
@@ -2169,7 +2164,7 @@ void RGMainWindow::cbShowSourcesWindow(GtkWidget *self, void *data)
       GPid pid;
       int status;
       char *argv[5];
-      argv[0] = "/usr/bin/software-properties";
+      argv[0] = "/usr/bin/software-properties-gtk";
       argv[1] = "-n";
       argv[2] = "-t";
       argv[3] = g_strdup_printf("%i", GDK_WINDOW_XID(me->_win->window));
@@ -2424,7 +2419,10 @@ void RGMainWindow::cbClearAllChangesClicked(GtkWidget *self, void *data)
    me->setTreeLocked(TRUE);
 
    // reset
-   me->_lister->openCache();
+   if (!me->_lister->openCache()) {
+      me->showErrors();
+      exit(1);
+   }
 
    me->setTreeLocked(FALSE);
    me->_lister->registerObserver(me);
@@ -2777,9 +2775,10 @@ void RGMainWindow::cbUpdateClicked(GtkWidget *self, void *data)
    // show errors and warnings (like the gpg failures for the package list)
    me->showErrors();
 
-   if(me->_lister->openCache())
+   if(!me->_lister->openCache()) {
       me->showErrors();
-
+      exit(1);
+   }
    // reread saved selections
    ifstream in(file);
    if (!in != 0) {
@@ -2888,7 +2887,8 @@ void RGMainWindow::cbUpgradeClicked(GtkWidget *self, void *data)
       res = me->_lister->upgrade();
 
    // mvo: do we really want this?
-   me->askStateChange(state, vector<RPackage*>());
+   vector<RPackage*> nullVector;
+   me->askStateChange(state, nullVector);
 
    me->refreshTable(pkg);
 
@@ -2947,7 +2947,10 @@ void RGMainWindow::cbMenuPinClicked(GtkWidget *self, void *data)
       li = g_list_next(li);
    }
    me->setTreeLocked(TRUE);
-   me->_lister->openCache();
+   if (!me->_lister->openCache()) {
+      me->showErrors();
+      exit(1);
+   }
 
    // reread saved selections
    ifstream in(file);
@@ -3287,7 +3290,7 @@ void RGMainWindow::cbGenerateDownloadScriptClicked(GtkWidget *self, void *data)
    ofstream out(file);
    out << "#!/bin/sh" << endl;
    for(int i=0;i<uris.size();i++) {
-      out << "wget " << uris[i] << endl;
+      out << "wget -c" << uris[i] << endl;
    }
    chmod(file, 0755);
 }

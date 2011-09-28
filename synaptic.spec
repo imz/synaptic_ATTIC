@@ -9,7 +9,7 @@
 
 Name: synaptic
 Version: 0.58
-Release: alt4
+Release: alt5
 
 Summary: Graphical front-end for APT
 Summary(ru_RU.UTF-8): Графическая оболочка для APT
@@ -25,8 +25,6 @@ Source3: package-supported.png
 Source4: %name.conf
 Source5: %name-uk.po
 
-Patch4: synaptic-0.56-alt-build-fix.diff
-Patch5: synaptic-0.57.2-gcc4-fix.patch
 Patch6: synaptic-0.57.2-gcc43-fix.patch
 Patch7: synaptic-0.58-alt-build-fix.patch
 
@@ -67,8 +65,6 @@ Synaptic - это графическая оболочка для APT (Advanced P
 %prep
 %setup
 
-%patch4 -p1
-%patch5
 %patch6 -p1
 %patch7 -p1
 
@@ -125,6 +121,13 @@ install -p -m644 %SOURCE4 %buildroot%_sysconfdir/apt/apt.conf.d/%name.conf
 %exclude %_datadir/pixmaps/%name.png
 
 %changelog
+* Wed Sep 28 2011 Lenar Shakirov <snejok@altlinux.ru> 0.58-alt5
+- Update some code from 0.60 (ALT #26216)
+- Drop synaptic-0.56-alt-build-fix.diff
+- Russian l10n updated
+- synaptic-0.58-alt-build-fix.patch: add reverting of some code:
+  * because we have very old apt+rpm in ALT
+
 * Mon Aug 29 2011 Lenar Shakirov <snejok@altlinux.ru> 0.58-alt4
 - Ukrainian l10n added: thanks to Roman Savochenko (rom_as@)
 

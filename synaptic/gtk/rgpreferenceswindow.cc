@@ -151,24 +151,27 @@ void RGPreferencesWindow::applyProxySettings()
       httpPass = _config->Find("Synaptic::httpProxyPass", "");
 
       if(!http.empty()) {
-	 s = g_strdup_printf("http://%s:%i", http.c_str(), httpPort);
+	 unsetenv("http_proxy");
+	 s = g_strdup_printf("http://%s:%i/", http.c_str(), httpPort);
 	 _config->Set("Acquire::http::Proxy", s);
 	 g_free(s);
       }
       // setup the proxy 
       if(!httpUser.empty() && !httpPass.empty()) {
-	 s = g_strdup_printf("http://%s:%s@%s:%i", 
+	 s = g_strdup_printf("http://%s:%s@%s:%i/", 
 			     httpUser.c_str(), httpPass.c_str(),
 			     http.c_str(), httpPort);
 	 _config->Set("Acquire::http::Proxy", s);
 	 g_free(s);
       }
       if(!ftp.empty()) {
+	 unsetenv("ftp_proxy");
 	 s = g_strdup_printf("http://%s:%i", ftp.c_str(), ftpPort);
 	 _config->Set("Acquire::ftp::Proxy", s);
 	 g_free(s);
       }
       // set the no-proxies
+      unsetenv("no_proxy");
       gchar **noProxyArray = g_strsplit(noProxy.c_str(), ",", 0);
       for (int j = 0; noProxyArray[j] != NULL; j++) {
          g_strstrip(noProxyArray[j]);
@@ -372,7 +375,6 @@ void RGPreferencesWindow::saveNetwork()
    _config->Set("Synaptic::noProxy", noProxy);
 
    applyProxySettings();
-
 }
  
 void RGPreferencesWindow::saveDistribution()
@@ -420,7 +422,10 @@ void RGPreferencesWindow::doneAction(GtkWidget *self, void *data)
       me->hide();
       me->_lister->unregisterObserver(me->_mainWin);
       me->_mainWin->setTreeLocked(TRUE);
-      me->_lister->openCache();
+      if (!me->_lister->openCache()) {
+	 me->_mainWin->showErrors();
+	 exit(1);
+      }
       me->_mainWin->setTreeLocked(FALSE);
       me->_lister->registerObserver(me->_mainWin);
       me->_mainWin->refreshTable();
@@ -1121,14 +1126,10 @@ RGPreferencesWindow::buttonAuthenticationClicked(GtkWidget *self, void *data)
    GtkWidget *entry_pass = glade_xml_get_widget(dia_xml,"entry_password");
 
    // now set the values
-   {
-      string now_user =  _config->Find("Synaptic::httpProxyUser","");
-      cout << now_user << endl;
-      gtk_entry_set_text(GTK_ENTRY(entry_user), now_user.c_str());
-      string now_pass =   _config->Find("Synaptic::httpProxyPass","");
-      cout << now_pass << endl;
-      gtk_entry_set_text(GTK_ENTRY(entry_pass), now_pass.c_str());
-   }
+   string now_user =  _config->Find("Synaptic::httpProxyUser","");
+   gtk_entry_set_text(GTK_ENTRY(entry_user), now_user.c_str());
+   string now_pass =   _config->Find("Synaptic::httpProxyPass","");
+   gtk_entry_set_text(GTK_ENTRY(entry_pass), now_pass.c_str());
 
    int res = dia.run();
 

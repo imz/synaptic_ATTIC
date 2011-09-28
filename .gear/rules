@@ -1,6 +1,5 @@
 copy: *.8
 copy: *.conf
-copy: *.diff
 copy: *.patch
 copy: *.png
 copy: *.po

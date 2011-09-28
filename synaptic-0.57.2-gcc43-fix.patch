@@ -46,15 +46,14 @@ diff -ur synaptic-0.57.2/gtk/rgfindwindow.cc synaptic-0.57.2.new/gtk/rgfindwindo
 diff -ur synaptic-0.57.2/gtk/rginstallprogress.cc synaptic-0.57.2.new/gtk/rginstallprogress.cc
 --- synaptic-0.57.2/gtk/rginstallprogress.cc	2008-12-12 16:30:57 +0000
 +++ synaptic-0.57.2.new/gtk/rginstallprogress.cc	2008-12-12 16:40:17 +0000
-@@ -32,6 +32,8 @@
+@@ -32,6 +32,7 @@
  
  #include <unistd.h>
  #include <stdio.h>
 +#include <cstring>
-+#include <cstdlib>
+ #include <cstdlib>
  
  #include "i18n.h"
- 
 diff -ur synaptic-0.57.2/gtk/rglogview.cc synaptic-0.57.2.new/gtk/rglogview.cc
 --- synaptic-0.57.2/gtk/rglogview.cc	2008-12-12 16:30:57 +0000
 +++ synaptic-0.57.2.new/gtk/rglogview.cc	2008-12-12 16:37:30 +0000
@@ -82,10 +81,11 @@ diff -ur synaptic-0.57.2/gtk/rgmisc.cc synaptic-0.57.2.new/gtk/rgmisc.cc
 diff -ur synaptic-0.57.2/gtk/rgpreferenceswindow.cc synaptic-0.57.2.new/gtk/rgpreferenceswindow.cc
 --- synaptic-0.57.2/gtk/rgpreferenceswindow.cc	2008-12-12 16:30:57 +0000
 +++ synaptic-0.57.2.new/gtk/rgpreferenceswindow.cc	2008-12-12 16:35:43 +0000
-@@ -28,6 +28,7 @@
+@@ -28,6 +28,8 @@
  #include <apt-pkg/configuration.h>
  #include <gtk/gtk.h>
  #include <cassert>
++#include <stdlib.h>
 +#include <cstring>
  
  #include "rconfiguration.h"
@@ -100,6 +100,17 @@ diff -ur synaptic-0.57.2/gtk/rgslideshow.cc synaptic-0.57.2.new/gtk/rgslideshow.
 +#include <algorithm>
  
  #include "rgslideshow.h"
+ 
+--- synaptic-0.57.2/gtk/rgaboutpanel.cc.orig	2010-11-01 16:01:39 +0300
++++ synaptic-0.57.2.new/gtk/rgaboutpanel.cc	2010-11-09 09:22:52 +0300
+@@ -58,7 +58,7 @@
+    RGAboutPanel *me = (RGAboutPanel *) data;
+ 
+    if (me->credits == NULL) {
+-      me->credits = new RGCreditsPanel::RGCreditsPanel(me);
++      me->credits = new RGCreditsPanel(me);
+    }
+    me->credits->setTitle(_("Credits"));
  
 diff -ur synaptic-0.57.2/gtk/rgterminstallprogress.cc synaptic-0.57.2.new/gtk/rgterminstallprogress.cc
 --- synaptic-0.57.2/gtk/rgterminstallprogress.cc	2008-12-12 16:30:57 +0000
