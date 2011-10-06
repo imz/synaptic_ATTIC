@@ -9,7 +9,7 @@
 
 Name: synaptic
 Version: 0.58
-Release: alt6
+Release: alt7
 
 Summary: Graphical front-end for APT
 Summary(ru_RU.UTF-8): Графическая оболочка для APT
@@ -123,6 +123,9 @@ install -p -m644 %SOURCE4 %buildroot%_sysconfdir/apt/apt.conf.d/%name.conf
 %exclude %_datadir/pixmaps/%name.png
 
 %changelog
+* Thu Oct 06 2011 Lenar Shakirov <snejok@altlinux.ru> 0.58-alt7
+- Fix "Package is supported" label translation
+
 * Thu Oct 06 2011 Lenar Shakirov <snejok@altlinux.ru> 0.58-alt6
 - Russian l10n updated: thanks to Anatoly Chernov aka aichernov@
 
