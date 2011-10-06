@@ -27,6 +27,7 @@ Source5: %name-uk.po
 
 Patch6: synaptic-0.57.2-gcc43-fix.patch
 Patch7: synaptic-0.58-alt-build-fix.patch
+Patch8: synaptic-0.58-rgiconlegend-supported.patch
 
 Requires: rpm, libapt
 
@@ -67,6 +68,7 @@ Synaptic - это графическая оболочка для APT (Advanced P
 
 %patch6 -p1
 %patch7 -p1
+%patch8 -p1
 
 %if_with ru_po
 # installing own translation

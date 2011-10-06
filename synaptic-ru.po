@@ -3388,7 +3388,7 @@ msgstr "Вставьте диск в привод."
 
 #: ../gtk/rgiconlegend.cc:76
 msgid "Package is supported"
-msgstr "Пакет поддерживается."
+msgstr "Пакет поддерживается"
 
 #: ../gtk/rgterminstallprogress.cc:89
 msgid "<i>Running...</i>"
