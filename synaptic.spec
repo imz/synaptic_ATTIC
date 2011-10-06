@@ -9,7 +9,7 @@
 
 Name: synaptic
 Version: 0.58
-Release: alt5
+Release: alt6
 
 Summary: Graphical front-end for APT
 Summary(ru_RU.UTF-8): Графическая оболочка для APT
@@ -121,6 +121,9 @@ install -p -m644 %SOURCE4 %buildroot%_sysconfdir/apt/apt.conf.d/%name.conf
 %exclude %_datadir/pixmaps/%name.png
 
 %changelog
+* Thu Oct 06 2011 Lenar Shakirov <snejok@altlinux.ru> 0.58-alt6
+- Russian l10n updated: thanks to Anatoly Chernov aka aichernov@
+
 * Wed Sep 28 2011 Lenar Shakirov <snejok@altlinux.ru> 0.58-alt5
 - Update some code from 0.60 (ALT #26216)
 - Drop synaptic-0.56-alt-build-fix.diff
