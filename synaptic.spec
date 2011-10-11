@@ -9,7 +9,7 @@
 
 Name: synaptic
 Version: 0.58
-Release: alt7
+Release: alt8
 
 Summary: Graphical front-end for APT
 Summary(ru_RU.UTF-8): Графическая оболочка для APT
@@ -28,6 +28,7 @@ Source5: %name-uk.po
 Patch6: synaptic-0.57.2-gcc43-fix.patch
 Patch7: synaptic-0.58-alt-build-fix.patch
 Patch8: synaptic-0.58-rgiconlegend-supported.patch
+Patch9: synaptic-0.58-rsources-extraspaces.patch
 
 Requires: rpm, libapt
 
@@ -69,6 +70,7 @@ Synaptic - это графическая оболочка для APT (Advanced P
 %patch6 -p1
 %patch7 -p1
 %patch8 -p1
+%patch9 -p1
 
 %if_with ru_po
 # installing own translation
@@ -123,6 +125,9 @@ install -p -m644 %SOURCE4 %buildroot%_sysconfdir/apt/apt.conf.d/%name.conf
 %exclude %_datadir/pixmaps/%name.png
 
 %changelog
+* Tue Oct 11 2011 Lenar Shakirov <snejok@altlinux.ru> 0.58-alt8
+- Don't add extra spaces to sources.list
+
 * Thu Oct 06 2011 Lenar Shakirov <snejok@altlinux.ru> 0.58-alt7
 - Fix "Package is supported" label translation
 
