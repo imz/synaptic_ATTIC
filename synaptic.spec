@@ -9,7 +9,7 @@
 
 Name: synaptic
 Version: 0.58
-Release: alt8
+Release: alt9
 
 Summary: Graphical front-end for APT
 Summary(ru_RU.UTF-8): Графическая оболочка для APT
@@ -29,6 +29,7 @@ Patch6: synaptic-0.57.2-gcc43-fix.patch
 Patch7: synaptic-0.58-alt-build-fix.patch
 Patch8: synaptic-0.58-rgiconlegend-supported.patch
 Patch9: synaptic-0.58-rsources-extraspaces.patch
+Patch10: synaptic-0.58-rsources-vendorparts.patch
 
 Requires: rpm, libapt
 
@@ -71,6 +72,7 @@ Synaptic - это графическая оболочка для APT (Advanced P
 %patch7 -p1
 %patch8 -p1
 %patch9 -p1
+%patch10 -p1
 
 %if_with ru_po
 # installing own translation
@@ -125,6 +127,9 @@ install -p -m644 %SOURCE4 %buildroot%_sysconfdir/apt/apt.conf.d/%name.conf
 %exclude %_datadir/pixmaps/%name.png
 
 %changelog
+* Thu Oct 13 2011 Lenar Shakirov <snejok@altlinux.ru> 0.58-alt9
+- Read vendors from vendors.list.d too (ALT #26429)
+
 * Tue Oct 11 2011 Lenar Shakirov <snejok@altlinux.ru> 0.58-alt8
 - Don't add extra spaces to sources.list
 
