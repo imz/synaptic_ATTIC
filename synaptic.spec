@@ -9,7 +9,7 @@
 
 Name: synaptic
 Version: 0.58
-Release: alt9
+Release: alt10
 
 Summary: Graphical front-end for APT
 Summary(ru_RU.UTF-8): Графическая оболочка для APT
@@ -127,6 +127,10 @@ install -p -m644 %SOURCE4 %buildroot%_sysconfdir/apt/apt.conf.d/%name.conf
 %exclude %_datadir/pixmaps/%name.png
 
 %changelog
+* Tue Oct 25 2011 Lenar Shakirov <snejok@altlinux.ru> 0.58-alt10
+- Avoid extra spaces on enabled repo:
+  * thank you very much, NotHAM (aka ichernov at tochka.ru)!
+
 * Thu Oct 13 2011 Lenar Shakirov <snejok@altlinux.ru> 0.58-alt9
 - Read vendors from vendors.list.d too (ALT #26429)
 
