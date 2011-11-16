@@ -1,6 +1,6 @@
 --- synaptic.orig/common/rsources.cc
 +++ synaptic/common/rsources.cc
-@@ -326,10 +326,10 @@ bool SourcesList::UpdateSources()
+@@ -326,12 +326,13 @@ bool SourcesList::UpdateSources()
                 S += "[" + (*it)->VendorID + "] ";
  
              S += (*it)->URI + " ";
@@ -11,8 +11,12 @@
 -               S += (*it)->Sections[J] + " ";
 +               S += " " + (*it)->Sections[J];
           }
-          ofs << S << endl;
+-         ofs << S << endl;
++         if ( ! S.empty() ) // we needn't to write empty line ...
++	     ofs << S << endl;
        }
+       ofs.close();
+    }
 --- synaptic.orig/gtk/rgrepositorywin.cc
 +++ synaptic/gtk/rgrepositorywin.cc
 @@ -675,11 +675,13 @@ void RGRepositoryEditor::SelectionChanged(GtkTreeSelection *selection,
