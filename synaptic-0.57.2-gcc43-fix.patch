@@ -124,3 +124,17 @@ diff -ur synaptic-0.57.2/gtk/rgterminstallprogress.cc synaptic-0.57.2.new/gtk/rg
  #include <unistd.h>
  #include <sys/wait.h>
  #include <sys/types.h>
+diff --git a/synaptic/common/rconfiguration.cc b/synaptic/common/rconfiguration.cc
+index 51558e9..4f047f2 100644
+--- synaptic.orig/common/rconfiguration.cc
++++ synaptic/common/rconfiguration.cc
+@@ -34,6 +34,9 @@
+ #include <apt-pkg/error.h>
+ #include <apt-pkg/configuration.h>
+ 
++#include <unistd.h>
++#include <sys/types.h>
++
+ #include "rconfiguration.h"
+ 
+ #include "i18n.h"
