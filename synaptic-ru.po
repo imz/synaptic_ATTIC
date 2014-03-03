@@ -1270,13 +1270,11 @@ msgstr "URI"
 #: ../gtk/rgfetchprogress.cc:200
 #, c-format
 msgid ""
-"Please insert the disk labeled:\n"
-"%s\n"
-"in drive %s"
+"Please insert the media labeled:\n"
+"%s"
 msgstr ""
-"Вставьте, пожалуйста, диск с меткой:\n"
-"%s\n"
-"в дисковод %s"
+"Вставьте, пожалуйста, носитель с меткой:\n"
+"%s"
 
 #: ../gtk/rgfetchprogress.cc:325
 #, c-format
