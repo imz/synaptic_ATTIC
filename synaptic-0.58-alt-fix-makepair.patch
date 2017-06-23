@@ -1,0 +1,13 @@
+diff --git synaptic.orig/gtk/rglogview.cc synaptic/gtk/rglogview.cc
+index 3821af7..d8502da 100644
+--- synaptic.orig/gtk/rglogview.cc
++++ synaptic/gtk/rglogview.cc
+@@ -83,7 +83,7 @@ void RGLogView::readLogs()
+ 			     COLUMN_LOG_TYPE, LOG_TYPE_TOPLEVEL, 
+ 			     -1);
+ 	 g_free(sort_key);
+-	 history_map.insert(make_pair<int,GtkTreeIter>(history_key,month_iter));
++        history_map.insert(make_pair(history_key,month_iter));
+       } else {
+ 	 month_iter = history_map[history_key];
+       }
