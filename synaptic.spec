@@ -9,7 +9,7 @@
 
 Name: synaptic
 Version: 0.58
-Release: alt16
+Release: alt16.1
 
 Summary: Graphical front-end for APT
 Summary(ru_RU.UTF-8): Графическая оболочка для APT
@@ -132,6 +132,9 @@ install -p -m644 %SOURCE4 %buildroot%_sysconfdir/apt/apt.conf.d/%name.conf
 %exclude %_datadir/pixmaps/%name.png
 
 %changelog
+* Thu Feb 01 2018 Grigory Ustinov <grenka@altlinux.org> 0.58-alt16.1
+- NMU: Add patch fixing action, that generates download script (Closes: #30608).
+
 * Fri Jun 23 2017 Aleksei Nikiforov <darktemplar@altlinux.org> 0.58-alt16
 - Fix build with gcc-6
 
