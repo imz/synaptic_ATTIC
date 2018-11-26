@@ -34,6 +34,7 @@ Patch6: synaptic-0.58-cdrom-to-media.patch
 Patch7: synaptic-0.58-alt-fix-null-history.patch
 Patch8: synaptic-0.58-alt-fix-makepair.patch
 Patch9: synaptic-0.58-fix-generate-script-action.patch
+Patch10: synaptic-0.58-alt-reset-scroll-position.patch
 
 BuildPreReq: libapt-devel >= 0.5.15lorg2-alt42
 %if_enabled autotools
@@ -78,6 +79,7 @@ Synaptic - это графическая оболочка для APT (Advanced P
 %patch7 -p2
 %patch8 -p1
 %patch9 -p2
+%patch10 -p2
 
 %if_with ru_po
 # installing own translation
