@@ -9,7 +9,7 @@
 
 Name: synaptic
 Version: 0.58
-Release: alt16.1
+Release: alt17
 
 Summary: Graphical front-end for APT
 Summary(ru_RU.UTF-8): Графическая оболочка для APT
@@ -134,6 +134,9 @@ install -p -m644 %SOURCE4 %buildroot%_sysconfdir/apt/apt.conf.d/%name.conf
 %exclude %_datadir/pixmaps/%name.png
 
 %changelog
+* Mon Nov 26 2018 Ivan Razzhivin <underwit@altlinux.org> 0.58-alt17
+- Add a patch for reset scroll position to zero point (Closes: #12691).
+
 * Thu Feb 01 2018 Grigory Ustinov <grenka@altlinux.org> 0.58-alt16.1
 - NMU: Add patch fixing action, that generates download script (Closes: #30608).
 
