@@ -36,6 +36,7 @@ Patch8: synaptic-0.58-alt-fix-makepair.patch
 Patch9: synaptic-0.58-fix-generate-script-action.patch
 Patch10: synaptic-0.58-alt-reset-scroll-position.patch
 Patch11: synaptic-0.58-alt-gcc8-crash-fix.patch
+Patch12: synaptic-0.58-alt-improve-translation.patch
 
 BuildPreReq: libapt-devel >= 0.5.15lorg2-alt42
 %if_enabled autotools
@@ -82,6 +83,7 @@ Synaptic - это графическая оболочка для APT (Advanced P
 %patch9 -p2
 %patch10 -p2
 %patch11 -p2
+%patch12 -p2
 
 %if_with ru_po
 # installing own translation
