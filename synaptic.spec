@@ -9,7 +9,7 @@
 
 Name: synaptic
 Version: 0.58
-Release: alt18
+Release: alt19
 
 Summary: Graphical front-end for APT
 Summary(ru_RU.UTF-8): Графическая оболочка для APT
@@ -138,6 +138,10 @@ install -p -m644 %SOURCE4 %buildroot%_sysconfdir/apt/apt.conf.d/%name.conf
 %exclude %_datadir/pixmaps/%name.png
 
 %changelog
+* Thu Dec 06 2018 Ivan Razzhivin <underwit@altlinux.org> 0.58-alt19
+- Update Russian translation
+- Add a patch for improve translations
+
 * Thu Nov 29 2018 Aleksei Nikiforov <darktemplar@altlinux.org> 0.58-alt18
 - NMU: Fixed crash when building using gcc-8 (Closes: #35725)
 
