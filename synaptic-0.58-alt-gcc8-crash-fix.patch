@@ -1,3 +1,40 @@
+diff --git a/synaptic/common/rpackage.cc b/synaptic/common/rpackage.cc
+index 90d94c0..5811d65 100644
+--- a/synaptic/common/rpackage.cc
++++ b/synaptic/common/rpackage.cc
+@@ -960,6 +960,8 @@ bool RPackage::isShallowDependency(RPackage *pkg)
+ 
+    return true;
+ #endif
++
++   return false;
+ }
+ 
+ // format: first version, second archives
+diff --git a/synaptic/common/rswig.h b/synaptic/common/rswig.h
+index 2d4b365..9400d76 100644
+--- a/synaptic/common/rswig.h
++++ b/synaptic/common/rswig.h
+@@ -27,7 +27,7 @@ class SwigInstallProgress : public RInstallProgress {
+    };
+    // get a str feed to the user with the result of the install run
+    virtual const char* getResultStr(pkgPackageManager::OrderResult r) {
+-      RInstallProgress::getResultStr(r);
++      return RInstallProgress::getResultStr(r);
+    };
+    virtual pkgPackageManager::OrderResult start(RPackageManager *pm,
+                                                 int numPackages = 0,
+@@ -52,8 +52,9 @@ class SwigAcquireStatus : public pkgAcquireStatus
+ {
+  protected:
+    virtual bool Pulse(pkgAcquire *Owner) {
+-      pkgAcquireStatus::Pulse(Owner);
++      bool result = pkgAcquireStatus::Pulse(Owner);
+       UpdatePulse(FetchedBytes, CurrentCPS, CurrentItems);
++      return result;
+    };
+  public:
+    // Called by items when they have finished a real download
 diff --git a/synaptic/gtk/rguserdialog.cc b/synaptic/gtk/rguserdialog.cc
 index 83349c1..433ea9e 100644
 --- a/synaptic/gtk/rguserdialog.cc
