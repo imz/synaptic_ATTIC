@@ -27,7 +27,7 @@ class SwigInstallProgress : public RInstallProgress {
    };
    // get a str feed to the user with the result of the install run
    virtual const char* getResultStr(pkgPackageManager::OrderResult r) {
-      RInstallProgress::getResultStr(r);
+      return RInstallProgress::getResultStr(r);
    };
    virtual pkgPackageManager::OrderResult start(RPackageManager *pm,
                                                 int numPackages = 0,
@@ -52,8 +52,9 @@ class SwigAcquireStatus : public pkgAcquireStatus
 {
  protected:
    virtual bool Pulse(pkgAcquire *Owner) {
-      pkgAcquireStatus::Pulse(Owner);
+      bool result = pkgAcquireStatus::Pulse(Owner);
       UpdatePulse(FetchedBytes, CurrentCPS, CurrentItems);
+      return result;
    };
  public:
    // Called by items when they have finished a real download

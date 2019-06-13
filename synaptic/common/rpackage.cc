@@ -959,6 +959,8 @@ bool RPackage::isShallowDependency(RPackage *pkg)
 
    return true;
 #endif
+
+   return false;
 }
 
 // format: first version, second archives

@@ -248,6 +248,8 @@ bool RGGladeUserDialog::init(const char *name)
 
    g_free(filename);
    g_free(main_widget);
+
+   return true;
 }
 
 int RGGladeUserDialog::run(const char *name,bool return_gtk_response)
