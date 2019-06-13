@@ -83,7 +83,7 @@ void RGLogView::readLogs()
 			     COLUMN_LOG_TYPE, LOG_TYPE_TOPLEVEL, 
 			     -1);
 	 g_free(sort_key);
-	 history_map.insert(make_pair<int,GtkTreeIter>(history_key,month_iter));
+        history_map.insert(make_pair(history_key,month_iter));
       } else {
 	 month_iter = history_map[history_key];
       }
