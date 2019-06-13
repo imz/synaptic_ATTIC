@@ -74,7 +74,7 @@ class RGFetchProgress : public pkgAcquireStatus, public RGGladeWindow {
    PangoFontDescription *_font;
 
  public:
-   virtual bool MediaChange(string Media, string Drive) override;
+   virtual bool MediaChange(const string &Media, const string &Drive) override;
    virtual void IMSHit(pkgAcquire::ItemDesc &Itm) override;
    virtual void Fetch(pkgAcquire::ItemDesc &Itm) override;
    virtual void Done(pkgAcquire::ItemDesc &Itm) override;

@@ -193,7 +193,7 @@ void RGFetchProgress::setDescription(string mainText, string secondText)
    g_free(str);
 }
 
-bool RGFetchProgress::MediaChange(string Media, string Drive)
+bool RGFetchProgress::MediaChange(const string &Media, const string &Drive)
 {
    gchar *msg;
 
