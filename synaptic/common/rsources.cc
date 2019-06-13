@@ -326,12 +326,13 @@ bool SourcesList::UpdateSources()
                S += "[" + (*it)->VendorID + "] ";
 
             S += (*it)->URI + " ";
-            S += (*it)->Dist + " ";
+            S += (*it)->Dist;
 
             for (unsigned int J = 0; J < (*it)->NumSections; J++)
-               S += (*it)->Sections[J] + " ";
+               S += " " + (*it)->Sections[J];
          }
-         ofs << S << endl;
+         if ( ! S.empty() ) // we needn't to write empty line ...
+	     ofs << S << endl;
       }
       ofs.close();
    }

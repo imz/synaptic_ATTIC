@@ -675,10 +675,14 @@ void RGRepositoryEditor::SelectionChanged(GtkTreeSelection *selection,
       gtk_entry_set_text(GTK_ENTRY(me->_entryDist), utf8(rec->Dist.c_str()));
       gtk_entry_set_text(GTK_ENTRY(me->_entrySect), "");
 
-      for (unsigned int I = 0; I < rec->NumSections; I++) {
-         gtk_entry_append_text(GTK_ENTRY(me->_entrySect),
-                               utf8(rec->Sections[I].c_str()));
-         gtk_entry_append_text(GTK_ENTRY(me->_entrySect), " ");
+      if (rec->NumSections > 0) { // if (... == 0)   do nothing ...
+        for (unsigned int I = 0; I < (rec->NumSections - 1); I++) {
+           gtk_entry_append_text(GTK_ENTRY(me->_entrySect),
+                                 utf8(rec->Sections[I].c_str()));
+           gtk_entry_append_text(GTK_ENTRY(me->_entrySect), " ");
+        }
+	gtk_entry_append_text(GTK_ENTRY(me->_entrySect),
+	    utf8(rec->Sections[rec->NumSections - 1].c_str()));
       }
    } else {
       //cout << "no selection" << endl;
