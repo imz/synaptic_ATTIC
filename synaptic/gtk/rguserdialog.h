@@ -41,12 +41,12 @@ public:
     RGUserDialog(RGWindow *parent) : _parentWindow(parent->window()) {};
     RGUserDialog(GtkWidget *parent) : _parentWindow(parent) {};
     
-    virtual bool showErrors();
+    virtual bool showErrors() override;
 
     virtual bool message(const char *msg,
 	    RUserDialog::DialogType dialog=RUserDialog::DialogInfo,
 	    RUserDialog::ButtonsType buttons=RUserDialog::ButtonsOk,
-	    bool defres=true);
+	    bool defres=true) override;
 
 };
 
@@ -82,7 +82,7 @@ class RGGladeUserDialog : public RGUserDialog
     RGGladeUserDialog(RGWindow* parent, const char *name);
     virtual ~RGGladeUserDialog()  { gtk_widget_destroy(_dialog); };
 
-    void setTitle(string title) { 
+    void setTitle(const string &title) { 
        gtk_window_set_title(GTK_WINDOW(_dialog),title.c_str());
     }
 
