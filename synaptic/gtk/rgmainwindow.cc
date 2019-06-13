@@ -300,6 +300,9 @@ void RGMainWindow::refreshTable(RPackage *selectedPkg, bool setAdjustment)
 	   gtk_tree_view_get_vadjustment(GTK_TREE_VIEW(_treeView)));
    }
 
+   // reset scroll position to zero point
+   gtk_adjustment_set_value(gtk_tree_view_get_vadjustment(GTK_TREE_VIEW(_treeView)), 0.0);
+
    // set selected pkg to be selected again
    if(selectedPkg != NULL) {
       GtkTreeIter iter;
