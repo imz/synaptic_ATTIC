@@ -197,8 +197,8 @@ bool RGFetchProgress::MediaChange(string Media, string Drive)
 {
    gchar *msg;
 
-   msg = g_strdup_printf(_("Please insert the disk labeled:\n%s\nin drive %s"),
-			 Media.c_str(), Drive.c_str());
+   msg = g_strdup_printf(_("Please insert the media labeled:\n%s"),
+			 Media.c_str());
 
    RGUserDialog userDialog(this);
    _cancelled = !userDialog.proceed(msg);
