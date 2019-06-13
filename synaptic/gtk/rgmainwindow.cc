@@ -3266,9 +3266,9 @@ void RGMainWindow::cbGenerateDownloadScriptClicked(GtkWidget *self, void *data)
    me->_lister->getStats(installed, broken, toInstall, toReInstall,
 			 toRemove, sizeChange);
    if(toInstall+toReInstall == 0) {
-      me->_userDialog->message("Nothing to install/upgrade\n\n"
+      me->_userDialog->message(_("Nothing to install/upgrade\n\n"
 			       "Please select the \"Mark all Upgrades\" "
-			       "button or some packages to install/upgrade.");
+			       "button or some packages to install/upgrade."));
       return;
    }
 
@@ -3350,7 +3350,7 @@ void RGMainWindow::cbAddDownloadedFilesClicked(GtkWidget *self, void *data)
    me->cbProceedClicked(NULL, me);
 
 #else
-   me->_userDialog->error("Sorry, not implemented for rpm, patches welcome");
+   me->_userDialog->error(_("Sorry, not implemented for rpm, patches welcome"));
 #endif
 }
 
