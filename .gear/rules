@@ -1,6 +1,4 @@
-copy: *.8
-copy: *.conf
-copy: *.patch
-copy: *.png
-copy: *.po
-tar: synaptic
+tar: @version@:synaptic
+diff: @version@:synaptic synaptic name=@name@-@version@-alt.patch
+copy?: *.conf
+copy?: *.png
