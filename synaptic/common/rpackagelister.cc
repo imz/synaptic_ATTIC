@@ -324,8 +324,12 @@ bool RPackageLister::openCache()
                              "Please report."), 2);
    }
 
+#ifdef HAVE_RPM
+   // be gentle and free memory
    if (_records)
       delete _records;
+#endif
+
    _records = new pkgRecords(*deps);
 
    if (_error->PendingError()) {

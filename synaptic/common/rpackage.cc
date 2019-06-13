@@ -128,8 +128,7 @@ const char *RPackage::summary()
 
    pkgCache::VerIterator ver = (*_depcache)[*_package].CandidateVerIter(*_depcache);
    if (!ver.end()) {
-      pkgCache::DescIterator Desc = ver.TranslatedDescription();
-      pkgRecords::Parser & parser = _records->Lookup(Desc.FileList());
+      pkgRecords::Parser & parser = _records->Lookup(ver.FileList());
       _summary = parser.ShortDesc();
       return _summary.c_str();
    }
