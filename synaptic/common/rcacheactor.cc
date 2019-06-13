@@ -1,4 +1,5 @@
 
+#include "config.h"
 #include "rcacheactor.h"
 #include "rpackagelister.h"
 #include "i18n.h"

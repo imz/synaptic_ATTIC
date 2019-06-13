@@ -37,6 +37,8 @@
 #include <X11/Xlib.h>
 #include <iostream>
 #include <cerrno>
+#include <cstring>
+#include <cstdlib>
 #include <unistd.h>
 #include <sys/wait.h>
 #include <sys/types.h>

@@ -21,6 +21,7 @@
  * USA
  */
 
+#include "config.h"
 #include <apt-pkg/error.h>
 
 #include <ruserdialog.h>

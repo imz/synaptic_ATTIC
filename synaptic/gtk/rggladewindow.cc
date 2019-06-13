@@ -21,9 +21,9 @@
  */
 
 
+#include "config.h"
 #include <apt-pkg/fileutl.h>
 #include <cassert>
-#include "config.h"
 #include "i18n.h"
 #include "rggladewindow.h"
 

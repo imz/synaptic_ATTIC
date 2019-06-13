@@ -1,4 +1,5 @@
 
+#include "config.h"
 #include "rpackagelistactor.h"
 #include "rpackagelister.h"
 #include "i18n.h"

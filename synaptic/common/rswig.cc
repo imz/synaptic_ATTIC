@@ -1,5 +1,6 @@
 // 
 
+#include "config.h"
 #include "rswig.h"
 
 bool RInitSystem()

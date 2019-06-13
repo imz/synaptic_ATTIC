@@ -20,9 +20,10 @@
  * USA
  */
 
-#include <cassert>
-#include <map>
 #include "config.h"
+#include <cassert>
+#include <cstring>
+#include <map>
 #include "rglogview.h"
 #include "rgmisc.h"
 

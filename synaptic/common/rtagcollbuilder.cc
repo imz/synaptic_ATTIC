@@ -20,4 +20,5 @@
 
 //#pragma implementation
 
+#include "config.h"
 #include "rtagcollbuilder.h"

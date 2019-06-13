@@ -20,10 +20,12 @@
  * USA
  */
 
+#include "config.h"
 #include <X11/Xlib.h>
 #include <gdk/gdkx.h>
 #include <gtk/gtk.h>
-#include <string>
+#include <cstring>
+#include <cstdlib>
 #include "i18n.h"
 #include "rgmisc.h"
 #include <stdio.h>

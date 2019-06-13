@@ -10,6 +10,7 @@
    ##################################################################### */
                                                                         /*}}} */
 // Include Files                                                        /*{{{*/
+#include "config.h"
 #include "indexcopy.h"
 #include "i18n.h"
 

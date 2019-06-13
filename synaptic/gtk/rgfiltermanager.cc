@@ -23,9 +23,10 @@
  */
 
 
+#include "config.h"
 #include <stdio.h>
 #include <cassert>
-#include "config.h"
+#include <cstring>
 #include "rpackageview.h"
 #include "rgfiltermanager.h"
 

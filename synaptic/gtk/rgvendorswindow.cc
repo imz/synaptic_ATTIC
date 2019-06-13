@@ -1,8 +1,8 @@
 /* $Id: rgvendorswindow.cc,v 1.4 2002/12/06 08:16:40 mvogt Exp $ */
+#include "config.h"
 #include <cassert>
 #include "rgvendorswindow.h"
 #include "rgrepositorywin.h"
-#include "config.h"
 #include "i18n.h"
 
 RGVendorsEditor::RGVendorsEditor(RGWindow *parent, SourcesList &_lst)

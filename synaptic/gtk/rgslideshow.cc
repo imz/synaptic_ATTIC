@@ -1,3 +1,4 @@
+#include "config.h"
 #include <sys/types.h>
 #include <dirent.h>
 
@@ -6,6 +7,7 @@
 #include <algorithm>
 #include <string>
 #include <vector>
+#include <algorithm>
 
 #include "rgslideshow.h"
 

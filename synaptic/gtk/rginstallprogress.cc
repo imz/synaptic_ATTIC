@@ -32,6 +32,7 @@
 
 #include <unistd.h>
 #include <stdio.h>
+#include <cstring>
 #include <cstdlib>
 
 #include "i18n.h"

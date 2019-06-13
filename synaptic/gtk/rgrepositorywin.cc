@@ -23,6 +23,7 @@
  * USA
  */
 
+#include "config.h"
 #include <apt-pkg/error.h>
 #include <apt-pkg/configuration.h>
 #include <apt-pkg/sourcelist.h>
@@ -31,7 +32,6 @@
 #include "rgrepositorywin.h"
 #include "rguserdialog.h"
 #include "rgmisc.h"
-#include "config.h"
 #include "i18n.h"
 
 #if HAVE_RPM

@@ -21,9 +21,8 @@
 //
 // mvo: taken from aptitude with a big _thankyou_ 
 
-#include "pkg_acqfile.h"
-
 #include "config.h"
+#include "pkg_acqfile.h"
 #include "i18n.h"
 
 #include <stdio.h>

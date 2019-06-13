@@ -20,8 +20,8 @@
  * USA
  */
 
-#include <cassert>
 #include "config.h"
+#include <cassert>
 #include "rgiconlegend.h"
 #include "rgmisc.h"
 

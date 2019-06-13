@@ -20,10 +20,10 @@
  * USA
  */
 
+#include "config.h"
 #include <gtk/gtk.h>
 #include <cassert>
 #include <list>
-#include "config.h"
 #include "rgtaskswin.h"
 #include "rgmainwindow.h"
 #include "rguserdialog.h"

@@ -3,6 +3,7 @@
  *  
  */
 
+#include "config.h"
 #include <libintl.h>
 
 #include "sections_trans.h"

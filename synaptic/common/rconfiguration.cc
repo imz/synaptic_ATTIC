@@ -34,6 +34,9 @@
 #include <apt-pkg/error.h>
 #include <apt-pkg/configuration.h>
 
+#include <unistd.h>
+#include <sys/types.h>
+
 #include "rconfiguration.h"
 
 #include "i18n.h"
