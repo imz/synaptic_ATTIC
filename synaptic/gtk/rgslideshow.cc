@@ -39,7 +39,7 @@ void RGSlideShow::refresh()
       if (_totalSteps) {
 	 float stepping = (_totalSteps / (float)_imageFileList.size());
 	 current = (int)((_currentStep + (stepping - 1) / 2) / stepping);
-	 if (current >= _imageFileList.size())
+	 if (size_t(current) >= _imageFileList.size())
 	    current = _imageFileList.size() - 1;
       }
       gtk_image_set_from_file(_image, _imageFileList[current].c_str());

@@ -157,7 +157,7 @@ bool RGUserDialog::message(const char *msg,
 
    dia = gtk_message_dialog_new (GTK_WINDOW(_parentWindow),
                                  GTK_DIALOG_DESTROY_WITH_PARENT,
-                                 gtkmessage, gtkbuttons, "%s", 
+                                 gtkmessage, gtkbuttons,
 			         NULL);
    
    gtk_message_dialog_set_markup (GTK_MESSAGE_DIALOG(dia), utf8(msg));

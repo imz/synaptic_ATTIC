@@ -1189,7 +1189,7 @@ static char *stripWsParser(const string &descr)
 static char *parseDescription(const string &descr)
 {
 
-   if (descr.size() + 1 > descrBufferSize) {
+   if (descr.size() + 1 > size_t(descrBufferSize)) {
       delete[] descrBuffer;
       descrBufferSize = descr.size() + 1;
       descrBuffer = new char[descrBufferSize];

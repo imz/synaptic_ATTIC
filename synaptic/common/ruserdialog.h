@@ -64,6 +64,7 @@ class RUserDialog {
 
    virtual bool showErrors();
 
+   virtual ~RUserDialog() = default;
 };
 
 #endif

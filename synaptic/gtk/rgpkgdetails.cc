@@ -207,7 +207,7 @@ void RGPkgDetailsWindow::fillInValues(RGGladeWindow *me, RPackage *pkg,
    gchar *str;
    vector<string> list;
    vector<pair<string,string> > versions = pkg->getAvailableVersions();
-   for(int i=0;i<versions.size();i++) {
+   for(size_t i=0;i<versions.size();++i) {
       // TRANSLATORS: this the format of the available versions in 
       // the "Properties/Available versions" window
       // e.g. "0.56 (unstable)"

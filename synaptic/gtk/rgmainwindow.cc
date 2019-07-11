@@ -275,7 +275,7 @@ void RGMainWindow::forgetNewPackages()
    int row = 0;
    while (row < _lister->viewPackagesSize()) {
       RPackage *elem = _lister->getViewPackage(row);
-      if (elem->getFlags() && RPackage::FNew)
+      if (elem->getFlags() & RPackage::FNew)
          elem->setNew(false);
    }
    _roptions->forgetNewPackages();
@@ -2170,7 +2170,7 @@ void RGMainWindow::cbShowSourcesWindow(GtkWidget *self, void *data)
       argv[0] = "/usr/bin/software-properties-gtk";
       argv[1] = "-n";
       argv[2] = "-t";
-      argv[3] = g_strdup_printf("%i", GDK_WINDOW_XID(me->_win->window));
+      argv[3] = g_strdup_printf("%lu", GDK_WINDOW_XID(me->_win->window));
       argv[4] = NULL;
       g_spawn_async(NULL, argv, NULL,
 		    (GSpawnFlags)G_SPAWN_DO_NOT_REAP_CHILD,
@@ -2838,10 +2838,12 @@ void RGMainWindow::cbUpgradeClicked(GtkWidget *self, void *data)
 
    // special case for non-interactive upgrades
    if(_config->FindB("Volatile::Non-Interactive", false)) 
+   {
       if(_config->FindB("Volatile::Upgrade-Mode", false))
 	 upgrade = UPGRADE_NORMAL;
       else if(_config->FindB("Volatile::DistUpgrade-Mode", false))
 	 upgrade = UPGRADE_DIST;
+   }
    
 
    if (upgrade == UPGRADE_ASK) {
@@ -3292,7 +3294,7 @@ void RGMainWindow::cbGenerateDownloadScriptClicked(GtkWidget *self, void *data)
    // FIXME: this is prototype code, hardcoding wget here suckx
    ofstream out(file);
    out << "#!/bin/sh" << endl;
-   for(int i=0;i<uris.size();i++) {
+   for(size_t i=0;i<uris.size();++i) {
       out << "wget -c " << uris[i] << endl;
    }
    chmod(file, 0755);

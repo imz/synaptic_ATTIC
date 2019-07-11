@@ -63,6 +63,8 @@ class RInstallProgress {
 
 
    RInstallProgress():_donePackagesTotal(0), _numPackagesTotal(0),_updateFinished(false) {};
+
+   virtual ~RInstallProgress() = default;
 };
 
 

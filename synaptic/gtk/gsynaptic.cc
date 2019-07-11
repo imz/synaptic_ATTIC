@@ -185,7 +185,7 @@ void update_check(RGMainWindow *mainWindow, RPackageLister *lister)
 
       // check for the mtime of the various package lists
       vector<string> filenames = lister->getPolicyArchives(true);
-      for (int i=0;i<filenames.size();i++) {
+      for (size_t i=0;i<filenames.size();++i) {
 	 stat(filenames[i].c_str(), &st);
 	 if(filenames[i] != "/var/lib/dpkg/status")
 	    lastUpdate = max(lastUpdate, (int)st.st_mtime);

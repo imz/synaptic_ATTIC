@@ -150,7 +150,7 @@ void RGInstallProgress::finishUpdate()
 
 void RGInstallProgress::prepare(RPackageLister *lister)
 {
-   for (unsigned int row = 0; row < lister->packagesSize(); row++) {
+   for (unsigned int row = 0; int(row) < lister->packagesSize(); row++) {
       RPackage *elem = lister->getPackage(row);
 
       // Is it going to be seen?
