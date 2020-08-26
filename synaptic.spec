@@ -71,6 +71,8 @@ intltoolize --force
 
 # To avoid some errors on API change:
 %add_optflags -Werror=overloaded-virtual
+# A style enforcement: always use the keyword, which helps to avoid API misuse
+%add_optflags -Werror=suggest-override
 
 %configure --with-vte --with-pkg-hold --enable-scripts
 %make_build
