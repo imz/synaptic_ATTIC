@@ -64,9 +64,14 @@ intltoolize --force
 %endif
 
 %add_optflags -fno-exceptions
+
 %ifarch %e2k
 %add_optflags -std=gnu++11
 %endif
+
+# To avoid some errors on API change:
+%add_optflags -Werror=overloaded-virtual
+
 %configure --with-vte --with-pkg-hold --enable-scripts
 %make_build
 
