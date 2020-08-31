@@ -65,8 +65,10 @@ intltoolize --force
 
 %add_optflags -fno-exceptions
 
-%ifarch %e2k
-%add_optflags -std=gnu++11
+%ifnarch %e2k
+%add_optflags -std=gnu++17
+%else
+%add_optflags -std=gnu++14
 %endif
 
 # To avoid some errors on API change:
