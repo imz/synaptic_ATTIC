@@ -65,7 +65,7 @@ intltoolize --force
 
 %add_optflags -fno-exceptions
 %ifarch %e2k
-%add_optflags -std=c++14
+%add_optflags -std=gnu++11
 %endif
 %configure --with-vte --with-pkg-hold --enable-scripts
 %make_build
