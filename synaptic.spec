@@ -20,7 +20,7 @@ Source2: %name.conf
 
 Patch1: %name-%version-alt.patch
 
-BuildRequires: libapt-devel >= 0.5.15lorg2-alt70
+BuildRequires: libapt-devel >= 0.5.15lorg2-alt59
 %if_enabled autotools
 BuildRequires: intltool
 %endif
